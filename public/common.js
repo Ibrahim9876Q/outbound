@@ -266,7 +266,24 @@
     source.onerror = () => { pill.classList.add('down'); setText('live-text', 'Reconnecting…'); };
   }
 
+  // ---------- high contrast (projectors) ----------
+
+  function setHighContrast(on) {
+    document.body.classList.toggle('hc', on);
+    const btn = $('hc-btn');
+    if (btn) btn.setAttribute('aria-pressed', on);
+    try { localStorage.setItem('outbound.hc', on ? '1' : '0'); } catch { /* storage blocked */ }
+  }
+
   function start() {
+    let hc = false;
+    try { hc = localStorage.getItem('outbound.hc') === '1'; } catch { /* storage blocked */ }
+    setHighContrast(hc);
+    $('hc-btn')?.addEventListener('click', () => setHighContrast(!document.body.classList.contains('hc')));
+    document.addEventListener('keydown', (e) => {
+      if (e.target.closest('input, textarea, select, [contenteditable]') || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'h' || e.key === 'H') setHighContrast(!document.body.classList.contains('hc'));
+    });
     for (const btn of document.querySelectorAll('.view-btn')) {
       btn.addEventListener('click', () => { if (!btn.disabled) showView(btn.dataset.view); });
     }

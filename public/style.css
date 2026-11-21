@@ -139,6 +139,17 @@ ul { list-style: none; margin: 0; padding: 0; }
 .pill.live .dot { background: var(--camera); }
 .pill.live.down .dot { background: var(--tracker); }
 
+.icon-btn {
+  width: 34px; height: 34px; flex: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  font-size: 17px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.icon-btn:hover, .icon-btn[aria-pressed="true"] { color: var(--text); border-color: var(--line-strong); }
+
 @media (max-width: 1500px) { .brand p { display: none; } }
 @media (max-width: 1360px) {
   .stats { gap: 12px; }

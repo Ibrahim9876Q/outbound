@@ -288,8 +288,10 @@
     const now = Date.now();
     for (const a of list) {
       const born = a.destinations.reduce((m, d) => Math.min(m, d.firstSeen), Infinity);
-      const fresh = now - born < FRESH_MS;
-      a.priority = (a.mic || a.cam ? 1e6 : 0) + (fresh ? 1e4 : 0) + a.activeConnections * 10 + a.destinations.length;
+      // Processes Windows couldn't name rank below every named app.
+      const unknown = /^pid-\d+/i.test(a.id);
+      const fresh = !unknown && now - born < FRESH_MS;
+      a.priority = (a.mic || a.cam ? 1e6 : 0) + (fresh ? 1e4 : 0) + (unknown ? 0 : 1e3) + a.activeConnections * 10 + a.destinations.length;
     }
     return list.sort((a, b) => b.priority - a.priority);
   }
@@ -468,11 +470,16 @@
     return specs;
   }
 
+  // Hosting / CDN / OS companies nearly every app touches. Two apps "both using Cloudflare" is plumbing,
+  // not a story, so these shared links only appear when one of the two apps is selected.
+  const INFRA_ORG = /cloudflare|akamai|fastly|amazon web services|cloudfront|google cloud|azure|^microsoft$|digitalocean|vultr|ovh|hetzner|linode|oracle|edgio|edgecast|lumen|level 3|unknown owner/i;
+
   // One wire per pair of apps: shared links list every company the pair has in common.
   function groupLinks(links) {
     const pairs = new Map();
     for (const link of links) {
       const kind = link.kind === 'local' ? 'local' : 'shared';
+      if (kind === 'shared' && INFRA_ORG.test(link.via) && selected !== link.from && selected !== link.to) continue;
       const [from, to] = [link.from, link.to].sort();
       const key = `${kind}|${from}|${to}`;
       let g = pairs.get(key);
@@ -644,7 +651,8 @@
 
   // ---------- selection + app details ----------
 
-  function select(id) {
+  function select(id, fromSpotlight = false) {
+    if (!fromSpotlight && spotlightTimer) toggleSpotlight(false);
     selected = id;
     if (lastState) {
       renderOrgs(lastState);
@@ -765,6 +773,75 @@
     setTimeout(() => { node.classList.add('leaving'); setTimeout(() => node.remove(), 450); }, 4500);
   }
 
+  // ---------- demo spotlight: cycles through the most interesting things on screen ----------
+
+  const SPOTLIGHT_MS = 6500;
+  let spotlightTimer = 0;
+  let spotlightIndex = 0;
+  let spotlightCaption = null;
+
+  function spotlightSteps() {
+    const apps = [...icons.values()].filter((i) => i.slot && !i.node.hidden).map((i) => i.app);
+    const onDesk = new Set(apps.map((a) => a.id));
+    const nameOf = (id) => apps.find((a) => a.id === id)?.name || id;
+    const steps = [];
+    for (const a of apps) if (a.cam) steps.push({ id: a.id, text: `${a.name} is using your camera right now` });
+    for (const a of apps) if (a.mic) steps.push({ id: a.id, text: `${a.name} is listening to your microphone right now` });
+    const busiest = apps.filter((a) => a.companies).sort((a, b) => b.companies - a.companies)[0];
+    if (busiest) {
+      const countries = new Set(busiest.destinations.map((d) => d.country).filter(Boolean)).size;
+      steps.push({ id: busiest.id, text: `${busiest.name} sends data to ${busiest.companies} companies in ${countries} countr${countries === 1 ? 'y' : 'ies'}` });
+    }
+    const tracked = apps.find((a) => a.trackers);
+    if (tracked) {
+      const t = tracked.destinations.find((d) => d.tracker);
+      steps.push({ id: tracked.id, text: `${tracked.name} talks to ${t.org}, a tracking / analytics company` });
+    }
+    const pairs = groupLinks(lastState ? lastState.links : []).filter((l) => onDesk.has(l.from) && onDesk.has(l.to));
+    const local = pairs.find((l) => l.kind === 'local' && l.active) || pairs.find((l) => l.kind === 'local');
+    if (local) steps.push({ id: local.from, text: `${nameOf(local.from)} and ${nameOf(local.to)} talk directly, without leaving this PC` });
+    const shared = pairs.filter((l) => l.kind === 'shared').sort((a, b) => b.vias.length - a.vias.length)[0];
+    if (shared) steps.push({ id: shared.from, text: `${nameOf(shared.from)} and ${nameOf(shared.to)} both send data to ${shared.vias.slice(0, 2).join(' and ')}` });
+    return steps;
+  }
+
+  function spotlightNext() {
+    const steps = spotlightSteps();
+    if (!steps.length) { showCaption('Nothing to spotlight yet: open an app and try again'); select(null); return; }
+    const step = steps[spotlightIndex++ % steps.length];
+    select(step.id, true);
+    showCaption(step.text);
+  }
+
+  function showCaption(text) {
+    if (!spotlightCaption) {
+      spotlightCaption = document.createElement('div');
+      spotlightCaption.className = 'spotlight-caption';
+      el.screen.appendChild(spotlightCaption);
+    }
+    spotlightCaption.style.top = `${el.internet.offsetHeight + 10}px`;
+    spotlightCaption.textContent = text;
+    spotlightCaption.hidden = false;
+    spotlightCaption.classList.remove('pop');
+    void spotlightCaption.offsetWidth;
+    spotlightCaption.classList.add('pop');
+  }
+
+  function toggleSpotlight(on = !spotlightTimer) {
+    clearInterval(spotlightTimer);
+    spotlightTimer = 0;
+    $('spotlight-btn').classList.toggle('on', on);
+    $('spotlight-btn').textContent = on ? 'Stop spotlight' : 'Demo spotlight';
+    if (on) {
+      spotlightIndex = 0;
+      spotlightNext();
+      spotlightTimer = setInterval(spotlightNext, SPOTLIGHT_MS);
+    } else {
+      if (spotlightCaption) spotlightCaption.hidden = true;
+      select(null);
+    }
+  }
+
   // ---------- footnote ----------
 
   function renderFootnote(state) {
@@ -810,7 +887,12 @@
     for (const id of ['show-out', 'show-local', 'show-shared']) $(id).addEventListener('change', applyToggles);
     applyToggles();
     el.screen.addEventListener('click', (e) => { if (!e.target.closest('.app')) select(null); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && selected) select(null); });
+    $('spotlight-btn').addEventListener('click', () => toggleSpotlight());
+    document.addEventListener('keydown', (e) => {
+      if (Outbound.view !== 'computer' || e.target.closest('input, textarea, select') || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'Escape' && (selected || spotlightTimer)) select(null);
+      if (e.key === 's' || e.key === 'S') toggleSpotlight();
+    });
 
     let resizeTimer = 0;
     new ResizeObserver(() => { clearTimeout(resizeTimer); resizeTimer = setTimeout(relayout, 60); }).observe(el.stage);

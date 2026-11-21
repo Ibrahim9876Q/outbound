@@ -18,11 +18,11 @@ Lane: public/index.html, style.css, common.js, computer.js, computer.css. Server
 ## SHOULD
 - [x] 12. Admin hint when dnsCacheAvailable is false
 - [ ] 13. <5% CPU idle; keyed in-place DOM updates
-- [ ] 14. 1280×800 + projector readable; high-contrast mode
-- [ ] 15. Demo spotlight button
+- [x] 14. 1280×800 + projector readable; high-contrast mode
+- [x] 15. Demo spotlight button
 
 ## Discovered
 - [ ] Verify mic/camera with REAL devices (ask user first) — only simulated so far
 - [ ] Verify "open a new app → icon appears + wires fire" live
 - [ ] Toasts can cover bottom-right icons for 4.5s (acceptable for now)
-- [ ] Shared-company curves get busy with many Microsoft/Cloudflare pairs; consider muting infra/CDN orgs
+- [x] Shared-company curves: infra/CDN orgs only shown for the selected app

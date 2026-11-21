@@ -29,3 +29,14 @@ Rubric (1–5): Truthful 5 · Works live 4 (mic/cam verified with simulated payl
 · Readable 4 · Wow 4 · Demo-ready 3 (no spotlight button yet) · Perf 4 · Code 4.
 - Demo-ready < 4: no spotlight, no high-contrast toggle yet → next iteration.
 Next: spotlight button + high-contrast toggle; real mic/camera check (ask user); new-app appearance test.
+
+## Iteration 3: 17:01–17:05
+- Demo spotlight button (+ S key): cycles camera user → mic user → app with most companies → tracker →
+  local app↔app link → shared company, selecting the app and showing a plain-English caption on screen. 6.5s/step.
+- High-contrast toggle (◐ in top bar, H key, remembered per browser): black screen, thicker wires, boxed names.
+- Shared links via hosting/CDN/OS companies (Cloudflare, Akamai, AWS, Google Cloud, Microsoft…) only drawn when
+  one of the two apps is selected: removes ~90% of dashed-curve noise. 1920×1080 now 3 shared wires vs dozens.
+- "Unknown app (PID N)" ghosts rank below every named app and never get the fresh-app boost.
+Verified: spotlight caption "Google Chrome sends data to 11 companies in 4 countries" + focus; HC screenshot.
+Rubric: Truthful 5 · Works live 4 · Readable 4 · Wow 4 · Demo-ready 4 · Perf 4 · Code 4.
+Step-back: if the demo were in 10 min, fix = verify real camera/mic live (needs user OK), then "new app appears" live.

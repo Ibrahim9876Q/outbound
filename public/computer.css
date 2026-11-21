@@ -336,6 +336,26 @@
   pointer-events: none;
 }
 
+/* demo spotlight caption */
+.spotlight-caption {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 88%;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(8, 14, 32, 0.92);
+  border: 1px solid var(--in);
+  box-shadow: 0 0 24px rgba(76, 201, 255, 0.35);
+  font-size: 16px;
+  font-weight: 650;
+  text-align: center;
+  z-index: 9;
+  pointer-events: none;
+}
+.spotlight-caption.pop { animation: caption-in 0.45s ease-out; }
+@keyframes caption-in { from { opacity: 0; transform: translate(-50%, -6px); } }
+
 /* toasts */
 .toast-zone {
   position: absolute;
@@ -573,7 +593,7 @@
 .dest .org-name { font-weight: 650; font-size: 15px; }
 .dest .meta { grid-column: 2; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 .dest .meta code { font-family: var(--mono); font-size: 12.5px; color: #c4cde6; }
-.peer { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.peer { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; padding: 5px 0; border-top: 1px solid var(--line); font-size: 14px; }
 .peer .sw { width: 16px; }
 
 /* ---------- side: live feed ---------- */
@@ -598,3 +618,16 @@
 .feed li.fresh { animation: feed-in 1.2s ease-out; }
 @keyframes feed-in { from { background: rgba(124, 170, 255, 0.18); } }
 .feed .none { color: var(--faint); font-size: 14px; border: 0; display: block; }
+
+/* ---------- high contrast (projectors) ---------- */
+
+body.hc .wire.out { opacity: 0.75; stroke-width: 1.8; }
+body.hc .wire.shared { opacity: 0.9; stroke-width: 2.4; }
+body.hc .wire.local { stroke-width: 3.2; }
+body.hc .org { background: #000; border-width: 2px; color: #fff; }
+body.hc .org.tracker { background: #3a0010; }
+body.hc .screen { background: #000; }
+body.hc .app .name { text-shadow: none; background: rgba(0, 0, 0, 0.85); border-radius: 4px; padding: 0 3px; }
+body.hc .key { color: #c8d0e8; }
+body.hc .mic-caption, body.hc .cam-caption { color: #b9c2dc; }
+body.hc .footnote { color: var(--muted); }
