@@ -16,3 +16,5 @@
   --user-data-dir) can open the webcam/mic without Windows logging it in CapabilityAccessManager, so it can't
   test the live path. Use a real app driven by the user.
 - Close anything you pop up on the user's screen (a failed `start <uri>` leaves an "OpenWith" dialog).
+- Orchestrator rules: write requests to notes/claude-REQUESTS.md (not notes/REQUESTS.md); never merge other branches.
+- Mono + uppercase text is ~30% wider: shorten labels (captions, pills) instead of letting them wrap.

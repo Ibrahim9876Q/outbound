@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  const { esc, flagHtml, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon } = Outbound.util;
+  const { esc, flagHtml, countryName, ago, duration, initials, appLabel, deviceAppName, deviceUsers, eventText, svgIcon } = Outbound.util;
   const $ = (id) => document.getElementById(id);
   const SVG_NS = 'http://www.w3.org/2000/svg';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -50,7 +50,7 @@
 
   // [label, width, id] — the function row holds the mic-mute and camera keys like a real laptop.
   const KEY_ROWS = [
-    { cls: 'fn', keys: [['esc', 1], ['F1', 1], ['F2', 1], ['F3', 1], ['mic', 1, 'key-mic'], ['F5', 1], ['F6', 1], ['F7', 1], ['F8', 1], ['cam', 1, 'key-cam'], ['F10', 1], ['F11', 1], ['F12', 1], ['del', 1]] },
+    { cls: 'fn', keys: [['esc', 1], ['F1', 1], ['F2', 1], ['F3', 1], ['mic', 2.6, 'key-mic'], ['F5', 1], ['F6', 1], ['F7', 1], ['F8', 1], ['cam', 2.6, 'key-cam'], ['F10', 1], ['F11', 1], ['F12', 1], ['del', 1]] },
     { keys: [['`', 1], ['1', 1], ['2', 1], ['3', 1], ['4', 1], ['5', 1], ['6', 1], ['7', 1], ['8', 1], ['9', 1], ['0', 1], ['-', 1], ['=', 1], ['⌫', 1.9]] },
     { keys: [['tab', 1.5], ...'QWERTYUIOP[]'.split('').map((k) => [k, 1]), ['\\', 1.4]] },
     { keys: [['caps', 1.8], ...'ASDFGHJKL;\''.split('').map((k) => [k, 1]), ['enter', 2.1]] },
@@ -60,10 +60,16 @@
 
   function buildKeyboard() {
     el.keyboard.innerHTML = KEY_ROWS.map((row) => `<div class="krow ${row.cls || ''}">${row.keys.map(([label, w, id]) => {
-      if (id === 'key-mic') return `<div class="key hero" id="key-mic" style="--w:${w}" title="Microphone">${svgIcon('micOff')}<small>muted</small></div>`;
-      if (id === 'key-cam') return `<div class="key hero" id="key-cam" style="--w:${w}" title="Camera">${svgIcon('camOff')}<small>off</small></div>`;
+      if (id === 'key-mic') return `<div class="key hero" id="key-mic" style="--w:${w}" title="Microphone">${heroKey('mic', false)}</div>`;
+      if (id === 'key-cam') return `<div class="key hero" id="key-cam" style="--w:${w}" title="Camera">${heroKey('cam', false)}</div>`;
       return `<div class="key" style="--w:${w}">${esc(label)}</div>`;
     }).join('')}</div>`).join('');
+  }
+
+  function heroKey(kind, on) {
+    const icon = kind === 'mic' ? (on ? 'mic' : 'micOff') : (on ? 'cam' : 'camOff');
+    const state = kind === 'mic' ? (on ? 'live' : 'muted') : (on ? 'on' : 'off');
+    return `${svgIcon(icon)}<span class="kl"><b>${kind.toUpperCase()}</b><small>${state}</small></span>`;
   }
 
   // ---------- fit the laptop to the window ----------
@@ -101,16 +107,13 @@
     const wasOn = key.classList.contains('on');
     if (wasOn !== dev.active) {
       key.classList.toggle('on', dev.active);
-      key.innerHTML = isMic
-        ? `${svgIcon(dev.active ? 'mic' : 'micOff')}<small>${dev.active ? 'live' : 'muted'}</small>`
-        : `${svgIcon(dev.active ? 'cam' : 'camOff')}<small>${dev.active ? 'on' : 'off'}</small>`;
+      key.innerHTML = heroKey(isMic ? 'mic' : 'cam', dev.active);
     }
 
     const caption = $(isMic ? 'mic-caption' : 'cam-caption');
     caption.classList.toggle('on', dev.active);
-    caption.textContent = dev.active
-      ? `${who} is using your ${isMic ? 'microphone' : 'camera'}`
-      : (isMic ? 'Microphone muted' : 'Camera off');
+    caption.textContent = dev.active ? `● ${isMic ? 'Mic' : 'Cam'}: ${who}` : (isMic ? 'Mic muted' : 'Cam off');
+    caption.title = dev.active ? `${who} is using your ${isMic ? 'microphone' : 'camera'}` : '';
 
     $(isMic ? 'tray-mic' : 'tray-cam').classList.toggle('on', dev.active);
 
@@ -371,7 +374,6 @@
     node.className = 'app';
     node.dataset.id = app.id;
     node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div>`;
-    if (!app.icon) node.querySelector('.tile').style.background = `linear-gradient(160deg, ${appColor(app.id, 48)}, ${appColor(app.id, 30)})`;
     node.addEventListener('click', (e) => { e.stopPropagation(); select(selected === app.id ? null : app.id); });
     return node;
   }
@@ -383,7 +385,6 @@
       // The real icon arrived after the app first appeared.
       node.querySelector('.initials')?.remove();
       const tile = node.querySelector('.tile');
-      tile.style.background = '';
       tile.insertAdjacentHTML('afterbegin', tileInner(app));
     }
     const co = node.querySelector('.badge.co');
@@ -687,10 +688,9 @@
     if (!icon) { el.detail.innerHTML = ''; return; }
     const app = icon.app;
     const tile = app.icon ? tileInner(app) : `<span class="initials">${esc(initials(app.name))}</span>`;
-    const tileStyle = app.icon ? '' : ` style="background:linear-gradient(160deg, ${appColor(app.id, 48)}, ${appColor(app.id, 30)})"`;
     const live = app.destinations.filter((d) => d.active).length;
     const dev = [app.mic && 'using the microphone', app.cam && 'using the camera'].filter(Boolean);
-    let html = `<div class="detail-head"><div class="tile"${tileStyle}>${tile}</div><div><h3>${esc(app.name)}</h3>`
+    let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     if (app.destinations.length) {
       html += '<div class="detail-sub">Sends data to</div><ul class="dests">';
@@ -758,8 +758,11 @@
       let li = feedItems.get(key);
       if (!li) {
         li = document.createElement('li');
-        li.className = eventClass(e) + (firstState ? '' : ' fresh');
-        li.innerHTML = `<span class="dot"></span><span>${esc(eventText(e))}</span><span class="t"></span>`;
+        li.className = eventClass(e);
+        li.innerHTML = '<span class="dot"></span><span class="msg"></span><span class="t"></span>';
+        const msg = li.querySelector('.msg');
+        if (firstState || reducedMotion.matches) msg.textContent = eventText(e);
+        else typeLine(li, msg, eventText(e));
         feedItems.set(key, li);
         el.feed.insertBefore(li, anchor);
       } else {
@@ -770,6 +773,21 @@
       if (t.textContent !== when) t.textContent = when;
     }
     for (const [key, li] of feedItems) if (!keys.has(key)) { li.remove(); feedItems.delete(key); }
+  }
+
+  // New feed lines type themselves out like a terminal.
+  function typeLine(li, msg, text) {
+    li.classList.add('typing');
+    let i = 0;
+    const timer = setInterval(() => {
+      i = Math.min(text.length, i + 2);
+      msg.textContent = text.slice(0, i);
+      if (i >= text.length || !li.isConnected) {
+        clearInterval(timer);
+        msg.textContent = text;
+        li.classList.remove('typing');
+      }
+    }, 16);
   }
 
   function toast(e) {
