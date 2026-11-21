@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outbound</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1>Outbound</h1>
+        <p>Where your apps send your data, and when they use your mic and camera</p>
+      </div>
+    </div>
+    <nav class="views" role="tablist">
+      <button class="view-btn active" data-view="computer" role="tab">Computer</button>
+      <button class="view-btn" data-view="globe" role="tab">Globe</button>
+      <button class="view-btn" data-view="phone" role="tab" disabled title="Next: route your phone through Outbound">Phone <small>soon</small></button>
+    </nav>
+    <div class="stats">
+      <div class="stat"><b id="stat-apps">0</b><span>apps online</span></div>
+      <div class="stat"><b id="stat-companies">0</b><span>companies</span></div>
+      <div class="stat"><b id="stat-countries">0</b><span>countries</span></div>
+      <div class="stat tracker"><b id="stat-trackers">0</b><span>trackers</span></div>
+      <div class="pill" id="pill-mic"><span class="dot"></span>Mic</div>
+      <div class="pill" id="pill-cam"><span class="dot"></span>Camera</div>
+      <div class="pill live" id="pill-live"><span class="dot"></span><span id="live-text">Connecting…</span></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- COMPUTER VIEW -->
+    <section class="view" id="view-computer">
+      <div class="stage">
+        <div class="wire-toggles">
+          <label><input type="checkbox" id="show-out" checked><span class="sw out"></span>App → company</label>
+          <label><input type="checkbox" id="show-local" checked><span class="sw local"></span>App ↔ app (direct)</label>
+          <label><input type="checkbox" id="show-shared" checked><span class="sw shared"></span>Same company</label>
+        </div>
+
+        <div class="laptop">
+          <div class="lid">
+            <div class="bezel-top">
+              <div class="cam" id="cam">
+                <span class="cam-led"></span>
+                <span class="cam-lens"><span class="cam-glint"></span></span>
+                <span class="cam-label" id="cam-label">Camera off</span>
+              </div>
+            </div>
+            <div class="screen" id="screen">
+              <div class="flash" id="flash"></div>
+              <div class="internet" id="internet">
+                <div class="internet-title">The internet <span id="internet-sub"></span></div>
+                <div class="orgs" id="orgs"></div>
+              </div>
+              <svg class="wires" id="wires" aria-hidden="true">
+                <g id="wire-paths"></g>
+                <g id="packets"></g>
+              </svg>
+              <div class="desktop" id="desktop"></div>
+              <div class="empty" id="empty">Waiting for apps to connect…</div>
+              <div class="toast-zone" id="toasts"></div>
+              <div class="taskbar">
+                <span class="start" aria-hidden="true"></span>
+                <span class="task-search">Outbound is watching</span>
+                <span class="tray">
+                  <span class="tray-icon" id="tray-mic" title="Microphone"></span>
+                  <span class="tray-icon" id="tray-cam" title="Camera"></span>
+                  <span id="clock"></span>
+                </span>
+              </div>
+            </div>
+            <div class="bezel-bottom">OUTBOUND</div>
+          </div>
+          <div class="base">
+            <div class="hinge"></div>
+            <div class="keyboard" id="keyboard"></div>
+            <div class="deck-row">
+              <div class="mic-caption" id="mic-caption">Microphone muted</div>
+              <div class="trackpad"></div>
+              <div class="cam-caption" id="cam-caption">Camera off</div>
+            </div>
+          </div>
+        </div>
+        <p class="footnote" id="footnote">Outbound shows which apps connect where and who owns each server. It can't read message contents, because they're encrypted.</p>
+      </div>
+
+      <aside class="side">
+        <div class="card device-card" id="card-mic">
+          <div class="card-head">
+            <span class="device-icon mic-ico"></span>
+            <div><h2>Microphone</h2><p id="mic-status">Not in use</p></div>
+          </div>
+          <div class="nums">
+            <div><b id="mic-sessions">0</b><span>times today</span></div>
+            <div><b id="mic-time">0m</b><span>in use today</span></div>
+          </div>
+          <ul class="usage" id="mic-usage"></ul>
+        </div>
+
+        <div class="card device-card" id="card-cam">
+          <div class="card-head">
+            <span class="device-icon cam-ico"></span>
+            <div><h2>Camera</h2><p id="cam-status">Not in use</p></div>
+          </div>
+          <div class="nums">
+            <div><b id="cam-sessions">0</b><span>times today</span></div>
+            <div><b id="cam-time">0m</b><span>in use today</span></div>
+          </div>
+          <ul class="usage" id="cam-usage"></ul>
+        </div>
+
+        <div class="card" id="card-app">
+          <h2>App details</h2>
+          <p class="hint" id="app-hint">Click an app on the screen to see where it sends your data.</p>
+          <div id="app-detail"></div>
+        </div>
+
+        <div class="card">
+          <h2>Live activity</h2>
+          <ul class="feed" id="feed"></ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- GLOBE VIEW -->
+    <section class="view hidden" id="view-globe">
+      <div class="globe-wrap">
+        <div id="globe"></div>
+        <div class="globe-legend">
+          <div><span class="sw out"></span>Data leaving this PC</div>
+          <div><span class="sw in"></span>Data coming back</div>
+          <div><span class="sw tracker"></span>Tracker / analytics company</div>
+        </div>
+        <div class="globe-tip" id="globe-tip"></div>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <h2>Countries your data reaches</h2>
+          <ul class="countries" id="countries"></ul>
+        </div>
+        <div class="card">
+          <h2>Filter by app</h2>
+          <div class="app-filter" id="app-filter"></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/vendor/globe.gl.min.js"></script>
+  <script src="common.js"></script>
+  <script src="computer.js"></script>
+  <script src="globe.js"></script>
+</body>
+</html>
