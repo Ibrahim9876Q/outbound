@@ -39,3 +39,16 @@ Check the timing and Wi-Fi fallback, then record the ten-minute health and CPU r
 - Opened example.com from curl and confirmed that the new Windows HTTPS destination had both a country and an attributed owner.
 - Scores (1–5) for truthful / works live / readable / wow / demo-ready / performance / code quality: **5 / 4 / 4 / 4 / 4 / 4 / 4**. The timed walkthrough and device hardware cues still need a rehearsal on the merged app.
 - After three iterations, the highest remaining demo risk is rehearsing the live handoff between Computer, device preview and Globe with the merged frontend. The backend preview can verify the contract independently.
+
+## Iteration 4 · 2026-11-21 18:26 EST
+
+Push state immediately after an activity event and reserve Node worker capacity for serving local assets during slow DNS.
+Verify the first SSE state after a new connection contains the active peer link.
+
+- A live curl-to-Node link emitted the event and its updated state less than 400 ms apart. The network fixture confirmed that two pending resolver calls leave capacity available and that subsequent polls resume queuing lookups when a slot frees up.
+- Re-ran the API, SSE, asset, network and device fixture checks on the final backend. The final ten-second idle sample recorded 0.00% of one core at Windows timer resolution. The permission-gated mic/camera check and rehearsal from the merged checkout remain open.
+- Scores (1–5) for truthful / works live / readable / wow / demo-ready / performance / code quality: **5 / 4 / 4 / 4 / 4 / 4 / 5**. The immediate state update closes the visible lag between the activity event and its corresponding wire.
+
+### Regression checks
+
+- Confirm the new-link SSE event is followed by state with an active reciprocal link. Confirm slow reverse DNS calls leave at least two worker threads available with the default Node worker pool.

@@ -10,7 +10,7 @@ The screenshot is scoped to a real local curl-to-Node.js test connection. The co
 
 ## Setup
 
-Use Windows 11, Node.js 24 and npm 11. In PowerShell, run the first two commands from the project folder. Run the third in a second terminal while the server is running.
+Use Windows 11, Node.js 24 and npm 11. Run the first two commands in PowerShell from the integrated project checkout. Run the third in a second terminal while the server is running.
 
 ```powershell
 npm.cmd ci

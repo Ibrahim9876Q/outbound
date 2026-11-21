@@ -21,11 +21,19 @@ function coordinate(value, limit, fallback) {
 
 const events = [];
 const clients = new Set();
+let stateQueued = false;
 
 function pushEvent(e) {
   events.unshift(e);
   if (events.length > 200) events.pop();
   broadcast('event', e);
+  if (clients.size && !stateQueued) {
+    stateQueued = true;
+    setImmediate(() => {
+      stateQueued = false;
+      broadcastState();
+    });
+  }
 }
 
 function broadcast(type, data) {
@@ -41,6 +49,10 @@ function state() {
   return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60) };
 }
 
+function broadcastState() {
+  if (clients.size) broadcast('state', state());
+}
+
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
 function loop(fn, everyMs) {
   const go = async () => {
@@ -51,7 +63,7 @@ function loop(fn, everyMs) {
 }
 loop(() => network.poll(), 1500);
 loop(() => devices.poll(), 750);
-setInterval(() => { if (clients.size) broadcast('state', state()); }, 1000);
+setInterval(broadcastState, 1000);
 
 const PUBLIC = path.join(__dirname, 'public');
 const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
