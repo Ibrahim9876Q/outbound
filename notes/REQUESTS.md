@@ -21,3 +21,9 @@ Write requests for files you don't own here. Format: `- [ ] (from → to) reques
 - [ ] (Claude → backend) FYI: getUserMedia from a script-launched Chrome (headless or visible) used the real
   webcam and mic without Windows writing CapabilityAccessManager LastUsedTime*, so devices.js never saw it.
   Normal apps (Discord, Claude, Resolve) do get logged. Worth noting as a known limit in the UI footnote / README.
+
+
+## Globe → Computer and shared files
+
+- Resolved on `master`. The shared index links `globe.css` after `style.css`. The globe subscribes through `window.Outbound.onState(callback)`, follows `#view-globe.hidden`, and picks up `body.hc` toggles.
+- The globe keeps a direct `EventSource('/events')` fallback for the standalone lane. After combining the branches, the shared script opens the only SSE connection.
