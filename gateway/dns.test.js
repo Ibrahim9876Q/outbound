@@ -66,8 +66,10 @@ test('DNS forwards ordinary names and requires approval for trackers and CNAME t
   await once(upstream, 'listening');
   const port = upstream.address().port;
   const requests = [];
+  let revokeOnUpstream = false;
   function respond(packet) {
     requests.push(packet);
+    if (revokeOnUpstream) approved = false;
     const alias = packet.includes(name('alias.example'));
     return answer(packet, alias ? 'test.google-analytics.com' : null);
   }
@@ -114,4 +116,8 @@ test('DNS forwards ordinary names and requires approval for trackers and CNAME t
     ['blocked', 'google-analytics.com'], ['blocked', 'google-analytics.com'], ['approved', 'google-analytics.com'],
   ]);
   assert.deepEqual(errors, []);
+  revokeOnUpstream = true;
+  const revoked = await lookup(gateway.port, 'test.google-analytics.com', 'udp');
+  assert.equal(revoked[3] & 0x0f, 5);
+  assert.equal(events.at(-1).status, 'blocked');
 });

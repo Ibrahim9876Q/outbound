@@ -1,5 +1,9 @@
 # Phone lane progress
 
+## 2026-11-21 18:57 EST — Recheck grants after DNS resolution
+
+Direct tracker queries now recheck consent after the upstream resolver answers. Added a loopback regression that revokes approval during upstream resolution and verifies the gateway refuses the response. The hosted Auth0 and phone checks remain pending because the local configuration is absent.
+
 ## 2026-11-21 16:45 EST — Auth0 feasibility
 
 The requested 30-minute research window begins at 16:45 EST. I am checking plan eligibility separately from API behavior and looking for a documented no-cost path for a live hackathon demo.

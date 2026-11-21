@@ -210,7 +210,8 @@ function createHandler({ upstreams, allowTracker, onLookup }) {
       const { response, answer } = await forward(packet, question, upstreams, tcp);
       const { trackers, ttlOffsets } = inspectAnswer(response, answer);
       if (trackers.size > 8) throw new Error('Too many tracker names in DNS response');
-      trackers.delete(direct);
+      // Approval may have expired or been revoked while the upstream resolver answered.
+      if (direct) trackers.add(direct);
       for (const tracker of trackers) {
         checkedTracker ||= tracker;
         if (!await allowTracker(tracker)) {
