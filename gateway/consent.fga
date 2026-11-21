@@ -1,0 +1,12 @@
+model
+  schema 1.1
+
+type user
+
+type tracker
+  relations
+    define can_resolve: [user with unexpired]
+
+condition unexpired(current_time: timestamp, expires_at: timestamp) {
+  current_time < expires_at
+}

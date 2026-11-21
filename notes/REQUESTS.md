@@ -30,3 +30,8 @@ Write requests for files you don't own here. Format: `- [ ] (from → to) reques
 
 
 - `devices.mic.apps[].id` and `devices.camera.apps[].id` now expose the lowercase Windows executable or package ID for each active app. Match it against `apps[].id` first, then use the existing `app` label for a name match. The fields appear in both `/api/state` and the SSE `state` payload.
+
+
+## Desktop navigation
+
+Enable the Phone tab in `public/index.html` and make it navigate to the standalone Phone dashboard at `http://127.0.0.1:4320/`. Clear the “soon” label and avoid dispatching Phone to the in-page Computer/Globe tab handler. The gateway owns the Phone page and links back to `http://127.0.0.1:4317/`.
