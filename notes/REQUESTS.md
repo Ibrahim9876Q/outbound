@@ -27,3 +27,6 @@ Write requests for files you don't own here. Format: `- [ ] (from → to) reques
 
 - Resolved on `master`. The shared index links `globe.css` after `style.css`. The globe subscribes through `window.Outbound.onState(callback)`, follows `#view-globe.hidden`, and picks up `body.hc` toggles.
 - The globe keeps a direct `EventSource('/events')` fallback for the standalone lane. After combining the branches, the shared script opens the only SSE connection.
+
+
+- `devices.mic.apps[].id` and `devices.camera.apps[].id` now expose the lowercase Windows executable or package ID for each active app. Match it against `apps[].id` first, then use the existing `app` label for a name match. The fields appear in both `/api/state` and the SSE `state` payload.
