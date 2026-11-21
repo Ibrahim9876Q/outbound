@@ -23,3 +23,18 @@ Check the shared files using browser-only overrides, test unplaced destinations,
 - An isolated browser fixture covered empty snapshots, missing and zero coordinates, overlapping destination points, tracker routes, and stable DOM and arc objects when only the timestamp changes.
 - Node used 0.875 CPU seconds in a 10.09-second idle sample, or 0.525% of total host CPU. Browser hidden-view pause passed. Phone files are handled in another lane and returned 404 in this overlay.
 - Rubric for this lane, in order. **5 / 4 / 4 / 4 / 4 / 4 / 4**.
+
+## Iteration 3 · November 21, 2026, 6:28 PM EST
+
+Reviewed the Globe requirements and both projector captures. Long app names wrap too quickly on a wide screen, and pinned details should stay steady while socket counts change.
+Widen the sidebar at the larger demo viewport and verify that a socket-only update preserves the pinned card and keyboard focus.
+
+- The wider sidebar passed at 1920×1080. Re-ran the live tab, single SSE connection, shared contrast, focus, app filter, hover, and reduced-motion checks using the same shared snapshot. Chrome showed 72 mapped destinations and 144 arcs in this run.
+- Re-ran the fixture regressions and verified that an updated socket count resized the point without replacing the open details or moving focus from its close button.
+- Rubric for this lane, in order. **5 / 4 / 4 / 4 / 4 / 4 / 4**.
+
+### Globe demo handoff · 2:15–2:50
+
+Open Globe and read the current country count. Choose a country to rotate the globe to a destination and show the company, location, and app. Choose the demo app to narrow the map and country counts. Explain that the paths illustrate TCP connections and that locations are estimated.
+
+On slow Wi-Fi, use destinations already observed during the live preflight. The view retains recently closed destinations for about ten minutes. The two screenshots are a fallback to explain the view if the host has no network access.

@@ -58,6 +58,7 @@
   let rotating = !reducedMotion.matches;
   let pinnedPoint = null;
   let shownPoint = null;
+  let tipContentKey = '';
 
   const overview = node('div', 'globe-overview');
   const heading = node('h2', '', 'Connection map');
@@ -260,12 +261,21 @@
   function renderPoint(point) {
     if (point === shownPoint) return;
     shownPoint = point;
+    const pinned = pinnedPoint !== null;
+    const byOwner = new Map();
+    for (const place of point?.places || []) {
+      const key = JSON.stringify([place.org, place.city, place.country, place.appId, place.appName, place.tracker]);
+      byOwner.set(key, place);
+    }
+    const contentKey = JSON.stringify([pinned, point?.key, point?.label, [...byOwner.keys()]]);
+    if (tipContentKey === contentKey) return;
+    tipContentKey = contentKey;
     tip.replaceChildren();
     tip.hidden = !point;
-    tip.classList.toggle('pinned', pinnedPoint !== null);
+    tip.classList.toggle('pinned', pinned);
     if (!point) return;
 
-    if (pinnedPoint !== null) {
+    if (pinned) {
       const close = node('button', 'globe-tip-close', '×');
       close.type = 'button';
       close.setAttribute('aria-label', 'Close destination details');
@@ -277,13 +287,8 @@
       return;
     }
 
-    const byOwner = new Map();
-    for (const place of point.places) {
-      const key = JSON.stringify([place.org, place.city, place.country, place.appId, place.tracker]);
-      byOwner.set(key, place);
-    }
     const details = [...byOwner.values()];
-    for (const place of details.slice(0, pinnedPoint === null ? 4 : details.length)) {
+    for (const place of pinned ? details : details.slice(0, 4)) {
       const row = node('div', 'globe-tip-row');
       const title = node('strong', '', place.org);
       if (place.tracker) title.append(node('span', 'globe-tracker', 'Tracker'));
@@ -291,7 +296,7 @@
       row.append(title, node('p', '', place.appName + ' · ' + location));
       tip.append(row);
     }
-    if (pinnedPoint === null && details.length > 4) {
+    if (!pinned && details.length > 4) {
       tip.append(node('p', '', 'Select the point to see all ' + details.length + ' entries.'));
     }
   }

@@ -327,6 +327,12 @@
   outline-offset: 2px;
 }
 
+@media (min-width: 1600px) {
+  #view-globe {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, var(--side-w, 380px));
+  }
+}
+
 @media (max-width: 900px) {
   #view-globe {
     grid-template-columns: minmax(0, 1fr);
