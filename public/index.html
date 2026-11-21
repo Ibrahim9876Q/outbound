@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Outbound</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="computer.css">
+  <link rel="stylesheet" href="globe.css">
+  <link rel="stylesheet" href="phone.css">
 </head>
 <body>
   <header class="topbar">
@@ -18,7 +21,7 @@
     <nav class="views" role="tablist">
       <button class="view-btn active" data-view="computer" role="tab">Computer</button>
       <button class="view-btn" data-view="globe" role="tab">Globe</button>
-      <button class="view-btn" data-view="phone" role="tab" disabled title="Next: route your phone through Outbound">Phone <small>soon</small></button>
+      <button class="view-btn" data-view="phone" role="tab" title="See what your phone connects to">Phone</button>
     </nav>
     <div class="stats">
       <div class="stat"><b id="stat-apps">0</b><span>apps online</span></div>
@@ -148,11 +151,15 @@
         </div>
       </aside>
     </section>
+
+    <!-- PHONE VIEW (owned by phone.js / phone.css) -->
+    <section class="view hidden" id="view-phone"></section>
   </main>
 
   <script src="/vendor/globe.gl.min.js"></script>
   <script src="common.js"></script>
   <script src="computer.js"></script>
   <script src="globe.js"></script>
+  <script src="phone.js"></script>
 </body>
 </html>
