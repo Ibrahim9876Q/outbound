@@ -22,7 +22,7 @@
     <nav class="views" role="tablist">
       <button class="view-btn active" data-view="computer" role="tab">Computer</button>
       <button class="view-btn" data-view="globe" role="tab">Globe</button>
-      <button class="view-btn" data-view="phone" role="tab" title="See what your phone connects to">Phone</button>
+      <a class="view-btn" href="http://127.0.0.1:4320/" target="_blank" rel="noopener" title="Open the phone dashboard in a new tab">Phone<span class="ext">↗</span></a>
     </nav>
     <div class="stats">
       <div class="stat"><b id="stat-apps">0</b><span>apps online</span></div>
@@ -62,7 +62,7 @@
             <div class="screen" id="screen">
               <div class="flash" id="flash"></div>
               <div class="internet" id="internet">
-                <div class="internet-title">The internet <span id="internet-sub"></span></div>
+                <div class="internet-title">// The internet <span id="internet-sub"></span></div>
                 <div class="orgs" id="orgs"></div>
               </div>
               <svg class="wires" id="wires" aria-hidden="true">
@@ -73,7 +73,7 @@
                 <g id="packets"></g>
               </svg>
               <div class="desktop" id="desktop"></div>
-              <div class="empty" id="empty">Waiting for apps to connect…</div>
+              <div class="empty" id="empty">&gt; waiting for apps to connect_</div>
               <div class="toast-zone" id="toasts"></div>
               <div class="taskbar">
                 <span class="start" aria-hidden="true"></span>
@@ -91,9 +91,9 @@
             <div class="hinge"></div>
             <div class="keyboard" id="keyboard"></div>
             <div class="deck-row">
-              <div class="mic-caption" id="mic-caption">Microphone muted</div>
+              <div class="mic-caption" id="mic-caption">Mic muted</div>
               <div class="trackpad"></div>
-              <div class="cam-caption" id="cam-caption">Camera off</div>
+              <div class="cam-caption" id="cam-caption">Cam off</div>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
         <div class="card device-card" id="card-mic">
           <div class="card-head">
             <span class="device-icon mic-ico"></span>
-            <div><h2>Microphone</h2><p id="mic-status">Not in use</p></div>
+            <div><h2>[ Microphone ]</h2><p id="mic-status">Not in use</p></div>
           </div>
           <div class="nums">
             <div><b id="mic-sessions">0</b><span>times today</span></div>
@@ -116,7 +116,7 @@
         <div class="card device-card" id="card-cam">
           <div class="card-head">
             <span class="device-icon cam-ico"></span>
-            <div><h2>Camera</h2><p id="cam-status">Not in use</p></div>
+            <div><h2>[ Camera ]</h2><p id="cam-status">Not in use</p></div>
           </div>
           <div class="nums">
             <div><b id="cam-sessions">0</b><span>times today</span></div>
@@ -126,13 +126,13 @@
         </div>
 
         <div class="card" id="card-app">
-          <h2>App details</h2>
+          <h2>&gt; App details</h2>
           <p class="hint" id="app-hint">Click an app on the screen to see where it sends your data.</p>
           <div id="app-detail"></div>
         </div>
 
         <div class="card feed-card">
-          <h2>Live activity</h2>
+          <h2>&gt; Live feed</h2>
           <ul class="feed" id="feed"></ul>
         </div>
       </aside>

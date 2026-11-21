@@ -56,3 +56,16 @@ User: the drawn webcam must never use the real camera; when the camera is in use
   light spill washing over the top of the screen (.laptop.cam-on), REC label on a dark pill.
 - Turn-on burst: glare scales to 2.8× and 1.8× brightness, then settles (skipped with reduced motion).
 Verified with simulated payload screenshots at 1280×800 and 1920×1080.
+
+## Iteration 6: 18:55, orchestrator brief: B&W cybersecurity theme + 2 fixes
+- style.css rewritten around shared tokens (--bg/--fg/--muted/--dim/--line/--grid/--mic/--tracker/--font-mono …),
+  pure black + 1px grid + subtle scanlines, mono uppercase headings, square cards with corner brackets,
+  blinking cursor after OUTBOUND. Tokens documented in notes/claude-REQUESTS.md.
+- computer.css rewritten monochrome: grey/white wires, bright white local wires, dashed grey shared, red trackers,
+  orange mic, white camera light/flash/rings. Icons grayscale unless selected or using mic/camera.
+- Big MIC / CAM keycaps (2.6 units wide, taller, white outline, icon + "MIC"/"CAM" + state).
+- Feed lines type themselves out with a block cursor (skipped with reduced motion).
+- Phone tab is a link to http://127.0.0.1:4320/ (new tab, rel=noopener).
+- 1280 top bar no longer clips; deck captions shortened to "● MIC: <app>" / "Mic muted".
+Verified: screenshots 1920×1080 idle + 1280×800 simulated mic/cam; Phone link href/target checked; no JS errors.
+Process: requests now go in notes/claude-REQUESTS.md; don't merge other branches.

@@ -234,7 +234,7 @@
   function showView(name) {
     if (!document.getElementById(`view-${name}`)) return;
     Outbound.view = name;
-    for (const btn of document.querySelectorAll('.view-btn')) {
+    for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
       const on = btn.dataset.view === name;
       btn.classList.toggle('active', on);
       btn.setAttribute('aria-selected', on);
@@ -284,7 +284,8 @@
       if (e.target.closest('input, textarea, select, [contenteditable]') || e.ctrlKey || e.metaKey || e.altKey) return;
       if (e.key === 'h' || e.key === 'H') setHighContrast(!document.body.classList.contains('hc'));
     });
-    for (const btn of document.querySelectorAll('.view-btn')) {
+    // Only buttons with data-view switch views; the Phone tab is a plain link to the phone dashboard.
+    for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
       btn.addEventListener('click', () => { if (!btn.disabled) showView(btn.dataset.view); });
     }
     const fromHash = location.hash.slice(1);
