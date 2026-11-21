@@ -3,8 +3,8 @@
   --map-muted: #aebfd7;
   --map-border: #2e405b;
   --map-panel: #0d1626;
-  --map-out: var(--out, #ffb347);
-  --map-in: var(--in, #4cc9ff);
+  --map-out: #ffb347;
+  --map-in: #4cc9ff;
   --map-tracker: var(--tracker, #ff4d6d);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(270px, 320px);
