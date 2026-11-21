@@ -5,3 +5,4 @@
 - Keep UI verification tied to the frontend lane commits. The starting backend worktree has the HTML shell only.
 - Use one `netstat -ano` call for both address families. Launch live curl checks directly from PowerShell when nested child creation from piped Node is blocked.
 - Exercise device transitions with registry fixtures when hardware permission is pending. Keep real device data in the ignored `data/` directory.
+- Capture screenshots of a scoped observed localhost connection to keep personal app and device history out of the docs. Use a real-time headless browser session for SSE pages.
