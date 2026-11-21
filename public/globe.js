@@ -6,6 +6,7 @@
   const tip = document.getElementById('globe-tip');
   const legend = view.querySelector('.globe-legend');
   const wrap = mount.parentElement;
+  const shared = window.Outbound;
 
   if (!document.querySelector('link[href$="globe.css"]')) {
     const stylesheet = document.createElement('link');
@@ -15,7 +16,7 @@
   }
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+  const regionNames = shared?.util?.countryName ? null : new Intl.DisplayNames(['en'], { type: 'region' });
   const palette = [
     ['#ffb347', '#4cc9ff'],
     ['#ff8766', '#77b0ff'],
@@ -45,6 +46,7 @@
     YT ZA ZM ZW
   `.trim().split(/\s+/);
   const countryRows = new Map();
+  const countryTargets = new Map();
   const appButtons = new Map();
   const arcCache = new Map();
   let globe;
@@ -75,7 +77,7 @@
   });
   legend.append(node('p', '', 'Motion illustrates active TCP connections.'));
   tip.hidden = true;
-  const countryNote = node('p', 'globe-card-note', 'App destinations, including recently closed connections.');
+  const countryNote = node('p', 'globe-card-note', 'Estimated server locations, including recently closed connections.');
   countries.before(countryNote);
   const countryEmpty = node('p', 'globe-card-note', 'Waiting for destinations…');
   const filterEmpty = node('p', 'globe-card-note', 'Apps appear after connecting to a remote server.');
@@ -97,6 +99,7 @@
   }
 
   function countryName(code) {
+    if (shared?.util?.countryName) return shared.util.countryName(code);
     return code ? regionNames.of(code) : 'Unknown country';
   }
 
@@ -162,10 +165,12 @@
         const [out, inbound] = palette[hash(app.id) % palette.length];
         button.style.setProperty('--route-out', out);
         button.style.setProperty('--route-in', inbound);
+        button.title = app.id;
       }
       button.addEventListener('click', () => {
         selectedApp = app.id || null;
         setRotation(false);
+        clearPoint();
         render();
       });
       return button;
@@ -179,19 +184,34 @@
 
   function renderCountries(places) {
     const totals = new Map();
+    countryTargets.clear();
     for (const place of places) {
       const code = place.country;
       totals.set(code, (totals.get(code) || 0) + 1);
+      const best = countryTargets.get(code);
+      if (globe && code && hasCoordinates(place) && (!best || place.sockets > best.sockets)) {
+        countryTargets.set(code, place);
+      }
     }
     const rows = [...totals].sort(([a, aCount], [b, bCount]) =>
       Number(!a) - Number(!b) || bCount - aCount || countryName(a).localeCompare(countryName(b)));
     reconcile(countries, countryRows, rows, ([code]) => code, ([code]) => {
       const row = node('li', 'globe-country');
+      const button = node('button', 'globe-country-button');
+      button.type = 'button';
+      button.addEventListener('click', () => focusCountry(code));
       const icon = countryFlag(code);
       icon.setAttribute('aria-hidden', 'true');
-      row.append(icon, node('span', 'globe-country-name', countryName(code)), node('span', 'globe-count'));
+      button.append(icon, node('span', 'globe-country-name', countryName(code)),
+        node('span', 'globe-count'));
+      row.append(button);
       return row;
-    }, (row, [, count]) => setText(row.lastElementChild, String(count)));
+    }, (row, [code, count]) => {
+      const button = row.firstElementChild;
+      button.disabled = !countryTargets.has(code);
+      button.title = button.disabled ? '' : 'Focus a destination in ' + countryName(code);
+      setText(button.lastElementChild, String(count));
+    });
     countryEmpty.hidden = rows.length > 0;
   }
 
@@ -259,7 +279,7 @@
 
     const byOwner = new Map();
     for (const place of point.places) {
-      const key = JSON.stringify([place.org, place.city, place.country, place.appName, place.tracker]);
+      const key = JSON.stringify([place.org, place.city, place.country, place.appId, place.tracker]);
       byOwner.set(key, place);
     }
     const details = [...byOwner.values()];
@@ -281,22 +301,42 @@
     renderPoint(null);
   }
 
+  function pinPoint(point) {
+    setRotation(false);
+    pinnedPoint = point.key;
+    shownPoint = null;
+    renderPoint(point);
+  }
+
+  function focusCountry(code) {
+    const { lat, lng } = countryTargets.get(code);
+    const point = globe.pointsData().find((entry) => entry.lat === lat && entry.lng === lng);
+    if (!point) return;
+    globe.pointOfView({ lat, lng, altitude: 1.85 }, reducedMotion.matches ? 0 : 650);
+    pinPoint(point);
+  }
+
   function render() {
     if (!visible || !state) return;
-    const apps = state.apps.filter((app) => app.destinations.length).sort((a, b) =>
-      a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
-    if (!apps.some((app) => app.id === selectedApp)) selectedApp = null;
-    const places = apps.filter((app) => selectedApp === null || app.id === selectedApp)
+    const apps = state.apps.filter((app) => app.destinations.length);
+    const nameCounts = new Map();
+    for (const app of apps) nameCounts.set(app.name, (nameCounts.get(app.name) || 0) + 1);
+    const namedApps = apps.map((app) => {
+      const label = shared?.util?.appLabel?.(app.name) || app.name;
+      return { ...app, name: nameCounts.get(app.name) > 1 ? label + ' · ' + app.id : label };
+    }).sort((a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
+    if (!namedApps.some((app) => app.id === selectedApp)) selectedApp = null;
+    const places = namedApps.filter((app) => selectedApp === null || app.id === selectedApp)
       .flatMap((app) => app.destinations.map((destination) => ({
         id: app.id + '|' + destination.ip, appId: app.id, appName: app.name,
         org: destination.org || 'Unknown owner', city: destination.city,
         country: countryCode(destination.country), lat: destination.lat, lng: destination.lng,
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
       }))).sort((a, b) => a.id.localeCompare(b.id));
-    const key = JSON.stringify([apps.map(({ id, name }) => [id, name]), selectedApp, state.home, places]);
+    const key = JSON.stringify([namedApps.map(({ id, name }) => [id, name]), selectedApp, state.home, places]);
     if (key === modelKey) return;
     modelKey = key;
-    renderFilters(apps);
+    renderFilters(namedApps);
     renderCountries(places);
     const home = state.home;
     const located = hasCoordinates(home) ? places.filter(hasCoordinates) : [];
@@ -353,12 +393,7 @@
         .onPointHover((point) => {
           if (pinnedPoint === null) renderPoint(point);
         })
-        .onPointClick((point) => {
-          setRotation(false);
-          pinnedPoint = point.key;
-          shownPoint = null;
-          renderPoint(point);
-        })
+        .onPointClick(pinPoint)
         .onGlobeClick(clearPoint);
 
       const controls = globe.controls();
@@ -420,8 +455,8 @@
   new MutationObserver(syncView).observe(view, { attributes: true, attributeFilter: ['class', 'hidden'] });
   document.addEventListener('visibilitychange', syncView);
 
-  if (typeof window.Outbound?.subscribeState === 'function') {
-    window.Outbound.subscribeState(receiveState);
+  if (typeof shared?.onState === 'function') {
+    shared.onState(receiveState);
   } else {
     const source = new EventSource('/events');
     source.addEventListener('state', (event) => receiveState(JSON.parse(event.data)));

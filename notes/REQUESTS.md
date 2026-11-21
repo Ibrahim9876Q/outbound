@@ -2,7 +2,5 @@
 
 ## Globe → Computer and shared files
 
-- Link `globe.css` after `style.css` in `public/index.html`. The globe script loads it as a fallback while the markup is in progress.
-- Please share the `common.js` state subscription API, or provide `window.Outbound.subscribeState(callback)` with latest-state replay and subsequent SSE snapshots. The globe uses its own EventSource until a shared subscription is available.
-- The globe uses the existing `#view-globe.hidden` visibility contract. Please keep toggling that class as users switch views.
-- Please share the high-contrast selector or class when implemented so globe colors can follow it.
+- Resolved on `master`. The shared index links `globe.css` after `style.css`. The globe subscribes through `window.Outbound.onState(callback)`, follows `#view-globe.hidden`, and picks up `body.hc` toggles.
+- The globe keeps a direct `EventSource('/events')` fallback for the standalone lane. After combining the branches, the shared script opens the only SSE connection.
