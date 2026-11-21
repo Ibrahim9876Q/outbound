@@ -38,3 +38,8 @@ Widen the sidebar at the larger demo viewport and verify that a socket-only upda
 Open Globe and read the current country count. Choose a country to rotate the globe to a destination and show the company, location, and app. Choose the demo app to narrow the map and country counts. Explain that the paths illustrate TCP connections and that locations are estimated.
 
 On slow Wi-Fi, use destinations already observed during the live preflight. The view retains recently closed destinations for about ten minutes. The two screenshots are a fallback to explain the view if the host has no network access.
+
+## Round 2 · November 21, 2026, 6:57 PM EST
+
+- Reviewed the updated integration branch. The shared stylesheet now uses grayscale wire colors, so Globe defines its warm and cool legend swatches locally to match the route palette.
+- Verified the scoped CSS against the route palette and ran JavaScript syntax and diff checks. This patch was checked statically.
