@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  const { esc, flag, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon } = Outbound.util;
+  const { esc, flagHtml, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon } = Outbound.util;
   const $ = (id) => document.getElementById(id);
   const SVG_NS = 'http://www.w3.org/2000/svg';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -23,6 +23,7 @@
     wires: $('wires'),
     wirePaths: $('wire-paths'),
     packets: $('packets'),
+    packetLayer: $('packet-layer'),
     desktop: $('desktop'),
     empty: $('empty'),
     toasts: $('toasts'),
@@ -174,7 +175,9 @@
         if (d.country) o.countries.set(d.country, (o.countries.get(d.country) || 0) + 1);
       }
     }
-    const score = (o) => (o.org === 'Unknown owner' ? -100 : 0) + o.apps.size * 4 + o.sockets + (o.tracker ? 6 : 0) + (o.active ? 3 : 0);
+    // The selected app's companies come first so its wires all land on visible chips.
+    const score = (o) => (selected && o.apps.has(selected) ? 1e4 : 0) + (o.org === 'Unknown owner' ? -100 : 0)
+      + o.apps.size * 4 + o.sockets + (o.tracker ? 6 : 0) + (o.active ? 3 : 0);
     return [...orgs.values()].sort((a, b) => score(b) - score(a) || a.org.localeCompare(b.org));
   }
 
@@ -196,8 +199,7 @@
         orgChips.set(o.org, chip);
       }
       const cc = [...o.countries.entries()].sort((a, b) => b[1] - a[1]).map(([c]) => c);
-      const flags = cc.slice(0, 2).map(flag).join('');
-      const html = `<span class="flag" title="${esc(cc.map(countryName).join(', '))}">${flags}</span>${esc(o.org)}${o.apps.size > 1 ? `<span class="n">×${o.apps.size}</span>` : ''}`;
+      const html = `${cc.slice(0, 2).map(flagHtml).join('')}<span class="org-label">${esc(o.org)}</span>${o.apps.size > 1 ? `<span class="n">×${o.apps.size}</span>` : ''}`;
       if (chip.dataset.html !== html) { chip.innerHTML = html; chip.dataset.html = html; }
       chip.classList.toggle('tracker', o.tracker);
       chip.title = `${o.org}${o.tracker ? ' · tracker / analytics' : ''} · used by ${o.apps.size} app${o.apps.size > 1 ? 's' : ''}`;
@@ -564,6 +566,7 @@
     }
     if (moreChip) moreChip.classList.toggle('hit', hitOrgs.has('+more'));
     el.wires.classList.toggle('focus', !!selected);
+    el.packetLayer.classList.toggle('focus', !!selected);
   }
 
   function bezier(p, t) {
@@ -632,9 +635,11 @@
   }
 
   function applyToggles() {
-    el.wires.classList.toggle('hide-out', !$('show-out').checked);
-    el.wires.classList.toggle('hide-local', !$('show-local').checked);
-    el.wires.classList.toggle('hide-shared', !$('show-shared').checked);
+    for (const layer of [el.wires, el.packetLayer]) {
+      layer.classList.toggle('hide-out', !$('show-out').checked);
+      layer.classList.toggle('hide-local', !$('show-local').checked);
+      layer.classList.toggle('hide-shared', !$('show-shared').checked);
+    }
   }
 
   // ---------- selection + app details ----------
@@ -642,11 +647,18 @@
   function select(id) {
     selected = id;
     if (lastState) {
+      renderOrgs(lastState);
       for (const icon of icons.values()) updateIcon(icon.node, icon.app);
       renderWires(lastState);
       for (const p of packets) p.node.classList.toggle('dim', !!selected && !p.wire.apps.includes(selected));
     }
     renderDetail();
+    if (selected) {
+      // Scroll only the side panel (scrollIntoView would also nudge the whole page).
+      const card = $('card-app');
+      const side = card.parentElement;
+      side.scrollTo({ top: card.offsetTop - side.offsetTop - 12, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    }
   }
 
   function renderDetail() {
@@ -668,7 +680,7 @@
         const ports = d.ports && d.ports.length ? ` · port ${d.ports.slice(0, 4).join(', ')}` : '';
         return `<li class="dest"><span class="live ${d.active ? 'on' : ''}" title="${d.active ? 'Connected now' : 'Closed'}"></span>`
           + `<span class="org-name">${esc(d.org)} ${d.tracker ? '<span class="tag tracker">tracker</span>' : ''}</span>`
-          + `<span class="meta">${host}<br>${flag(d.country)} ${esc(where)}${ports}${d.active ? '' : ' · closed'}</span></li>`;
+          + `<span class="meta">${host}<br>${flagHtml(d.country)} ${esc(where)}${ports}${d.active ? '' : ' · closed'}</span></li>`;
       }).join('');
       html += '</ul>';
     }
@@ -677,7 +689,7 @@
       html += [...new Set(app.localPeers)].map((id) => {
         const peer = lastState.apps.find((a) => a.id === id);
         const link = lastState.links.find((l) => l.kind === 'local' && ((l.from === id && l.to === app.id) || (l.to === id && l.from === app.id)));
-        return `<div class="peer"><span class="sw local"></span>${esc(peer ? peer.name : id)}${link && link.ports.length ? ` <span class="hint">· port ${link.ports.slice(0, 3).join(', ')}</span>` : ''}</div>`;
+        return `<div class="peer"><span class="sw local"></span>${esc(appLabel(peer ? peer.name : id))}${link && link.ports.length ? ` <span class="hint">· port ${link.ports.slice(0, 3).join(', ')}</span>` : ''}</div>`;
       }).join('');
     }
     const shared = lastState.links.filter((l) => l.kind === 'shared' && (l.from === app.id || l.to === app.id));
@@ -685,7 +697,7 @@
       html += '<div class="detail-sub">Sends to the same company as</div>';
       html += shared.map((l) => {
         const other = lastState.apps.find((a) => a.id === (l.from === app.id ? l.to : l.from));
-        return `<div class="peer"><span class="sw shared"></span>${esc(other ? other.name : '?')} <span class="hint">· both → ${esc(l.via)}</span></div>`;
+        return `<div class="peer"><span class="sw shared"></span>${esc(appLabel(other ? other.name : '?'))} <span class="hint">· both → ${esc(l.via)}</span></div>`;
       }).join('');
     }
     if (el.detail.dataset.html !== html) {

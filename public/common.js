@@ -6,7 +6,8 @@
 //   Outbound.onView(fn)    fn(viewName) when the user switches tabs ("computer" | "globe" | "phone").
 //   Outbound.state         the latest state, or null before the first one arrives.
 //   Outbound.view          the current view name.
-//   Outbound.util          { esc, flag, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon }
+//   Outbound.util          { esc, flag, flagHtml, countryName, ago, duration, initials, appColor, appLabel, deviceAppName,
+//                            deviceUsers, eventText, svgIcon }
 (function () {
   'use strict';
 
@@ -33,6 +34,35 @@
   function flag(cc) {
     if (!cc || !/^[A-Za-z]{2}$/.test(cc)) return '';
     return String.fromCodePoint(...cc.toUpperCase().split('').map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
+  }
+
+  // Windows has no flag emoji glyphs (it draws the two letters), so check once and fall back to a code badge.
+  let flagsSupported = null;
+  function emojiFlagsSupported() {
+    if (flagsSupported !== null) return flagsSupported;
+    flagsSupported = false;
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 20;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      ctx.font = '16px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
+      ctx.textBaseline = 'top';
+      ctx.fillText(flag('CA'), 0, 0);
+      const px = ctx.getImageData(0, 0, 20, 20).data;
+      for (let i = 0; i < px.length; i += 4) {
+        if (px[i + 3] && Math.max(Math.abs(px[i] - px[i + 1]), Math.abs(px[i + 1] - px[i + 2])) > 40) { flagsSupported = true; break; }
+      }
+    } catch { /* no canvas: use badges */ }
+    return flagsSupported;
+  }
+
+  // A flag emoji where the system can draw one, otherwise a small "US" badge (class "cc").
+  function flagHtml(cc) {
+    if (!cc || !/^[A-Za-z]{2}$/.test(cc)) return '';
+    const title = esc(countryName(cc));
+    return emojiFlagsSupported()
+      ? `<span class="flag" title="${title}">${flag(cc)}</span>`
+      : `<span class="cc" title="${title}">${cc.toUpperCase()}</span>`;
   }
 
   let regionNames = null;
@@ -154,7 +184,7 @@
     return `<svg class="ico ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
   }
 
-  Outbound.util = { esc, flag, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon };
+  Outbound.util = { esc, flag, countryName, ago, duration, initials, appColor, appLabel, deviceAppName, deviceUsers, eventText, svgIcon, flagHtml };
 
   // ---------- top bar ----------
 

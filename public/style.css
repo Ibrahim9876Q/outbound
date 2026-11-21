@@ -190,6 +190,18 @@ main { height: calc(100vh - var(--topbar-h)); position: relative; }
   text-transform: uppercase;
   vertical-align: 1px;
 }
+/* country code badge, used where the system can't draw flag emoji (Windows) */
+.cc {
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  font: 700 11px/15px var(--font);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  vertical-align: 1px;
+}
+
 .tag.tracker { background: rgba(255, 77, 109, 0.18); color: var(--tracker); border: 1px solid rgba(255, 77, 109, 0.5); }
 
 /* legend swatches, used by the wire toggles and the globe legend */

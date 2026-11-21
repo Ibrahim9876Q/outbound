@@ -62,6 +62,9 @@
               </div>
               <svg class="wires" id="wires" aria-hidden="true">
                 <g id="wire-paths"></g>
+              </svg>
+              <!-- packets get their own layer so moving them never repaints the glowing wires -->
+              <svg class="wires" id="packet-layer" aria-hidden="true">
                 <g id="packets"></g>
               </svg>
               <div class="desktop" id="desktop"></div>
