@@ -117,8 +117,12 @@
     if (!isMic) {
       const cam = $('cam');
       cam.classList.toggle('on', dev.active);
+      el.laptop.classList.toggle('cam-on', dev.active);
       $('cam-label').textContent = dev.active ? `● REC · ${who}` : 'Camera off';
-      if (dev.active && !wasOn && !firstState) flashScreen();
+      if (dev.active && !wasOn && !firstState) {
+        flashScreen();
+        burstCameraLight(cam);
+      }
     }
 
     const prefix = isMic ? 'mic' : 'cam';
@@ -148,6 +152,14 @@
       ? rows.slice(0, 4).map((r) => `<li class="${r.now ? 'now' : ''}"><span class="dot"></span>${r.text}</li>`).join('')
       : '<li class="none">No apps have used it yet</li>';
     if (list.innerHTML !== html) list.innerHTML = html;
+  }
+
+  function burstCameraLight(cam) {
+    if (reducedMotion.matches) return;
+    cam.classList.remove('burst');
+    void cam.offsetWidth; // restart the animation
+    cam.classList.add('burst');
+    setTimeout(() => cam.classList.remove('burst'), 1200);
   }
 
   function flashScreen() {

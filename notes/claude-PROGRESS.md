@@ -48,3 +48,11 @@ Step-back: if the demo were in 10 min, fix = verify real camera/mic live (needs 
   CapabilityAccessManager (latest webcam entry still May 2, mic entry Nov 19), so the server never saw them.
   → UI path still verified only with the simulated payload. Needs a real app the user drives (Discord call,
     Teams, or a webcam test page in their normal Chrome) while watching /api/state.
+
+## Iteration 5: 18:36, camera light (user request)
+User: the drawn webcam must never use the real camera; when the camera is in use it should be a
+"blinding light", purely UI. (Outbound never calls getUserMedia; it only reads Windows' usage registry.)
+- White-hot LED with layered green halo, 60cqw glare + horizontal lens-flare streak over the bezel,
+  light spill washing over the top of the screen (.laptop.cam-on), REC label on a dark pill.
+- Turn-on burst: glare scales to 2.8× and 1.8× brightness, then settles (skipped with reduced motion).
+Verified with simulated payload screenshots at 1280×800 and 1920×1080.
