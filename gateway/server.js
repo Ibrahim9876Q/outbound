@@ -4,10 +4,13 @@ const path = require('node:path');
 const net = require('node:net');
 const dns = require('node:dns');
 const { startDns } = require('./dns');
+const { createFga, createCiba } = require('./auth0');
+const { createConsent, ConsentError } = require('./consent');
 
 const DASHBOARD_PORT = 4320;
 const LOOPBACK = '127.0.0.1';
 const ROOT = path.join(__dirname, '..');
+const DASHBOARD_HOSTS = new Set([LOOPBACK + ':' + DASHBOARD_PORT, 'localhost:' + DASHBOARD_PORT]);
 const ASSETS = {
   '/': ['text/html', path.join(__dirname, 'index.html')],
   '/phone.js': ['text/javascript', path.join(ROOT, 'public', 'phone.js')],
@@ -35,7 +38,33 @@ function readConfig(env) {
     .filter((address) => address !== host || upstreamPort !== port)
     .map((address) => ({ host: address, port: upstreamPort }));
   if (!upstreams.length) throw new Error('Set PHONE_UPSTREAM_DNS to the IPv4 or IPv6 address of a DNS resolver.');
-  return { host, client, port, upstreams };
+  const grantMinutes = Number(env.PHONE_GRANT_MINUTES || 15);
+  if (!Number.isInteger(grantMinutes) || grantMinutes < 1 || grantMinutes > 1440) {
+    throw new Error('PHONE_GRANT_MINUTES must be a whole number from 1 to 1440.');
+  }
+  const subject = env.AUTH0_USER_ID;
+  const domain = env.AUTH0_DOMAIN?.toLowerCase();
+  let fga;
+  let ciba;
+  if ([env.FGA_API_URL, env.FGA_STORE_ID, env.FGA_MODEL_ID, env.FGA_CLIENT_ID, env.FGA_CLIENT_SECRET,
+    env.PHONE_POLICY_KEY, domain, subject].every(Boolean)) {
+    const api = env.FGA_API_URL.replace(/\/$/, '') + '/';
+    if (!/^https:\/\/api\.[a-z0-9-]+\.fga\.dev\/$/.test(api)) throw new Error('Use the regional https FGA API URL.');
+    const ulid = /^[0-9A-HJKMNP-TV-Z]{26}$/;
+    if (!ulid.test(env.FGA_STORE_ID) || !ulid.test(env.FGA_MODEL_ID)) throw new Error('Set valid FGA store and model IDs.');
+    if (!/^[a-f0-9]{64}$/i.test(env.PHONE_POLICY_KEY)) throw new Error('Set PHONE_POLICY_KEY to 32 random bytes in hex.');
+    fga = {
+      api, store: env.FGA_STORE_ID, model: env.FGA_MODEL_ID, subject: domain + '/' + subject,
+      clientId: env.FGA_CLIENT_ID, clientSecret: env.FGA_CLIENT_SECRET, key: Buffer.from(env.PHONE_POLICY_KEY, 'hex'),
+    };
+  }
+  if ([domain, env.AUTH0_CLIENT_ID, env.AUTH0_CLIENT_SECRET, subject].every(Boolean)) {
+    if (!/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/.test(domain)) {
+      throw new Error('AUTH0_DOMAIN must be the Auth0 tenant hostname.');
+    }
+    ciba = { issuer: 'https://' + domain + '/', clientId: env.AUTH0_CLIENT_ID, clientSecret: env.AUTH0_CLIENT_SECRET, subject };
+  }
+  return { host, client, port, upstreams, fga, ciba, grantMinutes };
 }
 
 function json(res, status, body) {
@@ -43,25 +72,50 @@ function json(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-async function startGateway(config) {
+async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data', 'phone-consent.json') } = {}) {
   const assets = new Map(await Promise.all(Object.entries(ASSETS).map(async ([route, [type, file]]) =>
     [route, { type, body: await fs.readFile(file) }])));
   const stats = { lookups: 0, blocked: 0 };
   const lookups = [];
-  const trackers = new Map();
+  const consent = createConsent({
+    fga: config.fga && createFga(config.fga, fetch),
+    ciba: config.ciba && createCiba(config.ciba, fetch),
+    grantMinutes: config.grantMinutes,
+    catalogPath,
+  });
   let dnsListener;
-  const server = http.createServer((req, res) => {
+  const server = http.createServer(async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Content-Security-Policy', "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
-    if (!['127.0.0.1:' + DASHBOARD_PORT, 'localhost:' + DASHBOARD_PORT].includes(req.headers.host)) {
+    if (!DASHBOARD_HOSTS.has(req.headers.host)) {
       return json(res, 403, { error: 'Open the dashboard on this PC.' });
     }
-    if (req.method !== 'GET') return json(res, 405, { error: 'Method not allowed.' });
+    if (req.method === 'POST') {
+      if (req.headers.origin !== 'http://' + req.headers.host || req.headers['x-outbound-action'] !== '1') {
+        return json(res, 403, { error: 'Use the local Phone view to change tracker permissions.' });
+      }
+      const action = /^\/api\/trackers\/([a-z0-9.-]{1,253})\/(request|revoke)$/.exec(req.url);
+      if (!action) return json(res, 404, { error: 'Not found.' });
+      try {
+        if (action[2] === 'request') return json(res, 202, consent.request(action[1]));
+        await consent.revoke(action[1]);
+        return json(res, 200, { revoked: true });
+      } catch (error) {
+        const message = error instanceof ConsentError ? error.message : 'Could not update tracker permissions.';
+        return json(res, error instanceof ConsentError ? error.status : 500, { error: message });
+      }
+    }
+    if (req.method !== 'GET' && req.method !== 'HEAD') return json(res, 405, { error: 'Method not allowed.' });
+    if (req.url === '/favicon.ico') {
+      res.writeHead(204);
+      return res.end();
+    }
     if (req.url === '/api/state') {
       return json(res, 200, {
         dns: { host: config.host, port: dnsListener.port },
-        stats, lookups, trackers: [...trackers.values()].reverse(),
+        stats, lookups, consent: consent.snapshot(),
       });
     }
     const asset = assets.get(req.url);
@@ -84,17 +138,14 @@ async function startGateway(config) {
     dnsListener = await startDns({
       ...config,
       onError,
-      allowTracker: async () => false,
+      allowTracker: consent.allowTracker,
       onLookup(event) {
         stats.lookups++;
         if (event.status === 'blocked') stats.blocked++;
         const at = Date.now();
         lookups.unshift({ ...event, at, id: stats.lookups });
         if (lookups.length > 80) lookups.pop();
-        if (event.tracker) {
-          trackers.delete(event.tracker);
-          trackers.set(event.tracker, { domain: event.tracker, org: event.org, at });
-        }
+        if (event.tracker) consent.observe(event.tracker);
       },
     });
     await new Promise((resolve, reject) => {

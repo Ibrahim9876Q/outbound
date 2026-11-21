@@ -24,3 +24,11 @@ Build and run the standalone gateway in `gateway/` and serve the Phone view from
 Verified the live gateway serves HTML, CSS, JS and JSON on 4320. A loopback query for `example.com` used Windows' configured DNS resolver and returned addresses. A query for `google-analytics.com` returned REFUSED and appeared as blocked in the feed. The DNS regression test also exercised TCP, alias blocking, and zero TTL for permitted tracker responses.
 
 Rubric (phone scope): truthful 5, live 4, readability 4, visual impact 3, demo readiness 3, performance 3, code quality 4. The next iteration adds a visible Guardian approval state and allows timing the completed gateway. A physical phone and hosted Auth0 account remain pending.
+
+## 2026-11-21 18:30 EST — Auth0 consent firewall
+
+Add the conditional Auth0 FGA model and CIBA polling to the gateway. Expose pending requests, expiry and revocation in the Phone view. Exercise the state transitions and wire format with local test fixtures, then verify the unconfigured gateway still blocks known trackers.
+
+Four automated tests passed. A separate loopback integration exercise passed the full DNS-to-HTTP path with fixture-backed Guardian denial and approval, followed by FGA revocation. The live unconfigured gateway resolved two ordinary domains, blocked two tracker domains, and rejected a cross-origin consent request. Chromium verified the feed and filter with no console errors, no horizontal overflow at 390, 1280, and 1920 pixels, and screenshots at each width. A 10-second gateway CPU sample measured 0.16% of one core and a 50.9 MB working set.
+
+Rubric (phone scope): truthful 5, live 4, readability 4, visual impact 4, demo readiness 3, performance 4, code quality 4. The remaining demo dependency is a live Guardian enrollment, FGA credentials, and a physical phone on a reachable DNS adapter. The main dashboard owner has the Phone tab request.

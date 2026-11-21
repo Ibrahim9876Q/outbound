@@ -20,7 +20,7 @@
 .phone a { color: inherit; text-decoration: none; }
 .phone a:hover { color: var(--phone-blue); }
 .phone :focus-visible { outline: 2px solid var(--phone-blue); outline-offset: 4px; }
-.phone p, .phone dl, .phone dd, .phone h1, .phone h2 { margin: 0; }
+.phone p, .phone dd, .phone h1, .phone h2 { margin: 0; }
 
 .phone-bar {
   display: flex;
@@ -47,7 +47,6 @@
 .phone-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
 .phone-intro h1 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 750; letter-spacing: -.045em; }
 .phone-intro p { color: var(--phone-muted); }
-.phone-intro .phone-kicker { display: none; }
 .phone-endpoint {
   display: grid;
   gap: .2rem;
@@ -101,6 +100,7 @@
 .phone-badge { display: inline-block; padding: .15rem .55rem; border-radius: 1rem; background: #223650; color: #bfe7ff; font-size: .875rem; font-weight: 650; }
 .phone-badge--blocked, .phone-badge--error { background: #432337; color: #ff9bb0; }
 .phone-badge--approved { background: #194132; color: #92ffc5; }
+.phone-badge--pending { background: #3c3020; color: #ffd396; }
 .phone-consent { padding: .85rem 1rem; }
 .phone-hint, .phone-empty, .phone-footnote, .phone-action-status { color: var(--phone-muted); font-size: .9rem; }
 .phone-scroll .phone-empty { padding: 1rem; }
@@ -108,6 +108,19 @@
 .phone-trackers { list-style: none; margin: 0; padding: 0; }
 .phone-tracker { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .8rem 0; border-bottom: 1px solid var(--phone-border); }
 .phone-tracker:last-child { border-bottom: 0; }
+.phone-tracker-actions { flex-shrink: 0; display: grid; justify-items: end; gap: .4rem; }
+.phone-trackers { max-height: 44vh; overflow-y: auto; }
+.phone-button {
+  border: 1px solid #3e5b79;
+  border-radius: .45rem;
+  padding: .35rem .65rem;
+  color: var(--phone-text);
+  background: #21354c;
+  font: 650 .875rem/1.4 "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+.phone-button:hover:enabled { border-color: var(--phone-blue); }
+.phone-button:disabled { opacity: .5; cursor: default; }
 .phone .phone-footnote { margin-top: 1rem; }
 
 @media (max-width: 770px) {

@@ -5,3 +5,5 @@
 - Treat DNS activity as lookups. A successful lookup alone cannot identify the app or prove a connection occurred.
 - Use Node's resolver with an explicit loopback port for a Windows smoke test. The Windows `nslookup -port` invocation did not reach the gateway on this machine.
 - Run the Node test runner with `--test-isolation=none` in this sandbox to avoid its worker-spawn restriction.
+- In Chromium compare the document scroll width with the document client width. A vertical scrollbar can make the viewport's inner width larger than the document width.
+- Keep the provider fixture results and live gateway observations distinct in the demo notes.

@@ -31,7 +31,7 @@ function readName(packet, start, compressed = true) {
       throw new Error('Invalid DNS label');
     }
     const label = packet.toString('latin1', offset + 1, offset + 1 + length);
-    labels.push(label.toLowerCase().replace(/[^a-z0-9_-]/g, (byte) => '\\' + byte.charCodeAt(0).toString(10).padStart(3, '0')));
+    labels.push(label.replace(/[^a-z0-9_-]/gi, (byte) => '\\' + byte.charCodeAt(0).toString(10).padStart(3, '0')).toLowerCase());
     offset += length + 1;
   }
 }
