@@ -52,3 +52,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 ### Regression checks
 
 - Confirm the new-link SSE event is followed by state with an active reciprocal link. Confirm slow reverse DNS calls leave at least two worker threads available with the default Node worker pool.
+
+## Loop round 2 · 2026-11-21 18:57 EST
+
+- Retried process discovery in a single batch when active TCP rows reference missing PIDs. Documented the Computer lane's observation that some browser capture paths bypass the Windows privacy timestamps.
+- A fixture recovered a process absent from the first tasklist snapshot. Restarted on 4319 and verified the live state endpoint and unchanged top-level keys. No state fields changed.
+- Left the pre-existing untracked audio and camera probe scripts outside this change.
