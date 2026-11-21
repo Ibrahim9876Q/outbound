@@ -9,10 +9,15 @@ const { DeviceWatcher } = require('./lib/devices');
 const PORT = Number(process.env.PORT) || 4317;
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
 const HOME = {
-  lat: Number(process.env.HOME_LAT) || 43.0096,
-  lng: Number(process.env.HOME_LNG) || -81.2737,
+  lat: coordinate(process.env.HOME_LAT, 90, 43.0096),
+  lng: coordinate(process.env.HOME_LNG, 180, -81.2737),
   label: process.env.HOME_LABEL || 'This PC',
 };
+
+function coordinate(value, limit, fallback) {
+  const number = value?.trim() ? Number(value) : NaN;
+  return Number.isFinite(number) && Math.abs(number) <= limit ? number : fallback;
+}
 
 const events = [];
 const clients = new Set();
@@ -24,8 +29,9 @@ function pushEvent(e) {
 }
 
 function broadcast(type, data) {
+  if (clients.size === 0) return;
   const msg = `event: ${type}\ndata: ${JSON.stringify(data)}\n\n`;
-  for (const res of clients) res.write(msg);
+  for (const res of clients) if (!res.writableNeedDrain) res.write(msg);
 }
 
 const network = new NetworkWatcher(pushEvent);
@@ -43,10 +49,12 @@ function loop(fn, everyMs) {
   };
   go();
 }
-loop(() => network.poll(), 2000);
+loop(() => network.poll(), 1500);
 loop(() => devices.poll(), 1000);
-setInterval(() => broadcast('state', state()), 1000);
+setInterval(() => { if (clients.size) broadcast('state', state()); }, 1000);
 
+const PUBLIC = path.join(__dirname, 'public');
+const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml' };
 const STATIC = {
   '/vendor/globe.gl.min.js': path.join(__dirname, 'node_modules', 'globe.gl', 'dist', 'globe.gl.min.js'),
@@ -64,22 +72,30 @@ function sendFile(res, file) {
 }
 
 const server = http.createServer((req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host}`);
+  if (!LOCAL_HOST.test(req.headers.host || '')) {
+    res.writeHead(403);
+    return res.end();
+  }
+  const url = URL.parse(req.url, 'http://localhost');
+  if (!url) {
+    res.writeHead(400);
+    return res.end();
+  }
   if (url.pathname === '/events') {
-    res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', Connection: 'keep-alive' });
+    res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-store', Connection: 'keep-alive' });
     res.write(`event: state\ndata: ${JSON.stringify(state())}\n\n`);
     clients.add(res);
-    req.on('close', () => clients.delete(res));
+    res.on('close', () => clients.delete(res));
     return;
   }
   if (url.pathname === '/api/state') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(state()));
   }
-  if (STATIC[url.pathname]) return sendFile(res, STATIC[url.pathname]);
+  if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
-  const file = path.join(__dirname, 'public', path.normalize(rel));
-  if (!file.startsWith(path.join(__dirname, 'public'))) { res.writeHead(403); return res.end(); }
+  const file = path.resolve(PUBLIC, rel);
+  if (!file.startsWith(PUBLIC + path.sep)) { res.writeHead(403); return res.end(); }
   sendFile(res, file);
 });
 
