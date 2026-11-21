@@ -1,0 +1,210 @@
+/* Shared look for every view: colors, top bar, page layout and side-panel cards.
+   View-specific styles live in computer.css, globe.css and phone.css. */
+
+:root {
+  --bg: #050a18;
+  --bg-2: #0a1530;
+  --panel: rgba(14, 24, 50, 0.78);
+  --panel-solid: #0e1832;
+  --line: rgba(140, 170, 255, 0.16);
+  --line-strong: rgba(140, 170, 255, 0.32);
+  --text: #eaf0ff;
+  --muted: #9aa8cc;
+  --faint: #66749a;
+
+  --mic: #ff8a1f;
+  --camera: #3dffa0;
+  --out: #ffb347;
+  --in: #4cc9ff;
+  --local: #7cf9ff;
+  --shared: #c084fc;
+  --tracker: #ff4d6d;
+
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --topbar-h: 68px;
+  --side-w: 380px;
+  --radius: 14px;
+}
+
+/* High-contrast mode for projectors: toggled with the HC button (body.hc). */
+body.hc {
+  --bg: #000;
+  --bg-2: #000;
+  --panel: #0a0a0a;
+  --panel-solid: #0a0a0a;
+  --line: rgba(255, 255, 255, 0.35);
+  --line-strong: rgba(255, 255, 255, 0.7);
+  --text: #fff;
+  --muted: #d8def0;
+  --faint: #b4bdd6;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background:
+    radial-gradient(1200px 700px at 38% 38%, rgba(48, 84, 180, 0.22), transparent 70%),
+    radial-gradient(900px 400px at 38% 105%, rgba(70, 110, 255, 0.10), transparent 70%),
+    linear-gradient(180deg, var(--bg-2), var(--bg) 70%);
+  background-color: var(--bg);
+  color: var(--text);
+  font: 15px/1.4 var(--font);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font: inherit; color: inherit; }
+h1, h2, p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+.hidden, [hidden] { display: none !important; }
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 10, 24, 0.7);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand h1 { font-size: 21px; font-weight: 700; letter-spacing: 0.02em; }
+.brand p { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.logo {
+  width: 30px; height: 30px; flex: none;
+  border-radius: 9px;
+  background:
+    radial-gradient(circle at 50% 50%, #fff 0 3px, transparent 4px),
+    conic-gradient(from 200deg, var(--in), var(--local), var(--out), var(--tracker), var(--in));
+  box-shadow: 0 0 18px rgba(124, 249, 255, 0.35);
+}
+
+.views {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.view-btn {
+  border: 0;
+  background: transparent;
+  padding: 7px 16px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+.view-btn:hover { color: var(--text); }
+.view-btn.active { background: rgba(124, 170, 255, 0.18); color: var(--text); }
+.view-btn:disabled { opacity: 0.5; cursor: default; }
+.view-btn small { font-size: 11px; opacity: 0.8; }
+
+.stats { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.stat { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
+.stat b { font-size: 22px; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.stat.tracker.hot b { color: var(--tracker); text-shadow: 0 0 12px rgba(255, 77, 109, 0.5); }
+
+.pill {
+  display: flex; align-items: center; gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--faint); flex: none; }
+#pill-mic.on { color: var(--text); border-color: var(--mic); background: rgba(255, 138, 31, 0.14); }
+#pill-mic.on .dot { background: var(--mic); box-shadow: 0 0 10px var(--mic); animation: pulse 1.4s ease-in-out infinite; }
+#pill-cam.on { color: var(--text); border-color: var(--camera); background: rgba(61, 255, 160, 0.12); }
+#pill-cam.on .dot { background: var(--camera); box-shadow: 0 0 10px var(--camera); animation: pulse 1.4s ease-in-out infinite; }
+.pill.live .dot { background: var(--camera); }
+.pill.live.down .dot { background: var(--tracker); }
+
+@media (max-width: 1500px) { .brand p { display: none; } }
+@media (max-width: 1360px) {
+  .stats { gap: 12px; }
+  .stat b { font-size: 19px; }
+  .pill { padding: 5px 10px; }
+}
+
+/* ---------- page layout ---------- */
+
+main { height: calc(100vh - var(--topbar-h)); position: relative; }
+
+.view {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--side-w);
+}
+
+@media (min-width: 1800px) { :root { --side-w: 420px; } }
+@media (max-width: 1100px) { :root { --side-w: 320px; } }
+
+/* ---------- side panel ---------- */
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px 14px 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  flex: none;
+}
+.card h2 { font-size: 16px; font-weight: 650; margin-bottom: 6px; }
+.hint { color: var(--muted); font-size: 14px; }
+
+.tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+.tag.tracker { background: rgba(255, 77, 109, 0.18); color: var(--tracker); border: 1px solid rgba(255, 77, 109, 0.5); }
+
+/* legend swatches, used by the wire toggles and the globe legend */
+.sw { display: inline-block; width: 22px; height: 4px; border-radius: 2px; vertical-align: middle; }
+.sw.out { background: var(--out); }
+.sw.in { background: var(--in); }
+.sw.local { background: var(--local); box-shadow: 0 0 6px var(--local); }
+.sw.shared { background: repeating-linear-gradient(90deg, var(--shared) 0 5px, transparent 5px 9px); }
+.sw.tracker { background: var(--tracker); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
