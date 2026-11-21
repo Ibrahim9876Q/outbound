@@ -18,3 +18,6 @@ Write requests for files you don't own here. Format: `- [ ] (from → to) reques
   (turns `pid-1234` into "Unknown app (PID 1234)").
 - FYI globe: common.js toggles `.hidden` on `#view-globe` and calls `Outbound.onView(fn)` listeners after the
   switch, so call `globe.width(...)/height(...)` there (the container has 0 size while hidden).
+- [ ] (Claude → backend) FYI: getUserMedia from a script-launched Chrome (headless or visible) used the real
+  webcam and mic without Windows writing CapabilityAccessManager LastUsedTime*, so devices.js never saw it.
+  Normal apps (Discord, Claude, Resolve) do get logged. Worth noting as a known limit in the UI footnote / README.

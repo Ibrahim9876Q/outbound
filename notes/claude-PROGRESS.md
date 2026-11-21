@@ -40,3 +40,11 @@ Next: spotlight button + high-contrast toggle; real mic/camera check (ask user);
 Verified: spotlight caption "Google Chrome sends data to 11 companies in 4 countries" + focus; HC screenshot.
 Rubric: Truthful 5 · Works live 4 · Readable 4 · Wow 4 · Demo-ready 4 · Perf 4 · Code 4.
 Step-back: if the demo were in 10 min, fix = verify real camera/mic live (needs user OK), then "new app appears" live.
+
+## Iteration 4: real-device test (user approved camera + mic)
+- Windows Camera app is NOT installed on this PC (`start microsoft.windows.camera:` opens a "Pick an app" dialog).
+- Held the real webcam (USB2.0 HD UVC WebCam, 8s) and mic (Realtek array, 9s) via getUserMedia from Chrome
+  launched by a script (headless and visible). Both devices opened, but Windows wrote NOTHING to
+  CapabilityAccessManager (latest webcam entry still May 2, mic entry Nov 19), so the server never saw them.
+  → UI path still verified only with the simulated payload. Needs a real app the user drives (Discord call,
+    Teams, or a webcam test page in their normal Chrome) while watching /api/state.

@@ -12,3 +12,7 @@
   packets in their own layer and keep filtered wires static.
 - scrollIntoView also scrolls overflow:hidden ancestors (the page moved). Scroll the side panel directly.
 - In python edit scripts use raw strings for regex text (`\d` warnings).
+- Windows Camera app isn't installed here. Chrome launched by automation (headless OR visible, custom
+  --user-data-dir) can open the webcam/mic without Windows logging it in CapabilityAccessManager, so it can't
+  test the live path. Use a real app driven by the user.
+- Close anything you pop up on the user's screen (a failed `start <uri>` leaves an "OpenWith" dialog).
