@@ -13,3 +13,17 @@ Verify JSON, SSE, globe assets and localhost connections on port 4319. Check rep
 ### Regression checks
 
 - Serve JSON, SSE and all four globe assets from 127.0.0.1:4319. Count only eligible sockets, pair reciprocal loopback rows and mark shared links inactive when one app disconnects.
+
+## Iteration 2 · 2026-11-21 16:58 EST
+
+Read microphone and webcam concurrently and use Windows start and stop times for completed sessions.
+Verify first-run history, short sessions, restart deduplication, midnight, concurrent app usage and live idle reads.
+
+- Imported completed sessions from both Windows privacy keys, saved updates atomically and counted overlapping use once. Active entries expose the app ID documented in `notes/REQUESTS.md`.
+- Live Windows state and SSE passed. Fixture checks passed for short sessions, actual stop timestamps, midnight overlap, concurrent use, failed reads and deduplication on restart. Live hardware activation requires permission.
+- Scores (1–5) for truthful / works live / readable / wow / demo-ready / performance / code quality: **5 / 3 / 2 / 2 / 2 / 3 / 4**. Registry transition fixtures cover the device behavior. Live hardware, UI and ten-minute verification are pending.
+- Next, finish demo and submission docs. Run the backend soak during drafting.
+
+### Regression checks
+
+- Confirm a missing stop value does not imply device use and a failed read preserves the last observation. Verify exact completed-session times, clipping at midnight, union of overlapping usage and idempotent reload from disk.

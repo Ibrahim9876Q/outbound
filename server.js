@@ -50,7 +50,7 @@ function loop(fn, everyMs) {
   go();
 }
 loop(() => network.poll(), 1500);
-loop(() => devices.poll(), 1000);
+loop(() => devices.poll(), 750);
 setInterval(() => { if (clients.size) broadcast('state', state()); }, 1000);
 
 const PUBLIC = path.join(__dirname, 'public');
