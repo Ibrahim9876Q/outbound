@@ -1,16 +1,14 @@
 .phone {
-  --phone-bg: #0b101c;
-  --phone-panel: #121a2a;
-  --phone-border: #29374e;
-  --phone-text: #f1f5fc;
-  --phone-muted: #a5b4cd;
-  --phone-blue: #4cc9ff;
-  --phone-green: #3dffa0;
-  --phone-red: #ff6c87;
+  --phone-bg: #080808;
+  --phone-panel: #101010;
+  --phone-border: #444;
+  --phone-text: #f5f5f5;
+  --phone-muted: #b8b8b8;
+  --phone-red: var(--tracker, #ff3b3b);
   margin: 0;
   min-height: 100vh;
   color-scheme: dark;
-  background: radial-gradient(ellipse at 10% 0%, #172b46, transparent 58%), var(--phone-bg);
+  background: var(--phone-bg);
   color: var(--phone-text);
   font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
 }
@@ -18,8 +16,8 @@
 .phone *, .phone *::before { box-sizing: border-box; }
 .phone [hidden] { display: none !important; }
 .phone a { color: inherit; text-decoration: none; }
-.phone a:hover { color: var(--phone-blue); }
-.phone :focus-visible { outline: 2px solid var(--phone-blue); outline-offset: 4px; }
+.phone a:hover { color: var(--phone-text); }
+.phone :focus-visible { outline: 2px solid var(--phone-text); outline-offset: 4px; }
 .phone p, .phone dd, .phone h1, .phone h2 { margin: 0; }
 
 .phone-bar {
@@ -29,7 +27,7 @@
   gap: 1rem;
   padding: 1rem clamp(1rem, 5vw, 4rem);
   border-bottom: 1px solid var(--phone-border);
-  background: #0b101cbb;
+  background: #080808;
 }
 
 .phone-brand { display: flex; align-items: center; gap: .7rem; font-weight: 750; font-size: 1.125rem; }
@@ -37,8 +35,8 @@
   content: "";
   width: .75rem;
   height: .75rem;
-  border: 2px solid var(--phone-blue);
-  border-radius: 3px;
+  border: 2px solid var(--phone-text);
+
   transform: rotate(45deg);
 }
 
@@ -53,16 +51,16 @@
   min-width: 12rem;
   padding: .65rem .9rem;
   border: 1px solid var(--phone-border);
-  border-radius: .6rem;
+
   color: var(--phone-muted);
   background: var(--phone-panel);
   font-size: .875rem;
 }
 
 .phone-indicator { display: flex; align-items: center; gap: .55rem; font-weight: 650; }
-.phone-indicator::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
-.phone-indicator[data-live="true"] { color: var(--phone-green); }
-.phone-indicator[data-live="false"] { color: var(--phone-red); }
+.phone-indicator::before { content: ""; width: .5rem; height: .5rem; background: currentColor; }
+.phone-indicator[data-live="true"] { color: var(--phone-text); }
+.phone-indicator[data-live="false"] { color: var(--phone-muted); }
 .phone-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -74,19 +72,19 @@
   flex-direction: column-reverse;
   padding: .85rem 1.1rem;
   border: 1px solid var(--phone-border);
-  border-radius: .75rem;
+
   background: var(--phone-panel);
 }
 .phone-metrics dt { color: var(--phone-muted); }
 .phone-metrics dd { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; font-variant-numeric: tabular-nums; }
 .phone-metrics > div:nth-child(2) dd { color: var(--phone-red); }
-.phone-metrics > div:nth-child(3) dd { color: var(--phone-green); }
+.phone-metrics > div:nth-child(3) dd { color: var(--phone-text); }
 .phone-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
-.phone-card { min-width: 0; border: 1px solid var(--phone-border); border-radius: .8rem; background: var(--phone-panel); }
+.phone-card { min-width: 0; border: 1px solid var(--phone-border); background: var(--phone-panel); }
 .phone-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1rem; border-bottom: 1px solid var(--phone-border); }
 .phone-card-head h2 { font-size: 1.12rem; }
 .phone-filter { display: flex; align-items: center; gap: .35rem; color: var(--phone-muted); font-size: .875rem; white-space: nowrap; cursor: pointer; }
-.phone-filter input { accent-color: var(--phone-blue); }
+.phone-filter input { accent-color: var(--phone-text); }
 .phone-scroll { max-height: 52vh; overflow: auto; }
 .phone-table { width: 100%; border-collapse: collapse; text-align: left; }
 .phone-table th, .phone-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--phone-border); vertical-align: middle; }
@@ -97,10 +95,10 @@
 .phone small, .phone-time { color: var(--phone-muted); font-size: .875rem; }
 .phone small { display: block; overflow-wrap: anywhere; }
 .phone-time { white-space: nowrap; font-variant-numeric: tabular-nums; }
-.phone-badge { display: inline-block; padding: .15rem .55rem; border-radius: 1rem; background: #223650; color: #bfe7ff; font-size: .875rem; font-weight: 650; }
-.phone-badge--blocked, .phone-badge--error { background: #432337; color: #ff9bb0; }
-.phone-badge--approved { background: #194132; color: #92ffc5; }
-.phone-badge--pending { background: #3c3020; color: #ffd396; }
+.phone-badge { display: inline-block; padding: .15rem .55rem; border: 1px solid var(--phone-border); color: var(--phone-text); font-size: .875rem; font-weight: 650; }
+.phone-badge--blocked { color: var(--phone-red); border-color: currentColor; }
+.phone-badge--approved { background: var(--phone-text); color: var(--phone-bg); }
+.phone-badge--pending { border-style: dashed; }
 .phone-consent { padding: .85rem 1rem; }
 .phone-hint, .phone-empty, .phone-footnote, .phone-action-status { color: var(--phone-muted); font-size: .9rem; }
 .phone-scroll .phone-empty { padding: 1rem; }
@@ -111,15 +109,15 @@
 .phone-tracker-actions { flex-shrink: 0; display: grid; justify-items: end; gap: .4rem; }
 .phone-trackers { max-height: 44vh; overflow-y: auto; }
 .phone-button {
-  border: 1px solid #3e5b79;
-  border-radius: .45rem;
+  border: 1px solid #777;
+
   padding: .35rem .65rem;
   color: var(--phone-text);
-  background: #21354c;
+  background: #181818;
   font: 650 .875rem/1.4 "Segoe UI", system-ui, sans-serif;
   cursor: pointer;
 }
-.phone-button:hover:enabled { border-color: var(--phone-blue); }
+.phone-button:hover:enabled { border-color: var(--phone-text); }
 .phone-button:disabled { opacity: .5; cursor: default; }
 .phone .phone-footnote { margin-top: 1rem; }
 
@@ -135,3 +133,16 @@
   .phone-metrics dt { font-size: .875rem; }
   .phone-table th, .phone-table td, .phone-card-head { padding-inline: .65rem; }
 }
+
+.phone-bar, .phone-endpoint, .phone-card-head, .phone-metrics, .phone-time, .phone-badge {
+  font-family: Consolas, "Courier New", monospace;
+}
+.phone-bar, .phone-card-head { background: #181818; }
+.phone-brand, .phone-card-head h2, .phone-metrics dt {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.phone-intro h1 { font-family: Consolas, "Courier New", monospace; }
+.phone-metrics > div { justify-content: flex-end; border-top: 2px solid var(--phone-muted); }
+.phone-metrics > div:nth-child(2) { border-top-color: var(--phone-red); }
+.phone a:hover { text-decoration: underline; }
