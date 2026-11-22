@@ -1,0 +1,310 @@
+{
+ "instagram": {
+  "title": "Instagram",
+  "hex": "FF0069"
+ },
+ "tiktok": {
+  "title": "TikTok",
+  "hex": "000000"
+ },
+ "youtube": {
+  "title": "YouTube",
+  "hex": "FF0000"
+ },
+ "facebook": {
+  "title": "Facebook",
+  "hex": "0866FF"
+ },
+ "snapchat": {
+  "title": "Snapchat",
+  "hex": "FFFC00"
+ },
+ "whatsapp": {
+  "title": "WhatsApp",
+  "hex": "25D366"
+ },
+ "google": {
+  "title": "Google",
+  "hex": "4285F4"
+ },
+ "googlechrome": {
+  "title": "Google Chrome",
+  "hex": "4285F4"
+ },
+ "spotify": {
+  "title": "Spotify",
+  "hex": "1ED760"
+ },
+ "discord": {
+  "title": "Discord",
+  "hex": "5865F2"
+ },
+ "netflix": {
+  "title": "Netflix",
+  "hex": "E50914"
+ },
+ "threads": {
+  "title": "Threads",
+  "hex": "000000"
+ },
+ "messenger": {
+  "title": "Messenger",
+  "hex": "00B2FF"
+ },
+ "amazon": {
+  "title": "Amazon",
+  "hex": "FF9900"
+ },
+ "x": {
+  "title": "X",
+  "hex": "000000"
+ },
+ "reddit": {
+  "title": "Reddit",
+  "hex": "FF4500"
+ },
+ "pinterest": {
+  "title": "Pinterest",
+  "hex": "BD081C"
+ },
+ "twitch": {
+  "title": "Twitch",
+  "hex": "9146FF"
+ },
+ "telegram": {
+  "title": "Telegram",
+  "hex": "26A5E4"
+ },
+ "signal": {
+  "title": "Signal",
+  "hex": "3B45FD"
+ },
+ "steam": {
+  "title": "Steam",
+  "hex": "000000"
+ },
+ "epicgames": {
+  "title": "Epic Games",
+  "hex": "313131"
+ },
+ "zoom": {
+  "title": "Zoom",
+  "hex": "0B5CFF"
+ },
+ "dropbox": {
+  "title": "Dropbox",
+  "hex": "0061FF"
+ },
+ "notion": {
+  "title": "Notion",
+  "hex": "000000"
+ },
+ "openai": {
+  "title": "OpenAI",
+  "hex": "412991"
+ },
+ "tinder": {
+  "title": "Tinder",
+  "hex": "FF6B6B"
+ },
+ "uber": {
+  "title": "Uber",
+  "hex": "000000"
+ },
+ "airbnb": {
+  "title": "Airbnb",
+  "hex": "FF5A5F"
+ },
+ "paypal": {
+  "title": "PayPal",
+  "hex": "003087"
+ },
+ "venmo": {
+  "title": "Venmo",
+  "hex": "008CFF"
+ },
+ "duolingo": {
+  "title": "Duolingo",
+  "hex": "58CC02"
+ },
+ "roblox": {
+  "title": "Roblox",
+  "hex": "000000"
+ },
+ "shazam": {
+  "title": "Shazam",
+  "hex": "0088FF"
+ },
+ "soundcloud": {
+  "title": "SoundCloud",
+  "hex": "FF5500"
+ },
+ "tumblr": {
+  "title": "Tumblr",
+  "hex": "36465D"
+ },
+ "wechat": {
+  "title": "WeChat",
+  "hex": "07C160"
+ },
+ "line": {
+  "title": "LINE",
+  "hex": "00C300"
+ },
+ "viber": {
+  "title": "Viber",
+  "hex": "7360F2"
+ },
+ "bereal": {
+  "title": "BeReal",
+  "hex": "000000"
+ },
+ "ebay": {
+  "title": "eBay",
+  "hex": "E53238"
+ },
+ "etsy": {
+  "title": "Etsy",
+  "hex": "F16521"
+ },
+ "shopify": {
+  "title": "Shopify",
+  "hex": "7AB55C"
+ },
+ "grammarly": {
+  "title": "Grammarly",
+  "hex": "027E6F"
+ },
+ "googlemaps": {
+  "title": "Google Maps",
+  "hex": "4285F4"
+ },
+ "gmail": {
+  "title": "Gmail",
+  "hex": "EA4335"
+ },
+ "youtubemusic": {
+  "title": "YouTube Music",
+  "hex": "FF0000"
+ },
+ "primevideo": {
+  "title": "Prime Video",
+  "hex": "1F2E3E"
+ },
+ "applemusic": {
+  "title": "Apple Music",
+  "hex": "FA243C"
+ },
+ "tidal": {
+  "title": "Tidal",
+  "hex": "000000"
+ },
+ "waze": {
+  "title": "Waze",
+  "hex": "33CCFF"
+ },
+ "lyft": {
+  "title": "Lyft",
+  "hex": "FF00BF"
+ },
+ "doordash": {
+  "title": "DoorDash",
+  "hex": "FF3008"
+ },
+ "ubereats": {
+  "title": "Uber Eats",
+  "hex": "06C167"
+ },
+ "cashapp": {
+  "title": "Cash App",
+  "hex": "00C244"
+ },
+ "revolut": {
+  "title": "Revolut",
+  "hex": "191C1F"
+ },
+ "coinbase": {
+  "title": "Coinbase",
+  "hex": "0052FF"
+ },
+ "binance": {
+  "title": "Binance",
+  "hex": "F0B90B"
+ },
+ "robinhood": {
+  "title": "Robinhood",
+  "hex": "CCFF00"
+ },
+ "strava": {
+  "title": "Strava",
+  "hex": "FC4C02"
+ },
+ "fitbit": {
+  "title": "Fitbit",
+  "hex": "00B0B9"
+ },
+ "garmin": {
+  "title": "Garmin",
+  "hex": "000000"
+ },
+ "quora": {
+  "title": "Quora",
+  "hex": "B92B27"
+ },
+ "medium": {
+  "title": "Medium",
+  "hex": "000000"
+ },
+ "substack": {
+  "title": "Substack",
+  "hex": "FF6719"
+ },
+ "patreon": {
+  "title": "Patreon",
+  "hex": "000000"
+ },
+ "onlyfans": {
+  "title": "OnlyFans",
+  "hex": "00AFF0"
+ },
+ "kick": {
+  "title": "Kick",
+  "hex": "53FC19"
+ },
+ "riotgames": {
+  "title": "Riot Games",
+  "hex": "EB0029"
+ },
+ "valorant": {
+  "title": "Valorant",
+  "hex": "FA4454"
+ },
+ "leagueoflegends": {
+  "title": "League of Legends",
+  "hex": "C28F2C"
+ },
+ "nvidia": {
+  "title": "NVIDIA",
+  "hex": "76B900"
+ },
+ "brave": {
+  "title": "Brave",
+  "hex": "FB542B"
+ },
+ "firefox": {
+  "title": "Firefox",
+  "hex": "FF7139"
+ },
+ "opera": {
+  "title": "Opera",
+  "hex": "FF1B2D"
+ },
+ "vivaldi": {
+  "title": "Vivaldi",
+  "hex": "EF3939"
+ },
+ "duckduckgo": {
+  "title": "DuckDuckGo",
+  "hex": "DE5833"
+ }
+}
