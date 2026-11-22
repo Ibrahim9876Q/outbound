@@ -120,3 +120,10 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `aa36440` displays the six wire kinds and verified HQ incident badges. Chrome showed four badges and followed one to a cited Dossier entry.
 - `e37acac` and `8eab304` verify actual policy wiring with no adapter. All three rule types were approved, evaluated as blocked, and removed by the real routes using the local dry-run enforcer and an isolated store.
 - Captured all six views in Chrome on port 4318 at 1280×800 and 1920×1080. Three reloads passed with zero browser console errors. `npm test` passed 24 tests. `npm run check` passed for 10 assets, state, report, and SSE.
+
+## xray4 frontend
+
+- Merged integration at `edaf902`. Added evidence-weighted exposure gauges, local week history, canonical dossier badges, sensitive-first permissions, and retained-sample counts.
+- Exercised the demo from a local scan with 629 permission records to the Tim Hortons case and a reversible local dry-run rule preview, then followed the app-filtered globe link. Verified all six keyboard shortcuts. Phone remains available from its tab.
+- Chrome captures cover all seven views at 1280×800 and 1920×1080. `npm test` passed all 35 tests. `npm run check` passed for 10 assets, state, report, and SSE.
+- The final local Chrome pass reloaded three times at each viewport with zero console errors. With scan results retained at 1920×1080, the browser reported 60 animation frames per second on Computer and 85 on Globe. These are short headless Chrome samples and varied between runs.
