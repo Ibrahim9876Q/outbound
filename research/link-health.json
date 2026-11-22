@@ -1655,6 +1655,10 @@
     "checkedAt": "2026-11-22T08:55:22.687Z",
     "status": "reachable"
   },
+  "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over": {
+    "checkedAt": "2026-11-22T09:09:38.432Z",
+    "status": "reachable"
+  },
   "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data": {
     "checkedAt": "2026-11-22T08:55:20.359Z",
     "status": "reachable"
@@ -1792,7 +1796,7 @@
     "status": "reachable"
   },
   "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ": {
-    "checkedAt": "2026-11-22T09:00:56.896Z",
+    "checkedAt": "2026-11-22T09:09:38.516Z",
     "status": "unavailable",
     "reason": "curl: (22) The requested URL returned error: 403"
   },

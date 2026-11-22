@@ -1106,6 +1106,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:36:49.725Z"
+          },
+          "quote": "Netflix has since updated its privacy statement and improved its information provision",
+          "quoteSource": {
+            "url": "https://autoriteitpersoonsgegevens.nl/en/current/netflix-fined-for-not-properly-informing-customers",
+            "title": "Netflix fined for not properly informing customers | Autoriteit Persoonsgegevens",
+            "publisher": "Dutch Data Protection Authority",
+            "date": "2024-12-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.151Z"
           }
         }
       ]
@@ -1513,6 +1522,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:36:49.584Z"
+          },
+          "quote": "allowed some users to see titles from another active user’s chat history",
+          "quoteSource": {
+            "url": "https://openai.com/index/march-20-chatgpt-outage/",
+            "title": "March 20 ChatGPT outage: Here’s what happened | OpenAI",
+            "publisher": "OpenAI",
+            "date": "2023-03-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.351Z"
           }
         }
       ]
@@ -1986,6 +2004,15 @@
             "date": "2024-10-24",
             "verified": true,
             "fetchedAt": "2026-11-22T05:47:36.270Z"
+          },
+          "quote": "administrative fines totalling €310 million",
+          "quoteSource": {
+            "url": "https://dataprotection.ie/en/news-media/press-releases/irish-data-protection-commission-fines-linkedin-ireland-eu310-million",
+            "title": "Irish Data Protection Commission fines LinkedIn Ireland €310 million | 24/10/2024 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "date": "2024-10-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:36.120Z"
           }
         }
       ]
@@ -2221,6 +2248,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:54:31.412Z"
+          },
+          "quote": "requiring online counseling service BetterHelp to pay $7.8 million",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/07/ftc-gives-final-approval-order-banning-betterhelp-sharing-sensitive-health-data-advertising",
+            "title": "FTC Gives Final Approval to Order Banning BetterHelp from Sharing Sensitive Health Data for Advertising, Requiring It to Pay $7.8 Million | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2023-07-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.514Z"
           }
         }
       ]
@@ -2344,6 +2380,15 @@
             "date": "2022-09-15",
             "verified": true,
             "fetchedAt": "2026-11-22T05:47:36.293Z"
+          },
+          "quote": "imposing a fine of €405 million and a range of corrective measures",
+          "quoteSource": {
+            "url": "https://dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-instagram-inquiry",
+            "title": "Data Protection Commission announces decision in Instagram Inquiry | 15/09/2022 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "date": "2022-09-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.155Z"
           }
         }
       ]
@@ -2458,6 +2503,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:29.020Z"
+          },
+          "quote": "TikTok infringed the GDPR regarding its transfers of EEA User Data to China",
+          "quoteSource": {
+            "url": "https://www.dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following",
+            "title": "Irish Data Protection Commission fines TikTok €530 million and orders corrective measures following Inquiry into transfers of EEA User Data to China | 02/05/2025 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "date": "2025-05-02",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.153Z"
           }
         },
         {
@@ -2525,6 +2579,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:58:06.899Z"
+          },
+          "quote": "including when the App was not open",
+          "quoteSource": {
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-001/?wbdisable=true",
+            "title": "PIPEDA Findings #2022-001: Joint investigation into location tracking by the Tim Hortons App - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "date": "2022-06-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.170Z"
           }
         }
       ]
@@ -2589,6 +2652,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:29.683Z"
+          },
+          "quote": "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook",
+            "title": "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2019-07-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.523Z"
           }
         }
       ]
@@ -2637,6 +2709,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:11.974Z"
+          },
+          "quote": "Following this reassessment, the DPC imposed a fine of €225 million on WhatsApp",
+          "quoteSource": {
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/decision-concerning-whatsapp-ireland-ltd",
+            "title": "Decision concerning WhatsApp Ireland Ltd | Data Protection Commissioner",
+            "publisher": "Irish Data Protection Commission",
+            "date": "2021-08-20",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.164Z"
           }
         }
       ]
@@ -2672,6 +2753,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:13.538Z"
+          },
+          "quote": "The FTC alleged Avast sold that data to more than 100 third parties through its subsidiary, Jumpshot",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over",
+            "title": "FTC Order Will Ban Avast from Selling Browsing Data for Advertising Purposes, Require It to Pay $16.5 Million Over Charges the Firm Sold Browsing Data After Claiming Its Products Would Block Online Tracking | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2024-02-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.612Z"
           }
         }
       ]
@@ -3989,6 +4079,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:54:31.155Z"
+          },
+          "quote": "Epic will pay a $275 million penalty for violating children’s privacy law",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2022/12/fortnite-video-game-maker-epic-games-pay-more-half-billion-dollars-over-ftc-allegations",
+            "title": "Fortnite Video Game Maker Epic Games to Pay More Than Half a Billion Dollars over FTC Allegations of Privacy Violations and Unwanted Charges | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2022-12-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:36.448Z"
           }
         }
       ]
@@ -4024,6 +4123,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:54:33.437Z"
+          },
+          "quote": "failing to report its unauthorized disclosure of consumer health data to Facebook, Google, and other companies",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/02/ftc-enforcement-action-bar-goodrx-sharing-consumers-sensitive-health-info-advertising",
+            "title": "FTC Enforcement Action to Bar GoodRx from Sharing Consumers’ Sensitive Health Info for Advertising | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2023-02-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.332Z"
           }
         }
       ]
@@ -12420,6 +12528,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:21:26.676Z"
+          },
+          "quote": "Kochava’s data can reveal people’s visits to reproductive health clinics, places of worship",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other",
+            "title": "FTC Sues Kochava for Selling Data that Tracks People at Reproductive Health Clinics, Places of Worship, and Other Sensitive Locations | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2022-08-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.390Z"
           }
         }
       ],
@@ -12943,6 +13060,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:21:29.009Z"
+          },
+          "quote": "finalized an order banning data broker Mobilewalla Inc. from selling sensitive location data",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data",
+            "title": "FTC Finalizes Order Banning Mobilewalla from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2025-01-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.370Z"
           }
         }
       ],
@@ -14297,6 +14423,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:21:29.127Z"
+          },
+          "quote": "including data about consumers’ visits to health-related locations and places of worship",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data",
+            "title": "FTC Finalizes Order Prohibiting Gravy Analytics, Venntel from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2025-01-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:37.407Z"
           }
         }
       ],
@@ -16039,6 +16174,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:47.921Z"
+          },
+          "quote": "Reddit has appealed its monetary penalty notice to the First-tier Tribunal",
+          "quoteSource": {
+            "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/reddit-issued-with-1447m-fine-for-children-s-privacy-failures/",
+            "title": "Reddit issued with £14.47m fine for children’s privacy failures | ICO",
+            "publisher": "Information Commissioner’s Office",
+            "date": "2026-02-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.274Z"
           }
         }
       ],
@@ -16675,6 +16819,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:58:06.971Z"
+          },
+          "quote": "Home Depot failed to ensure valid meaningful consent for its practice of sharing customer information with Meta",
+          "quoteSource": {
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-001/?wbdisable=true",
+            "title": "PIPEDA Findings #2023-001: Investigation into Home Depot of Canada Inc.’s compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "date": "2023-01-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.159Z"
           }
         }
       ]
@@ -16702,6 +16855,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:58:07.167Z"
+          },
+          "quote": "continual mass surveillance by Clearview based on its indiscriminate scraping and processing of their facial images",
+          "quoteSource": {
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-001/?wbdisable=true",
+            "title": "PIPEDA Findings #2021-001: Joint investigation of Clearview AI, Inc. by the Office of the Privacy Commissioner of Canada, the Commission d’accès à l’information du Québec, the Information and Privacy Commissioner for British Columbia, and the Information Privacy Commissioner of Alberta - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "date": "2021-02-02",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.183Z"
           }
         }
       ]
@@ -16729,6 +16891,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:58:07.170Z"
+          },
+          "quote": "a breach of security safeguards that ultimately affected close to 9.7 million individuals in Canada and abroad",
+          "quoteSource": {
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-005/?wbdisable=true",
+            "title": "PIPEDA Findings #2020-005: Investigation into Desjardins’ compliance with PIPEDA following a breach of personal information between 2017 and 2019 - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "date": "2020-12-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:35.175Z"
           }
         }
       ]
@@ -17213,6 +17384,15 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T08:21:24.891Z"
+          },
+          "quote": "including consumer reporting agencies, without consumers’ consent",
+          "quoteSource": {
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-takes-action-against-general-motors-sharing-drivers-precise-location-driving-behavior-data",
+            "title": "FTC Takes Action Against General Motors for Sharing Drivers’ Precise Location and Driving Behavior Data Without Consent | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "date": "2025-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:09:37.533Z"
           }
         }
       ]
@@ -18343,7 +18523,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T09:02:28.155Z",
+  "generatedAt": "2026-11-22T09:09:37.533Z",
   "index": {
     "exe": {
       "brave.exe": [

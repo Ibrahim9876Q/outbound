@@ -7,7 +7,8 @@ const sections = ['declared', 'sharesWith', 'destinations', 'incidents'];
 
 function sources(dossier) {
   return [...dossier.apps, ...dossier.companies].flatMap((item) =>
-    sections.flatMap((section) => (item[section] || []).map((row) => row.source)));
+    sections.flatMap((section) => (item[section] || []).flatMap((row) =>
+      row.quoteSource ? [row.source, row.quoteSource] : [row.source])));
 }
 
 async function check(url) {
