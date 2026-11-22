@@ -3,6 +3,14 @@
 # Output: one JSON line per tick: {"at":<ms>,"sessions":[{"pid":123,"name":"Discord","active":true}]}
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+$parentProcess = $null
+if ($env:OUTBOUND_DETECTOR_PARENT) {
+  try {
+    $parentProcess = [System.Diagnostics.Process]::GetProcessById([int]$env:OUTBOUND_DETECTOR_PARENT)
+    # Acquire the process handle now so a reused PID cannot extend this worker's lifetime.
+    $null = $parentProcess.Handle
+  } catch { exit 0 }
+}
 Add-Type -Language CSharp -TypeDefinition @'
 using System;
 using System.Collections.Generic;
@@ -91,7 +99,7 @@ namespace OutboundAudio {
 '@
 
 $once = $args -contains '--once'
-while ($true) {
+while ($null -eq $parentProcess -or -not $parentProcess.HasExited) {
   $byPid = @{}
   foreach ($s in [OutboundAudio.Capture]::List()) {
     if ($byPid.ContainsKey($s.Pid)) { $byPid[$s.Pid] = $byPid[$s.Pid] -or $s.Active } else { $byPid[$s.Pid] = $s.Active }
@@ -104,5 +112,6 @@ while ($true) {
   [Console]::Out.WriteLine($line)
   [Console]::Out.Flush()
   if ($once) { break }
-  Start-Sleep -Milliseconds 1000
+  if ($null -eq $parentProcess) { Start-Sleep -Milliseconds 1000 }
+  elseif ($parentProcess.WaitForExit(1000)) { break }
 }
