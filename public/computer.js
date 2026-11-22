@@ -268,17 +268,19 @@
   let gridKey = '';
 
   function buildSlots(appCount) {
-    const W = el.screen.clientWidth;
-    const H = el.screen.clientHeight;
+    const W = Math.round(el.screen.clientWidth);
+    const H = Math.round(el.screen.clientHeight);
     const top = el.internet.offsetTop + el.internet.offsetHeight + 12;
     const bottom = H - 38 - 8;
     const left = 14, right = W - 14;
-    const rows = Math.max(1, Math.floor((bottom - top) / SLOT_H));
+    const rowHeight = Math.max(SLOT_H, ...[...icons.values()].map(({ node }) =>
+      node.hidden ? 0 : node.offsetHeight + 4));
+    const rows = Math.max(1, Math.floor((bottom - top) / rowHeight));
     const standardCols = Math.max(1, Math.floor((right - left) / SLOT_W));
     const compact = appCount > standardCols * rows;
     const iconWidth = compact ? 76 : ICON_W;
     const cols = compact ? Math.max(standardCols, Math.floor((right - left) / 81)) : standardCols;
-    const key = `${W}x${H}@${top}/${iconWidth}`;
+    const key = `${W}x${H}@${top}/${iconWidth}/${rowHeight}`;
     if (key === gridKey) return false;
     gridKey = key;
     el.desktop.style.setProperty('--desktop-icon-width', `${iconWidth}px`);
@@ -288,8 +290,8 @@
     slots = [];
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
       const x = Math.round(left + c * cellW + (cellW - iconWidth) / 2);
-      const y = Math.round(top + r * cellH + (cellH - SLOT_H) / 2);
-      const cx = x + iconWidth / 2, cy = y + SLOT_H / 2;
+      const y = Math.round(top + r * cellH + (cellH - rowHeight) / 2);
+      const cx = x + iconWidth / 2, cy = y + rowHeight / 2;
       // Fill from the middle outward, preferring wide rows over tall columns.
       slots.push({ x, y, width: iconWidth, taken: null, rank: Math.abs(cx - focus.x) / W + Math.abs(cy - focus.y) / H * 1.6 });
     }
@@ -337,6 +339,7 @@
   }
 
   function renderDesktop(state, users) {
+    if (el.screen.clientWidth < 200) return;
     const apps = desktopApps(state, users);
     if (buildSlots(apps.length)) {
       // Grid changed size: re-place everything, busiest apps nearest the middle.
@@ -621,6 +624,7 @@
   }
 
   function renderWires(state) {
+    if (el.screen.clientWidth < 200) return;
     const specs = wireSpecs(state);
     const seen = new Set();
     for (const spec of specs) {

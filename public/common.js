@@ -433,6 +433,29 @@
     let waitingFresh = false;
     let retry = 500;
 
+    function applyDeviceEvent(event) {
+      const match = /^(mic|camera)-(on|off)$/.exec(event.type);
+      if (!match || !Outbound.state || waitingFresh || !event.app) return;
+      const [, kind, action] = match;
+      const state = Outbound.state;
+      const device = state.devices[kind];
+      const appName = event.app.toLowerCase();
+      const id = event.appId || event.id || device.lastUsedByApp?.find((entry) => entry.label?.toLowerCase() === appName)?.id
+        || state.apps.find((app) => app.name.toLowerCase() === appName || app.id.replace(/\.exe$/i, '').toLowerCase() === appName)?.id;
+      const matching = device.apps.filter((app) => id && app.id ? app.id.toLowerCase() === id.toLowerCase() : app.app.toLowerCase() === appName);
+      let apps = device.apps;
+      if (action === 'on' && !matching.length) {
+        apps = [...apps, { id, app: event.app, since: event.at }];
+      } else if (action === 'off' && matching.length === 1) {
+        apps = apps.filter((app) => app !== matching[0]);
+      }
+      if (apps === device.apps) return;
+      const updated = { ...state, devices: { ...state.devices, [kind]: { ...device, apps, active: apps.length > 0 } } };
+      Outbound.state = updated;
+      safe(renderTopbar, updated);
+      for (const fn of stateFns) safe(fn, updated);
+    }
+
     function publish(state) {
       if (!state || !Array.isArray(state.apps) || (Outbound.state && state.at < Outbound.state.at)) return;
       if (state.fresh === false || (waitingFresh && state.fresh !== true)) {
@@ -478,6 +501,7 @@
       current.addEventListener('event', (message) => {
         let event;
         try { event = JSON.parse(message.data); } catch { return; }
+        applyDeviceEvent(event);
         for (const fn of eventFns) safe(fn, event);
         if (/^(mic|camera)-(on|off)$/.test(event.type)) refresh(current);
       });
