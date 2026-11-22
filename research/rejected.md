@@ -481,3 +481,10 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Google — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: United States
 - Microsoft — https://www.microsoft.com/en-us/privacy/privacystatement — missing evidence: Where we store and process personal data
 - Amazon — https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — curl: (22) The requested URL returned error: 403
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+- Smart Home Manager — https://apps.apple.com/us/app/smart-home-manager/id1258654743 — No developer-declared data linked to the user
+- Bible Shorts — https://apps.apple.com/us/app/bible-shorts-watch-study/id6795921981 — No developer-declared data linked to the user
+- Bible Path — https://apps.apple.com/us/app/bible-path-widgets-stories/id6504798650 — No developer-declared data linked to the user

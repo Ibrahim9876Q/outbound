@@ -5765,6 +5765,586 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "gmail",
+      "name": "Gmail",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Gmail - Email by Google App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/gmail-email-by-google/id422689480",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:34.819Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "publisher": "X Corp.",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Grok App - App Store",
+            "publisher": "X Corp.",
+            "url": "https://apps.apple.com/us/app/grok/id6670324846",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:34.941Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI",
+      "publisher": "Meta Platforms, Inc.",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Contacts, User Content, Search History, Browsing History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Meta AI App - App Store",
+            "publisher": "Meta Platforms, Inc.",
+            "url": "https://apps.apple.com/us/app/meta-ai/id1558240027",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:35.029Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-authenticator",
+      "name": "Microsoft Authenticator",
+      "publisher": "Microsoft Corporation",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "User Content, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Microsoft Authenticator App - App Store",
+            "publisher": "Microsoft Corporation",
+            "url": "https://apps.apple.com/us/app/microsoft-authenticator/id983156458",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:34.975Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-drive",
+      "name": "Google Drive",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Drive App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-drive/id507874739",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:34.594Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-docs",
+      "name": "Google Docs",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Contacts, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Docs App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-docs/id842842640",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:34.763Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-sheets",
+      "name": "Google Sheets",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Contacts, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Sheets App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-sheets/id842849113",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:35.098Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "link-to-windows",
+      "name": "Link to Windows",
+      "publisher": "Microsoft Corporation",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Link to Windows App - App Store",
+            "publisher": "Microsoft Corporation",
+            "url": "https://apps.apple.com/us/app/link-to-windows/id6443686328",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:35.798Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "yahoo-mail",
+      "name": "Yahoo Mail",
+      "publisher": "Yahoo Inc.",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Yahoo Mail: Your Email & Inbox App - App Store",
+            "publisher": "Yahoo Inc.",
+            "url": "https://apps.apple.com/us/app/yahoo-mail-your-email-inbox/id577586159",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:36.141Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Calendar: Get Organized App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-calendar-get-organized/id909319292",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:36.366Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hp",
+      "name": "HP",
+      "publisher": "HP Inc.",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎HP App - App Store",
+            "publisher": "HP Inc.",
+            "url": "https://apps.apple.com/us/app/hp/id469284907",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:36.367Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-slides",
+      "name": "Google Slides",
+      "publisher": "Google LLC",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Contacts, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Slides App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-slides/id879478102",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:36.509Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bible-chat",
+      "name": "Bible Chat",
+      "publisher": "Book Vitals Inc.",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Bible Chat: Daily Devotional App - App Store",
+            "publisher": "Book Vitals Inc.",
+            "url": "https://apps.apple.com/us/app/bible-chat-daily-devotional/id6448849666",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:36.362Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "translate-now",
+      "name": "Translate Now",
+      "publisher": "AIR APPS SYSTEMS, UNIPESSOAL, LDA",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Translate Now - AI Translator App - App Store",
+            "publisher": "AIR APPS SYSTEMS, UNIPESSOAL, LDA",
+            "url": "https://apps.apple.com/us/app/translate-now-ai-translator/id1348028646",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.154Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "collectr",
+      "name": "Collectr",
+      "publisher": "Collectr Inc",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Collectr - TCG Collector App App - App Store",
+            "publisher": "Collectr Inc",
+            "url": "https://apps.apple.com/us/app/collectr-tcg-collector-app/id1603892248",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.540Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "psa",
+      "name": "PSA",
+      "publisher": "Collectors Universe, Inc",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PSA: Card Tracking & Grading App - App Store",
+            "publisher": "Collectors Universe, Inc",
+            "url": "https://apps.apple.com/us/app/psa-card-tracking-grading/id996239729",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.375Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "woodsense",
+      "name": "WoodSense",
+      "publisher": "Next Vision Limited",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Search History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎WoodSense: Wood Plans & Guides App - App Store",
+            "publisher": "Next Vision Limited",
+            "url": "https://apps.apple.com/us/app/woodsense-wood-plans-guides/id6754165620",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.663Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ancestry",
+      "name": "Ancestry",
+      "publisher": "Ancestry.com Operations Inc.",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Ancestry: Family History & DNA App - App Store",
+            "publisher": "Ancestry.com Operations Inc.",
+            "url": "https://apps.apple.com/us/app/ancestry-family-history-dna/id349554263",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.491Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "coinsnap",
+      "name": "CoinSnap",
+      "publisher": "Next Vision Limited",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Search History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎CoinSnap: Coin Identifier App - App Store",
+            "publisher": "Next Vision Limited",
+            "url": "https://apps.apple.com/us/app/coinsnap-coin-identifier/id1634551626",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:41.710Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hallow",
+      "name": "Hallow",
+      "publisher": "Hallow, Inc.",
+      "category": "reference",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hallow: Prayer & Meditation App - App Store",
+            "publisher": "Hallow, Inc.",
+            "url": "https://apps.apple.com/us/app/hallow-prayer-meditation/id1405323394",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:42.615Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -9080,7 +9660,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:22:30.266Z",
+  "generatedAt": "2026-11-22T06:23:43.146Z",
   "index": {
     "exe": {
       "brave.exe": [
