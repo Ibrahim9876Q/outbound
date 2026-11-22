@@ -806,3 +806,15 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 ## incidents-11 · 2026-11-22T08:20:07.704Z
 
 - Stripe — https://www.casemine.com/judgement/us/6109ba0e4653d04ad655694a — missing evidence: July 28, 2021
+
+## incidents-09 · 2026-11-22T08:21:29.267Z
+
+- Datadog — https://investors.datadoghq.com/static-files/6212f93a-3104-4aba-aba9-48a2e59c83b7 — curl: (22) The requested URL returned error: 403
+
+## incidents-10 · 2026-11-22T08:21:33.229Z
+
+- U.S. Radiology — https://ag.ny.gov/press-release/2023/attorney-general-james-secures-450000-medical-company-providing-services-western — missing evidence: U.S. Radiology
+
+## incidents-11 · 2026-11-22T08:21:37.872Z
+
+- Stripe — https://www.casemine.com/judgement/us/6109ba0e4653d04ad655694a — missing evidence: Stripe Elements, 2021, 4:20-cv-08196-YGR, various privacy laws, motion to dismiss

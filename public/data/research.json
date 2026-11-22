@@ -7651,7 +7651,7 @@
             "url": "https://www.stuevesiegel.com/assets/htmldocuments/2025-01-24%201%20Class%20Action%20Complaint%20Against%20Paypal%20Holdings%20Inc.%20Paypal%20I.pdf",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:19.633Z"
+            "fetchedAt": "2026-11-22T08:21:25.490Z"
           }
         }
       ],
@@ -7699,7 +7699,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:20.305Z"
+            "fetchedAt": "2026-11-22T08:21:24.719Z"
           }
         }
       ],
@@ -7747,7 +7747,7 @@
             "url": "https://arstechnica.com/information-technology/2015/06/hola-vpn-used-to-perform-ddos-attacks-violate-user-privacy/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:02.373Z"
+            "fetchedAt": "2026-11-22T08:21:34.428Z"
           }
         }
       ],
@@ -7795,7 +7795,7 @@
             "url": "https://www.tomsguide.com/computing/vpns/this-vpn-is-harvesting-your-ai-conversations-and-6-million-people-are-using-it",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:19.098Z"
+            "fetchedAt": "2026-11-22T08:21:25.218Z"
           }
         }
       ],
@@ -11537,7 +11537,7 @@
             "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ilnd-1_11-cv-05807/pdf/USCOURTS-ilnd-1_11-cv-05807-0.pdf",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:07.704Z"
+            "fetchedAt": "2026-11-22T08:21:37.871Z"
           }
         }
       ],
@@ -11793,7 +11793,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:20.300Z"
+            "fetchedAt": "2026-11-22T08:21:26.676Z"
           }
         }
       ],
@@ -12202,21 +12202,6 @@
       },
       "incidents": [
         {
-          "kind": "regulator",
-          "title": "Disney · FTC case record",
-          "year": 2025,
-          "jurisdiction": "United States",
-          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2025.",
-          "source": {
-            "title": "Disney | Federal Trade Commission",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/disney",
-            "date": "2025-12-31",
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:13:02.320Z"
-          }
-        },
-        {
           "title": "Disney children’s video privacy matter",
           "year": 2025,
           "summary": "The FTC alleged that Disney failed to properly designate some child-directed YouTube videos.",
@@ -12228,7 +12213,7 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/disney",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:36.939Z"
+            "fetchedAt": "2026-11-22T08:21:33.101Z"
           }
         }
       ],
@@ -12295,7 +12280,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2025/09/ftc-takes-action-against-robot-toy-maker-allowing-collection-childrens-data-without-parental-consent",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:22.646Z"
+            "fetchedAt": "2026-11-22T08:21:29.265Z"
           }
         }
       ],
@@ -12363,21 +12348,6 @@
       "incidents": [
         {
           "kind": "regulator",
-          "title": "Mobilewalla, Inc., In the Matter of · FTC case record",
-          "year": 2024,
-          "jurisdiction": "United States",
-          "summary": "The FTC case summary describes a matter involving location information. The earliest dated item in the published case timeline is from 2024.",
-          "source": {
-            "title": "Mobilewalla, Inc., In the Matter of | Federal Trade Commission",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3196-mobilewalla-inc-matter",
-            "date": "2025-01-14",
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:13:04.487Z"
-          }
-        },
-        {
-          "kind": "regulator",
           "title": "Mobilewalla final location-data order",
           "year": 2025,
           "jurisdiction": "United States",
@@ -12388,7 +12358,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:22.687Z"
+            "fetchedAt": "2026-11-22T08:21:29.009Z"
           }
         }
       ],
@@ -12672,26 +12642,27 @@
     },
     {
       "name": "Easy Healthcare Corporation",
-      "aliases": [],
+      "aliases": [
+        "Easy Healthcare"
+      ],
       "hq": {
         "city": null,
         "country": null
       },
       "incidents": [
         {
-          "kind": "court",
-          "title": "Easy Healthcare Corporation, U.S. v. · FTC case record",
+          "title": "Premom federal stipulated order",
           "year": 2023,
+          "summary": "A federal court entered an order related to the Premom fertility app and its handling of health information.",
           "jurisdiction": "United States",
-          "summary": "The FTC case summary describes a matter involving health information. The earliest dated item in the published case timeline is from 2023.",
-          "caseRef": "202 3186",
+          "kind": "regulator",
           "source": {
-            "title": "Easy Healthcare Corporation, U.S. v. | Federal Trade Commission",
+            "title": "Premom federal stipulated order",
             "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3186-easy-healthcare-corporation-us-v",
-            "date": "2023-06-26",
+            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf",
+            "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:14:36.303Z"
+            "fetchedAt": "2026-11-22T08:21:31.839Z"
           }
         }
       ],
@@ -13731,22 +13702,6 @@
       "incidents": [
         {
           "kind": "regulator",
-          "title": "Gravy Analytics, Inc., In the Matter of · FTC case record",
-          "year": 2024,
-          "jurisdiction": "United States",
-          "summary": "A press release linked in the FTC case timeline describes a matter involving location information. The earliest dated item in the published case timeline is from 2024.",
-          "caseRef": "212 3035",
-          "source": {
-            "title": "Gravy Analytics, Inc., In the Matter of | Federal Trade Commission",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/212-3035-gravy-analytics-inc-matter",
-            "date": "2025-01-14",
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:19:13.875Z"
-          }
-        },
-        {
-          "kind": "regulator",
           "title": "Gravy Analytics and Venntel final order",
           "year": 2025,
           "jurisdiction": "United States",
@@ -13757,7 +13712,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:22.771Z"
+            "fetchedAt": "2026-11-22T08:21:29.127Z"
           }
         }
       ],
@@ -14823,7 +14778,7 @@
             "url": "https://blog.sentry.io/security-incident-june-12-2016/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:18.279Z"
+            "fetchedAt": "2026-11-22T08:21:24.617Z"
           }
         }
       ],
@@ -15048,7 +15003,7 @@
             "url": "https://blog.checkpoint.com/securing-the-cloud/cdn-service-exposes-users-to-malicious-packages-for-phishing-attacks-invisible-to-security-tools/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:02.253Z"
+            "fetchedAt": "2026-11-22T08:21:34.066Z"
           }
         }
       ],
@@ -15164,7 +15119,7 @@
             "url": "https://companiesmarketcap.com/datadog/sec-reports-10k/0001561550-22-000009/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:02.868Z"
+            "fetchedAt": "2026-11-22T08:21:34.327Z"
           }
         }
       ],
@@ -15580,7 +15535,7 @@
             "url": "https://developer.adobe.com/document-services/faq/tech-support/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.720Z"
+            "fetchedAt": "2026-11-22T08:22:39.836Z"
           }
         }
       ],
@@ -15594,7 +15549,7 @@
             "url": "https://developer.adobe.com/document-services/faq/tech-support/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.727Z"
+            "fetchedAt": "2026-11-22T08:22:39.909Z"
           }
         },
         {
@@ -15606,7 +15561,7 @@
             "url": "https://developer.adobe.com/document-services/faq/tech-support/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.727Z"
+            "fetchedAt": "2026-11-22T08:22:39.909Z"
           }
         },
         {
@@ -15618,7 +15573,7 @@
             "url": "https://developer.adobe.com/document-services/faq/tech-support/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.727Z"
+            "fetchedAt": "2026-11-22T08:22:39.909Z"
           }
         }
       ]
@@ -15805,7 +15760,7 @@
             "url": "https://www.legal500.com/intelligence/united-states/privacy/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:02.508Z"
+            "fetchedAt": "2026-11-22T08:21:34.233Z"
           }
         }
       ],
@@ -15872,7 +15827,7 @@
             "url": "https://www.classaction.org/media/doe-v-microsoft-corporation-et-al.pdf",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:02.923Z"
+            "fetchedAt": "2026-11-22T08:21:34.561Z"
           }
         }
       ],
@@ -16663,7 +16618,7 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:20.026Z"
+            "fetchedAt": "2026-11-22T08:21:26.462Z"
           }
         }
       ]
@@ -16689,7 +16644,7 @@
             "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-takes-action-against-general-motors-sharing-drivers-precise-location-driving-behavior-data",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:58:20.392Z"
+            "fetchedAt": "2026-11-22T08:21:24.891Z"
           }
         }
       ]
@@ -17413,7 +17368,7 @@
             "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-reaches-agreement-hudson-valley-health-care-provider",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:36.164Z"
+            "fetchedAt": "2026-11-22T08:21:30.220Z"
           }
         }
       ]
@@ -17439,7 +17394,7 @@
             "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-550000-hudson-valley-health-care-facility",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.857Z"
+            "fetchedAt": "2026-11-22T08:21:30.218Z"
           }
         }
       ]
@@ -17465,7 +17420,7 @@
             "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-225-million-capital-region-health-care-provider",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.167Z"
+            "fetchedAt": "2026-11-22T08:21:30.214Z"
           }
         }
       ]
@@ -17491,7 +17446,7 @@
             "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-secures-500000-capital-region-health-care-provider",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.235Z"
+            "fetchedAt": "2026-11-22T08:21:30.249Z"
           }
         }
       ]
@@ -17517,7 +17472,7 @@
             "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-300000-newyork-presbyterian-hospital-failing",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.309Z"
+            "fetchedAt": "2026-11-22T08:21:30.258Z"
           }
         }
       ]
@@ -17543,7 +17498,7 @@
             "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-45-million-biotech-company-failing-protect-new",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.868Z"
+            "fetchedAt": "2026-11-22T08:21:30.483Z"
           }
         }
       ]
@@ -17569,7 +17524,7 @@
             "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-350000-long-island-home-health-care-company",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:35.404Z"
+            "fetchedAt": "2026-11-22T08:21:30.471Z"
           }
         }
       ]
@@ -17595,7 +17550,7 @@
             "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-and-multistate-coalition-secure-495-million-cloud-company",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:36.595Z"
+            "fetchedAt": "2026-11-22T08:21:31.179Z"
           }
         }
       ]
@@ -17621,7 +17576,7 @@
             "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-announces-largest-ccpa-settlement-date-secures-155",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:37.859Z"
+            "fetchedAt": "2026-11-22T08:21:31.835Z"
           }
         }
       ]
@@ -17647,7 +17602,7 @@
             "url": "https://cppa.ca.gov/announcements/2025/20250312.html",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:36.944Z"
+            "fetchedAt": "2026-11-22T08:21:31.257Z"
           }
         }
       ]
@@ -17673,7 +17628,7 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:38.597Z"
+            "fetchedAt": "2026-11-22T08:21:32.832Z"
           }
         }
       ]
@@ -17699,33 +17654,7 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:36.835Z"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Easy Healthcare",
-      "aliases": [],
-      "hq": {
-        "city": null,
-        "country": null
-      },
-      "declared": [],
-      "incidents": [
-        {
-          "title": "Premom federal stipulated order",
-          "year": 2023,
-          "summary": "A federal court entered an order related to the Premom fertility app and its handling of health information.",
-          "jurisdiction": "United States",
-          "kind": "regulator",
-          "source": {
-            "title": "Premom federal stipulated order",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T08:13:37.160Z"
+            "fetchedAt": "2026-11-22T08:21:33.181Z"
           }
         }
       ]
@@ -17751,7 +17680,7 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3067-cerebral-inc-kyle-robertson-us-v",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:13:38.683Z"
+            "fetchedAt": "2026-11-22T08:21:33.228Z"
           }
         }
       ]
@@ -17775,7 +17704,7 @@
             "url": "https://unpkg.com/network",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:20:01.254Z"
+            "fetchedAt": "2026-11-22T08:22:39.426Z"
           }
         }
       ]
@@ -17787,7 +17716,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "Requesting client IP address",
+          "purpose": "Akamai lists this field in the DataStream request logs customers can configure.",
+          "source": {
+            "title": "Data set parameters",
+            "publisher": "Akamai Technologies",
+            "url": "https://techdocs.akamai.com/datastream2/docs/data-set-parameters",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:22:47.663Z"
+          }
+        }
+      ],
       "incidents": [],
       "destinations": [
         {
@@ -17799,7 +17741,7 @@
             "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.602Z"
+            "fetchedAt": "2026-11-22T08:22:39.849Z"
           }
         },
         {
@@ -17811,13 +17753,27 @@
             "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:19:58.602Z"
+            "fetchedAt": "2026-11-22T08:22:39.849Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Customer-selected log destinations, including Amazon S3 and Google Cloud Storage",
+          "purpose": "Deliver DataStream logs to storage or analytics services selected by the customer",
+          "source": {
+            "title": "Destinations",
+            "publisher": "Akamai Technologies",
+            "url": "https://techdocs.akamai.com/datastream2/reference/destinations",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:22:52.561Z"
           }
         }
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:20:07.705Z",
+  "generatedAt": "2026-11-22T08:22:52.561Z",
   "index": {
     "exe": {
       "brave.exe": [
