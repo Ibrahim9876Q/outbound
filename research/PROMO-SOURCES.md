@@ -6,6 +6,8 @@ The public pages cited below were re-fetched with curl on 2026-11-22. **VERIFIED
 
 The card headings also need qualification. Use ?[ DATA THAT MAY BE COLLECTED ]? and ?[ DATA THAT MAY BE USED TO TRACK YOU ACROSS OTHER COMPANIES? APPS AND SITES ]? for developer declarations. Replace ?[ WHAT THEY WERE CAUGHT FOR ]? with ?[ ENFORCEMENT, SETTLEMENTS AND FINDINGS ]? so the heading covers both allegations and adjudicated findings.
 
+The v4 promo ([`promo/outbound-promo-v4.mp4`](../promo/outbound-promo-v4.mp4)) applies every **NEEDS EDIT** suggestion and the heading changes below, and it replaces the unverified Dossier footer counts with the current dossier totals. [`promo/tools/patch4.py`](../promo/tools/patch4.py) lists each change. The rows below transcribe v3.
+
 ## On-screen claims
 
 | Frame | Exact on-screen text | Status | Source title | Publisher | Date | URL | Scope or suggested edit |

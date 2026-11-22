@@ -15,10 +15,10 @@
 <img src="https://img.shields.io/badge/HACK_WESTERN_13-DISCOVER_THE_UNKNOWN-ffffff?style=for-the-badge&labelColor=000000" alt="Hack Western 13, Discover the Unknown">
 </p>
 
-**Outbound is a local Windows dashboard that shows which apps talk to whom, from where, and what they've been caught doing.**<br>
+**Outbound is a local Windows dashboard that shows which apps talk to whom, from where, and what regulators have found or alleged about them.**<br>
 It watches live TCP endpoints, mic and camera use, and (if you opt in) stored browser and Windows metadata. It ties every company to sourced fines and cases, and it won't block anything until **you approve it on your phone** through Auth0.
 
-[**▶ Watch the promo**](promo/outbound-promo-v3.mp4) · [Run it](#run) · [Architecture](#architecture) · [Demo script](DEMO.md) · [Devpost](DEVPOST.md)
+[**▶ Watch the promo**](promo/outbound-promo-v4.mp4) · [Run it](#run) · [Architecture](#architecture) · [Demo script](DEMO.md) · [Devpost](DEVPOST.md)
 
 </div>
 
@@ -33,13 +33,13 @@ It watches live TCP endpoints, mic and camera use, and (if you opt in) stored br
 </td>
 <td width="66%" valign="middle">
 
-Your apps keep talking after you close them, to companies you've never heard of, in countries you didn't choose. The privacy policy names the categories. Regulators name the rest.
+Your apps keep connections open in the background, often to companies you've never heard of, through servers in other countries. Privacy policies list the categories. Regulators fill in the rest.
 
 Outbound puts it all on one screen, on your own machine:
 
 - **Which apps** have open connections right now, and **where** those connections land.
 - **Who's behind them**, from offline ASN data plus a dossier of public records.
-- **What those companies were caught doing**: fines, settlements and investigations, each linked to its regulator or court source.
+- **What regulators and courts found or alleged**: fines, settlements and investigations, each linked to its regulator or court source.
 - **A stop button that asks you first.** Blocking goes through Auth0 CIBA on your phone and is recorded as an Auth0 FGA tuple.
 
 </td>
@@ -51,10 +51,10 @@ Outbound puts it all on one screen, on your own machine:
 <img src="docs/readme/card-google.jpg" alt="Google card: collected data categories, a quote about audio samples, and settlements of 1.375 billion and 391.5 million dollars" width="49%">
 <br>
 <img src="docs/readme/you.jpg" alt="You are less valuable than the data you produce, surrounded by app logos" width="49%">
-<img src="docs/readme/stat-trackers.jpg" alt="104 of 497 sites we visited had trackers watching" width="49%">
+<img src="docs/readme/stat-trackers.jpg" alt="104 of 497 visited domains matched a public tracker dataset" width="49%">
 </p>
 
-<p align="center"><sub>Frames from the <a href="promo/outbound-promo-v3.mp4">promo video</a>. Every fine, quote and figure on these cards is sourced. See <a href="promo/README.md">promo/README.md</a>.</sub></p>
+<p align="center"><sub>Frames from the <a href="promo/outbound-promo-v4.mp4">promo video</a>. Every fine, quote and figure is traced to its source in <a href="research/PROMO-SOURCES.md">research/PROMO-SOURCES.md</a>.</sub></p>
 
 ## The idea
 
@@ -289,10 +289,6 @@ npm run fixture
 Open `http://127.0.0.1:4319/`. The launcher requires the recording path. The dashboard header, `/api/state`, and SSE state show **FIXTURE DATA**. Every replay response includes `X-Outbound-Mode: FIXTURE DATA`. The server replays the original state without collecting new data or creating rules. Other API reads report that no recording is available and writes are disabled. After stopping the replay, clear the flag with `Remove-Item Env:OUTBOUND_FIXTURE` or close that shell before starting the live dashboard.
 
 </details>
-
-## Team
-
-TODO
 
 <div align="center">
 <br>
