@@ -421,6 +421,45 @@
   });
 
   let policy;
+  let dashboardAuth;
+  let authLoaded = false;
+  const authNeedsSignIn = () => dashboardAuth?.enabled && !dashboardAuth.user;
+  const authorName = (id) => id
+    ? dashboardAuth?.user?.sub === id ? dashboardAuth.user.name || id : id
+    : 'Local session';
+
+  async function refreshAuth() {
+    const control = $('auth-control');
+    try {
+      dashboardAuth = await api('/auth/me');
+      const { enabled, configured, user, error } = dashboardAuth;
+      control.replaceChildren();
+      control.removeAttribute('title');
+      if (!enabled) {
+        control.textContent = 'LOCAL MODE';
+        control.title = 'Set AUTH0_LOGIN=1 and configure the dashboard credentials. See Auth0 setup in Rules.';
+      } else if (!configured) {
+        control.textContent = error || 'Auth0 setup incomplete';
+      } else {
+        const link = document.createElement('a');
+        link.href = user ? '/auth/logout' : '/auth/login';
+        link.textContent = user ? 'Sign out' : 'Sign in with Auth0';
+        if (user) {
+          const name = document.createElement('span');
+          name.textContent = user.name || user.sub;
+          name.title = name.textContent;
+          control.append(name, ' ');
+        }
+        control.append(link);
+      }
+    } catch {
+      control.textContent = 'Auth status unavailable';
+    } finally {
+      authLoaded = true;
+      control.hidden = false;
+      if (Outbound.view === 'rules') renderPolicy();
+    }
+  }
   let blockTarget;
   let policyBusy = false;
   let previewRetry = false;
@@ -439,7 +478,7 @@
       pending.innerHTML = `<p>Target: ${esc(blockTarget.kind)} / ${esc(blockTarget.value)}</p><button type="button" class="tool-btn" id="rules-confirm">${label}</button>`;
       pending.setAttribute('aria-busy', String(policyBusy));
       const submit = $('rules-confirm');
-      submit.disabled = policyBusy || !policy || policy.enforcer !== 'dry-run'
+      submit.disabled = policyBusy || !authLoaded || authNeedsSignIn() || !policy || policy.enforcer !== 'dry-run'
         || (lower(policy.provider).includes('auth0') && policy.providerConfigured);
       submit.addEventListener('click', submitBlock);
     } else {
@@ -455,7 +494,7 @@
       + ' / Auth0: ' + (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured')
       + ' / enforcer: ' + policy.enforcer;
     $('rules-list').innerHTML = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
-      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || policy.enforcer !== 'dry-run' || (rule.approval?.via === 'auth0' && auth0) ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
+      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <small>Created by ${esc(authorName(rule.createdBy))}</small> <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || !authLoaded || authNeedsSignIn() || policy.enforcer !== 'dry-run' || (rule.approval?.via === 'auth0' && auth0) ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
   }
 
   function showPlan(plan, decision) {
@@ -555,6 +594,7 @@
     }
   });
   Outbound.onView((name) => { if (name === 'rules') refreshPolicy(); });
+  refreshAuth();
 
   const historyMetrics = [
     ['companies', 'Attributed companies'], ['trackers', 'Tracker companies'], ['countries', 'Countries'],
