@@ -17,11 +17,19 @@ npm install
 npm run dev:all
 ```
 
-Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If PowerShell blocks the npm shim, use `npm.cmd`. Use `npm start` for the desktop alone. `PORT` changes the desktop HTTP port.
+Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If PowerShell blocks the npm shim, use `npm.cmd`. Use `npm start` for the desktop alone. `PORT` changes the desktop HTTP port. For a fresh clone with the checked-in lockfile, `npm ci` can install the dependencies.
 
-- **Phone setup.** Copy [`.env.example`](.env.example) to the gitignored `.env` when configuring the gateway. Keep the loopback defaults for laptop-only DNS. The gateway loads `.env`. The desktop launcher opts into Phone polling with `OUTBOUND_PHONE=1`. A standalone desktop polls only when started with this flag or a loopback `PHONE_URL`. To run a second copy from a separate checkout, set `PORT`, `PHONE_DASHBOARD_PORT`, and `PHONE_DNS_PORT` to free ports in the shell before `npm run dev:all`. [Phone setup and offline demo](gateway/README.md)
+- **Phone setup.** Copy [`.env.example`](.env.example) to the gitignored `.env` when configuring the gateway. Phone defaults to loopback HTTP port `4320` and loopback UDP/TCP DNS port `5354`. The gateway loads `.env`. `npm run dev:all` enables desktop Phone polling and points it at the gateway. A standalone desktop polls only with `OUTBOUND_PHONE=1` or a loopback HTTP `PHONE_URL`. To run a second copy from a separate checkout, set `PORT`, `PHONE_DASHBOARD_PORT`, and `PHONE_DNS_PORT` to free ports in the shell before launch and open Phone at the chosen address. [Phone setup and offline demo](gateway/README.md)
 - **Desktop Auth0.** Dashboard sign-in is optional with `AUTH0_LOGIN=1`. Desktop CIBA/FGA policy uses `OUTBOUND_FGA_MODEL_ID`, while Phone consent uses `FGA_MODEL_ID`. To load desktop settings from `.env`, launch with `node --env-file=.env server.js`. See the setup guide for callback URLs, Guardian enrollment, and the other required environment variables. [Desktop Auth0 setup](research/SETUP-AUTH0.md)
 - **Troubleshooting.** If a port is busy, close the old Outbound process from its terminal. Use `npm run check` to verify desktop assets and routes on an ephemeral loopback port. The Windows DNS cache may require an elevated launch to expose more hostnames.
+
+## Quick demo
+
+1. In **Computer**, select a running app and point to one observed endpoint and its attribution.
+2. In **Stored data**, use a completed opt-in scan and open **Permission history** to show one recorded timestamp.
+3. In **Dossier**, search **Tim Hortons**, open the mobile location investigation, and point to its regulator source.
+4. Return to **Computer** and choose **Block app** for the rehearsed app, then **Preview block**. Point to **DRY RUN**.
+5. Click **Show app on globe**, then open a country row. Use **All apps** if the selected app has no mapped endpoints. [Three-minute script](DEMO.md)
 
 ## Views
 
@@ -36,7 +44,7 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 | History | 6 | The last seven recorded days in the UI, with up to 30 local days available through the API. |
 
 <!-- dossier-counts:start -->
-The dossier contains **334 apps**, **199 companies**, and **244 incident records**, with **575 distinct source URLs** across its records.
+The dossier contains **338 apps**, **197 companies**, and **240 incident records**, with **587 distinct source URLs** across its records.
 <!-- dossier-counts:end -->
 
 Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).
@@ -78,13 +86,15 @@ Counts include incident records from app and company entries. Run `npm run docs:
 | --- | --- |
 | `GET /api/state` | Current desktop snapshot, freshness, visible apps, links, and device state. |
 | `GET /events` | SSE stream with the initial state, later updates, and heartbeat comments. |
-| `GET /api/scan` · `POST /api/scan` | Read the current and retained scan results or start a new opt-in scan. A concurrent scan returns 409. |
+| `GET /api/scan` · `POST /api/scan` | Read the current and retained scan results or start a new opt-in scan. Starting while a scan or its background folder walk is active returns 409. |
 | `GET /api/scan/status` | Lightweight progress, section counts, and cached-result metadata. |
 | `GET /api/score` | Overall and per-app exposure factors, reasons and coverage. |
 | `GET /api/history` | Up to 30 local days of per-app aggregates. |
-| `GET /api/report` | Local Markdown report. Use `/api/report/download` for an attachment. |
-| `GET /api/policy` · `/api/policy/*` | Read policy state, submit or check rules, poll pending approvals, or remove rules. |
-| `GET /auth/*` | Optional desktop Auth0 endpoints `login`, `callback`, `logout`, and `me`. |
+| `GET /api/report` · `GET /api/report/download` | Local Markdown report and attachment. |
+| `GET /api/policy` | Read rules, command previews, and the configured provider and enforcer. |
+| `POST /api/policy/rules` · `POST /api/policy/check` | Create a rule or check the decision for a target. |
+| `GET /api/policy/requests/:id` · `DELETE /api/policy/rules/:id` | Poll an approval request or remove a rule. |
+| `GET /auth/me` · `GET /auth/login` · `GET /auth/callback` · `GET /auth/logout` | Read desktop identity status and handle the optional Auth0 sign-in flow. |
 
 The response contracts are documented in [notes/CONTRACT-v2.md](notes/CONTRACT-v2.md).
 
@@ -101,6 +111,25 @@ The repository has source-specific data terms and no blanket license grant for t
 ## Verify
 
 Run `npm test` for fixtures and `npm run check` for the desktop smoke test. GitHub Actions runs the fixture suite on Windows with Node 24. The live walkthrough and submission draft are in [DEMO.md](DEMO.md) and [DEVPOST.md](DEVPOST.md).
+
+### Performance replay
+
+Use replay for local performance testing only. Use the live dashboard for demos. Record a fresh `/api/state` response from your own live desktop once the `apps` array contains 80 distinct apps. This example uses the default desktop port. Keep the recording in gitignored `data/` on this PC because it can contain local app and connection metadata.
+
+```powershell
+New-Item -ItemType Directory -Force data | Out-Null
+curl.exe --fail --silent --show-error --output data/benchmark-state.json http://127.0.0.1:4317/api/state
+```
+
+Open a new shell and use a free loopback port for the replay.
+
+```powershell
+$env:PORT = '4319'
+$env:OUTBOUND_FIXTURE = 'data/benchmark-state.json'
+npm run fixture
+```
+
+Open `http://127.0.0.1:4319/`. The launcher requires the recording path. The dashboard header, `/api/state`, and SSE state show **FIXTURE DATA**. Every replay response includes `X-Outbound-Mode: FIXTURE DATA`. The server replays the original state without collecting new data or creating rules. Other API reads report that no recording is available and writes are disabled. After stopping the replay, clear the flag with `Remove-Item Env:OUTBOUND_FIXTURE` or close that shell before starting the live dashboard.
 
 ## Team
 
