@@ -704,6 +704,7 @@
 .xray-group span { color: var(--muted); }
 .xray-countries { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; }
 .protected-list li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.app[data-id="system:protected"] .name { font-size: 11px; -webkit-line-clamp: 3; }
 .detail-head p { font: 13px var(--font-mono); color: var(--muted); }
 .detail-sub { font: 700 12px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 10px 0 4px; }
 .detail-sub::before { content: "// "; color: var(--dim); }

@@ -152,16 +152,17 @@
   function renderScan(scan) {
     lastScan = scan;
     const running = scan.status === 'running';
-    scanButton.disabled = running;
+    scanButton.disabled = running || Boolean(scan.appDataBackground);
     setRadar(running);
     const messages = { idle: 'Ready when you choose to scan.', running: 'Scanning locally', done: 'Scan complete.', error: scan.error || 'The scan failed.' };
     $('scan-status').textContent = (messages[scan.status] || 'Scan status unavailable.')
-      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '');
+      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '')
+      + (scan.appDataBackground ? ' / App-data totals are provisional. The local walk is still running.' : '');
     const browsers = [];
     if (scan.status === 'done' && scan.summary) browsers.push(scanSummary(scan.summary));
     if (scan.browsers?.length) browsers.push(renderProfiles(scan.browsers));
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
-      `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
+      `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files${app.partial ? ' / partial' : ''}<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
     if (scan.status === 'done') {
       if (scan.warnings?.length) browsers.push(card('Scan warnings', list(scan.warnings.map(esc), '')));
@@ -191,7 +192,7 @@
     try {
       const scan = await api('/api/scan');
       renderScan(scan);
-      if (scan.status === 'running') scanPoll = setTimeout(refreshScan, 650);
+      if (scan.status === 'running' || scan.appDataBackground) scanPoll = setTimeout(refreshScan, 650);
     } catch (error) {
       setRadar(false);
       scanButton.disabled = error.status === 404;
