@@ -120,38 +120,38 @@ Counts include incident records from app and company entries. Run `npm run docs:
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','secondaryColor':'#161616','tertiaryColor':'#0b0b0b','clusterBkg':'#050505','clusterBorder':'#5f5f5f','edgeLabelBackground':'#000000','fontFamily':'ui-monospace, Consolas, monospace','fontSize':'13px'}}}%%
-flowchart LR
-  subgraph PC["Your Windows PC · everything binds 127.0.0.1"]
-    direction LR
-    COL["Windows collectors<br/>netstat · process graph<br/>foreground · mic + camera"]
-    SRV["Node desktop :4317<br/>state · score · history"]
-    SCAN["Opt-in scan worker<br/>browser domains · cookie hosts<br/>permissions · autoruns"]
-    DOS[("Local dossier<br/>338 apps · 240 incidents")]
-    HIS[("Local history<br/>30 days")]
-    UI["Dashboard<br/>Computer · Globe · Stored data<br/>Dossier · Rules · History"]
-    POL["Policy engine<br/>/api/policy"]
-    ENF["Enforcer<br/>dry run by default<br/>Windows Firewall opt-in"]
-    GW["Phone DNS gateway<br/>:5354 DNS · :4320 dashboard"]
+flowchart TB
+  subgraph PC["YOUR WINDOWS PC · binds 127.0.0.1"]
+    direction TB
+    subgraph DESK["Desktop :4317"]
+      direction LR
+      COL["Windows collectors<br/>netstat · processes<br/>mic + camera"] --> SRV["Node server<br/>state · score · history"]
+      SCAN["Opt-in scan<br/>domains · cookie hosts<br/>permissions"] --> SRV
+      DOS[("Dossier<br/>338 apps<br/>240 incidents")] --> SRV
+      SRV -- "SSE /events" --> UI["Dashboard<br/>Computer · Globe<br/>Dossier · Rules"]
+      UI -- "Block app" --> POL["Policy engine"]
+      POL -- "plan rule" --> ENF["Enforcer<br/>DRY RUN default"]
+    end
+    subgraph GWG["Phone gateway :4320 · DNS :5354"]
+      direction LR
+      GW["DNS check<br/>tracker?"]
+    end
   end
-  CIBA["Auth0 CIBA<br/>Guardian push"]
-  FGA["Auth0 FGA<br/>consent tuples"]
+  subgraph AUTH0["AUTH0"]
+    direction LR
+    CIBA["CIBA<br/>Guardian push"]
+    FGA[("FGA<br/>consent tuples")]
+  end
   PHONE["Your phone"]
-  UP["Upstream DNS resolver"]
+  UP["Upstream resolver"]
 
-  COL --> SRV
-  SCAN --> SRV
-  DOS --> SRV
-  SRV --> HIS
-  SRV -- "SSE /events" --> UI
-  UI -- "Block app" --> POL
   POL -- "bc-authorize" --> CIBA
+  POL -- "write + check" --> FGA
   CIBA -. "push" .-> PHONE
-  POL -- "write + check tuple" --> FGA
-  POL -- "plan rule" --> ENF
-  PHONE -- "DNS queries" --> GW
+  PHONE -- "DNS" --> GW
   GW -- "can_resolve?" --> FGA
-  GW -- "ask to allow tracker" --> CIBA
-  GW -- "forward allowed" --> UP
+  GW -- "ask to allow" --> CIBA
+  GW -- "forward if allowed" --> UP
 ```
 
 The desktop runs on its own. Without Auth0 settings, the policy engine uses a local provider and the enforcer only prints the firewall commands it would run. The phone gateway checks every DNS lookup before forwarding it:
