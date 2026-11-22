@@ -9,6 +9,7 @@ const { renderReport, renderScanAndLinks, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
 const { StoredScan } = require('./lib/scan');
 const { LinkWatcher } = require('./lib/links');
+const blocker = require('./lib/blocker/routes');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -173,6 +174,13 @@ const server = http.createServer((req, res) => {
     const daily = renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now,
       network.seenCompanies.namesOn(localDate(now)));
     return res.end(daily + renderScanAndLinks(scan.result, [...linkWatcher.current.edges.values()]));
+  }
+  if (url.pathname === '/api/policy' || url.pathname.startsWith('/api/policy/')) {
+    blocker.handle(req, res, url).catch((err) => {
+      console.error(err);
+      if (!res.headersSent) { res.writeHead(500, { 'Content-Type': 'application/json' }); res.end('{"error":"policy failed"}'); }
+    });
+    return;
   }
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
