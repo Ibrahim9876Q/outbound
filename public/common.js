@@ -117,11 +117,18 @@
     const out = { mic: new Map(), camera: new Map(), unmatched: { mic: [], camera: [] } };
     if (!state || !state.devices) return out;
     const apps = state.apps || [];
+    const byId = new Map(apps.map((app) => [app.id.toLowerCase(), app]));
     for (const kind of ['mic', 'camera']) {
       const dev = state.devices[kind];
       if (!dev || !dev.active) continue;
       const liveIds = (dev.lastUsedByApp || []).filter((e) => e.stop === 0);
       for (const user of dev.apps) {
+        if (user.id) {
+          const match = byId.get(user.id.toLowerCase());
+          if (match) out[kind].set(match.id, user.app);
+          else out.unmatched[kind].push(user.app);
+          continue;
+        }
         const ids = liveIds.filter((e) => e.label === user.app).map((e) => e.id);
         const want = norm(user.app);
         const match = apps.find((a) => ids.includes(a.id))
@@ -285,6 +292,7 @@
         let event;
         try { event = JSON.parse(message.data); } catch { return; }
         for (const fn of eventFns) safe(fn, event);
+        if (/^(mic|camera)-(on|off)$/.test(event.type)) refresh(current);
       });
       current.onerror = () => {
         if (source !== current) return;
