@@ -57,6 +57,7 @@
   let arrivingDestinations = new Set();
   let mapPoints = [];
   let estimateMarkers = new Map();
+  let estimateLayoutFrame = 0;
   let headquartersFor;
   let showHeadquarters = false;
   let recentTrail = new Map();
@@ -454,6 +455,7 @@
     marker.append(node('span', 'globe-estimate-count'));
     entry.marker = marker;
     styleEstimateMarker(entry);
+    scheduleEstimateLayout();
     marker.addEventListener('pointerenter', () => { if (pinnedPoint === null) renderPoint(entry.point); });
     marker.addEventListener('pointerleave', () => { if (pinnedPoint === null) renderPoint(null); });
     marker.addEventListener('click', () => pinPoint(entry.point));
@@ -478,6 +480,44 @@
     }
     estimateMarkers = next;
     globe.htmlElementsData([...next.values()]);
+    scheduleEstimateLayout();
+  }
+
+  function scheduleEstimateLayout() {
+    if (estimateLayoutFrame) return;
+    estimateLayoutFrame = requestAnimationFrame(() => {
+      estimateLayoutFrame = 0;
+      if (!visible || !globe || !estimateMarkers.size) return;
+      layoutEstimateLabels();
+    });
+  }
+
+  function layoutEstimateLabels() {
+    const camera = globe.camera().position;
+    const candidates = [...estimateMarkers.values()].filter((entry) => entry.marker?.isConnected)
+      .sort((a, b) => b.point.places.length - a.point.places.length || a.key.localeCompare(b.key));
+    const placed = [];
+    const visibility = [];
+    for (const { lat, lng, marker } of candidates) {
+      const label = marker.firstElementChild;
+      const point = globe.getCoords(lat, lng, 0.009);
+      const dx = camera.x - point.x, dy = camera.y - point.y, dz = camera.z - point.z;
+      const facing = (point.x * dx + point.y * dy + point.z * dz)
+        / (Math.hypot(point.x, point.y, point.z) * Math.hypot(dx, dy, dz));
+      if (facing < 0.2 || !label.offsetWidth) {
+        visibility.push([label, false]);
+        continue;
+      }
+      const { x, y } = globe.getScreenCoords(lat, lng, 0.009);
+      const halfWidth = label.offsetWidth / 2 + 2;
+      const halfHeight = label.offsetHeight / 2 + 2;
+      const box = { left: x - halfWidth, right: x + halfWidth, top: y - halfHeight, bottom: y + halfHeight };
+      const show = !placed.some((other) => box.left < other.right && box.right > other.left
+        && box.top < other.bottom && box.bottom > other.top);
+      if (show) placed.push(box);
+      visibility.push([label, show]);
+    }
+    for (const [label, show] of visibility) label.classList.toggle('label-visible', show);
   }
 
   function pulseDestinations(places) {
@@ -668,6 +708,7 @@
           return point.sockets ? '#e0e0e0' : '#858585';
         })
         .pointResolution(10)
+        .onZoom(scheduleEstimateLayout)
         .htmlAltitude(0.009)
         .htmlElement(estimateMarker)
         .htmlTransitionDuration(0)
@@ -726,6 +767,7 @@
     }
     visible = true;
     render();
+    scheduleEstimateLayout();
   }
 
   function receiveState(snapshot) {
