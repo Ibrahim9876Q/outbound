@@ -344,7 +344,8 @@
       if (!icon) {
         icon = { node: makeIcon(app), slot: null, app };
         icons.set(app.id, icon);
-        if (!firstState) icon.node.classList.add('entering');
+        icon.node.style.setProperty('--entry-delay', Math.min(180, icons.size * 18) + 'ms');
+        icon.node.classList.add('entering');
       }
       icon.app = app;
       if (!icon.slot) {
@@ -694,7 +695,8 @@
         packets.splice(i, 1);
         continue;
       }
-      const t = p.dir > 0 ? p.t : 1 - p.t;
+      const eased = p.t * p.t * (3 - 2 * p.t);
+      const t = p.dir > 0 ? eased : 1 - eased;
       const pt = bezier(p.wire.pts, t);
       p.node.setAttribute('cx', pt.x.toFixed(1));
       p.node.setAttribute('cy', pt.y.toFixed(1));

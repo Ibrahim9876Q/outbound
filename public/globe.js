@@ -820,6 +820,17 @@
   document.addEventListener('visibilitychange', syncView);
 
   if (typeof shared?.onState === 'function') {
+    const prewarm = () => {
+      if (globe || initFailed || !shared.state) return;
+      initGlobe();
+      if (!visible) globe?.pauseAnimation();
+    };
+    shared.onState(() => {
+      if (globe || initFailed || mount.dataset.prewarm) return;
+      mount.dataset.prewarm = 'queued';
+      if (window.requestIdleCallback) requestIdleCallback(prewarm, { timeout: 2200 });
+      else setTimeout(prewarm, 700);
+    });
     shared.onDiscovery?.((discovery) => {
       if (!visible) return;
       flashingDiscovery = discovery;

@@ -237,6 +237,30 @@
     if (node && node.textContent !== String(value)) node.textContent = value;
   }
 
+  const counters = new Map();
+  let counterFrame = 0;
+
+  function tickCount(id, value) {
+    const element = $(id);
+    if (counters.get(id)?.to === value || (!counters.has(id) && Number(element.textContent) === value)) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !element.textContent.trim()) {
+      counters.delete(id);
+      element.textContent = value;
+      return;
+    }
+    counters.set(id, { element, from: Number(element.textContent) || 0, to: value, start: performance.now() });
+    if (!counterFrame) counterFrame = requestAnimationFrame(animateCounters);
+  }
+
+  function animateCounters(now) {
+    for (const [id, { element, from, to, start }] of counters) {
+      const t = Math.max(0, Math.min(1, (now - start) / 280));
+      element.textContent = Math.round(from + (to - from) * (1 - (1 - t) ** 3));
+      if (t === 1) counters.delete(id);
+    }
+    counterFrame = counters.size ? requestAnimationFrame(animateCounters) : 0;
+  }
+
   function renderTopbar(state) {
     const orgs = new Set(), countries = new Set(), trackers = new Set();
     let online = 0, live = 0;
@@ -250,10 +274,10 @@
       }
       if (appLive) online++;
     }
-    setText('stat-apps', online);
-    setText('stat-companies', orgs.size);
-    setText('stat-countries', countries.size);
-    setText('stat-trackers', trackers.size);
+    tickCount('stat-apps', online);
+    tickCount('stat-companies', orgs.size);
+    tickCount('stat-countries', countries.size);
+    tickCount('stat-trackers', trackers.size);
     $('stat-trackers').parentElement.classList.toggle('hot', trackers.size > 0);
 
     devicePill('pill-mic', 'Mic', state.devices.mic, state);
@@ -261,6 +285,9 @@
     const phone = state.phone;
     $('pill-phone').classList.toggle('on', Boolean(phone));
     setText('phone-text', phone ? `Phone · ${phone.lookups} lookups · ${phone.blocked} blocked` : 'Phone · Offline');
+    setText('phone-view-status', phone
+      ? `${phone.lookups} lookups / ${phone.blocked} blocked`
+      : 'Phone gateway offline.');
     setText('live-text', `Live · ${live} connection${live === 1 ? '' : 's'}`);
   }
 
@@ -278,6 +305,14 @@
 
   function showView(name) {
     if (!document.getElementById(`view-${name}`)) return;
+    if (Outbound.view !== name && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.startViewTransition(() => applyView(name));
+    } else {
+      applyView(name);
+    }
+  }
+
+  function applyView(name) {
     Outbound.view = name;
     for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
       const on = btn.dataset.view === name;

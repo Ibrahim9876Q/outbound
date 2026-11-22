@@ -220,7 +220,13 @@ h1, h2, h3 {
 
 /* ---------- page layout ---------- */
 
-main { flex: 1; min-height: 0; position: relative; }
+main { flex: 1; min-height: 0; position: relative; view-transition-name: outbound-view; }
+::view-transition-group(outbound-view) { animation-duration: 300ms; }
+::view-transition-old(outbound-view) { animation: view-exit 300ms ease both; }
+::view-transition-new(outbound-view) { animation: view-enter 300ms ease both; }
+@keyframes view-exit { to { opacity: 0; transform: translateX(-8px); } }
+@keyframes view-enter { from { opacity: 0; transform: translateX(8px); } }
+#view-phone { display: block; padding: 18px; }
 
 .session-strip {
   flex: none;
