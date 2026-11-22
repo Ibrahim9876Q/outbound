@@ -757,3 +757,17 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Best Priced Brands, LLC, et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3081-best-priced-brands-llc-et-al — privacy topic not supported by the case summary or release headlines
 - US Search, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/us-search-inc — privacy topic not supported by the case summary or release headlines
 - EchoMetrix, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3006-echometrix-inc — privacy topic not supported by the case summary or release headlines
+
+## FTC case tag 1421, index pages 0–5
+
+- NGL — https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl — privacy topic not supported by the case summary or release headlines
+- Sony BMG Music Entertainment, a general partnership subsidiary of Sony Corporation of America, United States of America (For the Federal Trade Commission) — https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3071-sony-bmg-music-entertainment-general-partnership-subsidiary-sony-corporation-america-united-states — unclear dossier entity.
+- Industrious Kid, Inc. and Jeanette Symons., U.S. (for the FTC) — https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3082-industrious-kid-inc-jeanette-symons-us-ftc — unclear dossier entity.
+- Xanga.com, Inc., John Hiler, and Marc Ginsburg — https://search.ftc.gov/legal-library/browse/cases-proceedings/062-3073-xangacom-inc-john-hiler-marc-ginsburg — unclear dossier entity.
+- Bonzi Software, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/042-3016-bonzi-software-inc — privacy topic not supported by the case summary or release headlines
+- Mrs. Fields Famous Brands, Inc., Mrs. Fields' Holding Company, Inc., and Mrs. Fields' Original Cookies, Inc., U.S. (for the FTC) — https://search.ftc.gov/legal-library/browse/cases-proceedings/mrs-fields-famous-brands-inc-mrs-fields-holding-company-inc-mrs-fields-original-cookies-inc-us-ftc — unclear dossier entity.
+- American Pop Corn Company — https://search.ftc.gov/legal-library/browse/cases-proceedings/012-3026-american-pop-corn-company — privacy topic not supported by the case summary or release headlines
+- Frank, Lisa, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/012-3050-frank-lisa-inc — privacy topic not supported by the case summary or release headlines
+- Monarch Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3375-monarch-services-inc-et-al — unclear dossier entity.
+- Bigmailbox.Com, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3378-bigmailboxcom-inc-et-al — unclear dossier entity.
+- Toysmart.com, LLC, and Toysmart.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/x000075-toysmartcom-llc-toysmartcom-inc — unclear dossier entity.

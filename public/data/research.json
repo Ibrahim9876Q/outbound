@@ -16340,9 +16340,194 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Iconix Brand Group, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Iconix Brand Group, Inc. · FTC case record",
+          "year": 2009,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2009.",
+          "source": {
+            "title": "Iconix Brand Group, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/iconix-brand-group-inc",
+            "date": "2009-10-20",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:51.683Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "UMG Recordings, Inc., a corporation, US",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "UMG Recordings, Inc., a corporation, US · FTC case record",
+          "year": 2004,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2004.",
+          "source": {
+            "title": "UMG Recordings, Inc., a corporation, US | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/umg-recordings-inc-corporation-us",
+            "date": "2004-02-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:51.929Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Bonzi Software, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Bonzi Software, Inc. · FTC case record",
+          "year": 2004,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2004.",
+          "source": {
+            "title": "Bonzi Software, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/bonzi-software-inc",
+            "date": "2004-02-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.321Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Hershey Foods Corporation., U.S. (for the FTC)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Hershey Foods Corporation., U.S. (for the FTC) · FTC case record",
+          "year": 2003,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2003.",
+          "source": {
+            "title": "Hershey Foods Corporation., U.S. (for the FTC) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/hershey-foods-corporation-us-ftc",
+            "date": "2003-02-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.115Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ohio Art Company, The",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ohio Art Company, The · FTC case record",
+          "year": 2002,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2002.",
+          "caseRef": "022-3028",
+          "source": {
+            "title": "Ohio Art Company, The | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/022-3028-ohio-art-company",
+            "date": "2002-04-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.212Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Looksmart, Ltd.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Looksmart, Ltd. · FTC case record",
+          "year": 2001,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2001.",
+          "caseRef": "002 3379",
+          "source": {
+            "title": "Looksmart, Ltd. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3379-looksmart-ltd",
+            "date": "2001-04-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:54.859Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "GeoCities",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "GeoCities · FTC case record",
+          "year": 1998,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 1998.",
+          "caseRef": "982 3015",
+          "source": {
+            "title": "GeoCities | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/982-3015-geocities",
+            "date": "1999-02-12",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:54.825Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:58:46.643Z",
+  "generatedAt": "2026-11-22T06:58:55.414Z",
   "index": {
     "exe": {
       "brave.exe": [
