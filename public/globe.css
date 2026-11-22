@@ -1,11 +1,11 @@
 #view-globe {
-  --map-ink: #f0f5ff;
-  --map-muted: #aebfd7;
-  --map-border: #2e405b;
-  --map-panel: #0d1626;
-  --map-out: #ffb347;
-  --map-in: #4cc9ff;
-  --map-tracker: var(--tracker, #ff4d6d);
+  --map-ink: #f4f4f4;
+  --map-muted: #b5b5b5;
+  --map-border: #424242;
+  --map-panel: #101010;
+  --map-out: #e0e0e0;
+  --map-in: #8a8a8a;
+  --map-tracker: var(--tracker, #ff3b3b);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(270px, 320px);
   gap: 16px;
@@ -27,9 +27,9 @@
   min-width: 0;
   height: clamp(500px, calc(100dvh - 142px), 1080px);
   overflow: hidden;
-  background: #070b16;
+  background: #080808;
   border: 1px solid var(--map-border);
-  border-radius: 18px;
+  border-radius: 2px;
 }
 
 #globe {
@@ -63,7 +63,9 @@
   margin: 0;
   font-size: clamp(22px, 2.8vw, 36px);
   line-height: 1.15;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  font-family: Consolas, monospace;
 }
 
 #view-globe .globe-overview p {
@@ -74,9 +76,9 @@
 #view-globe .globe-legend,
 #view-globe .globe-tip,
 #view-globe .globe-motion {
-  background: rgba(9, 17, 31, 0.94);
+  background: #101010;
   border: 1px solid var(--map-border);
-  border-radius: 12px;
+  border-radius: 2px;
 }
 
 #view-globe .globe-legend {
@@ -127,7 +129,6 @@
   padding: 12px 14px;
   pointer-events: none;
   overflow-wrap: anywhere;
-  box-shadow: 0 8px 24px #0008;
 }
 
 #view-globe .globe-tip.pinned {
@@ -160,7 +161,7 @@
   width: 36px;
   height: 36px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 2px;
   background: transparent;
   color: var(--map-ink);
   font: 24px/1 "Segoe UI", system-ui, sans-serif;
@@ -169,7 +170,7 @@
 
 #view-globe .globe-tracker {
   margin-left: 7px;
-  color: #ff91a4;
+  color: var(--map-tracker);
   font-size: 14px;
 }
 
@@ -186,7 +187,7 @@
   min-width: 0;
   padding: 16px;
   border: 1px solid var(--map-border);
-  border-radius: 16px;
+  border-radius: 2px;
   background: var(--map-panel);
 }
 
@@ -230,7 +231,7 @@
   min-height: 36px;
   padding: 4px 7px 4px 4px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 2px;
   background: transparent;
   color: var(--map-ink);
   font: inherit;
@@ -247,7 +248,7 @@
 }
 
 #view-globe .globe-country-button:not(:disabled):hover {
-  background: #1e3554;
+  background: #272727;
 }
 
 #view-globe .globe-country-button:focus-visible {
@@ -266,6 +267,7 @@
   height: 11px;
   background-image: var(--globe-flag-sprite);
   background-repeat: no-repeat;
+  filter: grayscale(1);
   transform: scale(1.25);
 }
 
@@ -293,8 +295,8 @@
   max-width: 100%;
   padding: 5px 9px;
   border: 1px solid var(--map-border);
-  border-radius: 8px;
-  background: #121e32;
+  border-radius: 2px;
+  background: #151515;
   color: var(--map-muted);
   font: inherit;
   font-size: 14px;
@@ -307,23 +309,23 @@
   flex: 0 0 13px;
   height: 4px;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--route-out) 50%, var(--route-in) 50%);
+  background: var(--route-out);
   content: "";
 }
 
 #view-globe .globe-app[aria-pressed="true"] {
-  border-color: #83baff;
-  background: #1e3554;
+  border-color: #d0d0d0;
+  background: #272727;
   color: var(--map-ink);
 }
 
 #view-globe button:not(:disabled):hover {
   color: #fff;
-  border-color: #83baff;
+  border-color: #d0d0d0;
 }
 
 #view-globe button:focus-visible {
-  outline: 2px solid #a8d5ff;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -364,15 +366,15 @@
 @media (prefers-contrast: more) {
   #view-globe {
     --map-ink: #fff;
-    --map-muted: #e4efff;
-    --map-border: #95aac5;
+    --map-muted: #ededed;
+    --map-border: #b0b0b0;
   }
 }
 
 body.hc #view-globe {
   --map-ink: #fff;
-  --map-muted: #e4efff;
-  --map-border: #a1b3cb;
+  --map-muted: #ededed;
+  --map-border: #c0c0c0;
   --map-panel: #080808;
 }
 

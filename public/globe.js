@@ -18,14 +18,11 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const regionNames = shared?.util?.countryName ? null : new Intl.DisplayNames(['en'], { type: 'region' });
   const palette = [
-    ['#ffb347', '#4cc9ff'],
-    ['#ff8766', '#77b0ff'],
-    ['#ffe17b', '#61e4df'],
-    ['#ffa782', '#a8a9ff'],
-    ['#ffc958', '#9be3ff'],
-    ['#ff9eab', '#6df2b6'],
+    ['#ffffff', '#a0a0a0'],
+    ['#d6d6d6', '#787878'],
+    ['#eeeeee', '#8a8a8a'],
   ];
-  const trackerColors = ['#ff4d6d', '#ff8093'];
+  const trackerColor = getComputedStyle(document.documentElement).getPropertyValue('--tracker').trim() || '#ff3b3b';
   // The matching offline sprite is bundled in globe.css.
   const flagCodes = `
     AD AE AF AG AI AL AM AN AO AR AS AT AU AW AX AZ
@@ -163,9 +160,8 @@
       const button = node('button', 'globe-app');
       button.type = 'button';
       if (app.id) {
-        const [out, inbound] = palette[hash(app.id) % palette.length];
+        const [out] = palette[hash(app.id) % palette.length];
         button.style.setProperty('--route-out', out);
-        button.style.setProperty('--route-in', inbound);
         button.title = app.id;
       }
       button.addEventListener('click', () => {
@@ -219,7 +215,7 @@
   function makeArcs(places, home) {
     const next = new Map();
     for (const place of places) {
-      const [out, inbound] = place.tracker ? trackerColors : palette[hash(place.appId) % palette.length];
+      const [out, inbound] = place.tracker ? [trackerColor, trackerColor] : palette[hash(place.appId) % palette.length];
       const spread = hash(place.id) % 10 / 100;
       for (const [direction, start, end, color, scale] of [
         ['out', home, place, out, 0.32],
@@ -231,7 +227,7 @@
           startLat: start.lat, startLng: start.lng, endLat: end.lat, endLng: end.lng,
           startAlt: 0.004, endAlt: 0.004, scale: scale + spread,
           color: arcColor(color, place.active),
-          active: place.active, duration: 3400 + hash(id) % 1200, phase: spread,
+          active: place.active, inbound: direction === 'in', duration: 3400 + hash(id) % 1200, phase: spread,
         });
         next.set(id, arc);
       }
@@ -370,17 +366,15 @@
   function initGlobe() {
     try {
       globe = new window.Globe(mount, { rendererConfig: { antialias: true, alpha: true } })
-        .globeImageUrl('/vendor/earth-night.jpg')
-        .backgroundImageUrl('/vendor/night-sky.png')
-        .backgroundColor('#070b16')
-        .atmosphereColor('#4c8de1')
-        .atmosphereAltitude(0.17)
+        .backgroundColor('#080808')
+        .showAtmosphere(false)
+        .showGraticules(true)
         .arcAltitudeAutoScale('scale')
         .arcStartAltitude('startAlt')
         .arcEndAltitude('endAlt')
         .arcColor('color')
         .arcCurveResolution(40)
-        .arcDashLength((arc) => arc.active && !reducedMotion.matches ? 0.65 : 1)
+        .arcDashLength((arc) => arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
         .arcDashGap((arc) => arc.active && !reducedMotion.matches ? 0.22 : 0)
         .arcDashInitialGap('phase')
         .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
@@ -388,9 +382,9 @@
         .pointAltitude((point) => point.key === 'home' ? 0.022 : 0.008)
         .pointRadius((point) => point.key === 'home' ? 0.65 : Math.min(1.4, 0.26 + Math.sqrt(point.sockets) * 0.16))
         .pointColor((point) => {
-          if (point.key === 'home') return '#eefaff';
-          if (point.places.some((place) => place.tracker)) return '#ff4d6d';
-          return point.sockets ? '#7ce7ff' : '#6c8aab';
+          if (point.key === 'home') return '#ffffff';
+          if (point.places.some((place) => place.tracker)) return trackerColor;
+          return point.sockets ? '#e0e0e0' : '#858585';
         })
         .pointResolution(10)
         .pointsTransitionDuration(0)
@@ -401,6 +395,7 @@
         .onPointClick(pinPoint)
         .onGlobeClick(clearPoint);
 
+      globe.globeMaterial().color.set('#161616');
       const controls = globe.controls();
       controls.autoRotateSpeed = 0.27;
       controls.enablePan = false;
@@ -408,7 +403,7 @@
       controls.maxDistance = 530;
       setRotation(rotating);
       const home = hasCoordinates(state?.home) ? state.home : { lat: 43, lng: -81 };
-      globe.pointOfView({ lat: home.lat - 9, lng: home.lng + 28, altitude: 1.85 });
+      globe.pointOfView({ lat: home.lat - 9, lng: home.lng, altitude: 1.65 });
       globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     } catch (error) {
       globe = undefined;

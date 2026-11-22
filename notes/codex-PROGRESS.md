@@ -43,3 +43,9 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 
 - Reviewed the updated integration branch. The shared stylesheet now uses grayscale wire colors, so Globe defines its warm and cool legend swatches locally to match the route palette.
 - Verified the scoped CSS against the route palette and ran JavaScript syntax and diff checks. This patch was checked statically.
+
+## Black-and-white theme
+
+- Merged the shared theme and preserved both lanes’ entries in the shared requests file.
+- Replaced Earth imagery with a latitude and longitude grid. The routes, panels, and flag icons are grayscale. Tracker details use the shared red accent.
+- Opened the merged Globe tab in headless Chrome on port 4318 and inspected a 1280×800 capture with live destinations.
