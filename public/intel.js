@@ -95,14 +95,23 @@
     const permissions = report('permissions', 'Permission history', (rows) => {
       const groups = new Map();
       for (const row of rows) {
-        const group = groups.get(row.capability) || [];
+        const key = String(row.capability).toLowerCase();
+        const group = groups.get(key) || [];
         group.push(row);
-        groups.set(row.capability, group);
+        groups.set(key, group);
       }
       const day = 86400000;
       const now = scan.finishedAt || Date.now();
-      const labels = { webcam: 'Camera', microphone: 'Microphone', location: 'Location', contacts: 'Contacts' };
-      return [...groups].map(([capability, group]) => `<h3>${esc(labels[capability] || capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
+      const priority = ['location', 'microphone', 'webcam', 'contacts', 'phonecallhistory', 'phonecall', 'email', 'chat'];
+      const labels = { webcam: 'Camera', microphone: 'Microphone', location: 'Location', contacts: 'Contacts',
+        phonecallhistory: 'Phone call history', phonecall: 'Phone calls', email: 'Email', chat: 'Chat',
+        graphicscapturewithoutborder: 'Screen capture without border', graphicscaptureprogrammatic: 'Screen capture',
+        passkeysenumeration: 'Passkey list', systemaimodels: 'On-device AI models', useraccountinformation: 'Account info',
+        broadfilesystemaccess: 'Broad file access', documentslibrary: 'Documents library', pictureslibrary: 'Pictures library',
+        videoslibrary: 'Videos library', appointments: 'Calendar', radios: 'Wireless radios', gazeinput: 'Eye tracking',
+        humaninterface: 'Human interface devices', activity: 'Motion and activity', bluetoothsync: 'Bluetooth sync',
+        bluetooth: 'Bluetooth', cellularData: 'Cellular data', musiclibrary: 'Music library', notificationlistener: 'Notifications' };
+      const renderCapability = ([capability, group]) => `<h3>${esc(labels[capability] || group[0].capability.replace(/([a-z0-9])([A-Z])/g, '$1 $2'))}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
         + list(group.map((row) => {
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
           const marker = row.inUse ? '*' : '#';
@@ -110,7 +119,12 @@
           return `<code>[${timeline}]</code> ${esc(row.app)} ${researchBadge(row.researchId)}<br>`
             + esc(row.inUse ? 'In use since ' + timestamp(row.lastUsedStart) : Number.isFinite(row.lastUsedStart)
               ? timestamp(row.lastUsedStart) + (Number.isFinite(row.lastUsedStop) ? ' to ' + timestamp(row.lastUsedStop) : '') : 'No use timestamp reported');
-        }), '')).join('');
+        }), '');
+      const sensitive = priority.filter((key) => groups.has(key)).map((key) => [key, groups.get(key)]);
+      const other = [...groups].filter(([key]) => !priority.includes(key)).sort(([a], [b]) =>
+        (labels[a] || a).localeCompare(labels[b] || b));
+      return sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
+        <summary>Other permissions (${other.length})</summary>${other.map(renderCapability).join('')}</details>` : '');
     }, 'No permission history was reported.');
     const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
       return `<strong>${esc(row.name)}</strong> ${researchBadge(row.researchId)}`
