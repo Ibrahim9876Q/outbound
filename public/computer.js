@@ -792,7 +792,7 @@
       return `<div class="xray-group"><strong>${kind === 'mic' ? 'Microphone' : 'Camera'}</strong><span>${lines.map(esc).join('<br>') || 'No use recorded'}</span></div>`;
     }).join('');
     return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
-      + `<button type="button" class="toggle-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
+      + `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
   }
 

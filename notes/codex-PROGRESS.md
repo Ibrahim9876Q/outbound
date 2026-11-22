@@ -91,3 +91,12 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `67c2221` matches active device sessions by lowercase executable ID and refreshes immediately on device events. Both devices were inactive in the real-data runs. Hardware transition timing was not verified.
 - `8c520db` adds the Phone pill and lets the header wrap without clipping. Chrome observed the real Phone service both online with counts and offline.
 - `4fc9e31` fits the laptop to available stage space. The final Chrome run displayed seven live apps without overlap at both sizes. At 1280×800 the measured screen fit 14 compact slots. At 1920×1080 the lid and projected deck filled about 90% of the stage height. Wires rendered at both sizes and the console had no errors.
+
+## Discovery demo pass
+
+- Fast-forwarded to `d0c4e4a` before editing. Phone gateway files were outside this round.
+- `2bda267` adds App X-ray with a verdict, tracker groups, country flags, app device history, and filtered Globe navigation.
+- `8110fe1` highlights newly observed tracker companies and flashes the matching Globe route when visible. Weather.com produced a real batch for The Rubicon Project and four more. The next toast appeared just over three seconds later.
+- `7c3a224` adds the page-session strip. During live verification its count rose from seven companies and zero trackers to 18 companies and six trackers. Both sensor timers remained at zero while the devices were inactive.
+- `620d6e3` preserves the laptop scale under 600px of height and lets the stage scroll. At 1280×550 Chrome measured a 640px laptop width and confirmed the stage could scroll to the keyboard and deck.
+- Chrome on port 4318 passed at 1280×800 and 1920×1080 with no console errors. Live verification checked the X-ray verdict against Chrome's observed companies, the app-matched filter, the tracker toast rate and batch, and the Globe flash.
