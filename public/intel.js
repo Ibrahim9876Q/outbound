@@ -524,8 +524,10 @@
       pending.replaceChildren();
       pending.removeAttribute('aria-busy');
     }
+    const rulesList = $('rules-list');
     if (!policy) {
-      $('rules-list').textContent = 'No local policy data available.';
+      if (rulesList.textContent !== 'No local policy data available.') rulesList.textContent = 'No local policy data available.';
+      delete rulesList.dataset.model;
       return;
     }
     const auth0 = policy.auth0Configured ?? policy.providerConfigured;
@@ -534,10 +536,14 @@
       : 'Decision provider: ' + policy.provider + ' / Auth0: ' +
         (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured') +
         ' / enforcer: ' + policy.enforcer;
-    $('rules-list').innerHTML = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
+    const markup = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
       `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <small>Created by ${esc(authorName(rule.createdBy))} / ${esc(rule.approval?.status || 'unavailable')}</small>
         ${canWatch(rule) ? `<button type="button" class="tool-btn" data-watch-rule="${esc(rule.id)}">Show approval</button>` : ''}
         <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || !authLoaded || authNeedsSignIn() || policy.enforcer !== 'dry-run' ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
+    if (rulesList.dataset.model !== markup) {
+      rulesList.innerHTML = markup;
+      rulesList.dataset.model = markup;
+    }
   }
 
   function canWatch(rule) {
