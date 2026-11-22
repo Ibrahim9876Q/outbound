@@ -1855,7 +1855,44 @@
       },
       "declared": [],
       "sharesWith": [],
-      "destinations": [],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "TikTok named United States as a server location in its October 2023 data storage disclosure.",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "TikTok",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:24:01.079Z"
+          }
+        },
+        {
+          "country": "Malaysia",
+          "note": "TikTok named Malaysia as a server location in its October 2023 data storage disclosure.",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "TikTok",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:24:01.079Z"
+          }
+        },
+        {
+          "country": "Singapore",
+          "note": "TikTok named Singapore as a server location in its October 2023 data storage disclosure.",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "TikTok",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:24:01.079Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "fine",
@@ -1981,7 +2018,7 @@
             "url": "https://about.fb.com/news/2023/05/our-response-to-the-decision-on-facebooks-eu-us-data-transfers/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:22:30.263Z"
+            "fetchedAt": "2026-11-22T06:24:05.431Z"
           }
         }
       ],
@@ -10646,7 +10683,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:23:57.765Z",
+  "generatedAt": "2026-11-22T06:24:05.433Z",
   "index": {
     "exe": {
       "brave.exe": [

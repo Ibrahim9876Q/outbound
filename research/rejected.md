@@ -509,3 +509,9 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Cal AI — https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616 — No developer-declared data linked to the user
 - Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
 - ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
+
+## facts-04 · 2026-11-22T06:24:05.432Z
+
+- Google — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: United States
+- Microsoft — https://www.microsoft.com/en-us/privacy/privacystatement — missing evidence: Where we store and process personal data
+- Amazon — https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — curl: (22) The requested URL returned error: 403
