@@ -7,6 +7,7 @@ const { startDns } = require('./dns');
 const { createFga, createCiba } = require('./auth0');
 const { createConsent, ConsentError } = require('./consent');
 const { createDemo, lookupTracker, DOMAIN } = require('./demo');
+const { randomUUID } = require('node:crypto');
 
 const DASHBOARD_PORT = 4320;
 const LOOPBACK = '127.0.0.1';
@@ -79,6 +80,7 @@ async function startGateway(config, { fetch, laptop = false, dashboardPort = DAS
   const assets = new Map(await Promise.all(Object.entries(ASSETS).map(async ([route, [type, file]]) =>
     [route, { type, body: await fs.readFile(file) }])));
   const stats = { lookups: 0, blocked: 0 };
+  const instance = randomUUID();
   const lookups = [];
   const consent = createConsent({
     fga: demo?.fga || (config.fga && createFga(config.fga, fetch)),
@@ -157,7 +159,7 @@ async function startGateway(config, { fetch, laptop = false, dashboardPort = DAS
     if (req.url === '/api/state') {
       return json(res, 200, {
         dns: { host: config.host, port: dnsListener.port },
-        stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo), testDomain: laptop ? DOMAIN : null,
+        instance, stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo), testDomain: laptop ? DOMAIN : null,
       });
     }
     const asset = assets.get(req.url);
