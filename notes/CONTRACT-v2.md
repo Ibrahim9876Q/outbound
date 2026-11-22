@@ -121,3 +121,7 @@ GET /api/scan/status = {
 ```
 
 Poll status for progress and fetch the full result when a visible section is ready or the scan completes. Counts describe rows available in the current result and can include stale autorun rows. `autoruns[].stale: true` marks rows retained from the last completed scan while their source is being retried or could not be refreshed. Each successful source replaces its own rows, including when it returns an empty list.
+
+## 9. Performance replay (xray9)
+
+`npm run fixture` requires `OUTBOUND_FIXTURE` to point to a local recording of a fresh `/api/state` response with 80 distinct apps. Replay is for performance testing only. No live collector or Phone bridge runs in this mode. Every response has `X-Outbound-Mode: FIXTURE DATA`. The dashboard header, `/api/state` JSON, and each SSE state frame carry the same label. The recording retains its original timestamps. Other API and auth reads return a labeled HTTP 503, and API writes return a labeled HTTP 405.

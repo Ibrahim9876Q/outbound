@@ -3,7 +3,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { NetworkWatcher } = require('./lib/network');
+const { BANNER, HEADER, loadFixture, fixtureHtml, fixtureApi } = require('./lib/fixture');
 const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, renderScanAndLinks, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
@@ -15,6 +15,12 @@ const { scoreApps } = require('./lib/score');
 const { DailyHistory } = require('./lib/history');
 const { researchLink } = require('./lib/dossier');
 const { limitSnapshot } = require('./lib/payload');
+
+let fixture = null;
+if (Object.hasOwn(process.env, 'OUTBOUND_FIXTURE')) {
+  try { fixture = loadFixture(process.env.OUTBOUND_FIXTURE); }
+  catch (error) { console.error(error.message); process.exit(1); }
+}
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -73,14 +79,14 @@ function pushEvent(e) {
   stream.event(e);
 }
 
-const network = new NetworkWatcher(pushEvent);
-const devices = new DeviceWatcher(pushEvent);
-const scan = new StoredScan();
-const linkWatcher = new LinkWatcher();
-const history = new DailyHistory();
+const network = fixture ? null : new (require('./lib/network').NetworkWatcher)(pushEvent);
+const devices = fixture ? null : new DeviceWatcher(pushEvent);
+const scan = fixture ? null : new StoredScan();
+const linkWatcher = fixture ? null : new LinkWatcher();
+const history = fixture ? null : new DailyHistory();
 let scoreCache;
 let desktopCache;
-process.on('exit', () => {
+if (!fixture) process.on('exit', () => {
   devices.close();
   network.foreground.close();
   try { history.save(); } catch (error) { warnPoll('history', error); }
@@ -109,6 +115,7 @@ function desktop() {
 }
 
 function state() {
+  if (fixture) return fixture;
   const linked = desktop();
   const { byId } = scores(linked.apps);
   return limitSnapshot({ at: Date.now(), home: HOME,
@@ -125,22 +132,24 @@ function loop(fn, everyMs, name) {
   };
   go();
 }
-loop(async () => {
-  await network.poll();
-  sampledAt = Date.now();
-  history.capture(sampledAt, network.dailyReport.forDay(sampledAt), devices.reportSessions(sampledAt));
-}, 1500, 'network');
-loop(() => devices.poll(), 750, 'devices');
-loop(() => {
-  const { apps, links } = network.snapshot();
-  return linkWatcher.poll(apps, links);
-}, 15000, 'links');
-const endpoint = phoneEndpoint();
-if (endpoint) loop(() => pollPhone(endpoint), 2000, 'phone');
+if (!fixture) {
+  loop(async () => {
+    await network.poll();
+    sampledAt = Date.now();
+    history.capture(sampledAt, network.dailyReport.forDay(sampledAt), devices.reportSessions(sampledAt));
+  }, 1500, 'network');
+  loop(() => devices.poll(), 750, 'devices');
+  loop(() => {
+    const { apps, links } = network.snapshot();
+    return linkWatcher.poll(apps, links);
+  }, 15000, 'links');
+  const endpoint = phoneEndpoint();
+  if (endpoint) loop(() => pollPhone(endpoint), 2000, 'phone');
+  setInterval(() => {
+    try { history.save(); } catch (error) { warnPoll('history', error); }
+  }, 30000);
+}
 setInterval(() => stream.flush(), 500);
-setInterval(() => {
-  try { history.save(); } catch (error) { warnPoll('history', error); }
-}, 30000);
 
 const PUBLIC = path.join(__dirname, 'public');
 const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
@@ -157,11 +166,12 @@ function sendFile(res, file) {
   fs.readFile(file, (err, buf) => {
     if (err) { res.writeHead(404); return res.end('Not found'); }
     res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
-    res.end(buf);
+    res.end(fixture && file === path.join(PUBLIC, 'index.html') ? fixtureHtml(buf.toString('utf8')) : buf);
   });
 }
 
 const server = http.createServer(async (req, res) => {
+  if (fixture) res.setHeader(HEADER, BANNER);
   if (!LOCAL_HOST.test(req.headers.host || '')) {
     res.writeHead(403);
     return res.end();
@@ -171,6 +181,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(400);
     return res.end();
   }
+  if (fixture && fixtureApi(req, res, url, fixture, stream)) return;
   if (url.pathname === '/events') {
     return stream.connect(res);
   }
@@ -222,8 +233,10 @@ const server = http.createServer(async (req, res) => {
       network.seenCompanies.namesOn(localDate(now)));
     return res.end(daily + renderScanAndLinks(scan.result, [...linkWatcher.current.edges.values()]));
   }
-  if (await require('./lib/auth').handle(req, res, url)) return;
-  if (await require('./lib/blocker/routes').handle(req, res, url)) return;
+  if (!fixture) {
+    if (await require('./lib/auth').handle(req, res, url)) return;
+    if (await require('./lib/blocker/routes').handle(req, res, url)) return;
+  }
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
   const file = path.resolve(PUBLIC, rel);
@@ -232,4 +245,4 @@ const server = http.createServer(async (req, res) => {
 });
 
 // Only listen on this computer, so nobody else on the Wi-Fi can see your data.
-server.listen(PORT, '127.0.0.1', () => console.log(`Outbound running at http://127.0.0.1:${server.address().port}`));
+server.listen(PORT, '127.0.0.1', () => console.log(`Outbound running at http://127.0.0.1:${server.address().port}${fixture ? ` (${BANNER})` : ''}`));

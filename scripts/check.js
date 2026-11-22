@@ -4,9 +4,11 @@ const { once } = require('node:events');
 const path = require('node:path');
 
 async function check() {
+  const env = { ...process.env, PORT: '0' };
+  delete env.OUTBOUND_FIXTURE;
   const child = spawn(process.execPath, ['server.js'], {
     cwd: path.join(__dirname, '..'),
-    env: { ...process.env, PORT: '0' },
+    env,
     stdio: ['ignore', 'pipe', 'inherit'],
   });
   const stopped = once(child, 'close').catch(() => {});
@@ -26,6 +28,7 @@ async function check() {
     async function get(route) {
       const result = await fetch(new URL(route, base), { signal: timeout, redirect: 'error' });
       assert.equal(result.status, 200, `GET ${route}`);
+      assert.equal(result.headers.has('X-Outbound-Mode'), false, `Live response for ${route}`);
       return result;
     }
     const html = await (await get('/')).text();

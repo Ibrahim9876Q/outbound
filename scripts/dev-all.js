@@ -1,6 +1,11 @@
 const { spawn } = require('node:child_process');
 const path = require('node:path');
 
+if (Object.hasOwn(process.env, 'OUTBOUND_FIXTURE')) {
+  console.error('Use npm run fixture for desktop-only replay. Clear OUTBOUND_FIXTURE to run the live servers.');
+  process.exit(1);
+}
+
 const root = path.join(__dirname, '..');
 const children = new Set();
 let stopping = false;
