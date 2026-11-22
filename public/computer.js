@@ -34,11 +34,11 @@
     hint: $('app-hint'),
   };
 
-  const ICON_W = 108;  // .app width in computer.css
+  const ICON_W = 96;  // .app width in computer.css
   const TILE_TOP = 6;  // .app padding-top
-  const TILE = 56;     // .tile size
-  const SLOT_W = 116;
-  const SLOT_H = 112;
+  const TILE = 44;     // .tile size
+  const SLOT_W = 104;
+  const SLOT_H = 104;
   const MAX_IDLE_LABELS = 4;  // "both → X" labels shown when no app is selected
   const FRESH_MS = 90 * 1000; // apps that just started talking get priority for a desktop spot
 
@@ -266,12 +266,12 @@
   function buildSlots() {
     const W = el.screen.clientWidth;
     const H = el.screen.clientHeight;
-    const top = el.internet.offsetHeight + 52;
+    const top = el.internet.offsetTop + el.internet.offsetHeight + 12;
     const bottom = H - 38 - 8;
     const left = 14, right = W - 14;
     const cols = Math.max(1, Math.floor((right - left) / SLOT_W));
     const rows = Math.max(1, Math.floor((bottom - top) / SLOT_H));
-    const key = `${cols}x${rows}@${top}`;
+    const key = `${W}x${H}@${top}`;
     if (key === gridKey) return false;
     gridKey = key;
     const cellW = (right - left) / cols;
@@ -279,8 +279,8 @@
     const focus = { x: W / 2, y: top + (bottom - top) * 0.45 };
     slots = [];
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      const x = left + c * cellW + (cellW - ICON_W) / 2;
-      const y = top + r * cellH + (cellH - SLOT_H) / 2 + 4;
+      const x = Math.round(left + c * cellW + (cellW - ICON_W) / 2);
+      const y = Math.round(top + r * cellH + (cellH - SLOT_H) / 2);
       const cx = x + ICON_W / 2, cy = y + SLOT_H / 2;
       // Fill from the middle outward, preferring wide rows over tall columns.
       slots.push({ x, y, taken: null, rank: Math.abs(cx - focus.x) / W + Math.abs(cy - focus.y) / H * 1.6 });
@@ -312,7 +312,7 @@
     const counts = new Map();
     for (const a of list) counts.set(a.name, (counts.get(a.name) || 0) + 1);
     for (const a of list) a.dupe = counts.get(a.name) > 1;
-    return list.sort((a, b) => b.priority - a.priority);
+    return list.sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id));
   }
 
   function renderDesktop(state, users) {
@@ -346,7 +346,8 @@
       if (!icon.slot) { icon.node.hidden = true; hiddenApps++; continue; }
       icon.node.hidden = false;
       if (!icon.node.isConnected) el.desktop.appendChild(icon.node);
-      icon.node.style.transform = `translate(${Math.round(icon.slot.x)}px, ${Math.round(icon.slot.y)}px)`;
+      icon.node.style.left = `${icon.slot.x}px`;
+      icon.node.style.top = `${icon.slot.y}px`;
       updateIcon(icon.node, app);
     }
     el.empty.hidden = apps.length > 0;
@@ -438,7 +439,7 @@
     if (!icon || !icon.slot || icon.node.hidden) return null;
     const x = icon.slot.x + ICON_W / 2;
     if (where === 'top') return { x, y: icon.slot.y + TILE_TOP };
-    if (where === 'bottom') return { x, y: icon.slot.y + TILE_TOP + TILE + 40 };
+    if (where === 'bottom') return { x, y: icon.slot.y + icon.node.offsetHeight };
     return { x, y: icon.slot.y + TILE_TOP + TILE / 2 };
   }
 
@@ -530,8 +531,7 @@
     ];
     for (const icon of icons.values()) {
       if (!icon.slot || icon.node.hidden) continue;
-      const nameH = icon.node.querySelector('.name').offsetHeight;
-      boxes.push({ x: icon.slot.x + 6, y: icon.slot.y, w: ICON_W - 12, h: TILE_TOP + TILE + 6 + nameH });
+      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: ICON_W, h: icon.node.offsetHeight });
     }
     let budget = selected ? Infinity : MAX_IDLE_LABELS;
     const hits = (b) => boxes.some((o) => b.x < o.x + o.w && o.x < b.x + b.w && b.y < o.y + o.h && o.y < b.y + b.h);
