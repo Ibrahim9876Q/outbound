@@ -12,6 +12,10 @@ const chosen = [
   [6002, 'utilities', /^(Govee Home|Google Authenticator|My Verizon|Apple Support|Proton VPN|Xfinity|Blink Home Monitor|Starlink|My Spectrum|Bambu Handy|NordVPN|1\.1\.1\.1)\b/i],
   [6015, 'finance', /^(Kalshi|Cash App|PayPal|Venmo|Klarna|Chime|Remitly|Fidelity Investments|Rocket Money|Robinhood|Intuit Credit Karma)\b/i],
   [6024, 'shopping', /^(Best Buy|Depop|Amazon Shopping|Costco|Affirm|Bath & Body Works)\b/i],
+  [6007, 'productivity', /^(Gmail|Grok|Microsoft Authenticator|Google Drive|Meta AI|Google Docs|Google Sheets|Link to Windows|Yahoo Mail|Smart Home Manager|Google Slides|Google Calendar|HP)\b/i],
+  [6006, 'reference', /^(Bible Chat|Bible Shorts|Translate Now|Collectr|Bible Path|FoilSnap|PSA|Hallow|WoodSense|Ancestry|CoinSnap|Sky Guide|COtrip Planner)\b/i],
+  [6013, 'health', /^(Oura|AHEALTH|Planet Fitness|Sweatcoin|WeWard|Yuka|LADDER|Garmin Connect|MenuFit|Cal AI|AllTrails|Crunch Fitness|Hume Health|Aetna Health|RISE|MyFitnessPal|Finch|ClassPass|Hatch Sleep)\b/i],
+  [6017, 'education', /^(Duolingo|Learna|Imprint|Toca Boca World|Deepstash|Google Classroom|Knowunity|ParentSquare|Gauth|Kahoot|Canvas by Instructure|ABCmouse|Simply Draw|PictureThis|Lingokids|Quizlet|ClassDojo|PowerSchool Mobile|Elevate)\b/i],
 ];
 
 function plain(value) {

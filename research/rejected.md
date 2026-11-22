@@ -468,3 +468,16 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 ## App Store chart leads
 
 - Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+
+## facts-04 · 2026-11-22T06:22:30.265Z
+
+- tiktok — https://in.tiktok.com/legal/page/eea/privacy-policy/en — curl: (22) The requested URL returned error: 404
+- tiktok — https://in.tiktok.com/legal/page/eea/privacy-policy/en — curl: (22) The requested URL returned error: 404
+- tiktok — https://in.tiktok.com/legal/page/eea/privacy-policy/en — curl: (22) The requested URL returned error: 404
+- Google — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: United States
+- Microsoft — https://www.microsoft.com/en-us/privacy/privacystatement — missing evidence: Where we store and process personal data
+- Amazon — https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — curl: (22) The requested URL returned error: 403

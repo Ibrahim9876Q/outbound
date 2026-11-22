@@ -1971,7 +1971,20 @@
       },
       "declared": [],
       "sharesWith": [],
-      "destinations": [],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Meta describes transferring European Facebook data to the United States.",
+          "source": {
+            "title": "Our Response to the Decision on Facebook’s EU-US Data Transfers",
+            "publisher": "Meta",
+            "url": "https://about.fb.com/news/2023/05/our-response-to-the-decision-on-facebooks-eu-us-data-transfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:30.263Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "fine",
@@ -5375,6 +5388,383 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "klarna",
+      "name": "Klarna",
+      "publisher": "Klarna Bank AB",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Klarna: Smarter everyday money App - App Store",
+            "publisher": "Klarna Bank AB",
+            "url": "https://apps.apple.com/us/app/klarna-smarter-everyday-money/id1115120118",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.230Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "chime",
+      "name": "Chime",
+      "publisher": "Chime Financial, Inc.",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Chime® – Mobile Banking App - App Store",
+            "publisher": "Chime Financial, Inc.",
+            "url": "https://apps.apple.com/us/app/chime-mobile-banking/id836215269",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.283Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "remitly",
+      "name": "Remitly",
+      "publisher": "Remitly Inc",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Usage Data, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Remitly: Send money & transfer App - App Store",
+            "publisher": "Remitly Inc",
+            "url": "https://apps.apple.com/us/app/remitly-send-money-transfer/id674258465",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.360Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fidelity-investments",
+      "name": "Fidelity Investments",
+      "publisher": "Fidelity Investments",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Fidelity Investments App - App Store",
+            "publisher": "Fidelity Investments",
+            "url": "https://apps.apple.com/us/app/fidelity-investments/id348177453",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.796Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "robinhood",
+      "name": "Robinhood",
+      "publisher": "Robinhood Markets Inc",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Contacts, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Robinhood: Trading & Investing App - App Store",
+            "publisher": "Robinhood Markets Inc",
+            "url": "https://apps.apple.com/us/app/robinhood-trading-investing/id938003185",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.691Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "rocket-money",
+      "name": "Rocket Money",
+      "publisher": "Rocket Money",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Rocket Money - Bills & Budgets App - App Store",
+            "publisher": "Rocket Money",
+            "url": "https://apps.apple.com/us/app/rocket-money-bills-budgets/id1130616675",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.630Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "intuit-credit-karma",
+      "name": "Intuit Credit Karma",
+      "publisher": "Credit Karma, Inc.",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Financial Info, Contact Info, Browsing History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Intuit Credit Karma App - App Store",
+            "publisher": "Credit Karma, Inc.",
+            "url": "https://apps.apple.com/us/app/intuit-credit-karma/id519817714",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:22.568Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "best-buy",
+      "name": "Best Buy",
+      "publisher": "Best Buy Co., Inc.",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Best Buy: Tech Deals & Savings App - App Store",
+            "publisher": "Best Buy Co., Inc.",
+            "url": "https://apps.apple.com/us/app/best-buy-tech-deals-savings/id314855255",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.332Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "amazon-shopping",
+      "name": "Amazon Shopping",
+      "publisher": "AMZN Mobile LLC",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Amazon Shopping App - App Store",
+            "publisher": "AMZN Mobile LLC",
+            "url": "https://apps.apple.com/us/app/amazon-shopping/id297606951",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.670Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "depop",
+      "name": "Depop",
+      "publisher": "Depop Limited",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Depop - Buy & Sell Clothes App - App Store",
+            "publisher": "Depop Limited",
+            "url": "https://apps.apple.com/us/app/depop-buy-sell-clothes/id518684914",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.720Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "costco",
+      "name": "Costco",
+      "publisher": "Costco Wholesale Corporation",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Costco App - App Store",
+            "publisher": "Costco Wholesale Corporation",
+            "url": "https://apps.apple.com/us/app/costco/id535509415",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.831Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bath-body-works",
+      "name": "Bath & Body Works",
+      "publisher": "Bath & Body Works",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Bath & Body Works | B&BW App - App Store",
+            "publisher": "Bath & Body Works",
+            "url": "https://apps.apple.com/us/app/bath-body-works-b-bw/id1256027729",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.636Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "affirm",
+      "name": "Affirm",
+      "publisher": "Affirm, Inc",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Affirm: Buy now, pay over time App - App Store",
+            "publisher": "Affirm, Inc",
+            "url": "https://apps.apple.com/us/app/affirm-buy-now-pay-over-time/id967040652",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:22:23.649Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -8690,7 +9080,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:21:28.516Z",
+  "generatedAt": "2026-11-22T06:22:30.266Z",
   "index": {
     "exe": {
       "brave.exe": [
