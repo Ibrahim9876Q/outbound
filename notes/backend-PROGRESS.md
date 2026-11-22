@@ -98,3 +98,10 @@ Verify the first SSE state after a new connection contains the active peer link.
 - Port 4319 completed a real opt-in scan in 20.844 seconds. Out of 15 profiles, all 15 history databases and 14 cookie databases were readable. One profile reported `EBUSY`.
 - Aggregates were 497 visited domains, 104 with public tracker matches, 162 tracker companies, 974 cookie domains, and 378 flagged cookie domains. The time-limited metadata walk reported 23,177,254,998 bytes across 49 app-folder rows.
 - The local state returned 154 link records at the end of the scan. Phone remained null in standalone mode and live state had a completed sample timestamp. The report served all three new sections.
+
+## xray3 live scan · 2026-11-22
+
+- The final scan on port 4319 returned 629 permission records across 23 capabilities, including 520 with recorded start times. It found 199 installed-software rows with six dossier matches, 221 autorun records with 40 flags, and 69 extensions with 35 permission-based flags.
+- The settings collector returned eight rows, five with observed registry values. The live API returned no collector warnings.
+- The foreground response arrived after 20.264 seconds with five provisional folder rows. The background walk finished with 66 rows and 46,106,167,863 bytes, and the API reported a local cache timestamp.
+- The policy status endpoint reported the dry-run enforcer. The single judged script uses this local scan dated November 22 and qualifies hosted consent.
