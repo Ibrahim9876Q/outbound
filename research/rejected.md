@@ -775,3 +775,13 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 ## incidents-10 · 2026-11-22T08:13:38.684Z
 
 - U.S. Radiology — https://ag.ny.gov/press-release/2023/attorney-general-james-secures-450000-medical-company-providing-services-western — missing evidence: U.S. Radiology
+
+## facts-09 · 2026-11-22T08:17:54.554Z
+
+- Akamai Technologies — https://www.linode.com/content/dam/site/en/documents/corporate/akamai-data-protection-addendum.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.linode.com/content/dam/site/en/documents/corporate/akamai-data-protection-addendum.pdf — curl: (22) The requested URL returned error: 403
+
+## incidents-11 · 2026-11-22T08:18:15.102Z
+
+- Stripe — https://www.govinfo.gov/content/pkg/USCOURTS-cand-4_20-cv-08196/pdf/USCOURTS-cand-4_20-cv-08196-0.pdf — curl: (28) Operation timed out after 20012 milliseconds with 0 bytes received
+- Magnite — https://www.consumerfinancemonitor.com/2026/08/07/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case/ — curl: (22) The requested URL returned error: 403

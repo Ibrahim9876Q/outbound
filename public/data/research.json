@@ -7734,7 +7734,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Report on Hola VPN and its residential exit network",
+          "year": 2015,
+          "kind": "report",
+          "jurisdiction": "Global",
+          "summary": "Ars Technica reported that Hola sold access to a network that used free users’ connections as exit nodes.",
+          "source": {
+            "title": "Hola VPN used to perform DDoS attacks, violate user privacy - Ars Technica",
+            "publisher": "Ars Technica",
+            "url": "https://arstechnica.com/information-technology/2015/06/hola-vpn-used-to-perform-ddos-attacks-violate-user-privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:55.591Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -10849,6 +10865,18 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:42.126Z"
           }
+        },
+        {
+          "party": "Amazon Web Services and Google Cloud Platform",
+          "purpose": "Provide data storage and associated services for The Media Grid",
+          "source": {
+            "title": "Criteo",
+            "publisher": "Criteo",
+            "url": "https://www.criteo.com/wp-content/uploads/2024/05/The-Media-Grid-Sub-Processors.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:54.553Z"
+          }
         }
       ]
     },
@@ -10884,7 +10912,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Dunstan v. comScore monitoring software complaint",
+          "year": 2011,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "A federal court described allegations that comScore obtained personal information from users’ computers after they installed its software.",
+          "source": {
+            "title": "Dunstan v. comScore monitoring software complaint",
+            "publisher": "U.S. District Court for the Northern District of Illinois",
+            "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ilnd-1_11-cv-05807/pdf/USCOURTS-ilnd-1_11-cv-05807-0.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:56.256Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Device and media usage information",
@@ -14379,7 +14423,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Research report on misuse of a package CDN",
+          "year": 2023,
+          "kind": "report",
+          "jurisdiction": "Global",
+          "summary": "Check Point reported that its researchers found malicious content still available through jsDelivr and notified the CDN.",
+          "source": {
+            "title": "CDN Service Exposes Users to Malicious Packages for Phishing Attacks Invisible to Security Tools - Check Point Blog",
+            "publisher": "Check Point Research",
+            "url": "https://blog.checkpoint.com/securing-the-cloud/cdn-service-exposes-users-to-malicious-packages-for-phishing-attacks-invisible-to-security-tools/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:56.442Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14391,6 +14451,18 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:39.163Z"
+          }
+        },
+        {
+          "party": "Cloudflare and other CDN providers",
+          "purpose": "Serve jsDelivr requests and use request metadata for analytics and security",
+          "source": {
+            "title": "jsDelivr",
+            "publisher": "jsDelivr",
+            "url": "https://raw.githubusercontent.com/jsdelivr/jsdelivr/master/Sub-Processors.md",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.262Z"
           }
         }
       ]
@@ -14467,7 +14539,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Datadog infrastructure breach",
+          "year": 2016,
+          "kind": "breach",
+          "jurisdiction": "United States",
+          "summary": "Datadog disclosed that an intruder accessed and copied data from infrastructure containing customer credentials.",
+          "source": {
+            "title": "Datadog - 10-K annual report 2021",
+            "publisher": "Datadog annual report, reproduced by CompaniesMarketCap",
+            "url": "https://companiesmarketcap.com/datadog/sec-reports-10k/0001561550-22-000009/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:55.762Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14839,7 +14927,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "Location and user activity",
+          "purpose": "Adobe’s Chrome Web Store disclosure for its Acrobat extension",
+          "source": {
+            "title": "Adobe Acrobat: PDF edit, convert, sign tools - Chrome Web Store",
+            "publisher": "Adobe",
+            "url": "https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.111Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "breach",
@@ -14978,6 +15079,32 @@
             "fetchedAt": "2026-11-22T06:45:45.658Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "New Relic lists the US as its default hosting region.",
+          "source": {
+            "title": "Choose your data center | New Relic Documentation",
+            "publisher": "New Relic",
+            "url": "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/choose-your-data-center/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.393Z"
+          }
+        },
+        {
+          "country": "Japan",
+          "note": "New Relic offers Japan as a hosting region for eligible organizations.",
+          "source": {
+            "title": "Choose your data center | New Relic Documentation",
+            "publisher": "New Relic",
+            "url": "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/choose-your-data-center/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.287Z"
+          }
+        }
       ]
     },
     {
@@ -15015,6 +15142,20 @@
             "fetchedAt": "2026-11-22T06:45:45.807Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Magnite’s framework notice describes transfers of personal information from the EU, UK and Switzerland to the US.",
+          "source": {
+            "title": "Data Privacy Framework - Magnite",
+            "publisher": "Magnite",
+            "url": "https://www.magnite.com/legal/data-protection-framework/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:40.327Z"
+          }
+        }
       ]
     },
     {
@@ -15038,7 +15179,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Kaiser website data collection allegations",
+          "year": 2023,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "A filed complaint alleged that Qualtrics collected information about users’ activity on the Kaiser Permanente website.",
+          "source": {
+            "title": "Kaiser website data collection allegations",
+            "publisher": "Plaintiff’s filed complaint",
+            "url": "https://www.classaction.org/media/doe-v-microsoft-corporation-et-al.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:55.970Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -15050,6 +15207,20 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:45.430Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "The subprocessor list identifies US-based Qualtrics entities that process data for cloud and support services.",
+          "source": {
+            "title": "Qualtrics Subprocessors - Qualtrics",
+            "publisher": "Qualtrics",
+            "url": "https://www.qualtrics.com/subprocessor-list/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:40.875Z"
           }
         }
       ]
@@ -16906,7 +17077,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:13:38.685Z",
+  "generatedAt": "2026-11-22T08:18:15.103Z",
   "index": {
     "exe": {
       "brave.exe": [
