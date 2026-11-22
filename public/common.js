@@ -262,9 +262,48 @@
   const trackersSeen = new Set();
   const pendingDiscoveries = [];
   const pageOpenedAt = Date.now();
+  const sessionCompanies = new Set();
+  const sessionCountries = new Set();
+  const sessionTrackers = new Set();
+  const sessionUse = { mic: [], camera: [] };
   let discoveryTimer = null;
   let discoveryShownAt = -Infinity;
   let discoveryToast;
+
+  function renderSession(state) {
+    for (const app of state.apps) {
+      for (const destination of app.destinations) {
+        if (!destination.active && !(destination.lastSeen >= pageOpenedAt)) continue;
+        if (destination.country) sessionCountries.add(destination.country);
+        if (!destination.org || destination.org === 'Unknown owner') continue;
+        const key = destination.org.trim().toLowerCase();
+        sessionCompanies.add(key);
+        if (destination.tracker) sessionTrackers.add(key);
+      }
+    }
+    const seconds = {};
+    for (const kind of ['mic', 'camera']) {
+      const device = state.devices[kind];
+      const observed = [
+        ...sessionUse[kind],
+        ...(device.recentSessions || []).map(({ start, stop }) => [start, stop]),
+        ...device.apps.map(({ since }) => [since, state.at]),
+      ].map(([start, stop]) => [Math.max(pageOpenedAt, start), Math.min(state.at, stop)])
+        .filter(([start, stop]) => stop > start).sort((a, b) => a[0] - b[0]);
+      const merged = [];
+      for (const range of observed) {
+        const previous = merged.at(-1);
+        if (previous && range[0] <= previous[1]) previous[1] = Math.max(previous[1], range[1]);
+        else merged.push(range);
+      }
+      sessionUse[kind] = merged;
+      seconds[kind] = Math.floor(merged.reduce((sum, [start, stop]) => sum + stop - start, 0) / 1000);
+    }
+    const count = (set, singular, plural) => `${set.size} ${set.size === 1 ? singular : plural}`;
+    setText('session-strip', 'Since you opened Outbound: '
+      + [count(sessionCompanies, 'company', 'companies'), count(sessionCountries, 'country', 'countries'),
+        count(sessionTrackers, 'tracker', 'trackers'), `mic ${seconds.mic}s`, `cam ${seconds.camera}s`].join(' · '));
+  }
 
   function discoverTrackers(state, initial) {
     for (const app of state.apps) {
@@ -315,6 +354,7 @@
       const initial = !Outbound.state;
       Outbound.state = state;
       safe(renderTopbar, state);
+      safe(renderSession, state);
       for (const fn of stateFns) safe(fn, state);
       discoverTrackers(state, initial);
       if (!connected && pill.classList.contains('down')) setText('live-text', 'Reconnecting…');

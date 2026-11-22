@@ -204,6 +204,15 @@ h1, h2, h3 {
 
 main { flex: 1; min-height: 0; position: relative; }
 
+.session-strip {
+  flex: none;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.35 var(--font-mono);
+}
+
 .discovery-toast {
   position: absolute;
   z-index: 12;
