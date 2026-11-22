@@ -16,7 +16,12 @@
 
   async function api(url, options) {
     const response = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(5000), ...options });
-    if (!response.ok) throw Object.assign(new Error('HTTP ' + response.status), { status: response.status });
+    if (!response.ok) {
+      const detail = await response.json().catch(() => null);
+      throw Object.assign(new Error(detail?.error || 'HTTP ' + response.status), {
+        status: response.status, retryAfter: response.headers.get('Retry-After'),
+      });
+    }
     return response.json();
   }
 
@@ -457,13 +462,18 @@
     } finally {
       authLoaded = true;
       control.hidden = false;
-      if (Outbound.view === 'rules') renderPolicy();
+      if (Outbound.view === 'rules') {
+        renderPolicy();
+        resumeApproval();
+      }
     }
   }
   let blockTarget;
   let policyBusy = false;
   let previewRetry = false;
   let previewedApp;
+  let approvalWatch;
+  let approvalTimer;
   $('rules-globe').addEventListener('click', () => Outbound.showAppOnGlobe(previewedApp));
 
   function blockButton(kind, value) {
@@ -478,8 +488,7 @@
       pending.innerHTML = `<p>Target: ${esc(blockTarget.kind)} / ${esc(blockTarget.value)}</p><button type="button" class="tool-btn" id="rules-confirm">${label}</button>`;
       pending.setAttribute('aria-busy', String(policyBusy));
       const submit = $('rules-confirm');
-      submit.disabled = policyBusy || !authLoaded || authNeedsSignIn() || !policy || policy.enforcer !== 'dry-run'
-        || (lower(policy.provider).includes('auth0') && policy.providerConfigured);
+      submit.disabled = policyBusy || !authLoaded || authNeedsSignIn() || !policy || policy.enforcer !== 'dry-run';
       submit.addEventListener('click', submitBlock);
     } else {
       pending.replaceChildren();
@@ -494,7 +503,69 @@
       + ' / Auth0: ' + (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured')
       + ' / enforcer: ' + policy.enforcer;
     $('rules-list').innerHTML = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
-      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <small>Created by ${esc(authorName(rule.createdBy))}</small> <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || !authLoaded || authNeedsSignIn() || policy.enforcer !== 'dry-run' || (rule.approval?.via === 'auth0' && auth0) ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
+      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <small>Created by ${esc(authorName(rule.createdBy))} / ${esc(rule.approval?.status || 'unavailable')}</small>
+        ${canWatch(rule) ? `<button type="button" class="tool-btn" data-watch-rule="${esc(rule.id)}">Show approval</button>` : ''}
+        <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || !authLoaded || authNeedsSignIn() || policy.enforcer !== 'dry-run' ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
+  }
+
+  function canWatch(rule) {
+    return authLoaded && !authNeedsSignIn() && rule.approval?.status === 'pending'
+      && rule.approval.requestId && (!dashboardAuth?.enabled || rule.createdBy === dashboardAuth.user?.sub);
+  }
+
+  function approvalPanel(label, binding, detail = '') {
+    const panel = $('phone-approval');
+    panel.hidden = false;
+    panel.textContent = ['+-- ' + label + ' --+', binding, detail].filter(Boolean).join('\n');
+  }
+
+  function watchApproval(response) {
+    clearTimeout(approvalTimer);
+    const watch = { id: response.requestId, binding: response.bindingMessage };
+    approvalWatch = watch;
+    $('rules-plan').hidden = true;
+    $('rules-status').textContent = '';
+    approvalPanel('WAITING FOR PHONE APPROVAL', watch.binding, 'Match this reference to the phone push.');
+    scheduleApproval(watch, response.retryAfterMs);
+  }
+
+  function scheduleApproval(watch, delay = 1000) {
+    approvalTimer = setTimeout(() => pollApproval(watch), Math.max(250, delay));
+  }
+
+  async function pollApproval(watch) {
+    try {
+      const result = await api('/api/policy/requests/' + encodeURIComponent(watch.id), { signal: AbortSignal.timeout(30000) });
+      if (approvalWatch !== watch) return;
+      if (result.status === 'pending') {
+        scheduleApproval(watch, result.retryAfterMs);
+        return;
+      }
+      const expired = result.status === 'expired' || /\bexpired\b/i.test(result.error || '');
+      const approved = result.status === 'approved';
+      const label = approved ? 'PHONE APPROVAL GRANTED' : expired ? 'PHONE APPROVAL EXPIRED' : 'PHONE APPROVAL DENIED';
+      approvalPanel(label, result.bindingMessage || watch.binding,
+        approved ? 'FGA relation written. See the local dry-run plan below.' : result.error || 'The request was denied.');
+      if (approved) showPlan(result.plan, result.decision);
+      refreshPolicy();
+    } catch (error) {
+      if (approvalWatch !== watch) return;
+      if (error.status === 401 || error.status === 404) {
+        approvalPanel('PHONE APPROVAL UNAVAILABLE', watch.binding, error.status === 401
+          ? 'Sign in with Auth0 to resume this approval.' : 'The approval request is unavailable. Check the Rules list.');
+        if (error.status === 401) refreshAuth();
+        return;
+      }
+      approvalPanel('WAITING FOR PHONE APPROVAL', watch.binding, 'Could not check the request. Trying again…');
+      const seconds = Number(error.retryAfter);
+      scheduleApproval(watch, Math.max(5000, Number.isFinite(seconds) ? seconds * 1000 : 0));
+    }
+  }
+
+  function resumeApproval() {
+    if (approvalWatch) return;
+    const saved = policy?.rules?.find(canWatch);
+    if (saved) watchApproval(saved.approval);
   }
 
   function showPlan(plan, decision) {
@@ -515,19 +586,16 @@
     try {
       policy = await api('/api/policy');
       if (policy.enforcer !== 'dry-run') $('rules-status').textContent = 'Preview controls require the dry-run enforcer.';
-      else if (lower(policy.provider).includes('auth0') && policy.providerConfigured) {
-        $('rules-status').textContent = 'Preview paused because the configured provider can send requests outside this PC.';
-      }
     } catch {
       policy = null;
       $('rules-provider').textContent = 'Policy API unavailable in this build.';
     }
     renderPolicy();
+    resumeApproval();
   }
 
   async function submitBlock() {
-    if (policyBusy || !blockTarget || policy?.enforcer !== 'dry-run'
-      || (lower(policy.provider).includes('auth0') && policy.providerConfigured)) return;
+    if (policyBusy || !authLoaded || authNeedsSignIn() || !blockTarget || policy?.enforcer !== 'dry-run') return;
     policyBusy = true;
     previewRetry = false;
     $('rules-status').textContent = 'Preparing the local dry-run preview…';
@@ -546,15 +614,21 @@
         signal: AbortSignal.timeout(15000),
         body: JSON.stringify({ target, action: 'block', scope: 'session' }),
       });
-      showPlan(response.plan, response.decision);
       previewedApp = target.kind === 'app' ? target.value : null;
       $('rules-globe').hidden = !previewedApp;
-      $('rules-status').textContent = response.plan?.some((entry) => entry.command)
-        ? 'Local block rule preview ready.' : 'The policy returned a decision with no runnable command.';
+      if (response.status === 'pending' && response.requestId) {
+        watchApproval(response);
+      } else {
+        showPlan(response.plan, response.decision);
+        $('rules-status').textContent = response.status === 'denied' ? response.error || 'Policy request denied.'
+          : response.plan?.some((entry) => entry.command)
+            ? 'Local block rule preview ready.' : 'The policy returned a decision with no runnable command.';
+      }
       blockTarget = null;
     } catch (error) {
       previewRetry = true;
-      $('rules-status').textContent = error.name === 'TimeoutError'
+      if (error.status === 401) refreshAuth();
+      $('rules-status').textContent = error.status === 401 ? 'Sign in with Auth0 to create this rule.' : error.name === 'TimeoutError'
         ? 'The preview timed out after 15 seconds. Check the Rules list for a result before retrying.'
         : 'Could not preview the block rule. Retry preview.';
     } finally {
@@ -565,6 +639,12 @@
   }
 
   document.addEventListener('click', async (event) => {
+    const watch = event.target.closest('[data-watch-rule]');
+    if (watch) {
+      const rule = policy?.rules?.find((item) => item.id === watch.dataset.watchRule);
+      if (rule && canWatch(rule)) watchApproval(rule.approval);
+      return;
+    }
     const block = event.target.closest('[data-block-kind]');
     if (block) {
       if (policyBusy) return;
@@ -577,17 +657,23 @@
       return;
     }
     const remove = event.target.closest('[data-remove-rule]');
-    if (!remove || policyBusy || policy?.enforcer !== 'dry-run') return;
+    if (!remove || policyBusy || !authLoaded || authNeedsSignIn() || policy?.enforcer !== 'dry-run') return;
     const rule = policy.rules?.find((item) => item.id === remove.dataset.removeRule);
-    if (!rule || (rule.approval?.via === 'auth0' && (policy.auth0Configured ?? policy.providerConfigured))) return;
+    if (!rule) return;
     policyBusy = true;
     renderPolicy();
     try {
       const result = await api('/api/policy/rules/' + encodeURIComponent(remove.dataset.removeRule), { method: 'DELETE' });
+      if (approvalWatch && approvalWatch.id === rule.approval?.requestId) {
+        approvalWatch = null;
+        clearTimeout(approvalTimer);
+        $('phone-approval').hidden = true;
+      }
       showPlan(result.plan);
       $('rules-status').textContent = 'Rule removed.';
-    } catch {
-      $('rules-status').textContent = 'Could not remove this rule.';
+    } catch (error) {
+      if (error.status === 401) refreshAuth();
+      $('rules-status').textContent = error.status === 401 ? 'Sign in with Auth0 to remove this rule.' : 'Could not remove this rule.';
     } finally {
       policyBusy = false;
       refreshPolicy();
