@@ -87,3 +87,21 @@ apps[].partial: boolean
 ```
 
 Timestamps are Unix milliseconds. A missing registry value or absent inventory field remains null. `permissions[].inUse` reflects a recorded start with zero stop FILETIME. It may outlast the process. Autorun and extension flags are based on metadata. `status: "done"` with `appDataBackground: true` means the 20-second provisional app-data snapshot has been published. Poll until it is false for the completed walk and cache timestamp. A row with `partial: true` has provisional totals. The scan and cache stay local.
+
+## 7. Exposure scores, history and payload metadata (xray4)
+
+`GET /api/score` returns `{ sampledAt: number|null, overall: Score, apps: [{ id, name, score: Score }] }`. `/api/state` and SSE add `apps[].score: Score|null`.
+
+```
+Score = { value: number|null, coverage: number,
+          factors: [{ factor, weight, raw: number|null, points: number|null, reason }] }
+GET /api/history = { days: [{ date: "YYYY-MM-DD", apps: [
+  { id, name, companies, trackers, countries, backgroundMinutes, micSeconds, cameraSeconds }
+] }] }
+```
+
+History contains at most 30 local calendar days. Background minutes estimate intervals between consecutive observed background samples. Mic and camera seconds combine overlapping sessions. A null score input means the relevant observation is missing. Coverage is the available weight, out of 100. See `SCORE.md`.
+
+The following records may carry an optional `researchId`: `apps[]`, `scan.installed[]`, `scan.extensions[]`, `scan.permissions[]`, `scan.browsers[].sites[]`, and `scan.browsers[].cookieDomains[]`. Extension rows may also have `publisher`. Dossier IDs are app IDs or `company:<canonical company name>`. Missing or ambiguous matches are omitted.
+
+State and SSE include pre-cap retained counts in `totals: { apps, links, legacyLinks, events }`, `apps[].totals: { destinations, localPeers, udp, children, backgroundCompanies, backgroundTrackers }`, and `devices.{mic,camera}.totals: { recentSessions, lastUsedByApp }`. The visible limits are 80 apps, 160 of each link array, 24 events, 40 destinations per app, 20 UDP listeners, 24 peer/child/background names per list, and 10 device sessions or last-used rows per list. Scores and history are computed before these display caps.

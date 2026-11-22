@@ -105,3 +105,10 @@ Verify the first SSE state after a new connection contains the active peer link.
 - The settings collector returned eight rows, five with observed registry values. The live API returned no collector warnings.
 - The foreground response arrived after 20.264 seconds with five provisional folder rows. The background walk finished with 66 rows and 46,106,167,863 bytes, and the API reported a local cache timestamp.
 - The policy status endpoint reported the dry-run enforcer. The single judged script uses this local scan dated November 22 and qualifies hosted consent.
+
+## xray4 verification · 2026-11-22
+
+- A 120.2-second idle run on 4319 used 5.56% of one CPU core for the Node process alone. Working set averaged 234.7 MiB and peaked at 276.6 MiB. No collector warnings appeared. The Windows links poll waits 15 seconds between completed runs and device registry history refreshes every 30 seconds when both live workers are healthy.
+- With the same 220-destination, 200-link, 60-event fixture, state JSON fell from 106,206 to 40,722 bytes. The SSE state frame fell from 106,227 to 40,743 bytes. Live payloads were 38,454 bytes in the collector-only run, 41,115 bytes in the final pre-scan build and 154,209 bytes in the final post-scan sample. Those live snapshots cover different traffic and the latter adds score factors.
+- The opt-in run produced an overall score of 27 with all seven factors represented. Top app scores and coverage were PowerShell 40/10%, Windows Services 35/65%, Google Chrome 30/75%, File Explorer 25/15% and Dllhost 23/25%. History contained one observed date and 18 app rows. Four live apps, 131 permission records, eight installed entries, 89 visited site rows and 401 cookie domain rows linked to dossiers. No scanned extension publisher matched the dossier.
+- All 35 tests passed and the desktop smoke check verified 10 assets plus the API routes. Scan collector failures stay in the per-scan warnings so opt-in worker restarts cannot reset the desktop log throttle.

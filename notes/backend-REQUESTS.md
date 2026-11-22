@@ -1,5 +1,7 @@
 # Backend requests
 
+- xray4 UI: section 7 of `CONTRACT-v2.md` covers score factors and coverage, the 30-day history endpoint, research IDs, and retained-array totals. Show null score factors as unknown. Dossier links use an app ID or a `company:` prefix plus the canonical company name. Use the relevant totals to communicate truncated lists.
+
 - xray3 scan panels: see section 6 of `CONTRACT-v2.md` for permissions, installed software, autoruns, extensions, and Windows privacy settings. Show null settings as unavailable. Continue polling while `appDataBackground` is true, even after status becomes done. Disable repeated scans during the continuation and label rows whose `partial` flag is true.
 
 - Scan UI: `lastVisit` and `lastWrite` are Unix milliseconds. `summary` deduplicates sites and cookie domains across browser profiles. Site trackers are public dataset associations and can differ from requests made during the local visit.

@@ -12,6 +12,8 @@ const { LinkWatcher } = require('./lib/links');
 const { warnPoll } = require('./lib/poll');
 const { scoreApps } = require('./lib/score');
 const { DailyHistory } = require('./lib/history');
+const { researchLink } = require('./lib/dossier');
+const { limitSnapshot } = require('./lib/payload');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -76,6 +78,7 @@ const scan = new StoredScan();
 const linkWatcher = new LinkWatcher();
 const history = new DailyHistory();
 let scoreCache;
+let desktopCache;
 process.on('exit', () => {
   devices.close();
   network.foreground.close();
@@ -86,21 +89,30 @@ process.on('SIGTERM', () => process.exit(143));
 
 function scores(apps) {
   const scanKey = scan.result.status === 'done' ? scan.result : null;
-  if (!scoreCache || scoreCache.sampledAt !== sampledAt || scoreCache.scan !== scanKey) {
+  if (!scoreCache || scoreCache.sampledAt !== sampledAt || scoreCache.scan !== scanKey || scoreCache.links !== linkWatcher.current) {
     const payload = scoreApps(apps, scan.result, sampledAt);
-    scoreCache = { sampledAt, scan: scanKey, payload, byId: new Map(payload.apps.map(({ id, score }) => [id, score])) };
+    scoreCache = { sampledAt, scan: scanKey, links: linkWatcher.current, payload,
+      byId: new Map(payload.apps.map(({ id, score }) => [id, score])) };
   }
   return scoreCache;
 }
 
+function desktop() {
+  if (!desktopCache || desktopCache.sampledAt !== sampledAt || desktopCache.links !== linkWatcher.current) {
+    const snapshot = network.snapshot();
+    desktopCache = { sampledAt, links: linkWatcher.current,
+      payload: { ...snapshot, legacyLinks: snapshot.links, ...linkWatcher.snapshot(snapshot.apps) } };
+  }
+  return desktopCache.payload;
+}
+
 function state() {
-  const snapshot = network.snapshot();
-  const linked = linkWatcher.snapshot(snapshot.apps);
+  const linked = desktop();
   const { byId } = scores(linked.apps);
-  return { at: Date.now(), home: HOME, ...snapshot, legacyLinks: snapshot.links,
-    ...linked, apps: linked.apps.map((app) => ({ ...app, score: byId.get(app.id) ?? null })),
-    devices: devices.snapshot(), events: events.slice(0, 60), phone,
-    sampledAt, fresh: sampledAt !== null };
+  return limitSnapshot({ at: Date.now(), home: HOME,
+    ...linked, apps: linked.apps.map((app) => ({ ...app, score: byId.get(app.id) ?? null,
+      ...researchLink({ exe: app.id, name: app.name }) })),
+    devices: devices.snapshot(), events: events.slice(0, 60), phone, sampledAt, fresh: sampledAt !== null });
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -165,7 +177,7 @@ const server = http.createServer(async (req, res) => {
   }
   if (url.pathname === '/api/score' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-    return res.end(JSON.stringify(scores(linkWatcher.snapshot(network.snapshot().apps).apps).payload));
+    return res.end(JSON.stringify(scores(desktop().apps).payload));
   }
   if (url.pathname === '/api/history' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
