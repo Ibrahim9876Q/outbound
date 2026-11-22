@@ -8,6 +8,7 @@ const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, renderScanAndLinks, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
 const { StoredScan } = require('./lib/scan');
+const { sendScan } = require('./lib/scan-response');
 const { LinkWatcher } = require('./lib/links');
 const { warnPoll } = require('./lib/poll');
 const { scoreApps } = require('./lib/score');
@@ -186,8 +187,7 @@ const server = http.createServer(async (req, res) => {
   if (url.pathname === '/api/scan') {
     const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
     if (req.method === 'GET') {
-      res.writeHead(200, headers);
-      return res.end(JSON.stringify(scan.result));
+      return sendScan(req, res, scan.result);
     }
     if (req.method === 'POST') {
       if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) {
