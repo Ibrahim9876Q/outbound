@@ -8,9 +8,9 @@ CBC Marketplace tested six popular mobile apps in November 2026 and reported tha
 
 ## What it does
 
-Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to inspect observed endpoints, estimated countries and tracker matches. Links distinguish observed local sockets from inferred associations. The webcam indicator and mic key respond to Windows capture sessions. Globe plots endpoints with usable IP location estimates and animates illustrative packets. An attributed owner can be a cloud or CDN operator.
+Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to inspect observed endpoints, estimated countries, tracker matches and background connections. Links distinguish observed local sockets from inferred associations. The webcam indicator and mic key respond to Windows capture sessions. Globe plots usable endpoint estimates, illustrates connections with animated packets, and links from company HQ references to sourced incidents.
 
-An opt-in scan shows browser history domains and cookie host counts, app-data metadata, Windows permission history, installed software, startup entries and tasks, extension permissions, and registry privacy settings. A source-backed Dossier supplies context. Local block rules default to a dry run that previews the commands.
+An opt-in scan shows browser history domains and cookie host counts, app-data metadata, Windows permission history, software inventory, startup entries and tasks, extension permissions, and registry privacy settings. It keeps the last completed scan available while a new one runs. The Dossier supplies context from public sources. Exposure scores show each observed factor and its coverage, and History shows recent daily totals. Rules default to a local dry run that previews firewall commands.
 
 ## How we built it
 
@@ -18,17 +18,17 @@ A local Node.js server reads Windows TCP sockets with `netstat -ano` and joins p
 
 We started with the Windows privacy registry, but its timestamps did not update live on our demo PC. We switched to Windows Core Audio capture sessions for the microphone and Media Foundation camera activity for the webcam. Outbound timestamps changes it observes and uses them to update the day's totals.
 
-The Phone gateway implements the CIBA prompt and FGA timed-grant flow. Fixture tests exercise approval, expiry and revocation. Our reported hosted request stopped at Guardian enrollment before push delivery, and hosted approval through revocation remains unverified. The labeled offline demo uses real loopback DNS and simulated approval decisions. The desktop's local dry run previews policy commands.
+Desktop policy supports optional Auth0 sign-in to identify the rule author. The configured policy provider requests consent through CIBA and records approval as an opaque FGA tuple. The separate Phone gateway uses CIBA and FGA for expiring DNS tracker grants. Fixture tests exercise approval and policy checks. Our reported hosted request stopped at Guardian enrollment before push delivery. Hosted end-to-end approval and revocation remain unverified. The labeled Phone offline demo uses real loopback DNS, fixture answers and simulated approval decisions.
 
-The desktop server binds to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver and network access.
+Both HTTP dashboards bind to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. The worker keeps the previous result in a local cache and exposes a small status endpoint while measurements continue. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver, and Phone DNS and hosted Auth0 use their configured external services.
 
 ## Challenges we ran into
 
-An IP address often identifies a cloud provider or CDN. We use hostnames when available and leave unknown owners and locations visible when attribution is missing. Busy pages exposed a second problem. Hundreds of destinations could build up in the live view, so we retain the newest inactive destinations per app while rolling today's observations into a local summary.
+An IP address often identifies a cloud provider or CDN. We use hostnames when available and leave unknown owners and locations visible when attribution is missing. Busy pages can build up hundreds of destinations, so we bound the live view while retaining daily aggregates. A registry record with no stop timestamp can outlast a running app, and tracker matches in the scan describe earlier public measurements of the sites.
 
 ## Accomplishments we’re proud of
 
-On this PC on **November 22, 2026**, one opt-in scan found **497 visited domains** and matched **104** of them to prior public tracker observations. It returned **629 permission entries across 23 capabilities**, **199 installed-software records**, and **69 browser extensions**, with **35** matching our sensitive-permission rules. Those flags describe declared or recorded access. They cannot establish misuse.
+We combined live socket and device observations, a read-only scan, and a sourced research dossier in one local workflow. A judge can follow a visible connection, inspect its attribution and source, then preview a rule. The dashboard keeps observed activity, inferred relationships, and recorded policies distinct.
 
 ## What we learned
 
