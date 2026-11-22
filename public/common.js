@@ -55,6 +55,28 @@
   Outbound.onView = (fn) => { viewFns.push(fn); };
   Outbound.showView = showView;
   Outbound.onDiscovery = (fn) => { discoveryFns.push(fn); };
+  Outbound.exposureGauge = (score) => {
+    if (!Number.isFinite(score?.value)) return '[??????????] Unknown';
+    const filled = Math.max(0, Math.min(10, Math.round(score.value / 10)));
+    return '[' + '#'.repeat(filled) + '.'.repeat(10 - filled) + '] ' + score.value + '/100';
+  };
+
+  let scoreRequestedAt = -Infinity;
+  let scorePending = false;
+  Outbound.onState(async () => {
+    if (scorePending || performance.now() - scoreRequestedAt < 3000) return;
+    scoreRequestedAt = performance.now();
+    scorePending = true;
+    try {
+      const response = await fetch('/api/score', { cache: 'no-store', signal: AbortSignal.timeout(4000) });
+      if (!response.ok) return;
+      const { overall } = await response.json();
+      setText('stat-exposure', overall?.value ?? 'Unknown');
+      $('score-overall').title = Outbound.exposureGauge(overall)
+        + ' / Evidence coverage: ' + (overall?.coverage ?? 'unknown') + '/100. Missing evidence is unknown.';
+    } catch { /* The last available score remains visible. */ }
+    finally { scorePending = false; }
+  });
 
   function safe(fn, arg) {
     try { fn(arg); } catch (err) { console.error(err); }

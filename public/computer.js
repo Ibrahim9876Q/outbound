@@ -453,7 +453,8 @@
     if (app.trackers) parts.push(`${app.trackers} tracker connection${app.trackers === 1 ? '' : 's'}`);
     if (app.mic) parts.push('using the microphone');
     if (app.cam) parts.push('using the camera');
-    node.title = parts.join(' · ');
+    node.title = parts.join(' · ') + '\nExposure ' + Outbound.exposureGauge(app.score)
+      + '\nEvidence coverage: ' + (app.score?.coverage ?? 'unknown') + '/100. Missing evidence is unknown.';
     node.setAttribute('aria-label', app.dupe ? app.name + ' (' + exeLabel(app) + ')' : app.name);
     node.setAttribute('aria-pressed', String(selected === app.id));
     if (app.protectedProcesses) node.setAttribute('aria-expanded', String(selected === app.id));
@@ -870,7 +871,17 @@
       + (app.protectedProcesses ? '' : `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
         + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`)
       + (Outbound.blockButton?.('app', app.id.endsWith('.exe') ? app.id : '') || '')
+      + exposurePanel(app.score)
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
+  }
+
+  function exposurePanel(score) {
+    const rows = (score?.factors || []).map(({ factor, weight, raw, points, reason }) =>
+      `<li><strong>${esc(factor.replace(/([A-Z])/g, ' $1').toLowerCase())}</strong><br>`
+      + `weight ${esc(weight)} / value ${esc(raw ?? 'unknown')} / points ${esc(points ?? 'unknown')}<br>${esc(reason)}</li>`).join('');
+    return `<details class="exposure-panel"><summary>Exposure ${esc(Outbound.exposureGauge(score))}</summary>`
+      + `<p>Evidence coverage: ${esc(score?.coverage ?? 'unknown')}/100. Missing observations are unknown.</p>`
+      + (rows ? '<ul>' + rows + '</ul>' : '<p>No app-level score factors were reported.</p>') + '</details>';
   }
 
   // ---------- live feed + toasts ----------
