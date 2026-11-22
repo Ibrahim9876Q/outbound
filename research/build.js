@@ -87,13 +87,14 @@ async function main() {
         const { section, ...claim } = entry;
         if (row.company && row.aliases) target.aliases = [...new Set([...target.aliases, ...row.aliases])];
         const key = section === 'incidents' ? 'title' : section === 'destinations' ? 'country' : 'party';
-        target[section] = target[section].filter((existing) => existing[key] !== claim[key]);
+        target[section] = (target[section] || []).filter((existing) => existing[key] !== claim[key]);
         target[section].push(claim);
       } else if (batch.startsWith('companies')) {
         const previous = dossier.companies.find((company) => company.name === entry.name);
         dossier.companies = dossier.companies.filter((company) => company.name !== entry.name);
         dossier.companies.push({ name: entry.name, aliases: previous?.aliases || [], hq: entry.hq,
-          incidents: previous?.incidents || [], declared: entry.declared });
+          incidents: previous?.incidents || [], declared: entry.declared,
+          ...(previous?.destinations ? { destinations: previous.destinations } : {}) });
       } else {
         const previous = dossier.apps.find((app) => app.id === entry.id);
         if (previous) {

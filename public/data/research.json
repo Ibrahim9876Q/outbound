@@ -204,7 +204,23 @@
         }
       ],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "fine",
+          "title": "Spotify access transparency decision",
+          "jurisdiction": "Sweden",
+          "summary": "The authority announced a SEK 58 million sanction concerning information Spotify supplied when individuals exercised access rights.",
+          "source": {
+            "title": "Sanktionsavgift mot Spotify | IMY",
+            "publisher": "Swedish Authority for Privacy Protection",
+            "url": "https://www.imy.se/nyheter/sanktionsavgift-mot-spotify",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:41.790Z"
+          }
+        }
+      ]
     },
     {
       "id": "steam",
@@ -270,7 +286,23 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2020,
+          "kind": "settlement",
+          "title": "Zoom security claims settlement announced",
+          "jurisdiction": "United States",
+          "summary": "The FTC announced a proposed settlement over allegations that Zoom misrepresented its encryption and security practices.",
+          "source": {
+            "title": "FTC Requires Zoom to Enhance its Security Practices as Part of Settlement | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2020/11/ftc-requires-zoom-enhance-its-security-practices-part-settlement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.828Z"
+          }
+        }
+      ]
     },
     {
       "id": "teams",
@@ -426,7 +458,23 @@
           }
         }
       ],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2014,
+          "kind": "settlement",
+          "title": "Snapchat disappearing messages representations",
+          "jurisdiction": "United States",
+          "summary": "Snapchat settled FTC allegations about misleading claims concerning disappearing messages and other privacy practices.",
+          "source": {
+            "title": "Snapchat Settles FTC Charges That Promises of Disappearing Messages Were False | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.511Z"
+          }
+        }
+      ]
     },
     {
       "id": "firefox",
@@ -596,7 +644,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2020,
+          "kind": "fine",
+          "title": "Irish Twitter inquiry IN-19-1-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€450,000",
+          "summary": "The DPC’s register lists this fine on Twitter International Company and records it as collected.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:44.659Z"
+          }
+        }
+      ]
     },
     {
       "id": "youtube",
@@ -1199,7 +1264,38 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "court",
+          "title": "Arkansas Temu privacy complaint",
+          "jurisdiction": "United States",
+          "summary": "Arkansas announced a lawsuit alleging deceptive access to personal information through the Temu app.",
+          "source": {
+            "title": "Attorney General Griffin Sues Chinese E-Commerce Company Temu for Deceiving Arkansans, Illegally Accessing Their Personal Information - Arkansas Attor",
+            "publisher": "Arkansas Attorney General",
+            "url": "https://arkansasag.gov/news-release/attorney-general-griffin-sues-chinese-e-commerce-company-temu-for-deceiving-arkansans-illegally-accessing-their-personal-information/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:39.283Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "court",
+          "title": "Nebraska Temu data complaint",
+          "jurisdiction": "United States",
+          "summary": "Nebraska announced a lawsuit alleging that Temu accessed phone data through its app.",
+          "source": {
+            "title": "Attorney General Hilgers Files Lawsuit Against Temu for Siphoning Nebraskans’ Phone Data | Nebraska Attorney General Mike Hilgers",
+            "publisher": "Nebraska Attorney General",
+            "url": "https://ago.nebraska.gov/attorney-general-hilgers-files-lawsuit-against-temu-siphoning-nebraskans-phone-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:40.079Z"
+          }
+        }
+      ]
     },
     {
       "id": "truecaller",
@@ -1501,7 +1597,23 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "court",
+          "title": "Grindr fine upheld on appeal",
+          "jurisdiction": "Norway",
+          "summary": "The authority reported that the Court of Appeal upheld the administrative penalty over Grindr’s sharing of user information for advertising.",
+          "source": {
+            "title": "The Court of Appeal upholds the fine against Grindr | Datatilsynet",
+            "publisher": "Norwegian Data Protection Authority",
+            "url": "https://www.datatilsynet.no/en/news/news-2025/the-court-of-appeal-upholds-the-fine-against-grindr/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:40.001Z"
+          }
+        }
+      ]
     },
     {
       "id": "flo",
@@ -1727,6 +1839,69 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:47:36.008Z"
           }
+        },
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "TikTok EEA data transfer inquiry",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€530 million",
+          "summary": "The DPC announced a fine and corrective measures following an inquiry into TikTok transfers of EEA user data to China.",
+          "source": {
+            "title": "Irish Data Protection Commission fines TikTok €530 million and orders corrective measures following Inquiry into transfers of EEA User Data to China |",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.020Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "investigation",
+          "title": "Canadian joint TikTok privacy investigation",
+          "jurisdiction": "Canada",
+          "summary": "Canadian regulators reported privacy concerns involving children’s data, age assurance and TikTok’s collection and use of personal information.",
+          "source": {
+            "title": "News release: Joint investigation into TikTok highlights privacy concerns related to the collection and use of children’s personal information - Offic",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2025/nr-c_250923/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.697Z"
+          }
+        },
+        {
+          "year": 2019,
+          "kind": "settlement",
+          "title": "Musical.ly children’s privacy settlement",
+          "jurisdiction": "United States",
+          "summary": "The FTC described a civil penalty to resolve allegations that TikTok’s predecessor Musical.ly collected children’s information without parental consent.",
+          "amount": "USD 5.7 million",
+          "source": {
+            "title": "Largest FTC COPPA settlement requires Musical.ly to change its tune | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/business-guidance/blog/2019/02/largest-ftc-coppa-settlement-requires-musically-change-its-tune",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.422Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Musical.ly, Inc. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3004",
+          "source": {
+            "title": "Musical.ly, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3004-musically-inc",
+            "date": "2019-02-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.059Z"
+          }
         }
       ]
     },
@@ -1795,6 +1970,22 @@
             "date": "2023-05-22",
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:11.908Z"
+          }
+        },
+        {
+          "year": 2019,
+          "kind": "settlement",
+          "title": "Facebook 2019 privacy order settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 5 billion",
+          "summary": "Facebook agreed to a penalty and new privacy oversight to resolve alleged violations of its earlier FTC order.",
+          "source": {
+            "title": "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.683Z"
           }
         }
       ]
@@ -2115,7 +2306,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "settlement",
+          "title": "Xbox children’s registration data settlement",
+          "jurisdiction": "United States",
+          "summary": "Microsoft agreed to a penalty and new obligations after the FTC alleged it collected children’s account information without parental consent.",
+          "amount": "USD 20 million",
+          "source": {
+            "title": "FTC Will Require Microsoft to Pay $20 million over Charges it Illegally Collected Personal Information from Children without Their Parents’ Consent | ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/06/ftc-will-require-microsoft-pay-20-million-over-charges-it-illegally-collected-personal-information",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:39.852Z"
+          }
+        }
+      ]
     },
     {
       "id": "bing",
@@ -4420,6 +4628,139 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "shein",
+      "name": "SHEIN",
+      "publisher": "SHEIN",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "shein.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "CNIL SHEIN cookies action",
+          "jurisdiction": "France",
+          "summary": "The CNIL announced a separate cookie sanction against SHEIN as part of its cookie enforcement work.",
+          "source": {
+            "title": "Régulation des cookies : la CNIL poursuit le plan d’action initié en 2019 et prononce deux amendes à l’encontre de GOOGLE et SHEIN | CNIL",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/fr/regulation-des-cookies-la-cnil-poursuit-le-plan-daction-initie-en-2019-et-prononce-deux-amendes",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.206Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "publisher": "Uber",
+      "category": "transport",
+      "processNames": [],
+      "domains": [
+        "uber.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Uber European driver data transfers",
+          "jurisdiction": "Netherlands / EU",
+          "amount": "290 million euro",
+          "summary": "The Dutch DPA announced a fine over transfers of European drivers’ personal data to the United States.",
+          "source": {
+            "title": "Dutch DPA imposes a fine of 290 million euro on Uber because of transfers of drivers&#039; data to the US | Autoriteit Persoonsgegevens",
+            "publisher": "Dutch Data Protection Authority",
+            "url": "https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-of-290-million-euro-on-uber-because-of-transfers-of-drivers-data-to-the-us",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.699Z"
+          }
+        },
+        {
+          "year": 2018,
+          "kind": "settlement",
+          "title": "Uber data security and breach settlement",
+          "jurisdiction": "United States",
+          "summary": "The FTC approved a settlement of allegations involving privacy and security practices, including Uber’s handling of a 2016 breach.",
+          "source": {
+            "title": "Federal Trade Commission Gives Final Approval to Settlement with Uber | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2018/10/federal-trade-commission-gives-final-approval-settlement-uber",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.817Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "life360",
+      "name": "Life360",
+      "publisher": "Life360",
+      "category": "location",
+      "processNames": [],
+      "domains": [
+        "life360.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2021,
+          "kind": "report",
+          "title": "Life360 location data reporting",
+          "jurisdiction": "United States",
+          "summary": "The Markup reported that Life360 sold precise location information and interviewed former employees about its relationships with data brokers.",
+          "source": {
+            "title": "The Popular Family Safety App Life360 Is Selling Precise Location Data on Its Tens of Millions of Users – The Markup",
+            "publisher": "The Markup",
+            "url": "https://themarkup.org/privacy/2021/12/06/the-popular-family-safety-app-life360-is-selling-precise-location-data-on-its-tens-of-millions-of-user",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.146Z"
+          }
+        },
+        {
+          "year": 2022,
+          "kind": "report",
+          "title": "Life360 response following location data reporting",
+          "jurisdiction": "United States",
+          "summary": "The Markup reported that Life360 said it would stop selling precise device location data and would move to aggregated data for most customers of that business.",
+          "source": {
+            "title": "Life360 Says It Will Stop Selling Precise Location Data – The Markup",
+            "publisher": "The Markup",
+            "url": "https://themarkup.org/privacy/2022/01/27/life360-says-it-will-stop-selling-precise-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:40.567Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -4430,7 +4771,71 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "settlement",
+          "title": "Texas Google privacy settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 1.375 billion",
+          "summary": "Texas announced a settlement of claims involving location, browsing and biometric data.",
+          "source": {
+            "title": "Attorney General Ken Paxton Secures Historic $1.375 Billion Settlement with Google Related to Texans’ Data Privacy Rights | Office of the Attorney Gen",
+            "publisher": "Texas Office of the Attorney General",
+            "url": "https://oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-historic-1375-billion-settlement-google-related-texans-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.447Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "CNIL Google email advertising and cookies decision",
+          "jurisdiction": "France",
+          "summary": "The CNIL announced fines totaling €325 million involving ads placed between emails and cookie consent.",
+          "source": {
+            "title": "Publicités insérées entre les courriels et cookies : la CNIL sanctionne GOOGLE d’une amende de 325 millions d’euros | CNIL",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/fr/publicites-inserees-entre-les-courriels-et-cookies-la-cnil-sanctionne-google-dune-amende-de-325",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.201Z"
+          }
+        },
+        {
+          "year": 2026,
+          "kind": "fine",
+          "title": "Irish Google location data fine entry",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€403,000,000",
+          "summary": "The DPC register lists a fine for its inquiry into Google’s processing of location data and labels it not confirmed.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:40.614Z"
+          }
+        },
+        {
+          "year": 2022,
+          "kind": "settlement",
+          "title": "Multistate Google location tracking settlement",
+          "jurisdiction": "United States",
+          "summary": "The New York Attorney General reported a multistate settlement concerning Google’s location tracking practices.",
+          "amount": "USD 391.5 million",
+          "source": {
+            "title": "2022 Year in Review | New York Attorney General",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/2022-year-review",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:53.639Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Identifiers, device information and interactions",
@@ -4453,7 +4858,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Amazon.com, Inc., U.S. v. · FTC case record",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2026.",
+          "source": {
+            "title": "Amazon.com, Inc., U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/252-3024-amazoncom-inc-us-v",
+            "date": "2026-06-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:03.018Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Purchase and service interaction information",
@@ -4582,6 +5003,20 @@
             "fetchedAt": "2026-11-22T05:48:38.256Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Salesforce identifies the United States among countries where personal data may be processed.",
+          "source": {
+            "title": "Salesforce Privacy Information | Salesforce",
+            "publisher": "Salesforce",
+            "url": "https://www.salesforce.com/company/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:54.665Z"
+          }
+        }
       ]
     },
     {
@@ -4649,6 +5084,20 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:38.791Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "AppsFlyer names the United States in its international data transfer disclosures.",
+          "source": {
+            "title": "AppsFlyer Services Privacy Policy | AppsFlyer",
+            "publisher": "AppsFlyer",
+            "url": "https://www.appsflyer.com/legal/services-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:54.452Z"
           }
         }
       ]
@@ -4801,6 +5250,20 @@
             "fetchedAt": "2026-11-22T05:48:42.058Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "Russia",
+          "note": "Yandex’s notice describes processing in Russia and possible international transfers.",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Yandex",
+            "url": "https://yandex.com/legal/confidential/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:55.486Z"
+          }
+        }
       ]
     },
     {
@@ -4873,11 +5336,1593 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:11.908Z"
           }
+        },
+        {
+          "year": 2024,
+          "kind": "settlement",
+          "title": "Texas Meta biometrics settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 1.4 billion",
+          "summary": "Texas announced a settlement of allegations involving Facebook facial recognition and biometric consent.",
+          "source": {
+            "title": "Attorney General Ken Paxton Secures $1.4 Billion Settlement with Meta Over Its Unauthorized Capture of Personal Biometric Data In Largest Settlement E",
+            "publisher": "Texas Office of the Attorney General",
+            "url": "https://www.oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.377Z"
+          }
+        },
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Irish Meta inquiry IN-18-10-1 and IN-18-11-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€251,000,000",
+          "summary": "The DPC register lists combined fines under the two inquiry numbers with appeal pending.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:39.402Z"
+          }
+        },
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Irish Meta inquiry IN-22-4-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€91,000,000",
+          "summary": "The DPC register lists an administrative fine for the Meta decision and records its appeal status.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:44.423Z"
+          }
         }
       ]
+    },
+    {
+      "name": "InMarket",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "settlement",
+          "title": "InMarket location data order",
+          "jurisdiction": "United States",
+          "summary": "The FTC’s action concerned InMarket’s collection and sale of precise location information and imposed restrictions on sharing it.",
+          "source": {
+            "title": "InMarket Media, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023088-inmarket-media-llc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.998Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RentGrow, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "RentGrow, Inc., U.S. v. · FTC case record",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2026.",
+          "source": {
+            "title": "RentGrow, Inc., U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3002-rentgrow-inc-us-v",
+            "date": "2026-07-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.002Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Illuminate Education, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Illuminate Education, Inc., In the Matter of · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Illuminate Education, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3105-illuminate-education-inc-matter",
+            "date": "2026-06-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:03.263Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "OkCupid/Match",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "OkCupid/Match · FTC case record",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2026.",
+          "source": {
+            "title": "OkCupid/Match | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/okcupidmatch",
+            "date": "2026-03-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.167Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Disney",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Disney · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Disney | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/disney",
+            "date": "2025-12-31",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.320Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Illusory Systems/Nomad",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Illusory Systems/Nomad · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Illusory Systems/Nomad | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/illusory-systemsnomad",
+            "date": "2025-12-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.340Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Apitor",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Apitor · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving location information. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Apitor | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/apitor",
+            "date": "2025-10-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.899Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Iconic Hearts Holdings, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Iconic Hearts Holdings, Inc., U.S. v. · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Iconic Hearts Holdings, Inc., U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3029-iconic-hearts-holdings-inc-us-v",
+            "date": "2025-09-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:02.109Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Cognosphere, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Cognosphere, LLC, U.S. v. · FTC case record",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2025.",
+          "source": {
+            "title": "Cognosphere, LLC, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v",
+            "date": "2025-01-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:05.741Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Mobilewalla",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Mobilewalla, Inc., In the Matter of · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving location information. The earliest dated item in the published case timeline is from 2024.",
+          "source": {
+            "title": "Mobilewalla, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3196-mobilewalla-inc-matter",
+            "date": "2025-01-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:04.487Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Intellivision",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Intellivision, In the Matter of · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2024.",
+          "source": {
+            "title": "Intellivision, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3023-intellivision-matter",
+            "date": "2025-01-13",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:05.287Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Vivint Smart Home, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Vivint Smart Home, Inc. · FTC case record",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2021.",
+          "source": {
+            "title": "Vivint Smart Home, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3060-vivint-smart-home-inc",
+            "date": "2024-12-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:07.311Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Credit Bureau Center, LLC (formerly known as MyScore LLC)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Credit Bureau Center, LLC (formerly known as MyScore LLC) · FTC case record",
+          "year": 2017,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2017.",
+          "source": {
+            "title": "Credit Bureau Center, LLC (formerly known as MyScore LLC) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3120-x170014-credit-bureau-center-llc-formerly-known-myscore-llc",
+            "date": "2024-11-21",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:06.936Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "CafePress",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "CafePress, In the Matter of · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2022.",
+          "source": {
+            "title": "CafePress, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923209-cafepress-matter",
+            "date": "2024-09-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:08.154Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "1Health.io/Vitagene",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "1Health.io/Vitagene, In the Matter of · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving health information. The earliest dated item in the published case timeline is from 2023.",
+          "source": {
+            "title": "1Health.io/Vitagene, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923170-1healthiovitagene-matter",
+            "date": "2024-09-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:07.337Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Monument, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Monument, Inc., U.S. v. · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving health information. The earliest dated item in the published case timeline is from 2024.",
+          "source": {
+            "title": "Monument, Inc., U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2323043-monument-inc-us-v",
+            "date": "2024-06-07",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:06.937Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Blackbaud, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Blackbaud, Inc. · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2024.",
+          "source": {
+            "title": "Blackbaud, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023181-blackbaud-inc",
+            "date": "2024-05-20",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:07.498Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Rite Aid Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Rite Aid Corporation, FTC v. · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2023.",
+          "source": {
+            "title": "Rite Aid Corporation, FTC v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023190-rite-aid-corporation-ftc-v",
+            "date": "2024-03-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:08.838Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Rite Aid Corporation, In the Matter of · FTC case record",
+          "year": 2010,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2010.",
+          "caseRef": "072 3121",
+          "source": {
+            "title": "Rite Aid Corporation, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3121-c-4308-rite-aid-corporation-matter",
+            "date": "2010-11-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:15:22.135Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TruthFinder, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "TruthFinder, LLC, FTC v. · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2023.",
+          "source": {
+            "title": "TruthFinder, LLC, FTC v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/truthfinder-llc-ftc-v",
+            "date": "2023-10-11",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:07.121Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Edmodo, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Edmodo, LLC, U.S. v. · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2023.",
+          "source": {
+            "title": "Edmodo, LLC, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3129-edmodo-llc-us-v",
+            "date": "2023-08-28",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:13:10.101Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Easy Healthcare Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Easy Healthcare Corporation, U.S. v. · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving health information. The earliest dated item in the published case timeline is from 2023.",
+          "caseRef": "202 3186",
+          "source": {
+            "title": "Easy Healthcare Corporation, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3186-easy-healthcare-corporation-us-v",
+            "date": "2023-06-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.303Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Chegg",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Chegg · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2022.",
+          "source": {
+            "title": "Chegg | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/chegg",
+            "date": "2023-01-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.369Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Drizly, LLC.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Drizly, LLC., In the Matter of · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2022.",
+          "caseRef": "2023185",
+          "source": {
+            "title": "Drizly, LLC., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023185-drizly-llc-matter",
+            "date": "2023-01-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.246Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Everalbum, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Everalbum, Inc., In the Matter of · FTC case record",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2021.",
+          "caseRef": "192 3172",
+          "source": {
+            "title": "Everalbum, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3172-everalbum-inc-matter",
+            "date": "2022-05-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.826Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Weight Watchers/WW",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Weight Watchers/WW · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2022.",
+          "caseRef": "1923228",
+          "source": {
+            "title": "Weight Watchers/WW | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923228-weight-watchersww",
+            "date": "2022-03-04",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.825Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ITMedia Solutions LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ITMedia Solutions LLC · FTC case record",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2016.",
+          "caseRef": "1523225",
+          "source": {
+            "title": "ITMedia Solutions LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1523225-itmedia-solutions-llc",
+            "date": "2022-01-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.448Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ascension Data & Analytics, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ascension Data & Analytics, LLC, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3126",
+          "source": {
+            "title": "Ascension Data & Analytics, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3126-ascension-data-analytics-llc-matter",
+            "date": "2021-12-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.422Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "OpenX Technologies, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "OpenX Technologies, Inc. · FTC case record",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving location information. The earliest dated item in the published case timeline is from 2021.",
+          "caseRef": "1923019",
+          "source": {
+            "title": "OpenX Technologies, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923019-openx-technologies-inc",
+            "date": "2021-12-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.713Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SkyMed International, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SkyMed International, Inc., In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "1923140",
+          "source": {
+            "title": "SkyMed International, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923140-skymed-international-inc-matter",
+            "date": "2021-02-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:37.335Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Midwest Recovery Systems, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Midwest Recovery Systems, LLC · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "1923042",
+          "source": {
+            "title": "Midwest Recovery Systems, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923042-midwest-recovery-systems-llc",
+            "date": "2020-11-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.886Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "NTT Global Data Centers Americas, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "NTT Global Data Centers Americas, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3189",
+          "source": {
+            "title": "NTT Global Data Centers Americas, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3189-ntt-global-data-centers-americas-inc-matter",
+            "date": "2020-10-28",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.733Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ortho-Clinical Diagnostics, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ortho-Clinical Diagnostics, Inc., In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3050",
+          "source": {
+            "title": "Ortho-Clinical Diagnostics, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3050-ortho-clinical-diagnostics-inc-matter",
+            "date": "2020-07-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.809Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Miniclip",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Miniclip, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3129",
+          "source": {
+            "title": "Miniclip, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3129-miniclip-matter",
+            "date": "2020-07-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.594Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Kohl's Department Stores, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Kohl's Department Stores, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "182 3200",
+          "source": {
+            "title": "Kohl's Department Stores, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3200-kohls-department-stores-inc",
+            "date": "2020-06-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:39.458Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "HyperBeard, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "HyperBeard, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3109",
+          "source": {
+            "title": "HyperBeard, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3109-hyperbeard-inc",
+            "date": "2020-06-04",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.580Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Jasjit Gotra (Alliance Security)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Jasjit Gotra (Alliance Security) · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "X140022",
+          "source": {
+            "title": "Jasjit Gotra (Alliance Security) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/x140022-jasjit-gotra-alliance-security",
+            "date": "2020-05-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.791Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "T&M Protection Resources, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "T&M Protection Resources, LLC, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3092",
+          "source": {
+            "title": "T&M Protection Resources, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3092-tm-protection-resources-llc-matter",
+            "date": "2020-03-23",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:39.515Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Global Data Vault, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Global Data Vault, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3093",
+          "source": {
+            "title": "Global Data Vault, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3093-global-data-vault-llc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.682Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TDARX, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "TDARX, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3084",
+          "source": {
+            "title": "TDARX, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3084-tdarx-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.774Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Click Labs, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Click Labs, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3090",
+          "source": {
+            "title": "Click Labs, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3090-click-labs-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.755Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Incentive Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Incentive Services, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3078",
+          "source": {
+            "title": "Incentive Services, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3078-incentive-services-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.047Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "DCR Workforce, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "DCR Workforce, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3188",
+          "source": {
+            "title": "DCR Workforce, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3188-dcr-workforce-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.186Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Trueface.ai",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Trueface.ai, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3193",
+          "source": {
+            "title": "Trueface.ai, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3193-truefaceai-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:45.958Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LotaData, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LotaData, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3194",
+          "source": {
+            "title": "LotaData, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3194-lotadata-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.285Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Thru, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Thru, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3196",
+          "source": {
+            "title": "Thru, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3196-thru-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.188Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "EmpiriStat",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "EmpiriStat, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3195",
+          "source": {
+            "title": "EmpiriStat, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3195-empiristat-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.079Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Mortgage Solutions FCS, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Mortgage Solutions FCS, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "182 3199",
+          "source": {
+            "title": "Mortgage Solutions FCS, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3199-mortgage-solutions-fcs-inc",
+            "date": "2020-01-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:45.972Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Medable, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Medable, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3192",
+          "source": {
+            "title": "Medable, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3192-medable-inc-matter",
+            "date": "2020-01-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.265Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "InfoTrax Systems, L.C.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "InfoTrax Systems, L.C. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "162 3130",
+          "source": {
+            "title": "InfoTrax Systems, L.C. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3130-infotrax-systems-lc",
+            "date": "2020-01-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.458Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Cambridge Analytica, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Cambridge Analytica, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3107",
+          "source": {
+            "title": "Cambridge Analytica, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3107-cambridge-analytica-llc-matter",
+            "date": "2019-12-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.370Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LifeLock, Inc., a corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LifeLock, Inc., a corporation · FTC case record",
+          "year": 2010,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2010.",
+          "caseRef": "072 3069",
+          "source": {
+            "title": "LifeLock, Inc., a corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3069-x100023-lifelock-inc-corporation",
+            "date": "2019-10-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.049Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LightYear Dealer Technologies, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LightYear Dealer Technologies, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3051",
+          "source": {
+            "title": "LightYear Dealer Technologies, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3051-lightyear-dealer-technologies-llc-matter",
+            "date": "2019-09-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.891Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LabMD, Inc. v. Federal Trade Commission",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LabMD, Inc. v. Federal Trade Commission · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "102 3099",
+          "source": {
+            "title": "LabMD, Inc. v. Federal Trade Commission | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3099-labmd-inc-v-federal-trade-commission",
+            "date": "2019-08-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.968Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SecurTest, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SecurTest, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3152",
+          "source": {
+            "title": "SecurTest, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3152-securtest-inc-matter",
+            "date": "2019-08-21",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.529Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Equifax, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Equifax, Inc. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3203",
+          "source": {
+            "title": "Equifax, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3203-equifax-inc",
+            "date": "2019-07-31",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.969Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "James V. Grago, Jr. doing business as ClixSense.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "James V. Grago, Jr. doing business as ClixSense.com, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3003",
+          "source": {
+            "title": "James V. Grago, Jr. doing business as ClixSense.com, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3003-james-v-grago-jr-doing-business-clixsensecom-matter",
+            "date": "2019-07-02",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.730Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Unixiz, Inc. doing business as i-Dressup.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Unixiz, Inc. doing business as i-Dressup.com · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3002",
+          "source": {
+            "title": "Unixiz, Inc. doing business as i-Dressup.com | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3002-unixiz-inc-doing-business-i-dressupcom",
+            "date": "2019-04-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.186Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T05:58:15.922Z",
+  "generatedAt": "2026-11-22T06:15:57.306Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -5145,6 +7190,9 @@
       "leagueoflegends.com": [
         "league-of-legends"
       ],
+      "life360.com": [
+        "life360"
+      ],
       "linkedin.com": [
         "linkedin"
       ],
@@ -5222,6 +7270,9 @@
       "razer.com": [
         "razer-synapse"
       ],
+      "shein.com": [
+        "shein"
+      ],
       "shop.app": [
         "shop"
       ],
@@ -5294,6 +7345,9 @@
       ],
       "tv.apple.com": [
         "apple-tv"
+      ],
+      "uber.com": [
+        "uber"
       ],
       "utorrent.com": [
         "utorrent"
