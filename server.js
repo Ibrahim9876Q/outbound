@@ -22,6 +22,32 @@ function coordinate(value, limit, fallback) {
 const events = [];
 const clients = new Set();
 const pendingEvents = [];
+let phone = null;
+
+async function pollPhone() {
+  try {
+    const response = await fetch('http://127.0.0.1:4320/api/state', {
+      signal: AbortSignal.timeout(1000),
+      redirect: 'error',
+    });
+    if (!response.ok) { phone = null; return; }
+    const { stats, lookups, consent } = await response.json();
+    const counts = [stats?.lookups, stats?.blocked, consent?.active];
+    if (!counts.every((count) => Number.isSafeInteger(count) && count >= 0) || !Array.isArray(lookups)) {
+      phone = null;
+      return;
+    }
+    phone = {
+      online: true,
+      lookups: stats.lookups,
+      blocked: stats.blocked,
+      approvals: consent.active,
+      lastTracker: lookups.find((lookup) => typeof lookup?.tracker === 'string' && lookup.tracker)?.tracker ?? null,
+    };
+  } catch {
+    phone = null;
+  }
+}
 
 function pushEvent(e) {
   events.unshift(e);
@@ -43,7 +69,7 @@ process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
 
 function state() {
-  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60) };
+  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60), phone };
 }
 
 function broadcastState() {
@@ -63,6 +89,8 @@ function loop(fn, everyMs) {
 }
 loop(() => network.poll(), 1500);
 loop(() => devices.poll(), 750);
+setInterval(pollPhone, 2000);
+pollPhone();
 setInterval(broadcastState, 500);
 
 const PUBLIC = path.join(__dirname, 'public');
