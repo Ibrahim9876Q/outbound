@@ -8613,6 +8613,586 @@
           }
         }
       ]
+    },
+    {
+      "id": "itunes",
+      "name": "iTunes",
+      "publisher": "Apple",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device data and account details",
+          "purpose": "Apple’s general notice describes processing these categories to provide and develop its services.",
+          "source": {
+            "title": "Legal - Apple Privacy Policy - Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/en-ww/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.179Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-devices",
+      "name": "Apple Devices",
+      "publisher": "Apple",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device data and account details",
+          "purpose": "Apple’s general notice describes processing these categories to provide and develop its services.",
+          "source": {
+            "title": "Legal - Apple Privacy Policy - Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/en-ww/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.179Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "windows-scan",
+      "name": "Windows Scan",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "windows-app",
+      "name": "Windows App",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "clipchamp",
+      "name": "Microsoft Clipchamp",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-photos",
+      "name": "Microsoft Photos",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bing-wallpaper",
+      "name": "Bing Wallpaper",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "publisher": "VideoLAN",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Developer privacy disclosures",
+          "purpose": "VideoLAN explains how VLC handles user information.",
+          "source": {
+            "title": "Legal - VideoLAN",
+            "publisher": "VideoLAN",
+            "url": "https://www.videolan.org/privacy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:44.074Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "picsart",
+      "name": "Picsart Photo Editor",
+      "publisher": "Picsart",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide Picsart services",
+          "source": {
+            "title": "Privacy Policy - Picsart",
+            "publisher": "Picsart",
+            "url": "https://picsart.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.923Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "filmora",
+      "name": "Wondershare Filmora",
+      "publisher": "Wondershare",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and usage information",
+          "purpose": "Wondershare describes processing these categories for its software.",
+          "source": {
+            "title": "Wondershare Inc.-Privacy",
+            "publisher": "Wondershare",
+            "url": "https://www.wondershare.com/privacy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.785Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "counter-strike-2",
+      "name": "Counter-Strike 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "dota-2",
+      "name": "Dota 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "team-fortress-2",
+      "name": "Team Fortress 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "deadlock",
+      "name": "Deadlock",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apex-legends",
+      "name": "Apex Legends",
+      "publisher": "Electronic Arts",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and gameplay information",
+          "purpose": "EA describes processing these categories across its games.",
+          "source": {
+            "title": "Privacy &amp; Cookie Policy - Official EA Site",
+            "publisher": "Electronic Arts",
+            "url": "https://www.ea.com/legal/privacy-and-cookie-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.642Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "rainbow-six-siege",
+      "name": "Rainbow Six Siege",
+      "publisher": "Ubisoft",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Game and device usage",
+          "purpose": "Ubisoft describes collecting data when players use its services.",
+          "source": {
+            "title": "Privacy policy",
+            "publisher": "Ubisoft",
+            "url": "https://legal.ubi.com/privacypolicy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.337Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "warframe",
+      "name": "Warframe",
+      "publisher": "Digital Extremes",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Provide and administer Warframe",
+          "source": {
+            "title": "Warframe: Privacy Policy",
+            "publisher": "Digital Extremes",
+            "url": "https://www.warframe.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.063Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vrchat",
+      "name": "VRChat",
+      "publisher": "VRChat",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide VRChat services",
+          "source": {
+            "title": "Privacy Policy &mdash; VRChat",
+            "publisher": "VRChat",
+            "url": "https://hello.vrchat.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.166Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "pubg",
+      "name": "PUBG: Battlegrounds",
+      "publisher": "Krafton",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide and secure PUBG",
+          "source": {
+            "title": "PUBG: BATTLEGROUNDS",
+            "publisher": "Krafton",
+            "url": "https://pubg.com/en/clause/privacy_policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:46.922Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "call-of-duty",
+      "name": "Call of Duty",
+      "publisher": "Activision",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and gameplay data",
+          "purpose": "Activision describes using these categories to provide its games and services.",
+          "source": {
+            "title": "Activision | Privacy Policy",
+            "publisher": "Activision",
+            "url": "https://www.activision.com/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:46.028Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -13247,7 +13827,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T06:53:52.352Z",
+  "generatedAt": "2026-11-22T06:57:46.924Z",
   "index": {
     "exe": {
       "brave.exe": [

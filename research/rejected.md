@@ -657,3 +657,14 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - https://chromewebstore.google.com/detail/onbjkmhileedchimkcmieeiomipdljki — No public developer name
 - https://chromewebstore.google.com/detail/gipljhilblgebbldeiefbfcaidmhaofa — No public developer name
 - https://chromewebstore.google.com/detail/depgbnacabpbpaepmhckinjdhjfplaeg — No public developer name
+
+## apps-05 · 2026-11-22T06:57:46.923Z
+
+- Adobe Acrobat Reader DC — https://www.adobe.com/privacy/privacy-notice.html — curl: (22) The requested URL returned error: 403
+- Lively Wallpaper — https://github.com/rocksdanister/lively/wiki/Privacy-Policy — missing evidence: collect
+- NVIDIA Control Panel — https://www.nvidia.com/en-us/about-nvidia/privacy-policy/ — missing evidence: device, system information
+- Epson Print and Scan — https://epson.com/privacy-policy — missing evidence: usage
+- Grand Theft Auto V Enhanced — https://www.rockstargames.com/privacy — missing evidence: gameplay, IP address
+- Red Dead Redemption 2 — https://www.rockstargames.com/privacy — missing evidence: gameplay, IP address
+- Cyberpunk 2077 — https://www.cdprojekt.com/en/privacy-policy/ — missing evidence: account, usage
+- Overwatch — https://www.blizzard.com/en-us/legal/privacy — curl: (22) The requested URL returned error: 404
