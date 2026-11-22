@@ -1,160 +1,20 @@
-# Outbound live demo
+# Outbound · Three-minute judged demo
 
-**Three minutes, followed by one minute of questions.**
+Rehearse from the integrated Windows checkout. Keep Computer, Stored data and Globe ready. Confirm the policy page shows the local provider and dry-run enforcer. Use the opt-in results from this PC only after reviewing what will be visible on the projector. Start with real traffic already present or use the local fallback below.
 
-Before presenting, start Outbound from the integrated project and open Computer. Close private apps and tabs, choose one app to open live, and check which destinations your machine can show. Test the camera and microphone preview with the presenter's permission. Keep a second terminal ready and leave the server running throughout.
-
-## 0:00–0:30 · The hook
-
-“Last week, CBC Marketplace reported that the Tim Hortons app appeared to send data to outside companies as soon as it opened. What is your laptop doing right now?” [CBC Marketplace investigation](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814)
-
-Point to the laptop and the connected apps already on its screen. “Outbound shows where Windows apps connect and when they use your microphone or camera.”
-
-## 0:30–1:30 · Watch a connection appear
-
-Open the rehearsed app. Return to Computer, point to a new company chip or live wire, and click the app. Read the actual company and country from the destination panel. “Windows reported a connection from this app to this endpoint. Outbound uses the hostname or the network owner to put a name on it.” If a tracker appears, point at its badge. If a direct link appears, click either app and show its local peer.
-
-## 1:30–2:15 · Make the devices visible
-
-Open the video-call preview and enable both devices. Return to Outbound while the preview stays open. Point to the green camera LED and orange mic key, then read the app label. Close the preview and show the devices returning to idle and the usage cards updating.
-
-“Outbound observed when the app started and stopped using the devices. That gives us the session duration you see here.”
-
-## 2:15–2:50 · Follow a destination
-
-Switch to Globe. Tell the judges the country count actually on screen, then filter to the app you just opened and hover a point. “This is where the endpoint's IP address maps. The globe shows endpoint estimates for the connections Outbound has recently observed.”
-
-## 2:50–3:00 · What’s next
-
-“Next we want to bring this view to phones and explore an Auth0 consent firewall so people can act on what they discover.”
-
-## If venue Wi-Fi is slow
-
-- Use destinations already observed in the current run within the last ten minutes. The UI, globe assets and offline IP tables load locally.
-- To show a real direct connection offline, run `curl.exe -N http://127.0.0.1:4317/events -o NUL` in the second terminal. Back in Computer, show the cURL-to-Node.js link. Press Ctrl+C after the demo.
-- Use the Windows Camera app for a local camera preview if the call preview stalls. If no external destinations are available, show the most recent available observation or say the globe is waiting for connections. Keep a labelled recording of a real rehearsal for the live sequence if the machine or display fails.
-
-## One minute of questions
-
-- **Can you see what the app sends?** Outbound reads metadata from Windows TCP snapshots. The animation illustrates connections and the app never inspects payloads.
-- **Does the company label identify who receives the data?** It's an attribution from the DNS name or the registered network owner, which can be a cloud or CDN provider. Geolocation estimates describe IP endpoints.
-- **What happens to the observations?** The dashboard is available only on the PC. Device session history is saved locally, and connection history is held in the running process.
-
-
-## Phone consent firewall
-
-Before judging, start `node gateway/server.js --demo` and open the desktop dashboard's **Phone** link or [localhost:4320](http://127.0.0.1:4320/). For live Auth0, keep the enrolled phone unlocked and check that startup reports `Mode: live`. Start with no active approval for the test tracker.
-
-| Time | Click | Say |
+| Time | Show | Say |
 | --- | --- | --- |
-| 0:00–0:20 | **RUN CONSENT SELF-TEST** | “Outbound just sent a real DNS lookup to the gateway. The tracker is blocked, and Outbound has requested approval.” |
-| 0:20–0:50 | In live mode, match the reference and approve in Guardian. In offline mode, click **Approve demo request**. | Live: “Auth0 CIBA sent this request to my enrolled phone. The gateway polls while the countdown runs.” Offline: “The banner marks the simulated Auth0 decision. This laptop is still making real loopback DNS requests.” |
-| 0:50–1:10 | Point to **APPROVED** and the FGA check in the terminal. | “The gateway retried DNS and checked the grant. Its expiry limits how long this tracker can resolve.” |
-| 1:10–1:30 | Expand **How Auth0 powers tracker consent**. | “CIBA gets the decision. FGA stores the per-tracker grant and its expiry. Revoking consent deletes that tuple.” |
-| 1:30–1:50 | Click **Revoke**, then **Look up tracker**. Point to the new **Blocked** row. | “That same tracker is blocked again on the next lookup.” |
+| 0:00–0:25 | Open **Stored data** and press **Scan this PC**. While it runs, point to Computer's live connections. | “On November 13, 2026, CBC Marketplace reported that the Tim Hortons app appeared to contact outside companies as soon as it opened. What can this laptop tell us about activity we'd otherwise miss?” |
+| 0:25–1:05 | Return to Stored data. Open the permission history and a recent timestamped row, preferably for location or microphone. Point to one app-data or extension finding. | “On this PC on November 22, 2026, the scanner found 629 Windows permission entries across 23 capabilities. Windows preserved timestamps in 520 entries, so we can see past access after an app closes. This is an opt-in inventory of local metadata.” |
+| 1:05–1:35 | Open **Dossier**, search **Tim Hortons**, and open the 2022 mobile location investigation. Point to the regulator and source link. | “The dossier puts a documented incident next to the company. This record is a Canadian privacy regulator's investigation. The result comes from the cited source, and our laptop scan is a separate observation.” |
+| 1:35–2:10 | From an observed app's detail, choose its block preview. In Rules, preview the session rule and point to **DRY RUN**; remove the demo rule afterwards. | “Here's the rule we would generate for that app. This is a preview. We left Windows settings and the firewall alone.” |
+| 2:10–3:00 | Switch to **Globe**, filter to one app, and follow its illustrated packets to a destination with a location estimate. Read the actual counts and open the attribution detail. | “These arcs animate observed connections. IP geolocation estimates the endpoint's location, and the attribution may name a network or CDN operator. The view lets us connect a live observation to the right question about an app.” |
 
-For a denial rehearsal, press **RUN CONSENT SELF-TEST** and deny in Guardian or click **Deny demo request**. The terminal stops at **DENIED** and **Look up tracker** confirms the block. If a live request fails, switch to the labeled offline demo before judging by starting the same command with the provider settings absent.
+[November 2026 CBC Marketplace report](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814) · [2022 Canadian privacy regulator release](https://www.priv.gc.ca/en/opc-news/news-and-announcements/2022/nr-c_220601/)
 
+## Fallback appendix
 
-**Three minutes, followed by one minute of questions.**
-
-Before presenting, start Outbound from the integrated project and open Computer. Close private apps and tabs, choose one app to open live, and check which destinations your machine can show. Test the camera and microphone preview with the presenter's permission. Keep a second terminal ready and leave the server running throughout.
-
-## 0:00–0:30 · The hook
-
-“Last week, CBC Marketplace reported that the Tim Hortons app appeared to send data to outside companies as soon as it opened. What is your laptop doing right now?” [CBC Marketplace investigation](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814)
-
-Point to the laptop and the connected apps already on its screen. “Outbound shows where Windows apps connect and when they use your microphone or camera.”
-
-## 0:30–1:30 · Watch a connection appear
-
-Open the rehearsed app. Return to Computer, point to a new company chip or live wire, and click the app. Read the actual company and country from the destination panel. “Windows reported a connection from this app to this endpoint. Outbound uses the hostname or the network owner to put a name on it.” If a tracker appears, point at its badge. If a direct link appears, click either app and show its local peer.
-
-## 1:30–2:15 · Make the devices visible
-
-Open the video-call preview and enable both devices. Return to Outbound while the preview stays open. Point to the green camera LED and orange mic key, then read the app label. Close the preview and show the devices returning to idle and the usage cards updating.
-
-“Outbound observed when the app started and stopped using the devices. That gives us the session duration you see here.”
-
-## 2:15–2:50 · Follow a destination
-
-Switch to Globe. Tell the judges the country count actually on screen, then filter to the app you just opened and hover a point. “This is where the endpoint's IP address maps. The globe shows endpoint estimates for the connections Outbound has recently observed.”
-
-## 2:50–3:00 · What’s next
-
-“Next we want to bring this view to phones and explore an Auth0 consent firewall so people can act on what they discover.”
-
-## If venue Wi-Fi is slow
-
-- Use destinations already observed in the current run within the last ten minutes. The UI, globe assets and offline IP tables load locally.
-- To show a real direct connection offline, run `curl.exe -N http://127.0.0.1:4317/events -o NUL` in the second terminal. Back in Computer, show the cURL-to-Node.js link. Press Ctrl+C after the demo.
-- Use the Windows Camera app for a local camera preview if the call preview stalls. If no external destinations are available, show the most recent available observation or say the globe is waiting for connections. Keep a labelled recording of a real rehearsal for the live sequence if the machine or display fails.
-
-## One minute of questions
-
-- **Can you see what the app sends?** Outbound reads metadata from Windows TCP snapshots. The animation illustrates connections and the app never inspects payloads.
-- **Does the company label identify who receives the data?** It's an attribution from the DNS name or the registered network owner, which can be a cloud or CDN provider. Geolocation estimates describe IP endpoints.
-- **What happens to the observations?** The dashboard is available only on the PC. Device session history is saved locally, and connection history is held in the running process.
-
-# Outbound demo
-
-## Phone consent firewall
-
-Before judging, start `node gateway/server.js --demo` and open the desktop dashboard's **Phone** link or [localhost:4320](http://127.0.0.1:4320/). For live Auth0, keep the enrolled phone unlocked and check that startup reports `Mode: live`. Start with no active approval for the test tracker.
-
-| Time | Click | Say |
-| --- | --- | --- |
-| 0:00–0:20 | **RUN CONSENT SELF-TEST** | “Outbound just sent a real DNS lookup to the gateway. The tracker is blocked, and Outbound has requested approval.” |
-| 0:20–0:50 | In live mode, match the reference and approve in Guardian. In offline mode, click **Approve demo request**. | Live: “Auth0 CIBA sent this request to my enrolled phone. The gateway polls while the countdown runs.” Offline: “The banner marks the simulated Auth0 decision. This laptop is still making real loopback DNS requests.” |
-| 0:50–1:10 | Point to **APPROVED** and the FGA check in the terminal. | “The gateway retried DNS and checked the grant. Its expiry limits how long this tracker can resolve.” |
-| 1:10–1:30 | Expand **How Auth0 powers tracker consent**. | “CIBA gets the decision. FGA stores the per-tracker grant and its expiry. Revoking consent deletes that tuple.” |
-| 1:30–1:50 | Click **Revoke**, then **Look up tracker**. Point to the new **Blocked** row. | “That same tracker is blocked again on the next lookup.” |
-
-For a denial rehearsal, press **RUN CONSENT SELF-TEST** and deny in Guardian or click **Deny demo request**. The terminal stops at **DENIED** and **Look up tracker** confirms the block. If a live request fails, switch to the labeled offline demo before judging by starting the same command with the provider settings absent.
-
-
-**Three minutes, followed by one minute of questions.**
-
-Before judging, open Computer and the Phone dashboard in separate tabs. Rehearse a video-call preview, start with no active grant for the test tracker, and keep the Guardian phone unlocked in live mode. For a clean Globe comparison, use a fresh desktop run and a Chrome window with background tabs closed. Keep a recording of the real weather.com rehearsal available if venue Wi-Fi stalls.
-
-## 0:00–0:25 · Hook
-
-“CBC Marketplace reported that the Tim Hortons app appeared to contact outside companies as soon as it opened. What could we discover by opening one page on this laptop?” Point to Computer and its live app connections. [CBC Marketplace investigation](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814)
-
-## 0:25–0:55 · Live microphone and camera
-
-Start the rehearsed call preview with the mic and camera enabled and switch straight back to Computer. Point to the mic key and webcam indicator as they react, then read the app name. Close the preview and show both returning to idle. “Outbound saw that app pick up both devices and recorded how long it used them.”
-
-## 0:55–1:45 · Discover the unknown on Globe
-
-Switch to Globe and show the starting count with Chrome selected once its filter is available. Open `weather.com` in Chrome, or the ad-funded news site shortlisted in rehearsal, and return to Globe. Give Outbound a few seconds to populate. Point to the arcs, read the actual on-screen counts, and click a country or destination to reveal an attributed owner.
-
-“On our laptop, one load of weather.com produced connections attributed to 38 companies in 13 countries, with at least seven flagged tracker companies. These are estimates for the observed endpoints.” If the live page yields fewer destinations, report that result and use the labeled rehearsal recording for the measured run.
-
-## 1:45–3:00 · Phone Auth0 consent firewall
-
-- **1:45–2:05** — Switch to Phone and press **RUN CONSENT SELF-TEST**. Point to the blocked lookup and the approval request.
-- **2:05–2:35** — In live mode, match the reference and approve in Guardian. Point to **APPROVED** and the successful retried lookup. “Auth0 CIBA asks for consent. FGA stores the tracker grant and its expiry.” If credentials or Wi-Fi are unavailable, use the labeled offline demo and explicitly identify its simulated Auth0 decision. The loopback DNS lookup still runs.
-- **2:35–3:00** — Click **Revoke**, then **Look up tracker**. Point to **Blocked**. “Once the grant is revoked, the same DNS lookup is blocked again.”
-
-## One minute of questions
-
-- **What does the globe measure?** Windows TCP snapshots yield the connections. The country is an IP geolocation estimate and the owner may be a cloud provider or CDN.
-- **How does the phone piece work?** The gateway checks the DNS request against tracker permissions. Revocation takes effect on the next lookup through the gateway.
-- **Where is the desktop data stored?** Connection observations live in memory. Device sessions are saved locally.
-
-## Phone consent firewall
-
-Appendix. Use this expanded click table for rehearsal and questions.
-
-Before judging, start `node gateway/server.js --demo` and open the desktop dashboard's **Phone** link or [localhost:4320](http://127.0.0.1:4320/). For live Auth0, keep the enrolled phone unlocked and check that startup reports `Mode: live`. Start with no active approval for the test tracker.
-
-| Time | Click | Say |
-| --- | --- | --- |
-| 0:00–0:20 | **RUN CONSENT SELF-TEST** | “Outbound just sent a real DNS lookup to the gateway. The tracker is blocked, and Outbound has requested approval.” |
-| 0:20–0:50 | In live mode, match the reference and approve in Guardian. In offline mode, click **Approve demo request**. | Live: “Auth0 CIBA sent this request to my enrolled phone. The gateway polls while the countdown runs.” Offline: “The banner marks the simulated Auth0 decision. This laptop is still making real loopback DNS requests.” |
-| 0:50–1:10 | Point to **APPROVED** and the FGA check in the terminal. | “The gateway retried DNS and checked the grant. Its expiry limits how long this tracker can resolve.” |
-| 1:10–1:30 | Expand **How Auth0 powers tracker consent**. | “CIBA gets the decision. FGA stores the per-tracker grant and its expiry. Revoking consent deletes that tuple.” |
-| 1:30–1:50 | Click **Revoke**, then **Look up tracker**. Point to the new **Blocked** row. | “That same tracker is blocked again on the next lookup.” |
-
-For a denial rehearsal, press **RUN CONSENT SELF-TEST** and deny in Guardian or click **Deny demo request**. The terminal stops at **DENIED** and **Look up tracker** confirms the block. If a live request fails, switch to the labeled offline demo before judging by starting the same command with the provider settings absent.
+- If the new scan is still running, show a completed opt-in scan from the rehearsal and identify when it was collected. If this frontend build shows only the older scan cards, read the relevant permission and inventory results from the local `/api/scan` response. The app-data walk continues when the first results are partial.
+- If venue Wi-Fi stalls, use the already-observed destinations still retained within the time and per-app caps. If none have location estimates, use `curl.exe -N http://127.0.0.1:4317/events -o NUL` from a second terminal to create a real local connection, then show it in Computer or Links. Stop that curl with Ctrl+C. Use a rehearsal recording only if it was captured and checked before judging.
+- If asked about device indicators, use a preapproved camera preview. The webcam lamp is white. The orange microphone key and the white lamp indicate Windows sessions, and durations reflect the observations.
+- If asked about Phone, live Auth0 CIBA needs a Guardian-enrolled approver and a configured FGA store. Our hosted attempt reached CIBA and was blocked before push delivery because enrollment was missing. The gateway's explicit offline demo runs a real loopback DNS lookup with labeled simulated approvals. Follow the gateway's rehearsal steps. [Phone setup and offline fallback](gateway/README.md)
