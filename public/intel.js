@@ -101,7 +101,8 @@
       }
       const day = 86400000;
       const now = scan.finishedAt || Date.now();
-      return [...groups].map(([capability, group]) => `<h3>${esc(capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
+      const labels = { webcam: 'Camera', microphone: 'Microphone', location: 'Location', contacts: 'Contacts' };
+      return [...groups].map(([capability, group]) => `<h3>${esc(labels[capability] || capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
         + list(group.map((row) => {
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
           const marker = row.inUse ? '*' : '#';
@@ -126,7 +127,7 @@
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
     const extensions = report('extensions', 'Extensions that can read every site', (rows) => list(rows.filter((row) => row.allSites).map((row) =>
       `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))}<br>`
-      + esc((row.permissions || []).join(', ')), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
+      + esc((row.permissions || []).join(', '))), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
       `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
         + (row.recommended ? '<br>Recommended: ' + esc(row.recommended) : '')), '') : '', 'No Windows privacy values were reported.');

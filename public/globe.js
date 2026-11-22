@@ -133,7 +133,7 @@
   hqLegend.hidden = true;
   legend.insertBefore(hqLegend, legend.lastElementChild);
   const incidentLegend = node('div');
-  incidentLegend.append(node('code', '', '[!]'), document.createTextNode('Verified incidents / HQ reference'));
+  incidentLegend.append(node('code', '', '[C] [$] [!]'), document.createTextNode('Court / fine / other HQ incident'));
   incidentLegend.hidden = true;
   legend.insertBefore(incidentLegend, legend.lastElementChild);
   tip.hidden = true;
@@ -552,7 +552,8 @@
         const index = cities.get(key) || 0;
         cities.set(key, index + 1);
         incidentMarkers.push({ ...hq, incident: true, kind, name: record.name, count: incidents.length,
-          glyph: incidents.some((entry) => entry.kind === 'fine') ? '$' : '!', offset: index * 38 });
+          glyph: incidents.some((entry) => entry.kind === 'fine') ? '$'
+            : incidents.some((entry) => entry.kind === 'court') ? 'C' : '!', offset: index * 38 });
       }
     }
     modelKey = '';
