@@ -1,5 +1,6 @@
 # Backend requests
 
+- Scan UI: `lastVisit` and `lastWrite` are Unix milliseconds. `summary` deduplicates sites and cookie domains across browser profiles. Site trackers are public dataset associations and can differ from requests made during the local visit.
 - Stored-data lane UI: `GET /api/scan` may include `appDataTimedOut: true` when the app-folder scan reaches its time budget. Its file sizes and counts reflect the files visited. The `kinds` values count files by kind, and an app folder may exclude a nested app listed separately.
 - Computer lane: the v2 Links view uses canonical `state.links` records with display-name endpoints. Existing desktop wires that expect executable IDs, `local`/`shared` kinds, ports or active state should read `state.legacyLinks ?? state.links`. A UDP self-edge describes an observed listener with an unknown peer. Named pipe self-edges describe only name-based attribution.
 - Computer lane: `state.sampledAt` is null and `state.fresh` is false until the first successful network sample after startup. Keep any previously received sample marked stale while fresh is false. Standalone runs keep `state.phone` null unless Phone polling is explicitly enabled.

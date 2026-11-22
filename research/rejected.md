@@ -41,3 +41,47 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Uber — https://www.uber.com/legal/en/document/?name=privacy-notice&country=united-states&lang=en — curl: (22) The requested URL returned error: 406
 - GoodRx — https://www.goodrx.com/consumer-privacy-policy — curl: (22) The requested URL returned error: 404
 - The Weather Channel — https://weather.com/legal/privacy — curl: (22) The requested URL returned error: 404
+
+## incidents-01 · 2026-11-22T05:47:36.961Z
+
+- epic-games — https://www.ftc.gov/news-events/news/press-releases/2022/12/fortnite-video-game-maker-epic-games-pay-more-half-billion-dollars-over-ftc-allegations — curl: (22) The requested URL returned error: 404
+- youtube — https://www.ftc.gov/legal-library/browse/cases-proceedings/172-3083-google-llc-youtube-llc — curl: (22) The requested URL returned error: 404
+- facebook — https://www.ftc.gov/news-events/news/press-releases/2020/02/ftc-releases-2019-privacy-data-security-update — curl: (22) The requested URL returned error: 404
+- flo — https://www.ftc.gov/legal-library/browse/cases-proceedings/192-3133-flo-health-inc — curl: (22) The requested URL returned error: 404
+- goodrx — https://www.ftc.gov/news-events/news/press-releases/2023/02/ftc-enforcement-action-bar-goodrx-sharing-consumers-sensitive-health-info-advertising — curl: (22) The requested URL returned error: 404
+- betterhelp — https://www.ftc.gov/news-events/news/press-releases/2023/07/ftc-gives-final-approval-order-banning-betterhelp-sharing-sensitive-health-data-advertising — curl: (22) The requested URL returned error: 404
+- avast — https://www.ftc.gov/enforcement/refunds/avast-settlement — curl: (22) The requested URL returned error: 404
+- Kochava — https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-ban-kochava-subsidiary-selling-sensitive-location-data-settle-charges-they-sold-location-data — curl: (22) The requested URL returned error: 404
+
+## companies-01 · 2026-11-22T05:48:43.687Z
+
+- Meta — https://www.facebook.com/privacy/policy/ — curl: (22) The requested URL returned error: 400
+- ByteDance — https://www.bytedance.com/en/privacy — curl: (22) The requested URL returned error: 404
+- Oracle — https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html — missing evidence: measurement
+- Xandr — https://about.ads.microsoft.com/en/resources/policies/xandr-privacy-policy — curl: (22) The requested URL returned error: 404
+- Quantcast — https://www.quantcast.com/privacy/ — missing evidence: quantcast, device, measurement
+- Adobe — https://www.adobe.com/privacy/policy.html — curl: (22) The requested URL returned error: 403
+- Hotjar — https://www.hotjar.com/legal/policies/privacy/ — curl: (22) The requested URL returned error: 403
+- Branch — https://www.branch.io/resources/privacy-policy/ — curl: (22) The requested URL returned error: 404
+- Adjust — https://www.adjust.com/terms/privacy-policy/ — curl: (22) The requested URL returned error: 429
+- Gravy Analytics — https://gravyanalytics.com/privacy-policy/ — missing evidence: gravy analytics
+- Acxiom — https://www.acxiom.com/privacy-policy/ — curl: (22) The requested URL returned error: 404
+- LiveRamp — https://liveramp.com/privacy/ — missing evidence: device
+
+## incidents-02 · 2026-11-22T05:50:13.538Z
+
+- epic-games — https://www.justice.gov/archives/opa/pr/epic-games-inc-developer-fortnite-video-game-agrees-275-million-penalty-and-injunction — No policy text
+
+## apps-04 · 2026-11-22T05:50:20.330Z
+
+- Vinted — https://www.vinted.com/privacy-policy — missing evidence: transaction, account
+- Google Home — https://policies.google.com/privacy?hl=en-US — missing evidence: voice and audio information
+- Gmail — https://policies.google.com/privacy?hl=en-US — missing evidence: emails you write and receive
+- Whatnot — https://www.whatnot.com/privacy — missing evidence: whatnot, order, account
+- Kalshi — https://kalshi.com/privacy — curl: (22) The requested URL returned error: 429
+- Amazon Music — https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — missing evidence: amazon music
+- Kindle — https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — missing evidence: reading, progress
+- Proton VPN — https://protonvpn.com/privacy-policy — missing evidence: subscription
+- Airbnb — https://www.airbnb.com/help/article/2855 — missing evidence: account information, provide
+- Expedia — https://www.expedia.com/legal/privacy — curl: (22) The requested URL returned error: 429
+- Etsy — https://www.etsy.com/legal/privacy/ — curl: (22) The requested URL returned error: 403
