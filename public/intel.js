@@ -219,6 +219,7 @@
       setRadar(false);
       scanButton.disabled = error.status === 404;
       $('scan-status').textContent = error.status === 404 ? 'Stored-data scanner is unavailable in this build.' : 'Could not read scan status.';
+      if (error.status !== 404 && Outbound.view === 'scan') scanPoll = setTimeout(refreshScan, 1500);
     }
   }
 
