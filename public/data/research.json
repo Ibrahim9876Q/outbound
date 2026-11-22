@@ -29,11 +29,65 @@
             "verified": true,
             "fetchedAt": "2026-11-22T03:49:23.027Z"
           }
+        },
+        {
+          "data": "diagnostic data",
+          "purpose": "Diagnose issues with Microsoft Edge",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:48.186Z"
+          }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Microsoft’s policy covering Edge describes service providers acting on its behalf.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.297Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:38.391Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "report",
+          "title": "Browser telemetry measurement by Trinity College Dublin",
+          "year": 2020,
+          "jurisdiction": "Ireland",
+          "summary": "A 2020 independent measurement study observed Edge sending a device hardware identifier in the version tested.",
+          "source": {
+            "title": "Web Browser Privacy: What Do Browsers Say When They Phone Home? - Trinity College Dublin",
+            "publisher": "Douglas J. Leith, Trinity College Dublin",
+            "url": "https://www.readkong.com/page/web-browser-privacy-what-do-browsers-say-when-they-phone-8577973",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:54.374Z"
+          }
+        }
+      ]
     },
     {
       "id": "brave",
@@ -128,6 +182,18 @@
             "verified": true,
             "fetchedAt": "2026-11-22T03:49:23.332Z"
           }
+        },
+        {
+          "data": "IP address",
+          "purpose": "Operate Discord",
+          "source": {
+            "title": "Privacy Policy | Discord",
+            "publisher": "Discord",
+            "url": "https://discord.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:47.809Z"
+          }
         }
       ],
       "sharesWith": [
@@ -141,6 +207,18 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:58:13.469Z"
+          }
+        },
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy | Discord",
+            "publisher": "Discord",
+            "url": "https://discord.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:47.808Z"
           }
         }
       ],
@@ -204,23 +282,48 @@
             "verified": true,
             "fetchedAt": "2026-11-22T03:49:23.933Z"
           }
-        }
-      ],
-      "sharesWith": [
+        },
         {
-          "party": "Service providers",
-          "purpose": "Help run Spotify, including its technical infrastructure.",
+          "data": "streaming history",
+          "purpose": "Provide playlists and recommendations",
           "source": {
             "title": "Privacy Policy - Spotify",
             "publisher": "Spotify",
             "url": "https://www.spotify.com/us/legal/privacy-policy/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:47:38.175Z"
+            "fetchedAt": "2026-11-22T06:45:49.679Z"
           }
         }
       ],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/us/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:49.973Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Spotify’s Korea notice names this destination for several third-party services.",
+          "source": {
+            "title": "Entrustment, Transfers to 3rd Party and Overseas Transfers - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.929Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "year": 2023,
@@ -350,9 +453,51 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Microsoft’s policy covering Teams describes service providers acting on its behalf.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.393Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Microsoft’s general policy covering Teams names the US as a possible processing location.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.441Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "European Commission accepts Teams bundling commitments",
+          "year": 2025,
+          "jurisdiction": "European Union",
+          "summary": "The Commission accepted commitments on the bundling of Teams with Microsoft productivity suites following an antitrust investigation.",
+          "source": {
+            "title": "European Commission accepts Teams bundling commitments",
+            "publisher": "European Commission",
+            "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/es/ip_25_2048/IP_25_2048_EN.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.854Z"
+          }
+        }
+      ]
     },
     {
       "id": "telegram",
@@ -2152,11 +2297,77 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:15.198Z"
           }
+        },
+        {
+          "data": "inputs",
+          "purpose": "Provide Claude",
+          "source": {
+            "title": "Privacy Policy \\ Anthropic",
+            "publisher": "Anthropic",
+            "url": "https://www.anthropic.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.924Z"
+          }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Cloud service providers",
+          "purpose": "Process customer data",
+          "source": {
+            "title": "Where are your servers located? Do you host your models on EU servers? | Anthropic Privacy Center",
+            "publisher": "Anthropic",
+            "url": "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:58.434Z"
+          }
+        },
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy \\ Anthropic",
+            "publisher": "Anthropic",
+            "url": "https://www.anthropic.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:47.842Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Anthropic says it may route customer traffic to the United States unless otherwise agreed.",
+          "source": {
+            "title": "Where are your servers located? Do you host your models on EU servers? | Anthropic Privacy Center",
+            "publisher": "Anthropic",
+            "url": "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.595Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "report",
+          "title": "Search indexing of shared Claude chats",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "TechCrunch reported that some publicly shared Claude chat pages appeared in Google search results.",
+          "source": {
+            "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google | TechCrunch",
+            "publisher": "TechCrunch",
+            "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:48.041Z"
+          }
+        }
+      ]
     },
     {
       "id": "google-search",
@@ -2762,9 +2973,51 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "The Google privacy policy covering Chrome describes use of service providers to run its products.",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.245Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Google’s service-wide transfer notice describes reliance on the EU–U.S. privacy framework.",
+          "source": {
+            "title": "Data transfer frameworks – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy/frameworks?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.502Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Incognito browsing class settlement",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "A federal appeals opinion describes a class settlement over browsing data collected while users used private browsing.",
+          "source": {
+            "title": "Incognito browsing class settlement",
+            "publisher": "United States Court of Appeals for the Ninth Circuit",
+            "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/20/24-5692.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.665Z"
+          }
+        }
+      ]
     },
     {
       "id": "github",
@@ -7470,6 +7723,46 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:35.839Z"
           }
+        },
+        {
+          "data": "IP address",
+          "purpose": "Deliver online services",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.426Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.456Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Google says it relies on the EU–U.S. Data Privacy Framework for covered transfers.",
+          "source": {
+            "title": "Data transfer frameworks – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy/frameworks?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.502Z"
+          }
         }
       ]
     },
@@ -7525,6 +7818,46 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:36.270Z"
           }
+        },
+        {
+          "data": "purchase history",
+          "purpose": "Provide shopping services",
+          "source": {
+            "title": "Amazon.com Privacy Notice",
+            "publisher": "Amazon",
+            "url": "https://digprjsurvey.amazon.com/csad/help/node/GX7NJQ4ZB8MHFRNJ",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.570Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Amazon.com Privacy Notice",
+            "publisher": "Amazon",
+            "url": "https://digprjsurvey.amazon.com/csad/help/node/GX7NJQ4ZB8MHFRNJ",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.567Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "The AWS notice says personal information associated with AWS offerings may be stored in or accessed from the United States.",
+          "source": {
+            "title": "AWS Privacy Notice",
+            "publisher": "Amazon Web Services",
+            "url": "https://aws.amazon.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.455Z"
+          }
         }
       ]
     },
@@ -7535,7 +7868,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Xbox children’s registration data settlement",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC announced a $20 million settlement over allegations that Microsoft collected children’s Xbox account information without parental consent.",
+          "source": {
+            "title": "FTC Will Require Microsoft to Pay $20 million over Charges it Illegally Collected Personal Information from Children without Their Parents’ Consent | ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/06/ftc-will-require-microsoft-pay-20-million-over-charges-it-illegally-collected-personal-information",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:48.087Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Device, usage and diagnostic data",
@@ -7547,6 +7896,46 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:35.909Z"
+          }
+        },
+        {
+          "data": "device identifiers",
+          "purpose": "Operate and configure products",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:37.760Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:37.753Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:38.391Z"
           }
         }
       ]
@@ -7588,6 +7977,32 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:36.154Z"
           }
+        },
+        {
+          "data": "IP address",
+          "purpose": "Provide advertising services",
+          "source": {
+            "title": "Privacy Policy | Criteo",
+            "publisher": "Criteo",
+            "url": "https://www.criteo.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.118Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy | Criteo",
+            "publisher": "Criteo",
+            "url": "https://www.criteo.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.126Z"
+          }
         }
       ]
     },
@@ -7616,7 +8031,9 @@
     },
     {
       "name": "Comscore",
-      "aliases": [],
+      "aliases": [
+        "comScore, Inc."
+      ],
       "hq": {
         "city": null,
         "country": null
@@ -7633,6 +8050,46 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:37.310Z"
+          }
+        },
+        {
+          "data": "IP address",
+          "purpose": "Measure online audiences",
+          "source": {
+            "title": "Privacy Policy - Comscore, Inc.",
+            "publisher": "Comscore",
+            "url": "https://www.comscore.com/About/Privacy-Policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:41.384Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy - Comscore, Inc.",
+            "publisher": "Comscore",
+            "url": "https://www.comscore.com/About/Privacy-Policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.111Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Comscore says website or program data may be processed in the United States, where it operates its central database.",
+          "source": {
+            "title": "Privacy Policy - Comscore, Inc.",
+            "publisher": "Comscore",
+            "url": "https://www.comscore.com/About/Privacy-Policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:27.616Z"
           }
         }
       ]
@@ -7974,7 +8431,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "Activity information from third-party apps and sites",
+          "purpose": "Personalize ads on Meta services when permitted by the account settings",
+          "source": {
+            "title": "Now You Can See and Control the Data That Apps and Websites Share With Facebook",
+            "publisher": "Meta",
+            "url": "https://about.fb.com/news/2019/08/off-facebook-activity/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:54.420Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "fine",
@@ -8038,6 +8508,34 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:44.423Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Integration partners",
+          "purpose": "Meta describes historical integrations authorized by users, including some that accessed messages.",
+          "source": {
+            "title": "Let's Clear Up a Few Things About Facebook's Partners",
+            "publisher": "Meta",
+            "url": "https://about.fb.com/news/2018/12/facebooks-partners/amp/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.489Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Meta describes transfers of European Facebook data to the United States.",
+          "source": {
+            "title": "Our Response to the Decision on Facebook’s EU-US Data Transfers",
+            "publisher": "Meta",
+            "url": "https://about.fb.com/news/2023/05/our-response-to-the-decision-on-facebooks-eu-us-data-transfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:56.583Z"
           }
         }
       ]
@@ -10681,9 +11179,1083 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Sentry",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "email address",
+          "purpose": "Register an account",
+          "source": {
+            "title": "Privacy Policy 3.3.2 (October 29, 2025) | Sentry",
+            "publisher": "Sentry",
+            "url": "https://sentry.io/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.991Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy 3.3.2 (October 29, 2025) | Sentry",
+            "publisher": "Sentry",
+            "url": "https://sentry.io/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.827Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "Privacy Policy 3.3.2 (October 29, 2025) | Sentry",
+            "publisher": "Sentry",
+            "url": "https://sentry.io/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.752Z"
+          }
+        },
+        {
+          "country": "Germany",
+          "note": "Sentry lists Germany as a hosting location for its site and service.",
+          "source": {
+            "title": "Privacy Policy 3.3.2 (October 29, 2025) | Sentry",
+            "publisher": "Sentry",
+            "url": "https://sentry.io/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:36.752Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cloudflare",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "email address",
+          "purpose": "Communicate with site visitors",
+          "source": {
+            "title": "Cloudflare&#x27;s Privacy Policy | Cloudflare",
+            "publisher": "Cloudflare",
+            "url": "https://www.cloudflare.com/privacypolicy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:37.832Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Cloudflare Thanksgiving incident",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "Cloudflare disclosed that an intruder used credentials to access its internal Atlassian server.",
+          "source": {
+            "title": "Thanksgiving 2023 security incident | Cloudflare Blog",
+            "publisher": "Cloudflare",
+            "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:47.807Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Cloudflare&#x27;s Privacy Policy | Cloudflare",
+            "publisher": "Cloudflare",
+            "url": "https://www.cloudflare.com/privacypolicy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:37.936Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Cloudflare names the US as one of its main storage locations.",
+          "source": {
+            "title": "Cloudflare&#x27;s Privacy Policy | Cloudflare",
+            "publisher": "Cloudflare",
+            "url": "https://www.cloudflare.com/privacypolicy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.500Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OneTrust",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Record website visits",
+          "source": {
+            "title": "Privacy Overview | OneTrust",
+            "publisher": "OneTrust",
+            "url": "https://www.onetrust.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:39.299Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "OneTrust Klue integration compromise",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "OneTrust reported exposure of business contact and CRM information through a compromised third-party integration.",
+          "source": {
+            "title": "Update from OneTrust on Klue-Salesforce Security Incident | Blog | OneTrust",
+            "publisher": "OneTrust",
+            "url": "https://www.onetrust.com/blog/update-from-onetrust-on-klue-salesforce-security-incident/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.488Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Overview | OneTrust",
+            "publisher": "OneTrust",
+            "url": "https://www.onetrust.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:39.306Z"
+          }
+        },
+        {
+          "party": "Microsoft Azure",
+          "purpose": "Host the OneTrust cloud service",
+          "source": {
+            "title": "OneTrust",
+            "publisher": "OneTrust",
+            "url": "https://www.onetrust.com/content/dam/onetrust/brand/content/asset/certifications/ot-security-privacy-and-architecture-white-paper-v7.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:25.892Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "OneTrust lists the US among hosting regions its customers can select.",
+          "source": {
+            "title": "OneTrust",
+            "publisher": "OneTrust",
+            "url": "https://www.onetrust.com/content/dam/onetrust/brand/content/asset/certifications/ot-security-privacy-and-architecture-white-paper-v7.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:25.856Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "jsDelivr",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate the CDN",
+          "source": {
+            "title": "jsDelivr",
+            "publisher": "jsDelivr",
+            "url": "https://raw.githubusercontent.com/jsdelivr/jsdelivr/master/Privacy%20Policy.md",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:39.137Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "jsDelivr",
+            "publisher": "jsDelivr",
+            "url": "https://raw.githubusercontent.com/jsdelivr/jsdelivr/master/Privacy%20Policy.md",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:39.163Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stripe",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "transaction data",
+          "purpose": "Process payments",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Stripe",
+            "url": "https://stripe.com/en-us/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:41.308Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Customer’s bank",
+          "purpose": "Authenticate and process payments",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Stripe",
+            "url": "https://stripe.com/en-us/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:41.375Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Stripe identifies the US as one of the countries where data may be transferred.",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Stripe",
+            "url": "https://stripe.com/en-us/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:27.994Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Datadog",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate services covered by its policy",
+          "source": {
+            "title": "Privacy Policy | Datadog",
+            "publisher": "Datadog",
+            "url": "https://www.datadoghq.com/legal/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:41.269Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy | Datadog",
+            "publisher": "Datadog",
+            "url": "https://www.datadoghq.com/legal/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:41.274Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Datadog names the US among countries where personal information may be processed.",
+          "source": {
+            "title": "Privacy Policy | Datadog",
+            "publisher": "Datadog",
+            "url": "https://www.datadoghq.com/legal/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:50.695Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Optimizely",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Measure use of the site or services",
+          "source": {
+            "title": "Privacy notice",
+            "publisher": "Optimizely",
+            "url": "https://www.optimizely.com/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.253Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "report",
+          "title": "Optimizely Web Experimentation incident",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "Optimizely reported that malicious code in affected experiments targeted payment information entered by site visitors.",
+          "source": {
+            "title": "Optimizely Web Experimentation incident",
+            "publisher": "Optimizely",
+            "url": "https://pages.optimizely.com/rs/947-RKE-048/images/Security%20Incident%20Report%20-%20Optimizely%20Web%20Experimentation%20-%20Nov%2017%202026.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.606Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy notice",
+            "publisher": "Optimizely",
+            "url": "https://www.optimizely.com/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.703Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "Privacy notice",
+            "publisher": "Optimizely",
+            "url": "https://www.optimizely.com/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:42.344Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Twilio",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate communication services",
+          "source": {
+            "title": "Website Privacy Notice | Twilio",
+            "publisher": "Twilio",
+            "url": "https://www.twilio.com/en-us/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:44.014Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Twilio employee and customer account compromise",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "Twilio reported that a social engineering attack led to unauthorized access to employee and customer account information.",
+          "source": {
+            "title": "Incident Report: Employee and Customer Account Compromise | Twilio",
+            "publisher": "Twilio",
+            "url": "https://www.twilio.com/en-us/blog/archive/2022/august-2022-social-engineering-attack",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:49.609Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Website Privacy Notice | Twilio",
+            "publisher": "Twilio",
+            "url": "https://www.twilio.com/en-us/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:44.005Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Twilio’s website notice describes covered transfers under the EU–U.S. Data Privacy Framework.",
+          "source": {
+            "title": "Website Privacy Notice | Twilio",
+            "publisher": "Twilio",
+            "url": "https://www.twilio.com/en-us/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:58.455Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Automattic",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "email address",
+          "purpose": "Set up a WordPress.com account",
+          "source": {
+            "title": "Privacy Policy &#8211; Automattic",
+            "publisher": "Automattic",
+            "url": "https://automattic.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:43.916Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "WordPress.com server intrusion",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "Automattic reported a server intrusion and said information on affected servers may have been exposed.",
+          "source": {
+            "title": "Security Incident &#8211; WordPress.com Blog",
+            "publisher": "Automattic",
+            "url": "https://wordpress.com/blog/2011/04/13/security/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:51.195Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy &#8211; Automattic",
+            "publisher": "Automattic",
+            "url": "https://automattic.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:44.091Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kaspersky Lab",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Voluntarily shared suspicious files",
+          "purpose": "Analyze potential malware",
+          "source": {
+            "title": "Kaspersky Transparency Center | Kaspersky | Kaspersky",
+            "publisher": "Kaspersky",
+            "url": "https://www.kaspersky.com/transparency-center",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:52.366Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "United States restricts Kaspersky antivirus services",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The Commerce Department announced a prohibition on providing certain Kaspersky products and services in the United States.",
+          "source": {
+            "title": "Lock",
+            "publisher": "Bureau of Industry and Security",
+            "url": "https://www.bis.gov/Kaspersky",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:48.125Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "Switzerland",
+          "note": "Kaspersky says some customer threat data is processed in Zurich.",
+          "source": {
+            "title": "Kaspersky Transparency Center | Kaspersky | Kaspersky",
+            "publisher": "Kaspersky",
+            "url": "https://www.kaspersky.com/transparency-center",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:41:57.804Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Kaspersky Lab | Kaspersky",
+            "publisher": "Kaspersky Lab",
+            "url": "https://www.kaspersky.com/global-privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:40.469Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reddit",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "ICO children’s privacy penalty",
+          "year": 2026,
+          "jurisdiction": "United Kingdom",
+          "summary": "The ICO announced a £14.47 million penalty over age assurance and processing children’s personal information. Reddit appealed.",
+          "source": {
+            "title": "Reddit issued with &#xA3;14.47m fine for children&#x2019;s privacy failures | ICO",
+            "publisher": "Information Commissioner’s Office",
+            "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/reddit-issued-with-1447m-fine-for-children-s-privacy-failures/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:47.921Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Adobe",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Adobe customer account compromise",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "Adobe reported access to customer IDs and encrypted passwords in a company security announcement.",
+          "source": {
+            "title": "Important Customer Security Announcement",
+            "publisher": "Adobe",
+            "url": "https://blog.adobe.com/en/publish/2013/10/03/important-customer-security-announcement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:47.788Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "GitHub",
+      "aliases": [
+        "GitHub, Inc."
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate GitHub services",
+          "source": {
+            "title": "GitHub General Privacy Statement - GitHub Docs",
+            "publisher": "GitHub",
+            "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:44.288Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Third-party OAuth token compromise",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "GitHub reported that stolen third-party OAuth tokens were used to download data from private repositories.",
+          "source": {
+            "title": "Security alert: Attack campaign involving stolen OAuth user tokens issued to two third-party integrators - The GitHub Blog",
+            "publisher": "GitHub",
+            "url": "https://github.blog/news-insights/company-news/security-alert-stolen-oauth-user-tokens/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.619Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "GitHub General Privacy Statement - GitHub Docs",
+            "publisher": "GitHub",
+            "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:44.267Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "GitHub General Privacy Statement - GitHub Docs",
+            "publisher": "GitHub",
+            "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.224Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "New Relic",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate services covered by its policy",
+          "source": {
+            "title": "New Relic",
+            "publisher": "New Relic",
+            "url": "https://newrelic.com/sites/default/files/2024-10/October%202024%20-New%20Relic%20General%20Data%20Privacy%20Notice.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.631Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "New Relic staging environment intrusion",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "New Relic reported that an intruder accessed its staging environment and extracted query results related to some customers.",
+          "source": {
+            "title": "Security Bulletin NR23-01 — Security Advisory | New Relic Documentation",
+            "publisher": "New Relic",
+            "url": "https://docs.newrelic.com/docs/security/new-relic-security/security-bulletins/security-bulletin-nr23-01-security-advisory/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.953Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "New Relic",
+            "publisher": "New Relic",
+            "url": "https://newrelic.com/sites/default/files/2024-10/October%202024%20-New%20Relic%20General%20Data%20Privacy%20Notice.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.658Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Magnite",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate the advertising platform",
+          "source": {
+            "title": "Advertising Platform Privacy Policy - Magnite",
+            "publisher": "Magnite",
+            "url": "https://www.magnite.com/legal/advertising-platform-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.821Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Advertising Platform Privacy Policy - Magnite",
+            "publisher": "Magnite",
+            "url": "https://www.magnite.com/legal/advertising-platform-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.807Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Qualtrics",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate services covered by its statement",
+          "source": {
+            "title": "Privacy Statement - Qualtrics - Qualtrics",
+            "publisher": "Qualtrics",
+            "url": "https://www.qualtrics.com/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.529Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Statement - Qualtrics - Qualtrics",
+            "publisher": "Qualtrics",
+            "url": "https://www.qualtrics.com/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:45.430Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "X Corp.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate X services",
+          "source": {
+            "title": "X Privacy Policy",
+            "publisher": "X Corp.",
+            "url": "https://x.com/en/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.498Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Twitter account-security information settlement",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The DOJ and FTC alleged Twitter used account-security phone numbers and email addresses for targeted advertising and announced a $150 million civil penalty.",
+          "source": {
+            "title": "Twitter account-security information settlement",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/2024.03.21-PrivacyandDataSecurityUpdate-508.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:51.956Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "X Privacy Policy",
+            "publisher": "X Corp.",
+            "url": "https://x.com/en/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.496Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "X uses a European-to-US conversation as an example of when information moves across borders.",
+          "source": {
+            "title": "X Privacy Policy",
+            "publisher": "X Corp.",
+            "url": "https://x.com/en/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:27.687Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Amplitude",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate services covered by its notice",
+          "source": {
+            "title": "Privacy Notice",
+            "publisher": "Amplitude",
+            "url": "https://amplitude.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.840Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Notice",
+            "publisher": "Amplitude",
+            "url": "https://amplitude.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.837Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "This privacy notice names the United States as a processing or hosting location.",
+          "source": {
+            "title": "Privacy Notice",
+            "publisher": "Amplitude",
+            "url": "https://amplitude.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:46.927Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blockthrough",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "IP address",
+          "purpose": "Operate services covered by its policy",
+          "source": {
+            "title": "Privacy Policy &#8211; Blockthrough",
+            "publisher": "Blockthrough",
+            "url": "https://blockthrough.com/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:47.065Z"
+          }
+        }
+      ],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide contracted services for the publisher",
+          "source": {
+            "title": "Privacy Policy &#8211; Blockthrough",
+            "publisher": "Blockthrough",
+            "url": "https://blockthrough.com/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:45:47.060Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ByteDance",
+      "aliases": [
+        "ByteDance Inc"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Approximate location in Canada when Location Services is enabled",
+          "purpose": "Operate TikTok with optional location access",
+          "source": {
+            "title": "Mythbusting: The Facts On Reports About Our Data Collection Practices - Newsroom | TikTok",
+            "publisher": "ByteDance",
+            "url": "https://newsroom.tiktok.com/mythbusting-the-facts-on-reports-about-our-data-collection-practices-ca?lang=en-CA",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:27.903Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "Irish DPC TikTok data transfers inquiry",
+          "year": 2025,
+          "jurisdiction": "Ireland",
+          "summary": "The Irish DPC announced a €530 million penalty against TikTok Ireland over transfers of EEA user data to China.",
+          "source": {
+            "title": "Irish Data Protection Commission fines TikTok €530 million and orders corrective measures following Inquiry into transfers of EEA User Data to China |",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:50.989Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "TikTok’s October 2023 storage disclosure listed US servers.",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "ByteDance",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:26.855Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Oracle",
+          "purpose": "Provide US cloud infrastructure for newly collected US TikTok user data, as disclosed in October 2023",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "ByteDance",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:48:28.028Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T06:24:05.433Z",
+  "generatedAt": "2026-11-22T06:48:54.375Z",
   "index": {
     "exe": {
       "brave.exe": [

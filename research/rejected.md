@@ -515,3 +515,116 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Google — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: United States
 - Microsoft — https://www.microsoft.com/en-us/privacy/privacystatement — missing evidence: Where we store and process personal data
 - Amazon — https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ — curl: (22) The requested URL returned error: 403
+
+## facts-05 · 2026-11-22T06:36:35.991Z
+
+- Cloudflare — https://www.cloudflare.com/privacypolicy/ — missing evidence: transfer your Personal Information to the United States
+- Meta — https://www.facebook.com/privacy/policy/ — curl: (22) The requested URL returned error: 400
+- Meta — https://www.facebook.com/privacy/policy/ — curl: (22) The requested URL returned error: 400
+- Adobe — https://www.adobe.com/legal/privacy.html — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/legal/privacy.html — curl: (22) The requested URL returned error: 403
+- Kaspersky Lab — https://www.kaspersky.com/global-privacy-policy — missing evidence: IP address
+- Kaspersky Lab — no verified parent entry
+- Akamai Technologies — https://www.akamai.com/legal/privacy-statement — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/legal/privacy-statement — curl: (22) The requested URL returned error: 403
+- Datadog — https://www.datadoghq.com/legal/privacy/ — missing evidence: transferred to the United States
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: IP address, information
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: service providers
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: transferred to the United States
+- Twilio — https://www.twilio.com/en-us/legal/privacy — missing evidence: transfer your personal data to the United States
+- claude — https://www.anthropic.com/legal/privacy — missing evidence: United States and other jurisdictions
+- chrome — https://www.google.com/chrome/privacy/ — missing evidence: IP address
+- teams — https://learn.microsoft.com/en-us/microsoftteams/teams-privacy — missing evidence: diagnostic data, information
+
+## incidents-07 · 2026-11-22T06:38:35.847Z
+
+- Adobe — https://blog.adobe.com/en/publish/2013/10/03/important-customer-security-announcement — missing evidence: October 03, 2013
+- Comscore — https://law.justia.com/cases/federal/district-courts/illinois/ilndce/1:2011cv05807/259136/369/ — curl: (22) The requested URL returned error: 403
+
+## facts-06 · 2026-11-22T06:38:47.910Z
+
+- Google — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: EU-U.S. Data Privacy Framework
+- chrome — https://policies.google.com/privacy/frameworks?hl=en — missing evidence: EU-U.S. Data Privacy Framework
+- claude — https://www.anthropic.com/legal/subprocessors — curl: (22) The requested URL returned error: 404
+
+## incidents-07 · 2026-11-22T06:41:49.554Z
+
+- Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403
+
+## facts-06 · 2026-11-22T06:41:59.748Z
+
+- Stripe — https://stripe.com/en-us/privacy — missing evidence: transfer your Personal Data to data centers in the United States
+
+## facts-07 · 2026-11-22T06:42:01.050Z
+
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/2024/akamai-services-data-flows-risks.pdf — curl: (22) The requested URL returned error: 403
+
+## incidents-07 · 2026-11-22T06:45:25.504Z
+
+- Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403
+- ByteDance — https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-tiktok-technology-limited — missing evidence: 530 million
+- X Corp. — https://www.justice.gov/usao-ndca/pr/twitter-agrees-doj-and-ftc-pay-150-million-civil-penalty-and-implement-comprehensive — No policy text
+
+## facts-05 · 2026-11-22T06:45:49.973Z
+
+- Cloudflare — https://www.cloudflare.com/privacypolicy/ — missing evidence: transfer your Personal Information to the United States
+- Meta — https://www.facebook.com/privacy/policy/ — curl: (22) The requested URL returned error: 400
+- Meta — https://www.facebook.com/privacy/policy/ — curl: (22) The requested URL returned error: 400
+- Adobe — https://www.adobe.com/legal/privacy.html — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/legal/privacy.html — curl: (22) The requested URL returned error: 403
+- Kaspersky Lab — https://www.kaspersky.com/global-privacy-policy — missing evidence: IP address
+- Akamai Technologies — https://www.akamai.com/legal/privacy-statement — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/legal/privacy-statement — curl: (22) The requested URL returned error: 403
+- Datadog — https://www.datadoghq.com/legal/privacy/ — missing evidence: transferred to the United States
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: IP address, information
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: service providers
+- Reddit — https://www.reddit.com/policies/privacy-policy — missing evidence: transferred to the United States
+- Twilio — https://www.twilio.com/en-us/legal/privacy — missing evidence: transfer your personal data to the United States
+- New Relic — https://newrelic.com/sites/default/files/2024-10/October%202024%20-New%20Relic%20General%20Data%20Privacy%20Notice.pdf — missing evidence: transferred to the United States
+- claude — https://www.anthropic.com/legal/privacy — missing evidence: United States and other jurisdictions
+- chrome — https://www.google.com/chrome/privacy/ — missing evidence: IP address
+- teams — https://learn.microsoft.com/en-us/microsoftteams/teams-privacy — missing evidence: diagnostic data, information
+
+## facts-07 · 2026-11-22T06:45:57.572Z
+
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/2024/akamai-services-data-flows-risks.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/privacy-notice.html — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/sub-processors.html — curl: (22) The requested URL returned error: 403
+- ByteDance — no verified parent entry
+- ByteDance — no verified parent entry
+
+## incidents-07 · 2026-11-22T06:47:08.655Z
+
+- Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403
+- X Corp. — https://search.ftc.gov/system/files/ftc_gov/pdf/2023062C4316TwitterOrderReopeningProceedings.pdf — missing evidence: $150 million, targeted advertising
+- edge — https://www.scss.tcd.ie/Doug.Leith/pubs/browser_privacy.pdf — curl: (22) The requested URL returned error: 502
+
+## facts-07 · 2026-11-22T06:47:31.379Z
+
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/2024/akamai-services-data-flows-risks.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/privacy-notice.html — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/sub-processors.html — curl: (22) The requested URL returned error: 403
+- Comscore — https://www.comscore.com/About/Privacy-Policy — curl: (28) Operation timed out after 20013 milliseconds with 0 bytes received
+
+## incidents-07 · 2026-11-22T06:48:24.126Z
+
+- Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403
+- edge — https://myinternetscout.com/wp-content/uploads/2020/03/2020-Douglas-J.-Leith-research-paper-on-browser-privacy.pdf — curl: (56) schannel: server closed abruptly (missing close_notify)
+
+## facts-07 · 2026-11-22T06:48:28.028Z
+
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/content/dam/cc/en/pdfs/Adobe-Career-Academy_Privacy-Notice.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/2024/akamai-services-data-flows-risks.pdf — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/privacy-notice.html — curl: (22) The requested URL returned error: 403
+- Adobe — https://www.adobe.com/privacy/sub-processors.html — curl: (22) The requested URL returned error: 403
+
+## incidents-07 · 2026-11-22T06:48:54.374Z
+
+- Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403

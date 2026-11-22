@@ -95,7 +95,7 @@ async function main() {
         const items = row.company ? dossier.companies : dossier.apps;
         const identity = row.company ? 'name' : 'id';
         let target = items.find((item) => item[identity] === row.id);
-        if (!target && row.creation) {
+        if (!target && row.creation && ['declared', 'incidents'].includes(row.section)) {
           const [name, publisher, category, domain] = row.creation;
           target = row.company ? { name, aliases: [], hq: { city: null, country: null }, declared: [], incidents: [] } :
             { id: row.id, name, publisher, category, processNames: [], domains: [domain],
@@ -105,7 +105,7 @@ async function main() {
         if (!target) { rejected.push('- ' + row.id + ' — no verified parent entry'); continue; }
         const { section, ...claim } = entry;
         if (row.company && row.aliases) target.aliases = [...new Set([...target.aliases, ...row.aliases])];
-        const key = section === 'incidents' ? 'title' : section === 'destinations' ? 'country' : 'party';
+        const key = { incidents: 'title', destinations: 'country', declared: 'data', sharesWith: 'party' }[section];
         target[section] = (target[section] || []).filter((existing) => existing[key] !== claim[key]);
         target[section].push(claim);
       } else if (batch.startsWith('companies')) {
@@ -113,7 +113,8 @@ async function main() {
         dossier.companies = dossier.companies.filter((company) => company.name !== entry.name);
         dossier.companies.push({ name: entry.name, aliases: previous?.aliases || [], hq: entry.hq,
           incidents: previous?.incidents || [], declared: entry.declared,
-          ...(previous?.destinations ? { destinations: previous.destinations } : {}) });
+          ...(previous?.destinations ? { destinations: previous.destinations } : {}),
+          ...(previous?.sharesWith ? { sharesWith: previous.sharesWith } : {}) });
       } else {
         const previous = dossier.apps.find((app) => app.id === entry.id);
         if (previous) {
