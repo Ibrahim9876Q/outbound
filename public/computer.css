@@ -377,6 +377,19 @@
   overflow: hidden;
   overflow-wrap: anywhere;
 }
+/* exe subtitle, shown when two apps share a name */
+.app .sub {
+  max-width: 100%;
+  margin-top: -3px;
+  font: 11px/1.2 var(--font-mono);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app.dupe .name { -webkit-line-clamp: 1; }
+.detail-head .exe { font: 12px var(--font-mono); color: var(--dim); }
+
 .badge {
   position: absolute;
   min-width: 22px; height: 20px;
