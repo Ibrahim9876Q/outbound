@@ -9,6 +9,7 @@ const { renderReport, renderScanAndLinks, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
 const { StoredScan } = require('./lib/scan');
 const { LinkWatcher } = require('./lib/links');
+const { warnPoll } = require('./lib/poll');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -86,9 +87,9 @@ function state() {
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
-function loop(fn, everyMs) {
+function loop(fn, everyMs, name) {
   const go = async () => {
-    try { await fn(); } catch (err) { console.error(err); }
+    try { await fn(); } catch (err) { if (!err.reported) warnPoll(name, err); }
     setTimeout(go, everyMs);
   };
   go();
@@ -96,14 +97,14 @@ function loop(fn, everyMs) {
 loop(async () => {
   await network.poll();
   sampledAt = Date.now();
-}, 1500);
-loop(() => devices.poll(), 750);
+}, 1500, 'network');
+loop(() => devices.poll(), 750, 'devices');
 loop(() => {
   const { apps, links } = network.snapshot();
   return linkWatcher.poll(apps, links);
-}, 5000);
+}, 15000, 'links');
 const endpoint = phoneEndpoint();
-if (endpoint) loop(() => pollPhone(endpoint), 2000);
+if (endpoint) loop(() => pollPhone(endpoint), 2000, 'phone');
 setInterval(() => stream.flush(), 500);
 
 const PUBLIC = path.join(__dirname, 'public');
