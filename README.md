@@ -1,8 +1,62 @@
-# Outbound
+```text
+  ___  _   _ _____ ____   ___  _   _ _   _ ____
+ / _ \| | | |_   _| __ ) / _ \| | | | \ | |  _ \
+| | | | | | | | | |  _ \| | | | | | |  \| | | | |
+| |_| | |_| | | | | |_) | |_| | |_| | |\  | |_| |
+ \___/ \___/  |_| |____/ \___/ \___/|_| \_|____/
+   where your PC's data goes, who gets it, and what they were caught doing
+```
 
-Outbound is a local Windows dashboard for seeing where desktop apps connect, which apps are talking over localhost, and when they use your microphone or camera. Click an app in Computer to inspect its destinations. Switch to Globe to see the estimated locations of those endpoints.
+Outbound is a local Windows dashboard for seeing where desktop apps connect, which apps are talking to each other, and when they use your microphone or camera. An opt-in scan reads what is already stored on the PC, and a sourced dossier shows what the companies behind those apps say they collect and what regulators and courts found. Click an app in Computer to inspect its destinations. Switch to Globe to see the estimated locations of those endpoints.
 
 Built at Hack Western 13 for the **Discover the Unknown** theme.
+
+## Views
+
+| View | Key | What it shows |
+| --- | --- | --- |
+| Computer | 1 | A laptop with every app that has live connections, wires to the companies it reaches, app-to-app links (loopback TCP, parent/child, named pipes, local UDP, shared companies and trackers), live MIC and CAM keys, an exposure score per app, and a readable live feed. |
+| Globe | 2 | Estimated destination locations, app labels and packet arcs, company HQ reference points, and markers for sourced incidents at each company's HQ. |
+| Phone | 3 | The phone DNS gateway and Auth0 consent firewall (CIBA + FGA). |
+| Stored data | 4 | **Scan this PC** (opt-in): visited domains per browser profile with previously observed tracker associations, tracker cookie domains (names only), Windows permission history (which apps used location, microphone, camera, contacts and when), installed software, startup entries and scheduled tasks, browser extensions allowed to read every site, Windows privacy settings, and app data on disk. |
+| Dossier | 5 | Over 250 apps and 130 companies: what each says it collects, who it shares with, where data is stored, and verified court cases, fines, settlements and investigations, each with a source link. |
+| Rules | 6 | Block an app, company or domain. A decision provider (local, or Auth0 CIBA + FGA) approves the rule and the enforcer shows the exact Windows Firewall command. The default is a dry run. |
+| History | | Thirty days of per-app daily totals. |
+
+## Privacy guarantees
+
+- The server binds to `127.0.0.1` only. Nothing observed on the PC is sent anywhere.
+- The stored-data scan runs only when you press **Scan this PC**. Browser history is reduced to domains. Cookie values, saved passwords, autofill and tokens are never read.
+- Blocking is a dry run by default. Firewall rules are applied only when `OUTBOUND_ENFORCE=firewall` is set and the server runs elevated.
+- Auth0 is off unless its variables are set in the gitignored `.env`. See [research/SETUP-AUTH0.md](research/SETUP-AUTH0.md).
+
+## Architecture
+
+```text
+ Windows (read-only)                 server.js on 127.0.0.1                 browser views
+ ------------------                  ----------------------                 -------------
+ netstat / Get-NetTCPConnection --+
+ Core Audio sessions (mic)        +--> collectors --> state --> SSE /events --> Computer, Globe
+ Media Foundation (camera)        |    (lib/*.js)      |                         Stored data, Dossier
+ process tree, pipes, UDP         |                    +--> /api/score, /api/history, /api/report
+ registry, tasks, browser DBs  ---+--> opt-in scan ------> /api/scan (cached locally)
+                                        public/data/research.json --> Dossier, badges, Globe incidents
+ Rules view --> /api/policy --> provider: local | Auth0 (CIBA push -> FGA tuple)
+                                  --> enforcer: dry-run | windows-firewall (elevated + opt-in)
+```
+
+## Data sources and licenses
+
+- Tracker associations per site: [WhoTracks.Me](https://github.com/whotracksme/whotracks.me) measurements (CC BY 4.0) with [Ghostery TrackerDB](https://github.com/ghostery/trackerdb) metadata (CC BY-NC-SA 4.0, non-commercial). Details are recorded inside `public/data/site-trackers.json`.
+- IP ownership and location: `@ip-location-db/asn` and `geoip-lite`, used offline.
+- Domain grouping: the [Public Suffix List](https://publicsuffix.org/).
+- Dossier: regulator decisions, court records, company privacy policies and press investigations. Each item links its source, and every source was fetched during the build. Method and rejected leads: [research/METHOD.md](research/METHOD.md), [research/rejected.md](research/rejected.md).
+
+Because of the non-commercial TrackerDB terms, this repository ships without a blanket license.
+
+## Team
+
+TODO
 
 ![Outbound Computer view showing an observed direct TCP link between curl and Node.js](notes/backend-computer.png)
 

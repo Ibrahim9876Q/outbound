@@ -112,3 +112,8 @@ Verify the first SSE state after a new connection contains the active peer link.
 - With the same 220-destination, 200-link, 60-event fixture, state JSON fell from 106,206 to 40,722 bytes. The SSE state frame fell from 106,227 to 40,743 bytes. Live payloads were 38,454 bytes in the collector-only run, 41,115 bytes in the final pre-scan build and 154,209 bytes in the final post-scan sample. Those live snapshots cover different traffic and the latter adds score factors.
 - The opt-in run produced an overall score of 27 with all seven factors represented. Top app scores and coverage were PowerShell 40/10%, Windows Services 35/65%, Google Chrome 30/75%, File Explorer 25/15% and Dllhost 23/25%. History contained one observed date and 18 app rows. Four live apps, 131 permission records, eight installed entries, 89 visited site rows and 401 cookie domain rows linked to dossiers. No scanned extension publisher matched the dossier.
 - All 35 tests passed and the desktop smoke check verified 10 assets plus the API routes. Scan collector failures stay in the per-scan warnings so opt-in worker restarts cannot reset the desktop log throttle.
+
+## xray6 test stability
+
+- All 20 baseline runs of `node --test` passed. A controlled dual-protocol port collision reproduced `EADDRINUSE` in “DNS forwards ordinary names and requires approval for trackers and CNAME targets.” This proves a race in that test. The earlier integration failure had no log available for attribution.
+- DNS now exercises packet parsing, policy behavior, revocation and split TCP framing in memory. The SSE subscriber test uses an injected clock and close events for all 50 clients. The desktop smoke check still exercises a real HTTP/SSE loopback connection.

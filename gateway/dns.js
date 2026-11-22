@@ -305,4 +305,4 @@ async function startDns({ host, port, client, onError, ...options }) {
   return { port, close };
 }
 
-module.exports = { startDns, trackerDomain };
+module.exports = { startDns, trackerDomain, createHandler, handleStream };
