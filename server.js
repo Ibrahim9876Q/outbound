@@ -8,6 +8,7 @@ const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
 const { StoredScan } = require('./lib/scan');
+const { LinkWatcher } = require('./lib/links');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -60,6 +61,7 @@ function pushEvent(e) {
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
 const scan = new StoredScan();
+const linkWatcher = new LinkWatcher();
 process.on('exit', () => {
   devices.close();
   network.foreground.close();
@@ -68,7 +70,9 @@ process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
 
 function state() {
-  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60), phone };
+  const snapshot = network.snapshot();
+  return { at: Date.now(), home: HOME, ...snapshot, legacyLinks: snapshot.links,
+    ...linkWatcher.snapshot(snapshot.apps), devices: devices.snapshot(), events: events.slice(0, 60), phone };
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -81,6 +85,10 @@ function loop(fn, everyMs) {
 }
 loop(() => network.poll(), 1500);
 loop(() => devices.poll(), 750);
+loop(() => {
+  const { apps, links } = network.snapshot();
+  return linkWatcher.poll(apps, links);
+}, 5000);
 setInterval(pollPhone, 2000);
 pollPhone();
 setInterval(() => stream.flush(), 500);
@@ -131,7 +139,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(403, headers);
         return res.end(JSON.stringify({ ok: false, startedAt: scan.result.startedAt }));
       }
-      const startedAt = scan.start(network.snapshot().apps.map(({ id, name }) => ({ id, name })));
+      const startedAt = scan.start(state().apps.map(({ id, name }) => ({ id, name })));
       res.writeHead(startedAt ? 202 : 409, headers);
       return res.end(JSON.stringify({ ok: Boolean(startedAt), startedAt: startedAt ?? scan.result.startedAt }));
     }
