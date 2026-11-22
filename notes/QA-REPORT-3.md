@@ -41,3 +41,10 @@ All 40 tests and the smoke check passed.
 ## xray9 replay verification
 
 The 80-app measurements remain blocked on integration commit `7c867fa`. Its tracked files and replay references contain no test-only 80-app dashboard replay fixture. The earlier backend destination-retention replay used a different workload. The live frame measurements above remain the verified results.
+
+## xray9 browser and gallery verification
+
+- Chrome and Edge each verified the 6 px scrollbar, dark grey thumb, and transparent track on six containers spanning the Dossier, Computer feed, Stored Data, and Globe.
+- Chrome completed three reloads on each of the seven dashboard views on port 4318. All 21 reloads produced zero console errors and zero external page requests. Edge completed the scrollbar check. Its supplemental reload run timed out.
+- A real local dry-run rule was created and removed in Chrome. A DOM observer counted one update to the empty list, and the policy API confirmed zero remaining rules after refresh.
+- The seven public-facing captures are in `notes/gallery/` at 1920×1080. Stored Data shows the real aggregate summary, with browser profiles and domain rows excluded. Individual connection and device history details were omitted from the gallery.
