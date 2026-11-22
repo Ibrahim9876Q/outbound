@@ -42,7 +42,11 @@
     ];
     overlay.append(output, skip);
     document.body.append(overlay);
-    const finish = () => overlay.remove();
+    const finish = () => {
+      const focused = overlay.contains(document.activeElement);
+      overlay.remove();
+      if (focused) document.querySelector('.view-btn.active')?.focus({ preventScroll: true });
+    };
     skip.addEventListener('click', finish);
     overlay.addEventListener('keydown', (event) => { if (event.key === 'Escape') finish(); });
     skip.focus();
@@ -368,6 +372,8 @@
   }
 
   function applyView(name, target) {
+    const previous = Outbound.view;
+    const focusLeavesView = previous !== name && document.getElementById(`view-${previous}`)?.contains(document.activeElement);
     Outbound.view = name;
     Outbound.viewTarget = target;
     for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
@@ -376,6 +382,7 @@
       btn.setAttribute('aria-selected', on);
     }
     for (const view of document.querySelectorAll('main > .view')) view.classList.toggle('hidden', view.id !== `view-${name}`);
+    if (focusLeavesView) document.querySelector('.view-btn.active')?.focus({ preventScroll: true });
     try { history.replaceState(null, '', `#${name}${target ? '/' + encodeURIComponent(target) : ''}`); } catch { /* file:// or sandboxed */ }
     for (const fn of viewFns) safe(fn, name);
   }
@@ -595,9 +602,21 @@
     $('hc-btn')?.addEventListener('click', () => setHighContrast(!document.body.classList.contains('hc')));
     const shortcuts = ['computer', 'globe', 'scan', 'dossier', 'rules', 'history'];
     document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !e.defaultPrevented) {
+        const details = e.target.closest('details[open]');
+        if (details) {
+          e.preventDefault();
+          details.open = false;
+          details.querySelector('summary')?.focus({ preventScroll: true });
+        }
+      }
       if (e.target.closest('input, textarea, select, [contenteditable]') || e.ctrlKey || e.metaKey || e.altKey) return;
       if (e.key === 'h' || e.key === 'H') setHighContrast(!document.body.classList.contains('hc'));
-      if (!e.shiftKey && /^[1-6]$/.test(e.key)) showView(shortcuts[Number(e.key) - 1]);
+      if (!e.shiftKey && /^[1-6]$/.test(e.key)) {
+        const name = shortcuts[Number(e.key) - 1];
+        document.querySelector(`.view-btn[data-view="${name}"]`)?.focus({ preventScroll: true });
+        showView(name);
+      }
     });
     // Only buttons with data-view switch views; the Phone tab is a plain link to the phone dashboard.
     for (const btn of document.querySelectorAll('.view-btn[data-view]')) {

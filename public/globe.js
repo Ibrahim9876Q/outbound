@@ -665,7 +665,7 @@
       const close = node('button', 'globe-tip-close', '×');
       close.type = 'button';
       close.setAttribute('aria-label', 'Close destination details');
-      close.addEventListener('click', clearPoint);
+      close.addEventListener('click', dismissPoint);
       tip.append(close);
     }
     if (point.key === 'home') {
@@ -738,11 +738,21 @@
     renderPoint(null);
   }
 
+  let pointOpener;
+  function dismissPoint() {
+    clearPoint();
+    const opener = pointOpener?.isConnected ? pointOpener : document.querySelector('.view-btn[data-view="globe"]');
+    opener?.focus({ preventScroll: true });
+    pointOpener = null;
+  }
+
   function pinPoint(point) {
     setRotation(false);
+    if (!tip.contains(document.activeElement)) pointOpener = view.contains(document.activeElement) ? document.activeElement : null;
     pinnedPoint = point.key;
     shownPoint = null;
     renderPoint(point);
+    tip.querySelector('.globe-tip-close')?.focus({ preventScroll: true });
   }
 
   function focusCountry(code) {
@@ -942,7 +952,10 @@
   mount.addEventListener('pointerdown', () => setRotation(false));
   mount.addEventListener('wheel', () => setRotation(false), { passive: true });
   view.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') clearPoint();
+    if (event.key === 'Escape' && pinnedPoint !== null) {
+      event.preventDefault();
+      dismissPoint();
+    }
   });
   reducedMotion.addEventListener('change', () => {
     if (reducedMotion.matches) setRotation(false);

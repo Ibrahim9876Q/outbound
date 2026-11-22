@@ -709,6 +709,21 @@
     }
   });
   Outbound.onView((name) => { if (name === 'rules') refreshPolicy(); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || event.defaultPrevented || event.target.closest('details[open]')) return;
+    if (Outbound.view === 'dossier' && selection && !$('dossier-search').contains(event.target)) {
+      event.preventDefault();
+      Outbound.showView('dossier');
+      $('dossier-search').focus({ preventScroll: true });
+    }
+    if (Outbound.view === 'rules' && blockTarget && !policyBusy) {
+      event.preventDefault();
+      blockTarget = null;
+      $('rules-status').textContent = '';
+      renderPolicy();
+      document.querySelector('.view-btn[data-view="rules"]')?.focus({ preventScroll: true });
+    }
+  });
   refreshAuth();
 
   const historyMetrics = [

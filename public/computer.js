@@ -769,9 +769,15 @@
   }
 
   function runLoop() {
-    const want = Outbound.view === 'computer' && !document.hidden;
+    const want = Outbound.view === 'computer' && !document.hidden && !reducedMotion.matches;
     if (want && !rafId) { lastFrame = 0; rafId = requestAnimationFrame(frame); }
     if (!want && rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    if (reducedMotion.matches) {
+      for (const { node } of packets.splice(0)) {
+        node.style.display = 'none';
+        pool.push(node);
+      }
+    }
   }
 
   function applyToggles() {
@@ -1165,7 +1171,12 @@
     $('spotlight-btn').addEventListener('click', () => toggleSpotlight());
     document.addEventListener('keydown', (e) => {
       if (Outbound.view !== 'computer' || e.target.closest('input, textarea, select') || e.ctrlKey || e.metaKey || e.altKey) return;
-      if (e.key === 'Escape' && (selected || spotlightTimer)) select(null);
+      if (e.key === 'Escape' && !e.defaultPrevented && e.target.closest('details[open]')) return;
+      if (e.key === 'Escape' && !e.defaultPrevented && (selected || spotlightTimer)) {
+        const opener = icons.get(selected)?.node;
+        select(null);
+        (opener && !opener.hidden ? opener : $('spotlight-btn')).focus({ preventScroll: true });
+      }
       if (e.key === 's' || e.key === 'S') toggleSpotlight();
     });
 
@@ -1177,6 +1188,7 @@
     Outbound.onEvent(toast);
     Outbound.onView(() => { runLoop(); if (Outbound.view === 'computer') relayout(); });
     document.addEventListener('visibilitychange', runLoop);
+    reducedMotion.addEventListener('change', runLoop);
     runLoop();
   }
 
