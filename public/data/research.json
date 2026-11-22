@@ -2072,21 +2072,6 @@
           }
         },
         {
-          "year": 2025,
-          "kind": "investigation",
-          "title": "Canadian joint TikTok privacy investigation",
-          "jurisdiction": "Canada",
-          "summary": "Canadian regulators reported privacy concerns involving children’s data, age assurance and TikTok’s collection and use of personal information.",
-          "source": {
-            "title": "News release: Joint investigation into TikTok highlights privacy concerns related to the collection and use of children’s personal information - Offic",
-            "publisher": "Office of the Privacy Commissioner of Canada",
-            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2025/nr-c_250923/?wbdisable=true",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:08:28.697Z"
-          }
-        },
-        {
           "year": 2019,
           "kind": "settlement",
           "title": "Musical.ly children’s privacy settlement",
@@ -2100,6 +2085,22 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:12:41.422Z"
+          }
+        },
+        {
+          "title": "Canadian joint TikTok privacy investigation",
+          "summary": "Canadian regulators examined age assurance and TikTok’s handling of children’s personal information.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-003",
+          "source": {
+            "title": "PIPEDA Findings #2025-003: Joint investigation of TikTok Pte. Ltd. by the Office of the Privacy Commissioner of Canada, the Commission d’accès à l’inf",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.112Z"
           }
         }
       ]
@@ -2122,18 +2123,19 @@
       "destinations": [],
       "incidents": [
         {
-          "kind": "investigation",
           "title": "Tim Hortons mobile location investigation",
+          "summary": "A joint inquiry found that the app collected granular location information excessively and lacked meaningful consent.",
           "year": 2022,
+          "kind": "investigation",
           "jurisdiction": "Canada",
-          "summary": "Canadian privacy regulators found that its app collected sensitive location information, including when users were not actively using the app.",
+          "caseRef": "PIPEDA 2022-001",
           "source": {
-            "title": "News release: Tim Hortons app violated privacy laws in collection of ‘vast amounts’ of sensitive location data - Office of the Privacy Commissioner of",
+            "title": "PIPEDA Findings #2022-001: Joint investigation into location tracking by the Tim Hortons App - Office of the Privacy Commissioner of Canada",
             "publisher": "Office of the Privacy Commissioner of Canada",
-            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2022/nr-c_220601/",
-            "date": "2022-06-01",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-001/?wbdisable=true",
+            "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:47:36.960Z"
+            "fetchedAt": "2026-11-22T06:58:06.899Z"
           }
         }
       ]
@@ -10441,6 +10443,38 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:19:05.129Z"
           }
+        },
+        {
+          "title": "Google search engine de-indexing finding",
+          "summary": "The OPC examined whether Google met its obligations when challenged over search results linked to an individual.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-002",
+          "source": {
+            "title": "PIPEDA Findings #2025-002: Investigation and recommendations concerning Google search engine service’s compliance with its obligations under PIPEDA - ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.344Z"
+          }
+        },
+        {
+          "title": "Google ads and sensitive health information",
+          "summary": "The OPC examined use of sensitive health information to target Google ads.",
+          "year": 2014,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2014-001",
+          "source": {
+            "title": "Commissioner&rsquo;s Findings - PIPEDA Report of Findings #2014-001: Use of sensitive health information for targeting of Google ads raises privacy co",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2014/pipeda-2014-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:17.373Z"
+          }
         }
       ],
       "declared": [
@@ -10614,6 +10648,22 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:48.087Z"
+          }
+        },
+        {
+          "title": "Windows 10 privacy settings",
+          "summary": "The OPC reported that Microsoft would obtain opt-in consent and improve transparency for Windows 10 privacy settings.",
+          "year": 2018,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2018-004",
+          "source": {
+            "title": "PIPEDA Report of Findings #2018-004: Microsoft to obtain opt-in consent, enhance transparency for Windows 10 privacy settings - Office of the Privacy ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.828Z"
           }
         }
       ],
@@ -11240,6 +11290,38 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:44.423Z"
+          }
+        },
+        {
+          "title": "Canadian Facebook and Cambridge Analytica inquiry",
+          "summary": "Canadian privacy regulators investigated Facebook’s consent and accountability practices involving third-party apps.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-002",
+          "source": {
+            "title": "PIPEDA Findings #2019-002: Joint investigation of Facebook, Inc. by the Privacy Commissioner of Canada and the Information and Privacy Commissioner fo",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.791Z"
+          }
+        },
+        {
+          "title": "Non-users’ information in Facebook address books",
+          "summary": "The OPC reported that Facebook agreed to stop using non-users’ information from users’ address books.",
+          "year": 2018,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2018-003",
+          "source": {
+            "title": "PIPEDA Report of Findings #2018-003: Facebook agrees to stop using non-users’ personal information in users’ address books - Office of the Privacy Com",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.919Z"
           }
         }
       ],
@@ -14985,9 +15067,522 @@
           }
         }
       ]
+    },
+    {
+      "name": "Home Depot",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Home Depot’s sharing of e-receipt data with Meta",
+          "summary": "The OPC found that Home Depot shared information with Meta for offline conversion measurement without obtaining meaningful consent.",
+          "year": 2023,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2023-001",
+          "source": {
+            "title": "PIPEDA Findings #2023-001: Investigation into Home Depot of Canada Inc.’s compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:06.971Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clearview AI",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Clearview AI joint investigation",
+          "summary": "Canadian privacy regulators found that Clearview collected images for facial recognition without consent.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-001",
+          "source": {
+            "title": "PIPEDA Findings #2021-001: Joint investigation of Clearview AI, Inc. by the Office of the Privacy Commissioner of Canada, the Commission d’accès à l’i",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.167Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Desjardins",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Desjardins personal information breach",
+          "summary": "The OPC assessed safeguards after a breach that involved an employee taking personal information.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-005",
+          "source": {
+            "title": "PIPEDA Findings #2020-005: Investigation into Desjardins’ compliance with PIPEDA following a breach of personal information between 2017 and 2019 - Of",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-005/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.170Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Staples",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Staples Openbox resale program",
+          "summary": "The OPC examined safeguards for personal information left on returned electronic devices.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-004",
+          "source": {
+            "title": "PIPEDA Findings #2025-004: Investigation into the privacy practices of Staples Canada ULC related to electronic devices to be resold as part of its Op",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.245Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "23andMe",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Joint 23andMe breach investigation",
+          "summary": "Canadian and UK regulators examined security safeguards following a breach involving customer accounts.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-001",
+          "source": {
+            "title": "PIPEDA Findings #2025-001: Joint investigation into a data breach at 23andMe by the Privacy Commissioner of Canada and the UK Information Commissioner",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.427Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Brinks Home",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Brinks Home OPC inquiry",
+          "summary": "The OPC examined Brinks Home’s practices for handling personal information.",
+          "year": 2024,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2024-002",
+          "source": {
+            "title": "PIPEDA Findings #2024-002: Investigation into Brinks Home - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.932Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Aylo",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Aylo consent investigation",
+          "summary": "The OPC examined whether Aylo obtained consent from people depicted in videos uploaded to its websites.",
+          "year": 2024,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2024-001",
+          "source": {
+            "title": "PIPEDA Findings #2024-001: Investigation into Aylo (formerly MindGeek)’s Compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.090Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Agronomy",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Agronomy safeguards and consent inquiry",
+          "summary": "The OPC investigated Agronomy’s safeguards, accountability and consent practices.",
+          "year": 2023,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2023-002",
+          "source": {
+            "title": "PIPEDA Findings #2023-002: Investigation into Agronomy’s privacy practices related to safeguards, accountability valid consent for the collection and ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.034Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trimac",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Trimac driver surveillance investigation",
+          "summary": "The OPC examined audio and video monitoring in truck cabins.",
+          "year": 2022,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2022-006",
+          "source": {
+            "title": "PIPEDA Findings #2022-006: Investigation into Trimac’s use of an audio and video surveillance device in its truck cabins - Office of the Privacy Commi",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-006/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.066Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Biron Health Group",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Biron promotional emails to testing customers",
+          "summary": "Biron stopped sending promotional emails to travellers who underwent COVID-19 testing.",
+          "year": 2022,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2022-002",
+          "source": {
+            "title": "PIPEDA Findings #2022-002: Biron Health Group has ceased sending promotional emails to travellers arriving in Canada who undergo COVID-19 testing - Of",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.139Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BMO",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "BMO security deficiencies and breach",
+          "summary": "The OPC documented security shortcomings in an investigation of a large-scale breach.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-003",
+          "source": {
+            "title": "PIPEDA Findings #2021-003: Security deficiencies at BMO lead to large-scale breach - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.278Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CoreFour",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "CoreFour OPC investigation",
+          "summary": "The OPC examined the company’s handling of personal information under PIPEDA.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-002",
+          "source": {
+            "title": "PIPEDA Findings #2021-002: Investigation into CoreFour Inc.’s compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.361Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cadillac Fairview",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Mall kiosk facial analytics investigation",
+          "summary": "A joint inquiry examined facial analytics deployed in mall directory kiosks.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-004",
+          "source": {
+            "title": "PIPEDA Findings #2020-004: Joint investigation of the Cadillac Fairview Corporation Limited by the Privacy Commissioner of Canada, the Information and",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.423Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dell",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Dell security and complaint handling",
+          "summary": "The regulator reported that Dell improved security and complaint handling following breaches.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-003",
+          "source": {
+            "title": "PIPEDA Findings #2020-003: Dell improves security and complaint handling practices following breaches and OPC Investigation - Office of the Privacy Co",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.531Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AggregateIQ",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Joint AggregateIQ investigation",
+          "summary": "Privacy commissioners investigated political campaign data handled by AggregateIQ.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-004",
+          "source": {
+            "title": "PIPEDA Findings #2019-004: Joint investigation of AggregateIQ Data Services Ltd. by the Privacy Commissioner of Canada and the Information and Privacy",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.529Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Loblaw",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Loblaw gift card verification inquiry",
+          "summary": "The OPC examined identity verification and information transfers for a gift card program.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-003",
+          "source": {
+            "title": "PIPEDA Findings #2019-003: Investigation into authentication and transfer practices used during Loblaw gift card offering - Office of the Privacy Comm",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.595Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Equifax",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Canadian Equifax breach investigation",
+          "summary": "The OPC examined how the 2017 Equifax breach affected personal information for Canadian customers.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-001",
+          "source": {
+            "title": "PIPEDA Findings #2019-001: Investigation into Equifax Inc. and Equifax Canada Co.’s compliance with PIPEDA in light of the 2017 breach of personal inf",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.767Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wajam",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Wajam adware privacy investigation",
+          "summary": "The OPC found multiple breaches of PIPEDA in its inquiry into the Canadian adware developer.",
+          "year": 2017,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2017-002",
+          "source": {
+            "title": "PIPEDA Report of Findings #2017-002: Canadian adware developer Wajam Internet Technologies Inc. breaches multiple provisions of PIPEDA - Office of the",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2017/pipeda-2017-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.986Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Apple device identifiers for targeted advertising",
+          "summary": "The OPC called on Apple to clarify how it uses and discloses device identifiers for targeted advertising.",
+          "year": 2013,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2013-017",
+          "source": {
+            "title": "Commissioner&rsquo;s Findings - PIPEDA Report of Findings #2013-017: Apple called upon to provide greater clarity on its use and disclosure of unique ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2013/pipeda-2013-017/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:17.408Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T06:58:05.982Z",
+  "generatedAt": "2026-11-22T06:58:17.408Z",
   "index": {
     "exe": {
       "brave.exe": [
