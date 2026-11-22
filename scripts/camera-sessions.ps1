@@ -3,6 +3,14 @@
 # Output: one JSON line per tick: {"at":<ms>,"sessions":[{"pid":123,"name":"Discord","camera":"USB2.0 HD UVC WebCam","active":true}]}
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+$parentProcess = $null
+if ($env:OUTBOUND_DETECTOR_PARENT) {
+  try {
+    $parentProcess = [System.Diagnostics.Process]::GetProcessById([int]$env:OUTBOUND_DETECTOR_PARENT)
+    # Acquire the process handle now so a reused PID cannot extend this worker's lifetime.
+    $null = $parentProcess.Handle
+  } catch { exit 0 }
+}
 Add-Type -Language CSharp -TypeDefinition @'
 using System;
 using System.Collections.Generic;
@@ -90,7 +98,7 @@ $hr = [OutboundCamera.Monitor]::Begin()
 if ($hr -ne 0) { [Console]::Error.WriteLine("camera monitor failed to start: 0x{0:X8}" -f $hr); exit 1 }
 $once = $args -contains '--once'
 if ($once) { Start-Sleep -Milliseconds 1500 }
-while ($true) {
+while ($null -eq $parentProcess -or -not $parentProcess.HasExited) {
   $sessions = foreach ($s in [OutboundCamera.Monitor]::Snapshot()) {
     $p = Get-Process -Id $s.Pid
     [pscustomobject]@{ pid = [int]$s.Pid; name = $p.ProcessName; path = $p.Path; camera = $s.Camera; active = [bool]$s.Active }
@@ -99,5 +107,6 @@ while ($true) {
   [Console]::Out.WriteLine($line)
   [Console]::Out.Flush()
   if ($once) { break }
-  Start-Sleep -Milliseconds 1000
+  if ($null -eq $parentProcess) { Start-Sleep -Milliseconds 1000 }
+  elseif ($parentProcess.WaitForExit(1000)) { break }
 }

@@ -63,3 +63,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 
 - Integrated both verified PowerShell detectors as long-running child processes. Their JSON snapshots now drive the existing device state, activity events and persisted session totals. An invalid or missing frame preserves the last observation while the worker restarts.
 - Both native detectors emitted valid JSON on Windows. A stream fixture verified Discord activation, deduplication, release and persistence for both kinds. Port 4319 returned the existing device shape. Live Discord hardware activation remains to be verified.
+
+## Orchestrator follow-up
+
+- Integration accepted live activation within one second for both devices and counted an eight-second microphone session.
+- Restored registry history alongside live session records, added npm entry points, and introduced registry fallback with `devices.source`. A combined fixture verified fallback, historical rows and live priority.
+- Shutdown prevents worker relaunch and explicitly kills both workers. The PowerShell scripts also watch the owning Node process handle and exit if it disappears. Verified both shutdown calls in a fixture and verified both scripts exit when the owner cannot be opened.
