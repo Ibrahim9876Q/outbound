@@ -6,6 +6,7 @@ const path = require('path');
 const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, localDate } = require('./lib/report');
+const { StateStream } = require('./lib/sse');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -21,8 +22,7 @@ function coordinate(value, limit, fallback) {
 }
 
 const events = [];
-const clients = new Set();
-const pendingEvents = [];
+const stream = new StateStream(state);
 let phone = null;
 
 async function pollPhone() {
@@ -53,14 +53,7 @@ async function pollPhone() {
 function pushEvent(e) {
   events.unshift(e);
   if (events.length > 200) events.pop();
-  if (clients.size) {
-    pendingEvents.push(e);
-    if (pendingEvents.length > 200) pendingEvents.shift();
-  }
-}
-
-function frame(type, data) {
-  return `event: ${type}\ndata: ${JSON.stringify(data)}\n\n`;
+  stream.event(e);
 }
 
 const network = new NetworkWatcher(pushEvent);
@@ -71,13 +64,6 @@ process.on('SIGTERM', () => process.exit(143));
 
 function state() {
   return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60), phone };
-}
-
-function broadcastState() {
-  const events = pendingEvents.splice(0);
-  if (!clients.size) return;
-  const batch = events.map((event) => frame('event', event)).join('') + frame('state', state());
-  for (const res of clients) if (!res.writableNeedDrain) res.write(batch);
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -92,7 +78,7 @@ loop(() => network.poll(), 1500);
 loop(() => devices.poll(), 750);
 setInterval(pollPhone, 2000);
 pollPhone();
-setInterval(broadcastState, 500);
+setInterval(() => stream.flush(), 500);
 
 const PUBLIC = path.join(__dirname, 'public');
 const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
@@ -123,11 +109,7 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
   if (url.pathname === '/events') {
-    res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-store', Connection: 'keep-alive' });
-    res.flushHeaders();
-    clients.add(res);
-    res.on('close', () => clients.delete(res));
-    return;
+    return stream.connect(res);
   }
   if (url.pathname === '/api/state') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
