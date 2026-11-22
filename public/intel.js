@@ -51,11 +51,11 @@
       + '<h3>Top visited domains</h3>'
       + list((browser.sites || []).map((site) => `<strong>${esc(site.domain)}</strong> / ${number(site.visits)} visits`
         + '<div class="tracker-chips">' + trackerChips(site.trackers || []) + '</div>'
-        + dossierLink(site.company || site.domain, site.company ? 'company' : 'domain')),
+        + (researchBadge(site.researchId) || dossierLink(site.company || site.domain, site.company ? 'company' : 'domain'))),
       browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
       + '<h3>Tracker cookie domains</h3>'
       + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
-        `${esc(cookie.domain)}${cookie.company ? ' / ' + dossierLink(cookie.company) : ''} / ${number(cookie.cookies)} cookies`),
+        `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies ${researchBadge(cookie.researchId)}`),
       browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.'));
   }
 
@@ -107,16 +107,13 @@
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
           const marker = row.inUse ? '*' : '#';
           const timeline = age >= 0 && age < 7 ? Array.from({ length: 7 }, (_, i) => i === 6 - age ? marker : '.').join('') : '.......';
-          return `<code>[${timeline}]</code> ${esc(row.app)}<br>`
+          return `<code>[${timeline}]</code> ${esc(row.app)} ${researchBadge(row.researchId)}<br>`
             + esc(row.inUse ? 'In use since ' + timestamp(row.lastUsedStart) : Number.isFinite(row.lastUsedStart)
               ? timestamp(row.lastUsedStart) + (Number.isFinite(row.lastUsedStop) ? ' to ' + timestamp(row.lastUsedStop) : '') : 'No use timestamp reported');
         }), '')).join('');
     }, 'No permission history was reported.');
     const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
-      const dossier = research?.find((record) => record.type === 'app' && record.id === row.researchId);
-      const incidents = dossier ? entries(dossier, 'incidents').length : 0;
-      return `<strong>${esc(row.name)}</strong> ${row.researchId ? dossierLink(row.researchId, 'app', 'Open dossier') : ''}`
-        + (incidents ? ` <span class="tag tracker">${incidents} ${incidents === 1 ? 'incident' : 'incidents'}</span>` : '')
+      return `<strong>${esc(row.name)}</strong> ${researchBadge(row.researchId)}`
         + '<br>' + esc([row.publisher, row.version, row.installDate, Number.isFinite(row.sizeBytes) ? size(row.sizeBytes) : null].filter(Boolean).join(' / '));
     }), '') : '', 'No installed software entries were reported.');
     const autoruns = report('autoruns', 'Phones home on its own', (rows) =>
@@ -126,7 +123,7 @@
           + esc([row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
     const extensions = report('extensions', 'Extensions that can read every site', (rows) => list(rows.filter((row) => row.allSites).map((row) =>
-      `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))}<br>`
+      `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))} ${researchBadge(row.researchId)}<br>`
       + esc((row.permissions || []).join(', '))), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
       `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
@@ -222,6 +219,20 @@
   const lower = (value) => String(value ?? '').trim().toLowerCase();
   const entries = (record, key) => (record[key] || []).filter((item) => item.source?.verified === true);
   const fields = ['declared', 'sharesWith', 'destinations', 'incidents'];
+  let researchIndex = new Map();
+
+  function researchBadge(id) {
+    if (!id) return '';
+    const company = id.startsWith('company:');
+    const count = Outbound.researchIncidents(id);
+    return dossierLink(company ? id.slice(8) : id, company ? 'company' : 'app',
+      'DOSSIER' + (count === null ? '' : ' [' + count + ']'));
+  }
+  Outbound.researchBadge = researchBadge;
+  Outbound.researchIncidents = (id) => {
+    const record = researchIndex.get(id);
+    return record ? entries(record, 'incidents').length : null;
+  };
 
   function sourceHTML(source) {
     let url;
@@ -273,6 +284,7 @@
         ...(data.apps || []).map((record) => ({ ...record, type: 'app', match: [...(record.processNames || []), ...(record.domains || [])] })),
         ...(data.companies || []).map((record) => ({ ...record, type: 'company', match: record.aliases || [] })),
       ];
+      researchIndex = new Map(research.map((record) => [record.type === 'company' ? 'company:' + record.name : record.id, record]));
       const incidents = research.reduce((sum, record) => sum + entries(record, 'incidents').length, 0);
       const sources = new Set(research.flatMap((record) => fields.flatMap((key) => entries(record, key).map((item) => item.source.url).filter(Boolean))));
       $('dossier-count').textContent = (data.apps || []).length + ' apps / ' + incidents + ' incidents / ' + sources.size + ' sources';
@@ -295,6 +307,13 @@
   $('dossier-search').addEventListener('input', renderDossier);
   $('dossier-kind').addEventListener('change', renderDossier);
   Outbound.onView((name) => { if (name === 'dossier') loadResearch(); });
+  let researchScheduled = false;
+  Outbound.onState(() => {
+    if (researchScheduled) return;
+    researchScheduled = true;
+    if (window.requestIdleCallback) requestIdleCallback(loadResearch, { timeout: 2000 });
+    else setTimeout(loadResearch, 300);
+  });
 
   let policy;
   let blockTarget;

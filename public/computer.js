@@ -351,6 +351,7 @@
       if (keep.has(id)) continue;
       if (icon.slot) icon.slot.taken = null;
       icon.node.remove();
+      icon.dossier?.remove();
       icons.delete(id);
       if (selected === id) select(null);
     }
@@ -368,12 +369,13 @@
         const free = slots.find((s) => !s.taken) || evictFor(app);
         if (free) { free.taken = app.id; icon.slot = free; }
       }
-      if (!icon.slot) { icon.node.hidden = true; hiddenApps++; continue; }
+      if (!icon.slot) { icon.node.hidden = true; if (icon.dossier) icon.dossier.hidden = true; hiddenApps++; continue; }
       icon.node.hidden = false;
       if (!icon.node.isConnected) el.desktop.appendChild(icon.node);
       icon.node.style.left = `${icon.slot.x}px`;
       icon.node.style.top = `${icon.slot.y}px`;
       updateIcon(icon.node, app);
+      updateDesktopDossier(icon);
     }
     el.empty.hidden = apps.length > 0;
     placeToasts();
@@ -390,8 +392,29 @@
     const slot = victim.slot;
     victim.slot = null;
     victim.node.hidden = true;
+    if (victim.dossier) victim.dossier.hidden = true;
     slot.taken = null;
     return slot;
+  }
+
+  function updateDesktopDossier(icon) {
+    const id = icon.app.researchId;
+    if (!id) { if (icon.dossier) icon.dossier.hidden = true; return; }
+    if (!icon.dossier) {
+      icon.dossier = document.createElement('button');
+      icon.dossier.type = 'button';
+      icon.dossier.className = 'desktop-dossier';
+      el.desktop.append(icon.dossier);
+    }
+    const badge = icon.dossier;
+    const count = Outbound.researchIncidents?.(id);
+    badge.hidden = false;
+    badge.dataset.dossier = id.startsWith('company:') ? id.slice(8) : id;
+    badge.dataset.dossierKind = id.startsWith('company:') ? 'company' : 'app';
+    badge.textContent = 'DOSSIER' + (Number.isFinite(count) ? ' ' + count : '');
+    badge.setAttribute('aria-label', icon.app.name + ' dossier' + (Number.isFinite(count) ? ', ' + count + ' incidents' : ''));
+    badge.style.left = `${icon.slot.x}px`;
+    badge.style.top = `${icon.slot.y + 15}px`;
   }
 
   // "chatgpt.exe"; apps seen only through the mic/camera have no exe.
@@ -821,8 +844,11 @@
     }
     if (el.detail.dataset.html !== html) {
       const scroll = el.detail.querySelector('.dests')?.scrollTop || 0;
+      const openScore = el.detail.querySelector('.exposure-panel')?.open && el.detail.dataset.app === app.id;
       el.detail.innerHTML = html;
       el.detail.dataset.html = html;
+      el.detail.dataset.app = app.id;
+      if (openScore) el.detail.querySelector('.exposure-panel').open = true;
       const dests = el.detail.querySelector('.dests');
       if (dests) dests.scrollTop = scroll;
     }
@@ -869,7 +895,7 @@
     }).join('');
     return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
       + (app.protectedProcesses ? '' : `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
-        + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`)
+        + (Outbound.researchBadge?.(app.researchId) || `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`))
       + (Outbound.blockButton?.('app', app.id.endsWith('.exe') ? app.id : '') || '')
       + exposurePanel(app.score)
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
