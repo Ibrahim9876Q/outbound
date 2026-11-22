@@ -10,6 +10,8 @@ CBC Marketplace tested six popular mobile apps in November 2026 and reported tha
 
 Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to see the endpoints it connects to, their estimated countries and recognizable tracker domains. Links show when two programs have a local TCP connection or both connect to the same attributed company. The webcam indicator and mic key light up when Windows reports an app using those devices. The Globe view plots the estimated location of each destination and lets you filter by app.
 
+The Phone dashboard demonstrates a DNS consent firewall. Auth0 CIBA requests approval through Guardian, and Auth0 FGA stores the per-tracker grant with an expiry. Revoking the grant blocks subsequent tracker lookups through the gateway.
+
 ## How we built it
 
 A local Node.js server reads Windows TCP sockets and joins process IDs to executable names and icons. It attributes endpoints using the Windows DNS cache when available, reverse DNS, an offline autonomous system number (ASN) database for network owners and an offline IP geolocation database. It streams state and activity to the dashboard using Server-Sent Events.
@@ -26,10 +28,12 @@ An IP address often identifies a cloud provider or CDN. We use hostnames when av
 
 We brought three kinds of evidence into one view. An ordinary app can light up a connection to a place a user may never have thought about, the laptop shows when a device starts being used, and each app has details users can inspect. The dashboard’s runtime assets and lookups work from the laptop itself.
 
+On our laptop, a single load of weather.com produced connections attributed to **38 companies in 13 countries**, with **at least seven tracker companies** flagged during that run. The seven included Rubicon, Outbrain, PubMatic, Criteo, AppNexus, Taboola and The Trade Desk. Counts depend on the traffic observed and the IP and hostname attribution available during the run.
+
 ## What we learned
 
 Sockets, DNS names and device timestamps answer different questions. Keeping the source and limits of each observation visible helps people interpret a connection without needing to read a network trace.
 
 ## What’s next
 
-We want to explore a phone view and an Auth0-based consent firewall with revocable approvals. That would give users a way to act on what they discover.
+We want to make it easier to connect a phone to the DNS gateway and give people more control over how long they approve each tracker.

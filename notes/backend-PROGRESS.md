@@ -69,3 +69,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 - Integration accepted live activation within one second for both devices and counted an eight-second microphone session.
 - Restored registry history alongside live session records, added npm entry points, and introduced registry fallback with `devices.source`. A combined fixture verified fallback, historical rows and live priority.
 - Shutdown prevents worker relaunch and explicitly kills both workers. The PowerShell scripts also watch the owning Node process handle and exit if it disappears. Verified both shutdown calls in a fixture and verified both scripts exit when the owner cannot be opened.
+
+## Tracker and judging round
+
+- Merged the Phone lane first and retained both branches' demo and cross-lane notes.
+- Categorized all 16 tracker organizations from the measured page load. Tests cover names, normalization, category values and false-positive boundaries. Exposed categories additively on destinations. All six tests passed with Node test isolation disabled in the sandbox.
+- Combined Computer, Globe and Phone into the judged script and retained the Phone click table as an appendix. Recorded the orchestrator's measured weather.com results in the Devpost draft.
