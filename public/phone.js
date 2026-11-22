@@ -110,7 +110,7 @@
     byId('demo-description').textContent = state.demo ?
       'Simulated Auth0 approval with real loopback DNS. Runs offline on this laptop.' :
       'Send a lookup from this laptop and approve it on your enrolled phone.';
-    for (const button of demoPanel.querySelectorAll('button')) {
+    for (const button of demoPanel.querySelectorAll('button[data-demo]')) {
       button.hidden = !state.demo && button.dataset.demo !== 'lookup';
       button.disabled = busy || (button.dataset.demo !== 'lookup' &&
         !consent.trackers.some((tracker) => tracker.state === 'pending'));
