@@ -11,6 +11,8 @@ Stop any gateway already using port 4320, then run `node gateway/server.js --dem
 
 The **DEMO DATA** banner identifies simulated Auth0 decisions. The gateway processes actual loopback DNS requests and uses an offline fixture answer. Demo approvals stay in memory and reset on restart.
 
+With both providers configured, the same command runs live consent with a laptop DNS test button. Select **Ask Guardian**, respond on the enrolled phone before the countdown expires, then repeat the lookup. The demo decision buttons are available only with the offline fallback.
+
 Run the gateway from the repo root with Node 24 and open the [Phone dashboard](http://127.0.0.1:4320/).
 
 ```powershell

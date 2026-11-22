@@ -2,6 +2,18 @@ const { Resolver } = require('node:dns/promises');
 
 const DOMAIN = 'google-analytics.com';
 
+async function lookupTracker(port) {
+  const resolver = new Resolver({ tries: 1, timeout: 5000 });
+  resolver.setServers(['127.0.0.1:' + port]);
+  try {
+    await resolver.resolve4(DOMAIN);
+    return 'Lookup allowed.';
+  } catch (error) {
+    if (error.code === 'EREFUSED') return 'Lookup blocked.';
+    throw error;
+  }
+}
+
 function createDemo() {
   const grants = new Map();
   let pending;
@@ -31,17 +43,6 @@ function createDemo() {
       pending(result);
       return true;
     },
-    async lookup(port) {
-      const resolver = new Resolver({ tries: 1, timeout: 2000 });
-      resolver.setServers(['127.0.0.1:' + port]);
-      try {
-        await resolver.resolve4(DOMAIN);
-        return 'Lookup allowed.';
-      } catch (error) {
-        if (error.code === 'EREFUSED') return 'Lookup blocked.';
-        throw error;
-      }
-    },
     async resolve(packet, question) {
       const response = Buffer.from(packet.subarray(0, question.end));
       const hasAnswer = question.host === DOMAIN && question.type === 1;
@@ -58,4 +59,4 @@ function createDemo() {
   };
 }
 
-module.exports = { createDemo };
+module.exports = { createDemo, lookupTracker };

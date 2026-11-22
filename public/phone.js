@@ -103,10 +103,21 @@
   function render() {
     const { dns, stats, consent } = state;
     const demoPanel = byId('demo');
-    demoPanel.hidden = !state.demo;
+    demoPanel.hidden = !state.laptop;
+    byId('demo-label').textContent = state.demo ? 'DEMO DATA' : 'Laptop DNS test';
+    byId('demo-description').textContent = state.demo ?
+      'Simulated Auth0 approval with real loopback DNS. Runs offline on this laptop.' :
+      'Send a lookup from this laptop and approve it on your enrolled phone.';
     for (const button of demoPanel.querySelectorAll('button')) {
+      button.hidden = !state.demo && button.dataset.demo !== 'lookup';
       button.disabled = busy || (button.dataset.demo !== 'lookup' &&
         !consent.trackers.some((tracker) => tracker.state === 'pending'));
+    }
+    const pending = consent.trackers.find((tracker) => tracker.state === 'pending');
+    byId('approval-wait').hidden = state.demo || !pending;
+    if (pending && !state.demo) {
+      const seconds = Math.max(0, Math.ceil((pending.expiresAt - Date.now()) / 1000));
+      byId('approval-clock').textContent = Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
     }
     const gatewayStatus = byId('status');
     gatewayStatus.textContent = dns.host === '127.0.0.1' ? 'Loopback DNS listening' : 'Phone DNS listening';
