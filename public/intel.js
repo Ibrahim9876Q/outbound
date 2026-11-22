@@ -118,11 +118,13 @@
       const renderCapability = ([capability, group]) => `<h3>${esc(labels[capability] || group[0].capability.replace(/([a-z0-9])([A-Z])/g, '$1 $2'))}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
         + list(group.map((row) => {
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
-          const marker = row.inUse ? '*' : '#';
-          const timeline = age >= 0 && age < 7 ? Array.from({ length: 7 }, (_, i) => i === 6 - age ? marker : '.').join('') : '.......';
+          const timeline = age >= 0 && age < 7 ? Array.from({ length: 7 }, (_, i) => i === 6 - age ? '#' : '.').join('') : '.......';
+          const stopped = Number.isFinite(row.lastUsedStop) && row.lastUsedStop > 0;
           return `<code>[${timeline}]</code> ${esc(row.app)} ${researchBadge(row.researchId)}<br>`
-            + esc(row.inUse ? 'In use since ' + timestamp(row.lastUsedStart) : Number.isFinite(row.lastUsedStart)
-              ? timestamp(row.lastUsedStart) + (Number.isFinite(row.lastUsedStop) ? ' to ' + timestamp(row.lastUsedStop) : '') : 'No use timestamp reported');
+            + esc(Number.isFinite(row.lastUsedStart) && row.lastUsedStart > 0
+              ? stopped ? timestamp(row.lastUsedStart) + ' to ' + timestamp(row.lastUsedStop)
+                : 'last started ' + timestamp(row.lastUsedStart) + ', stop time not recorded'
+              : 'No use timestamp reported');
         }), '');
       const sensitive = priority.filter((key) => groups.has(key)).map((key) => [key, groups.get(key)]);
       const other = [...groups].filter(([key]) => !priority.includes(key)).sort(([a], [b]) =>
