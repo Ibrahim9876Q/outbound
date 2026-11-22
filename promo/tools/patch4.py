@@ -40,7 +40,7 @@ R = [
     ("'EVERY APP. EVERY COMPANY IT TALKS TO. LIVE.'", "'APP CONNECTIONS AND ATTRIBUTED COMPANIES, LIVE'"),
     ("'330+ APPS · 240+ VERIFIED FINES, CASES & INVESTIGATIONS'", "'330+ APP ENTRIES · 240 DOCUMENTED INCIDENTS'"),
     ("'Real Outbound Dossier screens: 334 apps, 244 incidents, 575 sources, each fetched and verified.'",
-     "'Real Outbound Dossier screens. Current dossier: 338 app and extension entries, 240 incidents, 587 source URLs.'"),
+     "'Real Outbound Dossier screens from an earlier build. At release: 338 app and extension entries, 240 incidents, 593 source URLs.'"),
     ("'Auth0 FGA records who approved which rule, and only then", "'Auth0 FGA records the approval against that rule\\'s ID, and only then"),
     # paraphrase support: a leading ~ means no quotation marks
     ("        d.text((x - 4, y + 26), '\\u201c', font=bahn(80), fill=fade(GREY, b))\n        yy = para(d, x + 30, y + 48, q + '\\u201d', semi(38), colw - 50, fade(WHITE, b), 42)",

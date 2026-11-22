@@ -111,7 +111,7 @@ Company claims and documented incidents for 338 apps, each linked to the regulat
 | **History** | `6` | The last seven recorded days in the UI, with up to 30 local days available through the API. |
 
 <!-- dossier-counts:start -->
-The dossier contains **338 apps**, **197 companies**, and **240 incident records**, with **587 distinct source URLs** across its records.
+The dossier contains **338 apps**, **197 companies**, and **240 incident records**, with **593 distinct source URLs** across its records.
 <!-- dossier-counts:end -->
 
 Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).

@@ -553,7 +553,7 @@ def scene_feature(img, d, t, cur):
         u = ease((lt - 0.12) / 0.15); cx, cy = lerp(tx, nx, u), lerp(ty, ny, u)
     else: cx, cy = tx, ty
     draw_cursor(d, cx, cy, max(0, 1 - lt / 0.12))
-    return 'Real Outbound Dossier screens. Current dossier: 338 app and extension entries, 240 incidents, 587 source URLs.'
+    return 'Real Outbound Dossier screens from an earlier build. At release: 338 app and extension entries, 240 incidents, 593 source URLs.'
 
 def scene_auth0(img, d, t):
     st = 34.92
