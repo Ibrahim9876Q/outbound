@@ -402,3 +402,59 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - NCO Group, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/992-3012-nco-group-inc-et-al — no substantive case summary
 - Hill Zachary Keith — https://search.ftc.gov/legal-library/browse/cases-proceedings/032-3102-hill-zachary-keith — no substantive case summary
 - UMG Recordings, Inc., a corporation, US — https://search.ftc.gov/legal-library/browse/cases-proceedings/umg-recordings-inc-corporation-us — no substantive case summary
+
+## incidents-06 · 2026-11-22T06:16:29.270Z
+
+- discord — https://www.cnil.fr/sites/cnil/files/2023-05/cnil_-_43e_rapport_annuel_-_2022.pdf — write EOF
+- Criteo — https://www.cnil.fr/sites/cnil/files/2024-04/cnil_44e_rapport_annuel_2023.pdf — write EOF
+- Google — https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/20/24-5692.pdf — write EOF
+- Amazon — https://search.ftc.gov/system/files/ftc_gov/pdf/1923128amazonalexaorderfiled.pdf — write EOF
+- x — https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2022/05/ftcs-twitter-case-enhancing-security-without-compromising-privacy — missing evidence: $150 million
+- doordash — https://oag.ca.gov/system/files/media/doordash-final-judgment-signed.pdf — write EOF
+- Sephora — https://oag.ca.gov/system/files/media/pea-sephora-filed-judgment.pdf — write EOF
+
+## incidents-06 · 2026-11-22T06:19:09.514Z
+
+- x — https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2022/05/ftcs-twitter-case-enhancing-security-without-compromising-privacy — missing evidence: $150 million
+- doordash — https://oag.ca.gov/system/files/media/doordash-final-judgment-signed.pdf — No policy text
+
+## FTC privacy case index pages 0–9
+
+- CMG Media Corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/242-3029-cmg-media-corporation-matter — privacy topic not supported by the case summary or release headlines
+- General Motors LLC., et al., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/2423052-general-motors-llc-et-al-matter — unclear dossier entity.
+- Support King, LLC (SpyFone.com), In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3003-support-king-llc-spyfonecom-matter — privacy topic not supported by the case summary or release headlines
+- Pornhub/Mindgeek/Aylo — https://search.ftc.gov/legal-library/browse/cases-proceedings/pornhubmindgeekaylo — privacy topic not supported by the case summary or release headlines
+- Roca Labs, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3255-x150061-roca-labs-inc — privacy topic not supported by the case summary or release headlines
+- Aqua Finance — https://search.ftc.gov/legal-library/browse/cases-proceedings/aqua-finance — privacy topic not supported by the case summary or release headlines
+- Fashion Nova, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3138-fashion-nova-llc-matter — privacy topic not supported by the case summary or release headlines
+- Snap, Inc., U.S. v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3039-snap-inc-us-v — privacy topic not supported by the case summary or release headlines
+- TransUnion Rental Screening Solutions, Inc. and Trans Union, LLC., FTC and CFPB v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3204-transunion-rental-screening-solutions-inc-trans-union-llc-ftc-cfpb-v — privacy topic not supported by the case summary or release headlines
+- MyLife.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3022-mylifecom-inc — privacy topic not supported by the case summary or release headlines
+- AppFolio, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1923016-appfolio-inc — privacy topic not supported by the case summary or release headlines
+- Emp Media Inc. (MyEx.com) — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3052-emp-media-inc-myexcom — privacy topic not supported by the case summary or release headlines
+- Retina-X Studios, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3118-retina-x-studios-llc-matter — privacy topic not supported by the case summary or release headlines
+- BoostMyScore LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3059-boostmyscore-llc — privacy topic not supported by the case summary or release headlines
+- Office Depot, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3023-office-depot-inc — privacy topic not supported by the case summary or release headlines
+- Unrollme Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3139-unrollme-inc-matter — privacy topic not supported by the case summary or release headlines
+- Apartment Hunters, Inc. et al. (Wetakesection8.com) — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3007-apartment-hunters-inc-et-al-wetakesection8com — privacy topic not supported by the case summary or release headlines
+- D-Link — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3157-x170030-d-link — privacy topic not supported by the case summary or release headlines
+- RealPage, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3059-realpage-inc — privacy topic not supported by the case summary or release headlines
+- Integrated Flight Solutions, et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3151-integrated-flight-solutions-et-al — privacy topic not supported by the case summary or release headlines
+- Katrina Moore — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3111-katrina-moore — privacy topic not supported by the case summary or release headlines
+- BLU Products and Samuel Ohev-Zion, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3025-blu-products-samuel-ohev-zion-matter — unclear dossier entity.
+- PayPal, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3102-paypal-inc-matter — privacy topic not supported by the case summary or release headlines
+- Sears Holdings Management Corporation, a corporation, in the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3099-c-4264-sears-holdings-management-corporation-corporation-matter — privacy topic not supported by the case summary or release headlines
+- Prime Sites, Inc. (Explore Talent) — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3218-prime-sites-inc-explore-talent — privacy topic not supported by the case summary or release headlines
+- Jerk, LLC, d/b/a Jerk.com, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3141-jerk-llc-dba-jerkcom-matter — privacy topic not supported by the case summary or release headlines
+- Lenovo, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3134-lenovo-inc — privacy topic not supported by the case summary or release headlines
+- TaxSlayer, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3063-taxslayer-matter — privacy topic not supported by the case summary or release headlines
+- Turn Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3099-turn-inc-matter — privacy topic not supported by the case summary or release headlines
+- Upromise, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3116-c-4351-upromise-inc — privacy topic not supported by the case summary or release headlines
+- VIZIO, INC. and VIZIO Inscape Services, LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3024-vizio-inc-vizio-inscape-services-llc — unclear dossier entity.
+- Practice Fusion, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3039-practice-fusion-inc-matter — privacy topic not supported by the case summary or release headlines
+- Very Incognito Technologies, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3034-very-incognito-technologies-matter — privacy topic not supported by the case summary or release headlines
+- ASUSTeK Computer Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3156-asustek-computer-inc-matter — privacy topic not supported by the case summary or release headlines
+- InMobi Pte Ltd. — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3203-inmobi-pte-ltd — privacy topic not supported by the case summary or release headlines
+- Henry Schein Practice Solutions, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3161-c4575-henry-schein-practice-solutions-inc-matter — privacy topic not supported by the case summary or release headlines
+- Oracle Corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3115-c4571-oracle-corporation-matter — privacy topic not supported by the case summary or release headlines
+- Craig Brittain, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3120-craig-brittain-matter — privacy topic not supported by the case summary or release headlines

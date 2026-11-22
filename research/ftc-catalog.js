@@ -34,7 +34,7 @@ const aliases = [
   [/^google/i, 'Google', true], [/^amazon/i, 'Amazon', true], [/^disney/i, 'Disney', true],
 ];
 // These matters already have a separate curated entry or are reserved for the priority batch.
-const known = /avast|kochava|epic games|betterhelp|goodrx|flo health|x-mode|zoom video|uber technologies|google llc and youtube|twitter, inc\., u\.s\.|facebook, inc\.|bytedance, ltd\.|microsoft corporation/i;
+const known = /avast|kochava|epic games|betterhelp|goodrx|flo health|x-mode|zoom video|uber technologies|google llc and youtube|twitter, inc\., u\.s\.|facebook, inc\.|bytedance, ltd\.|musical\.ly|snapchat, inc\.|ring, llc|microsoft corporation/i;
 
 function plain(html) {
   return html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ')
@@ -82,10 +82,12 @@ async function inspect(candidate) {
   if (!heading || !normalize(heading).includes(normalize(title))) throw new Error('case title mismatch');
   const block = /Case Summary\s*<\/h2>([\s\S]*?)(?=<h2\b|<\/main>)/i.exec(main)?.[1];
   const summary = plain(block || '');
-  if (summary.length < 60) throw new Error('no substantive case summary');
-  const topic = topics.find(([pattern]) => pattern.test(summary))?.[1];
-  if (!topic) throw new Error('privacy topic not supported by the case summary');
   const timeline = /Case Timeline\s*<\/h2>([\s\S]*)/i.exec(main)?.[1];
+  const headlines = [...(timeline || '').matchAll(/<a href="\/news-events\/news\/press-releases\/[^"]+"[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map(([, text]) => plain(text)).join(' ');
+  const summaryTopic = summary.length >= 60 && topics.find(([pattern]) => pattern.test(summary))?.[1];
+  const topic = summaryTopic || topics.find(([pattern]) => pattern.test(headlines))?.[1];
+  if (!topic) throw new Error('privacy topic not supported by the case summary or release headlines');
   const dates = [...(timeline || '').matchAll(/\bdatetime="([\d-]{10})T/g)].map(([, date]) => date).sort();
   if (!dates.length) throw new Error('no dated case timeline');
   const year = Number(dates[0].slice(0, 4));
@@ -95,7 +97,8 @@ async function inspect(candidate) {
     title: title + ' · FTC case record',
     year,
     jurisdiction: 'United States',
-    summary: 'The FTC case summary describes a matter involving ' + topic + '. ' +
+    summary: (summaryTopic ? 'The FTC case summary' : 'A press release linked in the FTC case timeline') +
+      ' describes a matter involving ' + topic + '. ' +
       'The earliest dated item in the published case timeline is from ' + year + '.',
     ...(fileNumber ? { caseRef: fileNumber } : {}),
     source: { title: heading, publisher, url, date: candidate.updated, verified: true, fetchedAt: new Date().toISOString() },
@@ -112,7 +115,8 @@ async function main() {
   const existingRefs = new Set(existing.map((item) => item.caseRef).filter(Boolean));
   const rejectFile = path.join(__dirname, 'rejected.md');
   const history = await fs.readFile(rejectFile, 'utf8');
-  const tried = new Set([...history.matchAll(/https:\/\/search\.ftc\.gov\/legal-library\/browse\/cases-proceedings\/[^\s]+/g)]
+  const tried = new Set(history.split('\n').filter((line) => !/no substantive case summary|privacy topic not supported by the case summary\s*$/.test(line))
+    .flatMap((line) => [...line.matchAll(/https:\/\/search\.ftc\.gov\/legal-library\/browse\/cases-proceedings\/[^\s]+/g)])
     .map(([url]) => new URL(url).pathname));
   const index = await Promise.allSettled(Array.from({ length: pages }, (_, i) =>
     get(base + '/enforcement/cases-proceedings/terms/1420?page=' + (offset + i)).then(parseIndex)));

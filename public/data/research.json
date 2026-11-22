@@ -158,7 +158,24 @@
           }
         }
       ],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2022,
+          "kind": "fine",
+          "title": "CNIL Discord sanction",
+          "jurisdiction": "France",
+          "summary": "The CNIL reported a sanction against Discord in its 2022 activity report.",
+          "amount": "€800,000",
+          "source": {
+            "title": "CNIL Discord sanction",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/sites/cnil/files/2023-05/cnil_-_43e_rapport_annuel_-_2022.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:07.581Z"
+          }
+        }
+      ]
     },
     {
       "id": "spotify",
@@ -659,6 +676,22 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:44.659Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Twitter, Inc., a corporation · FTC case record",
+          "year": 2010,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2010.",
+          "caseRef": "092 3093",
+          "source": {
+            "title": "Twitter, Inc., a corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3093-twitter-inc-corporation",
+            "date": "2026-06-03",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:14.822Z"
           }
         }
       ]
@@ -1885,22 +1918,6 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:12:41.422Z"
-          }
-        },
-        {
-          "kind": "regulator",
-          "title": "Musical.ly, Inc. · FTC case record",
-          "year": 2019,
-          "jurisdiction": "United States",
-          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2019.",
-          "caseRef": "172 3004",
-          "source": {
-            "title": "Musical.ly, Inc. | Federal Trade Commission",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3004-musically-inc",
-            "date": "2019-02-27",
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:14:48.059Z"
           }
         }
       ]
@@ -3821,7 +3838,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2026,
+          "kind": "settlement",
+          "title": "California Lyft privacy settlement",
+          "jurisdiction": "United States",
+          "summary": "The California Attorney General announced a privacy settlement with Lyft.",
+          "amount": "USD 1.8 million",
+          "source": {
+            "title": "Privacy Rights Can’t Be Left in the Rearview: Attorney General Bonta Secures $1.8 Million Settlement with Lyft | State of California - Department of J",
+            "publisher": "California Department of Justice",
+            "url": "https://oag.ca.gov/news/press-releases/privacy-rights-can%E2%80%99t-be-left-rearview-attorney-general-bonta-secures-18-million",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:09.514Z"
+          }
+        }
+      ]
     },
     {
       "id": "instacart",
@@ -4834,6 +4868,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:12:53.639Z"
           }
+        },
+        {
+          "year": 2024,
+          "kind": "settlement",
+          "title": "Google private browsing class settlement",
+          "jurisdiction": "United States",
+          "summary": "In its later appellate opinion, the court described a 2024 agreement resolving the certified class’s request for injunctive relief, with changes to disclosures and certain retained data.",
+          "source": {
+            "title": "Google private browsing class settlement",
+            "publisher": "U.S. Court of Appeals for the Ninth Circuit",
+            "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/20/24-5692.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:05.129Z"
+          }
         }
       ],
       "declared": [
@@ -4872,6 +4921,22 @@
             "date": "2026-06-30",
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:03.018Z"
+          }
+        },
+        {
+          "year": 2023,
+          "kind": "settlement",
+          "title": "Alexa children’s records retention case",
+          "jurisdiction": "United States",
+          "summary": "The stipulated order imposed a civil penalty and obligations governing children’s Alexa data.",
+          "amount": "USD 25 million",
+          "source": {
+            "title": "Alexa children’s records retention case",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/1923128amazonalexaorderfiled.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:06.699Z"
           }
         }
       ],
@@ -4920,7 +4985,24 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "fine",
+          "title": "CNIL Criteo retargeting action",
+          "jurisdiction": "France",
+          "summary": "The CNIL reported a fine after finding GDPR shortcomings involving proof of consent, access rights, and other practices in Criteo’s ad retargeting business.",
+          "amount": "€40 million",
+          "source": {
+            "title": "CNIL Criteo retargeting action",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/sites/cnil/files/2024-04/cnil_44e_rapport_annuel_2023.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:08.386Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Browsing events and pseudonymous identifiers",
@@ -6787,7 +6869,7 @@
       "declared": []
     },
     {
-      "name": "LabMD, Inc. v. Federal Trade Commission",
+      "name": "LabMD, Inc.",
       "aliases": [],
       "hq": {
         "city": null,
@@ -6920,9 +7002,575 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Ring",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "settlement",
+          "title": "Ring camera privacy and security case",
+          "jurisdiction": "United States",
+          "summary": "The FTC announced a proposed order addressing allegations of access to private camera footage and inadequate account protections.",
+          "amount": "USD 5.8 million",
+          "source": {
+            "title": "FTC Says Ring Employees Illegally Surveilled Customers, Failed to Stop Hackers from Taking Control of Users&#039; Cameras | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/05/ftc-says-ring-employees-illegally-surveilled-customers-failed-stop-hackers-taking-control-users",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:05.120Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sephora",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "year": 2022,
+          "kind": "court",
+          "title": "California Sephora privacy judgment",
+          "jurisdiction": "United States",
+          "summary": "The filed judgment imposes financial and compliance obligations in California’s action against Sephora under its consumer privacy law.",
+          "source": {
+            "title": "California Sephora privacy judgment",
+            "publisher": "California Department of Justice",
+            "url": "https://oag.ca.gov/system/files/media/pea-sephora-filed-judgment.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:08.044Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gravy Analytics",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Gravy Analytics, Inc., In the Matter of · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving location information. The earliest dated item in the published case timeline is from 2024.",
+          "caseRef": "212 3035",
+          "source": {
+            "title": "Gravy Analytics, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/212-3035-gravy-analytics-inc-matter",
+            "date": "2025-01-14",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:13.875Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Verkada Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Verkada Inc., U.S. v. · FTC case record",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2024.",
+          "caseRef": "2123068",
+          "source": {
+            "title": "Verkada Inc., U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2123068-verkada-inc-us-v",
+            "date": "2024-09-04",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:16.318Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Global Tel Link Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Global Tel Link Corporation · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2023.",
+          "caseRef": "2123012",
+          "source": {
+            "title": "Global Tel Link Corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2123012-global-tel-link-corporation",
+            "date": "2024-02-23",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:15.591Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Tapplock, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Tapplock, Inc., In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving security practices for information. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3011",
+          "source": {
+            "title": "Tapplock, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3011-tapplock-inc-matter",
+            "date": "2020-05-20",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:19.138Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "mResource LLC (Loop Works LLC)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "mResource LLC (Loop Works LLC), In the Matter of · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "182 3143",
+          "source": {
+            "title": "mResource LLC (Loop Works LLC), In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3143-mresource-llc-loop-works-llc-matter",
+            "date": "2018-11-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:19.281Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "IDmission LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "IDmission LLC, In the Matter of · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "182 3150",
+          "source": {
+            "title": "IDmission LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3150-idmission-llc-matter",
+            "date": "2018-11-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:22.829Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "VenPath, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "VenPath, Inc., In the Matter of · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "182 3144",
+          "source": {
+            "title": "VenPath, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3144-venpath-inc-matter",
+            "date": "2018-11-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:20.941Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SmartStart Employment Screening, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SmartStart Employment Screening, Inc., In the Matter of · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "182 3154",
+          "source": {
+            "title": "SmartStart Employment Screening, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3154-smartstart-employment-screening-inc-matter",
+            "date": "2018-11-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:23.312Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ReadyTech Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ReadyTech Corporation, In the Matter of · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "182 3100",
+          "source": {
+            "title": "ReadyTech Corporation, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3100-readytech-corporation-matter",
+            "date": "2018-10-25",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:23.447Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "VTech Electronics Limited",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "VTech Electronics Limited · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "162 3032",
+          "source": {
+            "title": "VTech Electronics Limited | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3032-vtech-electronics-limited",
+            "date": "2018-01-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:25.774Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Tru Communication, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Tru Communication, Inc., In the Matter of · FTC case record",
+          "year": 2017,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2017.",
+          "caseRef": "172 3171",
+          "source": {
+            "title": "Tru Communication, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3171-tru-communication-inc-matter",
+            "date": "2017-11-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:24.353Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Md7, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Md7, LLC, In the Matter of · FTC case record",
+          "year": 2017,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2017.",
+          "caseRef": "172 3172",
+          "source": {
+            "title": "Md7, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3172-md7-llc-matter",
+            "date": "2017-11-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:24.375Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ashley Madison",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ashley Madison · FTC case record",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2016.",
+          "caseRef": "152 3284",
+          "source": {
+            "title": "Ashley Madison | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison",
+            "date": "2017-09-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:26.495Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Credit Protection Association",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Credit Protection Association · FTC case record",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2016.",
+          "caseRef": "142 3142",
+          "source": {
+            "title": "Credit Protection Association | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3142-credit-protection-association",
+            "date": "2016-05-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:29.268Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Sitesearch Corporation, Doing Business As LeapLab",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Sitesearch Corporation, Doing Business As LeapLab · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "142 3192",
+          "source": {
+            "title": "Sitesearch Corporation, Doing Business As LeapLab | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3192-x150060-sitesearch-corporation-doing-business-leaplab",
+            "date": "2016-02-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:29.365Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LAI Systems, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LAI Systems, LLC · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "142 3261",
+          "source": {
+            "title": "LAI Systems, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3261-lai-systems-llc",
+            "date": "2015-12-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:30.615Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Retro Dreamer",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Retro Dreamer · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "142 3262",
+          "source": {
+            "title": "Retro Dreamer | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3262-retro-dreamer",
+            "date": "2015-12-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:29.655Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Wyndham Worldwide Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Wyndham Worldwide Corporation · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "1023142",
+          "source": {
+            "title": "Wyndham Worldwide Corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1023142-x120032-wyndham-worldwide-corporation",
+            "date": "2015-12-11",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:29.781Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Sprint Corporation (Sprint ASL Program)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Sprint Corporation (Sprint ASL Program) · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "142 3094",
+          "source": {
+            "title": "Sprint Corporation (Sprint ASL Program) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3094-sprint-corporation-sprint-asl-program-0",
+            "date": "2015-10-21",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:29.653Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:15:57.306Z",
+  "generatedAt": "2026-11-22T06:19:30.618Z",
   "index": {
     "exe": {
       "brave.exe": [
