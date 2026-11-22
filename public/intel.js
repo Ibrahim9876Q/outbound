@@ -91,12 +91,12 @@
       + (selected ? profileCard(selected.browser) : '<p>No browser profiles with results are shown.</p>'));
   }
 
-  function scanWindows(scan) {
-    const report = (key, title, render, empty) => card(title,
+  function scanWindows(scan, prefix) {
+    const report = (key, title, render, empty) => scan.status === 'running' && !scan[key]?.length ? '' : card(title,
       Array.isArray(scan[key]) ? render(scan[key]) || `<p class="intel-muted">${esc(empty)}</p>`
         : '<p class="intel-muted">This scan section is unavailable.</p>');
     const timestamp = (value) => Number.isFinite(value) ? new Date(value).toLocaleString() : 'Time unavailable';
-    const permissions = '<div id="scan-permissions">' + report('permissions', 'Permission history', (rows) => {
+    const permissions = report('permissions', 'Permission history', (rows) => {
       const groups = new Map();
       for (const row of rows) {
         const key = String(row.capability).toLowerCase();
@@ -132,7 +132,7 @@
       return '<p>' + dossierLink('tim-hortons', 'app', 'Tim Hortons dossier') + '</p>'
         + sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
         <summary>Other permissions (${other.length})</summary>${other.map(renderCapability).join('')}</details>` : '');
-    }, 'No permission history was reported.') + '</div>';
+    }, 'No permission history was reported.');
     const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
       return `<strong>${esc(row.name)}</strong> ${researchBadge(row.researchId)}`
         + '<br>' + esc([row.publisher, row.version, row.installDate, Number.isFinite(row.sizeBytes) ? size(row.sizeBytes) : null].filter(Boolean).join(' / '));
@@ -150,7 +150,7 @@
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
       `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
         + (row.recommended ? '<br>Recommended: ' + esc(row.recommended) : '')), '') : '', 'No Windows privacy values were reported.');
-    return [permissions, installed, autoruns, extensions, privacy];
+    return [permissions && `<div id="${prefix}-permissions">${permissions}</div>`, installed, autoruns, extensions, privacy];
   }
 
   function setRadar(running) {
@@ -170,6 +170,7 @@
   }
 
   let permissionJump = false;
+  let completedScan;
   function renderScan(scan) {
     lastScan = scan;
     const running = scan.status === 'running';
@@ -179,29 +180,43 @@
     $('scan-status').textContent = (messages[scan.status] || 'Scan status unavailable.')
       + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '')
       + (scan.appDataBackground ? ' / App-data totals are provisional. The local walk is still running.' : '');
+    if (scan.status === 'done' && !scan.appDataBackground) completedScan = scan;
+    const previous = scan.previous ?? (scan.status === 'running' ? completedScan : null);
+    $('scan-previous').hidden = !previous;
+    if (previous) {
+      $('scan-previous-label').textContent = 'Previous scan, ' + new Date(previous.finishedAt).toLocaleString();
+      renderScanResults(previous, 'scan-previous');
+    }
+    renderScanResults(scan, 'scan');
+    const permissions = $('scan-permissions') || (previous && $('scan-previous-permissions'));
+    if (permissionJump && permissions && Outbound.view === 'scan') {
+      permissionJump = false;
+      permissions.scrollIntoView({ block: 'start' });
+    }
+  }
+
+  function renderScanResults(scan, prefix) {
     const browsers = [];
     if (scan.status === 'done' && scan.summary) browsers.push(scanSummary(scan.summary));
     if (scan.browsers?.length) browsers.push(renderProfiles(scan.browsers));
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
       `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files${app.partial ? ' / partial' : ''}<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
-    if (scan.status === 'done') {
+    if (scan.status === 'done' || scan.status === 'running') {
       if (scan.warnings?.length) browsers.push(card('Scan warnings', list(scan.warnings.map(esc), '')));
-      browsers.push(...scanWindows(scan));
+      browsers.push(...scanWindows(scan, prefix));
     }
     const html = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
-    const output = $('scan-results');
+    const output = $(prefix + '-results');
     if (output.dataset.model !== html) {
+      const scroll = $('view-scan').scrollTop;
       output.innerHTML = html;
       output.dataset.model = html;
-    }
-    if (permissionJump && $('scan-permissions') && Outbound.view === 'scan') {
-      permissionJump = false;
-      $('scan-permissions').scrollIntoView({ block: 'start' });
+      $('view-scan').scrollTop = scroll;
     }
   }
 
-  $('scan-results').addEventListener('click', (event) => {
+  $('view-scan').addEventListener('click', (event) => {
     const profile = event.target.closest('[data-scan-profile]');
     const toggle = event.target.closest('[data-empty-profiles]');
     if (!lastScan || (!profile && !toggle)) return;
@@ -209,7 +224,7 @@
     if (toggle) showEmptyProfiles = !showEmptyProfiles;
     renderScan(lastScan);
     const target = profile ? `[data-scan-profile="${selectedProfile}"]` : '[data-empty-profiles]';
-    $('scan-results').querySelector(target)?.focus();
+    event.target.closest('.intel-grid')?.querySelector(target)?.focus();
   });
 
   async function refreshScan() {
