@@ -55,6 +55,13 @@
   let state;
   let knownDestinations = new Set();
   let arrivingDestinations = new Set();
+  let mapPoints = [];
+  let headquartersFor;
+  let showHeadquarters = false;
+  let recentTrail = new Map();
+  const trailTime = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+  });
   let selectedApp = null;
   let modelKey = '';
   let visible = false;
@@ -70,7 +77,35 @@
   const motion = node('button', 'globe-motion');
   motion.type = 'button';
   motion.addEventListener('click', () => setRotation(!rotating));
-  wrap.append(overview, motion);
+  const hqToggle = node('button', 'globe-hq-toggle', 'Company HQ links');
+  hqToggle.type = 'button';
+  hqToggle.setAttribute('aria-pressed', 'false');
+  hqToggle.title = 'Show headquarters of reported network owners';
+  hqToggle.addEventListener('click', async () => {
+    if (!headquartersFor) {
+      hqToggle.disabled = true;
+      try {
+        ({ headquartersFor } = await import('/globe-hq.js'));
+      } catch (error) {
+        console.warn('Could not load Globe headquarters.', error);
+        return;
+      } finally {
+        hqToggle.disabled = false;
+      }
+    }
+    showHeadquarters = !showHeadquarters;
+    hqToggle.setAttribute('aria-pressed', String(showHeadquarters));
+    hqLegend.hidden = !showHeadquarters;
+    clearPoint();
+    modelKey = '';
+    render();
+  });
+  wrap.append(overview, motion, hqToggle);
+  const trail = node('section', 'globe-trail');
+  const trailList = node('ol');
+  const trailEmpty = node('p', '', 'Waiting for new destinations…');
+  trail.append(node('h3', '', 'Data trail'), trailList, trailEmpty);
+  wrap.append(trail);
 
   const legendLabels = ['Outbound route', 'Return route', 'Tracker / analytics'];
   [...legend.children].forEach((row, i) => {
@@ -80,6 +115,13 @@
     row.append(document.createTextNode(legendLabels[i]));
   });
   legend.append(node('p', '', 'Motion illustrates active TCP connections.'));
+  const estimateLegend = node('div');
+  estimateLegend.append(node('span', 'globe-estimate-key'), document.createTextNode('Country-level estimate'));
+  legend.insertBefore(estimateLegend, legend.lastElementChild);
+  const hqLegend = node('div');
+  hqLegend.append(node('span', 'globe-hq-key'), document.createTextNode('Network owner headquarters'));
+  hqLegend.hidden = true;
+  legend.insertBefore(hqLegend, legend.lastElementChild);
   tip.hidden = true;
   const countryNote = node('p', 'globe-card-note', 'Estimated server locations, including recently closed connections.');
   countries.before(countryNote);
@@ -110,6 +152,54 @@
   function hasCoordinates(place) {
     return Number.isFinite(place?.lat) && Math.abs(place.lat) <= 90
       && Number.isFinite(place?.lng) && Math.abs(place.lng) <= 180;
+  }
+
+  function plotLocation(place) {
+    if (!hasCoordinates(place) || !place.country) return place;
+    const usCentroid = place.country === 'US'
+      && Math.abs(place.lat - 37.751) < 0.015 && Math.abs(place.lng + 97.822) < 0.015;
+    if (place.city?.trim() && !usCentroid) return place;
+    const angle = (hash('angle:' + place.ip) % 4096) / 4096 * Math.PI * 2;
+    const radius = 0.25 + (hash('radius:' + place.ip) % 110) / 100;
+    const lat = Math.max(-89, Math.min(89, place.lat + Math.sin(angle) * radius));
+    const lng = (place.lng + Math.cos(angle) * radius + 540) % 360 - 180;
+    return { ...place, city: '', lat, lng, approximate: true };
+  }
+
+  function updateTrail(apps) {
+    const recent = new Map(recentTrail);
+    for (const app of apps) {
+      for (const destination of app.destinations) {
+        if (!Number.isFinite(destination.firstSeen)) continue;
+        const key = JSON.stringify([app.id, destination.ip, destination.firstSeen]);
+        const location = plotLocation({ ...destination, country: countryCode(destination.country) });
+        recent.set(key, [
+          destination.firstSeen, shared?.util?.appLabel?.(app.name) || app.name,
+          destination.org || 'Unknown owner',
+          location.city?.trim() || (location.country ? countryName(location.country) + ' (country only)' : 'Location unknown'),
+        ]);
+      }
+    }
+    recentTrail = new Map([...recent].sort((a, b) => b[1][0] - a[1][0] || a[0].localeCompare(b[0])).slice(0, 6));
+  }
+
+  function renderTrail() {
+    const model = JSON.stringify([...recentTrail.values()]);
+    if (trailList.dataset.model === model) return;
+    trailList.dataset.model = model;
+    trailEmpty.hidden = recentTrail.size > 0;
+    trailList.replaceChildren(...[...recentTrail.values()].map(([at, app, org, location]) => {
+      const row = node('li');
+      const when = node('time', '', trailTime.format(at));
+      when.dateTime = new Date(at).toISOString();
+      row.append(when);
+      for (const value of [app, org, location]) {
+        const cell = node('span', '', value);
+        cell.title = value;
+        row.append(cell);
+      }
+      return row;
+    }));
   }
 
   function countryCode(code) {
@@ -275,6 +365,18 @@
         });
         next.set(id, arc);
       }
+      if (!showHeadquarters) continue;
+      for (const hq of headquartersFor(place.org)) {
+        const id = 'hq|' + place.lat + '|' + place.lng + '|' + hq.owner + '|' + hq.city;
+        if (next.has(id)) continue;
+        const arc = arcCache.get(id) || {};
+        Object.assign(arc, {
+          startLat: place.lat, startLng: place.lng, endLat: hq.lat, endLng: hq.lng,
+          startAlt: 0.012, endAlt: 0.012, scale: 0.16, color: '#bcbcbc', phase: 0,
+          hqLabel: 'owned by ' + hq.owner + ' (HQ: ' + hq.city + ')',
+        });
+        next.set(id, arc);
+      }
     }
     arcCache.clear();
     for (const [id, arc] of next) arcCache.set(id, arc);
@@ -316,9 +418,9 @@
   function makePoints(places, home) {
     const points = new Map();
     for (const place of places) {
-      const key = place.lat + '|' + place.lng;
+      const key = place.approximate ? 'estimate|' + place.ip : place.lat + '|' + place.lng;
       if (!points.has(key)) {
-        points.set(key, { key, lat: place.lat, lng: place.lng, places: [], sockets: 0 });
+        points.set(key, { key, lat: place.lat, lng: place.lng, approximate: place.approximate, places: [], sockets: 0 });
       }
       const point = points.get(key);
       point.places.push(place);
@@ -328,6 +430,18 @@
       ...points.values(),
       { key: 'home', lat: home.lat, lng: home.lng, label: home.label || 'This PC' },
     ];
+  }
+
+  function estimateMarker(point) {
+    const marker = node('button', 'globe-estimate-marker');
+    marker.type = 'button';
+    marker.setAttribute('aria-label', 'Country-level estimate · ' + countryName(point.places[0].country));
+    marker.style.setProperty('--estimate-size', Math.min(27, 11 + Math.sqrt(point.sockets) * 2) + 'px');
+    if (point.places.some((place) => place.tracker)) marker.classList.add('tracker');
+    marker.addEventListener('pointerenter', () => { if (pinnedPoint === null) renderPoint(point); });
+    marker.addEventListener('pointerleave', () => { if (pinnedPoint === null) renderPoint(null); });
+    marker.addEventListener('click', () => pinPoint(point));
+    return marker;
   }
 
   function pulseDestinations(places) {
@@ -351,7 +465,7 @@
     const pinned = pinnedPoint !== null;
     const details = point?.places || [];
     const contentKey = JSON.stringify([pinned, point?.key, point?.label, details.map((place) =>
-      [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker])]);
+      [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker, place.approximate])]);
     if (tipContentKey === contentKey) return;
     tipContentKey = contentKey;
     tip.replaceChildren();
@@ -375,7 +489,9 @@
       const row = node('div', 'globe-tip-row');
       const title = node('strong', '', place.org);
       if (place.tracker) title.append(node('span', 'globe-tracker', 'Tracker'));
-      const location = [place.city, countryName(place.country)].filter(Boolean).join(', ');
+      const location = place.approximate
+        ? countryName(place.country) + ' · approximate (country only)'
+        : [place.city, countryName(place.country)].filter(Boolean).join(', ');
       const fields = node('dl', 'globe-tip-fields');
       for (const [label, value] of [
         ['ASN', place.asn ? 'AS' + place.asn : 'Unknown'],
@@ -408,7 +524,7 @@
 
   function focusCountry(code) {
     const { lat, lng } = countryTargets.get(code);
-    const point = globe.pointsData().find((entry) => entry.lat === lat && entry.lng === lng);
+    const point = mapPoints.find((entry) => entry.lat === lat && entry.lng === lng);
     if (!point) return;
     globe.pointOfView({ lat, lng, altitude: 1.85 }, reducedMotion.matches ? 0 : 650);
     pinPoint(point);
@@ -416,6 +532,7 @@
 
   function render() {
     if (!visible || !state) return;
+    renderTrail();
     const apps = state.apps.filter((app) => app.destinations.length);
     const nameCounts = new Map();
     for (const app of apps) nameCounts.set(app.name, (nameCounts.get(app.name) || 0) + 1);
@@ -431,7 +548,7 @@
         ip: destination.ip, asn: destination.asn, ports: destination.ports || [],
         country: countryCode(destination.country), lat: destination.lat, lng: destination.lng,
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
-      }))).sort((a, b) => a.id.localeCompare(b.id));
+      }))).map(plotLocation).sort((a, b) => a.id.localeCompare(b.id));
     const key = JSON.stringify([namedApps.map(({ id, name }) => [id, name]), selectedApp, state.home, places]);
     if (key === modelKey) return;
     modelKey = key;
@@ -448,12 +565,15 @@
     if (!globe) return;
     updateCountryCells(places);
     const points = hasCoordinates(home) ? makePoints(located, home) : [];
+    mapPoints = points;
     if (shownPoint) {
       const updated = points.find((point) => point.key === shownPoint.key);
       if (updated) renderPoint(updated);
       else clearPoint();
     }
-    globe.arcsData(makeArcs(located, home)).pointsData(points);
+    globe.arcsData(makeArcs(located, home))
+      .pointsData(points.filter((point) => !point.approximate))
+      .htmlElementsData(points.filter((point) => point.approximate));
     pulseDestinations(located);
   }
 
@@ -482,8 +602,9 @@
         .arcEndAltitude('endAlt')
         .arcColor('color')
         .arcCurveResolution(40)
-        .arcDashLength((arc) => arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
-        .arcDashGap((arc) => arc.active && !reducedMotion.matches ? 0.22 : 0)
+        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
+        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.22 : 0)
+        .arcLabel((arc) => arc.hqLabel ? node('div', 'globe-hq-label', arc.hqLabel) : '')
         .arcDashInitialGap('phase')
         .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
         .arcsTransitionDuration(0)
@@ -495,13 +616,17 @@
           return point.sockets ? '#e0e0e0' : '#858585';
         })
         .pointResolution(10)
+        .htmlAltitude(0.009)
+        .htmlElement(estimateMarker)
+        .htmlTransitionDuration(0)
         .pointsTransitionDuration(0)
         .ringColor('color')
         .ringAltitude(0.014)
         .ringMaxRadius(2.8)
         .ringPropagationSpeed(3)
         .ringRepeatPeriod(0)
-        .pointerEventsFilter((object) => ['point', 'globe'].includes(object.__globeObjType))
+        .pointerEventsFilter((object, data) => ['point', 'globe'].includes(object.__globeObjType)
+          || (object.__globeObjType === 'arc' && Boolean(data?.hqLabel)))
         .onPointHover((point) => {
           if (pinnedPoint === null) renderPoint(point);
         })
@@ -552,6 +677,7 @@
   }
 
   function receiveState(snapshot) {
+    updateTrail(snapshot.apps);
     const next = new Set(snapshot.apps.flatMap((app) =>
       app.destinations.map((destination) => app.id + '|' + destination.ip)));
     for (const id of next) {
