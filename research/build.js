@@ -2,6 +2,7 @@ const { execFile } = require('node:child_process');
 const { promisify } = require('node:util');
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const os = require('node:os');
 const { buildIndex } = require('./index');
 
 const run = promisify(execFile);
@@ -11,18 +12,36 @@ const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
 const flat = (text) => text.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
   .replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/gi, ' ').replace(/\s+/g, ' ').trim();
 
+async function pdfText(bytes) {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'outbound-source-'));
+  const file = path.join(directory, 'source.pdf');
+  try {
+    await fs.writeFile(file, bytes);
+    const { stdout } = await run('pdftotext.exe', ['-enc', 'UTF-8', file, '-'], {
+      windowsHide: true, timeout: 12000, maxBuffer: 8 * 1024 * 1024,
+    });
+    return stdout;
+  } finally {
+    await fs.rm(file, { force: true });
+    await fs.rmdir(directory);
+  }
+}
+
 async function verify(url, terms) {
   if (!url.startsWith('https://')) throw new Error('Source must use HTTPS');
   const { stdout } = await run('curl.exe', ['-fsSL', '--proto', '=https', '--proto-redir', '=https',
-    '--max-time', '20', '--max-redirs', '6', '-A', userAgent, url], { maxBuffer: 10 * 1024 * 1024, windowsHide: true })
+    '--max-time', '20', '--max-redirs', '6', '-A', userAgent, url],
+    { encoding: 'buffer', maxBuffer: 32 * 1024 * 1024, windowsHide: true })
     .catch((error) => { throw new Error(String(error.stderr || error.code).trim().slice(0, 250)); });
-  const content = flat(stdout);
+  const pdf = stdout.subarray(0, 5).toString() === '%PDF-';
+  const html = pdf ? '' : stdout.toString('utf8');
+  const content = pdf ? (await pdfText(stdout)).replace(/\s+/g, ' ').trim() : flat(html);
   if (!content || /^(access denied|just a moment|attention required)/i.test(content)) throw new Error('No policy text');
   const normalized = content.toLowerCase();
   const missing = terms.filter((term) => !normalized.includes(term.toLowerCase()));
   if (missing.length) throw new Error('missing evidence: ' + missing.join(', '));
   return { fetchedAt: new Date().toISOString(),
-    title: flat(stdout.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').slice(0, 150),
+    title: flat(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').slice(0, 150),
     evidence: terms.map((term) => {
       const i = normalized.indexOf(term.toLowerCase());
       return content.slice(Math.max(0, i - 24), i + term.length + 34);
