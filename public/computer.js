@@ -857,7 +857,7 @@
   function toast(e) {
     const cls = eventClass(e);
     const isDevice = cls === 'mic' || cls === 'camera';
-    if (!isDevice && cls !== 'tracker' && cls !== 'link') return;
+    if (!isDevice && cls !== 'link') return;
     const node = document.createElement('div');
     node.className = `toast ${cls}`;
     const ico = cls === 'mic' ? svgIcon(e.type.endsWith('on') ? 'mic' : 'micOff') : cls === 'camera' ? svgIcon(e.type.endsWith('on') ? 'cam' : 'camOff') : '';

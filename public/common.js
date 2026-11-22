@@ -14,6 +14,7 @@
   const stateFns = [];
   const eventFns = [];
   const viewFns = [];
+  const discoveryFns = [];
   const Outbound = { state: null, view: 'computer', util: {} };
   window.Outbound = Outbound;
 
@@ -21,6 +22,7 @@
   Outbound.onEvent = (fn) => { eventFns.push(fn); };
   Outbound.onView = (fn) => { viewFns.push(fn); };
   Outbound.showView = showView;
+  Outbound.onDiscovery = (fn) => { discoveryFns.push(fn); };
 
   function safe(fn, arg) {
     try { fn(arg); } catch (err) { console.error(err); }
@@ -257,6 +259,51 @@
 
   // ---------- live connection ----------
 
+  const trackersSeen = new Set();
+  const pendingDiscoveries = [];
+  const pageOpenedAt = Date.now();
+  let discoveryTimer = null;
+  let discoveryShownAt = -Infinity;
+  let discoveryToast;
+
+  function discoverTrackers(state, initial) {
+    for (const app of state.apps) {
+      for (const destination of app.destinations) {
+        if (!destination.tracker || !destination.org || destination.org === 'Unknown owner') continue;
+        const key = destination.org.trim().toLowerCase();
+        if (trackersSeen.has(key)) continue;
+        trackersSeen.add(key);
+        if (!initial || destination.firstSeen >= pageOpenedAt) {
+          pendingDiscoveries.push({ key, org: destination.org, country: destination.country, app: appLabel(app.name), appId: app.id });
+        }
+      }
+    }
+    if (pendingDiscoveries.length && discoveryTimer === null) {
+      discoveryTimer = setTimeout(showDiscovery, Math.max(0, discoveryShownAt + 3000 - performance.now()));
+    }
+  }
+
+  function showDiscovery() {
+    discoveryTimer = null;
+    const [lead, ...rest] = pendingDiscoveries.splice(0);
+    discoveryShownAt = performance.now();
+    if (!discoveryToast) {
+      discoveryToast = document.createElement('div');
+      discoveryToast.className = 'discovery-toast';
+      discoveryToast.setAttribute('role', 'status');
+      document.querySelector('main').append(discoveryToast);
+    }
+    const title = document.createElement('strong');
+    title.textContent = 'NEW TRACKER';
+    const text = document.createElement('span');
+    text.textContent = `${lead.org}${lead.country ? ' (' + lead.country + ')' : ''} via ${lead.app}`
+      + (rest.length ? ` · +${rest.length} more` : '');
+    discoveryToast.replaceChildren(title, text);
+    discoveryToast.hidden = false;
+    for (const fn of discoveryFns) safe(fn, lead);
+    setTimeout(() => { discoveryToast.hidden = true; }, 2800);
+  }
+
   function connect() {
     const pill = $('pill-live');
     let source;
@@ -265,9 +312,11 @@
 
     function publish(state) {
       if (!state || !Array.isArray(state.apps) || (Outbound.state && state.at < Outbound.state.at)) return;
+      const initial = !Outbound.state;
       Outbound.state = state;
       safe(renderTopbar, state);
       for (const fn of stateFns) safe(fn, state);
+      discoverTrackers(state, initial);
       if (!connected && pill.classList.contains('down')) setText('live-text', 'Reconnecting…');
     }
 

@@ -58,6 +58,8 @@
   let mapPoints = [];
   let estimateMarkers = new Map();
   let estimateLayoutFrame = 0;
+  let flashingDiscovery = null;
+  let discoveryFlashTimer;
   let headquartersFor;
   let showHeadquarters = false;
   let recentTrail = new Map();
@@ -382,14 +384,19 @@
         const id = place.approximate
           ? ['estimate', place.country, place.appId, Boolean(place.tracker), Boolean(place.active), direction].join('|')
           : place.id + direction;
-        if (next.has(id)) continue;
+        const flash = flashingDiscovery?.appId === place.appId && place.tracker
+          && flashingDiscovery.key === place.org.trim().toLowerCase();
+        if (next.has(id)) {
+          if (flash) next.get(id).flash = true;
+          continue;
+        }
         const arc = arcCache.get(id) || {};
         Object.assign(arc, {
           startLat: start.lat, startLng: start.lng, endLat: end.lat, endLng: end.lng,
           startAlt: 0.004, endAlt: 0.004,
           altitude: routeAltitude(start, end, scale + spread, 0.004, direction === 'in' ? 0.22 : 0.26),
           color: arcColor(color, place.active),
-          active: place.active, inbound: direction === 'in', duration: 3400 + hash(id) % 1200, phase: spread,
+          active: place.active, inbound: direction === 'in', duration: 3400 + hash(id) % 1200, phase: spread, flash,
         });
         next.set(id, arc);
       }
@@ -704,7 +711,8 @@
         .arcAltitude('altitude')
         .arcStartAltitude('startAlt')
         .arcEndAltitude('endAlt')
-        .arcColor('color')
+        .arcColor((arc) => arc.flash ? trackerColor : arc.color)
+        .arcStroke((arc) => arc.flash ? 0.75 : null)
         .arcCurveResolution(40)
         .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
         .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.22 : 0)
@@ -812,6 +820,18 @@
   document.addEventListener('visibilitychange', syncView);
 
   if (typeof shared?.onState === 'function') {
+    shared.onDiscovery?.((discovery) => {
+      if (!visible) return;
+      flashingDiscovery = discovery;
+      modelKey = '';
+      render();
+      clearTimeout(discoveryFlashTimer);
+      discoveryFlashTimer = setTimeout(() => {
+        flashingDiscovery = null;
+        modelKey = '';
+        render();
+      }, 1100);
+    });
     shared.showAppOnGlobe = (id) => {
       selectedApp = id;
       modelKey = '';
