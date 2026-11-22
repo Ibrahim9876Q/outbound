@@ -155,3 +155,42 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Garmin Connect — https://www.garmin.com/en-US/privacy/connect/policy/ — missing evidence: activity, location
 - AllTrails — https://www.alltrails.com/privacy — missing evidence: alltrails, location, account
 - MyFitnessPal — https://www.myfitnesspal.com/privacy-policy — missing evidence: nutrition
+
+## incidents-04 · 2026-11-22T06:08:49.295Z
+
+- tiktok — https://www.justice.gov/archives/opa/pr/justice-department-sues-tiktok-and-parent-company-bytedance-widespread-violations-childrens — No policy text
+- Microsoft — https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3141-microsoft-corporation-us-v — curl: (22) The requested URL returned error: 404
+- x — https://search.ftc.gov/legal-library/browse/cases-proceedings/2023062-twitter-inc-us-v — missing evidence: $150 million
+
+## incidents-05 · 2026-11-22T06:12:53.640Z
+
+- Meta — https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-conclusion-two-inquiries-meta-ireland — curl: (22) The requested URL returned error: 404
+- Ring — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3123-ring-llc — curl: (22) The requested URL returned error: 404
+- Amazon — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3128-amazoncom-alexa-us-v — missing evidence: delete, $25 million
+- Google — https://www.cnil.fr/en/closure-injunction-google — missing evidence: 31 december 2021, 2021, 150 million
+
+## facts-03 · 2026-11-22T06:12:55.487Z
+
+- Microsoft — https://privacy.microsoft.com/en-us/privacystatement — missing evidence: where we store and process personal data
+- Google — https://policies.google.com/privacy/frameworks?hl=en-US — missing evidence: united states
+- Adobe — https://www.adobe.com/privacy/policy.html — curl: (22) The requested URL returned error: 403
+
+## FTC privacy case index pages 0–8
+
+- CMG Media Corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/242-3029-cmg-media-corporation-matter — privacy topic not supported by the case summary
+- Twitter, Inc., a corporation — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3093-twitter-inc-corporation — no substantive case summary
+- General Motors LLC., et al., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/2423052-general-motors-llc-et-al-matter — no substantive case summary
+- Support King, LLC (SpyFone.com), In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3003-support-king-llc-spyfonecom-matter — privacy topic not supported by the case summary
+- Pornhub/Mindgeek/Aylo — https://search.ftc.gov/legal-library/browse/cases-proceedings/pornhubmindgeekaylo — privacy topic not supported by the case summary
+- Roca Labs, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3255-x150061-roca-labs-inc — privacy topic not supported by the case summary
+- GoDaddy Inc., et al., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/2023133-godaddy-inc-et-al-matter — unclear dossier entity.
+- Cerebral, Inc. and Kyle Robertson, U.S. v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3067-cerebral-inc-kyle-robertson-us-v — unclear dossier entity.
+- Aqua Finance — https://search.ftc.gov/legal-library/browse/cases-proceedings/aqua-finance — privacy topic not supported by the case summary
+- Fashion Nova, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3138-fashion-nova-llc-matter — privacy topic not supported by the case summary
+- Snap, Inc., U.S. v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3039-snap-inc-us-v — no substantive case summary
+- Gravy Analytics, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/212-3035-gravy-analytics-inc-matter — no substantive case summary
+- Marriott International, Inc. and Starwood Hotels & Resorts Worldwide, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3022-marriott-international-inc-starwood-hotels-resorts-worldwide-llc-matter — unclear dossier entity.
+- Verkada Inc., U.S. v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/2123068-verkada-inc-us-v — no substantive case summary
+- Ring, LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/2023113-ring-llc — privacy topic not supported by the case summary
+- Global Tel Link Corporation — https://search.ftc.gov/legal-library/browse/cases-proceedings/2123012-global-tel-link-corporation — privacy topic not supported by the case summary
+- TransUnion Rental Screening Solutions, Inc. and Trans Union, LLC., FTC and CFPB v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3204-transunion-rental-screening-solutions-inc-trans-union-llc-ftc-cfpb-v — no substantive case summary
