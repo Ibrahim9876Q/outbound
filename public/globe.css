@@ -117,6 +117,33 @@
 #view-globe .globe-estimate-marker { pointer-events: auto; cursor: pointer; }
 #view-globe .globe-estimate-marker.tracker { border-color: var(--map-tracker); }
 
+#view-globe .globe-hq-toggle,
+#view-globe .globe-hq-label {
+  color: var(--map-ink);
+  background: var(--map-panel);
+  border: 1px solid var(--map-border);
+  padding: 7px 10px;
+  font: 14px/1.35 Consolas, monospace;
+}
+
+#view-globe .globe-hq-toggle {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 16px;
+  cursor: pointer;
+}
+
+#view-globe .globe-hq-toggle[aria-pressed="true"] {
+  background: var(--map-ink);
+  color: var(--map-panel);
+}
+
+#view-globe .globe-hq-key {
+  width: 18px;
+  border-top: 2px dotted #bcbcbc;
+}
+
 #view-globe .sw.out { background: var(--map-out); }
 #view-globe .sw.in { background: var(--map-in); }
 #view-globe .sw.tracker { background: var(--map-tracker); }

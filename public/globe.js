@@ -56,6 +56,8 @@
   let knownDestinations = new Set();
   let arrivingDestinations = new Set();
   let mapPoints = [];
+  let headquartersFor;
+  let showHeadquarters = false;
   let selectedApp = null;
   let modelKey = '';
   let visible = false;
@@ -71,7 +73,30 @@
   const motion = node('button', 'globe-motion');
   motion.type = 'button';
   motion.addEventListener('click', () => setRotation(!rotating));
-  wrap.append(overview, motion);
+  const hqToggle = node('button', 'globe-hq-toggle', 'Company HQ links');
+  hqToggle.type = 'button';
+  hqToggle.setAttribute('aria-pressed', 'false');
+  hqToggle.title = 'Show headquarters of reported network owners';
+  hqToggle.addEventListener('click', async () => {
+    if (!headquartersFor) {
+      hqToggle.disabled = true;
+      try {
+        ({ headquartersFor } = await import('/globe-hq.js'));
+      } catch (error) {
+        console.warn('Could not load Globe headquarters.', error);
+        return;
+      } finally {
+        hqToggle.disabled = false;
+      }
+    }
+    showHeadquarters = !showHeadquarters;
+    hqToggle.setAttribute('aria-pressed', String(showHeadquarters));
+    hqLegend.hidden = !showHeadquarters;
+    clearPoint();
+    modelKey = '';
+    render();
+  });
+  wrap.append(overview, motion, hqToggle);
 
   const legendLabels = ['Outbound route', 'Return route', 'Tracker / analytics'];
   [...legend.children].forEach((row, i) => {
@@ -84,6 +109,10 @@
   const estimateLegend = node('div');
   estimateLegend.append(node('span', 'globe-estimate-key'), document.createTextNode('Country-level estimate'));
   legend.insertBefore(estimateLegend, legend.lastElementChild);
+  const hqLegend = node('div');
+  hqLegend.append(node('span', 'globe-hq-key'), document.createTextNode('Network owner headquarters'));
+  hqLegend.hidden = true;
+  legend.insertBefore(hqLegend, legend.lastElementChild);
   tip.hidden = true;
   const countryNote = node('p', 'globe-card-note', 'Estimated server locations, including recently closed connections.');
   countries.before(countryNote);
@@ -288,6 +317,18 @@
           startAlt: 0.004, endAlt: 0.004, scale: scale + spread,
           color: arcColor(color, place.active),
           active: place.active, inbound: direction === 'in', duration: 3400 + hash(id) % 1200, phase: spread,
+        });
+        next.set(id, arc);
+      }
+      if (!showHeadquarters) continue;
+      for (const hq of headquartersFor(place.org)) {
+        const id = 'hq|' + place.lat + '|' + place.lng + '|' + hq.owner + '|' + hq.city;
+        if (next.has(id)) continue;
+        const arc = arcCache.get(id) || {};
+        Object.assign(arc, {
+          startLat: place.lat, startLng: place.lng, endLat: hq.lat, endLng: hq.lng,
+          startAlt: 0.012, endAlt: 0.012, scale: 0.16, color: '#bcbcbc', phase: 0,
+          hqLabel: 'owned by ' + hq.owner + ' (HQ: ' + hq.city + ')',
         });
         next.set(id, arc);
       }
@@ -515,8 +556,9 @@
         .arcEndAltitude('endAlt')
         .arcColor('color')
         .arcCurveResolution(40)
-        .arcDashLength((arc) => arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
-        .arcDashGap((arc) => arc.active && !reducedMotion.matches ? 0.22 : 0)
+        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
+        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.22 : 0)
+        .arcLabel((arc) => arc.hqLabel ? node('div', 'globe-hq-label', arc.hqLabel) : '')
         .arcDashInitialGap('phase')
         .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
         .arcsTransitionDuration(0)
@@ -537,7 +579,8 @@
         .ringMaxRadius(2.8)
         .ringPropagationSpeed(3)
         .ringRepeatPeriod(0)
-        .pointerEventsFilter((object) => ['point', 'globe'].includes(object.__globeObjType))
+        .pointerEventsFilter((object, data) => ['point', 'globe'].includes(object.__globeObjType)
+          || (object.__globeObjType === 'arc' && Boolean(data?.hqLabel)))
         .onPointHover((point) => {
           if (pinnedPoint === null) renderPoint(point);
         })
