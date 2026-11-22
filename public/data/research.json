@@ -6925,6 +6925,412 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "toca-boca-world",
+      "name": "Toca Boca World",
+      "publisher": "Toca Boca AB",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Toca Boca World: Game & Play App - App Store",
+            "publisher": "Toca Boca AB",
+            "url": "https://apps.apple.com/us/app/toca-boca-world-game-play/id1208138685",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:55.414Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "deepstash",
+      "name": "Deepstash",
+      "publisher": "Brainstash Inc",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Deepstash: Smarter Every Day! App - App Store",
+            "publisher": "Brainstash Inc",
+            "url": "https://apps.apple.com/us/app/deepstash-smarter-every-day/id1445023295",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.179Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-classroom",
+      "name": "Google Classroom",
+      "publisher": "Google LLC",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Contacts, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Classroom App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-classroom/id924620788",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.161Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "kahoot",
+      "name": "Kahoot",
+      "publisher": "Kahoot ASA",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Kahoot! Play & Create Quizzes App - App Store",
+            "publisher": "Kahoot ASA",
+            "url": "https://apps.apple.com/us/app/kahoot-play-create-quizzes/id1131203560",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.227Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "simply-draw",
+      "name": "Simply Draw",
+      "publisher": "Simply Ltd",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Simply Draw: Learn to Draw App - App Store",
+            "publisher": "Simply Ltd",
+            "url": "https://apps.apple.com/us/app/simply-draw-learn-to-draw/id1639875485",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.370Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lingokids",
+      "name": "Lingokids",
+      "publisher": "Monkimun Inc",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Lingokids: Games & Shows App - App Store",
+            "publisher": "Monkimun Inc",
+            "url": "https://apps.apple.com/us/app/lingokids-games-shows/id1002043426",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.667Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "parentsquare",
+      "name": "ParentSquare",
+      "publisher": "PARENTSQUARE LLC",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎ParentSquare App - App Store",
+            "publisher": "PARENTSQUARE LLC",
+            "url": "https://apps.apple.com/us/app/parentsquare/id908126679",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.617Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gauth",
+      "name": "Gauth",
+      "publisher": "GAUTHTECH PTE. LTD.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Gauth: AI Study Companion App - App Store",
+            "publisher": "GAUTHTECH PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/gauth-ai-study-companion/id1542571008",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:56.561Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "knowunity",
+      "name": "Knowunity",
+      "publisher": "Knowunity Inc.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Knowunity: AI Study & Homework App - App Store",
+            "publisher": "Knowunity Inc.",
+            "url": "https://apps.apple.com/us/app/knowunity-ai-study-homework/id1484296272",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.248Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "canvas-by-instructure",
+      "name": "Canvas by Instructure",
+      "publisher": "Instructure, Inc.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Canvas by Instructure App - App Store",
+            "publisher": "Instructure, Inc.",
+            "url": "https://apps.apple.com/us/app/canvas-by-instructure/id480883488",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.321Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "picturethis",
+      "name": "PictureThis",
+      "publisher": "Glority Global Group Ltd.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Search History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PictureThis - Plant Identifier App - App Store",
+            "publisher": "Glority Global Group Ltd.",
+            "url": "https://apps.apple.com/us/app/picturethis-plant-identifier/id1252497129",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.466Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "quizlet",
+      "name": "Quizlet",
+      "publisher": "Quizlet Inc",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Quizlet: More than Flashcards App - App Store",
+            "publisher": "Quizlet Inc",
+            "url": "https://apps.apple.com/us/app/quizlet-more-than-flashcards/id546473125",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.581Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "elevate",
+      "name": "Elevate",
+      "publisher": "Elevate Labs, LLC",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Elevate - Brain Training Games App - App Store",
+            "publisher": "Elevate Labs, LLC",
+            "url": "https://apps.apple.com/us/app/elevate-brain-training-games/id875063456",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.553Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "classdojo",
+      "name": "ClassDojo",
+      "publisher": "ClassDojo, Inc.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, User Content, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎ClassDojo App - App Store",
+            "publisher": "ClassDojo, Inc.",
+            "url": "https://apps.apple.com/us/app/classdojo/id552602056",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:57.764Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -10240,7 +10646,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:23:51.725Z",
+  "generatedAt": "2026-11-22T06:23:57.765Z",
   "index": {
     "exe": {
       "brave.exe": [
