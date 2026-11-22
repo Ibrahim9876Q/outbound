@@ -3,6 +3,15 @@ $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
 $consent = 'Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore'
 
+$required = @{ 'installed' = 'Get-AppxPackage'; 'scheduled tasks' = 'Get-ScheduledTask' }[$Collector]
+if ($required) {
+  try { Get-Command -Name $required -ErrorAction Stop | Out-Null }
+  catch {
+    [Console]::Error.WriteLine("Required Windows cmdlet is unavailable: $required")
+    exit 69
+  }
+}
+
 function ConsentEntries($Root) {
   foreach ($capability in Get-ChildItem "$Root\$consent") {
     foreach ($app in Get-ChildItem $capability.PSPath) {

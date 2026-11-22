@@ -9,13 +9,16 @@ function stop(code) {
   if (stopping) return;
   stopping = true;
   process.exitCode = code;
-  for (const child of children) child.kill();
+  for (const child of children) {
+    if (child.connected) child.disconnect();
+  }
 }
 
 for (const entry of ['server.js', 'gateway/server.js']) {
   const child = spawn(process.execPath, [entry], {
-    cwd: root, stdio: 'inherit',
-    env: entry === 'server.js' ? { ...process.env, OUTBOUND_PHONE: '1' } : process.env,
+    cwd: root, stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
+    env: entry === 'server.js' ? { ...process.env, OUTBOUND_PHONE: '1',
+      PHONE_URL: process.env.PHONE_URL || `http://127.0.0.1:${process.env.PHONE_DASHBOARD_PORT || 4320}` } : process.env,
   });
   children.add(child);
   child.once('error', (error) => {

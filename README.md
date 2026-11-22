@@ -19,7 +19,7 @@ npm run dev:all
 
 Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If PowerShell blocks the npm shim, use `npm.cmd`. Use `npm start` for the desktop alone. `PORT` changes the desktop HTTP port.
 
-- **Phone setup.** Copy [`.env.example`](.env.example) to the gitignored `.env` when configuring the gateway. Keep the loopback defaults for laptop-only DNS. The gateway loads `.env`. The desktop launcher opts into Phone polling with `OUTBOUND_PHONE=1`. A standalone desktop polls only when started with this flag or a loopback `PHONE_URL`. [Phone setup and offline demo](gateway/README.md)
+- **Phone setup.** Copy [`.env.example`](.env.example) to the gitignored `.env` when configuring the gateway. Keep the loopback defaults for laptop-only DNS. The gateway loads `.env`. The desktop launcher opts into Phone polling with `OUTBOUND_PHONE=1`. A standalone desktop polls only when started with this flag or a loopback `PHONE_URL`. To run a second copy from a separate checkout, set `PORT`, `PHONE_DASHBOARD_PORT`, and `PHONE_DNS_PORT` to free ports in the shell before `npm run dev:all`. [Phone setup and offline demo](gateway/README.md)
 - **Desktop Auth0.** Dashboard sign-in is optional with `AUTH0_LOGIN=1`. Desktop CIBA/FGA policy uses `OUTBOUND_FGA_MODEL_ID`, while Phone consent uses `FGA_MODEL_ID`. To load desktop settings from `.env`, launch with `node --env-file=.env server.js`. See the setup guide for callback URLs, Guardian enrollment, and the other required environment variables. [Desktop Auth0 setup](research/SETUP-AUTH0.md)
 - **Troubleshooting.** If a port is busy, close the old Outbound process from its terminal. Use `npm run check` to verify desktop assets and routes on an ephemeral loopback port. The Windows DNS cache may require an elevated launch to expose more hostnames.
 
@@ -36,7 +36,7 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 | History | 6 | The last seven recorded days in the UI, with up to 30 local days available through the API. |
 
 <!-- dossier-counts:start -->
-The dossier contains **313 apps**, **183 companies**, and **223 incident records**, with **528 distinct source URLs** across its records.
+The dossier contains **334 apps**, **199 companies**, and **244 incident records**, with **575 distinct source URLs** across its records.
 <!-- dossier-counts:end -->
 
 Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).

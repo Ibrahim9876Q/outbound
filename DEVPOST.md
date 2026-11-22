@@ -1,39 +1,42 @@
 # Outbound
 
-**See where Windows apps connect and when they use your microphone or camera.**
+**Discover where your Windows apps connect, what they leave on the PC, and when they use sensitive permissions.**
 
 ## Inspiration
 
-CBC Marketplace tested six popular mobile apps in November 2026 and reported that the Tim Hortons app appeared to connect to outside companies as soon as it opened. We wanted to make that kind of discovery possible on a Windows laptop, using the apps that are already running. [CBC Marketplace investigation](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814)
+CBC Marketplace reported that the Tim Hortons app appeared to contact outside companies as soon as it opened. We wanted a way to explore similar activity on a Windows laptop and see the evidence behind each observation. [CBC Marketplace investigation](https://www.cbc.ca/news/canada/app-data-privacy-9.7417814)
 
 ## What it does
 
-Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to inspect observed endpoints, estimated countries, tracker matches and background connections. Links distinguish observed local sockets from inferred associations. The webcam indicator and mic key respond to Windows capture sessions. Globe plots usable endpoint estimates, illustrates connections with animated packets, and links from company HQ references to sourced incidents.
+- **Computer and Globe.** Select an app to inspect observed TCP destinations, attributed owners, tracker matches and estimated endpoint locations. Globe animates those connections. The laptop’s mic key and camera lamp reflect Windows capture sessions. Links distinguish observed local sockets and process relationships from inferred associations.
+- **Stored data and Permission history.** The opt-in scan summarizes browser history domains and cookie hosts, app-folder metadata, installed software, startup entries and tasks, extension permissions, and Windows privacy settings and permission timestamps. The previous completed scan stays available during a rescan and can be reopened after a restart.
+- **Dossier, exposure and history.** The Dossier links public claims and incidents to sources. Exposure scores show the factors and coverage behind the number. Daily history and a local Markdown report summarize the observations over time.
+- **Rules and Phone.** Desktop Rules previews Windows Firewall commands in dry-run mode. A separate DNS gateway can require time-limited approval for tracker lookups when configured. The offline Phone demo labels its fixture DNS answers and simulated approvals.
 
-An opt-in scan shows browser history domains and cookie host counts, app-data metadata, Windows permission history, software inventory, startup entries and tasks, extension permissions, and registry privacy settings. It keeps the last completed scan available while a new one runs. The Dossier supplies context from public sources. Exposure scores show each observed factor and its coverage, and History shows recent daily totals. Rules default to a local dry run that previews firewall commands.
+## How we use Auth0
 
-## How we built it
+Optional desktop sign-in identifies the local rule author. For a configured approval, Auth0 CIBA requests a decision through Guardian. On approval, Auth0 FGA stores an opaque rule relation. The Phone gateway uses CIBA and FGA for expiring DNS tracker grants. Fixture tests exercise request and approval handling, FGA checks, expiry, and revocation.
 
-A local Node.js server reads Windows TCP sockets with `netstat -ano` and joins process IDs to executable names and icons. It attributes endpoints using the Windows DNS cache when available, reverse DNS, an offline autonomous system number (ASN) database for network owners and an offline IP geolocation database. Server-Sent Events stream the observations to the dashboard, and globe.gl plots the estimated endpoint locations.
+The reported hosted attempt stopped at Guardian enrollment, before a push was delivered. Hosted approval and revocation remain unverified end to end. Our live desktop rehearsal exercised the local dry run.
 
-We started with the Windows privacy registry, but its timestamps did not update live on our demo PC. We switched to Windows Core Audio capture sessions for the microphone and Media Foundation camera activity for the webcam. Outbound timestamps changes it observes and uses them to update the day's totals.
+## Privacy
 
-Desktop policy supports optional Auth0 sign-in to identify the rule author. The configured policy provider requests consent through CIBA and records approval as an opaque FGA tuple. The separate Phone gateway uses CIBA and FGA for expiring DNS tracker grants. Fixture tests exercise approval and policy checks. Our reported hosted request stopped at Guardian enrollment before push delivery. Hosted end-to-end approval and revocation remain unverified. The labeled Phone offline demo uses real loopback DNS, fixture answers and simulated approval decisions.
+Both HTTP dashboards bind to loopback. The opt-in scan keeps its results and caches on the PC. Browser history in the result is reduced to domains. Cookie queries select host and count fields. The scanner leaves password stores alone, and the app-folder walk reads names, sizes and timestamps. The desktop uses offline ASN and IP geolocation data. Reverse DNS can use the operating system’s resolver. Optional Phone DNS forwarding and hosted Auth0 use the configured upstream services. Firewall rules stay in preview mode by default.
 
-Both HTTP dashboards bind to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. The desktop keeps the previous result in a local cache and serves a small status response while the scan worker runs. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver, and Phone DNS and hosted Auth0 use their configured external services.
+## Built with
 
-## Challenges we ran into
+- Node.js 24, Server-Sent Events, and globe.gl
+- Windows PowerShell, `netstat`, Core Audio, Media Foundation, and the Windows privacy registry
+- Node’s SQLite reader, the Public Suffix List, and WhoTracks.me data
+- ip-location-db ASN data and geoip-lite
+- A Node.js DNS gateway, Auth0 CIBA, Auth0 FGA, and optional desktop OpenID Connect sign-in
 
-An IP address often identifies a cloud provider or CDN. We use hostnames when available and leave unknown owners and locations visible when attribution is missing. Busy pages can build up hundreds of destinations, so we bound the live view while retaining daily aggregates. A registry record with no stop timestamp can outlast a running app, and tracker matches in the scan describe earlier public measurements of the sites.
+## Challenges and accomplishments
 
-## Accomplishments we’re proud of
+An IP address often points to a CDN or cloud provider. We show the attribution we have and leave unknowns visible. The privacy registry lagged during live device tests, so we use Core Audio and Media Foundation for live indicators and the registry for historical context. We also kept local browsing metadata readable while independent collectors fail or finish at different times.
 
-We combined live socket and device observations, a read-only scan, and a sourced research dossier in one local workflow. A judge can follow a visible connection, inspect its attribution and source, then preview a rule. The dashboard keeps observed activity, inferred relationships, and recorded policies distinct.
-
-## What we learned
-
-Sockets, DNS names and device timestamps answer different questions. Keeping the source and limits of each observation visible helps people interpret a connection without needing to read a network trace.
+The live demo shows a Windows permission record and a separate public investigation with its source. It then follows an observed app through a firewall preview to the Globe. Each view shows the basis for its claims so a judge can inspect the underlying evidence.
 
 ## What’s next
 
-We want to validate the full hosted consent flow with an enrolled approver, expand the Dossier with verified sources, and make it easier to compare opt-in snapshots over time.
+Verify hosted consent through approval and revocation on a Guardian-enrolled test device, broaden the sourced Dossier, and compare opt-in snapshots over time.

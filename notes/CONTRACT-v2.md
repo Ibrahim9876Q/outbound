@@ -108,6 +108,8 @@ State and SSE include pre-cap retained counts in `totals: { apps, links, legacyL
 
 ## 8. Retained scans and lightweight polling (xray5)
 
+When an existing scan cache is unreadable, `/api/scan` includes a warning and `/api/scan/status` counts it. A subsequent completed scan can replace it. Device usage and daily history expose optional `devices.warning` in `/api/state` and `warning` in `/api/history` when records could not be restored. An invalid policy file returns HTTP 503 with an error message and stays on disk untouched.
+
 `GET /api/scan` keeps its existing fields. It adds `cached: boolean` and can embed the last completed snapshot as `previous` while a newer scan is running, provisional, or failed. A restored snapshot or reused `previous` has `cached: true` with the original `finishedAt`. Fresh results have `cached: false`. Only a scan that completes its background walk replaces the saved snapshot. The full route supports gzip and sends `Cache-Control: no-store`.
 
 ```
