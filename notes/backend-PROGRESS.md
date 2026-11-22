@@ -75,3 +75,8 @@ Verify the first SSE state after a new connection contains the active peer link.
 - Merged the Phone lane first and retained both branches' demo and cross-lane notes.
 - Categorized all 16 tracker organizations from the measured page load. Tests cover names, normalization, category values and false-positive boundaries. Exposed categories additively on destinations. All six tests passed with Node test isolation disabled in the sandbox.
 - Combined Computer, Globe and Phone into the judged script and retained the Phone click table as an appendix. Recorded the orchestrator's measured weather.com results in the Devpost draft.
+
+## Large state measurement
+
+- Replayed a deterministic 220-destination fixture with 20 active connections. Uncompressed JSON shrank from 62,425 bytes to 28,664 bytes after retaining 80 inactive destinations. The original weather.com response bytes were not available for replay.
+- The old timer sent one state per second while idle, with extra immediate activity pushes. Live port 4319 measured 1.96 state frames per second after the change; event frames now share those batches.
