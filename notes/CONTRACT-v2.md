@@ -62,3 +62,28 @@ Routes (via `lib/blocker/routes.js`):
 
 ## 5. Front end (Codex 1)
 Renders all of the above, with an honest empty state when an endpoint returns 404 or empty ("backend not merged yet" is fine during development). Never show placeholder numbers.
+
+## 6. Extended opt-in scan (xray3)
+
+`POST /api/scan` keeps its existing shape. It returns 409 while the foreground scan or its app-data continuation is active. `GET /api/scan` adds:
+
+```
+permissions: [{ capability, app, exe: string|null, allowed: string|null,
+                lastUsedStart: number|null, lastUsedStop: number|null, inUse: boolean }]
+installed: [{ name, publisher: string|null, version: string|null,
+              installDate: "YYYY-MM-DD"|null, sizeBytes: number|null,
+              source: "HKLM"|"HKLM-WOW6432Node"|"HKCU"|"Appx", researchId? }]
+autoruns: [{ kind: "startup"|"task"|"service", name, command, publisher?,
+             flagged: boolean, reason: string|null, status?, startType?,
+             triggers?: [{ type, enabled, start, end, repetition, daysInterval,
+                            daysOfWeek, weeksInterval, delay }] }]
+extensions: [{ browser, profile, id, name, version: string|null,
+               permissions: string[], allSites: boolean, risky: boolean }]
+windowsPrivacy: [{ setting, value: number|string|null, meaning, recommended }]
+warnings: string[]
+appDataBackground: boolean
+appDataCachedAt: number|null
+apps[].partial: boolean
+```
+
+Timestamps are Unix milliseconds. A missing registry value or absent inventory field remains null. `permissions[].inUse` reflects a recorded start with zero stop FILETIME. It may outlast the process. Autorun and extension flags are based on metadata. `status: "done"` with `appDataBackground: true` means the 20-second provisional app-data snapshot has been published. Poll until it is false for the completed walk and cache timestamp. A row with `partial: true` has provisional totals. The scan and cache stay local.

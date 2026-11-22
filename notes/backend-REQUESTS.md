@@ -1,5 +1,7 @@
 # Backend requests
 
+- xray3 scan panels: see section 6 of `CONTRACT-v2.md` for permissions, installed software, autoruns, extensions, and Windows privacy settings. Show null settings as unavailable. Continue polling while `appDataBackground` is true, even after status becomes done. Disable repeated scans during the continuation and label rows whose `partial` flag is true.
+
 - Scan UI: `lastVisit` and `lastWrite` are Unix milliseconds. `summary` deduplicates sites and cookie domains across browser profiles. Site trackers are public dataset associations and can differ from requests made during the local visit.
 - Stored-data lane UI: `GET /api/scan` may include `appDataTimedOut: true` when the app-folder scan reaches its time budget. Its file sizes and counts reflect the files visited. The `kinds` values count files by kind, and an app folder may exclude a nested app listed separately.
 - Computer lane: the v2 Links view uses canonical `state.links` records with display-name endpoints. Existing desktop wires that expect executable IDs, `local`/`shared` kinds, ports or active state should read `state.legacyLinks ?? state.links`. A UDP self-edge describes an observed listener with an unknown peer. Named pipe self-edges describe only name-based attribution.

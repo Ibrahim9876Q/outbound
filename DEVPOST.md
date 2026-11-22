@@ -8,9 +8,9 @@ CBC Marketplace tested six popular mobile apps in November 2026 and reported tha
 
 ## What it does
 
-Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to see the endpoints it connects to, their estimated countries and recognizable tracker domains. Links show when two programs have a local TCP connection or both connect to the same attributed company. The webcam indicator and mic key light up when Windows reports an app using those devices. The Globe view plots the estimated location of each destination and lets you filter by app.
+Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to inspect observed endpoints, estimated countries and tracker matches. Links distinguish observed local sockets from inferred associations. The webcam indicator and mic key respond to Windows capture sessions. Globe plots endpoints with usable IP location estimates and animates illustrative packets. An attributed owner can be a cloud or CDN operator.
 
-The Phone dashboard demonstrates a DNS consent firewall. Auth0 CIBA requests approval through Guardian, and Auth0 FGA stores the per-tracker grant with an expiry. Revoking the grant blocks subsequent tracker lookups through the gateway.
+An opt-in scan shows browser history domains and cookie host counts, app-data metadata, Windows permission history, installed software, startup entries and tasks, extension permissions, and registry privacy settings. A source-backed Dossier supplies context. Local block rules default to a dry run that previews the commands.
 
 ## How we built it
 
@@ -18,9 +18,9 @@ A local Node.js server reads Windows TCP sockets with `netstat -ano` and joins p
 
 We started with the Windows privacy registry, but its timestamps did not update live on our demo PC. We switched to Windows Core Audio capture sessions for the microphone and Media Foundation camera activity for the webcam. Outbound timestamps changes it observes and uses them to update the day's totals.
 
-The phone DNS gateway checks tracker lookups against active permissions before forwarding them. Auth0 Client-Initiated Backchannel Authentication (CIBA) sends an approval prompt to the enrolled user in Guardian. Auth0 Fine-Grained Authorization (FGA) stores the timed grant and checks it on later lookups. The gateway removes the grant when the user revokes access.
+The Phone gateway models a DNS consent firewall. Its hosted path uses Auth0 CIBA for the Guardian prompt and FGA for timed grants, with revocation checked on later lookups. The tested hosted request stopped before delivery because its approver lacked Guardian enrollment. The labeled offline demo uses real loopback DNS with simulated approval decisions.
 
-The server binds to the PC’s loopback address so other devices on the network cannot open the dashboard. We keep connection observations in memory and save device session history locally. Owner and geography lookups use local tables, and hostname fallback uses the Windows resolver.
+The desktop server binds to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver and network access.
 
 ## Challenges we ran into
 
@@ -28,9 +28,7 @@ An IP address often identifies a cloud provider or CDN. We use hostnames when av
 
 ## Accomplishments we’re proud of
 
-We brought three kinds of evidence into one view. An ordinary app can light up a connection to a place a user may never have thought about, the laptop shows when a device starts being used, and each app has details users can inspect. The dashboard’s runtime assets and lookups work from the laptop itself.
-
-On our laptop, a single load of weather.com produced connections attributed to **38 companies in 13 countries**, with **seven tracker companies** flagged during that run. After expanding our organization list, a separate single-load test flagged **13 trackers with categories**. The counts reflect observed TCP connections and the IP and hostname attribution available during each run.
+On this PC on **November 22, 2026**, one opt-in scan found **497 visited domains** and matched **104** of them to prior public tracker observations. It returned **629 permission entries across 23 capabilities**, **199 installed-software records**, and **69 browser extensions**, with **35** matching our sensitive-permission rules. Those flags describe declared or recorded access. They cannot establish misuse.
 
 ## What we learned
 
@@ -38,4 +36,4 @@ Sockets, DNS names and device timestamps answer different questions. Keeping the
 
 ## What’s next
 
-We want to make it easier to connect a phone to the DNS gateway and give people more control over how long they approve each tracker.
+We want to validate the full hosted consent flow with an enrolled approver, expand the Dossier with verified sources, and make it easier to compare opt-in snapshots over time.

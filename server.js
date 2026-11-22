@@ -124,12 +124,12 @@ function sendFile(res, file) {
   });
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   if (!LOCAL_HOST.test(req.headers.host || '')) {
     res.writeHead(403);
     return res.end();
   }
-  const url = URL.parse(req.url, 'http://localhost');
+  const url = URL.parse(req.url, `http://${req.headers.host}`);
   if (!url) {
     res.writeHead(400);
     return res.end();
@@ -174,6 +174,7 @@ const server = http.createServer((req, res) => {
       network.seenCompanies.namesOn(localDate(now)));
     return res.end(daily + renderScanAndLinks(scan.result, [...linkWatcher.current.edges.values()]));
   }
+  if (await require('./lib/blocker/routes').handle(req, res, url)) return;
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
   const file = path.resolve(PUBLIC, rel);
