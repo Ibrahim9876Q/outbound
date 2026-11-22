@@ -25,10 +25,10 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 
 ## Quick demo
 
-1. In **Computer**, select a running app and point to one observed endpoint and its attribution.
-2. In **Stored data**, use a completed opt-in scan and open **Permission history** to show one recorded timestamp.
-3. In **Dossier**, search **Tim Hortons**, open the mobile location investigation, and point to its regulator source.
-4. Return to **Computer** and choose **Block app** for the rehearsed app, then **Preview block**. Point to **DRY RUN**.
+1. In **Computer**, select a running app and point to an observed endpoint and its attribution. Use an observed local link if remote traffic is sparse.
+2. In **Stored data**, run **Scan this PC** before the timer. When the scan is ready, open **Permission history** and show one recorded timestamp.
+3. In **Dossier**, search **Tim Hortons** and click its result. Under **Documented incidents**, point to the mobile location investigation and its regulator source.
+4. Return to **Computer** and choose **Block app** for a rehearsed app with a known executable path, then **Preview block**. Point to **DRY RUN**.
 5. Click **Show app on globe**, then open a country row. Use **All apps** if the selected app has no mapped endpoints. [Three-minute script](DEMO.md)
 
 ## Views
@@ -97,6 +97,8 @@ Counts include incident records from app and company entries. Run `npm run docs:
 | `GET /auth/me` · `GET /auth/login` · `GET /auth/callback` · `GET /auth/logout` | Read desktop identity status and handle the optional Auth0 sign-in flow. |
 
 The response contracts are documented in [notes/CONTRACT-v2.md](notes/CONTRACT-v2.md).
+
+In local mode, `/auth/me` reports sign-in as disabled. The login, callback, and logout routes return 404 until sign-in is enabled. Approval polling requires a pending or retained Auth0 request ID.
 
 ## Data sources and licenses
 
