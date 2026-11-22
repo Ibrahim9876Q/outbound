@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
+const { renderReport, localDate } = require('./lib/report');
 
 const PORT = Number(process.env.PORT) || 4317;
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -131,6 +132,19 @@ const server = http.createServer((req, res) => {
   if (url.pathname === '/api/state') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(state()));
+  }
+  if (url.pathname === '/api/report' || url.pathname === '/api/report/download') {
+    if (req.method !== 'GET') {
+      res.writeHead(405, { Allow: 'GET' });
+      return res.end();
+    }
+    const now = Date.now();
+    const headers = { 'Content-Type': 'text/markdown; charset=utf-8', 'Cache-Control': 'no-store' };
+    if (url.pathname.endsWith('/download') || url.searchParams.get('download') === '1') {
+      headers['Content-Disposition'] = `attachment; filename="outbound-${localDate(now)}.md"`;
+    }
+    res.writeHead(200, headers);
+    return res.end(renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now));
   }
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);

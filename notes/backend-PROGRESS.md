@@ -80,3 +80,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 
 - Replayed a deterministic 220-destination fixture with 20 active connections. Uncompressed JSON shrank from 62,425 bytes to 28,664 bytes after retaining 80 inactive destinations. The original weather.com response bytes were not available for replay.
 - The old timer sent one state per second while idle, with extra immediate activity pushes. Live port 4319 measured 1.96 state frames per second after the change; event frames now share those batches.
+
+## Phone bridge and daily report
+
+- On port 4319, verified null state before and after a loopback gateway fixture and all five projected fields while it was online.
+- Verified the Markdown content type, no-store response, dated attachment name and GET-only handling. The fixture also covers day rollover, unique totals and overlapping device usage.
+- `npm.cmd test -- --test-isolation=none` passed all nine tests. The sandbox variant runs in-process to avoid subprocess restrictions.

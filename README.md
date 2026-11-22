@@ -34,3 +34,5 @@ Polling can miss brief connections, including some short device sessions. UDP tr
 The HTTP server binds to `127.0.0.1`. Network observations are held in memory, and device session history is saved to `data/usage.json` on the PC. Reverse DNS uses the Windows resolver. IP ownership and location data, the dashboard and its globe assets are served locally.
 
 Use [DEMO.md](DEMO.md) for the live walkthrough and [DEVPOST.md](DEVPOST.md) for the submission draft.
+
+Open `http://localhost:4317/api/report` for today's local Markdown summary, or `http://localhost:4317/api/report/download` to save it. Network totals cover today's observations from the current server run, including destinations removed from the live view.
