@@ -24,6 +24,7 @@
       <button class="view-btn" data-view="globe" role="tab">Globe</button>
       <button class="view-btn" data-view="phone" role="tab">Phone</button>
       <button class="view-btn" data-view="scan" role="tab">Stored data</button>
+      <button class="view-btn" data-view="dossier" role="tab">Dossier</button>
     </nav>
     <div class="stats">
       <div class="stat"><b id="stat-apps">0</b><span>apps online</span></div>
@@ -183,6 +184,12 @@
       <p id="scan-status" role="status">Waiting for scan status.</p>
       <pre class="ascii-radar" id="scan-radar" aria-hidden="true" hidden></pre>
       <div id="scan-results" class="intel-grid"></div>
+    </section>
+    <section class="view intel-view hidden" id="view-dossier">
+      <div class="intel-heading"><h2>Dossier</h2><p id="dossier-count" role="status">Waiting for local research.</p></div>
+      <div class="intel-filters"><label>Search <input type="search" id="dossier-search" placeholder="App, company or domain"></label>
+        <label>Incident kind <select id="dossier-kind"><option value="">All kinds</option><option>court</option><option>settlement</option><option>fine</option><option>regulator</option><option>investigation</option><option>report</option><option>breach</option></select></label></div>
+      <div class="intel-grid"><div id="dossier-list" class="card"></div><div id="dossier-card" class="card"></div></div>
     </section>
   </main>
 

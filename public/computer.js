@@ -827,6 +827,7 @@
     }).join('');
     return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
       + `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
+      + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
   }
 

@@ -11,6 +11,8 @@
   };
   const card = (title, body) => `<section class="card"><h2>${esc(title)}</h2>${body}</section>`;
   const list = (items, empty) => items.length ? `<ul>${items.map((item) => '<li>' + item + '</li>').join('')}</ul>` : `<p class="intel-muted">${esc(empty)}</p>`;
+  const dossierLink = (name, kind = 'company') => name
+    ? `<button type="button" class="intel-link" data-dossier="${esc(name)}" data-dossier-kind="${kind}">${esc(name)}</button>` : '';
 
   async function api(url, options) {
     const response = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(5000), ...options });
@@ -53,11 +55,12 @@
       (browser.blockedReason ? `<p class="ascii-warning">${esc(browser.blockedReason)}</p>` : '')
       + '<h3>Top visited domains</h3>'
       + list((browser.sites || []).map((site) => `<strong>${esc(site.domain)}</strong> / ${number(site.visits)} visits`
-        + (site.trackers?.length ? '<br>' + site.trackers.map((tracker) => esc(tracker.company)).join(', ') : '')),
+        + (site.trackers?.length ? '<br>' + site.trackers.map((tracker) => dossierLink(tracker.company)).join(', ') : '')
+        + '<br>' + dossierLink(site.company || site.domain, site.company ? 'company' : 'domain')),
       browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
       + '<h3>Tracker cookie domains</h3>'
       + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
-        `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies`),
+        `${esc(cookie.domain)}${cookie.company ? ' / ' + dossierLink(cookie.company) : ''} / ${number(cookie.cookies)} cookies`),
       browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.')));
     const trackers = scan.summary?.topTrackers || [];
     if (trackers.length) {
@@ -66,7 +69,7 @@
         `${esc(tracker.company)}<br><code>${'#'.repeat(Math.max(0, Math.min(20, Math.round(tracker.sites / max * 20))))}</code> ${number(tracker.sites)} sites`), '')));
     }
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
-      `<strong>${esc(app.app)}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
+      `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
     $('scan-results').innerHTML = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
   }
@@ -98,4 +101,81 @@
     refreshScan();
   });
   Outbound.onView((name) => { if (name === 'scan') refreshScan(); });
+
+  let research;
+  let researchLoading;
+  let selection;
+  const lower = (value) => String(value ?? '').trim().toLowerCase();
+  const entries = (record, key) => (record[key] || []).filter((item) => item.source?.verified === true);
+  const fields = ['declared', 'sharesWith', 'destinations', 'incidents'];
+
+  function sourceHTML(source) {
+    let url;
+    try {
+      const parsed = new URL(source.url);
+      if (parsed.protocol === 'https:' || parsed.protocol === 'http:') url = parsed.href;
+    } catch { /* Invalid citations stay plain text. */ }
+    const details = [source.publisher, source.date].filter(Boolean).join(' / ') || 'Source metadata unavailable';
+    return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}</small>`;
+  }
+
+  function renderDossier() {
+    const records = research || [];
+    const search = lower($('dossier-search').value);
+    const kind = $('dossier-kind').value;
+    const visible = records.filter((record) => [record.name, record.publisher, record.id, ...(record.match || [])]
+      .some((value) => lower(value).includes(search)) && (!kind || entries(record, 'incidents').some((incident) => incident.kind === kind)));
+    $('dossier-list').innerHTML = '<h2>Research index</h2>' + list(visible.map((record) => dossierLink(record.name, record.type)),
+      research ? 'No researched entries match.' : 'Research is unavailable in this build.');
+    const target = selection?.[1];
+    const selected = records.find((record) => (selection[0] === 'domain' || record.type === selection[0])
+      && [record.name, record.id, ...record.match].some((value) => lower(value) === lower(target)));
+    const output = $('dossier-card');
+    if (!selected) {
+      output.textContent = target ? 'No verified dossier for ' + target + '.' : 'Choose a researched app or company.';
+      return;
+    }
+    const display = (key, heading, row) => `<h3>${heading}</h3>` + list(entries(selected, key)
+      .filter((entry) => key !== 'incidents' || !kind || entry.kind === kind)
+      .map((entry) => row(entry) + sourceHTML(entry.source)), 'No verified entries reported.');
+    output.innerHTML = `<h2>${esc(selected.name)}</h2>`
+      + (selected.publisher ? `<p>${esc(selected.publisher)}</p>` : '')
+      + display('declared', 'Declared collection', (entry) => `<strong>${esc(entry.data)}</strong> / ${esc(entry.purpose)}`)
+      + display('sharesWith', 'Declared sharing', (entry) => `<strong>${esc(entry.party)}</strong> / ${esc(entry.purpose)}`)
+      + display('destinations', 'Declared destinations', (entry) => `<strong>${esc(entry.country)}</strong> / ${esc(entry.note)}`)
+      + display('incidents', 'Documented incidents', (entry) => `<strong>${esc(entry.title)}</strong><br>`
+        + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary));
+  }
+
+  async function loadResearch() {
+    if (research) { renderDossier(); return; }
+    if (researchLoading) return;
+    researchLoading = true;
+    try {
+      const data = await api('/data/research.json');
+      research = [
+        ...(data.apps || []).map((record) => ({ ...record, type: 'app', match: [...(record.processNames || []), ...(record.domains || [])] })),
+        ...(data.companies || []).map((record) => ({ ...record, type: 'company', match: record.aliases || [] })),
+      ];
+      const incidents = research.reduce((sum, record) => sum + entries(record, 'incidents').length, 0);
+      const sources = new Set(research.flatMap((record) => fields.flatMap((key) => entries(record, key).map((item) => item.source.url).filter(Boolean))));
+      $('dossier-count').textContent = (data.apps || []).length + ' apps / ' + incidents + ' incidents / ' + sources.size + ' sources';
+    } catch {
+      $('dossier-count').textContent = 'Verified research is unavailable in this build.';
+    } finally {
+      researchLoading = false;
+      renderDossier();
+    }
+  }
+
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-dossier]');
+    if (!trigger) return;
+    selection = [trigger.dataset.dossierKind, trigger.dataset.dossier];
+    if (Outbound.view !== 'dossier') Outbound.showView('dossier');
+    else renderDossier();
+  });
+  $('dossier-search').addEventListener('input', renderDossier);
+  $('dossier-kind').addEventListener('change', renderDossier);
+  Outbound.onView((name) => { if (name === 'dossier') loadResearch(); });
 })();

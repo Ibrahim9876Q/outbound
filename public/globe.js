@@ -609,6 +609,10 @@
     for (const place of pinned ? details : details.slice(0, 2)) {
       const row = node('div', 'globe-tip-row');
       const title = node('strong', '', place.org);
+      const dossier = node('button', 'intel-link', 'Company dossier');
+      dossier.type = 'button';
+      dossier.dataset.dossier = place.org;
+      dossier.dataset.dossierKind = 'company';
       if (place.tracker) title.append(node('span', 'globe-tracker', 'Tracker'));
       const location = [place.city, countryName(place.country)].filter(Boolean).join(', ');
       const fields = node('dl', 'globe-tip-fields');
@@ -622,6 +626,7 @@
         fields.append(node('dt', '', label), node('dd', '', value));
       }
       row.append(title, fields);
+      if (pinned) row.append(dossier);
       tip.append(row);
     }
     if (!pinned && details.length > 2) {

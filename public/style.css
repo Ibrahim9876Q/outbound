@@ -237,6 +237,10 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .intel-grid li { padding: 5px 0; border-bottom: 1px solid var(--line); }
 .intel-grid a { text-decoration: underline; }
 .intel-link { color: inherit; background: none; border: 0; text-decoration: underline; padding: 0; cursor: pointer; }
+.intel-filters { display: flex; gap: 12px; flex-wrap: wrap; }
+.intel-filters input, .intel-filters select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line-strong); }
+.citation { display: block; margin-top: 4px; color: var(--muted); }
+#dossier-list { max-height: 62vh; overflow: auto; }
 
 .session-strip {
   flex: none;
