@@ -6,6 +6,7 @@
 
 - The app rule route now resolves running executables server-side when no path is supplied. Treat a plan row with an empty `command` as an explanation and render its `reason`. Multiple resolved executables produce multiple command rows.
 - `research.json#index` has `exe` and `domain` maps. Lowercase executable basenames and remove a domain's final dot before lookup. For hostnames, try the full name before walking ancestor suffixes by DNS label. Values are arrays of app IDs, since several products can share a domain. A shared-domain match alone does not identify the app responsible for a connection.
+- `research.json#index.extension` maps lowercase Chromium extension IDs to dossier app ID arrays. Resolve each `scan.extensions[].id` by exact match before falling back to the publisher or domain. Use the existing `researchId` shape when the ID resolves uniquely. When no ID matches, keep the existing fallback. Store privacy labels describe publisher declarations, and scan permission flags describe requested access.
 
 - The policy route is wired into `server.js`. Mutation requests must have an origin matching the request host and port.
 - Frontend owner: read `/data/research.json`. Null HQ/date or empty evidence sections mean no verified value. Distinguish publisher disclosures, incidents, and observed traffic.

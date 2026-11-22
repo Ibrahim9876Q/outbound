@@ -42,6 +42,10 @@ test('dossier v2 has a verified HTTPS source for every claim and every entry', (
     for (const key of ['id', 'name', 'publisher', 'category']) str(app[key]);
     assert.ok(app.processNames.every((value) => /\.exe$/i.test(value)));
     assert.ok(app.domains.every((value) => /^(?:[a-z0-9-]+\.)+[a-z0-9-]+$/i.test(value)));
+    if (app.extensionIds) {
+      for (const id of app.extensionIds) assert.match(id, /^[a-p]{32}$/);
+      assert.ok(app.extensionIds.length);
+    }
     headquarters(app.hq);
     claims(app.declared, ['data', 'purpose']);
     claims(app.sharesWith, ['party', 'purpose']);
@@ -66,4 +70,10 @@ test('dossier index maps executable and domain keys to stable app IDs', () => {
   assert.ok(dossier.index.exe['discord.exe'].includes('discord'));
   assert.ok(dossier.index.domain['discord.com'].includes('discord'));
   assert.ok(dossier.index.domain['google.com'].length > 1);
+  const honeyId = 'bmnlcjabgnpnenekpadlanbbkooimhnj';
+  assert.deepEqual(dossier.index.extension[honeyId], ['extension-' + honeyId]);
+  for (const [extensionId, matches] of Object.entries(dossier.index.extension)) {
+    assert.match(extensionId, /^[a-p]{32}$/);
+    assert.equal(matches.length, 1);
+  }
 });
