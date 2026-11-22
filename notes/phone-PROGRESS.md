@@ -1,5 +1,9 @@
 # Phone lane progress
 
+## Final round — Auth0 failure and reconnect rehearsal
+
+Merged master, mapped Auth0 errors with credential redaction, and added an explicitly labeled offline fallback on a separate loopback port. Chromium passed five reloads and recovered after restarting the test-owned gateway on the same port. The browser also showed the mapped enrollment failure and completed the fallback approval flow using a local provider fixture. No hosted Guardian enrollment was attempted.
+
 ## 2026-11-21 19:01 EST — Laptop-only consent demo
 
 Added an opt-in offline demo with an on-screen DEMO DATA banner, simulated approval decisions, and real loopback DNS through the gateway. Verified through the HTTP and DNS endpoints that the tracker stays blocked while pending and after denial, resolves after approval, and is blocked again after revocation. All four gateway tests passed.
