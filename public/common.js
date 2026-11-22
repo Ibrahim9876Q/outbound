@@ -337,6 +337,8 @@
     }
     const fromHash = location.hash.slice(1);
     if (fromHash && fromHash !== 'computer') showView(fromHash);
+    // Editing the #hash in the address bar doesn't reload the page, so follow it here too.
+    window.addEventListener('hashchange', () => showView(location.hash.slice(1) || 'computer'));
     connect();
   }
 
