@@ -1,12 +1,196 @@
-```text
-  ___  _   _ _____ ____   ___  _   _ _   _ ____
- / _ \| | | |_   _| __ ) / _ \| | | | \ | |  _ \
-| | | | | | | | | |  _ \| | | | | |  \| | | | |
-| |_| | |_| | | | |_) | |_| | |_| | |\  | |_| |
- \___/ \___/  |_| |____/ \___/ \___/|_| \_|____/
+<div align="center">
+
+<img src="docs/readme/hero.gif" alt="OUTBOUND. You will be secure." width="100%">
+
+<h3>See where your data goes. Then stop it.</h3>
+
+<p>
+<img src="https://img.shields.io/badge/WINDOWS_11-LOCAL_ONLY-ffffff?style=for-the-badge&logo=windows11&logoColor=white&labelColor=000000" alt="Windows 11, local only">
+<img src="https://img.shields.io/badge/NODE.JS_24-DASHBOARD-ffffff?style=for-the-badge&logo=nodedotjs&logoColor=white&labelColor=000000" alt="Node.js 24 dashboard">
+<img src="https://img.shields.io/badge/AUTH0-CIBA_PUSH-ffffff?style=for-the-badge&logo=auth0&logoColor=white&labelColor=000000" alt="Auth0 CIBA push">
+<img src="https://img.shields.io/badge/AUTH0_FGA-CONSENT_TUPLES-ffffff?style=for-the-badge&labelColor=000000" alt="Auth0 FGA consent tuples">
+<br>
+<img src="https://img.shields.io/badge/BIND-127.0.0.1-ffffff?style=for-the-badge&labelColor=000000" alt="Binds 127.0.0.1">
+<img src="https://img.shields.io/badge/FIREWALL-DRY_RUN_DEFAULT-ffffff?style=for-the-badge&labelColor=000000" alt="Firewall dry run by default">
+<img src="https://img.shields.io/badge/HACK_WESTERN_13-DISCOVER_THE_UNKNOWN-ffffff?style=for-the-badge&labelColor=000000" alt="Hack Western 13, Discover the Unknown">
+</p>
+
+**Outbound is a local Windows dashboard that shows which apps talk to whom, from where, and what they've been caught doing.**<br>
+It watches live TCP endpoints, mic and camera use, and (if you opt in) stored browser and Windows metadata. It ties every company to sourced fines and cases, and it won't block anything until **you approve it on your phone** through Auth0.
+
+[**▶ Watch the promo**](promo/outbound-promo-v3.mp4) · [Run it](#run) · [Architecture](#architecture) · [Demo script](DEMO.md) · [Devpost](DEVPOST.md)
+
+</div>
+
+---
+
+## Why
+
+<table>
+<tr>
+<td width="34%" valign="middle" align="center">
+<img src="docs/readme/monitored.gif" alt="An eye opens: You are being monitored" width="100%">
+</td>
+<td width="66%" valign="middle">
+
+Your apps keep talking after you close them, to companies you've never heard of, in countries you didn't choose. The privacy policy names the categories. Regulators name the rest.
+
+Outbound puts it all on one screen, on your own machine:
+
+- **Which apps** have open connections right now, and **where** those connections land.
+- **Who's behind them**, from offline ASN data plus a dossier of public records.
+- **What those companies were caught doing**: fines, settlements and investigations, each linked to its regulator or court source.
+- **A stop button that asks you first.** Blocking goes through Auth0 CIBA on your phone and is recorded as an Auth0 FGA tuple.
+
+</td>
+</tr>
+</table>
+
+<p align="center">
+<img src="docs/readme/card-meta.jpg" alt="Meta card: collected data categories, an FTC quote, and fines of 1.2 billion euros and 5 billion dollars" width="49%">
+<img src="docs/readme/card-google.jpg" alt="Google card: collected data categories, a quote about audio samples, and settlements of 1.375 billion and 391.5 million dollars" width="49%">
+<br>
+<img src="docs/readme/you.jpg" alt="You are less valuable than the data you produce, surrounded by app logos" width="49%">
+<img src="docs/readme/stat-trackers.jpg" alt="104 of 497 sites we visited had trackers watching" width="49%">
+</p>
+
+<p align="center"><sub>Frames from the <a href="promo/outbound-promo-v3.mp4">promo video</a>. Every fine, quote and figure on these cards is sourced. See <a href="promo/README.md">promo/README.md</a>.</sub></p>
+
+## The idea
+
+Outbound makes every connection on your PC answer four questions:
+
+| Question | Outbound layer |
+| :-- | :-- |
+| **Who is talking?** | The process graph, foreground app and `netstat`, sampled live and streamed over SSE |
+| **Where does it go?** | Offline ASN and GeoLite2 estimates, drawn on a spinning globe with HQ reference points |
+| **Who is behind it?** | A local dossier of 338 apps and 197 companies, with 240 sourced incidents |
+| **Did you agree to that?** | Auth0 CIBA push approval, an Auth0 FGA consent tuple, then a Windows Firewall rule plan (dry run by default) |
+
+<div align="center">
+<img src="docs/readme/features.gif" alt="Globe, computer view, dossier and Auth0 consent firewall, from the promo" width="100%">
+</div>
+
+## Features
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/readme/globe.jpg" alt="Globe view">
+<h3>01 · Globe</h3>
+Where your endpoints land: usable location estimates, illustrative arcs, company HQs, and links to the incidents tied to each one.
+</td>
+<td width="50%" valign="top">
+<img src="docs/readme/computer.jpg" alt="Computer view">
+<h3>02 · Computer</h3>
+Every running app with its live endpoints, background connections, MIC and CAM activity, and exposure factors. Observed sockets and inferred links are labelled separately.
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/readme/dossier.jpg" alt="Dossier view">
+<h3>03 · Dossier</h3>
+Company claims and documented incidents for 338 apps, each linked to the regulator, court, company or press record it came from.
+</td>
+<td width="50%" valign="top">
+<img src="docs/readme/auth0.jpg" alt="Auth0 consent firewall">
+<h3>04 · Consent firewall</h3>
+<b>Nothing gets blocked until you say so.</b> Auth0 CIBA sends a push to your phone, and Auth0 FGA records which rule you approved. The firewall rule stays a dry run unless you opt in.
+</td>
+</tr>
+</table>
+
+| View | Key | What it shows |
+| --- | :-: | --- |
+| **Computer** | `1` | Observed apps and endpoints, background connections, MIC and CAM activity, app exposure factors, and a live feed. Links distinguish observed local sockets from inferred relationships. |
+| **Globe** | `2` | Usable endpoint location estimates with illustrative arcs, company HQ reference points, and links to sourced incidents. |
+| **Phone** | | The DNS gateway and tracker consent demo. Hosted consent uses Auth0 CIBA with Guardian and timed FGA grants. |
+| **Stored data** | `3` | The opt-in scan covers browser history domains, cookie hosts and counts, recorded Windows permission history, installed software, startup entries and tasks, extension permissions, privacy settings, and app-folder metadata. |
+| **Dossier** | `4` | Sourced company claims, documented incidents, and links to original records. |
+| **Rules** | `5` | Local or configured Auth0 policy decisions and Windows Firewall command previews. Dry run is the default. |
+| **History** | `6` | The last seven recorded days in the UI, with up to 30 local days available through the API. |
+
+<!-- dossier-counts:start -->
+The dossier contains **338 apps**, **197 companies**, and **240 incident records**, with **587 distinct source URLs** across its records.
+<!-- dossier-counts:end -->
+
+Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).
+
+## Architecture
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','secondaryColor':'#161616','tertiaryColor':'#0b0b0b','clusterBkg':'#050505','clusterBorder':'#5f5f5f','edgeLabelBackground':'#000000','fontFamily':'ui-monospace, Consolas, monospace','fontSize':'13px'}}}%%
+flowchart LR
+  subgraph PC["Your Windows PC · everything binds 127.0.0.1"]
+    direction LR
+    COL["Windows collectors<br/>netstat · process graph<br/>foreground · mic + camera"]
+    SRV["Node desktop :4317<br/>state · score · history"]
+    SCAN["Opt-in scan worker<br/>browser domains · cookie hosts<br/>permissions · autoruns"]
+    DOS[("Local dossier<br/>338 apps · 240 incidents")]
+    HIS[("Local history<br/>30 days")]
+    UI["Dashboard<br/>Computer · Globe · Stored data<br/>Dossier · Rules · History"]
+    POL["Policy engine<br/>/api/policy"]
+    ENF["Enforcer<br/>dry run by default<br/>Windows Firewall opt-in"]
+    GW["Phone DNS gateway<br/>:5354 DNS · :4320 dashboard"]
+  end
+  CIBA["Auth0 CIBA<br/>Guardian push"]
+  FGA["Auth0 FGA<br/>consent tuples"]
+  PHONE["Your phone"]
+  UP["Upstream DNS resolver"]
+
+  COL --> SRV
+  SCAN --> SRV
+  DOS --> SRV
+  SRV --> HIS
+  SRV -- "SSE /events" --> UI
+  UI -- "Block app" --> POL
+  POL -- "bc-authorize" --> CIBA
+  CIBA -. "push" .-> PHONE
+  POL -- "write + check tuple" --> FGA
+  POL -- "plan rule" --> ENF
+  PHONE -- "DNS queries" --> GW
+  GW -- "can_resolve?" --> FGA
+  GW -- "ask to allow tracker" --> CIBA
+  GW -- "forward allowed" --> UP
 ```
 
-Outbound is a local Windows dashboard that makes app connections and device use visible. Inspect live TCP endpoints, see when an app uses the microphone or camera, and opt in to a scan of stored browser and Windows metadata. The sourced dossier connects these observations to public privacy policies and documented incidents. Built at Hack Western 13 for **Discover the Unknown**.
+The desktop runs on its own. Without Auth0 settings, the policy engine uses a local provider and the enforcer only prints the firewall commands it would run. The phone gateway checks every DNS lookup before forwarding it:
+
+1. **Not a tracker** → forward to the configured resolver.
+2. **Tracker with an unexpired FGA grant** (`user can_resolve tracker`, condition `unexpired`) → forward, with the answer TTL set to 0 so the grant is checked again on the next lookup.
+3. **Tracker without a grant** → answer `REFUSED`. From the Phone dashboard you can ask for access, which sends a CIBA push. An approval writes a timed FGA tuple.
+4. **Tracker revealed by the answer** (CNAME cloaking) → checked again after the upstream replies, and refused if there's no grant.
+
+One block, end to end:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','actorBkg':'#000000','actorBorder':'#ffffff','actorTextColor':'#ffffff','actorLineColor':'#5f5f5f','signalColor':'#d6d6d6','signalTextColor':'#ffffff','labelBoxBkgColor':'#000000','labelBoxBorderColor':'#ffffff','labelTextColor':'#ffffff','loopTextColor':'#ffffff','noteBkgColor':'#1a1a1a','noteTextColor':'#ffffff','noteBorderColor':'#8a8a8a','activationBkgColor':'#2a2a2a','activationBorderColor':'#ffffff','sequenceNumberColor':'#000000','fontFamily':'ui-monospace, Consolas, monospace'}}}%%
+sequenceDiagram
+  autonumber
+  actor You
+  participant UI as Dashboard
+  participant API as Outbound :4317
+  participant CIBA as Auth0 CIBA
+  participant Phone as Your phone
+  participant FGA as Auth0 FGA
+  participant FW as Enforcer
+
+  You->>UI: Block app (TikTok)
+  UI->>API: POST /api/policy/rules
+  API->>CIBA: bc-authorize, "Outbound policy ref …"
+  CIBA-->>API: auth_req_id, interval
+  CIBA-)Phone: Guardian push
+  loop every interval until approved, denied or expired
+    UI->>API: GET /api/policy/requests/:id
+    API->>CIBA: token poll
+  end
+  You->>Phone: Approve
+  CIBA-->>API: approved
+  API->>FGA: write user:laptop blocked app:…
+  API->>FW: plan Windows Firewall rule
+  FW-->>UI: DRY RUN command preview
+  Note over API,FW: Real enforcement needs OUTBOUND_ENFORCE=firewall plus elevation
+```
 
 ## Run
 
@@ -19,9 +203,14 @@ npm run dev:all
 
 Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If PowerShell blocks the npm shim, use `npm.cmd`. Use `npm start` for the desktop alone. `PORT` changes the desktop HTTP port. For a fresh clone with the checked-in lockfile, `npm ci` can install the dependencies.
 
+<details>
+<summary><b>Phone setup, Desktop Auth0 and troubleshooting</b></summary>
+
 - **Phone setup.** Copy [`.env.example`](.env.example) to the gitignored `.env` when configuring the gateway. Phone defaults to loopback HTTP port `4320` and loopback UDP/TCP DNS port `5354`. The gateway loads `.env`. `npm run dev:all` enables desktop Phone polling and points it at the gateway. A standalone desktop polls only with `OUTBOUND_PHONE=1` or a loopback HTTP `PHONE_URL`. To run a second copy from a separate checkout, set `PORT`, `PHONE_DASHBOARD_PORT`, and `PHONE_DNS_PORT` to free ports in the shell before launch and open Phone at the chosen address. [Phone setup and offline demo](gateway/README.md)
 - **Desktop Auth0.** Dashboard sign-in is optional with `AUTH0_LOGIN=1`. Desktop CIBA/FGA policy uses `OUTBOUND_FGA_MODEL_ID`, while Phone consent uses `FGA_MODEL_ID`. To load desktop settings from `.env`, launch with `node --env-file=.env server.js`. See the setup guide for callback URLs, Guardian enrollment, and the other required environment variables. [Desktop Auth0 setup](research/SETUP-AUTH0.md)
 - **Troubleshooting.** If a port is busy, close the old Outbound process from its terminal. Use `npm run check` to verify desktop assets and routes on an ephemeral loopback port. The Windows DNS cache may require an elevated launch to expose more hostnames.
+
+</details>
 
 ## Quick demo
 
@@ -31,27 +220,10 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 4. Return to **Computer** and choose **Block app** for the rehearsed app, then **Preview block**. Point to **DRY RUN**.
 5. Click **Show app on globe**, then open a country row. Use **All apps** if the selected app has no mapped endpoints. [Three-minute script](DEMO.md)
 
-## Views
-
-| View | Key | What it shows |
-| --- | --- | --- |
-| Computer | 1 | Observed apps and endpoints, background connections, MIC and CAM activity, app exposure factors, and a live feed. Links distinguish observed local sockets from inferred relationships. |
-| Globe | 2 | Usable endpoint location estimates with illustrative arcs, company HQ reference points, and links to sourced incidents. |
-| Phone | | The DNS gateway and tracker consent demo. Hosted consent uses Auth0 CIBA with Guardian and timed FGA grants. |
-| Stored data | 3 | The opt-in scan covers browser history domains, cookie hosts and counts, recorded Windows permission history, installed software, startup entries and tasks, extension permissions, privacy settings, and app-folder metadata. |
-| Dossier | 4 | Sourced company claims, documented incidents, and links to original records. |
-| Rules | 5 | Local or configured Auth0 policy decisions and Windows Firewall command previews. Dry run is the default. |
-| History | 6 | The last seven recorded days in the UI, with up to 30 local days available through the API. |
-
-<!-- dossier-counts:start -->
-The dossier contains **338 apps**, **197 companies**, and **240 incident records**, with **587 distinct source URLs** across its records.
-<!-- dossier-counts:end -->
-
-Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).
-
-**Screenshot placeholders.** Add a redacted Computer view with a controlled loopback connection and a redacted Globe view showing an endpoint estimate.
-
 ## Privacy and limitations
+
+> [!IMPORTANT]
+> Outbound reads connection metadata only. It never inspects packet payloads, records mic or camera media, or reads password, autofill or token stores. Nothing leaves your PC unless you configure a resolver or Auth0.
 
 - Desktop and Phone HTTP dashboards bind to `127.0.0.1`. The opt-in phone DNS listener can bind to a configured private adapter. Scan results, device sessions and recent history stay on the PC.
 - The stored-data scan starts when requested. History is reduced to domains. SQLite cookie queries select hosts and counts. The scanner skips password, autofill and token stores and deletes its temporary database copies after reading.
@@ -60,25 +232,6 @@ Counts include incident records from app and company entries. Run `npm run docs:
 - Sampling can miss brief sockets and device sessions. TCP snapshots omit QUIC traffic. Endpoints can be attributed to a network or CDN provider, and shared owners and pipes can be inferred. The app measures connection metadata without inspecting packet payloads or recording device media.
 - Browser tracker matches come from prior public measurements. Extension and autorun flags describe metadata. Registry access timestamps can outlast a running process, and a locked browser database can limit coverage.
 - Exposure scores summarize observed factors and show coverage. Folder totals can be provisional, and cached scan results carry their collection time.
-
-## Architecture
-
-```text
- Windows collectors (read-only)
-   netstat, process graph, foreground app, mic and camera
-       |
-       v
- Node desktop (127.0.0.1:4317) --> SSE /events --> Computer and Globe
-   |       |                                    endpoint estimates
-   |       +--> /api/score, /api/history, /api/report
-   +--> opt-in scan worker --> local scan cache --> Stored data
-   +--> local research dataset -----------------> Dossier
-   +--> /api/policy --> local provider or Auth0 CIBA + FGA
-                     --> dry-run or opted-in elevated enforcer
-
- Phone dashboard (127.0.0.1:4320) --> DNS gateway --> configured resolver
-     tracker permission check --> CIBA Guardian approval + FGA timed grant
-```
 
 ## Local API
 
@@ -105,6 +258,7 @@ The response contracts are documented in [notes/CONTRACT-v2.md](notes/CONTRACT-v
 - **IP geolocation.** The installed `geoip-lite` package labels the library Apache-2.0 and the included GeoLite2 data CC BY-SA 4.0 in its license notice. This product includes GeoLite2 data created by MaxMind. Updated downloads carry their own terms. [geoip-lite](https://github.com/geoip-lite/node-geoip) · [MaxMind](https://www.maxmind.com/) · [GeoLite terms](https://www.maxmind.com/en/geolite/eula)
 - **Domain grouping and map.** The vendored Public Suffix List is MPL-2.0. The Natural Earth polygons are public domain. [Public Suffix List](https://publicsuffix.org/list/) · [Natural Earth terms](https://www.naturalearthdata.com/about/terms-of-use/)
 - **Dossier.** Claims link to their original regulator, court, company, or press sources. Consult each publisher's terms for reuse. [Research method](research/METHOD.md)
+- **Logos in the promo and README frames** come from [simple-icons](https://simpleicons.org) (CC0). Brand names and logos belong to their owners. They are used only to identify the apps discussed.
 
 The repository has source-specific data terms and no blanket license grant for the combined checkout.
 
@@ -112,7 +266,8 @@ The repository has source-specific data terms and no blanket license grant for t
 
 Run `npm test` for fixtures and `npm run check` for the desktop smoke test. GitHub Actions runs the fixture suite on Windows with Node 24. The live walkthrough and submission draft are in [DEMO.md](DEMO.md) and [DEVPOST.md](DEVPOST.md).
 
-### Performance replay
+<details>
+<summary><b>Performance replay</b></summary>
 
 Use replay for local performance testing only. Use the live dashboard for demos. Record a fresh `/api/state` response from your own live desktop once the `apps` array contains 80 distinct apps. This example uses the default desktop port. Keep the recording in gitignored `data/` on this PC because it can contain local app and connection metadata.
 
@@ -131,6 +286,15 @@ npm run fixture
 
 Open `http://127.0.0.1:4319/`. The launcher requires the recording path. The dashboard header, `/api/state`, and SSE state show **FIXTURE DATA**. Every replay response includes `X-Outbound-Mode: FIXTURE DATA`. The server replays the original state without collecting new data or creating rules. Other API reads report that no recording is available and writes are disabled. After stopping the replay, clear the flag with `Remove-Item Env:OUTBOUND_FIXTURE` or close that shell before starting the live dashboard.
 
+</details>
+
 ## Team
 
 TODO
+
+<div align="center">
+<br>
+<img src="docs/readme/eye-close.gif" alt="The eye closes" width="280">
+<br>
+<sub><b>OUTBOUND_</b> · built at Hack Western 13</sub>
+</div>
