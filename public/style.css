@@ -248,6 +248,10 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 
 .session-strip {
   flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
   padding: 6px 16px;
   border-bottom: 1px solid var(--line);
   background: var(--bg);

@@ -336,8 +336,18 @@
   let discoveryTimer = null;
   let discoveryShownAt = -Infinity;
   let discoveryToast;
+  const socketSamples = [];
+  let sampledAt = 0;
 
   function renderSession(state) {
+    if (state.at - sampledAt >= 1000) {
+      sampledAt = state.at;
+      socketSamples.push(state.apps.reduce((sum, app) => sum + (app.activeConnections || 0), 0));
+      if (socketSamples.length > 24) socketSamples.shift();
+      const peak = Math.max(1, ...socketSamples);
+      const ascii = '._-:=+*#';
+      setText('socket-sparkline', 'Sockets [' + socketSamples.map((total) => ascii[Math.round(total / peak * (ascii.length - 1))]).join('') + ']');
+    }
     for (const app of state.apps) {
       for (const destination of app.destinations) {
         if (!destination.active && !(destination.lastSeen >= pageOpenedAt)) continue;

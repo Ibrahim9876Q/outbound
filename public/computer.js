@@ -418,6 +418,7 @@
     const tr = node.querySelector('.badge.tr');
     tr.hidden = !app.trackers;
     tr.textContent = app.trackers;
+    tr.classList.toggle('ascii-warning', Boolean(app.trackers));
     const dev = node.querySelector('.badge.dev');
     const devKind = app.cam ? 'cam' : app.mic ? 'mic' : '';
     if (dev.dataset.kind !== devKind) {

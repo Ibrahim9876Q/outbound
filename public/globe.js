@@ -256,6 +256,11 @@
   }
 
   function reconcile(container, cache, items, key, create, update) {
+    const previous = [...cache.values()].filter((element) => element.parentElement === container);
+    const expected = items.map((item) => cache.get(key(item)));
+    const animate = !reducedMotion.matches && previous.length
+      && expected.some((element, index) => element !== container.children[index]);
+    const starts = animate ? new Map(previous.map((element) => [element, element.getBoundingClientRect().top])) : null;
     const remaining = new Set(cache.keys());
     let next = container.firstElementChild;
     for (const item of items) {
@@ -273,6 +278,20 @@
     for (const id of remaining) {
       cache.get(id).remove();
       cache.delete(id);
+    }
+    if (starts) {
+      const moves = [...container.children].map((element) => [element, starts.has(element)
+        ? starts.get(element) - element.getBoundingClientRect().top : null]);
+      requestAnimationFrame(() => {
+        moves.forEach(([element, delta], index) => {
+          if (!element.isConnected || delta === 0) return;
+          element.getAnimations().forEach((animation) => animation.cancel());
+          element.animate(delta === null
+            ? [{ opacity: 0, transform: 'translateY(5px)' }, { opacity: 1, transform: 'none' }]
+            : [{ transform: 'translateY(' + delta + 'px)' }, { transform: 'none' }],
+          { duration: 260, delay: delta === null ? Math.min(100, index * 12) : 0, easing: 'ease-out' });
+        });
+      });
     }
   }
 
