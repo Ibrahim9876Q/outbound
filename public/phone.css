@@ -134,6 +134,10 @@
 .phone-button:hover:enabled { border-color: var(--phone-text); }
 .phone-button:disabled { opacity: .5; cursor: default; }
 .phone .phone-footnote { margin-top: 1rem; }
+.phone-explainer { margin-top: 1rem; padding: .75rem 1rem; }
+.phone-explainer summary { cursor: pointer; font-weight: 650; }
+.phone-explainer ul { list-style: disc; padding-inline-start: 1.3rem; color: var(--phone-muted); }
+.phone-explainer li { margin-top: .5rem; }
 
 @media (max-width: 770px) {
   .phone-grid { grid-template-columns: 1fr; }
