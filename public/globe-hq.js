@@ -1,6 +1,7 @@
 // City centers for corporate headquarters. Names match service and network labels.
 // TikTok lists two global headquarters: https://www.bytedance.com/products-services?locale=en
 // Oracle's principal offices: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+// X lists its principal place of business in Austin: https://x.com/en/tos
 const companies = [
   ['Google', [['Mountain View, US', 37.39, -122.08]], 'Alphabet', 'Google LLC', 'Google Cloud', 'Google Analytics', 'Google Tag Manager', 'Google Ads', 'Google Ads (DoubleClick)', 'Google Firebase Analytics', 'Google (YouTube)', 'YouTube'],
   ['Microsoft', [['Redmond, US', 47.67, -122.12]], 'Microsoft Corporation', 'Microsoft Azure', 'Microsoft (Bing)', 'Microsoft (Xbox)', 'Azure'],
@@ -22,7 +23,7 @@ const companies = [
   ['Adobe', [['San Jose, US', 37.34, -121.89]], 'Adobe Inc.'],
   ['Oracle', [['Austin, US', 30.27, -97.74]], 'Oracle Cloud', 'Oracle Corporation'],
   ['Salesforce', [['San Francisco, US', 37.77, -122.42]], 'Slack'],
-  ['X (Twitter)', [['Bastrop, US', 30.11, -97.32]], 'Twitter', 'Twitter Inc.', 'X Corp.', 'X'],
+  ['X (Twitter)', [['Austin, US', 30.27, -97.74]], 'Twitter', 'Twitter Inc.', 'X Corp.', 'X'],
   ['Snap', [['Santa Monica, US', 34.02, -118.49]], 'Snapchat', 'Snap Inc.'],
   ['Yandex', [['Moscow, RU', 55.75, 37.62]]],
   ['Baidu', [['Beijing, CN', 39.90, 116.41]]],
