@@ -9193,6 +9193,586 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "waymo",
+      "name": "Waymo",
+      "publisher": "Waymo LLC",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Waymo App - App Store",
+            "publisher": "Waymo LLC",
+            "url": "https://apps.apple.com/us/app/waymo/id1343524838",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.054Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "airbnb",
+      "name": "Airbnb",
+      "publisher": "Airbnb, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Search History, Browsing History, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Airbnb App - App Store",
+            "publisher": "Airbnb, Inc.",
+            "url": "https://apps.apple.com/us/app/airbnb/id401626263",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.055Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "publisher": "Frontier Airlines, Inc",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Frontier Airlines App - App Store",
+            "publisher": "Frontier Airlines, Inc",
+            "url": "https://apps.apple.com/us/app/frontier-airlines/id1041410548",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.052Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "american-airlines",
+      "name": "American Airlines",
+      "publisher": "American Airlines, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Browsing History, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎American Airlines App - App Store",
+            "publisher": "American Airlines, Inc.",
+            "url": "https://apps.apple.com/us/app/american-airlines/id382698565",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.187Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "publisher": "Southwest Airlines",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Southwest Airlines: Travel App App - App Store",
+            "publisher": "Southwest Airlines",
+            "url": "https://apps.apple.com/us/app/southwest-airlines-travel-app/id344542975",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.499Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fly-delta",
+      "name": "Fly Delta",
+      "publisher": "Delta Air Lines, Inc",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Fly Delta App - App Store",
+            "publisher": "Delta Air Lines, Inc",
+            "url": "https://apps.apple.com/us/app/fly-delta/id388491656",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:56.327Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "united-airlines",
+      "name": "United Airlines",
+      "publisher": "United Air Lines",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎United Airlines App - App Store",
+            "publisher": "United Air Lines",
+            "url": "https://apps.apple.com/us/app/united-airlines/id449945214",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.738Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "expedia",
+      "name": "Expedia",
+      "publisher": "Expedia, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Expedia: Hotels, Flights, Cars App - App Store",
+            "publisher": "Expedia, Inc.",
+            "url": "https://apps.apple.com/us/app/expedia-hotels-flights-cars/id427916203",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.585Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hilton-honors",
+      "name": "Hilton Honors",
+      "publisher": "Hilton Worldwide Holdings Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hilton Honors: Book Hotels App - App Store",
+            "publisher": "Hilton Worldwide Holdings Inc.",
+            "url": "https://apps.apple.com/us/app/hilton-honors-book-hotels/id635150066",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:56.864Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "u-haul",
+      "name": "U-Haul",
+      "publisher": "U-Haul International, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎U-Haul: Moving Made Easier® App - App Store",
+            "publisher": "U-Haul International, Inc.",
+            "url": "https://apps.apple.com/us/app/u-haul-moving-made-easier/id989307692",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.066Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "marriott-bonvoy",
+      "name": "Marriott Bonvoy",
+      "publisher": "Marriott International",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Marriott Bonvoy: Book Hotels App - App Store",
+            "publisher": "Marriott International",
+            "url": "https://apps.apple.com/us/app/marriott-bonvoy-book-hotels/id455004730",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.407Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "tesla-robotaxi",
+      "name": "Tesla Robotaxi",
+      "publisher": "Tesla, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Financial Info, Location, Contact Info, User Content, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Tesla Robotaxi App - App Store",
+            "publisher": "Tesla, Inc.",
+            "url": "https://apps.apple.com/us/app/tesla-robotaxi/id6744257048",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.064Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-earth",
+      "name": "Google Earth",
+      "publisher": "Google LLC",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Earth App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-earth/id293622097",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.197Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "publisher": "Neutron Holdings. Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Lime - #RideGreen App - App Store",
+            "publisher": "Neutron Holdings. Inc.",
+            "url": "https://apps.apple.com/us/app/lime-ridegreen/id1199780189",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.234Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "upside",
+      "name": "Upside",
+      "publisher": "Upside Services Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Upside: Gas & Food Cash Back App - App Store",
+            "publisher": "Upside Services Inc.",
+            "url": "https://apps.apple.com/us/app/upside-gas-food-cash-back/id1099997174",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.255Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "turo",
+      "name": "Turo",
+      "publisher": "Turo Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Turo — Better car rental App - App Store",
+            "publisher": "Turo Inc.",
+            "url": "https://apps.apple.com/us/app/turo-better-car-rental/id555063314",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.154Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "royal-caribbean-international",
+      "name": "Royal Caribbean International",
+      "publisher": "Royal Caribbean Cruises Ltd.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Sensitive Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Royal Caribbean International App - App Store",
+            "publisher": "Royal Caribbean Cruises Ltd.",
+            "url": "https://apps.apple.com/us/app/royal-caribbean-international/id1260728016",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.161Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nfhs-network",
+      "name": "NFHS Network",
+      "publisher": "2080 Media Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NFHS Network App - App Store",
+            "publisher": "2080 Media Inc.",
+            "url": "https://apps.apple.com/us/app/nfhs-network/id1116186798",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.974Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "draftkings",
+      "name": "DraftKings",
+      "publisher": "DRAFTKINGS LLC.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, User Content, Identifiers, Usage Data, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎DraftKings: Sports & Casino App - App Store",
+            "publisher": "DRAFTKINGS LLC.",
+            "url": "https://apps.apple.com/us/app/draftkings-sports-casino/id1375031369",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.278Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "prizepicks",
+      "name": "PrizePicks",
+      "publisher": "SidePrize, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PrizePicks: Sports and Packs App - App Store",
+            "publisher": "SidePrize, LLC",
+            "url": "https://apps.apple.com/us/app/prizepicks-sports-and-packs/id1437843273",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.538Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -13827,7 +14407,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T06:57:46.924Z",
+  "generatedAt": "2026-11-22T06:57:58.540Z",
   "index": {
     "exe": {
       "brave.exe": [
