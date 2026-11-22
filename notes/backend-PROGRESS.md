@@ -117,3 +117,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 
 - All 20 baseline runs of `node --test` passed. A controlled dual-protocol port collision reproduced `EADDRINUSE` in “DNS forwards ordinary names and requires approval for trackers and CNAME targets.” This proves a race in that test. The earlier integration failure had no log available for attribution.
 - DNS now exercises packet parsing, policy behavior, revocation and split TCP framing in memory. The SSE subscriber test uses an injected clock and close events for all 50 clients. The desktop smoke check still exercises a real HTTP/SSE loopback connection.
+
+## xray7 verification
+
+- The Windows workflow uses Node 24 and runs the fixture suite with `CI=true`. The suite uses in-memory DNS and SSE fixtures and needs neither live collectors nor listening ports.
+- Ten consecutive local `npm test` runs with `CI=true` each passed all 40 tests, for 400 passing results and zero failures.
+- `npm run check` passed for 10 assets, state, report and SSE on its own loopback port. The local verification disabled outbound reverse DNS and hosted integrations.

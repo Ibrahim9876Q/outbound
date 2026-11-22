@@ -10,7 +10,7 @@ Outbound is a local Windows dashboard that makes app connections and device use 
 
 ## Run
 
-Use Windows 11 and Node.js 24. From a checkout of the repository:
+Use Windows 11 and Node.js 24. Run these commands from a repository checkout.
 
 ```powershell
 npm install
@@ -92,7 +92,7 @@ The response contracts are documented in [notes/CONTRACT-v2.md](notes/CONTRACT-v
 
 - **Site tracker associations.** WhoTracks.Me measurements are CC BY 4.0. Ghostery TrackerDB metadata is CC BY-NC-SA 4.0. The combined subset in `public/data/site-trackers.json` retains these source notices and TrackerDB's non-commercial and share-alike terms. [WhoTracks.Me](https://github.com/whotracksme/whotracks.me) · [TrackerDB license](https://github.com/ghostery/trackerdb/blob/main/LICENSE)
 - **ASN attribution.** The pinned `@ip-location-db/asn` package credits RouteViews, DB-IP and NRO under CC BY 4.0. Its publisher flags accuracy issues with the npm dataset. DB-IP asks for a link on pages that use its data. [ip-location-db](https://github.com/sapics/ip-location-db) · [RouteViews](https://www.routeviews.org/) · [DB-IP](https://db-ip.com/) · [NRO](https://www.nro.net/)
-- **IP geolocation.** The installed `geoip-lite` package separates Apache-2.0 library code from GeoLite2 data under the included MaxMind notice. This product includes GeoLite2 data created by MaxMind. Updated downloads carry their own terms. [geoip-lite](https://github.com/geoip-lite/node-geoip) · [MaxMind](https://www.maxmind.com/) · [GeoLite terms](https://www.maxmind.com/en/geolite/eula)
+- **IP geolocation.** The installed `geoip-lite` package labels the library Apache-2.0 and the included GeoLite2 data CC BY-SA 4.0 in its license notice. This product includes GeoLite2 data created by MaxMind. Updated downloads carry their own terms. [geoip-lite](https://github.com/geoip-lite/node-geoip) · [MaxMind](https://www.maxmind.com/) · [GeoLite terms](https://www.maxmind.com/en/geolite/eula)
 - **Domain grouping and map.** The vendored Public Suffix List is MPL-2.0. The Natural Earth polygons are public domain. [Public Suffix List](https://publicsuffix.org/list/) · [Natural Earth terms](https://www.naturalearthdata.com/about/terms-of-use/)
 - **Dossier.** Claims link to their original regulator, court, company, or press sources. Consult each publisher's terms for reuse. [Research method](research/METHOD.md)
 

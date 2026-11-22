@@ -20,7 +20,7 @@ We started with the Windows privacy registry, but its timestamps did not update 
 
 Desktop policy supports optional Auth0 sign-in to identify the rule author. The configured policy provider requests consent through CIBA and records approval as an opaque FGA tuple. The separate Phone gateway uses CIBA and FGA for expiring DNS tracker grants. Fixture tests exercise approval and policy checks. Our reported hosted request stopped at Guardian enrollment before push delivery. Hosted end-to-end approval and revocation remain unverified. The labeled Phone offline demo uses real loopback DNS, fixture answers and simulated approval decisions.
 
-Both HTTP dashboards bind to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. The worker keeps the previous result in a local cache and exposes a small status endpoint while measurements continue. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver, and Phone DNS and hosted Auth0 use their configured external services.
+Both HTTP dashboards bind to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. The desktop keeps the previous result in a local cache and serves a small status response while the scan worker runs. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver, and Phone DNS and hosted Auth0 use their configured external services.
 
 ## Challenges we ran into
 
