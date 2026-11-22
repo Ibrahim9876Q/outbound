@@ -757,7 +757,9 @@
         const ports = d.ports && d.ports.length ? ` · port ${d.ports.slice(0, 4).join(', ')}` : '';
         return `<li class="dest"><span class="live ${d.active ? 'on' : ''}" title="${d.active ? 'Connected now' : 'Closed'}"></span>`
           + `<span class="org-name">${esc(d.org)} ${d.tracker ? '<span class="tag tracker">tracker</span>' : ''}</span>`
-          + `<span class="meta">${host}<br>${flagHtml(d.country)} ${esc(where)}${ports}${d.active ? '' : ' · closed'}</span></li>`;
+          + `<span class="meta">${host}<br>${flagHtml(d.country)} ${esc(where)}${ports}${d.active ? '' : ' · closed'}`
+          + (Outbound.blockButton?.('company', d.org !== 'Unknown owner' ? d.org : '') || '')
+          + (Outbound.blockButton?.('domain', d.host) || '') + '</span></li>';
       }).join('');
       html += '</ul>';
     }
@@ -828,6 +830,7 @@
     return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
       + `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
       + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`
+      + (Outbound.blockButton?.('app', app.id.endsWith('.exe') ? app.id : '') || '')
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
   }
 

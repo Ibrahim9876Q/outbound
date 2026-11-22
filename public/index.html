@@ -25,6 +25,7 @@
       <button class="view-btn" data-view="phone" role="tab">Phone</button>
       <button class="view-btn" data-view="scan" role="tab">Stored data</button>
       <button class="view-btn" data-view="dossier" role="tab">Dossier</button>
+      <button class="view-btn" data-view="rules" role="tab">Rules</button>
     </nav>
     <div class="stats">
       <div class="stat"><b id="stat-apps">0</b><span>apps online</span></div>
@@ -190,6 +191,15 @@
       <div class="intel-filters"><label>Search <input type="search" id="dossier-search" placeholder="App, company or domain"></label>
         <label>Incident kind <select id="dossier-kind"><option value="">All kinds</option><option>court</option><option>settlement</option><option>fine</option><option>regulator</option><option>investigation</option><option>report</option><option>breach</option></select></label></div>
       <div class="intel-grid"><div id="dossier-list" class="card"></div><div id="dossier-card" class="card"></div></div>
+    </section>
+    <section class="view intel-view hidden" id="view-rules">
+      <div class="intel-heading"><h2>Block rules</h2>
+        <p>Preview a local policy decision and the commands it would produce.</p></div>
+      <p id="rules-provider">Waiting for local policy status.</p>
+      <p id="rules-status" role="status"></p>
+      <div id="rules-pending"></div>
+      <pre id="rules-plan" class="policy-plan" hidden></pre>
+      <div id="rules-list" class="card"></div>
     </section>
   </main>
 

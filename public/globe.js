@@ -626,7 +626,14 @@
         fields.append(node('dt', '', label), node('dd', '', value));
       }
       row.append(title, fields);
-      if (pinned) row.append(dossier);
+      if (pinned) {
+        row.append(dossier);
+        const actions = node('div', 'globe-endpoint-actions');
+        actions.innerHTML = (shared?.blockButton?.('app', place.appId.endsWith('.exe') ? place.appId : '') || '')
+          + (shared?.blockButton?.('company', place.org !== 'Unknown owner' ? place.org : '') || '')
+          + (shared?.blockButton?.('domain', place.host) || '');
+        row.append(actions);
+      }
       tip.append(row);
     }
     if (!pinned && details.length > 2) {
@@ -675,7 +682,7 @@
       .flatMap((app) => app.destinations.map((destination) => ({
         id: app.id + '|' + destination.ip, appId: app.id, appName: app.name,
         org: destination.org || 'Unknown owner', city: destination.city,
-        ip: destination.ip, asn: destination.asn, ports: destination.ports || [],
+        ip: destination.ip, asn: destination.asn, host: destination.host, ports: destination.ports || [],
         country: countryCode(destination.country), lat: destination.lat, lng: destination.lng,
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
       }))).map(plotLocation).sort((a, b) => a.id.localeCompare(b.id));

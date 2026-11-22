@@ -241,6 +241,10 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .intel-filters input, .intel-filters select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line-strong); }
 .citation { display: block; margin-top: 4px; color: var(--muted); }
 #dossier-list { max-height: 62vh; overflow: auto; }
+.policy-plan { border: 1px solid var(--line-strong); padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+#rules-list { margin-top: 12px; }
+#rules-list li, #rules-pending { padding: 6px 0; }
+[data-block-kind] { margin: 4px 5px 0 0; }
 
 .session-strip {
   flex: none;
