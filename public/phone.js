@@ -24,6 +24,9 @@
   let trackersKey;
   let busy = false;
   let testing = false;
+  let connected = false;
+  let polling = false;
+  let pollTimer;
 
   function node(tag, text, className) {
     const element = document.createElement(tag);
@@ -95,7 +98,7 @@
   function authMessage(consent) {
     if (state.demo) return 'Demo approvals last one minute. Use the demo controls to approve or deny a request.';
     if (consent.fga === 'unconfigured') return 'Known trackers are blocked. Configure Auth0 FGA and CIBA to request access.';
-    if (consent.fga === 'unavailable') return 'FGA is unavailable. New tracker lookups stay blocked if an approval can’t be verified.';
+    if (consent.fga === 'unavailable') return consent.fgaError || 'FGA is unavailable. New tracker lookups stay blocked if an approval can’t be verified.';
     if (!consent.ciba) return 'Configure Auth0 CIBA to send approval requests to Guardian.';
     return 'Ask Guardian to approve a tracker for ' + number.format(consent.grantMinutes) +
       (consent.grantMinutes === 1 ? ' minute.' : ' minutes.');
@@ -103,6 +106,8 @@
 
   function render() {
     const { dns, stats, consent } = state;
+    byId('offline-fallback').hidden = state.demo ||
+      !consent.trackers.some((tracker) => tracker.state === 'failed' && tracker.source === 'CIBA');
     const demoPanel = byId('demo');
     demoPanel.hidden = !state.laptop;
     byId('self-test').disabled = testing || busy || consent.pending;
@@ -164,6 +169,7 @@
       terminal.scrollTop = terminal.scrollHeight;
     };
     const domain = state.testDomain;
+    const instance = state.instance;
     const query = 'QUERY ' + domain + ' via ' + state.dns.host + ' … ';
     try {
       if (!(await post('/api/demo/lookup')).blocked) {
@@ -177,6 +183,7 @@
       const deadline = Date.now() + 330000;
       while (Date.now() < deadline) {
         await new Promise((resolve) => setTimeout(resolve, 500));
+        if (state.instance !== instance) throw new Error('Gateway restarted. Run the self-test again.');
         const tracker = state.consent.trackers.find((entry) => entry.domain === domain);
         if (tracker?.state === 'pending' && tracker.code === request.code && !announcedPending) {
           log(state.demo ? 'WAITING · choose Approve or Deny above.' : 'WAITING · respond on your enrolled phone.');
@@ -229,18 +236,31 @@
   }
 
   async function poll() {
+    if (polling) return;
+    clearTimeout(pollTimer);
+    polling = true;
     try {
-      const response = await fetch('/api/state', { signal: AbortSignal.timeout(2500) });
+      const response = await fetch('/api/state', { cache: 'no-store', signal: AbortSignal.timeout(2500) });
       if (!response.ok) throw new Error('Gateway unavailable');
       const next = await response.json();
-      if (state && next.stats.lookups < state.stats.lookups) feedKey = undefined;
+      if (!connected || state?.instance !== next.instance) {
+        feedKey = undefined;
+        trackersKey = undefined;
+      }
       state = next;
+      connected = true;
       render();
+      if (state.demo && location.hash === '#self-test') {
+        history.replaceState(null, '', location.pathname);
+        void runSelfTest();
+      }
     } catch {
-      byId('status').textContent = 'Gateway unavailable';
+      connected = false;
+      byId('status').textContent = 'Reconnecting to gateway…';
       byId('status').dataset.live = 'false';
     } finally {
-      setTimeout(poll, 1000);
+      polling = false;
+      pollTimer = setTimeout(poll, 1000);
     }
   }
 
@@ -248,5 +268,22 @@
   byId('trackers').addEventListener('click', changeConsent);
   byId('demo').addEventListener('click', changeConsent);
   byId('self-test').addEventListener('click', runSelfTest);
+  window.addEventListener('online', poll);
+  window.addEventListener('pageshow', (event) => { if (event.persisted) void poll(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) void poll(); });
+  byId('offline-fallback').addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    const message = byId('action-status');
+    button.disabled = true;
+    try {
+      const { port } = await post('/api/demo/fallback');
+      if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid offline demo address.');
+      location.assign('http://127.0.0.1:' + port + '/#self-test');
+    } catch (error) {
+      message.hidden = false;
+      message.textContent = error.message;
+      button.disabled = false;
+    }
+  });
   void poll();
 })();

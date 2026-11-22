@@ -38,7 +38,7 @@ async function publishModel(env, fetch = globalThis.fetch) {
     },
   };
   const options = () => ({ method: 'POST', redirect: 'error', signal: AbortSignal.timeout(10000) });
-  const token = await fetch('https://fga.us1.auth0.com/oauth/token', {
+  const token = await fetch('https://auth.fga.dev/oauth/token', {
     ...options(),
     body: new URLSearchParams({
       grant_type: 'client_credentials', audience: api,

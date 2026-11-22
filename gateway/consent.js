@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { orgForHost } = require('../lib/orgs');
 const { trackerDomain } = require('./dns');
+const { Auth0Error } = require('./auth0');
 
 class ConsentError extends Error {
   constructor(status, message) {
@@ -31,6 +32,7 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
   let pending = null;
   let grants = new Map();
   let freshness = fga ? 'loading' : 'unconfigured';
+  let fgaError;
   let refresh;
   let nextRefresh = 0;
   let revision = 0;
@@ -65,8 +67,10 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
 
   async function resolveRequest(request) {
     const { domain, code } = request;
+    let source = 'FGA';
     try {
       if (await fga.check(domain)) return;
+      source = 'CIBA';
       const auth = await ciba.start('Outbound ref ' + code);
       request.state = 'pending';
       request.expiresAt = auth.deadline;
@@ -76,6 +80,7 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
         return;
       }
       request.state = 'saving';
+      source = 'FGA';
       const expiresAt = Date.now() + grantMinutes * 60000;
       saveLabel(domain);
       await fga.grant(domain, expiresAt);
@@ -83,8 +88,8 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       grants.set(domain, expiresAt);
       decisions.delete(domain);
     } catch (error) {
-      const match = error.message.match(/^(?:Guardian|FGA) [a-z ]+failed \(HTTP \d{3}\)\.$/);
-      decisions.set(domain, { state: 'failed', requestCode: code, reason: match?.[0] || 'Could not complete the Auth0 request.' });
+      decisions.set(domain, { state: 'failed', requestCode: code, source,
+        reason: error instanceof Auth0Error ? error.message : 'Could not complete the Auth0 request. Check the gateway connection and Auth0 setup.' });
     } finally {
       pending = null;
       nextRefresh = 0;
@@ -113,8 +118,8 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       await fga.revoke(domain);
       grants.delete(domain);
       decisions.set(domain, { state: 'revoked' });
-    } catch {
-      throw new ConsentError(503, 'FGA could not confirm revocation. Try again.');
+    } catch (error) {
+      throw new ConsentError(503, error instanceof Auth0Error ? error.message : 'FGA could not confirm revocation. Try again.');
     } finally {
       revision++;
       revoking.delete(domain);
@@ -129,8 +134,11 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       if (revision !== currentRevision) return;
       grants = active;
       freshness = 'ready';
-    }).catch(() => {
-      if (revision === currentRevision) freshness = 'unavailable';
+      fgaError = undefined;
+    }).catch((error) => {
+      if (revision !== currentRevision) return;
+      freshness = 'unavailable';
+      fgaError = error instanceof Auth0Error ? error.message : 'Could not reach Auth0 FGA. Tracker lookups remain blocked if consent cannot be verified.';
     }).finally(() => {
       nextRefresh = revision === currentRevision ? Date.now() + 5000 : 0;
       refresh = undefined;
@@ -150,11 +158,17 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       if (expiresAt > now) return { ...base, state: 'approved', expiresAt };
       return { ...base, ...decisions.get(domain), state: decisions.get(domain)?.state || 'blocked' };
     });
-    return { fga: freshness, ciba: Boolean(ciba), grantMinutes, active: active.length, pending: Boolean(pending), trackers };
+    return { fga: freshness, fgaError, ciba: Boolean(ciba), grantMinutes, active: active.length, pending: Boolean(pending), trackers };
   }
 
   return {
     allowTracker, request, revoke, snapshot, observe: (domain) => seen.add(domain),
+    verify: async (domain) => {
+      try { return Boolean(fga && await fga.check(domain)); }
+      catch (error) {
+        throw new ConsentError(503, error instanceof Auth0Error ? error.message : 'Could not reach Auth0 FGA to check consent.');
+      }
+    },
   };
 }
 

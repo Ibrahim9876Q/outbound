@@ -7,11 +7,11 @@ const { startDns } = require('./dns');
 const { createFga, createCiba } = require('./auth0');
 const { createConsent, ConsentError } = require('./consent');
 const { createDemo, lookupTracker, DOMAIN } = require('./demo');
+const { randomUUID } = require('node:crypto');
 
 const DASHBOARD_PORT = 4320;
 const LOOPBACK = '127.0.0.1';
 const ROOT = path.join(__dirname, '..');
-const DASHBOARD_HOSTS = new Set([LOOPBACK + ':' + DASHBOARD_PORT, 'localhost:' + DASHBOARD_PORT]);
 const ASSETS = {
   '/style.css': ['text/css', path.join(ROOT, 'public', 'style.css')],
   '/': ['text/html', path.join(__dirname, 'index.html')],
@@ -74,11 +74,13 @@ function json(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-async function startGateway(config, { fetch, laptop = false, catalogPath = path.join(ROOT, 'data', 'phone-consent.json') } = {}) {
+async function startGateway(config, { fetch, laptop = false, dashboardPort = DASHBOARD_PORT,
+  catalogPath = path.join(ROOT, 'data', 'phone-consent.json') } = {}) {
   const demo = laptop && !(config.fga && config.ciba) ? createDemo() : null;
   const assets = new Map(await Promise.all(Object.entries(ASSETS).map(async ([route, [type, file]]) =>
     [route, { type, body: await fs.readFile(file) }])));
   const stats = { lookups: 0, blocked: 0 };
+  const instance = randomUUID();
   const lookups = [];
   const consent = createConsent({
     fga: demo?.fga || (config.fga && createFga(config.fga, fetch)),
@@ -87,17 +89,36 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
     catalogPath: demo ? null : catalogPath,
   });
   let dnsListener;
+  let offlineRun;
+  let startingOffline;
+  let closed = false;
   const server = http.createServer(async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Content-Security-Policy', "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
-    if (!DASHBOARD_HOSTS.has(req.headers.host)) {
+    if (![LOOPBACK + ':' + dashboardPort, 'localhost:' + dashboardPort].includes(req.headers.host)) {
       return json(res, 403, { error: 'Open the dashboard on this PC.' });
     }
     if (req.method === 'POST') {
       if (req.headers.origin !== 'http://' + req.headers.host || req.headers['x-outbound-action'] !== '1') {
         return json(res, 403, { error: 'Use the local Phone view to change tracker permissions.' });
+      }
+      if (!demo && req.url === '/api/demo/fallback' &&
+          consent.snapshot().trackers.some((tracker) => tracker.state === 'failed' && tracker.source === 'CIBA')) {
+        if (startingOffline) return json(res, 409, { error: 'The offline demo is already starting.' });
+        startingOffline = true;
+        try {
+          offlineRun?.close();
+          offlineRun = await startGateway({ host: LOOPBACK, client: LOOPBACK, port: 0, grantMinutes: 1 },
+            { laptop: true, dashboardPort: 0 });
+          if (closed) return offlineRun.close();
+          return json(res, 200, { port: offlineRun.dashboardPort });
+        } catch {
+          return json(res, 503, { error: 'Could not start the offline demo.' });
+        } finally {
+          startingOffline = false;
+        }
       }
       if (laptop && req.url === '/api/demo/lookup') {
         try {
@@ -108,7 +129,11 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
         }
       }
       if (laptop && req.url === '/api/demo/check') {
-        return json(res, 200, { allowed: await consent.allowTracker(DOMAIN) });
+        try {
+          return json(res, 200, { allowed: await consent.verify(DOMAIN) });
+        } catch (error) {
+          return json(res, 503, { error: error.message });
+        }
       }
       if (demo && ['/api/demo/approve', '/api/demo/deny'].includes(req.url)) {
         const accepted = demo.decide(req.url.endsWith('/approve') ? 'approved' : 'denied');
@@ -134,7 +159,7 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
     if (req.url === '/api/state') {
       return json(res, 200, {
         dns: { host: config.host, port: dnsListener.port },
-        stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo), testDomain: laptop ? DOMAIN : null,
+        instance, stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo), testDomain: laptop ? DOMAIN : null,
       });
     }
     const asset = assets.get(req.url);
@@ -144,6 +169,8 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
   });
 
   function close() {
+    closed = true;
+    offlineRun?.close();
     dnsListener?.close();
     server.close();
     server.closeAllConnections();
@@ -170,7 +197,8 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
     });
     await new Promise((resolve, reject) => {
       server.once('error', reject);
-      server.listen(DASHBOARD_PORT, LOOPBACK, () => {
+      server.listen(dashboardPort, LOOPBACK, () => {
+        dashboardPort = server.address().port;
         server.off('error', reject);
         server.on('error', onError);
         resolve();
@@ -180,7 +208,7 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
     close();
     throw error;
   }
-  return { close, dnsPort: dnsListener.port, demo: Boolean(demo) };
+  return { close, dnsPort: dnsListener.port, demo: Boolean(demo), dashboardPort };
 }
 
 function printAuthStatus(config, demo) {
