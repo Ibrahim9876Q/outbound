@@ -2,7 +2,7 @@ function buildIndex(apps) {
   function lookups(field, normalize) {
     const entries = new Map();
     for (const app of apps) {
-      for (const raw of app[field]) {
+      for (const raw of app[field] || []) {
         const key = normalize(raw);
         if (!key) continue;
         if (!entries.has(key)) entries.set(key, new Set());
@@ -15,6 +15,7 @@ function buildIndex(apps) {
   return {
     exe: lookups('processNames', (name) => name.trim().toLowerCase()),
     domain: lookups('domains', (name) => name.trim().toLowerCase().replace(/\.$/, '')),
+    extension: lookups('extensionIds', (id) => id.trim().toLowerCase()),
   };
 }
 
