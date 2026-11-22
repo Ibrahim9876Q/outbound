@@ -25,3 +25,19 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Roblox — https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy — curl: (22) The requested URL returned error: 403
 - Minecraft — https://privacy.microsoft.com/en-us/privacystatement — missing evidence: minecraft
 - VALORANT — https://www.riotgames.com/en/privacy-notice — missing evidence: valorant
+
+## apps-03 · 2026-11-22T05:44:26.597Z
+
+- SHEIN — https://us.shein.com/Privacy-Security-Policy-a-282.html — missing evidence: device, orders
+- AliExpress — https://www.aliexpress.com/p/privacy-policy.html — missing evidence: aliexpress, transaction, account
+- Duolingo — https://www.duolingo.com/privacy — missing evidence: usage, improve
+- Life360 — https://www.life360.com/privacy_policy/ — curl: (22) The requested URL returned error: 403
+- Avast — https://www.avast.com/privacy-policy — missing evidence: improve
+- McAfee — https://www.mcafee.com/en-us/consumer-support/policy/legal.html — curl: (22) The requested URL returned error: 403
+- CCleaner — https://www.ccleaner.com/legal/general-privacy-policy — missing evidence: device, improve
+- VLC — https://www.videolan.org/privacy.html — missing evidence: ip address
+- Notion — https://www.notion.com/privacy — curl: (22) The requested URL returned error: 401
+- Pinterest — https://policy.pinterest.com/en/privacy-policy — missing evidence: pinterest, device, personalize
+- Uber — https://www.uber.com/legal/en/document/?name=privacy-notice&country=united-states&lang=en — curl: (22) The requested URL returned error: 406
+- GoodRx — https://www.goodrx.com/consumer-privacy-policy — curl: (22) The requested URL returned error: 404
+- The Weather Channel — https://weather.com/legal/privacy — curl: (22) The requested URL returned error: 404

@@ -942,8 +942,512 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "capcut",
+      "name": "CapCut",
+      "publisher": "ByteDance",
+      "category": "creative",
+      "processNames": [
+        "capcut.exe"
+      ],
+      "domains": [
+        "capcut.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "User content and device information",
+          "purpose": "Provide and improve editing services",
+          "source": {
+            "title": "CapCut Privacy Policy",
+            "publisher": "ByteDance",
+            "url": "https://www.capcut.com/clause/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:06.353Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "temu",
+      "name": "Temu",
+      "publisher": "Temu",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "temu.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Order and device information",
+          "purpose": "Fulfill purchases and improve the service",
+          "source": {
+            "title": "Temu Canada | Privacy Policy",
+            "publisher": "Temu",
+            "url": "https://www.temu.com/privacy-and-cookie-policy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:06.432Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "truecaller",
+      "name": "Truecaller",
+      "publisher": "Truecaller",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "truecaller.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Phone number and device information",
+          "purpose": "Provide caller identification and spam detection",
+          "source": {
+            "title": "Truecaller Privacy Policies",
+            "publisher": "Truecaller",
+            "url": "https://www.truecaller.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:06.542Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "norton",
+      "name": "Norton",
+      "publisher": "Gen Digital",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "norton.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Product usage and device information",
+          "purpose": "Provide and enhance services",
+          "source": {
+            "title": "Privacy | Norton",
+            "publisher": "Gen Digital",
+            "url": "https://www.norton.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:08.048Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "utorrent",
+      "name": "µTorrent",
+      "publisher": "Rainberry",
+      "category": "utility",
+      "processNames": [
+        "utorrent.exe"
+      ],
+      "domains": [
+        "utorrent.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and usage data",
+          "purpose": "Operate and improve the service",
+          "source": {
+            "title": "BitTorrent | Privacy Policy",
+            "publisher": "Rainberry",
+            "url": "https://www.utorrent.com/legal/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:08.456Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "publisher": "Canva",
+      "category": "creative",
+      "processNames": [
+        "canva.exe"
+      ],
+      "domains": [
+        "canva.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Design content and usage information",
+          "purpose": "Provide and improve Canva",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Canva",
+            "url": "https://www.canva.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:08.777Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "publisher": "Figma",
+      "category": "creative",
+      "processNames": [
+        "figma.exe"
+      ],
+      "domains": [
+        "figma.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and usage information",
+          "purpose": "Provide and improve Figma",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Figma",
+            "url": "https://www.figma.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:09.019Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "publisher": "Microsoft",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "linkedin.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Profile and service usage information",
+          "purpose": "Provide and personalize professional networking",
+          "source": {
+            "title": "LinkedIn Privacy Policy",
+            "publisher": "Microsoft",
+            "url": "https://www.linkedin.com/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:10.225Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "doordash",
+      "name": "DoorDash",
+      "publisher": "DoorDash",
+      "category": "delivery",
+      "processNames": [],
+      "domains": [
+        "doordash.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact and order information",
+          "purpose": "Process and deliver orders",
+          "source": {
+            "title": "DoorDash Legal",
+            "publisher": "DoorDash",
+            "url": "https://www.doordash.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:10.323Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "tinder",
+      "name": "Tinder",
+      "publisher": "Match Group",
+      "category": "dating",
+      "processNames": [],
+      "domains": [
+        "tinder.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Profile and usage data",
+          "purpose": "Operate its matching service",
+          "source": {
+            "title": "Privacy Policy | Tinder | Match. Chat. Meet. Modern Dating.",
+            "publisher": "Match Group",
+            "url": "https://policies.tinder.com/privacy/intl/en/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:10.252Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bumble",
+      "name": "Bumble",
+      "publisher": "Bumble",
+      "category": "dating",
+      "processNames": [],
+      "domains": [
+        "bumble.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Profile and device data",
+          "purpose": "Operate and improve Bumble",
+          "source": {
+            "title": "Bumble Privacy Policy",
+            "publisher": "Bumble",
+            "url": "https://bumble.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:12.063Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "grindr",
+      "name": "Grindr",
+      "publisher": "Grindr",
+      "category": "dating",
+      "processNames": [],
+      "domains": [
+        "grindr.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Profile and location data",
+          "purpose": "Operate nearby profile discovery",
+          "source": {
+            "title": "Privacy | Trust Center",
+            "publisher": "Grindr",
+            "url": "https://www.grindr.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:16.756Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "flo",
+      "name": "Flo",
+      "publisher": "Flo Health",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "flo.health"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health entries provided by users",
+          "purpose": "Provide cycle and health tracking",
+          "source": {
+            "title": "Flo | Privacy Policy",
+            "publisher": "Flo Health",
+            "url": "https://flo.health/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:15.174Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "betterhelp",
+      "name": "BetterHelp",
+      "publisher": "BetterHelp",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "betterhelp.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Intake and account information",
+          "purpose": "Match people with therapists and deliver services",
+          "source": {
+            "title": "Privacy Policy | BetterHelp",
+            "publisher": "BetterHelp",
+            "url": "https://www.betterhelp.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:21.449Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "waze",
+      "name": "Waze",
+      "publisher": "Google",
+      "category": "navigation",
+      "processNames": [],
+      "domains": [
+        "waze.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location and route information",
+          "purpose": "Provide navigation and traffic services",
+          "source": {
+            "title": "Waze Privacy Policy - Waze Help",
+            "publisher": "Google",
+            "url": "https://www.waze.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:26.596Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-maps",
+      "name": "Google Maps",
+      "publisher": "Google",
+      "category": "navigation",
+      "processNames": [],
+      "domains": [
+        "maps.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location information depending on settings",
+          "purpose": "Deliver mapping and nearby results",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:44:26.317Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [],
-  "generatedAt": "2026-11-22T05:43:14.662Z"
+  "generatedAt": "2026-11-22T05:44:26.599Z"
 }
