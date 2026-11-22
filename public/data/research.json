@@ -204,7 +204,23 @@
         }
       ],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "fine",
+          "title": "Spotify access transparency decision",
+          "jurisdiction": "Sweden",
+          "summary": "The authority announced a SEK 58 million sanction concerning information Spotify supplied when individuals exercised access rights.",
+          "source": {
+            "title": "Sanktionsavgift mot Spotify | IMY",
+            "publisher": "Swedish Authority for Privacy Protection",
+            "url": "https://www.imy.se/nyheter/sanktionsavgift-mot-spotify",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:41.790Z"
+          }
+        }
+      ]
     },
     {
       "id": "steam",
@@ -270,7 +286,23 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2020,
+          "kind": "settlement",
+          "title": "Zoom security claims settlement announced",
+          "jurisdiction": "United States",
+          "summary": "The FTC announced a proposed settlement over allegations that Zoom misrepresented its encryption and security practices.",
+          "source": {
+            "title": "FTC Requires Zoom to Enhance its Security Practices as Part of Settlement | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2020/11/ftc-requires-zoom-enhance-its-security-practices-part-settlement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.828Z"
+          }
+        }
+      ]
     },
     {
       "id": "teams",
@@ -426,7 +458,23 @@
           }
         }
       ],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2014,
+          "kind": "settlement",
+          "title": "Snapchat disappearing messages representations",
+          "jurisdiction": "United States",
+          "summary": "Snapchat settled FTC allegations about misleading claims concerning disappearing messages and other privacy practices.",
+          "source": {
+            "title": "Snapchat Settles FTC Charges That Promises of Disappearing Messages Were False | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.511Z"
+          }
+        }
+      ]
     },
     {
       "id": "firefox",
@@ -596,7 +644,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2020,
+          "kind": "fine",
+          "title": "Irish Twitter inquiry IN-19-1-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€450,000",
+          "summary": "The DPC’s register lists this fine on Twitter International Company and records it as collected.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:44.659Z"
+          }
+        }
+      ]
     },
     {
       "id": "youtube",
@@ -1199,7 +1264,38 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "court",
+          "title": "Arkansas Temu privacy complaint",
+          "jurisdiction": "United States",
+          "summary": "Arkansas announced a lawsuit alleging deceptive access to personal information through the Temu app.",
+          "source": {
+            "title": "Attorney General Griffin Sues Chinese E-Commerce Company Temu for Deceiving Arkansans, Illegally Accessing Their Personal Information - Arkansas Attor",
+            "publisher": "Arkansas Attorney General",
+            "url": "https://arkansasag.gov/news-release/attorney-general-griffin-sues-chinese-e-commerce-company-temu-for-deceiving-arkansans-illegally-accessing-their-personal-information/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:39.283Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "court",
+          "title": "Nebraska Temu data complaint",
+          "jurisdiction": "United States",
+          "summary": "Nebraska announced a lawsuit alleging that Temu accessed phone data through its app.",
+          "source": {
+            "title": "Attorney General Hilgers Files Lawsuit Against Temu for Siphoning Nebraskans’ Phone Data | Nebraska Attorney General Mike Hilgers",
+            "publisher": "Nebraska Attorney General",
+            "url": "https://ago.nebraska.gov/attorney-general-hilgers-files-lawsuit-against-temu-siphoning-nebraskans-phone-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:40.079Z"
+          }
+        }
+      ]
     },
     {
       "id": "truecaller",
@@ -1501,7 +1597,23 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "court",
+          "title": "Grindr fine upheld on appeal",
+          "jurisdiction": "Norway",
+          "summary": "The authority reported that the Court of Appeal upheld the administrative penalty over Grindr’s sharing of user information for advertising.",
+          "source": {
+            "title": "The Court of Appeal upholds the fine against Grindr | Datatilsynet",
+            "publisher": "Norwegian Data Protection Authority",
+            "url": "https://www.datatilsynet.no/en/news/news-2025/the-court-of-appeal-upholds-the-fine-against-grindr/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:40.001Z"
+          }
+        }
+      ]
     },
     {
       "id": "flo",
@@ -1727,6 +1839,53 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:47:36.008Z"
           }
+        },
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "TikTok EEA data transfer inquiry",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€530 million",
+          "summary": "The DPC announced a fine and corrective measures following an inquiry into TikTok transfers of EEA user data to China.",
+          "source": {
+            "title": "Irish Data Protection Commission fines TikTok €530 million and orders corrective measures following Inquiry into transfers of EEA User Data to China |",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.020Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "investigation",
+          "title": "Canadian joint TikTok privacy investigation",
+          "jurisdiction": "Canada",
+          "summary": "Canadian regulators reported privacy concerns involving children’s data, age assurance and TikTok’s collection and use of personal information.",
+          "source": {
+            "title": "News release: Joint investigation into TikTok highlights privacy concerns related to the collection and use of children’s personal information - Offic",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2025/nr-c_250923/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.697Z"
+          }
+        },
+        {
+          "year": 2019,
+          "kind": "settlement",
+          "title": "Musical.ly children’s privacy settlement",
+          "jurisdiction": "United States",
+          "summary": "The FTC described a civil penalty to resolve allegations that TikTok’s predecessor Musical.ly collected children’s information without parental consent.",
+          "amount": "USD 5.7 million",
+          "source": {
+            "title": "Largest FTC COPPA settlement requires Musical.ly to change its tune | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/business-guidance/blog/2019/02/largest-ftc-coppa-settlement-requires-musically-change-its-tune",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.422Z"
+          }
         }
       ]
     },
@@ -1795,6 +1954,22 @@
             "date": "2023-05-22",
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:11.908Z"
+          }
+        },
+        {
+          "year": 2019,
+          "kind": "settlement",
+          "title": "Facebook 2019 privacy order settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 5 billion",
+          "summary": "Facebook agreed to a penalty and new privacy oversight to resolve alleged violations of its earlier FTC order.",
+          "source": {
+            "title": "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.683Z"
           }
         }
       ]
@@ -2115,7 +2290,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "year": 2023,
+          "kind": "settlement",
+          "title": "Xbox children’s registration data settlement",
+          "jurisdiction": "United States",
+          "summary": "Microsoft agreed to a penalty and new obligations after the FTC alleged it collected children’s account information without parental consent.",
+          "amount": "USD 20 million",
+          "source": {
+            "title": "FTC Will Require Microsoft to Pay $20 million over Charges it Illegally Collected Personal Information from Children without Their Parents’ Consent | ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/06/ftc-will-require-microsoft-pay-20-million-over-charges-it-illegally-collected-personal-information",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:39.852Z"
+          }
+        }
+      ]
     },
     {
       "id": "bing",
@@ -4420,6 +4612,139 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "shein",
+      "name": "SHEIN",
+      "publisher": "SHEIN",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "shein.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "CNIL SHEIN cookies action",
+          "jurisdiction": "France",
+          "summary": "The CNIL announced a separate cookie sanction against SHEIN as part of its cookie enforcement work.",
+          "source": {
+            "title": "Régulation des cookies : la CNIL poursuit le plan d’action initié en 2019 et prononce deux amendes à l’encontre de GOOGLE et SHEIN | CNIL",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/fr/regulation-des-cookies-la-cnil-poursuit-le-plan-daction-initie-en-2019-et-prononce-deux-amendes",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.206Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "publisher": "Uber",
+      "category": "transport",
+      "processNames": [],
+      "domains": [
+        "uber.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Uber European driver data transfers",
+          "jurisdiction": "Netherlands / EU",
+          "amount": "290 million euro",
+          "summary": "The Dutch DPA announced a fine over transfers of European drivers’ personal data to the United States.",
+          "source": {
+            "title": "Dutch DPA imposes a fine of 290 million euro on Uber because of transfers of drivers&#039; data to the US | Autoriteit Persoonsgegevens",
+            "publisher": "Dutch Data Protection Authority",
+            "url": "https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-of-290-million-euro-on-uber-because-of-transfers-of-drivers-data-to-the-us",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.699Z"
+          }
+        },
+        {
+          "year": 2018,
+          "kind": "settlement",
+          "title": "Uber data security and breach settlement",
+          "jurisdiction": "United States",
+          "summary": "The FTC approved a settlement of allegations involving privacy and security practices, including Uber’s handling of a 2016 breach.",
+          "source": {
+            "title": "Federal Trade Commission Gives Final Approval to Settlement with Uber | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2018/10/federal-trade-commission-gives-final-approval-settlement-uber",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:38.817Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "life360",
+      "name": "Life360",
+      "publisher": "Life360",
+      "category": "location",
+      "processNames": [],
+      "domains": [
+        "life360.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "year": 2021,
+          "kind": "report",
+          "title": "Life360 location data reporting",
+          "jurisdiction": "United States",
+          "summary": "The Markup reported that Life360 sold precise location information and interviewed former employees about its relationships with data brokers.",
+          "source": {
+            "title": "The Popular Family Safety App Life360 Is Selling Precise Location Data on Its Tens of Millions of Users – The Markup",
+            "publisher": "The Markup",
+            "url": "https://themarkup.org/privacy/2021/12/06/the-popular-family-safety-app-life360-is-selling-precise-location-data-on-its-tens-of-millions-of-user",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.146Z"
+          }
+        },
+        {
+          "year": 2022,
+          "kind": "report",
+          "title": "Life360 response following location data reporting",
+          "jurisdiction": "United States",
+          "summary": "The Markup reported that Life360 said it would stop selling precise device location data and would move to aggregated data for most customers of that business.",
+          "source": {
+            "title": "Life360 Says It Will Stop Selling Precise Location Data – The Markup",
+            "publisher": "The Markup",
+            "url": "https://themarkup.org/privacy/2022/01/27/life360-says-it-will-stop-selling-precise-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:40.567Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -4430,7 +4755,71 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "year": 2025,
+          "kind": "settlement",
+          "title": "Texas Google privacy settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 1.375 billion",
+          "summary": "Texas announced a settlement of claims involving location, browsing and biometric data.",
+          "source": {
+            "title": "Attorney General Ken Paxton Secures Historic $1.375 Billion Settlement with Google Related to Texans’ Data Privacy Rights | Office of the Attorney Gen",
+            "publisher": "Texas Office of the Attorney General",
+            "url": "https://oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-historic-1375-billion-settlement-google-related-texans-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.447Z"
+          }
+        },
+        {
+          "year": 2025,
+          "kind": "fine",
+          "title": "CNIL Google email advertising and cookies decision",
+          "jurisdiction": "France",
+          "summary": "The CNIL announced fines totaling €325 million involving ads placed between emails and cookie consent.",
+          "source": {
+            "title": "Publicités insérées entre les courriels et cookies : la CNIL sanctionne GOOGLE d’une amende de 325 millions d’euros | CNIL",
+            "publisher": "CNIL",
+            "url": "https://www.cnil.fr/fr/publicites-inserees-entre-les-courriels-et-cookies-la-cnil-sanctionne-google-dune-amende-de-325",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:29.201Z"
+          }
+        },
+        {
+          "year": 2026,
+          "kind": "fine",
+          "title": "Irish Google location data fine entry",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€403,000,000",
+          "summary": "The DPC register lists a fine for its inquiry into Google’s processing of location data and labels it not confirmed.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:40.614Z"
+          }
+        },
+        {
+          "year": 2022,
+          "kind": "settlement",
+          "title": "Multistate Google location tracking settlement",
+          "jurisdiction": "United States",
+          "summary": "The New York Attorney General reported a multistate settlement concerning Google’s location tracking practices.",
+          "amount": "USD 391.5 million",
+          "source": {
+            "title": "2022 Year in Review | New York Attorney General",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/2022-year-review",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:53.639Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Identifiers, device information and interactions",
@@ -4582,6 +4971,20 @@
             "fetchedAt": "2026-11-22T05:48:38.256Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Salesforce identifies the United States among countries where personal data may be processed.",
+          "source": {
+            "title": "Salesforce Privacy Information | Salesforce",
+            "publisher": "Salesforce",
+            "url": "https://www.salesforce.com/company/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:54.665Z"
+          }
+        }
       ]
     },
     {
@@ -4649,6 +5052,20 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:48:38.791Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "AppsFlyer names the United States in its international data transfer disclosures.",
+          "source": {
+            "title": "AppsFlyer Services Privacy Policy | AppsFlyer",
+            "publisher": "AppsFlyer",
+            "url": "https://www.appsflyer.com/legal/services-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:54.452Z"
           }
         }
       ]
@@ -4801,6 +5218,20 @@
             "fetchedAt": "2026-11-22T05:48:42.058Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "Russia",
+          "note": "Yandex’s notice describes processing in Russia and possible international transfers.",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Yandex",
+            "url": "https://yandex.com/legal/confidential/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:55.486Z"
+          }
+        }
       ]
     },
     {
@@ -4873,11 +5304,85 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:50:11.908Z"
           }
+        },
+        {
+          "year": 2024,
+          "kind": "settlement",
+          "title": "Texas Meta biometrics settlement",
+          "jurisdiction": "United States",
+          "amount": "USD 1.4 billion",
+          "summary": "Texas announced a settlement of allegations involving Facebook facial recognition and biometric consent.",
+          "source": {
+            "title": "Attorney General Ken Paxton Secures $1.4 Billion Settlement with Meta Over Its Unauthorized Capture of Personal Biometric Data In Largest Settlement E",
+            "publisher": "Texas Office of the Attorney General",
+            "url": "https://www.oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:28.377Z"
+          }
+        },
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Irish Meta inquiry IN-18-10-1 and IN-18-11-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€251,000,000",
+          "summary": "The DPC register lists combined fines under the two inquiry numbers with appeal pending.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:39.402Z"
+          }
+        },
+        {
+          "year": 2024,
+          "kind": "fine",
+          "title": "Irish Meta inquiry IN-22-4-1",
+          "jurisdiction": "Ireland / EU",
+          "amount": "€91,000,000",
+          "summary": "The DPC register lists an administrative fine for the Meta decision and records its appeal status.",
+          "source": {
+            "title": "Fines | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/fines",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:08:44.423Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "InMarket",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "year": 2024,
+          "kind": "settlement",
+          "title": "InMarket location data order",
+          "jurisdiction": "United States",
+          "summary": "The FTC’s action concerned InMarket’s collection and sale of precise location information and imposed restrictions on sharing it.",
+          "source": {
+            "title": "InMarket Media, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023088-inmarket-media-llc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:12:41.998Z"
+          }
         }
       ]
     }
   ],
-  "generatedAt": "2026-11-22T05:58:15.922Z",
+  "generatedAt": "2026-11-22T06:13:10.844Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -5145,6 +5650,9 @@
       "leagueoflegends.com": [
         "league-of-legends"
       ],
+      "life360.com": [
+        "life360"
+      ],
       "linkedin.com": [
         "linkedin"
       ],
@@ -5222,6 +5730,9 @@
       "razer.com": [
         "razer-synapse"
       ],
+      "shein.com": [
+        "shein"
+      ],
       "shop.app": [
         "shop"
       ],
@@ -5294,6 +5805,9 @@
       ],
       "tv.apple.com": [
         "apple-tv"
+      ],
+      "uber.com": [
+        "uber"
       ],
       "utorrent.com": [
         "utorrent"
