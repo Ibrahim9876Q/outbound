@@ -340,11 +340,16 @@
   // ---------- view tabs ----------
 
   let viewTransition;
+  let lastViewRequest = -Infinity;
   function showView(name, target = '') {
     if (!document.getElementById(`view-${name}`)) return;
+    const now = performance.now();
+    const animate = !viewTransition && now - lastViewRequest >= 300 && Outbound.view !== name
+      && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    lastViewRequest = now;
     viewTransition?.skipTransition();
     viewTransition = null;
-    if (Outbound.view !== name && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (animate) {
       const transition = document.startViewTransition(() => {
         if (viewTransition === transition) applyView(name, target);
       });
