@@ -87,9 +87,33 @@ function Autoruns {
   }
 }
 
+function PrivacyValue($Setting, $Choices) {
+  foreach ($entry in $Choices) {
+    $item = Get-ItemProperty -LiteralPath $entry[0] -Name $entry[1]
+    $value = $item.($entry[1])
+    if ($null -ne $value) { return [pscustomobject]@{ setting=$Setting; value=$value; mode=$entry[2] } }
+  }
+  [pscustomobject]@{ setting=$Setting; value=$null; mode=$null }
+}
+
+function PrivacyReadout {
+  $pol = 'HKLM:\Software\Policies\Microsoft\Windows'
+  $user = 'HKCU:\Software\Microsoft\Windows\CurrentVersion'
+  $machine = 'HKLM:\Software\Microsoft\Windows\CurrentVersion'
+  PrivacyValue 'Advertising ID' @(@("$pol\AdvertisingInfo",'DisabledByGroupPolicy','disabledPolicy'), @("$user\AdvertisingInfo",'Enabled','enabled'))
+  PrivacyValue 'Diagnostic data' @(@("$pol\DataCollection",'AllowTelemetry','diagnostic'), @("$machine\Policies\DataCollection",'AllowTelemetry','diagnostic'))
+  PrivacyValue 'Tailored experiences' @(@('HKCU:\Software\Policies\Microsoft\Windows\CloudContent','DisableTailoredExperiencesWithDiagnosticData','disabledPolicy'), @("$user\Privacy",'TailoredExperiencesWithDiagnosticDataEnabled','enabled'))
+  PrivacyValue 'Activity history' @(@("$pol\System",'PublishUserActivities','enabled'), @("$pol\System",'EnableActivityFeed','enabled'), @("$user\ActivityHistory",'Enabled','enabled'))
+  PrivacyValue 'Location service' @(@("$pol\LocationAndSensors",'DisableLocation','disabledPolicy'), @("HKLM:\$consent\location",'Value','consent'))
+  PrivacyValue 'Inking and typing personalization' @(@("$pol\System",'AllowInputPersonalization','enabled'), @('HKCU:\Software\Microsoft\InputPersonalization','RestrictImplicitTextCollection','restriction'))
+  PrivacyValue 'Find my device' @(@("$pol\FindMyDevice",'AllowFindMyDevice','enabled'), @('HKLM:\Software\Microsoft\Settings\FindMyDevice','LocationSyncEnabled','enabled'))
+  PrivacyValue 'Online speech recognition' @(@("$pol\System",'AllowInputPersonalization','enabled'), @("$user\OnlineSpeechPrivacy",'HasAccepted','enabled'))
+}
+
 $rows = switch ($Collector) {
   'permissions' { ConsentEntries 'HKLM:'; ConsentEntries 'HKCU:' }
   'installed' { InstalledSoftware }
   'autoruns' { Autoruns }
+  'windowsPrivacy' { PrivacyReadout }
 }
 [Console]::WriteLine((ConvertTo-Json -InputObject @($rows) -Depth 8 -Compress))
