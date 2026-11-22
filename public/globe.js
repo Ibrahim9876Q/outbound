@@ -360,6 +360,16 @@
     }));
   }
 
+  function routeAltitude(start, end, scale, endpointAltitude, maximum) {
+    const radians = Math.PI / 180;
+    const latitude = (end.lat - start.lat) * radians;
+    const longitude = (end.lng - start.lng) * radians;
+    const haversine = Math.sin(latitude / 2) ** 2
+      + Math.cos(start.lat * radians) * Math.cos(end.lat * radians) * Math.sin(longitude / 2) ** 2;
+    const halfAngle = Math.asin(Math.sqrt(Math.min(1, Math.max(0, haversine))));
+    return Math.min(maximum, halfAngle * scale + endpointAltitude);
+  }
+
   function makeArcs(places, home) {
     const next = new Map();
     for (const place of places) {
@@ -376,7 +386,8 @@
         const arc = arcCache.get(id) || {};
         Object.assign(arc, {
           startLat: start.lat, startLng: start.lng, endLat: end.lat, endLng: end.lng,
-          startAlt: 0.004, endAlt: 0.004, scale: scale + spread,
+          startAlt: 0.004, endAlt: 0.004,
+          altitude: routeAltitude(start, end, scale + spread, 0.004, direction === 'in' ? 0.22 : 0.26),
           color: arcColor(color, place.active),
           active: place.active, inbound: direction === 'in', duration: 3400 + hash(id) % 1200, phase: spread,
         });
@@ -389,7 +400,8 @@
         const arc = arcCache.get(id) || {};
         Object.assign(arc, {
           startLat: place.lat, startLng: place.lng, endLat: hq.lat, endLng: hq.lng,
-          startAlt: 0.012, endAlt: 0.012, scale: 0.16, color: '#bcbcbc', phase: 0,
+          startAlt: 0.012, endAlt: 0.012, altitude: routeAltitude(place, hq, 0.16, 0.012, 0.24),
+          color: '#bcbcbc', phase: 0,
           hqLabel: 'owned by ' + hq.owner + ' (HQ: ' + hq.city + ')',
         });
         next.set(id, arc);
@@ -689,7 +701,7 @@
         .hexPolygonUseDots(true)
         .hexPolygonsTransitionDuration(0)
         .hexPolygonColor(countryCellColor)
-        .arcAltitudeAutoScale('scale')
+        .arcAltitude('altitude')
         .arcStartAltitude('startAlt')
         .arcEndAltitude('endAlt')
         .arcColor('color')
