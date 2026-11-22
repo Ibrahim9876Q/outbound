@@ -16,6 +16,11 @@ const chosen = [
   [6006, 'reference', /^(Bible Chat|Bible Shorts|Translate Now|Collectr|Bible Path|FoilSnap|PSA|Hallow|WoodSense|Ancestry|CoinSnap|Sky Guide|COtrip Planner)\b/i],
   [6013, 'health', /^(Oura|AHEALTH|Planet Fitness|Sweatcoin|WeWard|Yuka|LADDER|Garmin Connect|MenuFit|Cal AI|AllTrails|Crunch Fitness|Hume Health|Aetna Health|RISE|MyFitnessPal|Finch|ClassPass|Hatch Sleep)\b/i],
   [6017, 'education', /^(Duolingo|Learna|Imprint|Toca Boca World|Deepstash|Google Classroom|Knowunity|ParentSquare|Gauth|Kahoot|Canvas by Instructure|ABCmouse|Simply Draw|PictureThis|Lingokids|Quizlet|ClassDojo|PowerSchool Mobile|Elevate)\b/i],
+  [6003, 'travel', /^(Waymo|Airbnb|Frontier Airlines|Southwest Airlines|American Airlines|Fly Delta|United Airlines|U-Haul|Expedia|Hilton Honors|Marriott Bonvoy|Amtrak|Tesla Robotaxi|Google Earth|Upside|Turo|Lime|Royal Caribbean International)\b/i],
+  [6004, 'sports', /^(NFHS Network|PrizePicks|DraftKings|Underdog|FloSports|ESPN|Hudl|FanDuel Sportsbook|MaxPreps|Fanatics Sports|sportsYou|NBA|bet365|GoFan|GameChanger|MLB Ballpark|DAZN)\b/i],
+  [6005, 'social', /^(Threads|Messenger|Instants|TextNow|GroupMe|Whee|BAND|Locket Widget|Letterboxd|BIGO LIVE|Clapper|WeChat)\b/i],
+  [6012, 'lifestyle', /^(Giftful|SmartThings|Partiful|Pinterest|T-Life|Ring|Hinge|LG ThinQ|Toyota|myQ|Hubspace|Elfster|Drawnames|Booksy|Zillow|Tesla|Vagaro)\b/i],
+  [6009, 'news', /^(Reddit|Substack|NewsBreak|Nextdoor|Ground News|Citizen|NYTimes|The Atlantic|Spectrum News|Fox Nation|The Wall Street Journal|AP News|NPR|The New Yorker)\b/i],
 ];
 
 function plain(value) {

@@ -1,41 +1,48 @@
-const google = 'https://policies.google.com/privacy?hl=en-US';
+// Candidates identified in the US Microsoft Store free-app charts and Steam's most-played chart.
 const microsoft = 'https://privacy.microsoft.com/en-us/privacystatement';
-const adobe = 'https://www.adobe.com/privacy/policy.html';
-const row = (id,name,publisher,category,domain,url,data,purpose,terms) =>
-  [id,name,publisher,category,null,domain,url,data,purpose,terms];
+const apple = 'https://www.apple.com/legal/privacy/en-ww/';
+const valve = 'https://store.steampowered.com/privacy_agreement/';
+const ea = 'https://www.ea.com/legal/privacy-and-cookie-policy';
+const rockstar = 'https://www.rockstargames.com/privacy';
+const ubisoft = 'https://legal.ubi.com/privacypolicy/';
+const row = (id, name, publisher, category, url, data, purpose, terms) =>
+  [id, name, publisher, category, null, null, url, data, purpose, terms];
+const ms = (id, name) => row(id, name, 'Microsoft', 'Windows app', microsoft, 'Device and diagnostic data',
+  'Microsoft describes collecting this data across its products for operation and diagnostics.', ['Microsoft', 'device identifiers', 'diagnostic data']);
+const ap = (id, name) => row(id, name, 'Apple', 'Windows app', apple, 'Device data and account details',
+  'Apple’s general notice describes processing these categories to provide and develop its services.', ['Apple', 'Device Data', 'Account Information']);
+const va = (id, name) => row(id, name, 'Valve', 'PC game', valve, 'Steam account and gameplay data',
+  'Valve’s Steam policy describes using these data to provide Steam services and game features.', ['Valve', 'Steam', 'gameplay']);
+const rt = (id, name) => row(id, name, 'Rockstar Games', 'PC game', rockstar, 'Gameplay information and online identifiers',
+  'Rockstar describes processing these categories across its products and services.', ['Rockstar', 'gameplay', 'IP address']);
+
 module.exports = [
-  ['chrome','Google Chrome','Google','browser','chrome.exe','google.com',google,'Information from Chrome browsing history when synced','Personalize Google services depending on settings',['google','chrome browsing history','sync','personalized']],
-  row('google-drive','Google Drive','Google','storage','drive.google.com',google,'Files created or uploaded to Google services','Provide file storage and related services',['google','docs and spreadsheets you make','upload','provide our services']),
-  row('twitch','Twitch','Amazon','video','twitch.tv','https://www.twitch.tv/p/en/legal/privacy-notice/','Information about use of Twitch services','Operate and improve the platform',['twitch','usage','improve']),
-  row('duolingo','Duolingo','Duolingo','education','duolingo.com','https://www.duolingo.com/privacy','Learning or account information','Provide language learning features',['duolingo','learning','account']),
-  row('uber','Uber','Uber','transport','uber.com','https://www.uber.com/privacy/','Location and trip information','Provide transportation and safety features',['uber','location','trip','safety']),
-  row('goodrx','GoodRx','GoodRx','health','goodrx.com','https://www.goodrx.com/privacy-policy','Health and account information','Operate consumer health services',['goodrx','health','services']),
-  row('notion','Notion','Notion Labs','productivity','notion.so','https://www.notion.so/Privacy-Policy-3468d120cf614d4c9014c09f6adc9091','Account and usage data','Provide and improve Notion',['notion','usage','improve']),
-  row('avg','AVG','Gen Digital','security','avg.com','https://www.avg.com/en-us/privacy','Product and device information','Operate security products',['avg','device','products']),
-  row('riot-vanguard','Riot Vanguard','Riot Games','security','riotgames.com','https://www.riotgames.com/en/privacy-notice','System and service usage information under Riot’s general notice','Operate services and maintain competitive integrity',['riot games','vanguard','anti-cheat']),
-  row('github','GitHub','Microsoft','developer','github.com','https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement','Account and usage information','Operate, secure and improve GitHub',['github','usage information','improve']),
-  row('vscode','Visual Studio Code','Microsoft','developer','code.visualstudio.com','https://code.visualstudio.com/docs/configure/telemetry','Product usage telemetry, depending on user settings','Diagnose problems and improve the product',['visual studio code','telemetry','usage']),
-  row('power-bi','Power BI','Microsoft','business','powerbi.microsoft.com',microsoft,'Data supplied by the customer to cloud services','Provide business analytics under the subscription',['power bi','customer data','provide']),
-  row('microsoft-store','Microsoft Store','Microsoft','shopping','apps.microsoft.com',microsoft,'Purchase history and account information','Process store purchases and provide services',['microsoft store','purchase history','account']),
-  row('skype','Skype','Microsoft','communication','skype.com',microsoft,'Communications and usage information','Provide communications-related features',['skype','communications','messages']),
-  row('swiftkey','Microsoft SwiftKey','Microsoft','utility','swiftkey.com',microsoft,'Typing and prediction information, depending on configuration','Improve keyboard predictions',['swiftkey','typed','prediction']),
-  row('microsoft-defender','Microsoft Defender','Microsoft','security','microsoft.com',microsoft,'Device and security information under product settings','Identify and protect against threats',['microsoft defender','malware','device']),
-  row('microsoft-family','Microsoft Family Safety','Microsoft','security','family.microsoft.com',microsoft,'Activity and location information when enabled','Support family safety controls',['family safety','location','activity']),
-  row('google-meet','Google Meet','Google','communication','meet.google.com','https://support.google.com/meet/answer/9852160?hl=en','Meeting information','Provide and protect video meetings',['google meet','meetings','security']),
-  row('google-calendar','Google Calendar','Google','productivity','calendar.google.com','https://support.google.com/calendar/answer/10319332?hl=en','Calendar events and activity','Provide calendar features and reminders',['google calendar','event','activity']),
-  row('google-play','Google Play','Google','shopping','play.google.com',google,'Purchase history and service activity','Operate downloads and recommendations',['google play','purchase activity','provide our services']),
-  row('youtube-music','YouTube Music','Google','music','music.youtube.com','https://support.google.com/youtubemusic/answer/6313551?hl=en','Watch and search history depending on settings','Improve music recommendations',['youtube music','watch history','recommendations']),
-  row('google-fit','Google Fit','Google','health','fit.google.com','https://support.google.com/fit/answer/6075066?hl=en','Fitness and activity information','Track fitness and health activity',['google fit','activity','fitness']),
-  row('adobe-acrobat','Adobe Acrobat','Adobe','productivity','adobe.com',adobe,'Files supplied by users and Adobe usage information','Provide document features',['adobe','acrobat','files']),
-  row('adobe-photoshop','Adobe Photoshop','Adobe','creative','adobe.com',adobe,'Subject to Adobe’s general policy for device and service usage information','Provide and improve Adobe products',['photoshop','device','improve']),
-  row('adobe-lightroom','Adobe Lightroom','Adobe','creative','adobe.com',adobe,'Content submitted to Adobe and service usage information','Provide creative and storage features',['lightroom','content','adobe']),
-  row('apple-app-store','App Store','Apple','shopping','apps.apple.com','https://www.apple.com/legal/privacy/data/en/app-store/','Search and purchase activity','Provide App Store features and recommendations',['app store','search','purchase']),
-  row('apple-fitness','Apple Fitness+','Apple','health','fitness.apple.com','https://www.apple.com/legal/privacy/data/en/apple-fitness-plus/','Fitness+ usage information','Provide and personalize workouts',['fitness+','workout','personaliz']),
-  row('apple-books','Apple Books','Apple','books','books.apple.com','https://www.apple.com/legal/privacy/data/en/apple-books/','Purchases and reading activity','Provide and personalize book recommendations',['apple books','read','recommendations']),
-  row('apple-news','Apple News','Apple','news','apple.com','https://www.apple.com/legal/privacy/data/en/apple-news/','Reading and viewing interactions','Personalize news features',['apple news','read','personaliz']),
-  row('apple-wallet','Apple Wallet','Apple','finance','apple.com','https://www.apple.com/legal/privacy/data/en/apple-pay/','Payment and device information for Apple Pay','Provide and secure payments',['apple pay','device','transaction']),
-  row('audible','Audible','Amazon','books','audible.com','https://www.audible.com/legal/privacy','Account and listening information','Provide and personalize audiobooks',['audible','listening','personalize']),
-  row('plex','Plex','Plex','video','plex.tv','https://www.plex.tv/about/privacy-legal/','Device and media usage information','Provide and improve Plex',['plex','device','improve']),
-  row('hulu','Hulu','Disney','video','hulu.com','https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/','Usage and device information across Disney services','Provide and personalize content',['hulu','device','personalize']),
-  row('max','HBO Max','Warner Bros. Discovery','video','max.com','https://www.wbdprivacy.com/policycenter/b2c/','Viewing and device information','Provide and personalize entertainment services',['device','viewing','personalize']),
+  ap('itunes', 'iTunes'),
+  ap('apple-devices', 'Apple Devices'),
+  ms('windows-scan', 'Windows Scan'),
+  ms('windows-app', 'Windows App'),
+  ms('clipchamp', 'Microsoft Clipchamp'),
+  ms('microsoft-photos', 'Microsoft Photos'),
+  ms('bing-wallpaper', 'Bing Wallpaper'),
+  row('acrobat-reader', 'Adobe Acrobat Reader DC', 'Adobe', 'Windows app', 'https://www.adobe.com/privacy/privacy-notice.html', 'Device information', 'Run Adobe software and services', ['Adobe', 'device', 'IP address']),
+  row('lively-wallpaper','Lively Wallpaper','rocksdanister','Windows app','https://github.com/rocksdanister/lively/wiki/Privacy-Policy','Wallpaper application privacy policy','The developer describes how Lively handles user information.',['Lively','privacy','collect']),
+  row('nvidia-control-panel','NVIDIA Control Panel','NVIDIA','Windows app','https://www.nvidia.com/en-us/about-nvidia/privacy-policy/','Device and system information','NVIDIA describes processing device information across its products and services.',['NVIDIA','device','system information']),
+  row('vlc','VLC','VideoLAN','Windows app','https://www.videolan.org/privacy.html','Developer privacy disclosures','VideoLAN explains how VLC handles user information.',['VideoLAN','VLC','collect']),
+  row('epson-print-scan','Epson Print and Scan','Epson','Windows app','https://epson.com/privacy-policy','Device and usage information','Epson describes processing these categories in its privacy notice.',['Epson','device','usage']),
+  row('picsart','Picsart Photo Editor','Picsart','Windows app','https://picsart.com/privacy-policy','Account and device information','Provide Picsart services',['Picsart','device','account']),
+  row('filmora','Wondershare Filmora','Wondershare','Windows app','https://www.wondershare.com/privacy.html','Device and usage information','Wondershare describes processing these categories for its software.',['Wondershare','device','usage']),
+  va('counter-strike-2', 'Counter-Strike 2'),
+  va('dota-2', 'Dota 2'),
+  va('team-fortress-2', 'Team Fortress 2'),
+  va('deadlock', 'Deadlock'),
+  rt('gta-v-enhanced', 'Grand Theft Auto V Enhanced'),
+  rt('red-dead-redemption-2', 'Red Dead Redemption 2'),
+  row('apex-legends','Apex Legends','Electronic Arts','PC game',ea,'Account and gameplay information','EA describes processing these categories across its games.',['Electronic Arts','gameplay','account']),
+  row('rainbow-six-siege','Rainbow Six Siege','Ubisoft','PC game',ubisoft,'Game and device usage','Ubisoft describes collecting data when players use its services.',['Ubisoft','device','play']),
+  row('warframe','Warframe','Digital Extremes','PC game','https://www.warframe.com/privacy','Account and usage information','Provide and administer Warframe',['Warframe','account','usage']),
+  row('vrchat','VRChat','VRChat','PC game','https://hello.vrchat.com/privacy','Account and device information','Provide VRChat services',['VRChat','account','device']),
+  row('cyberpunk-2077','Cyberpunk 2077','CD Projekt Red','PC game','https://www.cdprojekt.com/en/privacy-policy/','Account and usage information','CD Projekt explains its processing across its services.',['CD Projekt','account','usage']),
+  row('pubg','PUBG: Battlegrounds','Krafton','PC game','https://pubg.com/en/clause/privacy_policy','Account and device information','Provide and secure PUBG',['PUBG','account','device']),
+  row('call-of-duty','Call of Duty','Activision','PC game','https://www.activision.com/legal/privacy-policy','Account and gameplay data','Activision describes using these categories to provide its games and services.',['Activision','account','gameplay']),
+  row('overwatch','Overwatch','Blizzard','PC game','https://www.blizzard.com/en-us/legal/privacy','Account and game information','Blizzard describes how it processes information for its games and services.',['Blizzard','account','games']),
 ];

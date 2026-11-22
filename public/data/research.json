@@ -2072,21 +2072,6 @@
           }
         },
         {
-          "year": 2025,
-          "kind": "investigation",
-          "title": "Canadian joint TikTok privacy investigation",
-          "jurisdiction": "Canada",
-          "summary": "Canadian regulators reported privacy concerns involving children’s data, age assurance and TikTok’s collection and use of personal information.",
-          "source": {
-            "title": "News release: Joint investigation into TikTok highlights privacy concerns related to the collection and use of children’s personal information - Offic",
-            "publisher": "Office of the Privacy Commissioner of Canada",
-            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2025/nr-c_250923/?wbdisable=true",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:08:28.697Z"
-          }
-        },
-        {
           "year": 2019,
           "kind": "settlement",
           "title": "Musical.ly children’s privacy settlement",
@@ -2100,6 +2085,22 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:12:41.422Z"
+          }
+        },
+        {
+          "title": "Canadian joint TikTok privacy investigation",
+          "summary": "Canadian regulators examined age assurance and TikTok’s handling of children’s personal information.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-003",
+          "source": {
+            "title": "PIPEDA Findings #2025-003: Joint investigation of TikTok Pte. Ltd. by the Office of the Privacy Commissioner of Canada, the Commission d’accès à l’inf",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.112Z"
           }
         }
       ]
@@ -2122,18 +2123,19 @@
       "destinations": [],
       "incidents": [
         {
-          "kind": "investigation",
           "title": "Tim Hortons mobile location investigation",
+          "summary": "A joint inquiry found that the app collected granular location information excessively and lacked meaningful consent.",
           "year": 2022,
+          "kind": "investigation",
           "jurisdiction": "Canada",
-          "summary": "Canadian privacy regulators found that its app collected sensitive location information, including when users were not actively using the app.",
+          "caseRef": "PIPEDA 2022-001",
           "source": {
-            "title": "News release: Tim Hortons app violated privacy laws in collection of ‘vast amounts’ of sensitive location data - Office of the Privacy Commissioner of",
+            "title": "PIPEDA Findings #2022-001: Joint investigation into location tracking by the Tim Hortons App - Office of the Privacy Commissioner of Canada",
             "publisher": "Office of the Privacy Commissioner of Canada",
-            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2022/nr-c_220601/",
-            "date": "2022-06-01",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-001/?wbdisable=true",
+            "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:47:36.960Z"
+            "fetchedAt": "2026-11-22T06:58:06.899Z"
           }
         }
       ]
@@ -7636,7 +7638,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Honey affiliate attribution lawsuit",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "A proposed class action alleged that the Honey extension diverted referral commissions by changing affiliate attribution.",
+          "source": {
+            "title": "Honey affiliate attribution lawsuit",
+            "publisher": "Plaintiffs’ filed complaint",
+            "url": "https://www.stuevesiegel.com/assets/htmldocuments/2025-01-24%201%20Class%20Action%20Complaint%20Against%20Paypal%20Holdings%20Inc.%20Paypal%20I.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:19.633Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -7668,7 +7686,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "FTC Avast browsing-data order",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged Avast collected browsing information through extensions and antivirus software and sold it through Jumpshot.",
+          "source": {
+            "title": "FTC Order Will Ban Avast from Selling Browsing Data for Advertising Purposes, Require It to Pay $16.5 Million Over Charges the Firm Sold Browsing Data",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.305Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -7732,7 +7766,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "report",
+          "title": "Report on Urban VPN and AI chat data",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "Tom’s Guide reported researchers’ claims that the extension collected AI conversations. The publisher disputes descriptions of how the feature works.",
+          "source": {
+            "title": "This VPN is harvesting your AI conversations – and 6 million people are using it | Tom's Guide",
+            "publisher": "Tom’s Guide",
+            "url": "https://www.tomsguide.com/computing/vpns/this-vpn-is-harvesting-your-ai-conversations-and-6-million-people-are-using-it",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:19.098Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -8613,6 +8663,1746 @@
           }
         }
       ]
+    },
+    {
+      "id": "itunes",
+      "name": "iTunes",
+      "publisher": "Apple",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device data and account details",
+          "purpose": "Apple’s general notice describes processing these categories to provide and develop its services.",
+          "source": {
+            "title": "Legal - Apple Privacy Policy - Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/en-ww/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.179Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-devices",
+      "name": "Apple Devices",
+      "publisher": "Apple",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device data and account details",
+          "purpose": "Apple’s general notice describes processing these categories to provide and develop its services.",
+          "source": {
+            "title": "Legal - Apple Privacy Policy - Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/en-ww/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.179Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "windows-scan",
+      "name": "Windows Scan",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "windows-app",
+      "name": "Windows App",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "clipchamp",
+      "name": "Microsoft Clipchamp",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-photos",
+      "name": "Microsoft Photos",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bing-wallpaper",
+      "name": "Bing Wallpaper",
+      "publisher": "Microsoft",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and diagnostic data",
+          "purpose": "Microsoft describes collecting this data across its products for operation and diagnostics.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.046Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "publisher": "VideoLAN",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Developer privacy disclosures",
+          "purpose": "VideoLAN explains how VLC handles user information.",
+          "source": {
+            "title": "Legal - VideoLAN",
+            "publisher": "VideoLAN",
+            "url": "https://www.videolan.org/privacy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:44.074Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "picsart",
+      "name": "Picsart Photo Editor",
+      "publisher": "Picsart",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide Picsart services",
+          "source": {
+            "title": "Privacy Policy - Picsart",
+            "publisher": "Picsart",
+            "url": "https://picsart.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.923Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "filmora",
+      "name": "Wondershare Filmora",
+      "publisher": "Wondershare",
+      "category": "Windows app",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and usage information",
+          "purpose": "Wondershare describes processing these categories for its software.",
+          "source": {
+            "title": "Wondershare Inc.-Privacy",
+            "publisher": "Wondershare",
+            "url": "https://www.wondershare.com/privacy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.785Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "counter-strike-2",
+      "name": "Counter-Strike 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "dota-2",
+      "name": "Dota 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "team-fortress-2",
+      "name": "Team Fortress 2",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "deadlock",
+      "name": "Deadlock",
+      "publisher": "Valve",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account and gameplay data",
+          "purpose": "Valve’s Steam policy describes using these data to provide Steam services and game features.",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:43.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apex-legends",
+      "name": "Apex Legends",
+      "publisher": "Electronic Arts",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and gameplay information",
+          "purpose": "EA describes processing these categories across its games.",
+          "source": {
+            "title": "Privacy &amp; Cookie Policy - Official EA Site",
+            "publisher": "Electronic Arts",
+            "url": "https://www.ea.com/legal/privacy-and-cookie-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.642Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "rainbow-six-siege",
+      "name": "Rainbow Six Siege",
+      "publisher": "Ubisoft",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Game and device usage",
+          "purpose": "Ubisoft describes collecting data when players use its services.",
+          "source": {
+            "title": "Privacy policy",
+            "publisher": "Ubisoft",
+            "url": "https://legal.ubi.com/privacypolicy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.337Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "warframe",
+      "name": "Warframe",
+      "publisher": "Digital Extremes",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Provide and administer Warframe",
+          "source": {
+            "title": "Warframe: Privacy Policy",
+            "publisher": "Digital Extremes",
+            "url": "https://www.warframe.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.063Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vrchat",
+      "name": "VRChat",
+      "publisher": "VRChat",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide VRChat services",
+          "source": {
+            "title": "Privacy Policy &mdash; VRChat",
+            "publisher": "VRChat",
+            "url": "https://hello.vrchat.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:45.166Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "pubg",
+      "name": "PUBG: Battlegrounds",
+      "publisher": "Krafton",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide and secure PUBG",
+          "source": {
+            "title": "PUBG: BATTLEGROUNDS",
+            "publisher": "Krafton",
+            "url": "https://pubg.com/en/clause/privacy_policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:46.922Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "call-of-duty",
+      "name": "Call of Duty",
+      "publisher": "Activision",
+      "category": "PC game",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and gameplay data",
+          "purpose": "Activision describes using these categories to provide its games and services.",
+          "source": {
+            "title": "Activision | Privacy Policy",
+            "publisher": "Activision",
+            "url": "https://www.activision.com/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:46.028Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "waymo",
+      "name": "Waymo",
+      "publisher": "Waymo LLC",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Waymo App - App Store",
+            "publisher": "Waymo LLC",
+            "url": "https://apps.apple.com/us/app/waymo/id1343524838",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.054Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "airbnb",
+      "name": "Airbnb",
+      "publisher": "Airbnb, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Search History, Browsing History, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Airbnb App - App Store",
+            "publisher": "Airbnb, Inc.",
+            "url": "https://apps.apple.com/us/app/airbnb/id401626263",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.055Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "publisher": "Frontier Airlines, Inc",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Frontier Airlines App - App Store",
+            "publisher": "Frontier Airlines, Inc",
+            "url": "https://apps.apple.com/us/app/frontier-airlines/id1041410548",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.052Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "american-airlines",
+      "name": "American Airlines",
+      "publisher": "American Airlines, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Browsing History, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎American Airlines App - App Store",
+            "publisher": "American Airlines, Inc.",
+            "url": "https://apps.apple.com/us/app/american-airlines/id382698565",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.187Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "publisher": "Southwest Airlines",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Southwest Airlines: Travel App App - App Store",
+            "publisher": "Southwest Airlines",
+            "url": "https://apps.apple.com/us/app/southwest-airlines-travel-app/id344542975",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.499Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fly-delta",
+      "name": "Fly Delta",
+      "publisher": "Delta Air Lines, Inc",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Fly Delta App - App Store",
+            "publisher": "Delta Air Lines, Inc",
+            "url": "https://apps.apple.com/us/app/fly-delta/id388491656",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:56.327Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "united-airlines",
+      "name": "United Airlines",
+      "publisher": "United Air Lines",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎United Airlines App - App Store",
+            "publisher": "United Air Lines",
+            "url": "https://apps.apple.com/us/app/united-airlines/id449945214",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.738Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "expedia",
+      "name": "Expedia",
+      "publisher": "Expedia, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Expedia: Hotels, Flights, Cars App - App Store",
+            "publisher": "Expedia, Inc.",
+            "url": "https://apps.apple.com/us/app/expedia-hotels-flights-cars/id427916203",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:55.585Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hilton-honors",
+      "name": "Hilton Honors",
+      "publisher": "Hilton Worldwide Holdings Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hilton Honors: Book Hotels App - App Store",
+            "publisher": "Hilton Worldwide Holdings Inc.",
+            "url": "https://apps.apple.com/us/app/hilton-honors-book-hotels/id635150066",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:56.864Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "u-haul",
+      "name": "U-Haul",
+      "publisher": "U-Haul International, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎U-Haul: Moving Made Easier® App - App Store",
+            "publisher": "U-Haul International, Inc.",
+            "url": "https://apps.apple.com/us/app/u-haul-moving-made-easier/id989307692",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.066Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "marriott-bonvoy",
+      "name": "Marriott Bonvoy",
+      "publisher": "Marriott International",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Search History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Marriott Bonvoy: Book Hotels App - App Store",
+            "publisher": "Marriott International",
+            "url": "https://apps.apple.com/us/app/marriott-bonvoy-book-hotels/id455004730",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.407Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "tesla-robotaxi",
+      "name": "Tesla Robotaxi",
+      "publisher": "Tesla, Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Financial Info, Location, Contact Info, User Content, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Tesla Robotaxi App - App Store",
+            "publisher": "Tesla, Inc.",
+            "url": "https://apps.apple.com/us/app/tesla-robotaxi/id6744257048",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.064Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-earth",
+      "name": "Google Earth",
+      "publisher": "Google LLC",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, User Content, Search History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Earth App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-earth/id293622097",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.197Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "publisher": "Neutron Holdings. Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Lime - #RideGreen App - App Store",
+            "publisher": "Neutron Holdings. Inc.",
+            "url": "https://apps.apple.com/us/app/lime-ridegreen/id1199780189",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.234Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "upside",
+      "name": "Upside",
+      "publisher": "Upside Services Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Upside: Gas & Food Cash Back App - App Store",
+            "publisher": "Upside Services Inc.",
+            "url": "https://apps.apple.com/us/app/upside-gas-food-cash-back/id1099997174",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.255Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "turo",
+      "name": "Turo",
+      "publisher": "Turo Inc.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Turo — Better car rental App - App Store",
+            "publisher": "Turo Inc.",
+            "url": "https://apps.apple.com/us/app/turo-better-car-rental/id555063314",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.154Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "royal-caribbean-international",
+      "name": "Royal Caribbean International",
+      "publisher": "Royal Caribbean Cruises Ltd.",
+      "category": "travel",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Sensitive Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Royal Caribbean International App - App Store",
+            "publisher": "Royal Caribbean Cruises Ltd.",
+            "url": "https://apps.apple.com/us/app/royal-caribbean-international/id1260728016",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.161Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nfhs-network",
+      "name": "NFHS Network",
+      "publisher": "2080 Media Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NFHS Network App - App Store",
+            "publisher": "2080 Media Inc.",
+            "url": "https://apps.apple.com/us/app/nfhs-network/id1116186798",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:57.974Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "draftkings",
+      "name": "DraftKings",
+      "publisher": "DRAFTKINGS LLC.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, User Content, Identifiers, Usage Data, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎DraftKings: Sports & Casino App - App Store",
+            "publisher": "DRAFTKINGS LLC.",
+            "url": "https://apps.apple.com/us/app/draftkings-sports-casino/id1375031369",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.278Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "prizepicks",
+      "name": "PrizePicks",
+      "publisher": "SidePrize, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PrizePicks: Sports and Packs App - App Store",
+            "publisher": "SidePrize, LLC",
+            "url": "https://apps.apple.com/us/app/prizepicks-sports-and-packs/id1437843273",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:57:58.538Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "underdog",
+      "name": "Underdog",
+      "publisher": "Underdog Sports, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Underdog: Sports, Games & Rips App - App Store",
+            "publisher": "Underdog Sports, Inc.",
+            "url": "https://apps.apple.com/us/app/underdog-sports-games-rips/id1514665962",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.364Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "espn",
+      "name": "ESPN",
+      "publisher": "Disney Electronic Content, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎ESPN: Live Sports & Scores App - App Store",
+            "publisher": "Disney Electronic Content, Inc.",
+            "url": "https://apps.apple.com/us/app/espn-live-sports-scores/id317469184",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.191Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fanduel-sportsbook",
+      "name": "FanDuel Sportsbook",
+      "publisher": "FanDuel Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎FanDuel Sportsbook & Casino App - App Store",
+            "publisher": "FanDuel Limited",
+            "url": "https://apps.apple.com/us/app/fanduel-sportsbook-casino/id1413721906",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.340Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "dazn",
+      "name": "DAZN",
+      "publisher": "DAZN Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎DAZN: Stream Live Sports App - App Store",
+            "publisher": "DAZN Limited",
+            "url": "https://apps.apple.com/us/app/dazn-stream-live-sports/id1129523589",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.513Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hudl",
+      "name": "Hudl",
+      "publisher": "Hudl, Inc. (US)",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hudl App - App Store",
+            "publisher": "Hudl, Inc. (US)",
+            "url": "https://apps.apple.com/us/app/hudl/id412223222",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.642Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nba",
+      "name": "NBA",
+      "publisher": "NBA MEDIA VENTURES, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Browsing History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NBA: Live Games & Scores App - App Store",
+            "publisher": "NBA MEDIA VENTURES, LLC",
+            "url": "https://apps.apple.com/us/app/nba-live-games-scores/id484672289",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.692Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "maxpreps",
+      "name": "MaxPreps",
+      "publisher": "MaxPreps Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎MaxPreps: High School Sports App - App Store",
+            "publisher": "MaxPreps Inc.",
+            "url": "https://apps.apple.com/us/app/maxpreps-high-school-sports/id980665604",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.152Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fanatics-sports",
+      "name": "Fanatics Sports",
+      "publisher": "FBG ENTERPRISES OPCO, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Fanatics Sports & Casino App - App Store",
+            "publisher": "FBG ENTERPRISES OPCO, LLC",
+            "url": "https://apps.apple.com/us/app/fanatics-sports-casino/id1616738407",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.607Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "sportsyou",
+      "name": "sportsYou",
+      "publisher": "MMR Digital LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, User Content, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎sportsYou App - App Store",
+            "publisher": "MMR Digital LLC",
+            "url": "https://apps.apple.com/us/app/sportsyou/id1186906455",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.246Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bet365",
+      "name": "bet365",
+      "publisher": "Hillside Technology Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎bet365 - Sportsbook & Casino App - App Store",
+            "publisher": "Hillside Technology Limited",
+            "url": "https://apps.apple.com/us/app/bet365-sportsbook-casino/id1465717844",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.820Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gamechanger",
+      "name": "GameChanger",
+      "publisher": "GameChanger Media, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎GameChanger App - App Store",
+            "publisher": "GameChanger Media, Inc.",
+            "url": "https://apps.apple.com/us/app/gamechanger/id1308415878",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.361Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "threads",
+      "name": "Threads",
+      "publisher": "Instagram, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Contacts, User Content, Search History, Browsing History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Threads App - App Store",
+            "publisher": "Instagram, Inc.",
+            "url": "https://apps.apple.com/us/app/threads/id6446901002",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.707Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "messenger",
+      "name": "Messenger",
+      "publisher": "Meta Platforms, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Contacts, User Content, Search History, Browsing History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Messenger App - App Store",
+            "publisher": "Meta Platforms, Inc.",
+            "url": "https://apps.apple.com/us/app/messenger/id454638411",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.796Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "instants",
+      "name": "Instants",
+      "publisher": "Instagram, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Instants, an Instagram app App - App Store",
+            "publisher": "Instagram, Inc.",
+            "url": "https://apps.apple.com/us/app/instants-an-instagram-app/id6756442328",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.371Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "textnow",
+      "name": "TextNow",
+      "publisher": "TextNow, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎TextNow: Call + Text Unlimited App - App Store",
+            "publisher": "TextNow, Inc.",
+            "url": "https://apps.apple.com/us/app/textnow-call-text-unlimited/id314716233",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.471Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "groupme",
+      "name": "GroupMe",
+      "publisher": "Skype Communications S.a.r.l",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎GroupMe App - App Store",
+            "publisher": "Skype Communications S.a.r.l",
+            "url": "https://apps.apple.com/us/app/groupme/id392796698",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.512Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "whee",
+      "name": "Whee",
+      "publisher": "TIKTOK PTE. LTD.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Search History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Whee - TikTok Chat App - App Store",
+            "publisher": "TIKTOK PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/whee-tiktok-chat/id6484505984",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.692Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "band",
+      "name": "BAND",
+      "publisher": "NAVER Corp.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎BAND - App for all groups App - App Store",
+            "publisher": "NAVER Corp.",
+            "url": "https://apps.apple.com/us/app/band-app-for-all-groups/id542613198",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.776Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "locket-widget",
+      "name": "Locket Widget",
+      "publisher": "Locket Labs, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Locket Widget App - App Store",
+            "publisher": "Locket Labs, Inc.",
+            "url": "https://apps.apple.com/us/app/locket-widget/id1600525061",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.980Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "letterboxd",
+      "name": "Letterboxd",
+      "publisher": "Letterboxd Ltd",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Letterboxd App - App Store",
+            "publisher": "Letterboxd Ltd",
+            "url": "https://apps.apple.com/us/app/letterboxd/id1054271011",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.858Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -8700,6 +10490,54 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:19:05.129Z"
+          }
+        },
+        {
+          "title": "Google search engine de-indexing finding",
+          "summary": "The OPC examined whether Google met its obligations when challenged over search results linked to an individual.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-002",
+          "source": {
+            "title": "PIPEDA Findings #2025-002: Investigation and recommendations concerning Google search engine service’s compliance with its obligations under PIPEDA - ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.344Z"
+          }
+        },
+        {
+          "title": "Google ads and sensitive health information",
+          "summary": "The OPC examined use of sensitive health information to target Google ads.",
+          "year": 2014,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2014-001",
+          "source": {
+            "title": "Commissioner&rsquo;s Findings - PIPEDA Report of Findings #2014-001: Use of sensitive health information for targeting of Google ads raises privacy co",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2014/pipeda-2014-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:17.373Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Google, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving representations about privacy practices. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3136",
+          "source": {
+            "title": "Google, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3136-google-inc-matter",
+            "date": "2011-10-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.593Z"
           }
         }
       ],
@@ -8874,6 +10712,22 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:48.087Z"
+          }
+        },
+        {
+          "title": "Windows 10 privacy settings",
+          "summary": "The OPC reported that Microsoft would obtain opt-in consent and improve transparency for Windows 10 privacy settings.",
+          "year": 2018,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2018-004",
+          "source": {
+            "title": "PIPEDA Report of Findings #2018-004: Microsoft to obtain opt-in consent, enhance transparency for Windows 10 privacy settings - Office of the Privacy ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.828Z"
           }
         }
       ],
@@ -9074,14 +10928,14 @@
       "destinations": [
         {
           "country": "United States",
-          "note": "Comscore says website or program data may be processed in the United States, where it operates its central database.",
+          "note": "Comscore identifies the US as the location of its central database.",
           "source": {
             "title": "Privacy Policy - Comscore, Inc.",
             "publisher": "Comscore",
             "url": "https://www.comscore.com/About/Privacy-Policy",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:48:27.616Z"
+            "fetchedAt": "2026-11-22T06:58:24.537Z"
           }
         }
       ]
@@ -9269,6 +11123,21 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:54:31.515Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Kochava location data complaint",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC sued Kochava, alleging that its location data exposed visits to sensitive sites.",
+          "source": {
+            "title": "FTC Sues Kochava for Selling Data that Tracks People at Reproductive Health Clinics, Places of Worship, and Other Sensitive Locations | Federal Trade ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.300Z"
           }
         }
       ],
@@ -9501,6 +11370,38 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:08:44.423Z"
           }
+        },
+        {
+          "title": "Canadian Facebook and Cambridge Analytica inquiry",
+          "summary": "Canadian privacy regulators investigated Facebook’s consent and accountability practices involving third-party apps.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-002",
+          "source": {
+            "title": "PIPEDA Findings #2019-002: Joint investigation of Facebook, Inc. by the Privacy Commissioner of Canada and the Information and Privacy Commissioner fo",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.791Z"
+          }
+        },
+        {
+          "title": "Non-users’ information in Facebook address books",
+          "summary": "The OPC reported that Facebook agreed to stop using non-users’ information from users’ address books.",
+          "year": 2018,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2018-003",
+          "source": {
+            "title": "PIPEDA Report of Findings #2018-003: Facebook agrees to stop using non-users’ personal information in users’ address books - Office of the Privacy Com",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.919Z"
+          }
         }
       ],
       "sharesWith": [
@@ -9710,6 +11611,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:02.899Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Apitor children’s data complaint",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged a robot toy app allowed a third-party software provider to collect children’s data without parental consent.",
+          "source": {
+            "title": "FTC Takes Action Against Robot Toy Maker for Allowing Collection of Children’s Data without Parental Consent | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/09/ftc-takes-action-against-robot-toy-maker-allowing-collection-childrens-data-without-parental-consent",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.646Z"
+          }
         }
       ],
       "declared": []
@@ -9787,6 +11703,21 @@
             "date": "2025-01-14",
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:04.487Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Mobilewalla final location-data order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC finalized an order barring Mobilewalla from selling sensitive location data.",
+          "source": {
+            "title": "FTC Finalizes Order Banning Mobilewalla from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.687Z"
           }
         }
       ],
@@ -11142,6 +13073,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:19:13.875Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Gravy Analytics and Venntel final order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC finalized restrictions on Gravy Analytics and Venntel’s sale of sensitive location data.",
+          "source": {
+            "title": "FTC Finalizes Order Prohibiting Gravy Analytics, Venntel from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.771Z"
+          }
         }
       ],
       "declared": []
@@ -12193,7 +14139,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Sentry backup exposure",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "Sentry reported that exposed backups contained user details, including hashed passwords.",
+          "source": {
+            "title": "Security Incident (June 12 2016) | Sentry Blog",
+            "publisher": "Sentry",
+            "url": "https://blog.sentry.io/security-incident-june-12-2016/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:18.279Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -12705,6 +14667,20 @@
             "fetchedAt": "2026-11-22T06:45:44.091Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Automattic lists Amazon Web Services in the US for storage and backups.",
+          "source": {
+            "title": "Subprocessor List &#8211; Automattic",
+            "publisher": "Automattic",
+            "url": "https://automattic.com/subprocessor-list/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:23.916Z"
+          }
+        }
       ]
     },
     {
@@ -12781,7 +14757,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "IP address and device information",
+          "purpose": "Operate and protect Reddit",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.040Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "fine",
@@ -12796,6 +14785,34 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:47.921Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Perform services for Reddit",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.247Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Reddit says it may store information on United States servers.",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.257Z"
           }
         }
       ]
@@ -13245,9 +15262,1272 @@
           }
         }
       ]
+    },
+    {
+      "name": "Home Depot",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Home Depot’s sharing of e-receipt data with Meta",
+          "summary": "The OPC found that Home Depot shared information with Meta for offline conversion measurement without obtaining meaningful consent.",
+          "year": 2023,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2023-001",
+          "source": {
+            "title": "PIPEDA Findings #2023-001: Investigation into Home Depot of Canada Inc.’s compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:06.971Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clearview AI",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Clearview AI joint investigation",
+          "summary": "Canadian privacy regulators found that Clearview collected images for facial recognition without consent.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-001",
+          "source": {
+            "title": "PIPEDA Findings #2021-001: Joint investigation of Clearview AI, Inc. by the Office of the Privacy Commissioner of Canada, the Commission d’accès à l’i",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.167Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Desjardins",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Desjardins personal information breach",
+          "summary": "The OPC assessed safeguards after a breach that involved an employee taking personal information.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-005",
+          "source": {
+            "title": "PIPEDA Findings #2020-005: Investigation into Desjardins’ compliance with PIPEDA following a breach of personal information between 2017 and 2019 - Of",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-005/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.170Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Staples",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Staples Openbox resale program",
+          "summary": "The OPC examined safeguards for personal information left on returned electronic devices.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-004",
+          "source": {
+            "title": "PIPEDA Findings #2025-004: Investigation into the privacy practices of Staples Canada ULC related to electronic devices to be resold as part of its Op",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.245Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "23andMe",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Joint 23andMe breach investigation",
+          "summary": "Canadian and UK regulators examined security safeguards following a breach involving customer accounts.",
+          "year": 2025,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2025-001",
+          "source": {
+            "title": "PIPEDA Findings #2025-001: Joint investigation into a data breach at 23andMe by the Privacy Commissioner of Canada and the UK Information Commissioner",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.427Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Brinks Home",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Brinks Home OPC inquiry",
+          "summary": "The OPC examined Brinks Home’s practices for handling personal information.",
+          "year": 2024,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2024-002",
+          "source": {
+            "title": "PIPEDA Findings #2024-002: Investigation into Brinks Home - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:07.932Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Aylo",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Aylo consent investigation",
+          "summary": "The OPC examined whether Aylo obtained consent from people depicted in videos uploaded to its websites.",
+          "year": 2024,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2024-001",
+          "source": {
+            "title": "PIPEDA Findings #2024-001: Investigation into Aylo (formerly MindGeek)’s Compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.090Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Agronomy",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Agronomy safeguards and consent inquiry",
+          "summary": "The OPC investigated Agronomy’s safeguards, accountability and consent practices.",
+          "year": 2023,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2023-002",
+          "source": {
+            "title": "PIPEDA Findings #2023-002: Investigation into Agronomy’s privacy practices related to safeguards, accountability valid consent for the collection and ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.034Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trimac",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Trimac driver surveillance investigation",
+          "summary": "The OPC examined audio and video monitoring in truck cabins.",
+          "year": 2022,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2022-006",
+          "source": {
+            "title": "PIPEDA Findings #2022-006: Investigation into Trimac’s use of an audio and video surveillance device in its truck cabins - Office of the Privacy Commi",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-006/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.066Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Biron Health Group",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Biron promotional emails to testing customers",
+          "summary": "Biron stopped sending promotional emails to travellers who underwent COVID-19 testing.",
+          "year": 2022,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2022-002",
+          "source": {
+            "title": "PIPEDA Findings #2022-002: Biron Health Group has ceased sending promotional emails to travellers arriving in Canada who undergo COVID-19 testing - Of",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.139Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BMO",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "BMO security deficiencies and breach",
+          "summary": "The OPC documented security shortcomings in an investigation of a large-scale breach.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-003",
+          "source": {
+            "title": "PIPEDA Findings #2021-003: Security deficiencies at BMO lead to large-scale breach - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.278Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CoreFour",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "CoreFour OPC investigation",
+          "summary": "The OPC examined the company’s handling of personal information under PIPEDA.",
+          "year": 2021,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2021-002",
+          "source": {
+            "title": "PIPEDA Findings #2021-002: Investigation into CoreFour Inc.’s compliance with PIPEDA - Office of the Privacy Commissioner of Canada",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.361Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cadillac Fairview",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Mall kiosk facial analytics investigation",
+          "summary": "A joint inquiry examined facial analytics deployed in mall directory kiosks.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-004",
+          "source": {
+            "title": "PIPEDA Findings #2020-004: Joint investigation of the Cadillac Fairview Corporation Limited by the Privacy Commissioner of Canada, the Information and",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:08.423Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dell",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Dell security and complaint handling",
+          "summary": "The regulator reported that Dell improved security and complaint handling following breaches.",
+          "year": 2020,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2020-003",
+          "source": {
+            "title": "PIPEDA Findings #2020-003: Dell improves security and complaint handling practices following breaches and OPC Investigation - Office of the Privacy Co",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.531Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AggregateIQ",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Joint AggregateIQ investigation",
+          "summary": "Privacy commissioners investigated political campaign data handled by AggregateIQ.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-004",
+          "source": {
+            "title": "PIPEDA Findings #2019-004: Joint investigation of AggregateIQ Data Services Ltd. by the Privacy Commissioner of Canada and the Information and Privacy",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-004/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.529Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Loblaw",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Loblaw gift card verification inquiry",
+          "summary": "The OPC examined identity verification and information transfers for a gift card program.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-003",
+          "source": {
+            "title": "PIPEDA Findings #2019-003: Investigation into authentication and transfer practices used during Loblaw gift card offering - Office of the Privacy Comm",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-003/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.595Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Equifax",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Canadian Equifax breach investigation",
+          "summary": "The OPC examined how the 2017 Equifax breach affected personal information for Canadian customers.",
+          "year": 2019,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2019-001",
+          "source": {
+            "title": "PIPEDA Findings #2019-001: Investigation into Equifax Inc. and Equifax Canada Co.’s compliance with PIPEDA in light of the 2017 breach of personal inf",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-001/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.767Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wajam",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Wajam adware privacy investigation",
+          "summary": "The OPC found multiple breaches of PIPEDA in its inquiry into the Canadian adware developer.",
+          "year": 2017,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2017-002",
+          "source": {
+            "title": "PIPEDA Report of Findings #2017-002: Canadian adware developer Wajam Internet Technologies Inc. breaches multiple provisions of PIPEDA - Office of the",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2017/pipeda-2017-002/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:16.986Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Apple",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Apple device identifiers for targeted advertising",
+          "summary": "The OPC called on Apple to clarify how it uses and discloses device identifiers for targeted advertising.",
+          "year": 2013,
+          "kind": "investigation",
+          "jurisdiction": "Canada",
+          "caseRef": "PIPEDA 2013-017",
+          "source": {
+            "title": "Commissioner&rsquo;s Findings - PIPEDA Report of Findings #2013-017: Apple called upon to provide greater clarity on its use and disclosure of unique ",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2013/pipeda-2013-017/?wbdisable=true",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:17.408Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "X-Mode / Outlogic",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "X-Mode / Outlogic sensitive location order",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case concerned the sale of sensitive location data by X-Mode and successor Outlogic.",
+          "source": {
+            "title": "X-Mode Social, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.026Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "General Motors",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "GM and OnStar proposed location-data order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged GM and OnStar shared drivers’ precise location and driving behavior data without informed consent.",
+          "source": {
+            "title": "FTC Takes Action Against General Motors for Sharing Drivers’ Precise Location and Driving Behavior Data Without Consent | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-takes-action-against-general-motors-sharing-drivers-precise-location-driving-behavior-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.392Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Instant Checkmate, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Instant Checkmate, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "122 3221",
+          "source": {
+            "title": "Instant Checkmate, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3221-instant-checkmate-inc",
+            "date": "2014-04-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.162Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Accretive Health, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Accretive Health, Inc., In the Matter of · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "122 3077",
+          "source": {
+            "title": "Accretive Health, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3077-accretive-health-inc-matter",
+            "date": "2014-02-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.717Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TeleCheck Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "TeleCheck Services, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "112 3183",
+          "source": {
+            "title": "TeleCheck Services, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3183-telecheck-services-inc",
+            "date": "2014-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.656Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Certegy Check Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Certegy Check Services, Inc. · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "112 3184",
+          "source": {
+            "title": "Certegy Check Services, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3184-certegy-check-services-inc",
+            "date": "2013-08-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:35.592Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "CBR Systems, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "CBR Systems, Inc., In the Matter of · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "112 3120",
+          "source": {
+            "title": "CBR Systems, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3120-cbr-systems-inc-matter",
+            "date": "2013-05-03",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:37.008Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Path, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Path, Inc. · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "122 3158",
+          "source": {
+            "title": "Path, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3158-path-inc",
+            "date": "2013-02-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.212Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion, In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3094",
+          "source": {
+            "title": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3094-franklins-budget-car-sales-inc-also-dba-franklin-toyotascion-matter",
+            "date": "2012-10-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.823Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "EPN, Inc., also d/b/a Checknet, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "EPN, Inc., also d/b/a Checknet, Inc., In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "112 3143",
+          "source": {
+            "title": "EPN, Inc., also d/b/a Checknet, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3143-epn-inc-also-dba-checknet-inc-matter",
+            "date": "2012-10-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.728Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Myspace LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Myspace LLC, In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3058",
+          "source": {
+            "title": "Myspace LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3058-myspace-llc-matter",
+            "date": "2012-09-11",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.925Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "HireRight Solutions, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "HireRight Solutions, Inc. · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 313",
+          "source": {
+            "title": "HireRight Solutions, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-313-hireright-solutions-inc",
+            "date": "2012-08-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.858Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Upromise, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Upromise, Inc. · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3116",
+          "source": {
+            "title": "Upromise, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3116-upromise-inc",
+            "date": "2012-04-03",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.367Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Godwin, Jones O., d/b/a skidekids.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Godwin, Jones O., d/b/a skidekids.com · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "1123033",
+          "source": {
+            "title": "Godwin, Jones O., d/b/a skidekids.com | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1123033-godwin-jones-o-dba-skidekidscom",
+            "date": "2011-11-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.445Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ACRAnet, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ACRAnet, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "092 3088",
+          "source": {
+            "title": "ACRAnet, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3088-acranet-inc-matter",
+            "date": "2011-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.817Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SettlementOne Credit Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SettlementOne Credit Corporation · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "082 3208",
+          "source": {
+            "title": "SettlementOne Credit Corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3208-settlementone-credit-corporation",
+            "date": "2011-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:43.177Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Teletrack, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Teletrack, Inc. · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3075",
+          "source": {
+            "title": "Teletrack, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3075-teletrack-inc",
+            "date": "2011-06-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.218Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Lookout Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Lookout Services, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3076",
+          "source": {
+            "title": "Lookout Services, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3076-lookout-services-inc-matter",
+            "date": "2011-06-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.722Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ceridian Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ceridian Corporation, In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3160",
+          "source": {
+            "title": "Ceridian Corporation, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3160-ceridian-corporation-matter",
+            "date": "2011-06-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.883Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Playdom, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Playdom, Inc. · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "1023036",
+          "source": {
+            "title": "Playdom, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1023036-playdom-inc",
+            "date": "2011-05-12",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.940Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ChoicePoint Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ChoicePoint Inc. · FTC case record",
+          "year": 2006,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2006.",
+          "caseRef": "052-3069",
+          "source": {
+            "title": "ChoicePoint Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/052-3069-choicepoint-inc",
+            "date": "2010-09-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:46.641Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Iconix Brand Group, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Iconix Brand Group, Inc. · FTC case record",
+          "year": 2009,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2009.",
+          "source": {
+            "title": "Iconix Brand Group, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/iconix-brand-group-inc",
+            "date": "2009-10-20",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:51.683Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "UMG Recordings, Inc., a corporation, US",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "UMG Recordings, Inc., a corporation, US · FTC case record",
+          "year": 2004,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2004.",
+          "source": {
+            "title": "UMG Recordings, Inc., a corporation, US | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/umg-recordings-inc-corporation-us",
+            "date": "2004-02-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:51.929Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Bonzi Software, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Bonzi Software, Inc. · FTC case record",
+          "year": 2004,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2004.",
+          "source": {
+            "title": "Bonzi Software, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/bonzi-software-inc",
+            "date": "2004-02-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.321Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Hershey Foods Corporation., U.S. (for the FTC)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Hershey Foods Corporation., U.S. (for the FTC) · FTC case record",
+          "year": 2003,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2003.",
+          "source": {
+            "title": "Hershey Foods Corporation., U.S. (for the FTC) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/hershey-foods-corporation-us-ftc",
+            "date": "2003-02-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.115Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ohio Art Company, The",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ohio Art Company, The · FTC case record",
+          "year": 2002,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2002.",
+          "caseRef": "022-3028",
+          "source": {
+            "title": "Ohio Art Company, The | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/022-3028-ohio-art-company",
+            "date": "2002-04-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:52.212Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Looksmart, Ltd.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Looksmart, Ltd. · FTC case record",
+          "year": 2001,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2001.",
+          "caseRef": "002 3379",
+          "source": {
+            "title": "Looksmart, Ltd. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3379-looksmart-ltd",
+            "date": "2001-04-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:54.859Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "GeoCities",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "GeoCities · FTC case record",
+          "year": 1998,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 1998.",
+          "caseRef": "982 3015",
+          "source": {
+            "title": "GeoCities | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/982-3015-geocities",
+            "date": "1999-02-12",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:54.825Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:53:52.352Z",
+  "generatedAt": "2026-11-22T06:58:55.414Z",
   "index": {
     "exe": {
       "brave.exe": [

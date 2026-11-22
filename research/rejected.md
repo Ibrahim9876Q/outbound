@@ -657,3 +657,117 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - https://chromewebstore.google.com/detail/onbjkmhileedchimkcmieeiomipdljki — No public developer name
 - https://chromewebstore.google.com/detail/gipljhilblgebbldeiefbfcaidmhaofa — No public developer name
 - https://chromewebstore.google.com/detail/depgbnacabpbpaepmhckinjdhjfplaeg — No public developer name
+
+## apps-05 · 2026-11-22T06:57:46.923Z
+
+- Adobe Acrobat Reader DC — https://www.adobe.com/privacy/privacy-notice.html — curl: (22) The requested URL returned error: 403
+- Lively Wallpaper — https://github.com/rocksdanister/lively/wiki/Privacy-Policy — missing evidence: collect
+- NVIDIA Control Panel — https://www.nvidia.com/en-us/about-nvidia/privacy-policy/ — missing evidence: device, system information
+- Epson Print and Scan — https://epson.com/privacy-policy — missing evidence: usage
+- Grand Theft Auto V Enhanced — https://www.rockstargames.com/privacy — missing evidence: gameplay, IP address
+- Red Dead Redemption 2 — https://www.rockstargames.com/privacy — missing evidence: gameplay, IP address
+- Cyberpunk 2077 — https://www.cdprojekt.com/en/privacy-policy/ — missing evidence: account, usage
+- Overwatch — https://www.blizzard.com/en-us/legal/privacy — curl: (22) The requested URL returned error: 404
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+- Smart Home Manager — https://apps.apple.com/us/app/smart-home-manager/id1258654743 — No developer-declared data linked to the user
+- Bible Shorts — https://apps.apple.com/us/app/bible-shorts-watch-study/id6795921981 — No developer-declared data linked to the user
+- Bible Path — https://apps.apple.com/us/app/bible-path-widgets-stories/id6504798650 — No developer-declared data linked to the user
+- Sky Guide — https://apps.apple.com/us/app/sky-guide/id576588894 — No developer-declared data linked to the user
+- Cal AI — https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616 — No developer-declared data linked to the user
+- Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
+- ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
+- Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+- Smart Home Manager — https://apps.apple.com/us/app/smart-home-manager/id1258654743 — No developer-declared data linked to the user
+- Bible Shorts — https://apps.apple.com/us/app/bible-shorts-watch-study/id6795921981 — No developer-declared data linked to the user
+- Bible Path — https://apps.apple.com/us/app/bible-path-widgets-stories/id6504798650 — No developer-declared data linked to the user
+- Sky Guide — https://apps.apple.com/us/app/sky-guide/id576588894 — No developer-declared data linked to the user
+- Cal AI — https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616 — No developer-declared data linked to the user
+- Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
+- ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
+- Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
+- FloSports — https://apps.apple.com/us/app/flosports-watch-live-sports/id1149210891 — No developer-declared data linked to the user
+- NBA — https://apps.apple.com/us/app/nba-2k-hq/id6745190566 — No developer-declared data linked to the user
+
+## incidents-09 · 2026-11-22T06:58:22.771Z
+
+- Datadog — https://investors.datadoghq.com/static-files/6212f93a-3104-4aba-aba9-48a2e59c83b7 — curl: (22) The requested URL returned error: 403
+
+## facts-08 · 2026-11-22T06:58:24.537Z
+
+- New Relic — https://newrelic.com/termsandconditions/privacy — missing evidence: personal data transferred
+- Criteo — https://www.criteo.com/wp-content/uploads/2024/05/The-Media-Grid-Sub-Processors.pdf — missing evidence: United States
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+
+## FTC case tag 1420, index pages 0–9
+
+- DataMotion, Inc., a corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3023-datamotion-inc-corporation-matter — privacy topic not supported by the case summary or release headlines
+- Apperian, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3017-apperian-inc-matter — privacy topic not supported by the case summary or release headlines
+- Tennessee Football, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3032-tennessee-football-inc-matter — privacy topic not supported by the case summary or release headlines
+- Reynolds Consumer Products, Inc, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3030-reynolds-consumer-products-inc-matter — privacy topic not supported by the case summary or release headlines
+- Atlanta Falcons Football Club, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3018-atlanta-falcons-football-club-llc-matter — privacy topic not supported by the case summary or release headlines
+- DDC Laboratories, Inc., also d/b/a DNA Diagnostics Center, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3024-ddc-laboratories-inc-also-dba-dna-diagnostics-center-matter — privacy topic not supported by the case summary or release headlines
+- Baker Tilly Virchow Krause, LLP, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3019-baker-tilly-virchow-krause-llp-matter — privacy topic not supported by the case summary or release headlines
+- Charles River Laboratories, Int’l., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3022-charles-river-laboratories-intl-matter — privacy topic not supported by the case summary or release headlines
+- Receivable Management Services Corporation, The, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3031-receivable-management-services-corporation-matter — privacy topic not supported by the case summary or release headlines
+- PDB Sports, Ltd., d/b/a Denver Broncos Football Club, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3025-pdb-sports-ltd-dba-denver-broncos-football-club-matter — privacy topic not supported by the case summary or release headlines
+- American Apparel, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3036-american-apparel-inc-matter — privacy topic not supported by the case summary or release headlines
+- Level 3 Communications, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3028-level-3-communications-llc-matter — privacy topic not supported by the case summary or release headlines
+- BitTorrent, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3020-bittorrent-inc-matter — privacy topic not supported by the case summary or release headlines
+- Fantage.com, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3026-fantagecom-inc-matter — privacy topic not supported by the case summary or release headlines
+- Genelink, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3095-genelink-inc-matter — privacy topic not supported by the case summary or release headlines
+- Infotrack Information Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3092-infotrack-information-services-inc-et-al — unclear dossier entity.
+- Goldenshores Technologies, LLC, and Erik M. Geidl, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3087-goldenshores-technologies-llc-erik-m-geidl-matter — privacy topic not supported by the case summary or release headlines
+- Aaron’s, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3256-aarons-inc-matter — privacy topic not supported by the case summary or release headlines
+- TRENDnet, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3090-trendnet-inc-matter — privacy topic not supported by the case summary or release headlines
+- Time Warner Cable Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3149-time-warner-cable-inc — privacy topic not supported by the case summary or release headlines
+- HTC America Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3049-htc-america-inc-matter — privacy topic not supported by the case summary or release headlines
+- Filiquarian Publishing, LLC; Choice Level, LLC; and Joshua Linsk, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3195-filiquarian-publishing-llc-choice-level-llc-joshua-linsk-matter — unclear dossier entity.
+- C.A.L.M. Ventures, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-calm-ventures-inc-matter — privacy topic not supported by the case summary or release headlines
+- Watershed Development Corp., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-watershed-development-corp-matter — privacy topic not supported by the case summary or release headlines
+- Aspen Way Enterprises, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-aspen-way-enterprises-inc-matter — privacy topic not supported by the case summary or release headlines
+- Red Zone Investment Group, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-red-zone-investment-group-inc-matter — privacy topic not supported by the case summary or release headlines
+- DesignerWare, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-designerware-llc-matter — privacy topic not supported by the case summary or release headlines
+- B. Stamper Enterprises, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-b-stamper-enterprises-inc-matter — privacy topic not supported by the case summary or release headlines
+- Showplace, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-showplace-inc-matter — privacy topic not supported by the case summary or release headlines
+- J.A.G. Rents, LLC, also d/b/a ColorTyme, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-jag-rents-llc-also-dba-colortyme-matter — privacy topic not supported by the case summary or release headlines
+- Epic Marketplace, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3182-epic-marketplace-inc — privacy topic not supported by the case summary or release headlines
+- Equifax Information Services LL — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3252-equifax-information-services-ll — privacy topic not supported by the case summary or release headlines
+- Compete, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3155-compete-inc — privacy topic not supported by the case summary or release headlines
+- Google Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/google-inc — privacy topic not supported by the case summary or release headlines
+- PLS Financial Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023172-pls-financial-services-inc-et-al — privacy topic not supported by the case summary or release headlines
+- Direct Lending Source, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3000-direct-lending-source-inc-et-al — privacy topic not supported by the case summary or release headlines
+- Artist Arena LLC, United States of America (for the Federal Trade Commission) — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3167-artist-arena-llc-united-states-america-federal-trade-commission — privacy topic not supported by the case summary or release headlines
+- Spokeo, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023163-spokeo-inc — privacy topic not supported by the case summary or release headlines
+- RockYou, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023120-rockyou-inc — privacy topic not supported by the case summary or release headlines
+- Asset Acceptance, LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/052-3133-asset-acceptance-llc — privacy topic not supported by the case summary or release headlines
+- ScanScout, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3185-scanscout-inc-matter — privacy topic not supported by the case summary or release headlines
+- Frostwire LLC and Angel Leon — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3041-frostwire-llc-angel-leon — privacy topic not supported by the case summary or release headlines
+- W3 Innovations, LLC d/b/a Broken Thumb Apps and Justin Maples, U.S. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3251-w3-innovations-llc-dba-broken-thumb-apps-justin-maples-us — unclear dossier entity.
+- Fajilan and Associates, Inc., also d/b/a Statewide Credit Services, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3089-fajilan-associates-inc-also-dba-statewide-credit-services-matter — unclear dossier entity.
+- Chitika, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023087-chitika-inc-matter — privacy topic not supported by the case summary or release headlines
+- Best Priced Brands, LLC, et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3081-best-priced-brands-llc-et-al — privacy topic not supported by the case summary or release headlines
+- US Search, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/us-search-inc — privacy topic not supported by the case summary or release headlines
+- EchoMetrix, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3006-echometrix-inc — privacy topic not supported by the case summary or release headlines
+
+## FTC case tag 1421, index pages 0–5
+
+- NGL — https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl — privacy topic not supported by the case summary or release headlines
+- Sony BMG Music Entertainment, a general partnership subsidiary of Sony Corporation of America, United States of America (For the Federal Trade Commission) — https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3071-sony-bmg-music-entertainment-general-partnership-subsidiary-sony-corporation-america-united-states — unclear dossier entity.
+- Industrious Kid, Inc. and Jeanette Symons., U.S. (for the FTC) — https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3082-industrious-kid-inc-jeanette-symons-us-ftc — unclear dossier entity.
+- Xanga.com, Inc., John Hiler, and Marc Ginsburg — https://search.ftc.gov/legal-library/browse/cases-proceedings/062-3073-xangacom-inc-john-hiler-marc-ginsburg — unclear dossier entity.
+- Bonzi Software, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/042-3016-bonzi-software-inc — privacy topic not supported by the case summary or release headlines
+- Mrs. Fields Famous Brands, Inc., Mrs. Fields' Holding Company, Inc., and Mrs. Fields' Original Cookies, Inc., U.S. (for the FTC) — https://search.ftc.gov/legal-library/browse/cases-proceedings/mrs-fields-famous-brands-inc-mrs-fields-holding-company-inc-mrs-fields-original-cookies-inc-us-ftc — unclear dossier entity.
+- American Pop Corn Company — https://search.ftc.gov/legal-library/browse/cases-proceedings/012-3026-american-pop-corn-company — privacy topic not supported by the case summary or release headlines
+- Frank, Lisa, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/012-3050-frank-lisa-inc — privacy topic not supported by the case summary or release headlines
+- Monarch Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3375-monarch-services-inc-et-al — unclear dossier entity.
+- Bigmailbox.Com, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3378-bigmailboxcom-inc-et-al — unclear dossier entity.
+- Toysmart.com, LLC, and Toysmart.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/x000075-toysmartcom-llc-toysmartcom-inc — unclear dossier entity.

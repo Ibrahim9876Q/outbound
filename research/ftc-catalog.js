@@ -109,6 +109,8 @@ async function main() {
   const offset = Number(process.argv[2] || 0);
   const pages = Number(process.argv[3] || 3);
   const limit = Number(process.argv[4] || 20);
+  const tag = process.argv[5] || '1420';
+  if (!/^\d+$/.test(tag)) throw new Error('Supply a numeric FTC case tag.');
   const dossier = JSON.parse(await fs.readFile(file, 'utf8'));
   const existing = [...dossier.apps, ...dossier.companies].flatMap((item) => item.incidents);
   const existingUrls = new Set(existing.map(({ source }) => new URL(source.url).pathname));
@@ -119,7 +121,7 @@ async function main() {
     .flatMap((line) => [...line.matchAll(/https:\/\/search\.ftc\.gov\/legal-library\/browse\/cases-proceedings\/[^\s]+/g)])
     .map(([url]) => new URL(url).pathname));
   const index = await Promise.allSettled(Array.from({ length: pages }, (_, i) =>
-    get(base + '/enforcement/cases-proceedings/terms/1420?page=' + (offset + i)).then(parseIndex)));
+    get(base + '/enforcement/cases-proceedings/terms/' + tag + '?page=' + (offset + i)).then(parseIndex)));
   const leads = [...new Map(index.flatMap((item) => item.status === 'fulfilled' ? item.value : [])
     .map((item) => [item.url, item])).values()].filter((item) => {
       const pathname = new URL(item.url).pathname;
@@ -149,7 +151,7 @@ async function main() {
     }
   }
   if (rejects.length) await fs.appendFile(rejectFile,
-    '\n## FTC privacy case index pages ' + offset + '–' + (offset + pages - 1) + '\n\n' + rejects.join('\n') + '\n');
+    '\n## FTC case tag ' + tag + ', index pages ' + offset + '–' + (offset + pages - 1) + '\n\n' + rejects.join('\n') + '\n');
   if (count) {
     dossier.generatedAt = new Date().toISOString();
     dossier.index = buildIndex(dossier.apps);
