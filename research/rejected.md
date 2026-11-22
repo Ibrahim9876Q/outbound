@@ -132,3 +132,26 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Telegram Web ? https://telegram.org/privacy ? duplicate policy and service scope of the Telegram entry
 
 - Tuta Mail ? https://tuta.com/privacy ? response was a product landing page rather than its privacy notice
+
+## apps-07 · 2026-11-22T05:56:54.231Z
+
+- Apple Translate — https://www.apple.com/legal/privacy/data/en/translate/ — curl: (22) The requested URL returned error: 404
+- Safari — https://www.apple.com/legal/privacy/data/en/safari/ — missing evidence: suggestions, search
+- iCloud+ — https://www.apple.com/legal/privacy/data/en/icloud/ — curl: (22) The requested URL returned error: 404
+- Apple Home — https://www.apple.com/legal/privacy/data/en/home/ — curl: (22) The requested URL returned error: 404
+- Google Earth — https://policies.google.com/privacy?hl=en-US — missing evidence: google earth
+- Wear OS — https://support.google.com/wearos/answer/6073590?hl=en — curl: (22) The requested URL returned error: 404
+- Google Messages — https://support.google.com/messages/answer/9327903?hl=en — missing evidence: delivery
+- ChromeOS — https://www.google.com/chromebook/privacy/ — missing evidence: chromebook, diagnostic
+- Cloudflare WARP — https://www.cloudflare.com/application/privacypolicy/ — missing evidence: warp
+- Postman — https://www.postman.com/legal/privacy-policy/ — missing evidence: postman, usage, improve
+- Webex — https://www.cisco.com/c/en/us/about/legal/privacy-full.html — curl: (22) The requested URL returned error: 403
+- Box — https://www.box.com/legal/privacypolicy — curl: (22) The requested URL returned error: 403
+- WeTransfer — https://wetransfer.com/legal/privacy — missing evidence: account
+- LibreOffice — https://www.documentfoundation.org/privacy/ — missing evidence: personal data
+- Vivaldi Webmail — https://vivaldi.com/privacy/vivaldi-net/ — curl: (22) The requested URL returned error: 404
+- Quip — https://quip.com/privacy — curl: (22) The requested URL returned error: 404
+- Shazam — https://www.apple.com/legal/privacy/data/en/shazam/ — curl: (22) The requested URL returned error: 404
+- Garmin Connect — https://www.garmin.com/en-US/privacy/connect/policy/ — missing evidence: activity, location
+- AllTrails — https://www.alltrails.com/privacy — missing evidence: alltrails, location, account
+- MyFitnessPal — https://www.myfitnesspal.com/privacy-policy — missing evidence: nutrition
