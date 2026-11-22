@@ -15,11 +15,16 @@ const rows = [
   ['Cognosphere','Genshin Impact children’s privacy and marketing matter',2025,'Federal Trade Commission',ftc+'222-3152-cognosphere-llc-us-v','Cognosphere','children','The FTC case includes allegations involving children’s information in Genshin Impact.'],
   ['NGL','NGL youth safety and privacy order',2024,'Federal Trade Commission',ftc+'ngl','NGL','children','The FTC case addressed youth privacy and other claims related to the NGL messaging app.'],
   ['Disney','Disney children’s video privacy matter',2025,'Federal Trade Commission',ftc+'disney','Disney','COPPA','The FTC alleged that Disney failed to properly designate some child-directed YouTube videos.'],
-  ['Easy Healthcare','Premom federal stipulated order',2023,'Federal Trade Commission','https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf','Easy Healthcare','Premom','A federal court entered an order related to the Premom fertility app and its handling of health information.'],
+  ['Easy Healthcare Corporation','Premom federal stipulated order',2023,'Federal Trade Commission','https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf','Easy Healthcare','Premom','A federal court entered an order related to the Premom fertility app and its handling of health information.'],
   ['Cerebral','Cerebral telehealth information complaint',2024,'Federal Trade Commission',ftc+'222-3067-cerebral-inc-kyle-robertson-us-v','Cerebral','sensitive','The FTC case alleged improper use or disclosure of sensitive data from users of the telehealth service.'],
 ];
+const earlierDocketTitles = {
+  Disney: ['Disney · FTC case record'],
+  'Easy Healthcare Corporation': ['Easy Healthcare Corporation, U.S. v. · FTC case record'],
+};
 module.exports = rows.map(([id, title, year, publisher, url, entity, evidence, summary]) => ({
   id, company: true, publisher, url, section: 'incidents', creation: [id],
+  replaces: earlierDocketTitles[id],
   terms: [entity, String(year), evidence], claim: {
     title, year, summary, jurisdiction: 'United States', kind: publisher.includes('Attorney General') ? 'settlement' : 'regulator',
   },

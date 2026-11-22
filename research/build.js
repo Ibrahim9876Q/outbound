@@ -27,7 +27,7 @@ async function pdfText(bytes) {
   }
 }
 
-async function verify(url, terms) {
+async function fetchSource(url) {
   if (!url.startsWith('https://')) throw new Error('Source must use HTTPS');
   const { stdout } = await run('curl.exe', ['-fsSL', '--proto', '=https', '--proto-redir', '=https',
     '--max-time', '20', '--max-redirs', '6', '-A', userAgent, url],
@@ -37,6 +37,11 @@ async function verify(url, terms) {
   const html = pdf ? '' : stdout.toString('utf8');
   const content = pdf ? (await pdfText(stdout)).replace(/\s+/g, ' ').trim() : flat(html);
   if (!content || /^(access denied|just a moment|attention required)/i.test(content)) throw new Error('No policy text');
+  return { content, html };
+}
+
+async function verify(url, terms) {
+  const { content, html } = await fetchSource(url);
   const normalized = content.toLowerCase();
   const missing = terms.filter((term) => !normalized.includes(term.toLowerCase()));
   if (missing.length) throw new Error('missing evidence: ' + missing.join(', '));
@@ -139,4 +144,5 @@ async function main() {
   console.log('Accepted ' + accepted + ' of ' + entries.length + ' in ' + batch);
 }
 
-main().catch((error) => { console.error(error.message); process.exitCode = 1; });
+if (require.main === module) main().catch((error) => { console.error(error.message); process.exitCode = 1; });
+module.exports = { fetchSource };

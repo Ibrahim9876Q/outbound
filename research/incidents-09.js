@@ -7,6 +7,10 @@ const incident = (id, title, year, summary, publisher, url, terms, kind = 'regul
 });
 const agency = (id, title, year, summary, url, terms) =>
   incident(id, title, year, summary, 'Federal Trade Commission', url, terms);
+const earlierDocketTitles = {
+  Mobilewalla: ['Mobilewalla, Inc., In the Matter of · FTC case record'],
+  'Gravy Analytics': ['Gravy Analytics, Inc., In the Matter of · FTC case record'],
+};
 module.exports = [
   incident('Sentry', 'Sentry backup exposure', 2016, 'Sentry reported that exposed backups contained user details, including hashed passwords.',
     'Sentry', 'https://blog.sentry.io/security-incident-june-12-2016/', ['Sentry', 'June 12 2016', 'bcrypt-hashed passwords'], 'breach'),
@@ -48,4 +52,4 @@ module.exports = [
     'The FTC alleged a robot toy app allowed a third-party software provider to collect children’s data without parental consent.',
     news + '2025/09/ftc-takes-action-against-robot-toy-maker-allowing-collection-childrens-data-without-parental-consent',
     ['Apitor', 'parental consent', '2025']),
-];
+].map((row) => ({ ...row, replaces: earlierDocketTitles[row.id] }));

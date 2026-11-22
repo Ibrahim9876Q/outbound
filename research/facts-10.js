@@ -21,4 +21,11 @@ module.exports = [
     }, ['Spotify', 'Akamai Technologies AB', 'Data storage and file-sharing Sweden, United States of America']),
     publisher: 'Spotify',
   })),
+  make('Akamai Technologies', 'https://techdocs.akamai.com/datastream2/docs/data-set-parameters', 'declared', {
+    data: 'Requesting client IP address', purpose: 'Akamai lists this field in the DataStream request logs customers can configure.',
+  }, ['DataStream', 'Client IP', 'the IPv4 or IPv6 address of the requesting client']),
+  make('Akamai Technologies', 'https://techdocs.akamai.com/datastream2/reference/destinations', 'sharesWith', {
+    party: 'Customer-selected log destinations, including Amazon S3 and Google Cloud Storage',
+    purpose: 'Deliver DataStream logs to storage or analytics services selected by the customer',
+  }, ['DataStream 2', 'stream logs to third-party destinations', 'Amazon S3', 'Google Cloud Storage']),
 ];
