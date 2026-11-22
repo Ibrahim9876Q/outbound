@@ -352,7 +352,13 @@
       if (parsed.protocol === 'https:' || parsed.protocol === 'http:') url = parsed.href;
     } catch { /* Invalid citations stay plain text. */ }
     const details = [source.publisher || 'Publisher unavailable', source.date || 'Date unavailable'].join(' / ');
-    return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}</small>`;
+    const alternates = (source.alternates || []).flatMap((item) => {
+      try {
+        return new URL(item.url).protocol === 'https:'
+          ? [` / <a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Alternate source</a>`] : [];
+      } catch { return []; }
+    }).join('');
+    return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}${alternates}</small>`;
   }
 
   function renderDossier() {

@@ -1133,7 +1133,15 @@
             "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:43:01.225Z"
+            "fetchedAt": "2026-11-22T05:43:01.225Z",
+            "alternates": [
+              {
+                "url": "https://digprjsurvey.amazon.com/csad/help/node/GX7NJQ4ZB8MHFRNJ",
+                "title": "Amazon.com Privacy Notice",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:02:27.941Z"
+              }
+            ]
           }
         }
       ],
@@ -5465,7 +5473,15 @@
             "url": "https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-of-290-million-euro-on-uber-because-of-transfers-of-drivers-data-to-the-us",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:08:38.699Z"
+            "fetchedAt": "2026-11-22T06:08:38.699Z",
+            "alternates": [
+              {
+                "url": "https://autoriteitpersoonsgegevens.nl/actueel/ap-legt-uber-boete-op-van-290-miljoen-euro-om-doorgifte-data-chauffeurs-naar-vs",
+                "title": "AP legt Uber boete op van 290 miljoen euro om doorgifte data chauffeurs naar VS | Autoriteit Persoonsgegevens",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:02:28.154Z"
+              }
+            ]
           }
         },
         {
@@ -11891,7 +11907,15 @@
             "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:48:36.270Z"
+            "fetchedAt": "2026-11-22T05:48:36.270Z",
+            "alternates": [
+              {
+                "url": "https://digprjsurvey.amazon.com/csad/help/node/GX7NJQ4ZB8MHFRNJ",
+                "title": "Amazon.com Privacy Notice",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:02:27.941Z"
+              }
+            ]
           }
         },
         {
@@ -18319,7 +18343,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:39:48.802Z",
+  "generatedAt": "2026-11-22T09:02:28.155Z",
   "index": {
     "exe": {
       "brave.exe": [
