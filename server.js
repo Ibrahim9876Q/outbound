@@ -129,7 +129,8 @@ const server = http.createServer((req, res) => {
       headers['Content-Disposition'] = `attachment; filename="outbound-${localDate(now)}.md"`;
     }
     res.writeHead(200, headers);
-    return res.end(renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now));
+    return res.end(renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now,
+      network.seenCompanies.namesOn(localDate(now))));
   }
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
