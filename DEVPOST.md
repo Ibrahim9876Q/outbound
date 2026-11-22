@@ -18,7 +18,7 @@ A local Node.js server reads Windows TCP sockets with `netstat -ano` and joins p
 
 We started with the Windows privacy registry, but its timestamps did not update live on our demo PC. We switched to Windows Core Audio capture sessions for the microphone and Media Foundation camera activity for the webcam. Outbound timestamps changes it observes and uses them to update the day's totals.
 
-The Phone gateway models a DNS consent firewall. Its hosted path uses Auth0 CIBA for the Guardian prompt and FGA for timed grants, with revocation checked on later lookups. The tested hosted request stopped before delivery because its approver lacked Guardian enrollment. The labeled offline demo uses real loopback DNS with simulated approval decisions.
+The Phone gateway implements the CIBA prompt and FGA timed-grant flow. Fixture tests exercise approval, expiry and revocation. Our reported hosted request stopped at Guardian enrollment before push delivery, and hosted approval through revocation remains unverified. The labeled offline demo uses real loopback DNS and simulated approval decisions. The desktop's local dry run previews policy commands.
 
 The desktop server binds to loopback. Scan data stays on the PC. SQLite queries select cookie hosts and counts, and the app-folder walk reads file metadata. ASN and geolocation tables are local. Reverse DNS can depend on the system resolver and network access.
 

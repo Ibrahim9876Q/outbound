@@ -1,5 +1,7 @@
 # Backend requests
 
+- Judge QA handoff: see `QA-REPORT-2.md` ranks 2–9. Show scan sections as their arrays arrive while status is running. Replace stale registry “In use,” autorun “Phones home,” and extension “every site” copy with metadata-based labels. Handle skipped View Transitions, signal Globe readiness after filters render, and separate initial scan results from app-data completion. Use public-match and attributed-endpoint language for the corresponding UI. Show a useful error if block preview times out under scan load.
+
 - xray4 UI: section 7 of `CONTRACT-v2.md` covers score factors and coverage, the 30-day history endpoint, research IDs, and retained-array totals. Show null score factors as unknown. Dossier links use an app ID or a `company:` prefix plus the canonical company name. Use the relevant totals to communicate truncated lists.
 
 - xray3 scan panels: see section 6 of `CONTRACT-v2.md` for permissions, installed software, autoruns, extensions, and Windows privacy settings. Show null settings as unavailable. Continue polling while `appDataBackground` is true, even after status becomes done. Disable repeated scans during the continuation and label rows whose `partial` flag is true.
