@@ -216,6 +216,7 @@ const server = http.createServer(async (req, res) => {
       network.seenCompanies.namesOn(localDate(now)));
     return res.end(daily + renderScanAndLinks(scan.result, [...linkWatcher.current.edges.values()]));
   }
+  if (await require('./lib/auth').handle(req, res, url)) return;
   if (await require('./lib/blocker/routes').handle(req, res, url)) return;
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
