@@ -86,3 +86,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 - On port 4319, verified null state before and after a loopback gateway fixture and all five projected fields while it was online.
 - Verified the Markdown content type, no-store response, dated attachment name and GET-only handling. The fixture also covers day rollover, unique totals and overlapping device usage.
 - `npm.cmd test -- --test-isolation=none` passed all nine tests. The sandbox variant runs in-process to avoid subprocess restrictions.
+
+## Discovery improvements
+
+- The PowerShell helper samples the foreground PID roughly once a second. Background counts start after the baseline scan, group processes by executable, and skip unknown or stale foreground readings.
+- Local `data/seen.json` preserves attributed company names and their first observation time across server runs. Company identity follows the available attribution label and can improve when DNS information arrives.
+- The report includes background socket totals and newly seen companies for the local day. All 12 tests and the nine-asset smoke check passed.
