@@ -23,7 +23,28 @@ function ConsentEntries($Root) {
   }
 }
 
+function InstalledSoftware {
+  foreach ($location in @(
+    @{ Path='HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall'; Source='HKLM' },
+    @{ Path='HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall'; Source='HKLM-WOW6432Node' },
+    @{ Path='HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall'; Source='HKCU' }
+  )) {
+    foreach ($entry in Get-ChildItem $location.Path) {
+      $item = Get-ItemProperty $entry.PSPath
+      if (-not $item.DisplayName) { continue }
+      $size = if ($null -ne $item.EstimatedSize) { [long]$item.EstimatedSize * 1024 } else { $null }
+      [pscustomobject]@{ name=$item.DisplayName; publisher=$item.Publisher; version=$item.DisplayVersion
+        installDate=$item.InstallDate; sizeBytes=$size; source=$location.Source; icon=$item.DisplayIcon }
+    }
+  }
+  Get-AppxPackage | ForEach-Object {
+    [pscustomobject]@{ name=$_.Name; publisher=$_.Publisher; version=$_.Version.ToString()
+      installDate=$null; sizeBytes=$null; source='Appx' }
+  }
+}
+
 $rows = switch ($Collector) {
   'permissions' { ConsentEntries 'HKLM:'; ConsentEntries 'HKCU:' }
+  'installed' { InstalledSoftware }
 }
 [Console]::WriteLine((ConvertTo-Json -InputObject @($rows) -Depth 8 -Compress))
