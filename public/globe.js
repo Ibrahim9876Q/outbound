@@ -81,10 +81,10 @@
   const motion = node('button', 'globe-motion');
   motion.type = 'button';
   motion.addEventListener('click', () => setRotation(!rotating));
-  const hqToggle = node('button', 'globe-hq-toggle', 'Company HQ links');
+  const hqToggle = node('button', 'globe-hq-toggle', 'Company HQ reference');
   hqToggle.type = 'button';
   hqToggle.setAttribute('aria-pressed', 'false');
-  hqToggle.title = 'Show headquarters of reported network owners';
+  hqToggle.title = 'Company headquarters reference; these dotted lines do not represent network hops';
   hqToggle.addEventListener('click', async () => {
     if (!headquartersFor) {
       hqToggle.disabled = true;
@@ -118,7 +118,7 @@
     });
     row.append(document.createTextNode(legendLabels[i]));
   });
-  legend.append(node('p', '', 'Motion illustrates active TCP connections.'));
+  legend.append(node('p', '', 'Illustrative packets on observed TCP endpoints.'));
   const legendDisclosure = node('details', 'globe-legend-disclosure');
   legendDisclosure.append(node('summary', '', 'Map legend'), legend);
   wrap.append(legendDisclosure);
@@ -126,7 +126,7 @@
   estimateLegend.append(node('span', 'globe-estimate-key'), document.createTextNode('Country-level estimate'));
   legend.insertBefore(estimateLegend, legend.lastElementChild);
   const hqLegend = node('div');
-  hqLegend.append(node('span', 'globe-hq-key'), document.createTextNode('Network owner headquarters'));
+  hqLegend.append(node('span', 'globe-hq-key'), document.createTextNode('HQ reference / no network hop'));
   hqLegend.hidden = true;
   legend.insertBefore(hqLegend, legend.lastElementChild);
   tip.hidden = true;
@@ -196,20 +196,34 @@
         ]);
       }
     }
-    recentTrail = new Map([...recent].sort((a, b) => b[1][0] - a[1][0] || a[0].localeCompare(b[0])).slice(0, 6));
+    recentTrail = new Map([...recent].sort((a, b) => b[1][0] - a[1][0] || a[0].localeCompare(b[0])).slice(0, 600));
   }
 
   function renderTrail() {
-    const model = JSON.stringify([...recentTrail.values()]);
+    const groups = [];
+    const latest = new Map();
+    for (const [at, app, org, location] of recentTrail.values()) {
+      const key = JSON.stringify([app, org, location]);
+      const group = latest.get(key);
+      if (group && group[0] - at < 10000) {
+        group[4]++;
+      } else {
+        const row = [at, app, org, location, 1];
+        groups.push(row);
+        latest.set(key, row);
+      }
+    }
+    const rows = groups.slice(0, 6);
+    const model = JSON.stringify(rows);
     if (trailList.dataset.model === model) return;
     trailList.dataset.model = model;
     trailEmpty.hidden = recentTrail.size > 0;
-    trailList.replaceChildren(...[...recentTrail.values()].map(([at, app, org, location]) => {
+    trailList.replaceChildren(...rows.map(([at, app, org, location, count]) => {
       const row = node('li');
       const when = node('time', '', trailTime.format(at));
       when.dateTime = new Date(at).toISOString();
       row.append(when);
-      for (const value of [app, org, location]) {
+      for (const value of [app, org + (count > 1 ? ' x' + count : ''), location]) {
         const cell = node('span', '', value);
         cell.title = value;
         row.append(cell);
@@ -409,7 +423,7 @@
           startLat: place.lat, startLng: place.lng, endLat: hq.lat, endLng: hq.lng,
           startAlt: 0.012, endAlt: 0.012, altitude: routeAltitude(place, hq, 0.16, 0.012, 0.24),
           color: '#bcbcbc', phase: 0,
-          hqLabel: 'owned by ' + hq.owner + ' (HQ: ' + hq.city + ')',
+          hqLabel: 'Company reference: ' + hq.owner + ' (HQ: ' + hq.city + ')',
         });
         next.set(id, arc);
       }
@@ -683,7 +697,13 @@
       if (updated) renderPoint(updated);
       else clearPoint();
     }
-    globe.arcsData(makeArcs(located, home)).pointsData(points.filter((point) => !point.approximate));
+    const precise = points.filter((point) => !point.approximate);
+    globe.arcsData(makeArcs(located, home)).pointsData(precise)
+      .labelsData(precise.filter((point) => point.places?.length).map((point) => {
+        const names = [...new Set(point.places.map((place) => place.appName))];
+        const initial = (name) => shared?.util?.initials(name) || name.slice(0, 2).toUpperCase();
+        return { lat: point.lat, lng: point.lng, label: names.slice(0, 2).map(initial).join('/') + (names.length > 2 ? '+' : '') };
+      }));
     updateEstimateMarkers(points);
     pulseDestinations(located);
   }
@@ -714,8 +734,8 @@
         .arcColor((arc) => arc.flash ? trackerColor : arc.color)
         .arcStroke((arc) => arc.flash ? 0.75 : null)
         .arcCurveResolution(40)
-        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.24 : 0.58) : 1)
-        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.22 : 0)
+        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.045 : 0.085) : 1)
+        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.25 : 0)
         .arcLabel((arc) => arc.hqLabel ? node('div', 'globe-hq-label', arc.hqLabel) : '')
         .arcDashInitialGap('phase')
         .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
@@ -738,6 +758,12 @@
         .ringMaxRadius(2.8)
         .ringPropagationSpeed(3)
         .ringRepeatPeriod(0)
+        .labelText('label')
+        .labelSize(0.85)
+        .labelAltitude(0.012)
+        .labelIncludeDot(false)
+        .labelColor(() => '#fff')
+        .labelsTransitionDuration(0)
         .pointerEventsFilter((object, data) => ['point', 'globe'].includes(object.__globeObjType)
           || (object.__globeObjType === 'arc' && Boolean(data?.hqLabel)))
         .onPointHover((point) => {

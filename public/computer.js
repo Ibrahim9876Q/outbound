@@ -750,7 +750,7 @@
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     html += appXray(app);
     if (app.destinations.length) {
-      html += '<div class="detail-sub">Sends data to</div><ul class="dests">';
+      html += '<div class="detail-sub">Connected to endpoints attributed to</div><ul class="dests">';
       html += app.destinations.slice(0, 40).map((d) => {
         const where = [d.city, d.country ? countryName(d.country) : null].filter(Boolean).join(', ') || 'Unknown location';
         const host = d.host ? `<code>${esc(d.host)}</code>` : `<code>${esc(d.ip)}</code>`;
@@ -945,7 +945,7 @@
     const busiest = apps.filter((a) => a.companies).sort((a, b) => b.companies - a.companies)[0];
     if (busiest) {
       const countries = new Set(busiest.destinations.map((d) => d.country).filter(Boolean)).size;
-      steps.push({ id: busiest.id, text: `${busiest.name} sends data to ${busiest.companies} companies in ${countries} countr${countries === 1 ? 'y' : 'ies'}` });
+      steps.push({ id: busiest.id, text: `${busiest.name} connected to endpoints attributed to ${busiest.companies} companies in ${countries} countr${countries === 1 ? 'y' : 'ies'}` });
     }
     const tracked = apps.find((a) => a.trackers);
     if (tracked) {
