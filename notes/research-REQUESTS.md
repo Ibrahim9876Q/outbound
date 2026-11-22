@@ -1,5 +1,8 @@
 # Research and policy integration
 
+- Read `GET /auth/me` on load. When `enabled` and `configured` are true, link to `/auth/login` for signed-out users. Display `user.name` as text and link to `/auth/logout` when signed in. If enabled with missing settings, display the configuration error. Keep local controls available when login is disabled.
+- Policy creation still returns HTTP 201. Auth0 requests return `status: "pending"`, `requestId`, the exact phone `bindingMessage`, `expiresAt` (epoch milliseconds), and `retryAfterMs`. Show the binding message beside a pending phone status. Poll same-origin `GET /api/policy/requests/<requestId>` after the indicated interval until `approved` or `denied`, then render the returned plan or error. `GET /api/policy` exposes pending request IDs in `rule.approval` so the UI can resume after reload. Handle 401 by prompting sign-in and 404 as an unavailable request.
+
 - The app rule route now resolves running executables server-side when no path is supplied. Treat a plan row with an empty `command` as an explanation and render its `reason`. Multiple resolved executables produce multiple command rows.
 - `research.json#index` has `exe` and `domain` maps. Lowercase executable basenames and remove a domain's final dot before lookup. For hostnames, try the full name before walking ancestor suffixes by DNS label. Values are arrays of app IDs, since several products can share a domain. A shared-domain match alone does not identify the app responsible for a connection.
 

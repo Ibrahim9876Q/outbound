@@ -1,0 +1,20 @@
+model
+  schema 1.1
+
+type user
+
+type app
+  relations
+    define blocked: [user]
+
+type company
+  relations
+    define blocked: [user]
+
+type domain
+  relations
+    define blocked: [user]
+
+type policy_rule
+  relations
+    define approved: [user]
