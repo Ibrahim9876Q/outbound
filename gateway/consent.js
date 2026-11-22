@@ -72,7 +72,7 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       request.expiresAt = auth.deadline;
       const result = await ciba.waitForDecision(auth);
       if (result !== 'approved') {
-        decisions.set(domain, { state: result });
+        decisions.set(domain, { state: result, requestCode: code });
         return;
       }
       request.state = 'saving';
@@ -84,7 +84,7 @@ function createConsent({ fga, ciba, grantMinutes, catalogPath }) {
       decisions.delete(domain);
     } catch (error) {
       const match = error.message.match(/^(?:Guardian|FGA) [a-z ]+failed \(HTTP \d{3}\)\.$/);
-      decisions.set(domain, { state: 'failed', reason: match?.[0] || 'Could not complete the Auth0 request.' });
+      decisions.set(domain, { state: 'failed', requestCode: code, reason: match?.[0] || 'Could not complete the Auth0 request.' });
     } finally {
       pending = null;
       nextRefresh = 0;

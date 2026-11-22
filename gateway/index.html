@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Phone | Outbound</title>
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/phone.css">
   <script defer src="/phone.js"></script>
 </head>
@@ -16,9 +17,11 @@
     <section id="phone-demo" class="phone-card phone-demo" hidden aria-label="Laptop-only demo">
       <strong id="phone-demo-label">Laptop DNS test</strong>
       <p id="phone-demo-description"></p>
+      <button type="button" class="phone-button" id="phone-self-test">RUN CONSENT SELF-TEST</button>
       <button type="button" class="phone-button" data-demo="lookup">Look up tracker</button>
       <button type="button" class="phone-button" data-demo="approve" disabled>Approve demo request</button>
       <button type="button" class="phone-button" data-demo="deny" disabled>Deny demo request</button>
+      <div id="phone-terminal" class="phone-terminal" role="log" aria-label="Consent self-test log" hidden></div>
     </section>
     <section class="phone-intro" aria-labelledby="phone-title">
       <div>
@@ -61,6 +64,14 @@
       </section>
     </div>
     <p class="phone-footnote">DNS shows domain lookups. The feed covers traffic sent to this resolver. Encrypted DNS, cached addresses and direct IP connections can bypass it.</p>
+    <details class="phone-card phone-explainer">
+      <summary>How Auth0 powers tracker consent</summary>
+      <ul>
+        <li>Auth0 FGA stores a consent tuple for each approved tracker with an expiry and checks it on DNS lookups.</li>
+        <li>Auth0 CIBA sends an approval push to the enrolled phone while the gateway polls for the decision.</li>
+        <li>Revoking consent deletes the FGA tuple so future tracker lookups are blocked.</li>
+      </ul>
+    </details>
   </main>
 </body>
 </html>

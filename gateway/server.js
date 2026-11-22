@@ -6,13 +6,14 @@ const dns = require('node:dns');
 const { startDns } = require('./dns');
 const { createFga, createCiba } = require('./auth0');
 const { createConsent, ConsentError } = require('./consent');
-const { createDemo, lookupTracker } = require('./demo');
+const { createDemo, lookupTracker, DOMAIN } = require('./demo');
 
 const DASHBOARD_PORT = 4320;
 const LOOPBACK = '127.0.0.1';
 const ROOT = path.join(__dirname, '..');
 const DASHBOARD_HOSTS = new Set([LOOPBACK + ':' + DASHBOARD_PORT, 'localhost:' + DASHBOARD_PORT]);
 const ASSETS = {
+  '/style.css': ['text/css', path.join(ROOT, 'public', 'style.css')],
   '/': ['text/html', path.join(__dirname, 'index.html')],
   '/phone.js': ['text/javascript', path.join(ROOT, 'public', 'phone.js')],
   '/phone.css': ['text/css', path.join(ROOT, 'public', 'phone.css')],
@@ -100,10 +101,14 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
       }
       if (laptop && req.url === '/api/demo/lookup') {
         try {
-          return json(res, 200, { message: await lookupTracker(dnsListener.port) });
+          const message = await lookupTracker(dnsListener.port);
+          return json(res, 200, { message, blocked: message === 'Lookup blocked.' });
         } catch {
           return json(res, 500, { error: 'Laptop DNS lookup failed.' });
         }
+      }
+      if (laptop && req.url === '/api/demo/check') {
+        return json(res, 200, { allowed: await consent.allowTracker(DOMAIN) });
       }
       if (demo && ['/api/demo/approve', '/api/demo/deny'].includes(req.url)) {
         const accepted = demo.decide(req.url.endsWith('/approve') ? 'approved' : 'denied');
@@ -129,7 +134,7 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
     if (req.url === '/api/state') {
       return json(res, 200, {
         dns: { host: config.host, port: dnsListener.port },
-        stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo),
+        stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo), testDomain: laptop ? DOMAIN : null,
       });
     }
     const asset = assets.get(req.url);

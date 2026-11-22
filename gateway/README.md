@@ -4,10 +4,13 @@
 
 Stop any gateway already using port 4320, then run `node gateway/server.js --demo` and open the [Phone dashboard](http://127.0.0.1:4320/).
 
-1. Click **Look up tracker** to see a blocked lookup.
-2. Click **Request demo approval**, then **Deny demo request**. Look up the tracker again to confirm it is blocked.
-3. Request approval again and click **Approve demo request**. Look up the tracker to see the approved DNS response.
-4. Click **Revoke**, then look up the tracker again. A one-minute approval also expires automatically.
+1. Click **RUN CONSENT SELF-TEST**. Say “Outbound sent a DNS lookup, blocked the tracker, and requested approval.”
+2. Click **Approve demo request** when prompted. Say “The Auth0 decision is simulated in offline mode. The DNS requests are real.”
+3. Point to **APPROVED** and **SIMULATED FGA CHECK** in the terminal. Say “The next lookup resolved with an approval that expires after one minute.”
+4. Open **How Auth0 powers tracker consent**. Say “CIBA asks for consent on the enrolled phone. FGA stores it with an expiry.”
+5. Click **Revoke**, then **Look up tracker**. Say “Revocation deletes the stored approval. The tracker is blocked on the next lookup.”
+
+Use **Deny demo request** to rehearse the denial path. The separate **Look up tracker** and **Request demo approval** buttons are available for a manual walkthrough. See the [timed judging script](../DEMO.md#phone-consent-firewall) for the live and offline lines.
 
 The **DEMO DATA** banner identifies simulated Auth0 decisions. The gateway processes actual loopback DNS requests and uses an offline fixture answer. Demo approvals stay in memory and reset on restart.
 

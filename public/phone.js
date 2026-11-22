@@ -23,6 +23,7 @@
   let feedKey;
   let trackersKey;
   let busy = false;
+  let testing = false;
 
   function node(tag, text, className) {
     const element = document.createElement(tag);
@@ -104,11 +105,12 @@
     const { dns, stats, consent } = state;
     const demoPanel = byId('demo');
     demoPanel.hidden = !state.laptop;
+    byId('self-test').disabled = testing || busy || consent.pending;
     byId('demo-label').textContent = state.demo ? 'DEMO DATA' : 'Laptop DNS test';
     byId('demo-description').textContent = state.demo ?
       'Simulated Auth0 approval with real loopback DNS. Runs offline on this laptop.' :
       'Send a lookup from this laptop and approve it on your enrolled phone.';
-    for (const button of demoPanel.querySelectorAll('button')) {
+    for (const button of demoPanel.querySelectorAll('button[data-demo]')) {
       button.hidden = !state.demo && button.dataset.demo !== 'lookup';
       button.disabled = busy || (button.dataset.demo !== 'lookup' &&
         !consent.trackers.some((tracker) => tracker.state === 'pending'));
@@ -139,6 +141,69 @@
     }
   }
 
+  async function post(url) {
+    const response = await fetch(url, {
+      method: 'POST', headers: { 'X-Outbound-Action': '1' }, signal: AbortSignal.timeout(15000),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error);
+    return result;
+  }
+
+  async function runSelfTest() {
+    if (!state?.laptop || testing) return;
+    testing = true;
+    render();
+    const terminal = byId('terminal');
+    terminal.hidden = false;
+    terminal.replaceChildren();
+    const log = (message, blocked = false) => {
+      const line = node('div', '[' + time.format(Date.now()) + '] ' + message);
+      if (blocked) line.dataset.blocked = '';
+      terminal.append(line);
+      terminal.scrollTop = terminal.scrollHeight;
+    };
+    const domain = state.testDomain;
+    const query = 'QUERY ' + domain + ' via ' + state.dns.host + ' … ';
+    try {
+      if (!(await post('/api/demo/lookup')).blocked) {
+        log(query + 'ALLOWED. Revoke the existing approval and run again.');
+        return;
+      }
+      log(query + 'BLOCKED', true);
+      const request = await post('/api/trackers/' + encodeURIComponent(domain) + '/request');
+      log('APPROVAL REQUESTED · ref ' + request.code);
+      let announcedPending = false;
+      const deadline = Date.now() + 330000;
+      while (Date.now() < deadline) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        const tracker = state.consent.trackers.find((entry) => entry.domain === domain);
+        if (tracker?.state === 'pending' && tracker.code === request.code && !announcedPending) {
+          log(state.demo ? 'WAITING · choose Approve or Deny above.' : 'WAITING · respond on your enrolled phone.');
+          announcedPending = true;
+        }
+        if (tracker?.state === 'approved') {
+          if ((await post('/api/demo/lookup')).blocked) throw new Error('The approved lookup was blocked.');
+          log(query + 'APPROVED');
+          const { allowed } = await post('/api/demo/check');
+          log((state.demo ? 'SIMULATED FGA CHECK' : 'FGA CHECK') + (allowed ? ' · ALLOWED' : ' · NOT ALLOWED'));
+          if (!allowed) throw new Error('The approval could not be verified.');
+          return;
+        }
+        if (tracker?.requestCode === request.code && ['denied', 'expired', 'failed'].includes(tracker.state)) {
+          log('STOPPED · ' + (tracker.reason || tracker.state.toUpperCase()));
+          return;
+        }
+      }
+      log('STOPPED · approval timed out.');
+    } catch (error) {
+      log('STOPPED · ' + error.message);
+    } finally {
+      testing = false;
+      render();
+    }
+  }
+
   async function changeConsent(event) {
     const button = event.target.closest('button[data-action], button[data-demo]');
     if (!button || busy) return;
@@ -151,11 +216,7 @@
     render();
     try {
       const url = demo ? '/api/demo/' + demo : '/api/trackers/' + encodeURIComponent(domain) + '/' + action;
-      const response = await fetch(url, {
-        method: 'POST', headers: { 'X-Outbound-Action': '1' }, signal: AbortSignal.timeout(15000),
-      });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error);
+      const result = await post(url);
       message.textContent = result.message || (action === 'request' ? 'Check the request below for ' + domain + '.' :
         'Revoked approval for ' + domain + '.');
     } catch (error) {
@@ -186,5 +247,6 @@
   filter.addEventListener('change', renderFeed);
   byId('trackers').addEventListener('click', changeConsent);
   byId('demo').addEventListener('click', changeConsent);
+  byId('self-test').addEventListener('click', runSelfTest);
   void poll();
 })();
