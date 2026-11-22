@@ -227,6 +227,16 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 @keyframes view-exit { to { opacity: 0; transform: translateX(-8px); } }
 @keyframes view-enter { from { opacity: 0; transform: translateX(8px); } }
 #view-phone { display: block; padding: 18px; }
+.view.intel-view { display: block; padding: 18px; overflow: auto; }
+.intel-heading { display: grid; gap: 8px; margin-bottom: 12px; }
+.intel-heading p, .intel-muted { color: var(--muted); }
+.intel-heading button { justify-self: start; }
+.intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 12px; margin-top: 12px; align-items: start; }
+.intel-grid .card { padding: 14px; overflow-wrap: anywhere; }
+.intel-grid h3 { margin: 10px 0 4px; font-size: 14px; }
+.intel-grid li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+.intel-grid a { text-decoration: underline; }
+.intel-link { color: inherit; background: none; border: 0; text-decoration: underline; padding: 0; cursor: pointer; }
 
 .session-strip {
   flex: none;
