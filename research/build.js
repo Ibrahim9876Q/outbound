@@ -84,6 +84,7 @@ async function main() {
         }
         if (!target) { rejected.push('- ' + row.id + ' — no verified parent entry'); continue; }
         const { section, ...claim } = entry;
+        if (row.company && row.aliases) target.aliases = [...new Set([...target.aliases, ...row.aliases])];
         const key = section === 'incidents' ? 'title' : section === 'destinations' ? 'country' : 'party';
         target[section] = target[section].filter((existing) => existing[key] !== claim[key]);
         target[section].push(claim);
@@ -94,7 +95,11 @@ async function main() {
           incidents: previous?.incidents || [], declared: entry.declared });
       } else {
         const previous = dossier.apps.find((app) => app.id === entry.id);
-        if (previous) entry.incidents = previous.incidents;
+        if (previous) {
+          entry.incidents = previous.incidents;
+          entry.sharesWith = previous.sharesWith;
+          entry.destinations = previous.destinations;
+        }
         dossier.apps = dossier.apps.filter((app) => app.id !== entry.id);
         dossier.apps.push(entry);
       }

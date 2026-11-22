@@ -8,7 +8,6 @@ module.exports = [
   ['life360','Life360','Life360','location',null,'life360.com','https://www.life360.com/privacy_policy/','Precise location and driving data','Provide family location and safety features',['life360','precise location','driving']],
   ['avast','Avast','Gen Digital','security','avastui.exe','avast.com','https://www.avast.com/privacy-policy','Product usage and device information','Operate and improve security products',['avast','device','improve']],
   ['mcafee','McAfee','McAfee','security','mcafee.exe','mcafee.com','https://www.mcafee.com/en-us/consumer-support/policy/legal.html','Device information','Operate and protect services',['mcafee','device','protect']],
-  ['norton','Norton','Gen Digital','security',null,'norton.com','https://www.norton.com/privacy','Product usage and device information','Provide and enhance services',['norton','device','services']],
   ['ccleaner','CCleaner','Gen Digital','utility','ccleaner64.exe','ccleaner.com','https://www.ccleaner.com/legal/general-privacy-policy','Product usage and device information','Support and improve the product',['ccleaner','device','improve']],
   ['utorrent','µTorrent','Rainberry','utility','utorrent.exe','utorrent.com','https://www.utorrent.com/legal/privacy/','Device and usage data','Operate and improve the service',['utorrent','device','improve']],
   ['vlc','VLC','VideoLAN','video','vlc.exe','videolan.org','https://www.videolan.org/privacy.html','IP address when visiting VideoLAN websites','Operate the site and produce aggregate statistics',['videolan','ip address','statistics']],

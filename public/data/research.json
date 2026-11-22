@@ -130,8 +130,34 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Cloud hosting providers such as Google",
+          "purpose": "Host Discord data and services.",
+          "source": {
+            "title": "Privacy Policy | Discord",
+            "publisher": "Discord",
+            "url": "https://discord.com/privacy/policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.469Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Discord says it processes and stores information on servers in the United States.",
+          "source": {
+            "title": "Privacy Policy | Discord",
+            "publisher": "Discord",
+            "url": "https://discord.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.387Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -465,7 +491,80 @@
         }
       ],
       "sharesWith": [],
-      "destinations": [],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Slack identifies the United States as a destination for possible personal-data transfers.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.638Z"
+          }
+        },
+        {
+          "country": "Australia",
+          "note": "Listed by Slack among possible transfer locations covered by its contractual safeguards.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.599Z"
+          }
+        },
+        {
+          "country": "Canada",
+          "note": "Listed by Slack among possible transfer locations covered by its contractual safeguards.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.599Z"
+          }
+        },
+        {
+          "country": "India",
+          "note": "Listed by Slack among possible transfer locations covered by its contractual safeguards.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.599Z"
+          }
+        },
+        {
+          "country": "Japan",
+          "note": "Listed by Slack among possible transfer locations covered by its contractual safeguards.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.599Z"
+          }
+        },
+        {
+          "country": "South Korea",
+          "note": "Listed by Slack among possible transfer locations covered by its contractual safeguards.",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://app.slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:13.599Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -3639,6 +3738,688 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "apple-health",
+      "name": "Apple Health",
+      "publisher": "Apple",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health app data governed by the user’s sharing settings",
+          "purpose": "Organize health information",
+          "source": {
+            "title": "Legal - Health App &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/health-app/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:46.939Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-camera",
+      "name": "Apple Camera",
+      "publisher": "Apple",
+      "category": "photo",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Photo metadata including location when enabled",
+          "purpose": "Provide photo features",
+          "source": {
+            "title": "Legal - Camera and ARKit &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/camera/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:46.784Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-siri",
+      "name": "Siri",
+      "publisher": "Apple",
+      "category": "assistant",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Voice requests and related context",
+          "purpose": "Process Siri and dictation requests",
+          "source": {
+            "title": "Legal - Siri, Dictation &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/ask-siri-dictation/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:46.781Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-game-center",
+      "name": "Game Center",
+      "publisher": "Apple",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Player profile and game activity",
+          "purpose": "Provide gaming and social features",
+          "source": {
+            "title": "Legal - Game Center &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/game-center/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:47.009Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-find-my",
+      "name": "Find My",
+      "publisher": "Apple",
+      "category": "location",
+      "processNames": [],
+      "domains": [
+        "icloud.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location information under Find My settings",
+          "purpose": "Help locate devices and shared contacts",
+          "source": {
+            "title": "Legal - Find My &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/find-my/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:47.022Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-messages",
+      "name": "Apple Messages",
+      "publisher": "Apple",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Phone or email identifiers for iMessage",
+          "purpose": "Route messaging and account registration",
+          "source": {
+            "title": "Legal - Messages &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/messages/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:47.954Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-news",
+      "name": "Google News",
+      "publisher": "Google",
+      "category": "news",
+      "processNames": [],
+      "domains": [
+        "news.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Reading and account activity where enabled",
+          "purpose": "Customize news suggestions",
+          "source": {
+            "title": "How Google News stories are selected - Google News Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/googlenews/answer/9005749?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:48.814Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-translate",
+      "name": "Google Translate",
+      "publisher": "Google",
+      "category": "utility",
+      "processNames": [],
+      "domains": [
+        "translate.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Text entered for translation",
+          "purpose": "Provide language translation",
+          "source": {
+            "title": "Translate written words - Computer - Google Translate Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/translate/answer/6142478?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:48.475Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "publisher": "Google",
+      "category": "operating system",
+      "processNames": [],
+      "domains": [
+        "android.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device usage and diagnostics if enabled",
+          "purpose": "Improve Android products and services",
+          "source": {
+            "title": "Share usage &amp; diagnostics information with Google - Google Account Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/accounts/answer/6078260?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:48.740Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "youtube-kids",
+      "name": "YouTube Kids",
+      "publisher": "Google",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "youtubekids.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "App activity and device information under the children’s service notice",
+          "purpose": "Operate and improve YouTube Kids",
+          "source": {
+            "title": "YouTube Kids Privacy Notice - YouTube",
+            "publisher": "Google",
+            "url": "https://kids.youtube.com/t/privacynotice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:49.298Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "publisher": "GitLab",
+      "category": "developer",
+      "processNames": [],
+      "domains": [
+        "gitlab.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Provide and improve GitLab services",
+          "source": {
+            "title": "GitLab Privacy Statement",
+            "publisher": "GitLab",
+            "url": "https://about.gitlab.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:49.344Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "docker-desktop",
+      "name": "Docker Desktop",
+      "publisher": "Docker",
+      "category": "developer",
+      "processNames": [],
+      "domains": [
+        "docker.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and telemetry information under Docker’s policy",
+          "purpose": "Operate and improve Docker products",
+          "source": {
+            "title": "Docker Privacy | Docker",
+            "publisher": "Docker",
+            "url": "https://www.docker.com/legal/docker-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:49.665Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains IDEs",
+      "publisher": "JetBrains",
+      "category": "developer",
+      "processNames": [],
+      "domains": [
+        "jetbrains.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and product usage information",
+          "purpose": "Provide and improve JetBrains tools",
+          "source": {
+            "title": "Privacy Notice",
+            "publisher": "JetBrains",
+            "url": "https://www.jetbrains.com/legal/docs/privacy/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:49.585Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "zoom-rooms",
+      "name": "Zoom Rooms",
+      "publisher": "Zoom",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "zoom.us"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and meeting use information under Zoom’s general policy",
+          "purpose": "Provide and improve collaboration services",
+          "source": {
+            "title": "Zoom Privacy Statement | Zoom",
+            "publisher": "Zoom",
+            "url": "https://www.zoom.com/en/trust/privacy/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:49.613Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "docusign",
+      "name": "Docusign",
+      "publisher": "Docusign",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "docusign.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and transaction information",
+          "purpose": "Provide e-signing services",
+          "source": {
+            "title": "Privacy Notice | DocuSign",
+            "publisher": "Docusign",
+            "url": "https://www.docusign.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:51.381Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "thunderbird",
+      "name": "Thunderbird",
+      "publisher": "Mozilla",
+      "category": "email",
+      "processNames": [],
+      "domains": [
+        "thunderbird.net"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Technical or interaction data under Thunderbird settings",
+          "purpose": "Operate and improve Thunderbird",
+          "source": {
+            "title": "Thunderbird Privacy Policy — Thunderbird",
+            "publisher": "Mozilla",
+            "url": "https://www.thunderbird.net/en-US/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:50.932Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vivaldi",
+      "name": "Vivaldi",
+      "publisher": "Vivaldi Technologies",
+      "category": "browser",
+      "processNames": [],
+      "domains": [
+        "vivaldi.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Installation and version information described by Vivaldi",
+          "purpose": "Measure active installations and operate updates",
+          "source": {
+            "title": "Vivaldi Browser privacy policy | Vivaldi Browser",
+            "publisher": "Vivaldi Technologies",
+            "url": "https://vivaldi.com/privacy/browser/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:51.460Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "deepl",
+      "name": "DeepL",
+      "publisher": "DeepL",
+      "category": "translation",
+      "processNames": [],
+      "domains": [
+        "deepl.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Text entered for translation depending on product settings",
+          "purpose": "Provide translation services",
+          "source": {
+            "title": "DeepL Privacy Policy | Protecting Your Privacy Is Important To Us",
+            "publisher": "DeepL",
+            "url": "https://www.deepl.com/en/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:52.720Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "strava",
+      "name": "Strava",
+      "publisher": "Strava",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "strava.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Activity and location information",
+          "purpose": "Track and share fitness activity",
+          "source": {
+            "title": "Strava privacy notice",
+            "publisher": "Strava",
+            "url": "https://www.strava.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:53.423Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fitbit",
+      "name": "Fitbit",
+      "publisher": "Google",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "fitbit.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Activity and device information",
+          "purpose": "Provide fitness and wellness features",
+          "source": {
+            "title": "Fitbit Privacy Policy - Help",
+            "publisher": "Google",
+            "url": "https://www.fitbit.com/global/us/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:53.289Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "headspace",
+      "name": "Headspace",
+      "publisher": "Headspace",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "headspace.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and service use information",
+          "purpose": "Provide and personalize wellbeing services",
+          "source": {
+            "title": "Headspace Privacy Policy",
+            "publisher": "Headspace",
+            "url": "https://www.headspace.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:54.220Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "calm",
+      "name": "Calm",
+      "publisher": "Calm",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "calm.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Provide meditation and wellbeing services",
+          "source": {
+            "title": "Calm - Privacy Policy",
+            "publisher": "Calm",
+            "url": "https://www.calm.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:56:54.230Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -3874,12 +4655,31 @@
     },
     {
       "name": "Outlogic",
-      "aliases": [],
+      "aliases": [
+        "X-Mode Social",
+        "X-Mode"
+      ],
       "hq": {
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "X-Mode and Outlogic location-data action",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC announced restrictions on sharing or selling sensitive location data to settle allegations involving location sales and inadequate safeguards.",
+          "source": {
+            "title": "FTC Order Prohibits Data Broker X-Mode Social and Outlogic from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2024/01/ftc-order-prohibits-data-broker-x-mode-social-outlogic-selling-sensitive-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:58:15.922Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Location and device information",
@@ -4077,5 +4877,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T05:54:45.494Z"
+  "generatedAt": "2026-11-22T05:58:15.922Z"
 }
