@@ -503,6 +503,32 @@
         rate: kind === 'local' && link.active ? 2.2 : 0,
       });
     }
+    const kinds = new Set(['loopback', 'parent', 'pipe', 'udp', 'shared-company', 'shared-tracker']);
+    const appNames = new Map();
+    for (const { app } of icons.values()) {
+      appNames.set(app.name.toLowerCase(), appNames.has(app.name.toLowerCase()) ? null : app.id);
+    }
+    const resolve = (name) => icons.has(name) ? name : appNames.get(String(name).toLowerCase());
+    for (const link of state.links) {
+      if (!kinds.has(link.kind)) continue;
+      const from = resolve(link.from);
+      const to = resolve(link.to);
+      const hub = String(link.to).startsWith('company:') && visibleOrgs.get(link.to.slice(8));
+      const a = iconPoint(from, 'center');
+      const b = hub ? chipAnchor(hub) : iconPoint(to, 'center');
+      if (!a || !b) continue;
+      const dist = Math.hypot(b.x - a.x, b.y - a.y);
+      const lift = Math.max(24, Math.min(80, dist * 0.35));
+      const self = !dist;
+      const pts = [a, { x: a.x + (self ? 38 : 0), y: a.y - lift },
+        { x: b.x + (self ? 38 : 0), y: b.y + (self ? lift : -lift) }, b];
+      specs.push({
+        key: link.id || [link.kind, link.from, link.to].join('|'), kind: link.kind,
+        apps: [from, to].filter(Boolean), active: true, tracker: link.kind === 'shared-tracker',
+        pts, dist, evidence: [link.confidence, link.evidence].filter(Boolean).join(' / '),
+        rate: link.kind === 'loopback' ? 2.2 : 0,
+      });
+    }
     return specs;
   }
 
@@ -514,6 +540,7 @@
   function groupLinks(links) {
     const pairs = new Map();
     for (const link of links) {
+      if (link.kind !== 'local' && link.kind !== 'shared') continue;
       const kind = link.kind === 'local' ? 'local' : 'shared';
       if (kind === 'shared' && INFRA_ORG.test(link.via) && selected !== link.from && selected !== link.to) continue;
       const [from, to] = [link.from, link.to].sort();
@@ -590,6 +617,11 @@
       const d = pathD(spec.pts);
       if (w.d !== d) { w.d = d; w.path.setAttribute('d', d); }
       w.path.setAttribute('class', `wire ${w.kind}${w.tracker ? ' tracker' : ''}${w.active ? '' : ' closed'}${hi ? ' hi' : ''}`);
+      if (spec.evidence) {
+        let title = w.path.querySelector('title');
+        if (!title) title = w.path.appendChild(document.createElementNS(SVG_NS, 'title'));
+        title.textContent = spec.evidence;
+      }
       if (w.label) w.label.setAttribute('class', `wire-label shared${hi ? ' hi' : ''}`);
     }
     for (const [key, w] of wires) {
@@ -633,7 +665,7 @@
     node.setAttribute('fill', color);
     node.setAttribute('class', `packet ${w.kind}${selected && !w.apps.includes(selected) ? ' dim' : ''}`);
     node.style.display = '';
-    const dur = w.kind === 'local' ? 0.9 + Math.random() * 0.3 : 1.2 + Math.random() * 0.7;
+    const dur = Math.max(0.42, 1.5 - w.rate * 0.14) + Math.random() * 0.22;
     packets.push({ wire: w, t: 0, dur, dir, node });
   }
 
@@ -644,7 +676,7 @@
     const show = { out: $('show-out').checked, local: $('show-local').checked };
     if (!reducedMotion.matches) {
       for (const w of wires.values()) {
-        if (!w.rate || !show[w.kind] || !wires.has(w.path.dataset.key)) continue;
+        if (!w.rate || !(show[w.kind] ?? show.local) || !wires.has(w.path.dataset.key)) continue;
         w.acc += w.rate * dt;
         while (w.acc >= 1) {
           w.acc -= 1;
@@ -666,7 +698,7 @@
       const pt = bezier(p.wire.pts, t);
       p.node.setAttribute('cx', pt.x.toFixed(1));
       p.node.setAttribute('cy', pt.y.toFixed(1));
-      p.node.setAttribute('opacity', Math.min(1, p.t * 8, (1 - p.t) * 6).toFixed(2));
+      p.node.setAttribute('opacity', (Math.min(1, p.t * 8, (1 - p.t) * 6) * Math.min(1, 0.52 + p.wire.rate / 9)).toFixed(2));
     }
   }
 
