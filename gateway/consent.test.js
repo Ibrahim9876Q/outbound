@@ -7,6 +7,35 @@ const { createConsent } = require('./consent');
 
 const domain = 'google-analytics.com';
 
+test('Auth0 failures preserve safe provider detail and explain missing Guardian enrollment', async () => {
+  const secret = 'fixture secret & value';
+  const detail = 'No eligible notification channels were found. guardian-push: User does not have push notifications set up';
+  const ciba = createCiba({
+    issuer: 'https://tenant.example/', subject: 'auth0|fixture', clientSecret: secret,
+  }, async () => Response.json({
+    error: 'invalid_request', error_description: detail + ' ' + secret + ' ' + encodeURIComponent(secret),
+  }, { status: 400 }));
+
+  await assert.rejects(ciba.start('Outbound ref 123456'), (error) => {
+    assert.equal(error.source, 'CIBA');
+    assert.ok(error.message.startsWith('Phone not enrolled in Auth0 Guardian. Open the enrollment email, scan with the Guardian app, then retry.'));
+    assert.ok(error.message.includes(detail));
+    assert.ok(!error.message.includes(secret));
+    assert.ok(!error.message.includes(encodeURIComponent(secret)));
+    return true;
+  });
+
+  const fga = createFga({ subject: 'fixture', key: Buffer.alloc(32), clientSecret: secret }, async () =>
+    Response.json({ error_description: 'Client has no store access. Bearer fixture-access-token' }, { status: 401 }));
+  await assert.rejects(fga.check(domain), (error) => {
+    assert.equal(error.source, 'FGA');
+    assert.match(error.message, /Check the FGA credentials and permissions/);
+    assert.match(error.message, /Client has no store access/);
+    assert.ok(!error.message.includes('fixture-access-token'));
+    return true;
+  });
+});
+
 test('FGA uses opaque tuple IDs and checks expiry and revocation at the store', async () => {
   const config = {
     api: 'https://api.us1.fga.dev/', store: 'test-store', model: 'test-model',
