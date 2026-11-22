@@ -437,6 +437,7 @@
   });
 
   let policy;
+  let policyRevision = 0;
   let dashboardAuth;
   let authLoaded = false;
   const authNeedsSignIn = () => dashboardAuth?.enabled && !dashboardAuth.user;
@@ -527,9 +528,11 @@
       return;
     }
     const auth0 = policy.auth0Configured ?? policy.providerConfigured;
-    $('rules-provider').textContent = 'Decision provider: ' + policy.provider
-      + ' / Auth0: ' + (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured')
-      + ' / enforcer: ' + policy.enforcer;
+    $('rules-provider').textContent = policy.provider === 'local' && policy.enforcer === 'dry-run' && auth0 === false
+      ? 'Local dry run. Auth0 adds dashboard sign-in, Guardian phone approval, and an FGA authorization record.'
+      : 'Decision provider: ' + policy.provider + ' / Auth0: ' +
+        (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured') +
+        ' / enforcer: ' + policy.enforcer;
     $('rules-list').innerHTML = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
       `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <small>Created by ${esc(authorName(rule.createdBy))} / ${esc(rule.approval?.status || 'unavailable')}</small>
         ${canWatch(rule) ? `<button type="button" class="tool-btn" data-watch-rule="${esc(rule.id)}">Show approval</button>` : ''}
@@ -611,12 +614,15 @@
   }
 
   async function refreshPolicy() {
+    const revision = ++policyRevision;
     try {
-      policy = await api('/api/policy');
+      const refreshed = await api('/api/policy');
+      if (revision !== policyRevision) return;
+      policy = refreshed;
       if (policy.enforcer !== 'dry-run') $('rules-status').textContent = 'Preview controls require the dry-run enforcer.';
     } catch {
-      policy = null;
-      $('rules-provider').textContent = 'Policy API unavailable in this build.';
+      if (revision !== policyRevision) return;
+      if (!policy) $('rules-provider').textContent = 'Policy API unavailable in this build.';
     }
     renderPolicy();
     resumeApproval();
@@ -642,6 +648,10 @@
         signal: AbortSignal.timeout(15000),
         body: JSON.stringify({ target, action: 'block', scope: 'session' }),
       });
+      if (response.rule) {
+        policyRevision++;
+        policy.rules = [...policy.rules.filter((rule) => rule.id !== response.rule.id), response.rule];
+      }
       previewedApp = target.kind === 'app' ? target.value : null;
       $('rules-globe').hidden = !previewedApp;
       if (response.status === 'pending' && response.requestId) {
@@ -650,7 +660,9 @@
         showPlan(response.plan, response.decision);
         $('rules-status').textContent = response.status === 'denied' ? response.error || 'Policy request denied.'
           : response.plan?.some((entry) => entry.command)
-            ? 'Local block rule preview ready.' : 'The policy returned a decision with no runnable command.';
+            ? 'Block rule saved for this session. Dry-run command ready.'
+            : 'Block rule saved for this session. ' +
+              (response.plan?.find((entry) => entry.reason)?.reason || 'No firewall command is available for this target.');
       }
       blockTarget = null;
     } catch (error) {
@@ -692,6 +704,8 @@
     renderPolicy();
     try {
       const result = await api('/api/policy/rules/' + encodeURIComponent(remove.dataset.removeRule), { method: 'DELETE' });
+      policyRevision++;
+      policy.rules = policy.rules.filter((item) => item.id !== rule.id);
       if (approvalWatch && approvalWatch.id === rule.approval?.requestId) {
         approvalWatch = null;
         clearTimeout(approvalTimer);
