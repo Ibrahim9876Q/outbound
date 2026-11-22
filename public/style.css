@@ -32,6 +32,10 @@
   --topbar-h: 64px;
   --side-w: 380px;
   --radius: 2px;
+  --view-inset: 16px;
+  --panel-inset: 14px;
+  --panel-gap: 12px;
+  --panel-heading: 14px;
 }
 
 /* High contrast for projectors (◐ button or H): no grid or scanlines, brighter lines and greys. */
@@ -229,11 +233,14 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 ::view-transition-new(outbound-view) { animation: view-enter 300ms ease both; }
 @keyframes view-exit { to { opacity: 0; transform: translateX(-8px); } }
 @keyframes view-enter { from { opacity: 0; transform: translateX(8px); } }
-#view-phone { display: block; padding: 18px; }
-.view.intel-view { display: block; padding: 18px; overflow: auto; }
-.intel-heading { display: grid; gap: 8px; margin-bottom: 12px; }
+.view.intel-view { display: block; padding: var(--view-inset); overflow: auto; font-size: 14px; }
+.intel-heading { display: grid; gap: 6px; margin-bottom: var(--panel-gap); }
+.intel-heading h2 { font-size: 18px; }
+.intel-heading h2::before { content: '┌─ '; color: var(--muted); }
 .intel-heading p, .intel-muted { color: var(--muted); }
 .intel-heading button { justify-self: start; }
+#view-phone .card { max-width: 680px; }
+#view-phone .card a { display: inline-block; color: var(--fg); margin-top: 8px; }
 #scan-start { padding: 10px 16px; font-size: 15px; }
 #scan-results > .card:first-child { grid-column: 1 / -1; }
 .profile-tabs { margin: 7px 0; }
@@ -241,8 +248,8 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .tracker-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 5px 0; }
 .tracker-chip { border: 1px solid var(--line-strong); padding: 3px 7px; max-width: 100%; }
 .tracker-chip summary { cursor: pointer; }
-.intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 12px; margin-top: 12px; align-items: start; }
-.intel-grid .card { padding: 14px; overflow-wrap: anywhere; }
+.intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: var(--panel-gap); margin-top: var(--panel-gap); align-items: start; }
+.intel-grid .card { overflow-wrap: anywhere; }
 .intel-grid h3 { margin: 10px 0 4px; font-size: 14px; }
 .intel-grid li { padding: 5px 0; border-bottom: 1px solid var(--line); }
 .intel-grid a { color: var(--fg); text-decoration: underline; }
@@ -257,7 +264,6 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .auth-flow li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; }
 .auth-flow strong { color: var(--muted); font-weight: normal; }
 .auth-flow p { grid-column: 1 / -1; color: var(--muted); margin: 0; }
-#rules-list { margin-top: 12px; }
 #rules-list li, #rules-pending { padding: 6px 0; }
 [data-block-kind] { margin: 4px 5px 0 0; }
 
@@ -319,7 +325,7 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: var(--panel-inset);
   flex: none;
 }
 .card::before {
@@ -338,7 +344,7 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
     linear-gradient(var(--c), var(--c)) bottom right / 12px 1px no-repeat,
     linear-gradient(var(--c), var(--c)) bottom right / 1px 12px no-repeat;
 }
-.card h2 { font-size: 14px; margin-bottom: 8px; }
+.card h2 { font-size: var(--panel-heading); margin-bottom: 8px; }
 .hint { color: var(--muted); font-size: 14px; }
 
 .tag {
