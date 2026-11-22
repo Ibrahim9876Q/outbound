@@ -101,7 +101,8 @@
       }
       const day = 86400000;
       const now = scan.finishedAt || Date.now();
-      return [...groups].map(([capability, group]) => `<h3>${esc(capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
+      const labels = { webcam: 'Camera', microphone: 'Microphone', location: 'Location', contacts: 'Contacts' };
+      return [...groups].map(([capability, group]) => `<h3>${esc(labels[capability] || capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
         + list(group.map((row) => {
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
           const marker = row.inUse ? '*' : '#';
@@ -126,7 +127,7 @@
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
     const extensions = report('extensions', 'Extensions that can read every site', (rows) => list(rows.filter((row) => row.allSites).map((row) =>
       `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))}<br>`
-      + esc((row.permissions || []).join(', ')), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
+      + esc((row.permissions || []).join(', '))), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
       `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
         + (row.recommended ? '<br>Recommended: ' + esc(row.recommended) : '')), '') : '', 'No Windows privacy values were reported.');
@@ -152,16 +153,17 @@
   function renderScan(scan) {
     lastScan = scan;
     const running = scan.status === 'running';
-    scanButton.disabled = running;
+    scanButton.disabled = running || Boolean(scan.appDataBackground);
     setRadar(running);
     const messages = { idle: 'Ready when you choose to scan.', running: 'Scanning locally', done: 'Scan complete.', error: scan.error || 'The scan failed.' };
     $('scan-status').textContent = (messages[scan.status] || 'Scan status unavailable.')
-      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '');
+      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '')
+      + (scan.appDataBackground ? ' / App-data totals are provisional. The local walk is still running.' : '');
     const browsers = [];
     if (scan.status === 'done' && scan.summary) browsers.push(scanSummary(scan.summary));
     if (scan.browsers?.length) browsers.push(renderProfiles(scan.browsers));
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
-      `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
+      `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files${app.partial ? ' / partial' : ''}<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
     if (scan.status === 'done') {
       if (scan.warnings?.length) browsers.push(card('Scan warnings', list(scan.warnings.map(esc), '')));
@@ -191,7 +193,7 @@
     try {
       const scan = await api('/api/scan');
       renderScan(scan);
-      if (scan.status === 'running') scanPoll = setTimeout(refreshScan, 650);
+      if (scan.status === 'running' || scan.appDataBackground) scanPoll = setTimeout(refreshScan, 650);
     } catch (error) {
       setRadar(false);
       scanButton.disabled = error.status === 404;

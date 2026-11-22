@@ -776,7 +776,7 @@
     const dev = [app.mic && 'using the microphone', app.cam && 'using the camera'].filter(Boolean);
     let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
-    html += appXray(app);
+    if (!app.protectedProcesses) html += appXray(app);
     if (app.protectedProcesses) {
       html += '<div class="detail-sub">System and protected processes</div><ul class="dests protected-list">'
         + app.protectedProcesses.map((process) => {
