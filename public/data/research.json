@@ -4877,5 +4877,461 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T05:58:15.922Z"
+  "generatedAt": "2026-11-22T05:58:15.922Z",
+  "index": {
+    "exe": {
+      "brave.exe": [
+        "brave"
+      ],
+      "canva.exe": [
+        "canva"
+      ],
+      "capcut.exe": [
+        "capcut"
+      ],
+      "chatgpt.exe": [
+        "chatgpt"
+      ],
+      "chrome.exe": [
+        "chrome"
+      ],
+      "discord.exe": [
+        "discord"
+      ],
+      "dropbox.exe": [
+        "dropbox"
+      ],
+      "figma.exe": [
+        "figma"
+      ],
+      "firefox.exe": [
+        "firefox"
+      ],
+      "grammarly.desktop.exe": [
+        "grammarly"
+      ],
+      "icloud.exe": [
+        "icloud"
+      ],
+      "leagueclient.exe": [
+        "league-of-legends"
+      ],
+      "lghub.exe": [
+        "logitech-g-hub"
+      ],
+      "ms-teams.exe": [
+        "teams"
+      ],
+      "msedge.exe": [
+        "edge"
+      ],
+      "onedrive.exe": [
+        "onedrive"
+      ],
+      "opera.exe": [
+        "opera"
+      ],
+      "razer synapse.exe": [
+        "razer-synapse"
+      ],
+      "signal.exe": [
+        "signal"
+      ],
+      "slack.exe": [
+        "slack"
+      ],
+      "spotify.exe": [
+        "spotify"
+      ],
+      "steam.exe": [
+        "steam"
+      ],
+      "telegram.exe": [
+        "telegram"
+      ],
+      "utorrent.exe": [
+        "utorrent"
+      ],
+      "winword.exe": [
+        "office"
+      ],
+      "zoom.exe": [
+        "zoom"
+      ]
+    },
+    "domain": {
+      "1password.com": [
+        "1password"
+      ],
+      "android.com": [
+        "android"
+      ],
+      "apple.com": [
+        "apple-camera",
+        "apple-game-center",
+        "apple-health",
+        "apple-messages",
+        "apple-news",
+        "apple-siri",
+        "apple-wallet"
+      ],
+      "apps.apple.com": [
+        "apple-app-store"
+      ],
+      "apps.microsoft.com": [
+        "microsoft-store"
+      ],
+      "asana.com": [
+        "asana"
+      ],
+      "atlassian.com": [
+        "jira"
+      ],
+      "avast.com": [
+        "avast"
+      ],
+      "bandcamp.com": [
+        "bandcamp"
+      ],
+      "betterhelp.com": [
+        "betterhelp"
+      ],
+      "bing.com": [
+        "bing"
+      ],
+      "bitwarden.com": [
+        "bitwarden"
+      ],
+      "booking.com": [
+        "booking"
+      ],
+      "books.apple.com": [
+        "apple-books"
+      ],
+      "brave.com": [
+        "brave"
+      ],
+      "bumble.com": [
+        "bumble"
+      ],
+      "calm.com": [
+        "calm"
+      ],
+      "canva.com": [
+        "canva"
+      ],
+      "capcut.com": [
+        "capcut"
+      ],
+      "capitalone.com": [
+        "capital-one"
+      ],
+      "chatgpt.com": [
+        "chatgpt"
+      ],
+      "claude.ai": [
+        "claude"
+      ],
+      "code.visualstudio.com": [
+        "vscode"
+      ],
+      "copilot.microsoft.com": [
+        "copilot"
+      ],
+      "deepl.com": [
+        "deepl"
+      ],
+      "deezer.com": [
+        "deezer"
+      ],
+      "discord.com": [
+        "discord"
+      ],
+      "disneyplus.com": [
+        "disney-plus"
+      ],
+      "docker.com": [
+        "docker-desktop"
+      ],
+      "docusign.com": [
+        "docusign"
+      ],
+      "doordash.com": [
+        "doordash"
+      ],
+      "dropbox.com": [
+        "dropbox"
+      ],
+      "duckduckgo.com": [
+        "duckduckgo"
+      ],
+      "ea.com": [
+        "ea-app"
+      ],
+      "ebay.com": [
+        "ebay"
+      ],
+      "epicgames.com": [
+        "epic-games"
+      ],
+      "eventbrite.com": [
+        "eventbrite"
+      ],
+      "evernote.com": [
+        "evernote"
+      ],
+      "expressvpn.com": [
+        "expressvpn"
+      ],
+      "facebook.com": [
+        "facebook"
+      ],
+      "family.microsoft.com": [
+        "microsoft-family"
+      ],
+      "figma.com": [
+        "figma"
+      ],
+      "fit.google.com": [
+        "google-fit"
+      ],
+      "fitbit.com": [
+        "fitbit"
+      ],
+      "flo.health": [
+        "flo"
+      ],
+      "gemini.google.com": [
+        "gemini"
+      ],
+      "github.com": [
+        "github"
+      ],
+      "gitlab.com": [
+        "gitlab"
+      ],
+      "goodrx.com": [
+        "goodrx"
+      ],
+      "google.com": [
+        "chrome",
+        "google-search"
+      ],
+      "grammarly.com": [
+        "grammarly"
+      ],
+      "grindr.com": [
+        "grindr"
+      ],
+      "headspace.com": [
+        "headspace"
+      ],
+      "hulu.com": [
+        "hulu"
+      ],
+      "icloud.com": [
+        "apple-find-my",
+        "icloud"
+      ],
+      "instacart.com": [
+        "instacart"
+      ],
+      "instagram.com": [
+        "instagram"
+      ],
+      "jetbrains.com": [
+        "jetbrains"
+      ],
+      "leagueoflegends.com": [
+        "league-of-legends"
+      ],
+      "linkedin.com": [
+        "linkedin"
+      ],
+      "logitechg.com": [
+        "logitech-g-hub"
+      ],
+      "lyft.com": [
+        "lyft"
+      ],
+      "maps.apple.com": [
+        "apple-maps"
+      ],
+      "maps.google.com": [
+        "google-maps"
+      ],
+      "meet.google.com": [
+        "google-meet"
+      ],
+      "microsoft.com": [
+        "edge",
+        "microsoft-defender"
+      ],
+      "monday.com": [
+        "monday"
+      ],
+      "mozilla.org": [
+        "firefox"
+      ],
+      "music.apple.com": [
+        "apple-music"
+      ],
+      "netflix.com": [
+        "netflix"
+      ],
+      "news.google.com": [
+        "google-news"
+      ],
+      "obsproject.com": [
+        "obs"
+      ],
+      "office.com": [
+        "office"
+      ],
+      "onedrive.live.com": [
+        "onedrive"
+      ],
+      "opera.com": [
+        "opera"
+      ],
+      "outlook.com": [
+        "outlook"
+      ],
+      "photos.google.com": [
+        "google-photos"
+      ],
+      "play.google.com": [
+        "google-play"
+      ],
+      "playstation.com": [
+        "playstation"
+      ],
+      "plex.tv": [
+        "plex"
+      ],
+      "podcasts.apple.com": [
+        "apple-podcasts"
+      ],
+      "primevideo.com": [
+        "prime-video"
+      ],
+      "proton.me": [
+        "proton-drive",
+        "proton-mail"
+      ],
+      "razer.com": [
+        "razer-synapse"
+      ],
+      "shop.app": [
+        "shop"
+      ],
+      "signal.org": [
+        "signal"
+      ],
+      "skype.com": [
+        "skype"
+      ],
+      "slack.com": [
+        "slack"
+      ],
+      "snapchat.com": [
+        "snapchat"
+      ],
+      "soundcloud.com": [
+        "soundcloud"
+      ],
+      "spotify.com": [
+        "spotify"
+      ],
+      "starbucks.com": [
+        "starbucks"
+      ],
+      "steampowered.com": [
+        "steam",
+        "steam-mobile"
+      ],
+      "strava.com": [
+        "strava"
+      ],
+      "swiftkey.com": [
+        "swiftkey"
+      ],
+      "target.com": [
+        "target"
+      ],
+      "teams.microsoft.com": [
+        "teams"
+      ],
+      "telegram.org": [
+        "telegram"
+      ],
+      "temu.com": [
+        "temu"
+      ],
+      "thunderbird.net": [
+        "thunderbird"
+      ],
+      "tiktok.com": [
+        "tiktok"
+      ],
+      "timhortons.ca": [
+        "tim-hortons"
+      ],
+      "tinder.com": [
+        "tinder"
+      ],
+      "todoist.com": [
+        "todoist"
+      ],
+      "translate.google.com": [
+        "google-translate"
+      ],
+      "trello.com": [
+        "trello"
+      ],
+      "truecaller.com": [
+        "truecaller"
+      ],
+      "tv.apple.com": [
+        "apple-tv"
+      ],
+      "utorrent.com": [
+        "utorrent"
+      ],
+      "vivaldi.com": [
+        "vivaldi"
+      ],
+      "walmart.com": [
+        "walmart"
+      ],
+      "waze.com": [
+        "waze"
+      ],
+      "whatsapp.com": [
+        "whatsapp"
+      ],
+      "windows.com": [
+        "windows"
+      ],
+      "x.com": [
+        "x"
+      ],
+      "xbox.com": [
+        "xbox"
+      ],
+      "youtube.com": [
+        "youtube"
+      ],
+      "youtubekids.com": [
+        "youtube-kids"
+      ],
+      "zoom.us": [
+        "zoom",
+        "zoom-rooms"
+      ],
+      "zoominfo.com": [
+        "zoominfo"
+      ]
+    }
+  }
 }
