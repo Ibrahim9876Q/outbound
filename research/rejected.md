@@ -706,3 +706,54 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
 - Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
 - Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+
+## FTC case tag 1420, index pages 0–9
+
+- DataMotion, Inc., a corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3023-datamotion-inc-corporation-matter — privacy topic not supported by the case summary or release headlines
+- Apperian, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3017-apperian-inc-matter — privacy topic not supported by the case summary or release headlines
+- Tennessee Football, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3032-tennessee-football-inc-matter — privacy topic not supported by the case summary or release headlines
+- Reynolds Consumer Products, Inc, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3030-reynolds-consumer-products-inc-matter — privacy topic not supported by the case summary or release headlines
+- Atlanta Falcons Football Club, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3018-atlanta-falcons-football-club-llc-matter — privacy topic not supported by the case summary or release headlines
+- DDC Laboratories, Inc., also d/b/a DNA Diagnostics Center, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3024-ddc-laboratories-inc-also-dba-dna-diagnostics-center-matter — privacy topic not supported by the case summary or release headlines
+- Baker Tilly Virchow Krause, LLP, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3019-baker-tilly-virchow-krause-llp-matter — privacy topic not supported by the case summary or release headlines
+- Charles River Laboratories, Int’l., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3022-charles-river-laboratories-intl-matter — privacy topic not supported by the case summary or release headlines
+- Receivable Management Services Corporation, The, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3031-receivable-management-services-corporation-matter — privacy topic not supported by the case summary or release headlines
+- PDB Sports, Ltd., d/b/a Denver Broncos Football Club, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3025-pdb-sports-ltd-dba-denver-broncos-football-club-matter — privacy topic not supported by the case summary or release headlines
+- American Apparel, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3036-american-apparel-inc-matter — privacy topic not supported by the case summary or release headlines
+- Level 3 Communications, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3028-level-3-communications-llc-matter — privacy topic not supported by the case summary or release headlines
+- BitTorrent, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3020-bittorrent-inc-matter — privacy topic not supported by the case summary or release headlines
+- Fantage.com, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3026-fantagecom-inc-matter — privacy topic not supported by the case summary or release headlines
+- Genelink, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3095-genelink-inc-matter — privacy topic not supported by the case summary or release headlines
+- Infotrack Information Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3092-infotrack-information-services-inc-et-al — unclear dossier entity.
+- Goldenshores Technologies, LLC, and Erik M. Geidl, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3087-goldenshores-technologies-llc-erik-m-geidl-matter — privacy topic not supported by the case summary or release headlines
+- Aaron’s, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3256-aarons-inc-matter — privacy topic not supported by the case summary or release headlines
+- TRENDnet, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3090-trendnet-inc-matter — privacy topic not supported by the case summary or release headlines
+- Time Warner Cable Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3149-time-warner-cable-inc — privacy topic not supported by the case summary or release headlines
+- HTC America Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3049-htc-america-inc-matter — privacy topic not supported by the case summary or release headlines
+- Filiquarian Publishing, LLC; Choice Level, LLC; and Joshua Linsk, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3195-filiquarian-publishing-llc-choice-level-llc-joshua-linsk-matter — unclear dossier entity.
+- C.A.L.M. Ventures, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-calm-ventures-inc-matter — privacy topic not supported by the case summary or release headlines
+- Watershed Development Corp., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-watershed-development-corp-matter — privacy topic not supported by the case summary or release headlines
+- Aspen Way Enterprises, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-aspen-way-enterprises-inc-matter — privacy topic not supported by the case summary or release headlines
+- Red Zone Investment Group, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-red-zone-investment-group-inc-matter — privacy topic not supported by the case summary or release headlines
+- DesignerWare, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-designerware-llc-matter — privacy topic not supported by the case summary or release headlines
+- B. Stamper Enterprises, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-b-stamper-enterprises-inc-matter — privacy topic not supported by the case summary or release headlines
+- Showplace, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-showplace-inc-matter — privacy topic not supported by the case summary or release headlines
+- J.A.G. Rents, LLC, also d/b/a ColorTyme, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3151-jag-rents-llc-also-dba-colortyme-matter — privacy topic not supported by the case summary or release headlines
+- Epic Marketplace, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3182-epic-marketplace-inc — privacy topic not supported by the case summary or release headlines
+- Equifax Information Services LL — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3252-equifax-information-services-ll — privacy topic not supported by the case summary or release headlines
+- Compete, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3155-compete-inc — privacy topic not supported by the case summary or release headlines
+- Google Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/google-inc — privacy topic not supported by the case summary or release headlines
+- PLS Financial Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023172-pls-financial-services-inc-et-al — privacy topic not supported by the case summary or release headlines
+- Direct Lending Source, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3000-direct-lending-source-inc-et-al — privacy topic not supported by the case summary or release headlines
+- Artist Arena LLC, United States of America (for the Federal Trade Commission) — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3167-artist-arena-llc-united-states-america-federal-trade-commission — privacy topic not supported by the case summary or release headlines
+- Spokeo, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023163-spokeo-inc — privacy topic not supported by the case summary or release headlines
+- RockYou, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023120-rockyou-inc — privacy topic not supported by the case summary or release headlines
+- Asset Acceptance, LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/052-3133-asset-acceptance-llc — privacy topic not supported by the case summary or release headlines
+- ScanScout, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3185-scanscout-inc-matter — privacy topic not supported by the case summary or release headlines
+- Frostwire LLC and Angel Leon — https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3041-frostwire-llc-angel-leon — privacy topic not supported by the case summary or release headlines
+- W3 Innovations, LLC d/b/a Broken Thumb Apps and Justin Maples, U.S. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3251-w3-innovations-llc-dba-broken-thumb-apps-justin-maples-us — unclear dossier entity.
+- Fajilan and Associates, Inc., also d/b/a Statewide Credit Services, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3089-fajilan-associates-inc-also-dba-statewide-credit-services-matter — unclear dossier entity.
+- Chitika, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/1023087-chitika-inc-matter — privacy topic not supported by the case summary or release headlines
+- Best Priced Brands, LLC, et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3081-best-priced-brands-llc-et-al — privacy topic not supported by the case summary or release headlines
+- US Search, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/us-search-inc — privacy topic not supported by the case summary or release headlines
+- EchoMetrix, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3006-echometrix-inc — privacy topic not supported by the case summary or release headlines

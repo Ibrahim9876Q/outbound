@@ -10523,6 +10523,22 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:58:17.373Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Google, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving representations about privacy practices. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3136",
+          "source": {
+            "title": "Google, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3136-google-inc-matter",
+            "date": "2011-10-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.593Z"
+          }
         }
       ],
       "declared": [
@@ -15811,9 +15827,522 @@
           }
         }
       ]
+    },
+    {
+      "name": "Instant Checkmate, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Instant Checkmate, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "122 3221",
+          "source": {
+            "title": "Instant Checkmate, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3221-instant-checkmate-inc",
+            "date": "2014-04-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.162Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Accretive Health, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Accretive Health, Inc., In the Matter of · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "122 3077",
+          "source": {
+            "title": "Accretive Health, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3077-accretive-health-inc-matter",
+            "date": "2014-02-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.717Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TeleCheck Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "TeleCheck Services, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "112 3183",
+          "source": {
+            "title": "TeleCheck Services, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3183-telecheck-services-inc",
+            "date": "2014-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:33.656Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Certegy Check Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Certegy Check Services, Inc. · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "112 3184",
+          "source": {
+            "title": "Certegy Check Services, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3184-certegy-check-services-inc",
+            "date": "2013-08-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:35.592Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "CBR Systems, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "CBR Systems, Inc., In the Matter of · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "112 3120",
+          "source": {
+            "title": "CBR Systems, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3120-cbr-systems-inc-matter",
+            "date": "2013-05-03",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:37.008Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Path, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Path, Inc. · FTC case record",
+          "year": 2013,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2013.",
+          "caseRef": "122 3158",
+          "source": {
+            "title": "Path, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3158-path-inc",
+            "date": "2013-02-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.212Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion, In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3094",
+          "source": {
+            "title": "Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3094-franklins-budget-car-sales-inc-also-dba-franklin-toyotascion-matter",
+            "date": "2012-10-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.823Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "EPN, Inc., also d/b/a Checknet, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "EPN, Inc., also d/b/a Checknet, Inc., In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "112 3143",
+          "source": {
+            "title": "EPN, Inc., also d/b/a Checknet, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3143-epn-inc-also-dba-checknet-inc-matter",
+            "date": "2012-10-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.728Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Myspace LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Myspace LLC, In the Matter of · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3058",
+          "source": {
+            "title": "Myspace LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3058-myspace-llc-matter",
+            "date": "2012-09-11",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.925Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "HireRight Solutions, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "HireRight Solutions, Inc. · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 313",
+          "source": {
+            "title": "HireRight Solutions, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-313-hireright-solutions-inc",
+            "date": "2012-08-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:39.858Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Upromise, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Upromise, Inc. · FTC case record",
+          "year": 2012,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2012.",
+          "caseRef": "102 3116",
+          "source": {
+            "title": "Upromise, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3116-upromise-inc",
+            "date": "2012-04-03",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.367Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Godwin, Jones O., d/b/a skidekids.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Godwin, Jones O., d/b/a skidekids.com · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "1123033",
+          "source": {
+            "title": "Godwin, Jones O., d/b/a skidekids.com | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1123033-godwin-jones-o-dba-skidekidscom",
+            "date": "2011-11-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.445Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ACRAnet, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ACRAnet, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "092 3088",
+          "source": {
+            "title": "ACRAnet, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3088-acranet-inc-matter",
+            "date": "2011-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:42.817Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SettlementOne Credit Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SettlementOne Credit Corporation · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "082 3208",
+          "source": {
+            "title": "SettlementOne Credit Corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3208-settlementone-credit-corporation",
+            "date": "2011-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:43.177Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Teletrack, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Teletrack, Inc. · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3075",
+          "source": {
+            "title": "Teletrack, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3075-teletrack-inc",
+            "date": "2011-06-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.218Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Lookout Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Lookout Services, Inc., In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3076",
+          "source": {
+            "title": "Lookout Services, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3076-lookout-services-inc-matter",
+            "date": "2011-06-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.722Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ceridian Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ceridian Corporation, In the Matter of · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "102 3160",
+          "source": {
+            "title": "Ceridian Corporation, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3160-ceridian-corporation-matter",
+            "date": "2011-06-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.883Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Playdom, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Playdom, Inc. · FTC case record",
+          "year": 2011,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2011.",
+          "caseRef": "1023036",
+          "source": {
+            "title": "Playdom, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1023036-playdom-inc",
+            "date": "2011-05-12",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:45.940Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ChoicePoint Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ChoicePoint Inc. · FTC case record",
+          "year": 2006,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2006.",
+          "caseRef": "052-3069",
+          "source": {
+            "title": "ChoicePoint Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/052-3069-choicepoint-inc",
+            "date": "2010-09-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:46.641Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:58:24.538Z",
+  "generatedAt": "2026-11-22T06:58:46.643Z",
   "index": {
     "exe": {
       "brave.exe": [
