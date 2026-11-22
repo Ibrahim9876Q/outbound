@@ -53,6 +53,8 @@
   let globe;
   let initFailed = false;
   let state;
+  let knownDestinations = new Set();
+  let arrivingDestinations = new Set();
   let selectedApp = null;
   let modelKey = '';
   let visible = false;
@@ -328,6 +330,21 @@
     ];
   }
 
+  function pulseDestinations(places) {
+    if (!arrivingDestinations.size) return;
+    const rings = new Map();
+    if (!reducedMotion.matches) {
+      for (const place of places) {
+        if (!arrivingDestinations.has(place.id)) continue;
+        const key = place.lat + '|' + place.lng;
+        const color = place.tracker || rings.get(key)?.tracker ? trackerColor : '#ffffff';
+        rings.set(key, { lat: place.lat, lng: place.lng, color, tracker: color === trackerColor });
+      }
+    }
+    arrivingDestinations.clear();
+    if (rings.size) globe.ringsData([...rings.values()]);
+  }
+
   function renderPoint(point) {
     if (point === shownPoint) return;
     shownPoint = point;
@@ -430,6 +447,7 @@
       else clearPoint();
     }
     globe.arcsData(makeArcs(located, home)).pointsData(points);
+    pulseDestinations(located);
   }
 
   function setRotation(enabled) {
@@ -463,7 +481,7 @@
         .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
         .arcsTransitionDuration(0)
         .pointAltitude((point) => point.key === 'home' ? 0.022 : 0.008)
-        .pointRadius((point) => point.key === 'home' ? 0.65 : Math.min(1.4, 0.26 + Math.sqrt(point.sockets) * 0.16))
+        .pointRadius((point) => point.key === 'home' ? 0.65 : Math.min(2.1, 0.24 + Math.sqrt(point.sockets) * 0.23))
         .pointColor((point) => {
           if (point.key === 'home') return '#ffffff';
           if (point.places.some((place) => place.tracker)) return trackerColor;
@@ -471,6 +489,11 @@
         })
         .pointResolution(10)
         .pointsTransitionDuration(0)
+        .ringColor('color')
+        .ringAltitude(0.014)
+        .ringMaxRadius(2.8)
+        .ringPropagationSpeed(3)
+        .ringRepeatPeriod(0)
         .pointerEventsFilter((object) => ['point', 'globe'].includes(object.__globeObjType))
         .onPointHover((point) => {
           if (pinnedPoint === null) renderPoint(point);
@@ -522,6 +545,15 @@
   }
 
   function receiveState(snapshot) {
+    const next = new Set(snapshot.apps.flatMap((app) =>
+      app.destinations.map((destination) => app.id + '|' + destination.ip)));
+    for (const id of next) {
+      if (!knownDestinations.has(id)) arrivingDestinations.add(id);
+    }
+    for (const id of arrivingDestinations) {
+      if (!next.has(id)) arrivingDestinations.delete(id);
+    }
+    knownDestinations = next;
     state = snapshot;
     render();
   }
