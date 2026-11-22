@@ -184,10 +184,14 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(history.snapshot()));
   }
+  if (url.pathname === '/api/scan/status' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+    return res.end(JSON.stringify(scan.status()));
+  }
   if (url.pathname === '/api/scan') {
     const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
     if (req.method === 'GET') {
-      return sendScan(req, res, scan.result);
+      return sendScan(req, res, scan.view());
     }
     if (req.method === 'POST') {
       if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) {
