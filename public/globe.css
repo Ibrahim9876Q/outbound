@@ -368,7 +368,6 @@
   padding: 0;
   overflow: auto;
   list-style: none;
-  scrollbar-color: var(--map-border) transparent;
 }
 
 #view-globe .globe-country {
@@ -471,7 +470,6 @@
   margin-top: 10px;
   overflow: auto;
   padding: 3px;
-  scrollbar-color: var(--map-border) transparent;
 }
 
 #view-globe .globe-app {

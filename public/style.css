@@ -36,6 +36,7 @@
   --panel-inset: 14px;
   --panel-gap: 12px;
   --panel-heading: 14px;
+  --scroll-thumb: #555;
 }
 
 /* High contrast for projectors (◐ button or H): no grid or scanlines, brighter lines and greys. */
@@ -50,6 +51,17 @@ body.hc {
 body.hc::after { display: none; }
 
 * { box-sizing: border-box; }
+
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #777; }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) transparent; }
+}
 
 html, body { height: 100%; margin: 0; }
 
