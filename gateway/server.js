@@ -177,10 +177,16 @@ async function startGateway(config, { fetch, demo, catalogPath = path.join(ROOT,
   return { close, dnsPort: dnsListener.port };
 }
 
+function printAuthStatus(config, demo) {
+  const status = (value) => value ? 'configured' : 'not configured';
+  console.log('Auth0 FGA: ' + status(config.fga) + ' CIBA: ' + status(config.ciba) + ' Mode: ' + (demo ? 'demo' : 'live'));
+}
+
 async function main() {
   if (process.argv.includes('--demo')) {
     const config = { host: LOOPBACK, client: LOOPBACK, port: 0, grantMinutes: 1 };
     const gateway = await startGateway(config, { demo: createDemo() });
+    printAuthStatus(config, true);
     console.log('DEMO DATA at http://' + LOOPBACK + ':' + DASHBOARD_PORT + '/ (DNS ' + gateway.dnsPort + ')');
     return;
   }
@@ -191,6 +197,7 @@ async function main() {
   }
   const config = readConfig(process.env);
   const gateway = await startGateway(config);
+  printAuthStatus(config, false);
   console.log('Outbound Phone at http://' + LOOPBACK + ':' + DASHBOARD_PORT + '/');
   console.log('Phone DNS listening on ' + config.host + ':' + gateway.dnsPort + ' (UDP and TCP)');
 }
