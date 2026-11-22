@@ -82,3 +82,12 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `119520f` hides labels close to the horizon and resolves screen overlaps in descending estimate count. Country rings remain available for inspection.
 - `7eafc07` caps outbound, return, and HQ arc altitude while preserving distance-based scaling for short routes.
 - Verified at 1280×800 on port 4318 in Chrome with 181 real destinations after opening Weather.com and zero console errors. The preview supplied the shared Phone assets from integration. A controlled snapshot checked larger-label priority, horizon rejection, label refresh after rotation, and the Australia and Brazil routes.
+
+## Final Computer and shared UI pass
+
+- Fast-forwarded from `master` to `5c647f8` before making changes.
+- `dbd8a33` gives each icon, label, and executable subtitle a fixed grid cell and attaches wires to those coordinates. The verification follow-up adds a denser grid when the standard cells fill.
+- `8181930` fetches state on load and on SSE open, discards stale snapshots, and retries dropped streams with backoff. Chrome passed five actual reloads and recovered from restarting only the test-owned port 4318 server. The page kept its original time origin across recovery.
+- `67c2221` matches active device sessions by lowercase executable ID and refreshes immediately on device events. Both devices were inactive in the real-data runs. Hardware transition timing was not verified.
+- `8c520db` adds the Phone pill and lets the header wrap without clipping. Chrome observed the real Phone service both online with counts and offline.
+- `4fc9e31` fits the laptop to available stage space. The final Chrome run displayed seven live apps without overlap at both sizes. At 1280×800 the measured screen fit 14 compact slots. At 1920×1080 the lid and projected deck filled about 90% of the stage height. Wires rendered at both sizes and the console had no errors.

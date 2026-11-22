@@ -264,27 +264,31 @@
   let slots = [];          // [{ x, y, taken }]
   let gridKey = '';
 
-  function buildSlots() {
+  function buildSlots(appCount) {
     const W = el.screen.clientWidth;
     const H = el.screen.clientHeight;
     const top = el.internet.offsetTop + el.internet.offsetHeight + 12;
     const bottom = H - 38 - 8;
     const left = 14, right = W - 14;
-    const cols = Math.max(1, Math.floor((right - left) / SLOT_W));
     const rows = Math.max(1, Math.floor((bottom - top) / SLOT_H));
-    const key = `${W}x${H}@${top}`;
+    const standardCols = Math.max(1, Math.floor((right - left) / SLOT_W));
+    const compact = appCount > standardCols * rows;
+    const iconWidth = compact ? 80 : ICON_W;
+    const cols = compact ? Math.max(standardCols, Math.floor((right - left) / 86)) : standardCols;
+    const key = `${W}x${H}@${top}/${iconWidth}`;
     if (key === gridKey) return false;
     gridKey = key;
+    el.desktop.style.setProperty('--desktop-icon-width', `${iconWidth}px`);
     const cellW = (right - left) / cols;
     const cellH = (bottom - top) / rows;
     const focus = { x: W / 2, y: top + (bottom - top) * 0.45 };
     slots = [];
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      const x = Math.round(left + c * cellW + (cellW - ICON_W) / 2);
+      const x = Math.round(left + c * cellW + (cellW - iconWidth) / 2);
       const y = Math.round(top + r * cellH + (cellH - SLOT_H) / 2);
-      const cx = x + ICON_W / 2, cy = y + SLOT_H / 2;
+      const cx = x + iconWidth / 2, cy = y + SLOT_H / 2;
       // Fill from the middle outward, preferring wide rows over tall columns.
-      slots.push({ x, y, taken: null, rank: Math.abs(cx - focus.x) / W + Math.abs(cy - focus.y) / H * 1.6 });
+      slots.push({ x, y, width: iconWidth, taken: null, rank: Math.abs(cx - focus.x) / W + Math.abs(cy - focus.y) / H * 1.6 });
     }
     slots.sort((a, b) => a.rank - b.rank);
     return true;
@@ -318,7 +322,7 @@
 
   function renderDesktop(state, users) {
     const apps = desktopApps(state, users);
-    if (buildSlots()) {
+    if (buildSlots(apps.length)) {
       // Grid changed size: re-place everything, busiest apps nearest the middle.
       for (const icon of icons.values()) icon.slot = null;
       for (const s of slots) s.taken = null;
@@ -438,7 +442,7 @@
   function iconPoint(id, where) {
     const icon = icons.get(id);
     if (!icon || !icon.slot || icon.node.hidden) return null;
-    const x = icon.slot.x + ICON_W / 2;
+    const x = icon.slot.x + icon.slot.width / 2;
     if (where === 'top') return { x, y: icon.slot.y + TILE_TOP };
     if (where === 'bottom') return { x, y: icon.slot.y + icon.node.offsetHeight };
     return { x, y: icon.slot.y + TILE_TOP + TILE / 2 };
@@ -532,7 +536,7 @@
     ];
     for (const icon of icons.values()) {
       if (!icon.slot || icon.node.hidden) continue;
-      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: ICON_W, h: icon.node.offsetHeight });
+      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: icon.slot.width, h: icon.node.offsetHeight });
     }
     let budget = selected ? Infinity : MAX_IDLE_LABELS;
     const hits = (b) => boxes.some((o) => b.x < o.x + o.w && o.x < b.x + b.w && b.y < o.y + o.h && o.y < b.y + b.h);
@@ -833,7 +837,7 @@
     const boxes = [];
     for (const icon of icons.values()) {
       if (!icon.slot || icon.node.hidden) continue;
-      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: ICON_W, h: icon.node.offsetHeight });
+      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: icon.slot.width, h: icon.node.offsetHeight });
     }
     const free = (x, y) => !boxes.some((b) => x < b.x + b.w && b.x < x + w && y < b.y + b.h && b.y < y + h);
     const corners = [[W - 12 - w, bottom], [12, bottom], [W - 12 - w, top], [12, top]];
