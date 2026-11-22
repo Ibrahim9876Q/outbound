@@ -46,6 +46,10 @@
   }
 
   function profileCard(browser) {
+    const cookieDomains = browser.cookieDomains || [];
+    const otherCookies = cookieDomains.filter((cookie) => !cookie.isTracker);
+    const cookieRow = (cookie) =>
+      `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies ${researchBadge(cookie.researchId)}`;
     return card([browser.browser, browser.profile].filter(Boolean).join(' / '),
       (browser.blockedReason ? `<p class="ascii-warning">${esc(browser.blockedReason)}</p>` : '')
       + '<h3>Top visited domains</h3>'
@@ -54,9 +58,9 @@
         + (researchBadge(site.researchId) || dossierLink(site.company || site.domain, site.company ? 'company' : 'domain'))),
       browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
       + '<h3>Tracker cookie domains</h3>'
-      + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
-        `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies ${researchBadge(cookie.researchId)}`),
-      browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.'));
+      + list(cookieDomains.filter((cookie) => cookie.isTracker).map(cookieRow),
+        browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.')
+      + (otherCookies.length ? `<details><summary>Other cookie domains (${otherCookies.length})</summary>${list(otherCookies.map(cookieRow), '')}</details>` : ''));
   }
 
   function scanSummary(summary) {
@@ -123,7 +127,8 @@
       const sensitive = priority.filter((key) => groups.has(key)).map((key) => [key, groups.get(key)]);
       const other = [...groups].filter(([key]) => !priority.includes(key)).sort(([a], [b]) =>
         (labels[a] || a).localeCompare(labels[b] || b));
-      return sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
+      return '<p>' + dossierLink('tim-hortons', 'app', 'Tim Hortons dossier') + '</p>'
+        + sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
         <summary>Other permissions (${other.length})</summary>${other.map(renderCapability).join('')}</details>` : '');
     }, 'No permission history was reported.') + '</div>';
     const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
@@ -321,7 +326,7 @@
       $('dossier-count').textContent = 'Verified research is unavailable in this build.';
     } finally {
       researchLoading = false;
-      renderDossier();
+      if (Outbound.view === 'dossier') renderDossier();
       if (Outbound.view === 'scan' && lastScan) renderScan(lastScan);
     }
   }
@@ -501,7 +506,7 @@
           esc(week[i].date.slice(5) + ': ' + (point === null ? 'unknown' : number(point)))).join(' / ')}</li>`;
       });
       const daily = [...week].reverse().map((day) => card(day.date,
-        list([...day.apps].sort((a, b) => b.companies - a.companies || b.trackers - a.trackers || a.name.localeCompare(b.name))
+        '<h3>Top apps by attributed companies</h3>' + list([...day.apps].sort((a, b) => b.companies - a.companies || b.trackers - a.trackers || a.name.localeCompare(b.name))
           .slice(0, 5).map((app) => `<strong>${esc(app.name)}</strong><br>`
             + historyMetrics.map(([key, label]) => esc(label.toLowerCase() + ': ' + number(app[key]))).join(' / ')),
         'No app observations for this day.')));

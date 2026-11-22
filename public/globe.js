@@ -777,7 +777,8 @@
       const unknown = places.length - count;
       const mapped = count + ' mapped ' + plural(count, 'destination');
       const cap = shared?.capCount?.(places.length, retained, 'retained endpoints');
-      setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') + (cap ? ' / ' + cap : '') : 'Waiting for network activity…');
+      setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') + (cap ? ' / ' + cap : '')
+        : selectedApp ? 'No retained destinations for ' + selectedApp + '.' : 'Waiting for network activity…');
     }
     if (!globe) return;
     updateCountryCells(places);
@@ -873,7 +874,6 @@
         const home = hasCoordinates(state?.home) ? state.home : { lat: 43, lng: -81 };
         globe.pointOfView({ lat: home.lat - 9, lng: home.lng, altitude: 1.65 });
       });
-      globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       loadCountryCells();
     } catch (error) {
       globe = undefined;
@@ -898,6 +898,10 @@
     }
     if (!globe && !initFailed) initGlobe();
     if (globe) {
+      // Limit WebGL pixel work while keeping labels and hit targets at full CSS size.
+      const renderer = globe.renderer();
+      const ratio = Math.min(window.devicePixelRatio, 1.5, Math.sqrt(850000 / (width * height)));
+      if (Math.abs(renderer.getPixelRatio() - ratio) > 0.02) renderer.setPixelRatio(ratio);
       if (globe.width() !== width) globe.width(width);
       if (globe.height() !== height) globe.height(height);
       if (!visible) globe.resumeAnimation();
