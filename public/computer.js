@@ -1,5 +1,5 @@
 // Computer view: a drawn laptop whose screen is a desktop of the apps using the network, with wires
-// showing where each app sends data, plus the live webcam LED and mic key.
+// showing attributed endpoints, plus the live webcam LED and mic key.
 (function () {
   'use strict';
 
@@ -1048,7 +1048,7 @@
     const local = pairs.find((l) => l.kind === 'local' && l.active) || pairs.find((l) => l.kind === 'local');
     if (local) steps.push({ id: local.from, text: `${nameOf(local.from)} and ${nameOf(local.to)} talk directly, without leaving this PC` });
     const shared = pairs.filter((l) => l.kind === 'shared').sort((a, b) => b.vias.length - a.vias.length)[0];
-    if (shared) steps.push({ id: shared.from, text: `${nameOf(shared.from)} and ${nameOf(shared.to)} both send data to ${shared.vias.slice(0, 2).join(' and ')}` });
+    if (shared) steps.push({ id: shared.from, text: `${nameOf(shared.from)} and ${nameOf(shared.to)} both connected to endpoints attributed to ${shared.vias.slice(0, 2).join(' and ')}` });
     return steps;
   }
 

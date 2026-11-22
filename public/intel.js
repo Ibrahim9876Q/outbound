@@ -67,10 +67,11 @@
     const trackers = summary.topTrackers || [];
     const max = Math.max(1, ...trackers.map((tracker) => tracker.sites));
     const verdict = Number.isFinite(summary.sitesWithTrackers) && Number.isFinite(summary.sitesVisited)
-      ? `Tracker companies were attributed to ${summary.sitesWithTrackers} of ${summary.sitesVisited} visited domains.`
+      ? `Previously observed tracker associations matched ${summary.sitesWithTrackers} of ${summary.sitesVisited} visited domains.`
       : 'No scan totals were reported.';
     return card('Scan summary', '<strong>' + esc(verdict) + '</strong>'
       + `<p>${number(summary.sitesVisited)} sites visited / ${number(summary.sitesWithTrackers)} with trackers / ${number(summary.trackerCookieDomains)} tracker cookie domains / ${size(summary.appDataBytes)} app data</p>`
+      + '<p class="intel-muted">Matches come from a public tracker dataset. The scan observes locally stored domains.</p>'
       + '<h3>Top tracker companies across sites</h3>' + list(trackers.map((tracker) =>
         dossierLink(tracker.company) + `<br><code>${'#'.repeat(Math.max(0, Math.min(20, Math.round(tracker.sites / max * 20))))}</code> ${number(tracker.sites)} sites`),
       'No tracker companies were reported across visited sites.'));
