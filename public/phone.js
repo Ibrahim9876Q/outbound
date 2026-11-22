@@ -103,6 +103,8 @@
 
   function render() {
     const { dns, stats, consent } = state;
+    byId('offline-fallback').hidden = state.demo ||
+      !consent.trackers.some((tracker) => tracker.state === 'failed' && tracker.source === 'CIBA');
     const demoPanel = byId('demo');
     demoPanel.hidden = !state.laptop;
     byId('self-test').disabled = testing || busy || consent.pending;
@@ -236,6 +238,10 @@
       if (state && next.stats.lookups < state.stats.lookups) feedKey = undefined;
       state = next;
       render();
+      if (state.demo && location.hash === '#self-test') {
+        history.replaceState(null, '', location.pathname);
+        void runSelfTest();
+      }
     } catch {
       byId('status').textContent = 'Gateway unavailable';
       byId('status').dataset.live = 'false';
@@ -248,5 +254,19 @@
   byId('trackers').addEventListener('click', changeConsent);
   byId('demo').addEventListener('click', changeConsent);
   byId('self-test').addEventListener('click', runSelfTest);
+  byId('offline-fallback').addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    const message = byId('action-status');
+    button.disabled = true;
+    try {
+      const { port } = await post('/api/demo/fallback');
+      if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid offline demo address.');
+      location.assign('http://127.0.0.1:' + port + '/#self-test');
+    } catch (error) {
+      message.hidden = false;
+      message.textContent = error.message;
+      button.disabled = false;
+    }
+  });
   void poll();
 })();
