@@ -6345,6 +6345,586 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "oura",
+      "name": "Oura",
+      "publisher": "Oura Health Oy",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Oura App - App Store",
+            "publisher": "Oura Health Oy",
+            "url": "https://apps.apple.com/us/app/oura/id1043837948",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:46.882Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ahealth",
+      "name": "AHEALTH",
+      "publisher": "Gravity Labs Co., Ltd.",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎AHEALTH: Get Healthy Get Paid App - App Store",
+            "publisher": "Gravity Labs Co., Ltd.",
+            "url": "https://apps.apple.com/us/app/ahealth-get-healthy-get-paid/id1638253339",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:46.727Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "planet-fitness",
+      "name": "Planet Fitness",
+      "publisher": "Planet Fitness Holdings, LLC",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health & Fitness, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Planet Fitness App - App Store",
+            "publisher": "Planet Fitness Holdings, LLC",
+            "url": "https://apps.apple.com/us/app/planet-fitness/id399857015",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:47.644Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "sweatcoin",
+      "name": "Sweatcoin",
+      "publisher": "Sweatco Ltd",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Sweatcoin Walking Step Counter App - App Store",
+            "publisher": "Sweatco Ltd",
+            "url": "https://apps.apple.com/us/app/sweatcoin-walking-step-counter/id971023427",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.349Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "weward",
+      "name": "WeWard",
+      "publisher": "WEWARD",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎WeWard - Walking Rewards App App - App Store",
+            "publisher": "WEWARD",
+            "url": "https://apps.apple.com/us/app/weward-walking-rewards-app/id1454213029",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.327Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "yuka",
+      "name": "Yuka",
+      "publisher": "Yuca",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Yuka - Food & Cosmetic Scanner App - App Store",
+            "publisher": "Yuca",
+            "url": "https://apps.apple.com/us/app/yuka-food-cosmetic-scanner/id1092799236",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.332Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ladder",
+      "name": "LADDER",
+      "publisher": "Ladder Technologies, Inc.",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎LADDER Strength Training Plans App - App Store",
+            "publisher": "Ladder Technologies, Inc.",
+            "url": "https://apps.apple.com/us/app/ladder-strength-training-plans/id1502936453",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.880Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "garmin-connect",
+      "name": "Garmin Connect",
+      "publisher": "Garmin International",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health & Fitness, User Content",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Garmin Connect™ App - App Store",
+            "publisher": "Garmin International",
+            "url": "https://apps.apple.com/us/app/garmin-connect/id583446403",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "menufit",
+      "name": "MenuFit",
+      "publisher": "Kosco Digital LLC",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎MenuFit - Healthy Eating Out App - App Store",
+            "publisher": "Kosco Digital LLC",
+            "url": "https://apps.apple.com/us/app/menufit-healthy-eating-out/id6746144481",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:48.648Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "alltrails",
+      "name": "AllTrails",
+      "publisher": "AllTrails, Inc.",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎AllTrails: Hike, Bike & Run App - App Store",
+            "publisher": "AllTrails, Inc.",
+            "url": "https://apps.apple.com/us/app/alltrails-hike-bike-run/id405075943",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:49.052Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "crunch-fitness",
+      "name": "Crunch Fitness",
+      "publisher": "Crunch LLC Apps",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data, Sensitive Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Crunch Fitness App - App Store",
+            "publisher": "Crunch LLC Apps",
+            "url": "https://apps.apple.com/us/app/crunch-fitness/id398210959",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:49.605Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hume-health",
+      "name": "Hume Health",
+      "publisher": "FitTrack Inc",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hume Health App - App Store",
+            "publisher": "FitTrack Inc",
+            "url": "https://apps.apple.com/us/app/hume-health/id1477782599",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:49.692Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "aetna-health",
+      "name": "Aetna Health",
+      "publisher": "Aetna Life Insurance Company",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Aetna Health App - App Store",
+            "publisher": "Aetna Life Insurance Company",
+            "url": "https://apps.apple.com/us/app/aetna-health/id1261033071",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:49.769Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "rise",
+      "name": "RISE",
+      "publisher": "Rise Science Inc",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎RISE: Sleep Tracker App - App Store",
+            "publisher": "Rise Science Inc",
+            "url": "https://apps.apple.com/us/app/rise-sleep-tracker/id1453884781",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.165Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "myfitnesspal",
+      "name": "MyFitnessPal",
+      "publisher": "MyFitnessPal, Inc.",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎MyFitnessPal: Calorie Counter App - App Store",
+            "publisher": "MyFitnessPal, Inc.",
+            "url": "https://apps.apple.com/us/app/myfitnesspal-calorie-counter/id341232718",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:49.933Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "finch",
+      "name": "Finch",
+      "publisher": "Finch Care Public Benefit Corporation",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Finch: Self-Care Pet App - App Store",
+            "publisher": "Finch Care Public Benefit Corporation",
+            "url": "https://apps.apple.com/us/app/finch-self-care-pet/id1528595748",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.216Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "classpass",
+      "name": "ClassPass",
+      "publisher": "ClassPass, LLC",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Search History",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎ClassPass: Fitness, Spa, Salon App - App Store",
+            "publisher": "ClassPass, LLC",
+            "url": "https://apps.apple.com/us/app/classpass-fitness-spa-salon/id912947244",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.060Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hatch-sleep",
+      "name": "Hatch Sleep",
+      "publisher": "Hatch Baby Inc.",
+      "category": "health",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hatch Sleep App - App Store",
+            "publisher": "Hatch Baby Inc.",
+            "url": "https://apps.apple.com/us/app/hatch-sleep/id1158048301",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.199Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "duolingo",
+      "name": "Duolingo",
+      "publisher": "Duolingo, Inc",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Identifiers, Usage Data, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Duolingo: Learn Languages App - App Store",
+            "publisher": "Duolingo, Inc",
+            "url": "https://apps.apple.com/us/app/duolingo-learn-languages/id570060128",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.800Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "imprint",
+      "name": "Imprint",
+      "publisher": "Polywise, Inc.",
+      "category": "education",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Imprint: Visual Micro Learning App - App Store",
+            "publisher": "Polywise, Inc.",
+            "url": "https://apps.apple.com/us/app/imprint-visual-micro-learning/id1482780647",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:23:50.990Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -9660,7 +10240,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:23:43.146Z",
+  "generatedAt": "2026-11-22T06:23:51.725Z",
   "index": {
     "exe": {
       "brave.exe": [
