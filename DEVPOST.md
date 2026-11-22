@@ -14,7 +14,7 @@ Outbound turns a live snapshot of a PC into a laptop dashboard. Click an app to 
 
 A local Node.js server reads Windows TCP sockets and joins process IDs to executable names and icons. It attributes endpoints using the Windows DNS cache when available, reverse DNS, an offline autonomous system number (ASN) database for network owners and an offline IP geolocation database. It streams state and activity to the dashboard using Server-Sent Events.
 
-Windows already keeps per-app device-use timestamps in the privacy registry. We read the microphone and webcam entries without changing the registry. A start time with a zero stop time indicates active use. After Windows records a stop time, Outbound can show the completed session and update the day’s totals.
+We started with the Windows privacy registry, but its timestamps did not update live on our demo PC. We switched to Windows Core Audio capture sessions for the microphone and Media Foundation camera activity for the webcam. Outbound timestamps changes it observes and uses them to update the day's totals.
 
 The server binds to the PC’s loopback address so other devices on the network cannot open the dashboard. We keep connection observations in memory and save device session history locally. Owner and geography lookups use local tables, and hostname fallback uses the Windows resolver.
 

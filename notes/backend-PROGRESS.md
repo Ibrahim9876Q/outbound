@@ -58,3 +58,8 @@ Verify the first SSE state after a new connection contains the active peer link.
 - Retried process discovery in a single batch when active TCP rows reference missing PIDs. Documented the Computer lane's observation that some browser capture paths bypass the Windows privacy timestamps.
 - A fixture recovered a process absent from the first tasklist snapshot. Restarted on 4319 and verified the live state endpoint and unchanged top-level keys. No state fields changed.
 - Left the pre-existing untracked audio and camera probe scripts outside this change.
+
+## Detector integration
+
+- Integrated both verified PowerShell detectors as long-running child processes. Their JSON snapshots now drive the existing device state, activity events and persisted session totals. An invalid or missing frame preserves the last observation while the worker restarts.
+- Both native detectors emitted valid JSON on Windows. A stream fixture verified Discord activation, deduplication, release and persistence for both kinds. Port 4319 returned the existing device shape. Live Discord hardware activation remains to be verified.

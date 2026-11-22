@@ -18,7 +18,7 @@ Open the rehearsed app. Return to Computer, point to a new company chip or live 
 
 Open the video-call preview and enable both devices. Return to Outbound while the preview stays open. Point to the green camera LED and orange mic key, then read the app label. Close the preview and show the devices returning to idle and the usage cards updating.
 
-“Windows recorded when the app started and stopped using the devices. That gives us the session duration you see here.”
+“Outbound observed when the app started and stopped using the devices. That gives us the session duration you see here.”
 
 ## 2:15–2:50 · Follow a destination
 

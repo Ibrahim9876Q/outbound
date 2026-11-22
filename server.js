@@ -44,6 +44,9 @@ function broadcast(type, data) {
 
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
+process.on('exit', () => devices.close());
+process.on('SIGINT', () => process.exit(130));
+process.on('SIGTERM', () => process.exit(143));
 
 function state() {
   return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60) };
