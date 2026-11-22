@@ -541,7 +541,24 @@
         }
       ],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "YouTube children’s privacy settlement",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "amount": "USD 170 million",
+          "summary": "Google and YouTube agreed to a civil penalty to resolve allegations that YouTube collected children’s information without parental consent.",
+          "source": {
+            "title": "Google LLC and YouTube, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3083-google-llc-youtube-llc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:33.051Z"
+          }
+        }
+      ]
     },
     {
       "id": "netflix",
@@ -589,7 +606,7 @@
       },
       "declared": [
         {
-          "data": "Interactions with Amazon streaming services",
+          "data": "Interactions with Amazon services under Amazon?s general privacy notice",
           "purpose": "Provide and personalize Amazon services",
           "source": {
             "title": "Amazon.com Privacy Notice - Amazon Customer Service",
@@ -1117,37 +1134,6 @@
       "incidents": []
     },
     {
-      "id": "norton",
-      "name": "Norton",
-      "publisher": "Gen Digital",
-      "category": "security",
-      "processNames": [],
-      "domains": [
-        "norton.com"
-      ],
-      "hq": {
-        "city": null,
-        "country": null
-      },
-      "declared": [
-        {
-          "data": "Product usage and device information",
-          "purpose": "Provide and enhance services",
-          "source": {
-            "title": "Privacy | Norton",
-            "publisher": "Gen Digital",
-            "url": "https://www.norton.com/privacy",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T05:44:08.048Z"
-          }
-        }
-      ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
-    },
-    {
       "id": "utorrent",
       "name": "µTorrent",
       "publisher": "Rainberry",
@@ -1447,7 +1433,23 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Flo Health analytics disclosure settlement",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "Flo settled FTC allegations that it shared users’ health information with analytics providers after promising privacy.",
+          "source": {
+            "title": "Flo Health, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3133-flo-health-inc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:33.082Z"
+          }
+        }
+      ]
     },
     {
       "id": "betterhelp",
@@ -1478,7 +1480,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "BetterHelp advertising disclosure order",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "amount": "USD 7.8 million",
+          "summary": "The final FTC order bars sharing health data for advertising and provides refunds over allegations involving health questionnaire information and advertising partners.",
+          "source": {
+            "title": "FTC Gives Final Approval to Order Banning BetterHelp from Sharing Sensitive Health Data for Advertising, Requiring It to Pay $7.8 Million | Federal Tr",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/07/ftc-gives-final-approval-order-banning-betterhelp-sharing-sensitive-health-data-advertising",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:31.412Z"
+          }
+        }
+      ]
     },
     {
       "id": "waze",
@@ -2339,6 +2358,605 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "chrome",
+      "name": "Google Chrome",
+      "publisher": "Google",
+      "category": "browser",
+      "processNames": [
+        "chrome.exe"
+      ],
+      "domains": [
+        "google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Information from Chrome browsing history when synced",
+          "purpose": "Personalize Google services depending on settings",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:58.378Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "processNames": [],
+      "domains": [
+        "github.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Operate, secure and improve GitHub",
+          "source": {
+            "title": "GitHub General Privacy Statement - GitHub Docs",
+            "publisher": "Microsoft",
+            "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:59.499Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "processNames": [],
+      "domains": [
+        "code.visualstudio.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Product usage telemetry, depending on user settings",
+          "purpose": "Diagnose problems and improve the product",
+          "source": {
+            "title": "Telemetry",
+            "publisher": "Microsoft",
+            "url": "https://code.visualstudio.com/docs/configure/telemetry",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:00.203Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-store",
+      "name": "Microsoft Store",
+      "publisher": "Microsoft",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "apps.microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchase history and account information",
+          "purpose": "Process store purchases and provide services",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:59.788Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "skype",
+      "name": "Skype",
+      "publisher": "Microsoft",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "skype.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Communications and usage information",
+          "purpose": "Provide communications-related features",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:59.919Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "swiftkey",
+      "name": "Microsoft SwiftKey",
+      "publisher": "Microsoft",
+      "category": "utility",
+      "processNames": [],
+      "domains": [
+        "swiftkey.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Typing and prediction information, depending on configuration",
+          "purpose": "Improve keyboard predictions",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:59.924Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-defender",
+      "name": "Microsoft Defender",
+      "publisher": "Microsoft",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and security information under product settings",
+          "purpose": "Identify and protect against threats",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:52:59.823Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "microsoft-family",
+      "name": "Microsoft Family Safety",
+      "publisher": "Microsoft",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "family.microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Activity and location information when enabled",
+          "purpose": "Support family safety controls",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:00.684Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-meet",
+      "name": "Google Meet",
+      "publisher": "Google",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "meet.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Meeting information",
+          "purpose": "Provide and protect video meetings",
+          "source": {
+            "title": "Google Meet Security &amp; Privacy for users - Google Meet Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/meet/answer/9852160?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:01.078Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-play",
+      "name": "Google Play",
+      "publisher": "Google",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "play.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchase history and service activity",
+          "purpose": "Operate downloads and recommendations",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:00.908Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-fit",
+      "name": "Google Fit",
+      "publisher": "Google",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "fit.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Fitness and activity information",
+          "purpose": "Track fitness and health activity",
+          "source": {
+            "title": "Track your fitness activity - Android phone &amp; tablet - Google Fit Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/fit/answer/6075066?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:01.277Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-app-store",
+      "name": "App Store",
+      "publisher": "Apple",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "apps.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Search and purchase activity",
+          "purpose": "Provide App Store features and recommendations",
+          "source": {
+            "title": "Legal - App Store &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/app-store/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:02.218Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-books",
+      "name": "Apple Books",
+      "publisher": "Apple",
+      "category": "books",
+      "processNames": [],
+      "domains": [
+        "books.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases and reading activity",
+          "purpose": "Provide and personalize book recommendations",
+          "source": {
+            "title": "Legal - Apple Books &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-books/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:02.621Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-news",
+      "name": "Apple News",
+      "publisher": "Apple",
+      "category": "news",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Reading and viewing interactions",
+          "purpose": "Personalize news features",
+          "source": {
+            "title": "Legal - Apple News &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-news/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:02.403Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-wallet",
+      "name": "Apple Wallet",
+      "publisher": "Apple",
+      "category": "finance",
+      "processNames": [],
+      "domains": [
+        "apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Payment and device information for Apple Pay",
+          "purpose": "Provide and secure payments",
+          "source": {
+            "title": "Legal - Apple Pay &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-pay/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:02.706Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "plex",
+      "name": "Plex",
+      "publisher": "Plex",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "plex.tv"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and media usage information",
+          "purpose": "Provide and improve Plex",
+          "source": {
+            "title": "Privacy Policy | Plex",
+            "publisher": "Plex",
+            "url": "https://www.plex.tv/about/privacy-legal/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:03.161Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hulu",
+      "name": "Hulu",
+      "publisher": "Disney",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "hulu.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage and device information across Disney services",
+          "purpose": "Provide and personalize content",
+          "source": {
+            "title": "Privacy Policy - The Walt Disney Privacy Center",
+            "publisher": "Disney",
+            "url": "https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:53:03.733Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "epic-games",
+      "name": "Epic Games",
+      "publisher": "Epic Games",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "epicgames.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Fortnite children’s privacy settlement",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "amount": "USD 275 million",
+          "summary": "Epic agreed to a COPPA penalty to resolve allegations involving collection of children’s personal information.",
+          "source": {
+            "title": "Fortnite Video Game Maker Epic Games to Pay More Than Half a Billion Dollars over FTC Allegations of Privacy Violations and Unwanted Charges | Federal",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2022/12/fortnite-video-game-maker-epic-games-pay-more-half-billion-dollars-over-ftc-allegations",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:31.155Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "goodrx",
+      "name": "GoodRx",
+      "publisher": "GoodRx",
+      "category": "health",
+      "processNames": [],
+      "domains": [
+        "goodrx.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "GoodRx health-data advertising action",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "amount": "USD 1.5 million",
+          "summary": "GoodRx agreed to a civil penalty in a case concerning health-data disclosures and alleged Health Breach Notification Rule violations.",
+          "source": {
+            "title": "FTC Enforcement Action to Bar GoodRx from Sharing Consumers’ Sensitive Health Info for Advertising | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/02/ftc-enforcement-action-bar-goodrx-sharing-consumers-sensitive-health-info-advertising",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:33.437Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -2602,7 +3220,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Kochava sensitive location data settlement",
+          "year": 2026,
+          "jurisdiction": "United States",
+          "summary": "The FTC announced a settlement restricting the sale and disclosure of sensitive location data without express consent.",
+          "source": {
+            "title": "FTC to Ban Kochava and Subsidiary from Selling Sensitive Location Data to Settle Charges They Sold Location Data Linked to Millions of Mobile Devices ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2026/05/ftc-ban-kochava-subsidiary-selling-sensitive-location-data-settle-charges-they-sold-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:31.515Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Device and attribution information",
@@ -2761,5 +3395,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T05:50:20.331Z"
+  "generatedAt": "2026-11-22T05:54:45.494Z"
 }
