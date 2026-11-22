@@ -203,12 +203,12 @@
       $('rules-list').textContent = 'No local policy data available.';
       return;
     }
-    const auth0 = policy.auth0Configured ?? (lower(policy.provider).includes('auth0') ? policy.providerConfigured : null);
+    const auth0 = policy.auth0Configured ?? policy.providerConfigured;
     $('rules-provider').textContent = 'Decision provider: ' + policy.provider
       + ' / Auth0: ' + (auth0 == null ? 'configuration not reported' : auth0 ? 'configured' : 'not configured')
       + ' / enforcer: ' + policy.enforcer;
     $('rules-list').innerHTML = '<h2>Rules list</h2>' + list((policy.rules || []).map((rule) =>
-      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || policy.enforcer !== 'dry-run' ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
+      `${esc(rule.action)} / ${esc(rule.target.kind)} / ${esc(rule.target.value)} <button type="button" class="tool-btn" data-remove-rule="${esc(rule.id)}" ${policyBusy || policy.enforcer !== 'dry-run' || (rule.approval?.via === 'auth0' && auth0) ? 'disabled' : ''}>Remove</button>`), 'No rules saved.');
   }
 
   function showPlan(plan, decision) {

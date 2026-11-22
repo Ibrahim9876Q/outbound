@@ -444,7 +444,7 @@
 
   function isRelated(id) {
     if (!selected || !lastState) return false;
-    return lastState.links.some((l) => (l.from === selected && l.to === id) || (l.to === selected && l.from === id));
+    return (lastState.legacyLinks || lastState.links).some((l) => (l.from === selected && l.to === id) || (l.to === selected && l.from === id));
   }
 
   // Positions on the screen, from the icon's slot.
@@ -517,9 +517,13 @@
     const resolve = (name) => icons.has(name) ? name : appNames.get(String(name).toLowerCase());
     for (const link of state.links) {
       if (!kinds.has(link.kind)) continue;
-      const from = resolve(link.from);
-      const to = resolve(link.to);
-      const hub = String(link.to).startsWith('company:') && visibleOrgs.get(link.to.slice(8));
+      let endpointIds = [];
+      try { endpointIds = JSON.parse(link.id); } catch { /* Older IDs can be opaque. */ }
+      const idsMatch = Array.isArray(endpointIds) && endpointIds[0] === link.kind;
+      const from = resolve(idsMatch ? endpointIds[1] : link.from) || resolve(link.from);
+      const to = resolve(idsMatch ? endpointIds[2] : link.to) || resolve(link.to);
+      const hub = String(link.to).startsWith('company:')
+        && (visibleOrgs.get(link.to.slice(8)) || (moreChip && !moreChip.hidden ? moreChip : null));
       const a = iconPoint(from, 'center');
       const b = hub ? chipAnchor(hub) : iconPoint(to, 'center');
       if (!a || !b) continue;
@@ -772,11 +776,11 @@
       html += '<div class="detail-sub">Talks directly to (on this PC)</div>';
       html += [...new Set(app.localPeers)].map((id) => {
         const peer = lastState.apps.find((a) => a.id === id);
-        const link = lastState.links.find((l) => l.kind === 'local' && ((l.from === id && l.to === app.id) || (l.to === id && l.from === app.id)));
+        const link = (lastState.legacyLinks || lastState.links).find((l) => l.kind === 'local' && ((l.from === id && l.to === app.id) || (l.to === id && l.from === app.id)));
         return `<div class="peer"><span class="sw local"></span>${esc(appLabel(peer ? peer.name : id))}${link && link.ports.length ? ` <span class="hint">· port ${link.ports.slice(0, 3).join(', ')}</span>` : ''}</div>`;
       }).join('');
     }
-    const shared = lastState.links.filter((l) => l.kind === 'shared' && (l.from === app.id || l.to === app.id));
+    const shared = (lastState.legacyLinks || lastState.links).filter((l) => l.kind === 'shared' && (l.from === app.id || l.to === app.id));
     if (shared.length) {
       html += '<div class="detail-sub">Sends to the same company as</div>';
       html += shared.map((l) => {
@@ -961,7 +965,7 @@
       const t = tracked.destinations.find((d) => d.tracker);
       steps.push({ id: tracked.id, text: `${tracked.name} talks to ${t.org}, a tracking / analytics company` });
     }
-    const pairs = groupLinks(lastState ? lastState.links : []).filter((l) => onDesk.has(l.from) && onDesk.has(l.to));
+    const pairs = groupLinks(lastState ? (lastState.legacyLinks || lastState.links) : []).filter((l) => onDesk.has(l.from) && onDesk.has(l.to));
     const local = pairs.find((l) => l.kind === 'local' && l.active) || pairs.find((l) => l.kind === 'local');
     if (local) steps.push({ id: local.from, text: `${nameOf(local.from)} and ${nameOf(local.to)} talk directly, without leaving this PC` });
     const shared = pairs.filter((l) => l.kind === 'shared').sort((a, b) => b.vias.length - a.vias.length)[0];
