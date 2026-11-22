@@ -85,3 +85,50 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Airbnb — https://www.airbnb.com/help/article/2855 — missing evidence: account information, provide
 - Expedia — https://www.expedia.com/legal/privacy — curl: (22) The requested URL returned error: 429
 - Etsy — https://www.etsy.com/legal/privacy/ — curl: (22) The requested URL returned error: 403
+
+## apps-05 · 2026-11-22T05:53:04.152Z
+
+- Google Drive — https://policies.google.com/privacy?hl=en-US — missing evidence: docs and spreadsheets you make
+- Twitch — https://www.twitch.tv/p/en/legal/privacy-notice/ — missing evidence: twitch, usage, improve
+- Duolingo — https://www.duolingo.com/privacy — missing evidence: learning, account
+- Uber — https://www.uber.com/privacy/ — curl: (22) The requested URL returned error: 406
+- GoodRx — https://www.goodrx.com/privacy-policy — curl: (22) The requested URL returned error: 403
+- Notion — https://www.notion.so/Privacy-Policy-3468d120cf614d4c9014c09f6adc9091 — missing evidence: usage, improve
+- AVG — https://www.avg.com/en-us/privacy — missing evidence: device
+- Riot Vanguard — https://www.riotgames.com/en/privacy-notice — missing evidence: vanguard
+- Power BI — https://privacy.microsoft.com/en-us/privacystatement — missing evidence: power bi, customer data
+- Google Calendar — https://support.google.com/calendar/answer/10319332?hl=en — curl: (22) The requested URL returned error: 404
+- YouTube Music — https://support.google.com/youtubemusic/answer/6313551?hl=en — curl: (22) The requested URL returned error: 404
+- Adobe Acrobat — https://www.adobe.com/privacy/policy.html — curl: (22) The requested URL returned error: 403
+- Adobe Photoshop — https://www.adobe.com/privacy/policy.html — curl: (22) The requested URL returned error: 403
+- Adobe Lightroom — https://www.adobe.com/privacy/policy.html — curl: (22) The requested URL returned error: 403
+- Apple Fitness+ — https://www.apple.com/legal/privacy/data/en/apple-fitness-plus/ — curl: (22) The requested URL returned error: 404
+- Audible — https://www.audible.com/legal/privacy — missing evidence: personalize
+- HBO Max — https://www.wbdprivacy.com/policycenter/b2c/ — missing evidence: device, viewing, personalize
+
+## apps-06 · 2026-11-22T05:54:45.492Z
+
+- GIMP — https://www.gimp.org/privacy.html — curl: (22) The requested URL returned error: 404
+- Blender — https://www.blender.org/privacy-policy/ — curl: (22) The requested URL returned error: 403
+- Unity — https://unity.com/legal/privacy-policy — missing evidence: device, usage
+- Autodesk — https://www.autodesk.com/company/legal-notices-trademarks/privacy-statement — curl: (22) The requested URL returned error: 403
+- SketchUp — https://www.trimble.com/en/legal/privacy-policy — curl: (22) The requested URL returned error: 404
+- Procreate — https://procreate.com/privacy — curl: (22) The requested URL returned error: 404
+- Obsidian — https://obsidian.md/privacy — missing evidence: support
+- LastPass — https://www.lastpass.com/legal/privacy-policy — curl: (22) The requested URL returned error: 404
+- NordVPN — https://my.nordaccount.com/legal/privacy-policy/nordvpn/ — missing evidence: nordvpn, subscription
+- Battle.net — https://www.blizzard.com/en-us/company/about/privacy.html — curl: (22) The requested URL returned error: 404
+- Ubisoft Connect — https://www.ubisoft.com/en-us/company/about-us/privacy-policy — missing evidence: account, gameplay
+- Genshin Impact — https://www.hoyoverse.com/en-us/company/privacy — missing evidence: game, account
+- iCloud Mail — https://www.apple.com/legal/privacy/data/en/icloud/ — curl: (22) The requested URL returned error: 404
+- Pandora — https://www.pandora.com/legal/privacy — curl: (22) The requested URL returned error: 404
+- Costco — https://www.costco.com/privacy-policy.html — missing evidence: purchase
+- McDonald’s — https://www.mcdonalds.com/us/en-us/privacy.html — curl: (22) The requested URL returned error: 403
+
+- Norton ? https://www.norton.com/privacy ? matched product navigation on a privacy portal rather than a collection disclosure
+
+- Google Nest ? https://support.google.com/googlenest/answer/9415830?hl=en ? linked help page did not substantiate the collection statement
+
+- Telegram Web ? https://telegram.org/privacy ? duplicate policy and service scope of the Telegram entry
+
+- Tuta Mail ? https://tuta.com/privacy ? response was a product landing page rather than its privacy notice

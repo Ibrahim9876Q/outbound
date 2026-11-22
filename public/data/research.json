@@ -2957,6 +2957,688 @@
           }
         }
       ]
+    },
+    {
+      "id": "obs",
+      "name": "OBS Studio",
+      "publisher": "OBS Project",
+      "category": "creative",
+      "processNames": [],
+      "domains": [
+        "obsproject.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and request information from OBS websites",
+          "purpose": "Operate OBS community services",
+          "source": {
+            "title": "Privacy Policy | OBS",
+            "publisher": "OBS Project",
+            "url": "https://obsproject.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:34.487Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "zoominfo",
+      "name": "ZoomInfo",
+      "publisher": "ZoomInfo",
+      "category": "business",
+      "processNames": [],
+      "domains": [
+        "zoominfo.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Business contact information",
+          "purpose": "Provide business intelligence services",
+          "source": {
+            "title": "ZoomInfo Privacy Policy",
+            "publisher": "ZoomInfo",
+            "url": "https://www.zoominfo.com/about-zoominfo/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:35.754Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "trello",
+      "name": "Trello",
+      "publisher": "Atlassian",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "trello.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and content information in Atlassian services",
+          "purpose": "Provide and improve Atlassian services",
+          "source": {
+            "title": "Privacy Policy | Atlassian",
+            "publisher": "Atlassian",
+            "url": "https://www.atlassian.com/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.578Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "jira",
+      "name": "Jira",
+      "publisher": "Atlassian",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "atlassian.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and usage information",
+          "purpose": "Provide and improve Atlassian services",
+          "source": {
+            "title": "Privacy Policy | Atlassian",
+            "publisher": "Atlassian",
+            "url": "https://www.atlassian.com/legal/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.799Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "monday",
+      "name": "monday.com",
+      "publisher": "monday.com",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "monday.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Operate work management services",
+          "source": {
+            "title": "Privacy Policy - monday.com Legal Portal",
+            "publisher": "monday.com",
+            "url": "https://monday.com/l/privacy/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.423Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "publisher": "Asana",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "asana.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and product usage data",
+          "purpose": "Operate and improve work management services",
+          "source": {
+            "title": "Asana Privacy Statement • Asana",
+            "publisher": "Asana",
+            "url": "https://asana.com/terms/privacy-statement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.864Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "todoist",
+      "name": "Todoist",
+      "publisher": "Doist",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "todoist.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and task information",
+          "purpose": "Provide task management features",
+          "source": {
+            "title": "Privacy Policy | Todoist",
+            "publisher": "Doist",
+            "url": "https://www.todoist.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.551Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "evernote",
+      "name": "Evernote",
+      "publisher": "Bending Spoons",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "evernote.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and content information",
+          "purpose": "Provide note storage and related services",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Bending Spoons",
+            "url": "https://evernote.com/privacy/policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:40.206Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bitwarden",
+      "name": "Bitwarden",
+      "publisher": "Bitwarden",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "bitwarden.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and service metadata",
+          "purpose": "Operate and secure account services",
+          "source": {
+            "title": "Bitwarden Inc. Privacy Policy | Bitwarden",
+            "publisher": "Bitwarden",
+            "url": "https://bitwarden.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:38.850Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "1password",
+      "name": "1Password",
+      "publisher": "AgileBits",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "1password.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and service usage information",
+          "purpose": "Operate and improve 1Password services",
+          "source": {
+            "title": "Privacy Policy | 1Password",
+            "publisher": "AgileBits",
+            "url": "https://1password.com/legal/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:40.901Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "expressvpn",
+      "name": "ExpressVPN",
+      "publisher": "ExpressVPN",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "expressvpn.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and limited usage statistics",
+          "purpose": "Provide and support the VPN service",
+          "source": {
+            "title": "ExpressVPN Privacy Policy",
+            "publisher": "ExpressVPN",
+            "url": "https://www.expressvpn.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:42.085Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "steam-mobile",
+      "name": "Steam Mobile",
+      "publisher": "Valve",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "steampowered.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Steam account data and app usage information under Valve’s policy",
+          "purpose": "Provide Steam account services",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:41.009Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ea-app",
+      "name": "EA app",
+      "publisher": "Electronic Arts",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "ea.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account, device and gameplay data",
+          "purpose": "Provide and improve EA services",
+          "source": {
+            "title": "Privacy &amp; Cookie Policy - Official EA Site",
+            "publisher": "Electronic Arts",
+            "url": "https://www.ea.com/legal/privacy-and-cookie-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:41.370Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "proton-drive",
+      "name": "Proton Drive",
+      "publisher": "Proton",
+      "category": "storage",
+      "processNames": [],
+      "domains": [
+        "proton.me"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and file metadata described by Proton",
+          "purpose": "Operate file storage and sharing",
+          "source": {
+            "title": "Privacy Policy - Proton Drive | Proton",
+            "publisher": "Proton",
+            "url": "https://proton.me/drive/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:43.371Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "soundcloud",
+      "name": "SoundCloud",
+      "publisher": "SoundCloud",
+      "category": "music",
+      "processNames": [],
+      "domains": [
+        "soundcloud.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and listening activity",
+          "purpose": "Operate and personalize SoundCloud",
+          "source": {
+            "title": "SoundCloud - Listen to music",
+            "publisher": "SoundCloud",
+            "url": "https://soundcloud.com/pages/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:43.848Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "deezer",
+      "name": "Deezer",
+      "publisher": "Deezer",
+      "category": "music",
+      "processNames": [],
+      "domains": [
+        "deezer.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and listening information",
+          "purpose": "Provide and personalize streaming",
+          "source": {
+            "title": "Deezer - Personal data",
+            "publisher": "Deezer",
+            "url": "https://www.deezer.com/legal/personal-datas",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:43.106Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bandcamp",
+      "name": "Bandcamp",
+      "publisher": "Bandcamp",
+      "category": "music",
+      "processNames": [],
+      "domains": [
+        "bandcamp.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and purchase information",
+          "purpose": "Operate music sales and accounts",
+          "source": {
+            "title": "Privacy | Bandcamp",
+            "publisher": "Bandcamp",
+            "url": "https://bandcamp.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:44.607Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lyft",
+      "name": "Lyft",
+      "publisher": "Lyft",
+      "category": "transport",
+      "processNames": [],
+      "domains": [
+        "lyft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location and ride information",
+          "purpose": "Provide transportation services",
+          "source": {
+            "title": "Lyft Privacy Policy",
+            "publisher": "Lyft",
+            "url": "https://www.lyft.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:44.626Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "instacart",
+      "name": "Instacart",
+      "publisher": "Maplebear",
+      "category": "delivery",
+      "processNames": [],
+      "domains": [
+        "instacart.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Order and account data",
+          "purpose": "Provide shopping and delivery services",
+          "source": {
+            "title": "Instacart Privacy",
+            "publisher": "Maplebear",
+            "url": "https://www.instacart.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:44.620Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "target",
+      "name": "Target",
+      "publisher": "Target",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "target.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchase and device information",
+          "purpose": "Operate retail services",
+          "source": {
+            "title": "Target Privacy Policy : Target",
+            "publisher": "Target",
+            "url": "https://www.target.com/c/target-privacy-policy/-/N-4sr7p",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:45.229Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "starbucks",
+      "name": "Starbucks",
+      "publisher": "Starbucks",
+      "category": "food",
+      "processNames": [],
+      "domains": [
+        "starbucks.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and purchase information",
+          "purpose": "Operate ordering and rewards services",
+          "source": {
+            "title": "Starbucks Privacy Notice: Starbucks Coffee Company",
+            "publisher": "Starbucks",
+            "url": "https://www.starbucks.com/terms/privacy-notice/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:45.350Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "eventbrite",
+      "name": "Eventbrite",
+      "publisher": "Eventbrite",
+      "category": "events",
+      "processNames": [],
+      "domains": [
+        "eventbrite.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and event registration information",
+          "purpose": "Provide event discovery and ticketing",
+          "source": {
+            "title": "Eventbrite Privacy Policy &ndash; Eventbrite",
+            "publisher": "Eventbrite",
+            "url": "https://www.eventbrite.com/help/en-us/articles/460838/eventbrite-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:54:45.290Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
