@@ -80,6 +80,7 @@
     const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
     const gap = parseFloat(cs.rowGap) || 0;
+    const minWidth = parseFloat(cs.getPropertyValue('--laptop-min-width')) || 0;
     const availW = stage.clientWidth - padX;
     const availH = stage.clientHeight - padY - el.toggles.offsetHeight - el.footnote.offsetHeight - gap * 2;
     if (availW <= 0 || availH <= 0 || !el.laptop.offsetWidth) return;
@@ -89,7 +90,9 @@
       const baseRect = el.base.getBoundingClientRect();
       const visualH = baseRect.bottom - el.lid.getBoundingClientRect().top;
       const visualW = Math.max(w0, baseRect.width);
-      const w = Math.max(1, Math.floor(Math.min(availW * w0 / visualW, availH * w0 / visualH, 1600)));
+      const widthLimit = Math.min(1600, availW * w0 / visualW);
+      const preferred = Math.max(minWidth, availH * w0 / visualH);
+      const w = Math.max(1, Math.floor(Math.min(widthLimit, preferred)));
       el.laptop.style.setProperty('--lw', `${w}px`);
       const squash = el.base.offsetHeight - el.base.getBoundingClientRect().height;
       el.laptop.style.setProperty('--base-squash', `${Math.max(0, squash)}px`);
@@ -273,8 +276,8 @@
     const rows = Math.max(1, Math.floor((bottom - top) / SLOT_H));
     const standardCols = Math.max(1, Math.floor((right - left) / SLOT_W));
     const compact = appCount > standardCols * rows;
-    const iconWidth = compact ? 80 : ICON_W;
-    const cols = compact ? Math.max(standardCols, Math.floor((right - left) / 86)) : standardCols;
+    const iconWidth = compact ? 76 : ICON_W;
+    const cols = compact ? Math.max(standardCols, Math.floor((right - left) / 81)) : standardCols;
     const key = `${W}x${H}@${top}/${iconWidth}`;
     if (key === gridKey) return false;
     gridKey = key;

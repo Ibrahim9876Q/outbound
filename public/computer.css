@@ -17,6 +17,17 @@
   overflow: hidden;
 }
 
+@media (max-height: 600px) {
+  .stage {
+    --laptop-min-width: 640px;
+    justify-content: flex-start;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  .stage .footnote { flex: none; }
+}
+
 .wire-toggles {
   display: flex;
   flex-wrap: wrap;
