@@ -383,6 +383,7 @@
   let policy;
   let blockTarget;
   let policyBusy = false;
+  let previewRetry = false;
   let previewedApp;
   $('rules-globe').addEventListener('click', () => Outbound.showAppOnGlobe(previewedApp));
 
@@ -394,12 +395,17 @@
   function renderPolicy() {
     const pending = $('rules-pending');
     if (blockTarget) {
-      pending.innerHTML = `<p>Target: ${esc(blockTarget.kind)} / ${esc(blockTarget.value)}</p><button type="button" class="tool-btn" id="rules-confirm">Preview block</button>`;
+      const label = policyBusy ? 'Preparing dry-run preview…' : previewRetry ? 'Retry preview' : 'Preview block';
+      pending.innerHTML = `<p>Target: ${esc(blockTarget.kind)} / ${esc(blockTarget.value)}</p><button type="button" class="tool-btn" id="rules-confirm">${label}</button>`;
+      pending.setAttribute('aria-busy', String(policyBusy));
       const submit = $('rules-confirm');
       submit.disabled = policyBusy || !policy || policy.enforcer !== 'dry-run'
         || (lower(policy.provider).includes('auth0') && policy.providerConfigured);
       submit.addEventListener('click', submitBlock);
-    } else pending.replaceChildren();
+    } else {
+      pending.replaceChildren();
+      pending.removeAttribute('aria-busy');
+    }
     if (!policy) {
       $('rules-list').textContent = 'No local policy data available.';
       return;
@@ -444,6 +450,8 @@
     if (policyBusy || !blockTarget || policy?.enforcer !== 'dry-run'
       || (lower(policy.provider).includes('auth0') && policy.providerConfigured)) return;
     policyBusy = true;
+    previewRetry = false;
+    $('rules-status').textContent = 'Preparing the local dry-run preview…';
     renderPolicy();
     try {
       const target = { ...blockTarget };
@@ -456,17 +464,23 @@
       }
       const response = await api('/api/policy/rules', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(15000),
         body: JSON.stringify({ target, action: 'block', scope: 'session' }),
       });
       showPlan(response.plan, response.decision);
       previewedApp = target.kind === 'app' ? target.value : null;
       $('rules-globe').hidden = !previewedApp;
-      $('rules-status').textContent = 'Local block rule preview ready.';
+      $('rules-status').textContent = response.plan?.some((entry) => entry.command)
+        ? 'Local block rule preview ready.' : 'The policy returned a decision with no runnable command.';
       blockTarget = null;
-    } catch {
-      $('rules-status').textContent = 'Could not preview the block rule.';
+    } catch (error) {
+      previewRetry = true;
+      $('rules-status').textContent = error.name === 'TimeoutError'
+        ? 'The preview timed out after 15 seconds. Check the Rules list for a result before retrying.'
+        : 'Could not preview the block rule. Retry preview.';
     } finally {
       policyBusy = false;
+      renderPolicy();
       refreshPolicy();
     }
   }
@@ -474,6 +488,8 @@
   document.addEventListener('click', async (event) => {
     const block = event.target.closest('[data-block-kind]');
     if (block) {
+      if (policyBusy) return;
+      previewRetry = false;
       blockTarget = { kind: block.dataset.blockKind, value: block.dataset.blockValue };
       $('rules-plan').hidden = true;
       $('rules-status').textContent = '';
