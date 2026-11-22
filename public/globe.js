@@ -77,7 +77,9 @@
 
   const overview = node('div', 'globe-overview');
   const heading = node('h2', '', 'Connection map');
-  const summary = node('p', '', 'Waiting for network activity…');
+  const summary = node('p', '', 'Loading globe controls and points…');
+  summary.setAttribute('role', 'status');
+  let rendererReady = false;
   overview.append(heading, summary);
   const motion = node('button', 'globe-motion');
   motion.type = 'button';
@@ -744,8 +746,8 @@
     pinPoint(point);
   }
 
-  function render() {
-    if (!visible || !state) return;
+  function render(prewarming = false) {
+    if ((!visible && !prewarming) || !state) return;
     renderTrail();
     const apps = state.apps.filter((app) => app.destinations.length);
     const nameCounts = new Map();
@@ -772,7 +774,7 @@
     renderCountries(places);
     const home = state.home;
     const located = hasCoordinates(home) ? places.filter(hasCoordinates) : [];
-    if (!initFailed) {
+    if (!initFailed && rendererReady) {
       const count = located.length;
       const unknown = places.length - count;
       const mapped = count + ' mapped ' + plural(count, 'destination');
@@ -871,8 +873,11 @@
       controls.maxDistance = 530;
       setRotation(rotating);
       globe.onGlobeReady(() => {
+        rendererReady = true;
         const home = hasCoordinates(state?.home) ? state.home : { lat: 43, lng: -81 };
         globe.pointOfView({ lat: home.lat - 9, lng: home.lng, altitude: 1.65 });
+        modelKey = '';
+        render(true);
       });
       loadCountryCells();
     } catch (error) {
@@ -944,6 +949,8 @@
     const prewarm = () => {
       if (globe || initFailed || !shared.state) return;
       initGlobe();
+      modelKey = '';
+      render(true);
       if (!visible) globe?.pauseAnimation();
     };
     shared.onState(() => {
