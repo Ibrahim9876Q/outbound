@@ -176,10 +176,14 @@
     const running = scan.status === 'running';
     scanButton.disabled = running || Boolean(scan.appDataBackground);
     setRadar(running);
-    const messages = { idle: 'Ready when you choose to scan.', running: 'Scanning locally', done: 'Scan complete.', error: scan.error || 'The scan failed.' };
-    $('scan-status').textContent = (messages[scan.status] || 'Scan status unavailable.')
-      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '')
-      + (scan.appDataBackground ? ' / App-data totals are provisional. The local walk is still running.' : '');
+    const folderCount = new Set((scan.apps || []).map((app) => app.path).filter(Boolean)).size;
+    const done = scan.appDataBackground
+      ? 'Scan complete, app-data walk still running (' + number(folderCount) + ' folders reported so far)'
+      : 'Scan complete.';
+    const messages = { idle: 'Ready when you choose to scan.', running: 'Scanning locally', done, error: scan.error || 'The scan failed.' };
+    const status = (messages[scan.status] || 'Scan status unavailable.')
+      + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '');
+    if ($('scan-status').textContent !== status) $('scan-status').textContent = status;
     if (scan.status === 'done' && !scan.appDataBackground) completedScan = scan;
     const previous = scan.previous ?? (scan.status === 'running' ? completedScan : null);
     $('scan-previous').hidden = !previous;
@@ -232,7 +236,8 @@
     try {
       const scan = await api('/api/scan');
       renderScan(scan);
-      if (scan.status === 'running' || scan.appDataBackground) scanPoll = setTimeout(refreshScan, 650);
+      if (scan.status === 'running') scanPoll = setTimeout(refreshScan, 650);
+      else if (scan.appDataBackground) scanPoll = setTimeout(refreshScan, 3000);
     } catch (error) {
       setRadar(false);
       scanButton.disabled = error.status === 404;
