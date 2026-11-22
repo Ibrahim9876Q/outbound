@@ -10451,6 +10451,586 @@
           }
         }
       ]
+    },
+    {
+      "id": "bigo-live",
+      "name": "BIGO LIVE",
+      "publisher": "BIGO TECHNOLOGY PTE. LTD.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎BIGO LIVE-Live Stream, Go Live App - App Store",
+            "publisher": "BIGO TECHNOLOGY PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/bigo-live-live-stream-go-live/id1077137248",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:44.760Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "clapper",
+      "name": "Clapper",
+      "publisher": "CLAPPER MEDIA GROUP INC.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Clapper: Video, Live, Chat App - App Store",
+            "publisher": "CLAPPER MEDIA GROUP INC.",
+            "url": "https://apps.apple.com/us/app/clapper-video-live-chat/id1522122685",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:44.745Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "giftful",
+      "name": "Giftful",
+      "publisher": "Giftful LLC",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Giftful - Wishlist & Registry App - App Store",
+            "publisher": "Giftful LLC",
+            "url": "https://apps.apple.com/us/app/giftful-wishlist-registry/id1450175505",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:46.032Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "partiful",
+      "name": "Partiful",
+      "publisher": "Partiful Co.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Partiful: Party Invite Maker App - App Store",
+            "publisher": "Partiful Co.",
+            "url": "https://apps.apple.com/us/app/partiful-party-invite-maker/id1662982304",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:45.960Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "publisher": "Pinterest, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, User Content, Search History, Browsing History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Pinterest App - App Store",
+            "publisher": "Pinterest, Inc.",
+            "url": "https://apps.apple.com/us/app/pinterest/id429047995",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:45.824Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "t-life",
+      "name": "T-Life",
+      "publisher": "T-Mobile USA, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎T-Life App - App Store",
+            "publisher": "T-Mobile USA, Inc.",
+            "url": "https://apps.apple.com/us/app/t-life/id1111876388",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.218Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ring",
+      "name": "Ring",
+      "publisher": "Bot Home Automation, INC",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Ring - Always Home App - App Store",
+            "publisher": "Bot Home Automation, INC",
+            "url": "https://apps.apple.com/us/app/ring-always-home/id926252661",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.213Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hinge",
+      "name": "Hinge",
+      "publisher": "Hinge, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hinge Dating App: Match & Date App - App Store",
+            "publisher": "Hinge, Inc.",
+            "url": "https://apps.apple.com/us/app/hinge-dating-app-match-date/id595287172",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.632Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lg-thinq",
+      "name": "LG ThinQ",
+      "publisher": "LG Electronics",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎LG ThinQ App - App Store",
+            "publisher": "LG Electronics",
+            "url": "https://apps.apple.com/us/app/lg-thinq/id993504342",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.415Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hubspace",
+      "name": "Hubspace",
+      "publisher": "Afero, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hubspace App - App Store",
+            "publisher": "Afero, Inc.",
+            "url": "https://apps.apple.com/us/app/hubspace/id1506042235",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.579Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "elfster",
+      "name": "Elfster",
+      "publisher": "Elfster, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "User Content, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Elfster: The Secret Santa App App - App Store",
+            "publisher": "Elfster, Inc.",
+            "url": "https://apps.apple.com/us/app/elfster-the-secret-santa-app/id751594890",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.824Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "drawnames",
+      "name": "Drawnames",
+      "publisher": "Meetrix Online B.V.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Drawnames | Secret Santa app App - App Store",
+            "publisher": "Meetrix Online B.V.",
+            "url": "https://apps.apple.com/us/app/drawnames-secret-santa-app/id932002377",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.719Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "myq",
+      "name": "myQ",
+      "publisher": "The Chamberlain Group, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎myQ Garage & Access Control App - App Store",
+            "publisher": "The Chamberlain Group, Inc.",
+            "url": "https://apps.apple.com/us/app/myq-garage-access-control/id456282559",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.797Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "zillow",
+      "name": "Zillow",
+      "publisher": "Zillow, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Search History, Browsing History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Zillow Real Estate & Rentals App - App Store",
+            "publisher": "Zillow, Inc.",
+            "url": "https://apps.apple.com/us/app/zillow-real-estate-rentals/id310738695",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.807Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "booksy",
+      "name": "Booksy",
+      "publisher": "Booksy International sp. z o.o.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Booksy for Customers App - App Store",
+            "publisher": "Booksy International sp. z o.o.",
+            "url": "https://apps.apple.com/us/app/booksy-for-customers/id723961236",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.801Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "substack",
+      "name": "Substack",
+      "publisher": "Substack Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Substack App - App Store",
+            "publisher": "Substack Inc.",
+            "url": "https://apps.apple.com/us/app/substack/id1581650857",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.380Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "newsbreak",
+      "name": "NewsBreak",
+      "publisher": "Particle Media Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NewsBreak: Local News & Alerts App - App Store",
+            "publisher": "Particle Media Inc.",
+            "url": "https://apps.apple.com/us/app/newsbreak-local-news-alerts/id1132762804",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.467Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nextdoor",
+      "name": "Nextdoor",
+      "publisher": "Nextdoor.com, Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Nextdoor: Neighborhood Network App - App Store",
+            "publisher": "Nextdoor.com, Inc.",
+            "url": "https://apps.apple.com/us/app/nextdoor-neighborhood-network/id640360962",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.607Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ground-news",
+      "name": "Ground News",
+      "publisher": "Snapwise Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Ground News App - App Store",
+            "publisher": "Snapwise Inc.",
+            "url": "https://apps.apple.com/us/app/ground-news/id1324203419",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:51.600Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "citizen",
+      "name": "Citizen",
+      "publisher": "sp0n, Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health & Fitness, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Citizen: Safety & Live Video App - App Store",
+            "publisher": "sp0n, Inc.",
+            "url": "https://apps.apple.com/us/app/citizen-safety-live-video/id1039889567",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:51.628Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -17109,7 +17689,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:18:18.291Z",
+  "generatedAt": "2026-11-22T08:18:52.444Z",
   "index": {
     "exe": {
       "brave.exe": [
