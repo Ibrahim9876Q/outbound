@@ -717,7 +717,6 @@
       }
       showPlan(result.plan);
       $('rules-status').textContent = 'Rule removed.';
-      policy.rules = policy.rules.filter((item) => item.id !== rule.id);
     } catch (error) {
       if (error.status === 401) refreshAuth();
       $('rules-status').textContent = error.status === 401 ? 'Sign in with Auth0 to remove this rule.'
