@@ -704,13 +704,14 @@
   function renderDetail() {
     const icon = selected && icons.get(selected);
     el.hint.hidden = !!icon;
-    if (!icon) { el.detail.innerHTML = ''; return; }
+    if (!icon) { el.detail.innerHTML = ''; delete el.detail.dataset.html; return; }
     const app = icon.app;
     const tile = app.icon ? tileInner(app) : `<span class="initials">${esc(initials(app.name))}</span>`;
     const live = app.destinations.filter((d) => d.active).length;
     const dev = [app.mic && 'using the microphone', app.cam && 'using the camera'].filter(Boolean);
     let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
+    html += appXray(app);
     if (app.destinations.length) {
       html += '<div class="detail-sub">Sends data to</div><ul class="dests">';
       html += app.destinations.slice(0, 40).map((d) => {
@@ -746,6 +747,50 @@
       const dests = el.detail.querySelector('.dests');
       if (dests) dests.scrollTop = scroll;
     }
+  }
+
+  function appXray(app) {
+    const companies = new Map();
+    const countries = new Set();
+    for (const destination of app.destinations) {
+      if (destination.country) countries.add(destination.country);
+      if (!destination.org || destination.org === 'Unknown owner') continue;
+      const key = destination.org.toLowerCase();
+      const company = companies.get(key) || { name: destination.org, tracker: false, category: null };
+      company.tracker ||= destination.tracker;
+      company.category ||= destination.trackerCategory;
+      companies.set(key, company);
+    }
+    const groups = { ads: [], analytics: [], 'data broker': [], 'Other trackers': [], 'Other companies': [] };
+    for (const company of companies.values()) {
+      const group = company.tracker ? (company.category || 'Other trackers') : 'Other companies';
+      (groups[group] || groups['Other trackers']).push(company.name);
+    }
+    const trackers = [...companies.values()].filter((company) => company.tracker).length;
+    const verdict = companies.size
+      ? `${app.name} talked to ${companies.size} ${companies.size === 1 ? 'company' : 'companies'}`
+        + (countries.size ? ` in ${countries.size} ${countries.size === 1 ? 'country' : 'countries'}` : '')
+        + `${trackers ? `; ${trackers} ${trackers === 1 ? 'is a tracker' : 'are trackers'}` : ''}.`
+      : `No company identified for ${app.name} yet.`;
+    const labels = { ads: 'Advertising', analytics: 'Analytics', 'data broker': 'Data brokers' };
+    const orgs = Object.entries(groups).filter(([, names]) => names.length).map(([category, names]) =>
+      `<div class="xray-group"><strong>${labels[category] || category}</strong><span>${esc(names.sort().join(', '))}</span></div>`).join('');
+    const flags = [...countries].sort().map((code) => `<span>${flagHtml(code)} ${esc(countryName(code))}</span>`).join('');
+    const history = ['mic', 'camera'].map((kind) => {
+      const device = lastState.devices[kind];
+      const entry = (device.lastUsedByApp || []).find((row) => row.id.toLowerCase() === app.id.toLowerCase());
+      const matches = (row) => row.id ? row.id.toLowerCase() === app.id.toLowerCase()
+        : Boolean(entry && row.app.toLowerCase() === entry.label.toLowerCase());
+      const active = device.apps.find(matches);
+      const sessions = device.recentSessions.filter(matches).slice(0, 3);
+      const lines = sessions.map((session) => `${ago(session.stop)} · ${duration(session.stop - session.start)}`);
+      if (!lines.length && entry?.stop) lines.push(`${ago(entry.stop)} · ${duration(entry.stop - entry.start)}`);
+      if (active) lines.unshift('In use now');
+      return `<div class="xray-group"><strong>${kind === 'mic' ? 'Microphone' : 'Camera'}</strong><span>${lines.map(esc).join('<br>') || 'No use recorded'}</span></div>`;
+    }).join('');
+    return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
+      + `<button type="button" class="toggle-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
+      + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
   }
 
   // ---------- live feed + toasts ----------
@@ -960,6 +1005,9 @@
     for (const id of ['show-out', 'show-local', 'show-shared']) $(id).addEventListener('change', applyToggles);
     applyToggles();
     el.screen.addEventListener('click', (e) => { if (!e.target.closest('.app')) select(null); });
+    el.detail.addEventListener('click', (event) => {
+      if (event.target.closest('[data-xray-globe]') && selected) Outbound.showAppOnGlobe?.(selected);
+    });
     $('spotlight-btn').addEventListener('click', () => toggleSpotlight());
     document.addEventListener('keydown', (e) => {
       if (Outbound.view !== 'computer' || e.target.closest('input, textarea, select') || e.ctrlKey || e.metaKey || e.altKey) return;

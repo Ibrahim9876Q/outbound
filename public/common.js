@@ -20,6 +20,7 @@
   Outbound.onState = (fn) => { stateFns.push(fn); if (Outbound.state) safe(fn, Outbound.state); };
   Outbound.onEvent = (fn) => { eventFns.push(fn); };
   Outbound.onView = (fn) => { viewFns.push(fn); };
+  Outbound.showView = showView;
 
   function safe(fn, arg) {
     try { fn(arg); } catch (err) { console.error(err); }

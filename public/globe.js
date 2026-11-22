@@ -812,6 +812,13 @@
   document.addEventListener('visibilitychange', syncView);
 
   if (typeof shared?.onState === 'function') {
+    shared.showAppOnGlobe = (id) => {
+      selectedApp = id;
+      modelKey = '';
+      clearPoint();
+      shared.showView('globe');
+      syncView();
+    };
     shared.onState(receiveState);
   } else {
     const source = new EventSource('/events');

@@ -668,6 +668,12 @@
 .detail-head .tile img { width: 30px; height: 30px; filter: none; }
 .detail-head .tile .initials { font-size: 16px; }
 .detail-head h3 { margin: 0; font-size: 15px; }
+.app-xray { display: grid; gap: 9px; padding: 10px; border: 1px solid var(--line-strong); }
+.xray-verdict { font-weight: 700; font-size: 15px; }
+.app-xray button { justify-self: start; cursor: pointer; }
+.xray-group { display: grid; gap: 2px; font-size: 13px; overflow-wrap: anywhere; }
+.xray-group span { color: var(--muted); }
+.xray-countries { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; }
 .detail-head p { font: 13px var(--font-mono); color: var(--muted); }
 .detail-sub { font: 700 12px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 10px 0 4px; }
 .detail-sub::before { content: "// "; color: var(--dim); }
