@@ -37,3 +37,7 @@ Directory `%TEMP%\outbound-xray8-wEurIW\screenshots`
 - The successful compact command preview is at `%TEMP%\outbound-xray8-CdGPGg\screenshots\rules-command-1366x768.png`.
 
 All 40 tests and the smoke check passed.
+
+## xray9 replay verification
+
+The 80-app measurements remain blocked on integration commit `7c867fa`. Its tracked files and replay references contain no test-only 80-app dashboard replay fixture. The earlier backend destination-retention replay used a different workload. The live frame measurements above remain the verified results.
