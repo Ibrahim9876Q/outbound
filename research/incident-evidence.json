@@ -1,0 +1,1004 @@
+{
+  "[\"1Health.io/Vitagene\",\"1Health.io/Vitagene, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923170-1healthiovitagene-matter\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:10.037Z",
+    "year": "2023-06-16"
+  },
+  "[\"23andMe\",\"Joint 23andMe breach investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-001\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:22.980Z",
+    "year": "2025"
+  },
+  "[\"ACRAnet, Inc.\",\"ACRAnet, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3088-acranet-inc-matter\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:26.980Z",
+    "year": "2011-02-03"
+  },
+  "[\"Accretive Health, Inc.\",\"Accretive Health, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3077-accretive-health-inc-matter\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:27.456Z",
+    "year": "2013-12-31"
+  },
+  "[\"Adobe\",\"Adobe customer account compromise\",\"https://blog.adobe.com/en/publish/2013/10/03/important-customer-security-announcement\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:22.690Z",
+    "year": "2013"
+  },
+  "[\"AggregateIQ\",\"Joint AggregateIQ investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-004\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:23.764Z",
+    "year": "2019"
+  },
+  "[\"Agronomy\",\"Agronomy safeguards and consent inquiry\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-002\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:22.703Z",
+    "year": "2023"
+  },
+  "[\"Albany ENT & Allergy Services\",\"Albany ENT patient-data agreement\",\"https://ag.ny.gov/press-release/2024/attorney-general-james-secures-225-million-capital-region-health-care-provider\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:30.278Z",
+    "year": "2024"
+  },
+  "[\"Amazon\",\"Alexa children’s records retention case\",\"https://search.ftc.gov/system/files/ftc_gov/pdf/1923128amazonalexaorderfiled.pdf\",2023,\"USD 25 million\"]": {
+    "checkedAt": "2026-11-22T08:39:57.952Z",
+    "year": "2023",
+    "amount": "$25,000,000"
+  },
+  "[\"Amazon\",\"Amazon.com, Inc., U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/252-3024-amazoncom-inc-us-v\",2026,null]": {
+    "checkedAt": "2026-11-22T08:39:57.068Z",
+    "year": "2026-06-30"
+  },
+  "[\"Apitor\",\"Apitor children’s data complaint\",\"https://search.ftc.gov/news-events/news/press-releases/2025/09/ftc-takes-action-against-robot-toy-maker-allowing-collection-childrens-data-without-parental-consent\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:09.338Z",
+    "year": "2025"
+  },
+  "[\"Apitor\",\"Apitor · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/apitor\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:07.558Z",
+    "year": "2025-09-03"
+  },
+  "[\"Apple\",\"Apple device identifiers for targeted advertising\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2013/pipeda-2013-017\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:26.298Z",
+    "year": "2013"
+  },
+  "[\"Ascension Data & Analytics, LLC\",\"Ascension Data & Analytics, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3126-ascension-data-analytics-llc-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:09.711Z",
+    "year": "2020-12-15"
+  },
+  "[\"Ashley Madison\",\"Ashley Madison · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison\",2016,null]": {
+    "checkedAt": "2026-11-22T08:40:19.854Z",
+    "year": "2016-12-14"
+  },
+  "[\"Automattic\",\"WordPress.com server intrusion\",\"https://wordpress.com/blog/2011/04/13/security\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:22.852Z",
+    "year": "2011"
+  },
+  "[\"Aylo\",\"Aylo consent investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-001\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:23.124Z",
+    "year": "2024"
+  },
+  "[\"BMO\",\"BMO security deficiencies and breach\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-003\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:23.129Z",
+    "year": "2021"
+  },
+  "[\"Biron Health Group\",\"Biron promotional emails to testing customers\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-002\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:22.935Z",
+    "year": "2022"
+  },
+  "[\"Blackbaud\",\"Multistate Blackbaud breach settlement\",\"https://ag.ny.gov/press-release/2023/attorney-general-james-and-multistate-coalition-secure-495-million-cloud-company\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:30.279Z",
+    "year": "2023"
+  },
+  "[\"Blackbaud, Inc.\",\"Blackbaud, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2023181-blackbaud-inc\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:08.744Z",
+    "year": "2024-02-01"
+  },
+  "[\"Bonzi Software, Inc.\",\"Bonzi Software, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/bonzi-software-inc\",2004,null]": {
+    "checkedAt": "2026-11-22T08:40:28.162Z",
+    "year": "2004-02-18"
+  },
+  "[\"Brinks Home\",\"Brinks Home OPC inquiry\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2024/pipeda-2024-002\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:22.688Z",
+    "year": "2024"
+  },
+  "[\"CBR Systems, Inc.\",\"CBR Systems, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3120-cbr-systems-inc-matter\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:27.221Z",
+    "year": "2013-01-28"
+  },
+  "[\"Cadillac Fairview\",\"Mall kiosk facial analytics investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-004\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:23.762Z",
+    "year": "2020"
+  },
+  "[\"CafePress\",\"CafePress, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923209-cafepress-matter\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:07.545Z",
+    "year": "2022-03-15"
+  },
+  "[\"Cambridge Analytica, LLC\",\"Cambridge Analytica, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3107-cambridge-analytica-llc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.295Z",
+    "year": "2019-07-24"
+  },
+  "[\"Cerebral\",\"Cerebral telehealth information complaint\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3067-cerebral-inc-kyle-robertson-us-v\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:32.444Z",
+    "year": "2024"
+  },
+  "[\"Ceridian Corporation\",\"Ceridian Corporation, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3160-ceridian-corporation-matter\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.447Z",
+    "year": "2011-05-03"
+  },
+  "[\"Certegy Check Services, Inc.\",\"Certegy Check Services, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3184-certegy-check-services-inc\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:27.078Z",
+    "year": "2013-08-15"
+  },
+  "[\"Chegg\",\"Chegg · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/chegg\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:09.511Z",
+    "year": "2022-10-31"
+  },
+  "[\"ChoicePoint Inc.\",\"ChoicePoint Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/052-3069-choicepoint-inc\",2006,null]": {
+    "checkedAt": "2026-11-22T08:40:26.504Z",
+    "year": "2006-01-26"
+  },
+  "[\"Clearview AI\",\"Clearview AI joint investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-001\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:22.700Z",
+    "year": "2021"
+  },
+  "[\"Click Labs, Inc.\",\"Click Labs, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3090-click-labs-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.291Z",
+    "year": "2019-12-03"
+  },
+  "[\"Cloudflare\",\"Cloudflare Thanksgiving incident\",\"https://blog.cloudflare.com/thanksgiving-2023-security-incident\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:23.079Z",
+    "year": "2023"
+  },
+  "[\"Cognosphere\",\"Genshin Impact children’s privacy and marketing matter\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:32.556Z",
+    "year": "2025"
+  },
+  "[\"Comscore\",\"Dunstan v. comScore monitoring software complaint\",\"https://govinfo.gov/content/pkg/USCOURTS-ilnd-1_11-cv-05807/pdf/USCOURTS-ilnd-1_11-cv-05807-0.pdf\",2011,null]": {
+    "checkedAt": "2026-11-22T08:39:57.297Z",
+    "year": "2011"
+  },
+  "[\"Contract Logix, LLC\",\"Contract Logix, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3184-contract-logix-llc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.524Z",
+    "year": "2015-08-17"
+  },
+  "[\"CoreFour\",\"CoreFour OPC investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2021/pipeda-2021-002\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:23.759Z",
+    "year": "2021"
+  },
+  "[\"Credit Bureau Center, LLC (formerly known as MyScore LLC)\",\"Credit Bureau Center, LLC (formerly known as MyScore LLC) · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3120-x170014-credit-bureau-center-llc-formerly-known-myscore-llc\",2017,null]": {
+    "checkedAt": "2026-11-22T08:40:08.407Z",
+    "year": "2017-01-18"
+  },
+  "[\"Credit Karma, Inc.\",\"Credit Karma, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3091-credit-karma-inc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:19.516Z",
+    "year": "2014-03-28"
+  },
+  "[\"Credit Protection Association\",\"Credit Protection Association · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3142-credit-protection-association\",2016,null]": {
+    "checkedAt": "2026-11-22T08:40:19.700Z",
+    "year": "2016-05-09"
+  },
+  "[\"Criteo\",\"CNIL Criteo retargeting action\",\"https://cnil.fr/sites/cnil/files/2024-04/cnil_44e_rapport_annuel_2023.pdf\",2023,\"€40 million\"]": {
+    "checkedAt": "2026-11-22T08:39:58.966Z",
+    "year": "2023",
+    "amount": "40 millions d’euros"
+  },
+  "[\"DCR Workforce, Inc.\",\"DCR Workforce, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3188-dcr-workforce-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.444Z",
+    "year": "2019-09-03"
+  },
+  "[\"Dale Jarrett Racing Adventure, Inc.\",\"Dale Jarrett Racing Adventure, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3190-dale-jarrett-racing-adventure-inc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.472Z",
+    "year": "2015-08-17"
+  },
+  "[\"Datadog\",\"Datadog infrastructure breach\",\"https://companiesmarketcap.com/datadog/sec-reports-10k/0001561550-22-000009\",2016,null]": {
+    "checkedAt": "2026-11-22T08:40:23.046Z",
+    "year": "2016"
+  },
+  "[\"Dell\",\"Dell security and complaint handling\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-003\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:24.102Z",
+    "year": "2020"
+  },
+  "[\"Desjardins\",\"Desjardins personal information breach\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2020/pipeda-2020-005\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:22.697Z",
+    "year": "2020"
+  },
+  "[\"Disney\",\"Disney children’s video privacy matter\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/disney\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:07.159Z",
+    "year": "2025"
+  },
+  "[\"Drizly, LLC.\",\"Drizly, LLC., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2023185-drizly-llc-matter\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:09.318Z",
+    "year": "2022-10-24"
+  },
+  "[\"EPN, Inc., also d/b/a Checknet, Inc.\",\"EPN, Inc., also d/b/a Checknet, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3143-epn-inc-also-dba-checknet-inc-matter\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:26.880Z",
+    "year": "2012-06-07"
+  },
+  "[\"Easy Healthcare Corporation\",\"Premom federal stipulated order\",\"https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:03.044Z",
+    "year": "2023"
+  },
+  "[\"Edmodo, LLC\",\"Edmodo, LLC, U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3129-edmodo-llc-us-v\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:09.931Z",
+    "year": "2023-05-22"
+  },
+  "[\"EmpiriStat\",\"EmpiriStat, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3195-empiristat-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.030Z",
+    "year": "2019-09-03"
+  },
+  "[\"Enzo Biochem\",\"Enzo Biochem ransomware settlement\",\"https://ag.ny.gov/press-release/2024/attorney-general-james-secures-45-million-biotech-company-failing-protect-new\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:30.277Z",
+    "year": "2024"
+  },
+  "[\"Equifax\",\"Canadian Equifax breach investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-001\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:26.305Z",
+    "year": "2019"
+  },
+  "[\"Equifax, Inc.\",\"Equifax, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3203-equifax-inc\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:12.910Z",
+    "year": "2019-07-22"
+  },
+  "[\"Everalbum, Inc.\",\"Everalbum, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3172-everalbum-inc-matter\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:09.494Z",
+    "year": "2021-01-11"
+  },
+  "[\"Fandango, LLC\",\"Fandango, LLC · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3089-fandango-llc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:22.879Z",
+    "year": "2014-03-28"
+  },
+  "[\"Forensics Consulting Solutions, LLC\",\"Forensics Consulting Solutions, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3185-forensics-consulting-solutions-llc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.901Z",
+    "year": "2015-08-17"
+  },
+  "[\"Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion\",\"Franklin's Budget Car Sales, Inc., also d/b/a Franklin Toyota/Scion, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3094-franklins-budget-car-sales-inc-also-dba-franklin-toyotascion-matter\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:27.589Z",
+    "year": "2012-06-07"
+  },
+  "[\"GMR Transcription Services, Inc.\",\"GMR Transcription Services, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3095-gmr-transcription-services-inc-matter\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:19.751Z",
+    "year": "2014-01-31"
+  },
+  "[\"General Motors\",\"GM and OnStar proposed location-data order\",\"https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-takes-action-against-general-motors-sharing-drivers-precise-location-driving-behavior-data\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:27.326Z",
+    "year": "2025"
+  },
+  "[\"GeoCities\",\"GeoCities · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/982-3015-geocities\",1998,null]": {
+    "checkedAt": "2026-11-22T08:40:29.464Z",
+    "year": "1998-08-13"
+  },
+  "[\"GitHub\",\"Third-party OAuth token compromise\",\"https://github.blog/news-insights/company-news/security-alert-stolen-oauth-user-tokens\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:22.707Z",
+    "year": "2022"
+  },
+  "[\"Global Data Vault, LLC\",\"Global Data Vault, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3093-global-data-vault-llc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.867Z",
+    "year": "2019-12-03"
+  },
+  "[\"Global Tel Link Corporation\",\"Global Tel Link Corporation · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2123012-global-tel-link-corporation\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:14.456Z",
+    "year": "2023-11-16"
+  },
+  "[\"Godwin, Jones O., d/b/a skidekids.com\",\"Godwin, Jones O., d/b/a skidekids.com · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1123033-godwin-jones-o-dba-skidekidscom\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.098Z",
+    "year": "2011-11-08"
+  },
+  "[\"Golf Connect, LLC\",\"Golf Connect, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3141-golf-connect-llc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.738Z",
+    "year": "2015-08-17"
+  },
+  "[\"Google\",\"CNIL Google email advertising and cookies decision\",\"https://cnil.fr/fr/publicites-inserees-entre-les-courriels-et-cookies-la-cnil-sanctionne-google-dune-amende-de-325\",2025,null,\"€325 million\"]": {
+    "checkedAt": "2026-11-22T08:42:14.920Z",
+    "year": "2025",
+    "summaryAmounts": [
+      "325 millions d’euros"
+    ]
+  },
+  "[\"Google\",\"Google ads and sensitive health information\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2014/pipeda-2014-001\",2014,null]": {
+    "checkedAt": "2026-11-22T08:39:55.452Z",
+    "year": "2014"
+  },
+  "[\"Google\",\"Google search engine de-indexing finding\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-002\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:55.486Z",
+    "year": "2025"
+  },
+  "[\"Google\",\"Google, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3136-google-inc-matter\",2011,null]": {
+    "checkedAt": "2026-11-22T08:39:55.686Z",
+    "year": "2011-03-30"
+  },
+  "[\"Google\",\"Irish Google location data fine entry\",\"https://dataprotection.ie/en/dpc-guidance/decisions/fines\",2026,\"€403,000,000\"]": {
+    "checkedAt": "2026-11-22T08:39:51.214Z",
+    "year": "2026",
+    "amount": "€403,000,000"
+  },
+  "[\"Google\",\"Multistate Google location tracking settlement\",\"https://ag.ny.gov/2022-year-review\",2022,\"USD 391.5 million\"]": {
+    "checkedAt": "2026-11-22T08:39:55.519Z",
+    "year": "2022",
+    "amount": "$391.5 million"
+  },
+  "[\"Google\",\"Texas Google privacy settlement\",\"https://oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-historic-1375-billion-settlement-google-related-texans-data\",2025,\"USD 1.375 billion\"]": {
+    "checkedAt": "2026-11-22T08:39:55.469Z",
+    "year": "2025",
+    "amount": "$1.375 Billion"
+  },
+  "[\"Gravy Analytics\",\"Gravy Analytics and Venntel final order\",\"https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:14.463Z",
+    "year": "2025"
+  },
+  "[\"HealthAlliance\",\"HealthAlliance patient-data agreement\",\"https://ag.ny.gov/press-release/2024/attorney-general-james-secures-550000-hudson-valley-health-care-facility\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:30.278Z",
+    "year": "2024"
+  },
+  "[\"Healthline\",\"Healthline CCPA settlement\",\"https://oag.ca.gov/news/press-releases/attorney-general-bonta-announces-largest-ccpa-settlement-date-secures-155\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:31.431Z",
+    "year": "2025"
+  },
+  "[\"Hershey Foods Corporation., U.S. (for the FTC)\",\"Hershey Foods Corporation., U.S. (for the FTC) · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/hershey-foods-corporation-us-ftc\",2003,null]": {
+    "checkedAt": "2026-11-22T08:40:28.357Z",
+    "year": "2003-02-27"
+  },
+  "[\"HireRight Solutions, Inc.\",\"HireRight Solutions, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-313-hireright-solutions-inc\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:26.500Z",
+    "year": "2012-08-08"
+  },
+  "[\"Home Depot\",\"Home Depot’s sharing of e-receipt data with Meta\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2023/pipeda-2023-001\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:22.689Z",
+    "year": "2023"
+  },
+  "[\"Honda\",\"Honda California privacy settlement\",\"https://cppa.ca.gov/announcements/2025/20250312.html\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:30.807Z",
+    "year": "2025"
+  },
+  "[\"HyperBeard, Inc.\",\"HyperBeard, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3109-hyperbeard-inc\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:14.260Z",
+    "year": "2020-06-04"
+  },
+  "[\"IDmission LLC\",\"IDmission LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3150-idmission-llc-matter\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:13.877Z",
+    "year": "2018-09-27"
+  },
+  "[\"IOActive, Inc.\",\"IOActive, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3187-ioactive-inc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.761Z",
+    "year": "2015-08-17"
+  },
+  "[\"ITMedia Solutions LLC\",\"ITMedia Solutions LLC · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1523225-itmedia-solutions-llc\",2016,null]": {
+    "checkedAt": "2026-11-22T08:40:08.833Z",
+    "year": "2016-12-22"
+  },
+  "[\"Iconic Hearts Holdings, Inc.\",\"Iconic Hearts Holdings, Inc., U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3029-iconic-hearts-holdings-inc-us-v\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:07.855Z",
+    "year": "2025-09-29"
+  },
+  "[\"Iconix Brand Group, Inc.\",\"Iconix Brand Group, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/iconix-brand-group-inc\",2009,null]": {
+    "checkedAt": "2026-11-22T08:40:27.436Z",
+    "year": "2009-10-20"
+  },
+  "[\"Illuminate Education, Inc.\",\"Illuminate Education, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3105-illuminate-education-inc-matter\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:07.452Z",
+    "year": "2025-12-01"
+  },
+  "[\"Illusory Systems/Nomad\",\"Illusory Systems/Nomad · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/illusory-systemsnomad\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:07.253Z",
+    "year": "2025-12-16"
+  },
+  "[\"InMarket\",\"InMarket location data order\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2023088-inmarket-media-llc\",2024,null]": {
+    "checkedAt": "2026-11-22T08:39:58.326Z",
+    "year": "2024"
+  },
+  "[\"Inbox Group, LLC\",\"Inbox Group, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3202-inbox-group-llc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.025Z",
+    "year": "2015-08-17"
+  },
+  "[\"Incentive Services, Inc.\",\"Incentive Services, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3078-incentive-services-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.962Z",
+    "year": "2019-12-03"
+  },
+  "[\"InfoTrax Systems, L.C.\",\"InfoTrax Systems, L.C. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3130-infotrax-systems-lc\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.377Z",
+    "year": "2019-11-12"
+  },
+  "[\"Instant Checkmate, Inc.\",\"Instant Checkmate, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3221-instant-checkmate-inc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:27.834Z",
+    "year": "2014-04-09"
+  },
+  "[\"Intellivision\",\"Intellivision, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/232-3023-intellivision-matter\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:08.004Z",
+    "year": "2024-12-03"
+  },
+  "[\"James V. Grago, Jr. doing business as ClixSense.com\",\"James V. Grago, Jr. doing business as ClixSense.com, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3003-james-v-grago-jr-doing-business-clixsensecom-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.181Z",
+    "year": "2019-04-24"
+  },
+  "[\"Jasjit Gotra (Alliance Security)\",\"Jasjit Gotra (Alliance Security) · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/x140022-jasjit-gotra-alliance-security\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:14.612Z",
+    "year": "2018-03-23"
+  },
+  "[\"Jhayrmaine Daniels (California Skate Line)\",\"Jhayrmaine Daniels (California Skate Line), In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3198-jhayrmaine-daniels-california-skate-line-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.562Z",
+    "year": "2015-08-17"
+  },
+  "[\"Jubilant Clinsys, Inc.\",\"Jubilant Clinsys, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3140-jubilant-clinsys-inc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.496Z",
+    "year": "2015-08-17"
+  },
+  "[\"Just Bagels Manufacturing, Inc.\",\"Just Bagels Manufacturing, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3199-just-bagels-manufacturing-inc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.324Z",
+    "year": "2015-08-17"
+  },
+  "[\"Kaspersky Lab\",\"United States restricts Kaspersky antivirus services\",\"https://bis.gov/Kaspersky\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:22.702Z",
+    "year": "2024"
+  },
+  "[\"Kochava\",\"Kochava location data complaint\",\"https://search.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other\",2022,null]": {
+    "checkedAt": "2026-11-22T08:39:57.907Z",
+    "year": "2022"
+  },
+  "[\"Kochava\",\"Kochava sensitive location data settlement\",\"https://search.ftc.gov/news-events/news/press-releases/2026/05/ftc-ban-kochava-subsidiary-selling-sensitive-location-data-settle-charges-they-sold-location-data\",2026,null]": {
+    "checkedAt": "2026-11-22T08:39:58.043Z",
+    "year": "2026"
+  },
+  "[\"Kohl's Department Stores, Inc.\",\"Kohl's Department Stores, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3200-kohls-department-stores-inc\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:14.556Z",
+    "year": "2020-06-10"
+  },
+  "[\"LAI Systems, LLC\",\"LAI Systems, LLC · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3261-lai-systems-llc\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.534Z",
+    "year": "2015-12-17"
+  },
+  "[\"LabMD, Inc.\",\"LabMD, Inc. v. Federal Trade Commission · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3099-labmd-inc-v-federal-trade-commission\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:15.029Z",
+    "year": "2015-01-20"
+  },
+  "[\"LifeLock, Inc., a corporation\",\"LifeLock, Inc., a corporation · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3069-x100023-lifelock-inc-corporation\",2010,null]": {
+    "checkedAt": "2026-11-22T08:40:13.895Z",
+    "year": "2010-03-09"
+  },
+  "[\"LightYear Dealer Technologies, LLC\",\"LightYear Dealer Technologies, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3051-lightyear-dealer-technologies-llc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.248Z",
+    "year": "2019-06-12"
+  },
+  "[\"Loblaw\",\"Loblaw gift card verification inquiry\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-003\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:26.299Z",
+    "year": "2019"
+  },
+  "[\"Lookout Services, Inc.\",\"Lookout Services, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3076-lookout-services-inc-matter\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.586Z",
+    "year": "2011-05-03"
+  },
+  "[\"Looksmart, Ltd.\",\"Looksmart, Ltd. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3379-looksmart-ltd\",2001,null]": {
+    "checkedAt": "2026-11-22T08:40:29.219Z",
+    "year": "2001-04-19"
+  },
+  "[\"LotaData, Inc.\",\"LotaData, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3194-lotadata-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:12.983Z",
+    "year": "2019-09-03"
+  },
+  "[\"Magnite\",\"Magnite cookie tracking class certification ruling\",\"https://legal500.com/intelligence/united-states/privacy/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case\",2026,null]": {
+    "checkedAt": "2026-11-22T08:40:22.709Z",
+    "year": "2026"
+  },
+  "[\"Md7, LLC\",\"Md7, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3172-md7-llc-matter\",2017,null]": {
+    "checkedAt": "2026-11-22T08:40:19.940Z",
+    "year": "2017-09-08"
+  },
+  "[\"Medable, Inc.\",\"Medable, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3192-medable-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:12.803Z",
+    "year": "2019-11-19"
+  },
+  "[\"Meta\",\"Canadian Facebook and Cambridge Analytica inquiry\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2019/pipeda-2019-002\",2019,null]": {
+    "checkedAt": "2026-11-22T08:39:57.289Z",
+    "year": "2019"
+  },
+  "[\"Meta\",\"Irish Meta inquiry IN-18-10-1 and IN-18-11-1\",\"https://dataprotection.ie/en/dpc-guidance/decisions/fines\",2024,\"€251,000,000\"]": {
+    "checkedAt": "2026-11-22T08:39:51.215Z",
+    "year": "2024",
+    "amount": "€251,000,000"
+  },
+  "[\"Meta\",\"Irish Meta inquiry IN-22-4-1\",\"https://dataprotection.ie/en/dpc-guidance/decisions/fines\",2024,\"€91,000,000\"]": {
+    "checkedAt": "2026-11-22T08:39:51.215Z",
+    "year": "2024",
+    "amount": "€91,000,000"
+  },
+  "[\"Meta\",\"Non-users’ information in Facebook address books\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-003\",2018,null]": {
+    "checkedAt": "2026-11-22T08:39:57.282Z",
+    "year": "2018"
+  },
+  "[\"Meta\",\"Texas Meta biometrics settlement\",\"https://oag.state.tx.us/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture\",2024,\"USD 1.4 billion\"]": {
+    "checkedAt": "2026-11-22T08:39:56.427Z",
+    "year": "2024",
+    "amount": "$1.4 Billion"
+  },
+  "[\"Microsoft\",\"Windows 10 privacy settings\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2018/pipeda-2018-004\",2018,null]": {
+    "checkedAt": "2026-11-22T08:39:55.689Z",
+    "year": "2018"
+  },
+  "[\"Midwest Recovery Systems, LLC\",\"Midwest Recovery Systems, LLC · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923042-midwest-recovery-systems-llc\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:09.638Z",
+    "year": "2020-11-30"
+  },
+  "[\"Miniclip\",\"Miniclip, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3129-miniclip-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:09.413Z",
+    "year": "2020-05-19"
+  },
+  "[\"Mobilewalla\",\"Mobilewalla final location-data order\",\"https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:08.134Z",
+    "year": "2025"
+  },
+  "[\"Monument, Inc.\",\"Monument, Inc., U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2323043-monument-inc-us-v\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:08.259Z",
+    "year": "2024-04-11"
+  },
+  "[\"Mortgage Solutions FCS, Inc.\",\"Mortgage Solutions FCS, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3199-mortgage-solutions-fcs-inc\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:13.735Z",
+    "year": "2020-01-07"
+  },
+  "[\"Myspace LLC\",\"Myspace LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3058-myspace-llc-matter\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:27.241Z",
+    "year": "2012-05-08"
+  },
+  "[\"NAICS Association, LLC\",\"NAICS Association, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3138-naics-association-llc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.688Z",
+    "year": "2015-08-17"
+  },
+  "[\"NGL\",\"NGL youth safety and privacy order\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:32.501Z",
+    "year": "2024"
+  },
+  "[\"NTT Global Data Centers Americas, Inc.\",\"NTT Global Data Centers Americas, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3189-ntt-global-data-centers-americas-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:09.592Z",
+    "year": "2019-11-07"
+  },
+  "[\"New Relic\",\"New Relic staging environment intrusion\",\"https://docs.newrelic.com/docs/security/new-relic-security/security-bulletins/security-bulletin-nr23-01-security-advisory\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:22.906Z",
+    "year": "2023"
+  },
+  "[\"NewYork-Presbyterian\",\"Hospital tracking technology agreement\",\"https://ag.ny.gov/press-release/2023/attorney-general-james-secures-300000-newyork-presbyterian-hospital-failing\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:30.758Z",
+    "year": "2023"
+  },
+  "[\"Ohio Art Company, The\",\"Ohio Art Company, The · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/022-3028-ohio-art-company\",2002,null]": {
+    "checkedAt": "2026-11-22T08:40:28.238Z",
+    "year": "2002-04-22"
+  },
+  "[\"OkCupid/Match\",\"OkCupid/Match · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/okcupidmatch\",2026,null]": {
+    "checkedAt": "2026-11-22T08:40:07.431Z",
+    "year": "2026-03-30"
+  },
+  "[\"One Industries Corp.\",\"One Industries Corp., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3201-one-industries-corp-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:18.790Z",
+    "year": "2015-08-17"
+  },
+  "[\"OneTrust\",\"OneTrust Klue integration compromise\",\"https://onetrust.com/blog/update-from-onetrust-on-klue-salesforce-security-incident\",2026,null]": {
+    "checkedAt": "2026-11-22T08:40:22.709Z",
+    "year": "2026"
+  },
+  "[\"OpenX Technologies, Inc.\",\"OpenX Technologies, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923019-openx-technologies-inc\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:10.045Z",
+    "year": "2021-12-15"
+  },
+  "[\"Optimizely\",\"Optimizely Web Experimentation incident\",\"https://pages.optimizely.com/rs/947-RKE-048/images/Security%20Incident%20Report%20-%20Optimizely%20Web%20Experimentation%20-%20Nov%2017%202026.pdf\",2026,null]": {
+    "checkedAt": "2026-11-22T08:40:22.794Z",
+    "year": "2026"
+  },
+  "[\"Ortho-Clinical Diagnostics, Inc.\",\"Ortho-Clinical Diagnostics, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3050-ortho-clinical-diagnostics-inc-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:09.743Z",
+    "year": "2020-03-30"
+  },
+  "[\"OrthopedicsNY\",\"OrthopedicsNY privacy settlement\",\"https://ag.ny.gov/press-release/2025/attorney-general-james-secures-500000-capital-region-health-care-provider\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:30.277Z",
+    "year": "2025"
+  },
+  "[\"Outlogic\",\"X-Mode and Outlogic location-data action\",\"https://search.ftc.gov/news-events/news/press-releases/2024/01/ftc-order-prohibits-data-broker-x-mode-social-outlogic-selling-sensitive-location-data\",2024,null]": {
+    "checkedAt": "2026-11-22T08:39:55.692Z",
+    "year": "2024"
+  },
+  "[\"Path, Inc.\",\"Path, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3158-path-inc\",2013,null]": {
+    "checkedAt": "2026-11-22T08:40:27.267Z",
+    "year": "2013-02-01"
+  },
+  "[\"PaymentsMD, LLC\",\"PaymentsMD, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3088-paymentsmd-llc-matter\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:18.459Z",
+    "year": "2014-12-03"
+  },
+  "[\"Personal Touch\",\"Personal Touch patient and employee data settlement\",\"https://ag.ny.gov/press-release/2023/attorney-general-james-secures-350000-long-island-home-health-care-company\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:30.277Z",
+    "year": "2023"
+  },
+  "[\"Pinger, Inc.\",\"Pinger, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3137-pinger-inc-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.549Z",
+    "year": "2015-08-17"
+  },
+  "[\"Playdom, Inc.\",\"Playdom, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1023036-playdom-inc\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.630Z",
+    "year": "2011-05-12"
+  },
+  "[\"Qualtrics\",\"Kaiser website data collection allegations\",\"https://classaction.org/media/doe-v-microsoft-corporation-et-al.pdf\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:23.767Z",
+    "year": "2023"
+  },
+  "[\"ReadyTech Corporation\",\"ReadyTech Corporation, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3100-readytech-corporation-matter\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:19.819Z",
+    "year": "2018-07-02"
+  },
+  "[\"Reddit\",\"ICO children’s privacy penalty\",\"https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/reddit-issued-with-1447m-fine-for-children-s-privacy-failures\",2026,null,\"£14.47 million\"]": {
+    "checkedAt": "2026-11-22T08:43:04.471Z",
+    "year": "2026",
+    "summaryAmounts": [
+      "£14.47m"
+    ]
+  },
+  "[\"Refuah Health Center\",\"Refuah ransomware safeguards agreement\",\"https://ag.ny.gov/press-release/2024/attorney-general-james-reaches-agreement-hudson-valley-health-care-provider\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:30.278Z",
+    "year": "2024"
+  },
+  "[\"RentGrow, Inc.\",\"RentGrow, Inc., U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3002-rentgrow-inc-us-v\",2026,null]": {
+    "checkedAt": "2026-11-22T08:39:58.138Z",
+    "year": "2026-07-09"
+  },
+  "[\"Retro Dreamer\",\"Retro Dreamer · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3262-retro-dreamer\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.661Z",
+    "year": "2015-12-17"
+  },
+  "[\"Ring\",\"Ring camera privacy and security case\",\"https://search.ftc.gov/news-events/news/press-releases/2023/05/ftc-says-ring-employees-illegally-surveilled-customers-failed-stop-hackers-taking-control-users\",2023,\"USD 5.8 million\"]": {
+    "checkedAt": "2026-11-22T08:40:12.878Z",
+    "year": "2023",
+    "amount": "$5.8 million"
+  },
+  "[\"Rite Aid Corporation\",\"Rite Aid Corporation, FTC v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2023190-rite-aid-corporation-ftc-v\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:09.073Z",
+    "year": "2023-12-19"
+  },
+  "[\"Rite Aid Corporation\",\"Rite Aid Corporation, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3121-c-4308-rite-aid-corporation-matter\",2010,null]": {
+    "checkedAt": "2026-11-22T08:40:02.922Z",
+    "year": "2010-07-27"
+  },
+  "[\"SecurTest, Inc.\",\"SecurTest, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3152-securtest-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.167Z",
+    "year": "2019-06-14"
+  },
+  "[\"Sentry\",\"Sentry backup exposure\",\"https://blog.sentry.io/security-incident-june-12-2016\",2016,null]": {
+    "checkedAt": "2026-11-22T08:40:22.710Z",
+    "year": "2016"
+  },
+  "[\"Sephora\",\"California Sephora privacy judgment\",\"https://oag.ca.gov/system/files/media/pea-sephora-filed-judgment.pdf\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:15.323Z",
+    "year": "2022"
+  },
+  "[\"SettlementOne Credit Corporation\",\"SettlementOne Credit Corporation · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/082-3208-settlementone-credit-corporation\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.093Z",
+    "year": "2011-02-03"
+  },
+  "[\"Sitesearch Corporation, Doing Business As LeapLab\",\"Sitesearch Corporation, Doing Business As LeapLab · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3192-x150060-sitesearch-corporation-doing-business-leaplab\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:19.528Z",
+    "year": "2014-12-23"
+  },
+  "[\"SkyMed International, Inc.\",\"SkyMed International, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923140-skymed-international-inc-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:09.156Z",
+    "year": "2020-12-16"
+  },
+  "[\"SmartStart Employment Screening, Inc.\",\"SmartStart Employment Screening, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3154-smartstart-employment-screening-inc-matter\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:18.311Z",
+    "year": "2018-09-27"
+  },
+  "[\"Sprint Corporation (Sprint ASL Program)\",\"Sprint Corporation (Sprint ASL Program) · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3094-sprint-corporation-sprint-asl-program-0\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.034Z",
+    "year": "2015-10-21"
+  },
+  "[\"Staples\",\"Staples Openbox resale program\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-004\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:22.688Z",
+    "year": "2025"
+  },
+  "[\"SteriMed Medical Waste Solutions\",\"SteriMed Medical Waste Solutions, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3193-sterimed-medical-waste-solutions-matter\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.254Z",
+    "year": "2015-08-17"
+  },
+  "[\"T&M Protection Resources, LLC\",\"T&M Protection Resources, LLC, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3092-tm-protection-resources-llc-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:14.763Z",
+    "year": "2020-01-28"
+  },
+  "[\"TDARX, Inc.\",\"TDARX, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3084-tdarx-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.622Z",
+    "year": "2019-12-03"
+  },
+  "[\"Tapplock, Inc.\",\"Tapplock, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3011-tapplock-inc-matter\",2020,null]": {
+    "checkedAt": "2026-11-22T08:40:15.387Z",
+    "year": "2020-04-06"
+  },
+  "[\"TeleCheck Services, Inc.\",\"TeleCheck Services, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/112-3183-telecheck-services-inc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:27.245Z",
+    "year": "2014-01-16"
+  },
+  "[\"Teletrack, Inc.\",\"Teletrack, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3075-teletrack-inc\",2011,null]": {
+    "checkedAt": "2026-11-22T08:40:27.273Z",
+    "year": "2011-06-27"
+  },
+  "[\"Thru, Inc.\",\"Thru, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3196-thru-inc-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:13.144Z",
+    "year": "2019-09-03"
+  },
+  "[\"TinyCo, Inc.\",\"TinyCo, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3209-tinyco-inc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:20.248Z",
+    "year": "2014-09-17"
+  },
+  "[\"Tricolor Auto Acceptance, LLC\",\"Tricolor Auto Acceptance, LLC · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3073-tricolor-auto-acceptance-llc\",2015,null]": {
+    "checkedAt": "2026-11-22T08:40:19.086Z",
+    "year": "2015-09-16"
+  },
+  "[\"Trimac\",\"Trimac driver surveillance investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-006\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:23.089Z",
+    "year": "2022"
+  },
+  "[\"Tru Communication, Inc.\",\"Tru Communication, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3171-tru-communication-inc-matter\",2017,null]": {
+    "checkedAt": "2026-11-22T08:40:19.990Z",
+    "year": "2017-09-08"
+  },
+  "[\"Trueface.ai\",\"Trueface.ai, In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3193-truefaceai-matter\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:14.035Z",
+    "year": "2019-09-03"
+  },
+  "[\"TruthFinder, LLC\",\"TruthFinder, LLC, FTC v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/truthfinder-llc-ftc-v\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:08.586Z",
+    "year": "2023-09-11"
+  },
+  "[\"Twilio\",\"Twilio employee and customer account compromise\",\"https://twilio.com/en-us/blog/archive/2022/august-2022-social-engineering-attack\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:22.823Z",
+    "year": "2022"
+  },
+  "[\"UMG Recordings, Inc., a corporation, US\",\"UMG Recordings, Inc., a corporation, US · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/umg-recordings-inc-corporation-us\",2004,null]": {
+    "checkedAt": "2026-11-22T08:40:28.086Z",
+    "year": "2004-02-18"
+  },
+  "[\"Unixiz, Inc. doing business as i-Dressup.com\",\"Unixiz, Inc. doing business as i-Dressup.com · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3002-unixiz-inc-doing-business-i-dressupcom\",2019,null]": {
+    "checkedAt": "2026-11-22T08:40:12.836Z",
+    "year": "2019-04-24"
+  },
+  "[\"Upromise, Inc.\",\"Upromise, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3116-upromise-inc\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:28.463Z",
+    "year": "2012-01-05"
+  },
+  "[\"VTech Electronics Limited\",\"VTech Electronics Limited · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3032-vtech-electronics-limited\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:19.679Z",
+    "year": "2018-01-08"
+  },
+  "[\"VenPath, Inc.\",\"VenPath, Inc., In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3144-venpath-inc-matter\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:18.488Z",
+    "year": "2018-09-27"
+  },
+  "[\"Verkada Inc.\",\"Verkada Inc., U.S. v. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2123068-verkada-inc-us-v\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:14.277Z",
+    "year": "2024-08-30"
+  },
+  "[\"Vivint Smart Home, Inc.\",\"Vivint Smart Home, Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3060-vivint-smart-home-inc\",2021,null]": {
+    "checkedAt": "2026-11-22T08:40:07.762Z",
+    "year": "2021-04-29"
+  },
+  "[\"Wajam\",\"Wajam adware privacy investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2017/pipeda-2017-002\",2017,null]": {
+    "checkedAt": "2026-11-22T08:40:26.313Z",
+    "year": "2017"
+  },
+  "[\"Weight Watchers/WW\",\"Weight Watchers/WW · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1923228-weight-watchersww\",2022,null]": {
+    "checkedAt": "2026-11-22T08:40:09.936Z",
+    "year": "2022-02-16"
+  },
+  "[\"Wyndham Worldwide Corporation\",\"Wyndham Worldwide Corporation · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/1023142-x120032-wyndham-worldwide-corporation\",2012,null]": {
+    "checkedAt": "2026-11-22T08:40:19.907Z",
+    "year": "2012-06-26"
+  },
+  "[\"X Corp.\",\"Twitter account-security information settlement\",\"https://search.ftc.gov/system/files/ftc_gov/pdf/2024.03.21-PrivacyandDataSecurityUpdate-508.pdf\",2022,null,\"$150 million\"]": {
+    "checkedAt": "2026-11-22T08:42:15.536Z",
+    "year": "2022",
+    "summaryAmounts": [
+      "$150 million"
+    ]
+  },
+  "[\"X-Mode / Outlogic\",\"X-Mode / Outlogic sensitive location order\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc\",2024,null]": {
+    "checkedAt": "2026-11-22T08:40:27.532Z",
+    "year": "2024"
+  },
+  "[\"Yelp Inc.\",\"Yelp Inc. · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3066-yelp-inc\",2014,null]": {
+    "checkedAt": "2026-11-22T08:40:19.268Z",
+    "year": "2014-09-17"
+  },
+  "[\"avast\",\"Avast browsing data order\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/2023033-avast\",2024,\"USD 16.5 million\"]": {
+    "checkedAt": "2026-11-22T08:39:53.145Z",
+    "year": "2024",
+    "amount": "$16.5 million"
+  },
+  "[\"betterhelp\",\"BetterHelp advertising disclosure order\",\"https://search.ftc.gov/news-events/news/press-releases/2023/07/ftc-gives-final-approval-order-banning-betterhelp-sharing-sensitive-health-data-advertising\",2023,\"USD 7.8 million\"]": {
+    "checkedAt": "2026-11-22T08:39:52.628Z",
+    "year": "2023",
+    "amount": "$7.8 Million"
+  },
+  "[\"canva\",\"Canva account-data breach\",\"https://canva.com/help/incident-may24\",2019,null]": {
+    "checkedAt": "2026-11-22T08:39:51.354Z",
+    "year": "2019"
+  },
+  "[\"chatgpt\",\"ChatGPT conversation history exposure\",\"https://openai.com/index/march-20-chatgpt-outage\",2023,null]": {
+    "checkedAt": "2026-11-22T08:39:51.557Z",
+    "year": "2023"
+  },
+  "[\"chrome\",\"Incognito browsing class settlement\",\"https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/20/24-5692.pdf\",2024,null]": {
+    "checkedAt": "2026-11-22T08:39:55.614Z",
+    "year": "2024"
+  },
+  "[\"claude\",\"Search indexing of shared Claude chats\",\"https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google\",2026,null]": {
+    "checkedAt": "2026-11-22T08:39:51.537Z",
+    "year": "2026"
+  },
+  "[\"discord\",\"CNIL Discord sanction\",\"https://cnil.fr/sites/cnil/files/2023-05/cnil_-_43e_rapport_annuel_-_2022.pdf\",2022,\"€800,000\"]": {
+    "checkedAt": "2026-11-22T08:41:08.840Z",
+    "year": "2022",
+    "amount": "800 000 euros"
+  },
+  "[\"dropbox\",\"Dropbox Sign unauthorized access\",\"https://investors.dropbox.com/static-files/c057b02d-e330-4f11-9009-ff7f19d456e2\",2024,null]": {
+    "checkedAt": "2026-11-22T08:39:51.332Z",
+    "year": "2024"
+  },
+  "[\"edge\",\"Browser telemetry measurement by Trinity College Dublin\",\"https://readkong.com/page/web-browser-privacy-what-do-browsers-say-when-they-phone-8577973\",2020,null]": {
+    "checkedAt": "2026-11-22T08:39:51.224Z",
+    "year": "2020"
+  },
+  "[\"epic-games\",\"Fortnite children’s privacy settlement\",\"https://search.ftc.gov/news-events/news/press-releases/2022/12/fortnite-video-game-maker-epic-games-pay-more-half-billion-dollars-over-ftc-allegations\",2022,\"USD 275 million\"]": {
+    "checkedAt": "2026-11-22T08:39:56.382Z",
+    "year": "2022",
+    "amount": "$275 million"
+  },
+  "[\"extension-bmnlcjabgnpnenekpadlanbbkooimhnj\",\"Honey affiliate attribution lawsuit\",\"https://stuevesiegel.com/assets/htmldocuments/2025-01-24%201%20Class%20Action%20Complaint%20Against%20Paypal%20Holdings%20Inc.%20Paypal%20I.pdf\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:59.209Z",
+    "year": "2025"
+  },
+  "[\"extension-eppiocemhmnlbhjplcgkofciiegomcon\",\"Report on Urban VPN and AI chat data\",\"https://tomsguide.com/computing/vpns/this-vpn-is-harvesting-your-ai-conversations-and-6-million-people-are-using-it\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:58.351Z",
+    "year": "2025"
+  },
+  "[\"extension-gkojfkhlekighikafcpjkiklfbnlmeio\",\"Report on Hola VPN and its residential exit network\",\"https://arstechnica.com/information-technology/2015/06/hola-vpn-used-to-perform-ddos-attacks-violate-user-privacy\",2015,null]": {
+    "checkedAt": "2026-11-22T08:39:55.492Z",
+    "year": "2015"
+  },
+  "[\"facebook\",\"Facebook 2019 privacy order settlement\",\"https://search.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook\",2019,\"USD 5 billion\"]": {
+    "checkedAt": "2026-11-22T08:39:51.546Z",
+    "year": "2019",
+    "amount": "$5 Billion"
+  },
+  "[\"facebook\",\"Meta EU–US transfer inquiry\",\"https://dataprotection.ie/en/news-media/press-releases/Data-Protection-Commission-announces-conclusion-of-inquiry-into-Meta-Ireland\",2023,\"€1.2 billion\"]": {
+    "checkedAt": "2026-11-22T08:39:53.052Z",
+    "year": "2023",
+    "amount": "€1.2 billion"
+  },
+  "[\"flo\",\"Flo Health analytics disclosure settlement\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3133-flo-health-inc\",2021,null]": {
+    "checkedAt": "2026-11-22T08:39:52.294Z",
+    "year": "2021"
+  },
+  "[\"goodrx\",\"GoodRx health-data advertising action\",\"https://search.ftc.gov/news-events/news/press-releases/2023/02/ftc-enforcement-action-bar-goodrx-sharing-consumers-sensitive-health-info-advertising\",2023,\"USD 1.5 million\"]": {
+    "checkedAt": "2026-11-22T08:39:56.453Z",
+    "year": "2023",
+    "amount": "$1.5 million"
+  },
+  "[\"grindr\",\"Grindr fine upheld on appeal\",\"https://datatilsynet.no/en/news/news-2025/the-court-of-appeal-upholds-the-fine-against-grindr\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:52.520Z",
+    "year": "2025"
+  },
+  "[\"instagram\",\"Instagram children’s data inquiry\",\"https://dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-instagram-inquiry\",2022,\"€405 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.207Z",
+    "year": "2022",
+    "amount": "€405 million"
+  },
+  "[\"jsDelivr\",\"Research report on misuse of a package CDN\",\"https://blog.checkpoint.com/securing-the-cloud/cdn-service-exposes-users-to-malicious-packages-for-phishing-attacks-invisible-to-security-tools\",2023,null]": {
+    "checkedAt": "2026-11-22T08:40:22.701Z",
+    "year": "2023"
+  },
+  "[\"life360\",\"Life360 location data reporting\",\"https://themarkup.org/privacy/2021/12/06/the-popular-family-safety-app-life360-is-selling-precise-location-data-on-its-tens-of-millions-of-user\",2021,null]": {
+    "checkedAt": "2026-11-22T08:39:55.466Z",
+    "year": "2021"
+  },
+  "[\"life360\",\"Life360 response following location data reporting\",\"https://themarkup.org/privacy/2022/01/27/life360-says-it-will-stop-selling-precise-location-data\",2022,null]": {
+    "checkedAt": "2026-11-22T08:39:55.474Z",
+    "year": "2022"
+  },
+  "[\"linkedin\",\"LinkedIn targeted advertising inquiry\",\"https://dataprotection.ie/en/news-media/press-releases/irish-data-protection-commission-fines-linkedin-ireland-eu310-million\",2024,\"€310 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.207Z",
+    "year": "2024",
+    "amount": "€310 million"
+  },
+  "[\"lyft\",\"California Lyft privacy settlement\",\"https://oag.ca.gov/news/press-releases/privacy-rights-can%E2%80%99t-be-left-rearview-attorney-general-bonta-secures-18-million\",2026,\"USD 1.8 million\"]": {
+    "checkedAt": "2026-11-22T08:39:55.451Z",
+    "year": "2026",
+    "amount": "$1.8 Million"
+  },
+  "[\"mResource LLC (Loop Works LLC)\",\"mResource LLC (Loop Works LLC), In the Matter of · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3143-mresource-llc-loop-works-llc-matter\",2018,null]": {
+    "checkedAt": "2026-11-22T08:40:13.457Z",
+    "year": "2018-09-27"
+  },
+  "[\"netflix\",\"Dutch authority fines Netflix over privacy information\",\"https://autoriteitpersoonsgegevens.nl/en/current/netflix-fined-for-not-properly-informing-customers\",2024,null,\"€4.75 million\"]": {
+    "checkedAt": "2026-11-22T08:42:12.439Z",
+    "year": "2024",
+    "summaryAmounts": [
+      "4.75 million euro"
+    ]
+  },
+  "[\"shein\",\"CNIL SHEIN cookies action\",\"https://cnil.fr/fr/regulation-des-cookies-la-cnil-poursuit-le-plan-daction-initie-en-2019-et-prononce-deux-amendes\",2025,null]": {
+    "checkedAt": "2026-11-22T08:40:00.380Z",
+    "year": "2025"
+  },
+  "[\"slack\",\"Slack account-data breach\",\"https://slack.com/intl/en-gb/blog/news/intl-ja-jp-new-information-2015-incident\",2015,null]": {
+    "checkedAt": "2026-11-22T08:39:51.221Z",
+    "year": "2015"
+  },
+  "[\"snapchat\",\"Snapchat disappearing messages representations\",\"https://search.ftc.gov/news-events/news/press-releases/2014/05/snapchat-settles-ftc-charges-promises-disappearing-messages-were-false\",2014,null]": {
+    "checkedAt": "2026-11-22T08:39:51.368Z",
+    "year": "2014"
+  },
+  "[\"spotify\",\"Spotify access transparency decision\",\"https://imy.se/nyheter/sanktionsavgift-mot-spotify\",2023,null,\"SEK 58 million\"]": {
+    "checkedAt": "2026-11-22T08:43:04.176Z",
+    "year": "2023",
+    "summaryAmounts": [
+      "58 miljoner kronor"
+    ]
+  },
+  "[\"steam\",\"Steam storefront caching exposure\",\"https://store.steampowered.com/oldnews?enddate=1451635200&feed=steam_news\",2015,null]": {
+    "checkedAt": "2026-11-22T08:39:51.216Z",
+    "year": "2015"
+  },
+  "[\"teams\",\"European Commission accepts Teams bundling commitments\",\"https://ec.europa.eu/commission/presscorner/api/files/document/print/es/ip_25_2048/IP_25_2048_EN.pdf\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:51.311Z",
+    "year": "2025"
+  },
+  "[\"temu\",\"Arkansas Temu privacy complaint\",\"https://arkansasag.gov/news-release/attorney-general-griffin-sues-chinese-e-commerce-company-temu-for-deceiving-arkansans-illegally-accessing-their-personal-information\",2024,null]": {
+    "checkedAt": "2026-11-22T08:39:51.220Z",
+    "year": "2024"
+  },
+  "[\"temu\",\"Nebraska Temu data complaint\",\"https://ago.nebraska.gov/attorney-general-hilgers-files-lawsuit-against-temu-siphoning-nebraskans-phone-data\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:51.209Z",
+    "year": "2025"
+  },
+  "[\"tiktok\",\"Canadian joint TikTok privacy investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2025/pipeda-2025-003\",2025,null]": {
+    "checkedAt": "2026-11-22T08:39:51.624Z",
+    "year": "2025"
+  },
+  "[\"tiktok\",\"Musical.ly children’s privacy settlement\",\"https://search.ftc.gov/business-guidance/blog/2019/02/largest-ftc-coppa-settlement-requires-musically-change-its-tune\",2019,\"USD 5.7 million\"]": {
+    "checkedAt": "2026-11-22T08:39:52.751Z",
+    "year": "2019",
+    "amount": "$5.7 million"
+  },
+  "[\"tiktok\",\"TikTok EEA data transfer inquiry\",\"https://dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following\",2025,\"€530 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.370Z",
+    "year": "2025",
+    "amount": "€530 million"
+  },
+  "[\"tiktok\",\"TikTok children’s data inquiry\",\"https://dataprotection.ie/en/news-media/press-releases/DPC-announces-345-million-euro-fine-of-TikTok\",2023,\"€345 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.204Z",
+    "year": "2023",
+    "amount": "€345 million"
+  },
+  "[\"tim-hortons\",\"Tim Hortons mobile location investigation\",\"https://priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2022/pipeda-2022-001\",2022,null]": {
+    "checkedAt": "2026-11-22T08:39:51.981Z",
+    "year": "2022"
+  },
+  "[\"uber\",\"Uber European driver data transfers\",\"https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-of-290-million-euro-on-uber-because-of-transfers-of-drivers-data-to-the-us\",2024,\"290 million euro\"]": {
+    "checkedAt": "2026-11-22T08:39:55.457Z",
+    "year": "2024",
+    "amount": "290 million euro"
+  },
+  "[\"uber\",\"Uber data security and breach settlement\",\"https://search.ftc.gov/news-events/news/press-releases/2018/10/federal-trade-commission-gives-final-approval-settlement-uber\",2018,null]": {
+    "checkedAt": "2026-11-22T08:39:56.830Z",
+    "year": "2018"
+  },
+  "[\"whatsapp\",\"WhatsApp transparency inquiry\",\"https://dataprotection.ie/en/dpc-guidance/decisions/decision-concerning-whatsapp-ireland-ltd\",2021,\"€225 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.966Z",
+    "year": "2021",
+    "amount": "€225 million"
+  },
+  "[\"x\",\"Irish Twitter inquiry IN-19-1-1\",\"https://dataprotection.ie/en/dpc-guidance/decisions/fines\",2020,\"€450,000\"]": {
+    "checkedAt": "2026-11-22T08:39:51.214Z",
+    "year": "2020",
+    "amount": "€450,000"
+  },
+  "[\"x\",\"Twitter, Inc., a corporation · FTC case record\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/092-3093-twitter-inc-corporation\",2010,null]": {
+    "checkedAt": "2026-11-22T08:39:51.798Z",
+    "year": "2010-06-24"
+  },
+  "[\"xbox\",\"Xbox children’s registration data settlement\",\"https://search.ftc.gov/news-events/news/press-releases/2023/06/ftc-will-require-microsoft-pay-20-million-over-charges-it-illegally-collected-personal-information\",2023,\"USD 20 million\"]": {
+    "checkedAt": "2026-11-22T08:39:55.902Z",
+    "year": "2023",
+    "amount": "$20 million"
+  },
+  "[\"youtube\",\"YouTube children’s privacy settlement\",\"https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3083-google-llc-youtube-llc\",2019,\"USD 170 million\"]": {
+    "checkedAt": "2026-11-22T08:39:51.413Z",
+    "year": "2019",
+    "amount": "$170 million"
+  },
+  "[\"zoom\",\"Zoom security claims settlement announced\",\"https://search.ftc.gov/news-events/news/press-releases/2020/11/ftc-requires-zoom-enhance-its-security-practices-part-settlement\",2020,null]": {
+    "checkedAt": "2026-11-22T08:39:51.851Z",
+    "year": "2020"
+  }
+}

@@ -10,7 +10,7 @@ Extension candidates come from the [Chrome Web Store charts](https://chromewebst
 
 For enforcement research, PDF sources are downloaded with the same curl settings and converted to text with Poppler's `pdftotext.exe` before checking evidence. The FTC catalog tool starts from the [FTC's privacy cases index](https://search.ftc.gov/enforcement/cases-proceedings/terms/1420), then fetches each case page, verifies the title and topic, and checks for a dated case timeline. Topic evidence comes from the case summary or a press release headline in the timeline. The record's year identifies the earliest item shown in the timeline. The file number is recorded where the page exposes it and is used to avoid counting multiple pages for the same matter. Catalog entries summarize the docket topic, which may concern allegations or a procedural development.
 
-This snapshot contains 302 apps, 32 Chromium extensions, and 198 company records. The dossier contains 240 incident records, up from 162 at the start of this round, alongside 42 sharing disclosures and 50 country transfer disclosures. The index contains 26 executable names, 123 domains, and 32 extension IDs. Detailed FTC orders supersede generic docket summaries for the same party and matter where both were sourced. Some entries have an enforcement source only. The FTC's `search.ftc.gov` host supplied official case pages when its main hostname returned a 404 to curl.
+This snapshot contains 306 apps, 32 Chromium extensions, and 197 company records. The dossier contains 240 incident records, 60 sharing disclosures, and 61 country transfer disclosures. The index contains 26 executable names, 127 domains, and 32 extension IDs. Detailed FTC orders supersede generic docket summaries for the same party and matter where both were sourced. Some entries have an enforcement source only. The FTC's `search.ftc.gov` host supplied official case pages when its main hostname returned a 404 to curl.
 
 The Canadian cases use the [Privacy Commissioner's published PIPEDA findings](https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/). The Home Depot e-receipt disclosure to Meta was published as Canadian finding 2023-001 on January 26, 2023. That finding describes offline conversions and lack of meaningful consent.
 
@@ -58,3 +58,9 @@ Adobe refers to Acrobat Reader, with service-specific hosting information from A
 | Notion | incidents |
 
 Named countries require explicit processing or transfer evidence. Publisher-wide incidents without a verified link to the app are kept on the company record. Failed or insufficient sources are in [rejected.md](rejected.md).
+
+## Source quality checks
+
+`node research/audit.js --strict` fetches public incident sources with the same curl and PDF pipeline that the dossier build uses. It checks the first dated FTC docket entry when applicable and looks for each recorded year on the other source pages. It also checks the amounts in both structured fields and incident summaries, normalizing equivalent currency formats. The current audit captures dates for 240 incident records and evidence for 32 monetary figures. Run `node research/audit.js --retry-gaps --strict` to retain prior successful checks and retry failed or new ones.
+
+`npm test` verifies the captured evidence offline, flags stated years or amounts that have changed, and checks HTTPS URLs, verification timestamps, and duplicate claim sources and incidents. It compares incident titles, case references, and single-matter source URLs across app and company entries. Distinct matters with reference numbers may share a regulator's register, and different claim fields may cite the same policy. Six redundant incident records were consolidated in the demo audit.

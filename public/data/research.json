@@ -8119,23 +8119,7 @@
         "city": null,
         "country": null
       },
-      "incidents": [
-        {
-          "kind": "regulator",
-          "title": "FTC Avast browsing-data order",
-          "year": 2024,
-          "jurisdiction": "United States",
-          "summary": "The FTC alleged Avast collected browsing information through extensions and antivirus software and sold it through Jumpshot.",
-          "source": {
-            "title": "FTC Order Will Ban Avast from Selling Browsing Data for Advertising Purposes, Require It to Pay $16.5 Million Over Charges the Firm Sold Browsing Data",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T08:21:24.719Z"
-          }
-        }
-      ],
+      "incidents": [],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -11754,21 +11738,6 @@
           }
         },
         {
-          "year": 2024,
-          "kind": "settlement",
-          "title": "Google private browsing class settlement",
-          "jurisdiction": "United States",
-          "summary": "In its later appellate opinion, the court described a 2024 agreement resolving the certified class’s request for injunctive relief, with changes to disclosures and certain retained data.",
-          "source": {
-            "title": "Google private browsing class settlement",
-            "publisher": "U.S. Court of Appeals for the Ninth Circuit",
-            "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/04/20/24-5692.pdf",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:19:05.129Z"
-          }
-        },
-        {
           "title": "Google search engine de-indexing finding",
           "summary": "The OPC examined whether Google met its obligations when challenged over search results linked to an individual.",
           "year": 2025,
@@ -11975,21 +11944,6 @@
         "country": null
       },
       "incidents": [
-        {
-          "kind": "settlement",
-          "title": "Xbox children’s registration data settlement",
-          "year": 2023,
-          "jurisdiction": "United States",
-          "summary": "The FTC announced a $20 million settlement over allegations that Microsoft collected children’s Xbox account information without parental consent.",
-          "source": {
-            "title": "FTC Will Require Microsoft to Pay $20 million over Charges it Illegally Collected Personal Information from Children without Their Parents’ Consent | ",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/news-events/news/press-releases/2023/06/ftc-will-require-microsoft-pay-20-million-over-charges-it-illegally-collected-personal-information",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:48:48.087Z"
-          }
-        },
         {
           "title": "Windows 10 privacy settings",
           "summary": "The OPC reported that Microsoft would obtain opt-in consent and improve transparency for Windows 10 privacy settings.",
@@ -12612,22 +12566,6 @@
       ],
       "incidents": [
         {
-          "kind": "fine",
-          "title": "Meta EU–US transfer inquiry",
-          "year": 2023,
-          "jurisdiction": "Ireland / EU",
-          "amount": "€1.2 billion",
-          "summary": "The DPC announced a fine and corrective orders over Meta Ireland’s transfers of Facebook users’ personal data from the EU/EEA to the United States.",
-          "source": {
-            "title": "Data Protection Commission announces conclusion of inquiry into Meta Ireland | 22/05/2023 | Data Protection Commission",
-            "publisher": "Irish Data Protection Commission",
-            "url": "https://www.dataprotection.ie/en/news-media/press-releases/Data-Protection-Commission-announces-conclusion-of-inquiry-into-Meta-Ireland",
-            "date": "2023-05-22",
-            "verified": true,
-            "fetchedAt": "2026-11-22T05:50:11.908Z"
-          }
-        },
-        {
           "year": 2024,
           "kind": "settlement",
           "title": "Texas Meta biometrics settlement",
@@ -12955,32 +12893,6 @@
             "date": "2025-09-29",
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:02.109Z"
-          }
-        }
-      ],
-      "declared": []
-    },
-    {
-      "name": "Cognosphere, LLC",
-      "aliases": [],
-      "hq": {
-        "city": null,
-        "country": null
-      },
-      "incidents": [
-        {
-          "kind": "court",
-          "title": "Cognosphere, LLC, U.S. v. · FTC case record",
-          "year": 2025,
-          "jurisdiction": "United States",
-          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2025.",
-          "source": {
-            "title": "Cognosphere, LLC, U.S. v. | Federal Trade Commission",
-            "publisher": "Federal Trade Commission",
-            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v",
-            "date": "2025-01-17",
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:13:05.741Z"
           }
         }
       ],
@@ -16686,23 +16598,7 @@
           }
         }
       ],
-      "incidents": [
-        {
-          "kind": "fine",
-          "title": "Irish DPC TikTok data transfers inquiry",
-          "year": 2025,
-          "jurisdiction": "Ireland",
-          "summary": "The Irish DPC announced a €530 million penalty against TikTok Ireland over transfers of EEA user data to China.",
-          "source": {
-            "title": "Irish Data Protection Commission fines TikTok €530 million and orders corrective measures following Inquiry into transfers of EEA User Data to China |",
-            "publisher": "Irish Data Protection Commission",
-            "url": "https://www.dataprotection.ie/en/news-media/latest-news/irish-data-protection-commission-fines-tiktok-eu530-million-and-orders-corrective-measures-following",
-            "date": null,
-            "verified": true,
-            "fetchedAt": "2026-11-22T06:48:50.989Z"
-          }
-        }
-      ],
+      "incidents": [],
       "destinations": [
         {
           "country": "United States",
@@ -18257,7 +18153,9 @@
     },
     {
       "name": "Cognosphere",
-      "aliases": [],
+      "aliases": [
+        "Cognosphere, LLC"
+      ],
       "hq": {
         "city": null,
         "country": null
@@ -18421,7 +18319,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:38:25.235Z",
+  "generatedAt": "2026-11-22T08:39:48.802Z",
   "index": {
     "exe": {
       "brave.exe": [
