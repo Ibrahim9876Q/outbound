@@ -127,3 +127,10 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - Exercised the demo from a local scan with 629 permission records to the Tim Hortons case and a reversible local dry-run rule preview, then followed the app-filtered globe link. Verified all six keyboard shortcuts. Phone remains available from its tab.
 - Chrome captures cover all seven views at 1280×800 and 1920×1080. `npm test` passed all 35 tests. `npm run check` passed for 10 assets, state, report, and SSE.
 - The final local Chrome pass reloaded three times at each viewport with zero console errors. With scan results retained at 1920×1080, the browser reported 60 animation frames per second on Computer and 85 on Globe. These are short headless Chrome samples and varied between runs.
+
+## xray5 frontend
+
+- Merged integration at `6a0e253` and incorporated the backend scan cache and status endpoint. A real rescan kept the previous timestamp and 629 permission rows visible after reload. The foreground scan published permissions before completion, and the provisional status reported 50 folders while lightweight polls handled the background walk.
+- Both Chrome demo walkthroughs on port 4318 reached the Tim Hortons source, local dry-run decision, and filtered Globe with zero browser errors or external requests, including rapid switching. Four of the 629 permission records lacked stop timestamps and displayed historical wording. The hidden Globe already had nine filters and 24 mapped destinations before its tab opened.
+- The 1280×800 dry run produced a firewall command. The first executable lookup in the 1920×1080 walkthrough returned a decision without a command, which Rules reported explicitly.
+- A focused 1920×1080 check held the preview request locally. The retry appeared after 15.246 seconds, then a real retry generated a `netsh advfirewall` command. The test removed its rule and recorded zero browser errors. All 40 tests and the smoke check passed.
