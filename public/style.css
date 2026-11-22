@@ -232,6 +232,12 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .intel-heading p, .intel-muted { color: var(--muted); }
 .intel-heading button { justify-self: start; }
 #scan-start { padding: 10px 16px; font-size: 15px; }
+#scan-results > .card:first-child { grid-column: 1 / -1; }
+.profile-tabs { margin: 7px 0; }
+.profile-tabs [aria-selected="true"] { border-color: var(--fg); color: var(--fg); }
+.tracker-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 5px 0; }
+.tracker-chip { border: 1px solid var(--line-strong); padding: 3px 7px; max-width: 100%; }
+.tracker-chip summary { cursor: pointer; }
 .intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 12px; margin-top: 12px; align-items: start; }
 .intel-grid .card { padding: 14px; overflow-wrap: anywhere; }
 .intel-grid h3 { margin: 10px 0 4px; font-size: 14px; }

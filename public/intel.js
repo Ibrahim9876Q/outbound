@@ -26,6 +26,66 @@
   const scanButton = $('scan-start');
   const radar = $('scan-radar');
   const radarFrames = ['/..', './.', '../'];
+  let lastScan;
+  let selectedProfile;
+  let showEmptyProfiles = false;
+
+  function trackerChips(trackers) {
+    const companies = new Map();
+    for (const tracker of trackers) {
+      if (!tracker.company) continue;
+      const key = tracker.company.trim().toLowerCase();
+      const company = companies.get(key) || { name: tracker.company, entries: new Map() };
+      company.entries.set(JSON.stringify([tracker.domain, tracker.category]), tracker);
+      companies.set(key, company);
+    }
+    return [...companies.values()].map(({ name, entries }) =>
+      `<details class="tracker-chip"><summary>${esc(name)}${entries.size > 1 ? ' x' + entries.size : ''}</summary>`
+      + dossierLink(name) + list([...entries.values()].map(({ domain, category }) =>
+        esc([domain, category].filter(Boolean).join(' / '))), 'No tracker domains reported.') + '</details>').join('');
+  }
+
+  function profileCard(browser) {
+    return card([browser.browser, browser.profile].filter(Boolean).join(' / '),
+      (browser.blockedReason ? `<p class="ascii-warning">${esc(browser.blockedReason)}</p>` : '')
+      + '<h3>Top visited domains</h3>'
+      + list((browser.sites || []).map((site) => `<strong>${esc(site.domain)}</strong> / ${number(site.visits)} visits`
+        + '<div class="tracker-chips">' + trackerChips(site.trackers || []) + '</div>'
+        + dossierLink(site.company || site.domain, site.company ? 'company' : 'domain')),
+      browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
+      + '<h3>Tracker cookie domains</h3>'
+      + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
+        `${esc(cookie.domain)}${cookie.company ? ' / ' + dossierLink(cookie.company) : ''} / ${number(cookie.cookies)} cookies`),
+      browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.'));
+  }
+
+  function scanSummary(summary) {
+    const trackers = summary.topTrackers || [];
+    const max = Math.max(1, ...trackers.map((tracker) => tracker.sites));
+    const verdict = Number.isFinite(summary.sitesWithTrackers) && Number.isFinite(summary.sitesVisited)
+      ? `Tracker companies were attributed to ${summary.sitesWithTrackers} of ${summary.sitesVisited} visited domains.`
+      : 'No scan totals were reported.';
+    return card('Scan summary', '<strong>' + esc(verdict) + '</strong>'
+      + `<p>${number(summary.sitesVisited)} sites visited / ${number(summary.sitesWithTrackers)} with trackers / ${number(summary.trackerCookieDomains)} tracker cookie domains / ${size(summary.appDataBytes)} app data</p>`
+      + '<h3>Top tracker companies across sites</h3>' + list(trackers.map((tracker) =>
+        dossierLink(tracker.company) + `<br><code>${'#'.repeat(Math.max(0, Math.min(20, Math.round(tracker.sites / max * 20))))}</code> ${number(tracker.sites)} sites`),
+      'No tracker companies were reported across visited sites.'));
+  }
+
+  function renderProfiles(browsers) {
+    const profiles = browsers.map((browser, index) => ({
+      browser, index, visits: (browser.sites || []).reduce((sum, site) => sum + (site.visits || 0), 0),
+      empty: !(browser.sites?.length || browser.cookieDomains?.length || browser.blockedReason),
+    })).sort((a, b) => b.visits - a.visits || a.index - b.index);
+    const empty = profiles.filter((profile) => profile.empty).length;
+    const shown = profiles.filter((profile) => showEmptyProfiles || !profile.empty);
+    const selected = shown.find((profile) => profile.index === selectedProfile) || shown[0];
+    return card('Browser profiles',
+      (empty ? `<button type="button" class="tool-btn" data-empty-profiles aria-pressed="${showEmptyProfiles}">${showEmptyProfiles ? 'Hide' : 'Show'} ${empty} empty ${empty === 1 ? 'profile' : 'profiles'}</button>` : '')
+      + (shown.length ? '<div class="intel-filters profile-tabs" role="tablist" aria-label="Browser profiles">'
+        + shown.map(({ browser, index, visits }) => `<button type="button" class="tool-btn" role="tab" aria-selected="${index === selected.index}" data-scan-profile="${index}">${esc([browser.browser, browser.profile].filter(Boolean).join(' / '))} / ${visits} visits</button>`).join('') + '</div>' : '')
+      + (selected ? profileCard(selected.browser) : '<p>No browser profiles with results are shown.</p>'));
+  }
 
   function setRadar(running) {
     radar.hidden = !running;
@@ -44,35 +104,37 @@
   }
 
   function renderScan(scan) {
+    lastScan = scan;
     const running = scan.status === 'running';
     scanButton.disabled = running;
     setRadar(running);
     const messages = { idle: 'Ready when you choose to scan.', running: 'Scanning locally', done: 'Scan complete.', error: scan.error || 'The scan failed.' };
     $('scan-status').textContent = (messages[scan.status] || 'Scan status unavailable.')
       + (running && Number.isFinite(scan.progress) ? ' / ' + Math.round(scan.progress * 100) + '%' : '');
-    const browsers = (scan.browsers || []).map((browser) => card(
-      [browser.browser, browser.profile].filter(Boolean).join(' / '),
-      (browser.blockedReason ? `<p class="ascii-warning">${esc(browser.blockedReason)}</p>` : '')
-      + '<h3>Top visited domains</h3>'
-      + list((browser.sites || []).map((site) => `<strong>${esc(site.domain)}</strong> / ${number(site.visits)} visits`
-        + (site.trackers?.length ? '<br>' + site.trackers.map((tracker) => dossierLink(tracker.company)).join(', ') : '')
-        + '<br>' + dossierLink(site.company || site.domain, site.company ? 'company' : 'domain')),
-      browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
-      + '<h3>Tracker cookie domains</h3>'
-      + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
-        `${esc(cookie.domain)}${cookie.company ? ' / ' + dossierLink(cookie.company) : ''} / ${number(cookie.cookies)} cookies`),
-      browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.')));
-    const trackers = scan.summary?.topTrackers || [];
-    if (trackers.length) {
-      const max = Math.max(1, ...trackers.map((tracker) => tracker.sites));
-      browsers.push(card('Tracker companies across sites', list(trackers.map((tracker) =>
-        `${esc(tracker.company)}<br><code>${'#'.repeat(Math.max(0, Math.min(20, Math.round(tracker.sites / max * 20))))}</code> ${number(tracker.sites)} sites`), '')));
-    }
+    const browsers = [];
+    if (scan.status === 'done' && scan.summary) browsers.push(scanSummary(scan.summary));
+    if (scan.browsers?.length) browsers.push(renderProfiles(scan.browsers));
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
       `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
-    $('scan-results').innerHTML = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
+    const html = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
+    const output = $('scan-results');
+    if (output.dataset.model !== html) {
+      output.innerHTML = html;
+      output.dataset.model = html;
+    }
   }
+
+  $('scan-results').addEventListener('click', (event) => {
+    const profile = event.target.closest('[data-scan-profile]');
+    const toggle = event.target.closest('[data-empty-profiles]');
+    if (!lastScan || (!profile && !toggle)) return;
+    if (profile) selectedProfile = Number(profile.dataset.scanProfile);
+    if (toggle) showEmptyProfiles = !showEmptyProfiles;
+    renderScan(lastScan);
+    const target = profile ? `[data-scan-profile="${selectedProfile}"]` : '[data-empty-profiles]';
+    $('scan-results').querySelector(target)?.focus();
+  });
 
   async function refreshScan() {
     clearTimeout(scanPoll);
