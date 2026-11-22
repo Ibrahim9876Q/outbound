@@ -46,6 +46,10 @@
   }
 
   function profileCard(browser) {
+    const cookieDomains = browser.cookieDomains || [];
+    const otherCookies = cookieDomains.filter((cookie) => !cookie.isTracker);
+    const cookieRow = (cookie) =>
+      `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies ${researchBadge(cookie.researchId)}`;
     return card([browser.browser, browser.profile].filter(Boolean).join(' / '),
       (browser.blockedReason ? `<p class="ascii-warning">${esc(browser.blockedReason)}</p>` : '')
       + '<h3>Top visited domains</h3>'
@@ -54,9 +58,9 @@
         + (researchBadge(site.researchId) || dossierLink(site.company || site.domain, site.company ? 'company' : 'domain'))),
       browser.historyAvailable === false ? 'History unavailable.' : 'No visited domains reported.')
       + '<h3>Tracker cookie domains</h3>'
-      + list((browser.cookieDomains || []).filter((cookie) => cookie.isTracker).map((cookie) =>
-        `${esc(cookie.domain)}${cookie.company ? ' / ' + esc(cookie.company) : ''} / ${number(cookie.cookies)} cookies ${researchBadge(cookie.researchId)}`),
-      browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.'));
+      + list(cookieDomains.filter((cookie) => cookie.isTracker).map(cookieRow),
+        browser.cookiesAvailable === false ? 'Cookie domain list unavailable.' : 'No tracker cookie domains reported.')
+      + (otherCookies.length ? `<details><summary>Other cookie domains (${otherCookies.length})</summary>${list(otherCookies.map(cookieRow), '')}</details>` : ''));
   }
 
   function scanSummary(summary) {
@@ -92,7 +96,7 @@
       Array.isArray(scan[key]) ? render(scan[key]) || `<p class="intel-muted">${esc(empty)}</p>`
         : '<p class="intel-muted">This scan section is unavailable.</p>');
     const timestamp = (value) => Number.isFinite(value) ? new Date(value).toLocaleString() : 'Time unavailable';
-    const permissions = report('permissions', 'Permission history', (rows) => {
+    const permissions = '<div id="scan-permissions">' + report('permissions', 'Permission history', (rows) => {
       const groups = new Map();
       for (const row of rows) {
         const key = String(row.capability).toLowerCase();
@@ -110,7 +114,7 @@
         broadfilesystemaccess: 'Broad file access', documentslibrary: 'Documents library', pictureslibrary: 'Pictures library',
         videoslibrary: 'Videos library', appointments: 'Calendar', radios: 'Wireless radios', gazeinput: 'Eye tracking',
         humaninterface: 'Human interface devices', activity: 'Motion and activity', bluetoothsync: 'Bluetooth sync',
-        bluetooth: 'Bluetooth', cellularData: 'Cellular data', musiclibrary: 'Music library', notificationlistener: 'Notifications' };
+        bluetooth: 'Bluetooth', cellulardata: 'Cellular data', musiclibrary: 'Music library', notificationlistener: 'Notifications' };
       const renderCapability = ([capability, group]) => `<h3>${esc(labels[capability] || group[0].capability.replace(/([a-z0-9])([A-Z])/g, '$1 $2'))}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
         + list(group.map((row) => {
           const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
@@ -123,9 +127,10 @@
       const sensitive = priority.filter((key) => groups.has(key)).map((key) => [key, groups.get(key)]);
       const other = [...groups].filter(([key]) => !priority.includes(key)).sort(([a], [b]) =>
         (labels[a] || a).localeCompare(labels[b] || b));
-      return sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
+      return '<p>' + dossierLink('tim-hortons', 'app', 'Tim Hortons dossier') + '</p>'
+        + sensitive.map(renderCapability).join('') + (other.length ? `<details class="permission-other">
         <summary>Other permissions (${other.length})</summary>${other.map(renderCapability).join('')}</details>` : '');
-    }, 'No permission history was reported.');
+    }, 'No permission history was reported.') + '</div>';
     const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
       return `<strong>${esc(row.name)}</strong> ${researchBadge(row.researchId)}`
         + '<br>' + esc([row.publisher, row.version, row.installDate, Number.isFinite(row.sizeBytes) ? size(row.sizeBytes) : null].filter(Boolean).join(' / '));
@@ -161,6 +166,7 @@
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) radarTimer = setInterval(draw, 220);
   }
 
+  let permissionJump = false;
   function renderScan(scan) {
     lastScan = scan;
     const running = scan.status === 'running';
@@ -186,6 +192,10 @@
       output.innerHTML = html;
       output.dataset.model = html;
     }
+    if (permissionJump && $('scan-permissions') && Outbound.view === 'scan') {
+      permissionJump = false;
+      $('scan-permissions').scrollIntoView({ block: 'start' });
+    }
   }
 
   $('scan-results').addEventListener('click', (event) => {
@@ -209,6 +219,7 @@
       setRadar(false);
       scanButton.disabled = error.status === 404;
       $('scan-status').textContent = error.status === 404 ? 'Stored-data scanner is unavailable in this build.' : 'Could not read scan status.';
+      if (error.status !== 404 && Outbound.view === 'scan') scanPoll = setTimeout(refreshScan, 1500);
     }
   }
 
@@ -225,7 +236,14 @@
     }
     refreshScan();
   });
-  Outbound.onView((name) => { if (name === 'scan') { refreshScan(); loadResearch(); } });
+  $('permission-jump').addEventListener('click', () => Outbound.showView('scan', 'permissions'));
+  Outbound.onView((name) => {
+    if (name !== 'scan') return;
+    permissionJump = Outbound.viewTarget === 'permissions';
+    if (lastScan) renderScan(lastScan);
+    refreshScan();
+    loadResearch();
+  });
 
   let research;
   let researchLoading;
@@ -277,8 +295,11 @@
     const display = (key, heading, row) => `<h3>${heading}</h3>` + list(entries(selected, key)
       .filter((entry) => key !== 'incidents' || !kind || entry.kind === kind)
       .map((entry) => row(entry) + sourceHTML(entry.source)), 'No verified entries reported.');
+    const observed = (Outbound.state?.apps || []).find((app) => app.researchId === selected.id && app.id?.endsWith('.exe'))
+      || (Outbound.state?.apps || []).find((app) => app.id?.endsWith('.exe') && app.destinations?.length);
     output.innerHTML = `<h2>${esc(selected.name)}</h2>`
       + (selected.publisher ? `<p>${esc(selected.publisher)}</p>` : '')
+      + (observed ? `<p>Observed app / ${esc(observed.name)} ${blockButton('app', observed.id)}</p>` : '')
       + blockButton(selected.type, selected.type === 'app' ? selected.processNames?.[0] : selected.name)
       + (selected.domains || []).map((domain) => blockButton('domain', domain)).join(' ')
       + display('declared', 'Declared collection', (entry) => `<strong>${esc(entry.data)}</strong> / ${esc(entry.purpose)}`)
@@ -306,7 +327,7 @@
       $('dossier-count').textContent = 'Verified research is unavailable in this build.';
     } finally {
       researchLoading = false;
-      renderDossier();
+      if (Outbound.view === 'dossier') renderDossier();
       if (Outbound.view === 'scan' && lastScan) renderScan(lastScan);
     }
   }
@@ -314,13 +335,19 @@
   document.addEventListener('click', (event) => {
     const trigger = event.target.closest('[data-dossier]');
     if (!trigger) return;
-    selection = [trigger.dataset.dossierKind, trigger.dataset.dossier];
-    if (Outbound.view !== 'dossier') Outbound.showView('dossier');
-    else renderDossier();
+    const { dossierKind, dossier } = trigger.dataset;
+    Outbound.showView('dossier', dossierKind === 'app' ? dossier : dossierKind + ':' + dossier);
   });
   $('dossier-search').addEventListener('input', renderDossier);
   $('dossier-kind').addEventListener('change', renderDossier);
-  Outbound.onView((name) => { if (name === 'dossier') loadResearch(); });
+  Outbound.onView((name) => {
+    if (name !== 'dossier') return;
+    const id = Outbound.viewTarget;
+    const match = /^(company|domain):(.*)$/.exec(id);
+    selection = id ? (match ? match.slice(1) : ['app', id]) : null;
+    if (id) $('dossier-search').value = '';
+    loadResearch();
+  });
   let researchScheduled = false;
   Outbound.onState(() => {
     if (researchScheduled) return;
@@ -332,6 +359,8 @@
   let policy;
   let blockTarget;
   let policyBusy = false;
+  let previewedApp;
+  $('rules-globe').addEventListener('click', () => Outbound.showAppOnGlobe(previewedApp));
 
   function blockButton(kind, value) {
     return value ? `<button type="button" class="tool-btn" data-block-kind="${esc(kind)}" data-block-value="${esc(value)}">Block ${esc(kind)}${kind === 'domain' ? ' / ' + esc(value) : ''}</button>` : '';
@@ -406,6 +435,8 @@
         body: JSON.stringify({ target, action: 'block', scope: 'session' }),
       });
       showPlan(response.plan, response.decision);
+      previewedApp = target.kind === 'app' ? target.value : null;
+      $('rules-globe').hidden = !previewedApp;
       $('rules-status').textContent = 'Local block rule preview ready.';
       blockTarget = null;
     } catch {
@@ -476,7 +507,7 @@
           esc(week[i].date.slice(5) + ': ' + (point === null ? 'unknown' : number(point)))).join(' / ')}</li>`;
       });
       const daily = [...week].reverse().map((day) => card(day.date,
-        list([...day.apps].sort((a, b) => b.companies - a.companies || b.trackers - a.trackers || a.name.localeCompare(b.name))
+        '<h3>Top apps by attributed companies</h3>' + list([...day.apps].sort((a, b) => b.companies - a.companies || b.trackers - a.trackers || a.name.localeCompare(b.name))
           .slice(0, 5).map((app) => `<strong>${esc(app.name)}</strong><br>`
             + historyMetrics.map(([key, label]) => esc(label.toLowerCase() + ': ' + number(app[key]))).join(' / ')),
         'No app observations for this day.')));

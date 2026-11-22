@@ -318,6 +318,10 @@
         button.title = app.id;
       }
       button.addEventListener('click', () => {
+        if (shared?.showView) {
+          shared.showView('globe', app.id || '');
+          return;
+        }
         selectedApp = app.id || null;
         setRotation(false);
         clearPoint();
@@ -750,8 +754,9 @@
       const label = shared?.util?.appLabel?.(app.name) || app.name;
       return { ...app, name: nameCounts.get(app.name) > 1 ? label + ' · ' + app.id : label };
     }).sort((a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
-    if (!namedApps.some((app) => app.id === selectedApp)) selectedApp = null;
-    const places = namedApps.filter((app) => selectedApp === null || app.id === selectedApp)
+    const shownApps = namedApps.filter((app) => selectedApp === null || app.id === selectedApp);
+    const retained = shownApps.reduce((total, app) => total + (app.totals?.destinations ?? app.destinations.length), 0);
+    const places = shownApps
       .flatMap((app) => app.destinations.map((destination) => ({
         id: app.id + '|' + destination.ip, appId: app.id, appName: app.name,
         org: destination.org || 'Unknown owner', city: destination.city,
@@ -760,7 +765,7 @@
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
       }))).map(plotLocation).sort((a, b) => a.id.localeCompare(b.id));
     alignCountryEstimates(places);
-    const key = JSON.stringify([namedApps.map(({ id, name }) => [id, name]), selectedApp, state.home, places]);
+    const key = JSON.stringify([namedApps.map(({ id, name }) => [id, name]), selectedApp, state.home, places, retained]);
     if (key === modelKey) return;
     modelKey = key;
     renderFilters(namedApps);
@@ -771,7 +776,9 @@
       const count = located.length;
       const unknown = places.length - count;
       const mapped = count + ' mapped ' + plural(count, 'destination');
-      setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') : 'Waiting for network activity…');
+      const cap = shared?.capCount?.(places.length, retained, 'retained endpoints');
+      setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') + (cap ? ' / ' + cap : '')
+        : selectedApp ? 'No retained destinations for ' + selectedApp + '.' : 'Waiting for network activity…');
     }
     if (!globe) return;
     updateCountryCells(places);
@@ -867,7 +874,6 @@
         const home = hasCoordinates(state?.home) ? state.home : { lat: 43, lng: -81 };
         globe.pointOfView({ lat: home.lat - 9, lng: home.lng, altitude: 1.65 });
       });
-      globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       loadCountryCells();
     } catch (error) {
       globe = undefined;
@@ -892,6 +898,10 @@
     }
     if (!globe && !initFailed) initGlobe();
     if (globe) {
+      // Limit WebGL pixel work while keeping labels and hit targets at full CSS size.
+      const renderer = globe.renderer();
+      const ratio = Math.min(window.devicePixelRatio, 1.5, Math.sqrt(850000 / (width * height)));
+      if (Math.abs(renderer.getPixelRatio() - ratio) > 0.02) renderer.setPixelRatio(ratio);
       if (globe.width() !== width) globe.width(width);
       if (globe.height() !== height) globe.height(height);
       if (!visible) globe.resumeAnimation();
@@ -954,13 +964,16 @@
         render();
       }, 1100);
     });
-    shared.showAppOnGlobe = (id) => {
-      selectedApp = id;
+    shared.showAppOnGlobe = (id) => shared.showView('globe', id);
+    shared.onView((name) => {
+      if (name !== 'globe') return;
+      const target = shared.viewTarget || null;
+      if (target !== selectedApp) setRotation(false);
+      selectedApp = target;
       modelKey = '';
       clearPoint();
-      shared.showView('globe');
       syncView();
-    };
+    });
     shared.onState(receiveState);
   } else {
     const source = new EventSource('/events');

@@ -155,9 +155,13 @@
       rows.push({ text: `<span class="who">${esc(deviceAppName(e.label, state))}</span><span class="when">· ${ago(e.stop, now)} · ${duration(e.stop - e.start)} long</span>` });
       if (rows.length >= 4) break;
     }
-    const html = rows.length
+    const caps = [
+      Outbound.capCount(dev.lastUsedByApp?.length ?? 0, dev.totals?.lastUsedByApp, 'retained last-used records'),
+      Outbound.capCount(dev.recentSessions?.length ?? 0, dev.totals?.recentSessions, 'retained session records'),
+    ].filter(Boolean);
+    const html = (rows.length
       ? rows.slice(0, 4).map((r) => `<li class="${r.now ? 'now' : ''}"><span class="dot"></span>${r.text}</li>`).join('')
-      : '<li class="none">No apps have used it yet</li>';
+      : '<li class="none">No apps have used it yet</li>') + caps.map((cap) => `<li class="none">${esc(cap)} in the available sample</li>`).join('');
     if (list.innerHTML !== html) list.innerHTML = html;
   }
 
@@ -477,7 +481,9 @@
     if (app.mic) parts.push('using the microphone');
     if (app.cam) parts.push('using the camera');
     node.title = parts.join(' · ') + '\nExposure ' + Outbound.exposureGauge(app.score)
-      + '\nEvidence coverage: ' + (app.score?.coverage ?? 'unknown') + '/100. Missing evidence is unknown.';
+      + '\nEvidence coverage: ' + (app.score?.coverage ?? 'unknown') + '/100. Missing evidence is unknown.'
+      + (app.score?.factors || []).map((factor) =>
+        '\n' + factor.factor + ': weight ' + factor.weight + ', value ' + (factor.raw ?? 'unknown') + '. ' + factor.reason).join('');
     node.setAttribute('aria-label', app.dupe ? app.name + ' (' + exeLabel(app) + ')' : app.name);
     node.setAttribute('aria-pressed', String(selected === app.id));
     if (app.protectedProcesses) node.setAttribute('aria-expanded', String(selected === app.id));
@@ -801,6 +807,14 @@
     let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     if (!app.protectedProcesses) html += appXray(app);
+    const capped = [
+      ['destinations', app.destinations, 'retained endpoints'], ['localPeers', app.localPeers, 'retained local peers'],
+      ['udp', app.udp, 'retained UDP listeners'], ['children', app.children, 'retained child processes'],
+      ['backgroundCompanies', app.background?.companies, 'retained background companies'],
+      ['backgroundTrackers', app.background?.trackers, 'retained background trackers'],
+    ].map(([key, records, label]) => Outbound.capCount(records?.length ?? 0, app.totals?.[key], label)).filter(Boolean);
+    if (capped.length) html += '<div class="detail-sub">Retained sample bounds</div><ul class="coverage-list">'
+      + capped.map((line) => '<li>' + esc(line) + '</li>').join('') + '</ul>';
     if (app.protectedProcesses) {
       html += '<div class="detail-sub">System and protected processes</div><ul class="dests protected-list">'
         + app.protectedProcesses.map((process) => {
