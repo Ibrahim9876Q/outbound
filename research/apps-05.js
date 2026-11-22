@@ -4,7 +4,7 @@ const adobe = 'https://www.adobe.com/privacy/policy.html';
 const row = (id,name,publisher,category,domain,url,data,purpose,terms) =>
   [id,name,publisher,category,null,domain,url,data,purpose,terms];
 module.exports = [
-  row('chrome','Google Chrome','Google','browser','google.com',google,'Information from Chrome browsing history when synced','Personalize Google services depending on settings',['google','chrome browsing history','sync','personalized']),
+  ['chrome','Google Chrome','Google','browser','chrome.exe','google.com',google,'Information from Chrome browsing history when synced','Personalize Google services depending on settings',['google','chrome browsing history','sync','personalized']],
   row('google-drive','Google Drive','Google','storage','drive.google.com',google,'Files created or uploaded to Google services','Provide file storage and related services',['google','docs and spreadsheets you make','upload','provide our services']),
   row('twitch','Twitch','Amazon','video','twitch.tv','https://www.twitch.tv/p/en/legal/privacy-notice/','Information about use of Twitch services','Operate and improve the platform',['twitch','usage','improve']),
   row('duolingo','Duolingo','Duolingo','education','duolingo.com','https://www.duolingo.com/privacy','Learning or account information','Provide language learning features',['duolingo','learning','account']),
