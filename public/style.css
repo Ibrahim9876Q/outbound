@@ -231,16 +231,17 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .intel-heading { display: grid; gap: 8px; margin-bottom: 12px; }
 .intel-heading p, .intel-muted { color: var(--muted); }
 .intel-heading button { justify-self: start; }
+#scan-start { padding: 10px 16px; font-size: 15px; }
 .intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 12px; margin-top: 12px; align-items: start; }
 .intel-grid .card { padding: 14px; overflow-wrap: anywhere; }
 .intel-grid h3 { margin: 10px 0 4px; font-size: 14px; }
 .intel-grid li { padding: 5px 0; border-bottom: 1px solid var(--line); }
-.intel-grid a { text-decoration: underline; }
+.intel-grid a { color: var(--fg); text-decoration: underline; }
 .intel-link { color: inherit; background: none; border: 0; text-decoration: underline; padding: 0; cursor: pointer; }
 .intel-filters { display: flex; gap: 12px; flex-wrap: wrap; }
 .intel-filters input, .intel-filters select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line-strong); }
 .citation { display: block; margin-top: 4px; color: var(--muted); }
-#dossier-list { max-height: 62vh; overflow: auto; }
+#dossier-list { max-height: 62vh; overflow-y: auto; overflow-x: hidden; }
 .policy-plan { border: 1px solid var(--line-strong); padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
 #rules-list { margin-top: 12px; }
 #rules-list li, #rules-pending { padding: 6px 0; }
