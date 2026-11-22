@@ -611,11 +611,16 @@
     output.hidden = false;
   }
 
+  let policyRead = 0;
   async function refreshPolicy() {
+    const read = ++policyRead;
     try {
-      policy = await api('/api/policy');
+      const latest = await api('/api/policy', { signal: AbortSignal.timeout(12000) });
+      if (read !== policyRead) return;
+      policy = latest;
       if (policy.enforcer !== 'dry-run') $('rules-status').textContent = 'Preview controls require the dry-run enforcer.';
     } catch {
+      if (read !== policyRead) return;
       policy = null;
       $('rules-provider').textContent = 'Policy API unavailable in this build.';
     }
@@ -690,9 +695,12 @@
     const rule = policy.rules?.find((item) => item.id === remove.dataset.removeRule);
     if (!rule) return;
     policyBusy = true;
+    $('rules-status').textContent = 'Removing the local rule…';
     renderPolicy();
     try {
-      const result = await api('/api/policy/rules/' + encodeURIComponent(remove.dataset.removeRule), { method: 'DELETE' });
+      const result = await api('/api/policy/rules/' + encodeURIComponent(remove.dataset.removeRule), {
+        method: 'DELETE', signal: AbortSignal.timeout(15000),
+      });
       if (approvalWatch && approvalWatch.id === rule.approval?.requestId) {
         approvalWatch = null;
         clearTimeout(approvalTimer);
@@ -700,11 +708,15 @@
       }
       showPlan(result.plan);
       $('rules-status').textContent = 'Rule removed.';
+      policy.rules = policy.rules.filter((item) => item.id !== rule.id);
     } catch (error) {
       if (error.status === 401) refreshAuth();
-      $('rules-status').textContent = error.status === 401 ? 'Sign in with Auth0 to remove this rule.' : 'Could not remove this rule.';
+      $('rules-status').textContent = error.status === 401 ? 'Sign in with Auth0 to remove this rule.'
+        : error.name === 'TimeoutError' ? 'Removal timed out. The Rules list will refresh so you can check the outcome.'
+          : 'Could not remove this rule.';
     } finally {
       policyBusy = false;
+      renderPolicy();
       refreshPolicy();
     }
   });
