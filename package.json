@@ -9,6 +9,7 @@
     "phone:demo": "node gateway/server.js --demo",
     "fga:model": "node gateway/fga-model.js",
     "dev:all": "node scripts/dev-all.js",
+    "check": "node scripts/check.js",
     "test": "node --test"
   },
   "keywords": [],

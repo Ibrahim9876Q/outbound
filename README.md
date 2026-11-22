@@ -8,17 +8,23 @@ Built at Hack Western 13 for the **Discover the Unknown** theme.
 
 The screenshot is scoped to a real local curl-to-Node.js test connection. The connection details show port 4319.
 
-## Setup
+## Run
 
-Use Windows 11, Node.js 24 and npm 11. Run the first two commands in PowerShell from the integrated project checkout. Run the third in a second terminal while the server is running.
+Use Windows 11, Node.js 24 and npm 11. From the integrated project checkout, run:
 
-```powershell
-npm.cmd ci
-npm.cmd start
-Start-Process 'http://localhost:4317'
+```text
+npm install
+npm run dev:all
 ```
 
-For the backend worktree, run `$env:PORT=4319; node server.js` and open `http://localhost:4319`.
+Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If PowerShell blocks the npm shim, use `npm.cmd install` and `npm.cmd run dev:all`.
+
+### Troubleshooting
+
+- **Port already in use or a broken view after reload.** Close the old Outbound server in its terminal with Ctrl+C, then launch from the integrated checkout. Run `npm run check` to verify the page, its assets and the API on a free port.
+- **Exact website names are missing.** If Windows restricts the DNS cache, try starting Outbound from an administrator terminal. IP ownership and reverse DNS remain available as fallbacks.
+- **Phone configuration.** Copy `.env.example` to the gitignored `.env`. Keep the loopback defaults for a laptop run. For live Auth0, fill in the FGA store and model, the CIBA-enabled Auth0 application and enrolled user, and a generated `PHONE_POLICY_KEY`. Restart the gateway after editing `.env`. [Phone gateway setup](gateway/README.md)
+- **Guardian approval never arrives.** Enroll the test approver in Auth0 Guardian and verify that the enrolled user's ID matches `AUTH0_USER_ID`. Keep the enrolled phone unlocked for the test. For an offline rehearsal, stop your gateway and use `npm run phone:demo` with hosted credentials omitted. [Guardian and offline demo instructions](gateway/README.md)
 
 ## What Outbound measures
 
