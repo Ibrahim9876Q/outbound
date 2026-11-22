@@ -11,6 +11,7 @@ const { StoredScan } = require('./lib/scan');
 const { LinkWatcher } = require('./lib/links');
 const { warnPoll } = require('./lib/poll');
 const { scoreApps } = require('./lib/score');
+const { DailyHistory } = require('./lib/history');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -73,10 +74,12 @@ const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
 const scan = new StoredScan();
 const linkWatcher = new LinkWatcher();
+const history = new DailyHistory();
 let scoreCache;
 process.on('exit', () => {
   devices.close();
   network.foreground.close();
+  try { history.save(); } catch (error) { warnPoll('history', error); }
 });
 process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
@@ -111,6 +114,7 @@ function loop(fn, everyMs, name) {
 loop(async () => {
   await network.poll();
   sampledAt = Date.now();
+  history.capture(sampledAt, network.dailyReport.forDay(sampledAt), devices.reportSessions(sampledAt));
 }, 1500, 'network');
 loop(() => devices.poll(), 750, 'devices');
 loop(() => {
@@ -120,6 +124,9 @@ loop(() => {
 const endpoint = phoneEndpoint();
 if (endpoint) loop(() => pollPhone(endpoint), 2000, 'phone');
 setInterval(() => stream.flush(), 500);
+setInterval(() => {
+  try { history.save(); } catch (error) { warnPoll('history', error); }
+}, 30000);
 
 const PUBLIC = path.join(__dirname, 'public');
 const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
@@ -159,6 +166,10 @@ const server = http.createServer(async (req, res) => {
   if (url.pathname === '/api/score' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(scores(linkWatcher.snapshot(network.snapshot().apps).apps).payload));
+  }
+  if (url.pathname === '/api/history' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+    return res.end(JSON.stringify(history.snapshot()));
   }
   if (url.pathname === '/api/scan') {
     const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
