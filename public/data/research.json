@@ -4795,6 +4795,586 @@
           }
         }
       ]
+    },
+    {
+      "id": "vinted",
+      "name": "Vinted",
+      "publisher": "Vinted Limited",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Vinted: Pre-loved marketplace App - App Store",
+            "publisher": "Vinted Limited",
+            "url": "https://apps.apple.com/us/app/vinted-pre-loved-marketplace/id632064380",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.473Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "netflix-game-controller",
+      "name": "Netflix Game Controller",
+      "publisher": "Netflix, Inc.",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Netflix Game Controller App - App Store",
+            "publisher": "Netflix, Inc.",
+            "url": "https://apps.apple.com/us/app/netflix-game-controller/id6447582581",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.691Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gowish",
+      "name": "GoWish",
+      "publisher": "Onskeskyen ApS",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎GoWish - Your Digital Wishlist App - App Store",
+            "publisher": "Onskeskyen ApS",
+            "url": "https://apps.apple.com/us/app/gowish-your-digital-wishlist/id1605170923",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.495Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "pinedrama",
+      "name": "PineDrama",
+      "publisher": "TIKTOK PTE. LTD.",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "User Content, Browsing History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PineDrama - Short Dramas App - App Store",
+            "publisher": "TIKTOK PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/pinedrama-short-dramas/id6754134922",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.786Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-home",
+      "name": "Google Home",
+      "publisher": "Google LLC",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Search History, Browsing History",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Home App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-home/id680819774",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:26.123Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "quince",
+      "name": "Quince",
+      "publisher": "Lastbrand Inc.",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Quince: Luxury Essentials App - App Store",
+            "publisher": "Lastbrand Inc.",
+            "url": "https://apps.apple.com/us/app/quince-luxury-essentials/id6670251421",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.969Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "whatnot",
+      "name": "Whatnot",
+      "publisher": "Whatnot Inc.",
+      "category": "general",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Whatnot: Shop, Sell, Connect App - App Store",
+            "publisher": "Whatnot Inc.",
+            "url": "https://apps.apple.com/us/app/whatnot-shop-sell-connect/id1488269261",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.945Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "govee-home",
+      "name": "Govee Home",
+      "publisher": "Shenzhen Intellirocks Tech Co. Ltd.",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Govee Home App - App Store",
+            "publisher": "Shenzhen Intellirocks Tech Co. Ltd.",
+            "url": "https://apps.apple.com/us/app/govee-home/id1395696823",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:25.968Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-authenticator",
+      "name": "Google Authenticator",
+      "publisher": "Google LLC",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, User Content, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Google Authenticator App - App Store",
+            "publisher": "Google LLC",
+            "url": "https://apps.apple.com/us/app/google-authenticator/id388497605",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:26.799Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "my-verizon",
+      "name": "My Verizon",
+      "publisher": "Verizon Wireless",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎My Verizon App - App Store",
+            "publisher": "Verizon Wireless",
+            "url": "https://apps.apple.com/us/app/my-verizon/id416023011",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:26.785Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-support",
+      "name": "Apple Support",
+      "publisher": "Apple Inc.",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Apple Support App - App Store",
+            "publisher": "Apple Inc.",
+            "url": "https://apps.apple.com/us/app/apple-support/id1130498044",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.063Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "xfinity",
+      "name": "Xfinity",
+      "publisher": "Comcast Interactive Media",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Xfinity App - App Store",
+            "publisher": "Comcast Interactive Media",
+            "url": "https://apps.apple.com/us/app/xfinity/id1178765645",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.029Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "blink-home-monitor",
+      "name": "Blink Home Monitor",
+      "publisher": "Immedia Semiconductor, Inc",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Blink Home Monitor App - App Store",
+            "publisher": "Immedia Semiconductor, Inc",
+            "url": "https://apps.apple.com/us/app/blink-home-monitor/id1013961111",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.100Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "my-spectrum",
+      "name": "My Spectrum",
+      "publisher": "Charter Communications Operating, LLC",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎My Spectrum App - App Store",
+            "publisher": "Charter Communications Operating, LLC",
+            "url": "https://apps.apple.com/us/app/my-spectrum/id942608209",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.265Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "starlink",
+      "name": "Starlink",
+      "publisher": "Space Exploration Technologies Corp.",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Starlink App - App Store",
+            "publisher": "Space Exploration Technologies Corp.",
+            "url": "https://apps.apple.com/us/app/starlink/id1537177988",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:26.960Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bambu-handy",
+      "name": "Bambu Handy",
+      "publisher": "Shanghai Lunkuo Technology Co., Ltd",
+      "category": "utilities",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Bambu Handy App - App Store",
+            "publisher": "Shanghai Lunkuo Technology Co., Ltd",
+            "url": "https://apps.apple.com/us/app/bambu-handy/id1625671285",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.776Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "kalshi",
+      "name": "Kalshi",
+      "publisher": "KALSHI INC.",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Browsing History, Identifiers, Usage Data, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Kalshi: Trade Sports & Events App - App Store",
+            "publisher": "KALSHI INC.",
+            "url": "https://apps.apple.com/us/app/kalshi-trade-sports-events/id1632713844",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:27.978Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "cash-app",
+      "name": "Cash App",
+      "publisher": "Block, Inc.",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Cash App App - App Store",
+            "publisher": "Block, Inc.",
+            "url": "https://apps.apple.com/us/app/cash-app/id711923939",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:28.266Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "publisher": "PayPal, Inc.",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎PayPal - Pay, Send, Save App - App Store",
+            "publisher": "PayPal, Inc.",
+            "url": "https://apps.apple.com/us/app/paypal-pay-send-save/id283646709",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:28.514Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "venmo",
+      "name": "Venmo",
+      "publisher": "The Delancey Corporation, LLC",
+      "category": "finance",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Venmo App - App Store",
+            "publisher": "The Delancey Corporation, LLC",
+            "url": "https://apps.apple.com/us/app/venmo/id351727428",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:21:28.152Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -8110,7 +8690,7 @@
       "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:19:55.665Z",
+  "generatedAt": "2026-11-22T06:21:28.516Z",
   "index": {
     "exe": {
       "brave.exe": [

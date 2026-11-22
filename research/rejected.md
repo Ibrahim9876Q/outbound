@@ -464,3 +464,7 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Nomi Technologies, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3251-nomi-technologies-inc-matter — privacy topic not supported by the case summary or release headlines
 - American International Mailing, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3051-american-international-mailing-inc-matter — privacy topic not supported by the case summary or release headlines
 - TES Franchising, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3015-tes-franchising-llc-matter — privacy topic not supported by the case summary or release headlines
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
