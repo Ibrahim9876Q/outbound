@@ -380,7 +380,11 @@
     }
     const display = (key, heading, row) => `<h3>${heading}</h3>` + list(entries(selected, key)
       .filter((entry) => key !== 'incidents' || !kind || entry.kind === kind)
-      .map((entry) => row(entry) + sourceHTML(entry.source)), 'No verified entries reported.');
+      .map((entry) => {
+        const citedInQuote = key === 'incidents' && entry.quote && entry.quoteSource?.url === entry.source.url
+          && !entry.source.alternates?.length;
+        return row(entry) + (citedInQuote ? '' : sourceHTML(entry.source));
+      }), 'No verified entries reported.');
     const observed = (Outbound.state?.apps || []).find((app) => app.researchId === selected.id && app.id?.endsWith('.exe'))
       || (Outbound.state?.apps || []).find((app) => app.id?.endsWith('.exe') && app.destinations?.length);
     output.innerHTML = `<h2>${esc(selected.name)}</h2>`
