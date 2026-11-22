@@ -349,12 +349,9 @@
     if (point === shownPoint) return;
     shownPoint = point;
     const pinned = pinnedPoint !== null;
-    const byOwner = new Map();
-    for (const place of point?.places || []) {
-      const key = JSON.stringify([place.org, place.city, place.country, place.appId, place.appName, place.tracker]);
-      byOwner.set(key, place);
-    }
-    const contentKey = JSON.stringify([pinned, point?.key, point?.label, [...byOwner.keys()]]);
+    const details = point?.places || [];
+    const contentKey = JSON.stringify([pinned, point?.key, point?.label, details.map((place) =>
+      [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker])]);
     if (tipContentKey === contentKey) return;
     tipContentKey = contentKey;
     tip.replaceChildren();
@@ -374,16 +371,25 @@
       return;
     }
 
-    const details = [...byOwner.values()];
-    for (const place of pinned ? details : details.slice(0, 4)) {
+    for (const place of pinned ? details : details.slice(0, 2)) {
       const row = node('div', 'globe-tip-row');
       const title = node('strong', '', place.org);
       if (place.tracker) title.append(node('span', 'globe-tracker', 'Tracker'));
       const location = [place.city, countryName(place.country)].filter(Boolean).join(', ');
-      row.append(title, node('p', '', place.appName + ' · ' + location));
+      const fields = node('dl', 'globe-tip-fields');
+      for (const [label, value] of [
+        ['ASN', place.asn ? 'AS' + place.asn : 'Unknown'],
+        ['IP', place.ip],
+        ['LOCATION', location],
+        ['APP', place.appName],
+        ['PORTS', place.ports.length ? place.ports.join(', ') : 'Unknown'],
+      ]) {
+        fields.append(node('dt', '', label), node('dd', '', value));
+      }
+      row.append(title, fields);
       tip.append(row);
     }
-    if (!pinned && details.length > 4) {
+    if (!pinned && details.length > 2) {
       tip.append(node('p', '', 'Select the point to see all ' + details.length + ' entries.'));
     }
   }
@@ -422,6 +428,7 @@
       .flatMap((app) => app.destinations.map((destination) => ({
         id: app.id + '|' + destination.ip, appId: app.id, appName: app.name,
         org: destination.org || 'Unknown owner', city: destination.city,
+        ip: destination.ip, asn: destination.asn, ports: destination.ports || [],
         country: countryCode(destination.country), lat: destination.lat, lng: destination.lng,
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
       }))).sort((a, b) => a.id.localeCompare(b.id));
