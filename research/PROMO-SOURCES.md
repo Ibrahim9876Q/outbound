@@ -122,3 +122,8 @@ The card headings also need qualification. Use ?[ DATA THAT MAY BE COLLECTED ]? 
 | Feature / Dossier | 330+ APPS · 240+ VERIFIED FINES, CASES & INVESTIGATIONS | NEEDS EDIT | Current dossier inventory | Outbound | 2026-11-22 snapshot | [Dossier](../public/data/research.json) | Say “330+ app and extension entries · 240 documented incidents.” Check the exact numbers against the captured build. |
 | Feature / Dossier footer | Real Outbound Dossier screens: 334 apps, 244 incidents, 575 sources, each fetched and verified. | UNVERIFIED | Current dossier inventory | Outbound | 2026-11-22 snapshot | [Dossier](../public/data/research.json) | The tracked dossier at the merged revision had 338 app-and-extension entries, 240 incidents and 587 distinct primary citation URLs. The specific capture counts need proof from its own revision. |
 | Feature / Auth0 | Auth0 FGA records who approved which rule | NEEDS EDIT | Auth0 setup and policy tuple implementation | Outbound | 2026-11-22 snapshot | [Setup](SETUP-AUTH0.md), [Provider](../lib/blocker/providers/auth0.js) | Say “FGA records approval for an opaque rule ID.” The app records the signed-in rule author locally, and the push goes to the configured Guardian approver. |
+## Verification
+
+All 26 external URLs cited in this audit are present in the dossier. The source ledger records the re-fetches for the 10 URLs added in this round. [Link health ledger](link-health.json)
+
+On 2026-11-22, `npm test` passed all 51 tests. `npm run check` passed on `127.0.0.1:4321` for 10 assets, dashboard state, the report and the server-sent event stream.
