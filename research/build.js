@@ -95,7 +95,7 @@ async function main() {
         const items = row.company ? dossier.companies : dossier.apps;
         const identity = row.company ? 'name' : 'id';
         let target = items.find((item) => item[identity] === row.id);
-        if (!target && row.creation && ['declared', 'incidents'].includes(row.section)) {
+        if (!target && row.creation && (row.company || ['declared', 'incidents'].includes(row.section))) {
           const [name, publisher, category, domain] = row.creation;
           target = row.company ? { name, aliases: [], hq: { city: null, country: null }, declared: [], incidents: [] } :
             { id: row.id, name, publisher, category, processNames: [], domains: [domain],
@@ -106,7 +106,8 @@ async function main() {
         const { section, ...claim } = entry;
         if (row.company && row.aliases) target.aliases = [...new Set([...target.aliases, ...row.aliases])];
         const key = { incidents: 'title', destinations: 'country', declared: 'data', sharesWith: 'party' }[section];
-        target[section] = (target[section] || []).filter((existing) => existing[key] !== claim[key]);
+        target[section] = (target[section] || []).filter((existing) =>
+          existing[key] !== claim[key] && !row.replaces?.includes(existing[key]));
         target[section].push(claim);
       } else if (batch.startsWith('companies')) {
         const previous = dossier.companies.find((company) => company.name === entry.name);

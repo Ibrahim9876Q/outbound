@@ -7734,7 +7734,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Report on Hola VPN and its residential exit network",
+          "year": 2015,
+          "kind": "report",
+          "jurisdiction": "Global",
+          "summary": "Ars Technica reported that Hola sold access to a network that used free users’ connections as exit nodes.",
+          "source": {
+            "title": "Hola VPN used to perform DDoS attacks, violate user privacy - Ars Technica",
+            "publisher": "Ars Technica",
+            "url": "https://arstechnica.com/information-technology/2015/06/hola-vpn-used-to-perform-ddos-attacks-violate-user-privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.373Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -10403,6 +10419,618 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "extension-efaidnbmnnnibpcajpcglclefindmkaj",
+      "extensionIds": [
+        "efaidnbmnnnibpcajpcglclefindmkaj"
+      ],
+      "name": "Adobe Acrobat: PDF edit, convert, sign tools",
+      "publisher": "Adobe, Inc.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Location, User activity",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Adobe Acrobat: PDF edit, convert, sign tools - Chrome Web Store",
+            "publisher": "Adobe, Inc.",
+            "url": "https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:18.287Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bigo-live",
+      "name": "BIGO LIVE",
+      "publisher": "BIGO TECHNOLOGY PTE. LTD.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎BIGO LIVE-Live Stream, Go Live App - App Store",
+            "publisher": "BIGO TECHNOLOGY PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/bigo-live-live-stream-go-live/id1077137248",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:44.760Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "clapper",
+      "name": "Clapper",
+      "publisher": "CLAPPER MEDIA GROUP INC.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Clapper: Video, Live, Chat App - App Store",
+            "publisher": "CLAPPER MEDIA GROUP INC.",
+            "url": "https://apps.apple.com/us/app/clapper-video-live-chat/id1522122685",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:44.745Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "giftful",
+      "name": "Giftful",
+      "publisher": "Giftful LLC",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Giftful - Wishlist & Registry App - App Store",
+            "publisher": "Giftful LLC",
+            "url": "https://apps.apple.com/us/app/giftful-wishlist-registry/id1450175505",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:46.032Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "partiful",
+      "name": "Partiful",
+      "publisher": "Partiful Co.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Partiful: Party Invite Maker App - App Store",
+            "publisher": "Partiful Co.",
+            "url": "https://apps.apple.com/us/app/partiful-party-invite-maker/id1662982304",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:45.960Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "publisher": "Pinterest, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, User Content, Search History, Browsing History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Pinterest App - App Store",
+            "publisher": "Pinterest, Inc.",
+            "url": "https://apps.apple.com/us/app/pinterest/id429047995",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:45.824Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "t-life",
+      "name": "T-Life",
+      "publisher": "T-Mobile USA, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎T-Life App - App Store",
+            "publisher": "T-Mobile USA, Inc.",
+            "url": "https://apps.apple.com/us/app/t-life/id1111876388",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.218Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ring",
+      "name": "Ring",
+      "publisher": "Bot Home Automation, INC",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Ring - Always Home App - App Store",
+            "publisher": "Bot Home Automation, INC",
+            "url": "https://apps.apple.com/us/app/ring-always-home/id926252661",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.213Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hinge",
+      "name": "Hinge",
+      "publisher": "Hinge, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hinge Dating App: Match & Date App - App Store",
+            "publisher": "Hinge, Inc.",
+            "url": "https://apps.apple.com/us/app/hinge-dating-app-match-date/id595287172",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.632Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "lg-thinq",
+      "name": "LG ThinQ",
+      "publisher": "LG Electronics",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎LG ThinQ App - App Store",
+            "publisher": "LG Electronics",
+            "url": "https://apps.apple.com/us/app/lg-thinq/id993504342",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.415Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hubspace",
+      "name": "Hubspace",
+      "publisher": "Afero, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hubspace App - App Store",
+            "publisher": "Afero, Inc.",
+            "url": "https://apps.apple.com/us/app/hubspace/id1506042235",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.579Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "elfster",
+      "name": "Elfster",
+      "publisher": "Elfster, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "User Content, Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Elfster: The Secret Santa App App - App Store",
+            "publisher": "Elfster, Inc.",
+            "url": "https://apps.apple.com/us/app/elfster-the-secret-santa-app/id751594890",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.824Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "drawnames",
+      "name": "Drawnames",
+      "publisher": "Meetrix Online B.V.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Drawnames | Secret Santa app App - App Store",
+            "publisher": "Meetrix Online B.V.",
+            "url": "https://apps.apple.com/us/app/drawnames-secret-santa-app/id932002377",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:47.719Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "myq",
+      "name": "myQ",
+      "publisher": "The Chamberlain Group, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎myQ Garage & Access Control App - App Store",
+            "publisher": "The Chamberlain Group, Inc.",
+            "url": "https://apps.apple.com/us/app/myq-garage-access-control/id456282559",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.797Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "zillow",
+      "name": "Zillow",
+      "publisher": "Zillow, Inc.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Search History, Browsing History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Zillow Real Estate & Rentals App - App Store",
+            "publisher": "Zillow, Inc.",
+            "url": "https://apps.apple.com/us/app/zillow-real-estate-rentals/id310738695",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.807Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "booksy",
+      "name": "Booksy",
+      "publisher": "Booksy International sp. z o.o.",
+      "category": "lifestyle",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Booksy for Customers App - App Store",
+            "publisher": "Booksy International sp. z o.o.",
+            "url": "https://apps.apple.com/us/app/booksy-for-customers/id723961236",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:49.801Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "substack",
+      "name": "Substack",
+      "publisher": "Substack Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Substack App - App Store",
+            "publisher": "Substack Inc.",
+            "url": "https://apps.apple.com/us/app/substack/id1581650857",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.380Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "newsbreak",
+      "name": "NewsBreak",
+      "publisher": "Particle Media Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NewsBreak: Local News & Alerts App - App Store",
+            "publisher": "Particle Media Inc.",
+            "url": "https://apps.apple.com/us/app/newsbreak-local-news-alerts/id1132762804",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.467Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nextdoor",
+      "name": "Nextdoor",
+      "publisher": "Nextdoor.com, Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Nextdoor: Neighborhood Network App - App Store",
+            "publisher": "Nextdoor.com, Inc.",
+            "url": "https://apps.apple.com/us/app/nextdoor-neighborhood-network/id640360962",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:50.607Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ground-news",
+      "name": "Ground News",
+      "publisher": "Snapwise Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Ground News App - App Store",
+            "publisher": "Snapwise Inc.",
+            "url": "https://apps.apple.com/us/app/ground-news/id1324203419",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:51.600Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "citizen",
+      "name": "Citizen",
+      "publisher": "sp0n, Inc.",
+      "category": "news",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Health & Fitness, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Citizen: Safety & Live Video App - App Store",
+            "publisher": "sp0n, Inc.",
+            "url": "https://apps.apple.com/us/app/citizen-safety-live-video/id1039889567",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:51.628Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -10849,6 +11477,18 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:42.126Z"
           }
+        },
+        {
+          "party": "Amazon Web Services and Google Cloud Platform",
+          "purpose": "Provide data storage and associated services for The Media Grid",
+          "source": {
+            "title": "Criteo",
+            "publisher": "Criteo",
+            "url": "https://www.criteo.com/wp-content/uploads/2024/05/The-Media-Grid-Sub-Processors.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:54.553Z"
+          }
         }
       ]
     },
@@ -10884,7 +11524,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Dunstan v. comScore monitoring software complaint",
+          "year": 2011,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "A federal court described allegations that comScore obtained personal information from users’ computers after they installed its software.",
+          "source": {
+            "title": "Dunstan v. comScore monitoring software complaint",
+            "publisher": "U.S. District Court for the Northern District of Illinois",
+            "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ilnd-1_11-cv-05807/pdf/USCOURTS-ilnd-1_11-cv-05807-0.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:07.704Z"
+          }
+        }
+      ],
       "declared": [
         {
           "data": "Device and media usage information",
@@ -11558,6 +12214,21 @@
             "date": "2025-12-31",
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:02.320Z"
+          }
+        },
+        {
+          "title": "Disney children’s video privacy matter",
+          "year": 2025,
+          "summary": "The FTC alleged that Disney failed to properly designate some child-directed YouTube videos.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Disney | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/disney",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.939Z"
           }
         }
       ],
@@ -14364,7 +15035,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Research report on misuse of a package CDN",
+          "year": 2023,
+          "kind": "report",
+          "jurisdiction": "Global",
+          "summary": "Check Point reported that its researchers found malicious content still available through jsDelivr and notified the CDN.",
+          "source": {
+            "title": "CDN Service Exposes Users to Malicious Packages for Phishing Attacks Invisible to Security Tools - Check Point Blog",
+            "publisher": "Check Point Research",
+            "url": "https://blog.checkpoint.com/securing-the-cloud/cdn-service-exposes-users-to-malicious-packages-for-phishing-attacks-invisible-to-security-tools/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.253Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14376,6 +15063,18 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:39.163Z"
+          }
+        },
+        {
+          "party": "Cloudflare and other CDN providers",
+          "purpose": "Serve jsDelivr requests and use request metadata for analytics and security",
+          "source": {
+            "title": "jsDelivr",
+            "publisher": "jsDelivr",
+            "url": "https://raw.githubusercontent.com/jsdelivr/jsdelivr/master/Sub-Processors.md",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.262Z"
           }
         }
       ]
@@ -14452,7 +15151,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Datadog infrastructure breach",
+          "year": 2016,
+          "kind": "breach",
+          "jurisdiction": "United States",
+          "summary": "Datadog disclosed that an intruder accessed and copied data from infrastructure containing customer credentials.",
+          "source": {
+            "title": "Datadog - 10-K annual report 2021",
+            "publisher": "Datadog annual report, reproduced by CompaniesMarketCap",
+            "url": "https://companiesmarketcap.com/datadog/sec-reports-10k/0001561550-22-000009/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.868Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14824,7 +15539,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "Location and user activity",
+          "purpose": "Adobe’s Chrome Web Store disclosure for its Acrobat extension",
+          "source": {
+            "title": "Adobe Acrobat: PDF edit, convert, sign tools - Chrome Web Store",
+            "publisher": "Adobe",
+            "url": "https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.111Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "breach",
@@ -14839,6 +15567,58 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:47.788Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Amazon Web Services",
+          "purpose": "Host identity data and temporarily store some content for Acrobat Services",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.720Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
+          }
+        },
+        {
+          "country": "Ireland",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
+          }
+        },
+        {
+          "country": "Singapore",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
           }
         }
       ]
@@ -14963,6 +15743,32 @@
             "fetchedAt": "2026-11-22T06:45:45.658Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "New Relic lists the US as its default hosting region.",
+          "source": {
+            "title": "Choose your data center | New Relic Documentation",
+            "publisher": "New Relic",
+            "url": "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/choose-your-data-center/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.393Z"
+          }
+        },
+        {
+          "country": "Japan",
+          "note": "New Relic offers Japan as a hosting region for eligible organizations.",
+          "source": {
+            "title": "Choose your data center | New Relic Documentation",
+            "publisher": "New Relic",
+            "url": "https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/choose-your-data-center/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:41.287Z"
+          }
+        }
       ]
     },
     {
@@ -14986,7 +15792,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Magnite cookie tracking class certification ruling",
+          "year": 2026,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "Plaintiffs alleged that Magnite put tracking cookies on browsers for targeted advertising. The court denied class certification.",
+          "source": {
+            "title": "Adding To The Tally: Another Court Denies Bid For Class Certification In Cookie Tracking Case | Legal 500",
+            "publisher": "Ballard Spahr",
+            "url": "https://www.legal500.com/intelligence/united-states/privacy/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.508Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14998,6 +15820,20 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:45.807Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Magnite’s framework notice describes transfers of personal information from the EU, UK and Switzerland to the US.",
+          "source": {
+            "title": "Data Privacy Framework - Magnite",
+            "publisher": "Magnite",
+            "url": "https://www.magnite.com/legal/data-protection-framework/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:40.327Z"
           }
         }
       ]
@@ -15023,7 +15859,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Kaiser website data collection allegations",
+          "year": 2023,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "A filed complaint alleged that Qualtrics collected information about users’ activity on the Kaiser Permanente website.",
+          "source": {
+            "title": "Kaiser website data collection allegations",
+            "publisher": "Plaintiff’s filed complaint",
+            "url": "https://www.classaction.org/media/doe-v-microsoft-corporation-et-al.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.923Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -15035,6 +15887,20 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:45.430Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "The subprocessor list identifies US-based Qualtrics entities that process data for cloud and support services.",
+          "source": {
+            "title": "Qualtrics Subprocessors - Qualtrics",
+            "publisher": "Qualtrics",
+            "url": "https://www.qualtrics.com/subprocessor-list/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:17:40.875Z"
           }
         }
       ]
@@ -16525,9 +17391,433 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Refuah Health Center",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Refuah ransomware safeguards agreement",
+          "year": 2024,
+          "summary": "The state reported safeguards deficiencies and reached an agreement requiring investment in patient-data security.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Reaches Agreement with Hudson Valley Health Care Provider to Invest $1.2 Million to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-reaches-agreement-hudson-valley-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.164Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HealthAlliance",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "HealthAlliance patient-data agreement",
+          "year": 2024,
+          "summary": "New York announced penalties and security requirements following an investigation of patient data protection.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $550,000 from Hudson Valley Health Care Facility Operator for Failing to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-550000-hudson-valley-health-care-facility",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.857Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albany ENT & Allergy Services",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Albany ENT patient-data agreement",
+          "year": 2024,
+          "summary": "An agreement required penalties and security investment after attacks compromised patient records.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $2.25 Million from Capital Region Health Care Provider to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-225-million-capital-region-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.167Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OrthopedicsNY",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "OrthopedicsNY privacy settlement",
+          "year": 2025,
+          "summary": "The state announced a settlement over safeguards after attackers obtained patient data.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $500,000 from Capital Region Health Care Provider for Failing to Protect Patients’ Information",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-secures-500000-capital-region-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.235Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NewYork-Presbyterian",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Hospital tracking technology agreement",
+          "year": 2023,
+          "summary": "New York announced an agreement involving tracking technology on hospital websites.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $300,000 from NewYork-Presbyterian Hospital for Failing to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-300000-newyork-presbyterian-hospital-failing",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.309Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Enzo Biochem",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Enzo Biochem ransomware settlement",
+          "year": 2024,
+          "summary": "State attorneys general investigated safeguards after a ransomware attack on a clinical laboratory business.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $4.5 Million from Biotech Company for Failing to Protect New Yorkers’ Health Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-45-million-biotech-company-failing-protect-new",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.868Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Personal Touch",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Personal Touch patient and employee data settlement",
+          "year": 2023,
+          "summary": "The state reached an agreement over safeguards for patient and employee data.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $350,000 from Long Island Home Health Care Company for Failing to Protect Patient and Employee Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-350000-long-island-home-health-care-company",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.404Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blackbaud",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Multistate Blackbaud breach settlement",
+          "year": 2023,
+          "summary": "A coalition of state attorneys general settled a matter over a breach at the cloud software provider.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James and Multistate Coalition Secure $49.5 Million from Cloud Company for Data Breach",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-and-multistate-coalition-secure-495-million-cloud-company",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.595Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Healthline",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Healthline CCPA settlement",
+          "year": 2025,
+          "summary": "California announced a settlement over advertising disclosures and consumer opt-out practices.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General Bonta Announces Largest CCPA Settlement to Date, Secures $1.55 Million from Healthline.com | State of California - Department of Just",
+            "publisher": "California Attorney General",
+            "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-announces-largest-ccpa-settlement-date-secures-155",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:37.859Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Honda California privacy settlement",
+          "year": 2025,
+          "summary": "Honda agreed to change privacy request and consent practices under a California administrative settlement.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Honda Settles With CPPA Over Privacy Violations",
+            "publisher": "California Privacy Protection Agency",
+            "url": "https://cppa.ca.gov/announcements/2025/20250312.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.944Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cognosphere",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Genshin Impact children’s privacy and marketing matter",
+          "year": 2025,
+          "summary": "The FTC case includes allegations involving children’s information in Genshin Impact.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Cognosphere, LLC, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:38.597Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NGL",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "NGL youth safety and privacy order",
+          "year": 2024,
+          "summary": "The FTC case addressed youth privacy and other claims related to the NGL messaging app.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "NGL | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.835Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Easy Healthcare",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Premom federal stipulated order",
+          "year": 2023,
+          "summary": "A federal court entered an order related to the Premom fertility app and its handling of health information.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Premom federal stipulated order",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:37.160Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cerebral",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Cerebral telehealth information complaint",
+          "year": 2024,
+          "summary": "The FTC case alleged improper use or disclosure of sensitive data from users of the telehealth service.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Cerebral, Inc. and Kyle Robertson, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3067-cerebral-inc-kyle-robertson-us-v",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:38.683Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "unpkg",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Cloudflare",
+          "purpose": "Serve incoming CDN requests using its edge network",
+          "source": {
+            "title": "Network &amp; Architecture — UNPKG",
+            "publisher": "unpkg",
+            "url": "https://unpkg.com/network",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:01.254Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Akamai Technologies",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [],
+      "destinations": [
+        {
+          "country": "Sweden",
+          "note": "Spotify’s Korea disclosure lists this country for storage and file sharing by Akamai Technologies AB.",
+          "source": {
+            "title": "Entrustment, Transfers to 3rd Party and Overseas Transfers - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.602Z"
+          }
+        },
+        {
+          "country": "United States",
+          "note": "Spotify’s Korea disclosure lists this country for storage and file sharing by Akamai Technologies AB.",
+          "source": {
+            "title": "Entrustment, Transfers to 3rd Party and Overseas Transfers - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.602Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T06:58:55.414Z",
+  "generatedAt": "2026-11-22T08:20:07.705Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -17019,6 +18309,9 @@
       ],
       "cmedhionkhpnakcndndgjdbohmhepckk": [
         "extension-cmedhionkhpnakcndndgjdbohmhepckk"
+      ],
+      "efaidnbmnnnibpcajpcglclefindmkaj": [
+        "extension-efaidnbmnnnibpcajpcglclefindmkaj"
       ],
       "eimadpbcbfnmbkopoojfekhnkhdbieeh": [
         "extension-eimadpbcbfnmbkopoojfekhnkhdbieeh"

@@ -771,3 +771,38 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Monarch Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3375-monarch-services-inc-et-al — unclear dossier entity.
 - Bigmailbox.Com, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3378-bigmailboxcom-inc-et-al — unclear dossier entity.
 - Toysmart.com, LLC, and Toysmart.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/x000075-toysmartcom-llc-toysmartcom-inc — unclear dossier entity.
+
+## incidents-10 · 2026-11-22T08:13:38.684Z
+
+- U.S. Radiology — https://ag.ny.gov/press-release/2023/attorney-general-james-secures-450000-medical-company-providing-services-western — missing evidence: U.S. Radiology
+
+## facts-09 · 2026-11-22T08:17:54.554Z
+
+- Akamai Technologies — https://www.linode.com/content/dam/site/en/documents/corporate/akamai-data-protection-addendum.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.linode.com/content/dam/site/en/documents/corporate/akamai-data-protection-addendum.pdf — curl: (22) The requested URL returned error: 403
+
+## incidents-11 · 2026-11-22T08:18:15.102Z
+
+- Stripe — https://www.govinfo.gov/content/pkg/USCOURTS-cand-4_20-cv-08196/pdf/USCOURTS-cand-4_20-cv-08196-0.pdf — curl: (28) Operation timed out after 20012 milliseconds with 0 bytes received
+- Magnite — https://www.consumerfinancemonitor.com/2026/08/07/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case/ — curl: (22) The requested URL returned error: 403
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+- Smart Home Manager — https://apps.apple.com/us/app/smart-home-manager/id1258654743 — No developer-declared data linked to the user
+- Bible Shorts — https://apps.apple.com/us/app/bible-shorts-watch-study/id6795921981 — No developer-declared data linked to the user
+- Bible Path — https://apps.apple.com/us/app/bible-path-widgets-stories/id6504798650 — No developer-declared data linked to the user
+- Sky Guide — https://apps.apple.com/us/app/sky-guide/id576588894 — No developer-declared data linked to the user
+- Cal AI — https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616 — No developer-declared data linked to the user
+- Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
+- ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
+- Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
+- FloSports — https://apps.apple.com/us/app/flosports-watch-live-sports/id1149210891 — No developer-declared data linked to the user
+- SmartThings — https://apps.apple.com/us/app/smartthings/id1222822904 — No developer-declared data linked to the user
+- Toyota — https://apps.apple.com/us/app/toyota/id1455685357 — No developer-declared data linked to the user
+- Tesla — https://apps.apple.com/us/app/tesla/id582007913 — No developer-declared data linked to the user
+- Reddit — https://apps.apple.com/us/app/reddit/id1064216828 — No developer-declared data linked to the user
+
+## incidents-11 · 2026-11-22T08:20:07.704Z
+
+- Stripe — https://www.casemine.com/judgement/us/6109ba0e4653d04ad655694a — missing evidence: July 28, 2021

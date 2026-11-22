@@ -12,6 +12,7 @@ const directIds = [
   'gomekmidlodglbbmalcneegieacbdmki', // Avast Online Security
   'gkojfkhlekighikafcpjkiklfbnlmeio', // Hola VPN
   'eppiocemhmnlbhjplcgkofciiegomcon', // Urban VPN
+  'efaidnbmnnnibpcajpcglclefindmkaj', // Adobe Acrobat
 ];
 const plain = (value) => value.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"')
   .replace(/&#39;|&#x27;|&apos;/g, "'").replace(/\s+/g, ' ').trim();
@@ -72,9 +73,11 @@ async function main() {
     }
   }
   if (rejects.length) await fs.appendFile(rejectFile, '\n## Chrome Web Store leads\n\n' + rejects.join('\n') + '\n');
-  dossier.generatedAt = new Date().toISOString();
-  dossier.index = buildIndex(dossier.apps);
-  await fs.writeFile(file, JSON.stringify(dossier, null, 2) + '\n');
+  if (accepted) {
+    dossier.generatedAt = new Date().toISOString();
+    dossier.index = buildIndex(dossier.apps);
+    await fs.writeFile(file, JSON.stringify(dossier, null, 2) + '\n');
+  }
   console.log('Accepted ' + accepted + ' of ' + leads.length + ' extension leads.');
 }
 main().catch((error) => { console.error(error.message); process.exitCode = 1; });
