@@ -119,7 +119,7 @@ Counts include incident records from app and company entries. Run `npm run docs:
 ## Architecture
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','secondaryColor':'#161616','tertiaryColor':'#0b0b0b','clusterBkg':'#050505','clusterBorder':'#5f5f5f','edgeLabelBackground':'#000000','fontFamily':'ui-monospace, Consolas, monospace','fontSize':'13px'}}}%%
+%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','secondaryColor':'#161616','tertiaryColor':'#0b0b0b','clusterBkg':'#050505','clusterBorder':'#5f5f5f','edgeLabelBackground':'#000000'}}}%%
 flowchart TB
   subgraph PC["YOUR WINDOWS PC · binds 127.0.0.1"]
     direction TB
@@ -164,7 +164,7 @@ The desktop runs on its own. Without Auth0 settings, the policy engine uses a lo
 One block, end to end:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','actorBkg':'#000000','actorBorder':'#ffffff','actorTextColor':'#ffffff','actorLineColor':'#5f5f5f','signalColor':'#d6d6d6','signalTextColor':'#ffffff','labelBoxBkgColor':'#000000','labelBoxBorderColor':'#ffffff','labelTextColor':'#ffffff','loopTextColor':'#ffffff','noteBkgColor':'#1a1a1a','noteTextColor':'#ffffff','noteBorderColor':'#8a8a8a','activationBkgColor':'#2a2a2a','activationBorderColor':'#ffffff','sequenceNumberColor':'#000000','fontFamily':'ui-monospace, Consolas, monospace'}}}%%
+%%{init: {'theme':'base','themeVariables':{'background':'#000000','primaryColor':'#0b0b0b','primaryTextColor':'#ffffff','primaryBorderColor':'#ffffff','lineColor':'#9a9a9a','actorBkg':'#000000','actorBorder':'#ffffff','actorTextColor':'#ffffff','actorLineColor':'#5f5f5f','signalColor':'#d6d6d6','signalTextColor':'#ffffff','labelBoxBkgColor':'#000000','labelBoxBorderColor':'#ffffff','labelTextColor':'#ffffff','loopTextColor':'#ffffff','noteBkgColor':'#1a1a1a','noteTextColor':'#ffffff','noteBorderColor':'#8a8a8a','activationBkgColor':'#2a2a2a','activationBorderColor':'#ffffff','sequenceNumberColor':'#000000'}}}%%
 sequenceDiagram
   autonumber
   actor You
