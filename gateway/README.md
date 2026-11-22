@@ -1,5 +1,16 @@
 # Outbound Phone
 
+## Laptop-only consent demo
+
+Stop any gateway already using port 4320, then run `node gateway/server.js --demo` and open the [Phone dashboard](http://127.0.0.1:4320/).
+
+1. Click **Look up tracker** to see a blocked lookup.
+2. Click **Request demo approval**, then **Deny demo request**. Look up the tracker again to confirm it is blocked.
+3. Request approval again and click **Approve demo request**. Look up the tracker to see the approved DNS response.
+4. Click **Revoke**, then look up the tracker again. A one-minute approval also expires automatically.
+
+The **DEMO DATA** banner identifies simulated Auth0 decisions. The gateway processes actual loopback DNS requests and uses an offline fixture answer. Demo approvals stay in memory and reset on restart.
+
 Run the gateway from the repo root with Node 24 and open the [Phone dashboard](http://127.0.0.1:4320/).
 
 ```powershell
