@@ -116,6 +116,9 @@
     row.append(document.createTextNode(legendLabels[i]));
   });
   legend.append(node('p', '', 'Motion illustrates active TCP connections.'));
+  const legendDisclosure = node('details', 'globe-legend-disclosure');
+  legendDisclosure.append(node('summary', '', 'Map legend'), legend);
+  wrap.append(legendDisclosure);
   const estimateLegend = node('div');
   estimateLegend.append(node('span', 'globe-estimate-key'), document.createTextNode('Country-level estimate'));
   legend.insertBefore(estimateLegend, legend.lastElementChild);
@@ -160,13 +163,18 @@
     const usCentroid = place.country === 'US'
       && Math.abs(place.lat - 37.751) < 0.015 && Math.abs(place.lng + 97.822) < 0.015;
     if (place.city?.trim() && !usCentroid) return place;
-    const seed = Math.imul(hash(place.ip), 0x9e3779b1) >>> 0;
-    const angle = (seed >>> 16) / 65536 * Math.PI * 2;
-    const spread = usCentroid ? 3.4 : 1.4;
-    const radius = spread * (0.2 + 0.8 * Math.sqrt((seed & 65535) / 65535));
-    const lat = Math.max(-89, Math.min(89, place.lat + Math.sin(angle) * radius));
-    const lng = (place.lng + Math.cos(angle) * radius + 540) % 360 - 180;
+    const lat = usCentroid ? 37.751 : place.lat;
+    const lng = usCentroid ? -97.822 : place.lng;
     return { ...place, city: '', lat, lng, approximate: true };
+  }
+
+  function alignCountryEstimates(places) {
+    const anchors = new Map();
+    for (const place of places) {
+      if (!place.approximate) continue;
+      if (!anchors.has(place.country)) anchors.set(place.country, { lat: place.lat, lng: place.lng });
+      Object.assign(place, anchors.get(place.country));
+    }
   }
 
   function updateTrail(apps) {
@@ -179,7 +187,9 @@
         recent.set(key, [
           destination.firstSeen, shared?.util?.appLabel?.(app.name) || app.name,
           destination.org || 'Unknown owner',
-          location.city?.trim() || (location.country ? countryName(location.country) + ' (country only)' : 'Location unknown'),
+          location.city?.trim()
+            ? [location.city.trim(), location.country].filter(Boolean).join(', ')
+            : (location.country ? location.country + ' ~' : 'Unknown'),
         ]);
       }
     }
@@ -358,7 +368,10 @@
         ['out', home, place, out, 0.32],
         ['in', place, home, inbound, 0.22],
       ]) {
-        const id = place.id + direction;
+        const id = place.approximate
+          ? ['estimate', place.country, place.appId, Boolean(place.tracker), Boolean(place.active), direction].join('|')
+          : place.id + direction;
+        if (next.has(id)) continue;
         const arc = arcCache.get(id) || {};
         Object.assign(arc, {
           startLat: start.lat, startLng: start.lng, endLat: end.lat, endLng: end.lng,
@@ -421,7 +434,7 @@
   function makePoints(places, home) {
     const points = new Map();
     for (const place of places) {
-      const key = place.approximate ? 'estimate|' + place.ip : place.lat + '|' + place.lng;
+      const key = place.approximate ? 'estimate|' + place.country : place.lat + '|' + place.lng;
       if (!points.has(key)) {
         points.set(key, { key, lat: place.lat, lng: place.lng, approximate: place.approximate, places: [], sockets: 0 });
       }
@@ -438,6 +451,7 @@
   function estimateMarker(entry) {
     const marker = node('button', 'globe-estimate-marker');
     marker.type = 'button';
+    marker.append(node('span', 'globe-estimate-count'));
     entry.marker = marker;
     styleEstimateMarker(entry);
     marker.addEventListener('pointerenter', () => { if (pinnedPoint === null) renderPoint(entry.point); });
@@ -447,9 +461,10 @@
   }
 
   function styleEstimateMarker({ marker, point }) {
-    marker.setAttribute('aria-label', 'Country-level estimate · ' + countryName(point.places[0].country));
-    marker.style.setProperty('--estimate-size', Math.min(22, 9 + Math.sqrt(point.sockets) * 2) + 'px');
-    marker.classList.toggle('tracker', point.places.some((place) => place.tracker));
+    const count = point.places.length;
+    marker.setAttribute('aria-label', countryName(point.places[0].country) + ' · ' + count + ' country-level estimates');
+    marker.style.setProperty('--estimate-size', Math.round(18 + 10 * Math.log1p(count)) + 'px');
+    setText(marker.firstElementChild, count + ' approx.');
   }
 
   function updateEstimateMarkers(points) {
@@ -485,8 +500,9 @@
     shownPoint = point;
     const pinned = pinnedPoint !== null;
     const details = point?.places || [];
-    const contentKey = JSON.stringify([pinned, point?.key, point?.label, details.map((place) =>
-      [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker, place.approximate])]);
+    const topOrgs = point?.approximate ? summarizeEstimateOwners(details) : null;
+    const contentKey = JSON.stringify([pinned, point?.key, point?.label, details.length, topOrgs ?? details.map((place) =>
+      [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker])]);
     if (tipContentKey === contentKey) return;
     tipContentKey = contentKey;
     tip.replaceChildren();
@@ -506,13 +522,22 @@
       return;
     }
 
+    if (topOrgs) {
+      tip.append(node('strong', '', countryName(details[0].country)),
+        node('p', '', details.length + ' destinations · approximate (country only)'));
+      const owners = node('dl', 'globe-estimate-owners');
+      for (const [name, count] of topOrgs) {
+        owners.append(node('dt', '', name), node('dd', '', String(count)));
+      }
+      tip.append(owners);
+      return;
+    }
+
     for (const place of pinned ? details : details.slice(0, 2)) {
       const row = node('div', 'globe-tip-row');
       const title = node('strong', '', place.org);
       if (place.tracker) title.append(node('span', 'globe-tracker', 'Tracker'));
-      const location = place.approximate
-        ? countryName(place.country) + ' · approximate (country only)'
-        : [place.city, countryName(place.country)].filter(Boolean).join(', ');
+      const location = [place.city, countryName(place.country)].filter(Boolean).join(', ');
       const fields = node('dl', 'globe-tip-fields');
       for (const [label, value] of [
         ['ASN', place.asn ? 'AS' + place.asn : 'Unknown'],
@@ -529,6 +554,12 @@
     if (!pinned && details.length > 2) {
       tip.append(node('p', '', 'Select the point to see all ' + details.length + ' entries.'));
     }
+  }
+
+  function summarizeEstimateOwners(places) {
+    const counts = new Map();
+    for (const { org } of places) counts.set(org, (counts.get(org) || 0) + 1);
+    return [...counts].sort(([a, first], [b, second]) => second - first || a.localeCompare(b)).slice(0, 5);
   }
 
   function clearPoint() {
@@ -570,6 +601,7 @@
         country: countryCode(destination.country), lat: destination.lat, lng: destination.lng,
         active: destination.active, sockets: destination.sockets || 0, tracker: destination.tracker,
       }))).map(plotLocation).sort((a, b) => a.id.localeCompare(b.id));
+    alignCountryEstimates(places);
     const key = JSON.stringify([namedApps.map(({ id, name }) => [id, name]), selectedApp, state.home, places]);
     if (key === modelKey) return;
     modelKey = key;
