@@ -481,7 +481,24 @@
   }
   Outbound.blockButton = blockButton;
 
+  function renderAuthFlow() {
+    const identity = !authLoaded ? 'Checking dashboard sign-in'
+      : !dashboardAuth ? 'Sign-in status unavailable'
+        : !dashboardAuth.enabled ? 'Local mode'
+          : !dashboardAuth.configured ? 'Sign-in setup incomplete'
+            : dashboardAuth.user ? 'Signed in with Auth0' : 'Auth0 sign-in configured';
+    const configured = policy?.auth0Configured ?? policy?.providerConfigured;
+    const providerState = configured == null ? 'Configuration unavailable'
+      : configured ? 'Configured' : 'Setup required';
+    $('auth-flow-identity').textContent = identity;
+    $('auth-flow-push').textContent = providerState;
+    $('auth-flow-fga').textContent = providerState;
+    $('auth-flow-plan').textContent = policy?.enforcer === 'dry-run' ? 'Dry-run configured'
+      : policy?.enforcer ? policy.enforcer + ' configured' : 'Enforcer unavailable';
+  }
+
   function renderPolicy() {
+    renderAuthFlow();
     const pending = $('rules-pending');
     if (blockTarget) {
       const label = policyBusy ? 'Preparing dry-run preview…' : previewRetry ? 'Retry preview' : 'Preview block';

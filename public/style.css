@@ -252,6 +252,11 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .citation { display: block; margin-top: 4px; color: var(--muted); }
 #dossier-list { max-height: 62vh; overflow-y: auto; overflow-x: hidden; }
 .policy-plan { border: 1px solid var(--line-strong); padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.rules-grid { margin-top: 14px; }
+.auth-flow { list-style: none; padding: 0; margin: 0 0 12px; }
+.auth-flow li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; }
+.auth-flow strong { color: var(--muted); font-weight: normal; }
+.auth-flow p { grid-column: 1 / -1; color: var(--muted); margin: 0; }
 #rules-list { margin-top: 12px; }
 #rules-list li, #rules-pending { padding: 6px 0; }
 [data-block-kind] { margin: 4px 5px 0 0; }

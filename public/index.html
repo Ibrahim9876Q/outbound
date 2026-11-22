@@ -204,7 +204,19 @@
       <pre id="phone-approval" class="policy-plan" role="status" hidden></pre>
       <pre id="rules-plan" class="policy-plan" hidden></pre>
       <button type="button" class="tool-btn" id="rules-globe" hidden>Show app on globe</button>
-      <div id="rules-list" class="card"></div>
+      <div class="intel-grid rules-grid">
+        <section class="card" aria-labelledby="auth-flow-heading">
+          <h2 id="auth-flow-heading">Auth0 consent firewall</h2>
+          <ol class="auth-flow" aria-label="Approval steps">
+            <li><span>[1] Rule asked</span><strong id="auth-flow-identity">Checking dashboard sign-in</strong><p>The dashboard sends the rule request to this PC.</p></li>
+            <li><span>[2] Phone push via CIBA</span><strong id="auth-flow-push">Checking policy provider</strong><p>The configured approver matches the reference in Auth0 Guardian.</p></li>
+            <li><span>[3] FGA relation written</span><strong id="auth-flow-fga">Checking policy provider</strong><p>Approval records a relation against an opaque rule ID.</p></li>
+            <li><span>[4] Enforcer plan</span><strong id="auth-flow-plan">Checking enforcer</strong><p>The local enforcer generates the command preview.</p></li>
+          </ol>
+          <a href="/research/SETUP-AUTH0.md" target="_blank" rel="noopener">Open Auth0 setup guide</a>
+        </section>
+        <div id="rules-list" class="card"></div>
+      </div>
     </section>
     <section class="view intel-view hidden" id="view-history">
       <div class="intel-heading"><h2>Week history</h2><p id="history-status" role="status">Waiting for local history.</p></div>

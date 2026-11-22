@@ -143,8 +143,9 @@ setInterval(() => {
 
 const PUBLIC = path.join(__dirname, 'public');
 const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.md': 'text/plain; charset=utf-8' };
 const STATIC = {
+  '/research/SETUP-AUTH0.md': path.join(__dirname, 'research', 'SETUP-AUTH0.md'),
   '/vendor/globe.gl.min.js': path.join(__dirname, 'node_modules', 'globe.gl', 'dist', 'globe.gl.min.js'),
   '/vendor/earth-night.jpg': path.join(__dirname, 'node_modules', 'three-globe', 'example', 'img', 'earth-night.jpg'),
   '/vendor/earth-topology.png': path.join(__dirname, 'node_modules', 'three-globe', 'example', 'img', 'earth-topology.png'),
