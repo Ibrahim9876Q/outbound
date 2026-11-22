@@ -216,7 +216,7 @@ h1, h2, h3 {
 .icon-btn:hover, .icon-btn[aria-pressed="true"] { color: var(--bg); background: var(--fg); border-color: var(--fg); }
 
 @media (max-width: 1920px) { .brand p { display: none; } }
-@media (max-width: 1360px) {
+@media (max-width: 1440px) {
   .topbar { gap: 8px 12px; padding: 8px 14px; }
   .stats { gap: 10px; }
   .stat b { font-size: 18px; }

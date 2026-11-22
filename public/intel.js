@@ -368,7 +368,8 @@
       && [record.name, record.id, ...record.match].some((value) => lower(value) === lower(target)));
     const output = $('dossier-card');
     if (!selected) {
-      output.textContent = target ? 'No verified dossier for ' + target + '.' : 'Choose a researched app or company.';
+      output.innerHTML = '<h2>Dossier details</h2><p class="intel-muted">'
+        + esc(target ? 'No verified dossier for ' + target + '.' : 'Choose a researched app or company to see its disclosures and sourced incidents.') + '</p>';
       return;
     }
     const display = (key, heading, row) => `<h3>${heading}</h3>` + list(entries(selected, key)
@@ -378,14 +379,14 @@
       || (Outbound.state?.apps || []).find((app) => app.id?.endsWith('.exe') && app.destinations?.length);
     output.innerHTML = `<h2>${esc(selected.name)}</h2>`
       + (selected.publisher ? `<p>${esc(selected.publisher)}</p>` : '')
-      + (observed ? `<p>Observed app / ${esc(observed.name)} ${blockButton('app', observed.id)}</p>` : '')
+      + (observed ? `<p>Live app for rule preview / ${esc(observed.name)} ${blockButton('app', observed.id)}</p>` : '')
+      + display('incidents', 'Documented incidents', (entry) => `<strong>${esc(entry.title)}</strong><br>`
+        + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary))
       + blockButton(selected.type, selected.type === 'app' ? selected.processNames?.[0] : selected.name)
       + (selected.domains || []).map((domain) => blockButton('domain', domain)).join(' ')
       + display('declared', 'Declared collection', (entry) => `<strong>${esc(entry.data)}</strong> / ${esc(entry.purpose)}`)
       + display('sharesWith', 'Declared sharing', (entry) => `<strong>${esc(entry.party)}</strong> / ${esc(entry.purpose)}`)
-      + display('destinations', 'Declared destinations', (entry) => `<strong>${esc(entry.country)}</strong> / ${esc(entry.note)}`)
-      + display('incidents', 'Documented incidents', (entry) => `<strong>${esc(entry.title)}</strong><br>`
-        + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary));
+      + display('destinations', 'Declared destinations', (entry) => `<strong>${esc(entry.country)}</strong> / ${esc(entry.note)}`);
   }
 
   async function loadResearch() {

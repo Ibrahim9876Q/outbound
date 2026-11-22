@@ -25,7 +25,7 @@
   position: relative;
   isolation: isolate;
   min-width: 0;
-  height: clamp(500px, calc(100dvh - 142px), 1080px);
+  height: clamp(500px, calc(100% - 2 * var(--view-inset)), 1080px);
   overflow: hidden;
   background: #080808;
   border: 1px solid var(--map-border);

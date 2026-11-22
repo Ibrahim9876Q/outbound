@@ -690,6 +690,8 @@
 #mic-usage li.now .dot { background: var(--mic); box-shadow: 0 0 8px var(--mic); }
 #cam-usage li.now .dot { background: #fff; box-shadow: 0 0 8px #fff; }
 .usage .none { color: var(--dim); font-family: var(--font-mono); }
+.usage .none { color: var(--muted); white-space: normal; overflow-wrap: anywhere; }
+.detail-head > div:last-child { min-width: 0; overflow-wrap: anywhere; }
 
 /* short screens (1280×800): tighter device cards so app details and the feed stay in view */
 @media (max-height: 880px) {

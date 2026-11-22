@@ -161,7 +161,7 @@
     ].filter(Boolean);
     const html = (rows.length
       ? rows.slice(0, 4).map((r) => `<li class="${r.now ? 'now' : ''}"><span class="dot"></span>${r.text}</li>`).join('')
-      : '<li class="none">No apps have used it yet</li>') + caps.map((cap) => `<li class="none">${esc(cap)} in the available sample</li>`).join('');
+      : '<li class="none">No app usage recorded in this sample.</li>') + caps.map((cap) => `<li class="none">${esc(cap)}</li>`).join('');
     if (list.innerHTML !== html) list.innerHTML = html;
   }
 
@@ -839,6 +839,8 @@
           + (Outbound.blockButton?.('domain', d.host) || '') + '</span></li>';
       }).join('');
       html += '</ul>';
+    } else if (!app.protectedProcesses) {
+      html += '<p class="hint">No remote endpoints retained for this app.</p>';
     }
     if (app.localPeers && app.localPeers.length) {
       html += '<div class="detail-sub">Talks directly to (on this PC)</div>';
@@ -850,7 +852,7 @@
     }
     const shared = (lastState.legacyLinks || lastState.links).filter((l) => l.kind === 'shared' && (l.from === app.id || l.to === app.id));
     if (shared.length) {
-      html += '<div class="detail-sub">Sends to the same company as</div>';
+      html += '<div class="detail-sub">Shared endpoint attribution</div>';
       html += shared.map((l) => {
         const other = lastState.apps.find((a) => a.id === (l.from === app.id ? l.to : l.from));
         return `<div class="peer"><span class="sw shared"></span>${esc(appLabel(other ? other.name : '?'))} <span class="hint">· both → ${esc(l.via)}</span></div>`;
