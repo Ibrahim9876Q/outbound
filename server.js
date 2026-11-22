@@ -26,10 +26,19 @@ function coordinate(value, limit, fallback) {
 const events = [];
 const stream = new StateStream(state);
 let phone = null;
+let sampledAt = null;
 
-async function pollPhone() {
+function phoneEndpoint() {
+  const address = process.env.PHONE_URL || (process.env.OUTBOUND_PHONE === '1' ? 'http://127.0.0.1:4320' : '');
+  const url = address && URL.parse(address);
+  if (!url || url.protocol !== 'http:' || !['localhost', '127.0.0.1'].includes(url.hostname) || url.username || url.password) return null;
+  url.hostname = '127.0.0.1';
+  return new URL('/api/state', url);
+}
+
+async function pollPhone(endpoint) {
   try {
-    const response = await fetch('http://127.0.0.1:4320/api/state', {
+    const response = await fetch(endpoint, {
       signal: AbortSignal.timeout(1000),
       redirect: 'error',
     });
@@ -72,7 +81,8 @@ process.on('SIGTERM', () => process.exit(143));
 function state() {
   const snapshot = network.snapshot();
   return { at: Date.now(), home: HOME, ...snapshot, legacyLinks: snapshot.links,
-    ...linkWatcher.snapshot(snapshot.apps), devices: devices.snapshot(), events: events.slice(0, 60), phone };
+    ...linkWatcher.snapshot(snapshot.apps), devices: devices.snapshot(), events: events.slice(0, 60), phone,
+    sampledAt, fresh: sampledAt !== null };
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -83,14 +93,17 @@ function loop(fn, everyMs) {
   };
   go();
 }
-loop(() => network.poll(), 1500);
+loop(async () => {
+  await network.poll();
+  sampledAt = Date.now();
+}, 1500);
 loop(() => devices.poll(), 750);
 loop(() => {
   const { apps, links } = network.snapshot();
   return linkWatcher.poll(apps, links);
 }, 5000);
-setInterval(pollPhone, 2000);
-pollPhone();
+const endpoint = phoneEndpoint();
+if (endpoint) loop(() => pollPhone(endpoint), 2000);
 setInterval(() => stream.flush(), 500);
 
 const PUBLIC = path.join(__dirname, 'public');
