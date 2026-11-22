@@ -209,9 +209,10 @@
   cursor: pointer;
 }
 
-#view-globe .globe-hq-toggle[aria-pressed="true"] {
-  background: var(--map-ink);
-  color: var(--map-panel);
+#view-globe .globe-hq-toggle[aria-pressed="true"],
+#view-globe .globe-hq-toggle[aria-pressed="true"]:hover {
+  background: #fff;
+  color: #080808;
 }
 
 #view-globe .globe-hq-key {
