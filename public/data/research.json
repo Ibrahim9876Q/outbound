@@ -7638,7 +7638,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Honey affiliate attribution lawsuit",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "A proposed class action alleged that the Honey extension diverted referral commissions by changing affiliate attribution.",
+          "source": {
+            "title": "Honey affiliate attribution lawsuit",
+            "publisher": "Plaintiffs’ filed complaint",
+            "url": "https://www.stuevesiegel.com/assets/htmldocuments/2025-01-24%201%20Class%20Action%20Complaint%20Against%20Paypal%20Holdings%20Inc.%20Paypal%20I.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:19.633Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -7670,7 +7686,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "FTC Avast browsing-data order",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged Avast collected browsing information through extensions and antivirus software and sold it through Jumpshot.",
+          "source": {
+            "title": "FTC Order Will Ban Avast from Selling Browsing Data for Advertising Purposes, Require It to Pay $16.5 Million Over Charges the Firm Sold Browsing Data",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2024/02/ftc-order-will-ban-avast-selling-browsing-data-advertising-purposes-require-it-pay-165-million-over",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.305Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -7734,7 +7766,23 @@
         "city": null,
         "country": null
       },
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "report",
+          "title": "Report on Urban VPN and AI chat data",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "Tom’s Guide reported researchers’ claims that the extension collected AI conversations. The publisher disputes descriptions of how the feature works.",
+          "source": {
+            "title": "This VPN is harvesting your AI conversations – and 6 million people are using it | Tom's Guide",
+            "publisher": "Tom’s Guide",
+            "url": "https://www.tomsguide.com/computing/vpns/this-vpn-is-harvesting-your-ai-conversations-and-6-million-people-are-using-it",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:19.098Z"
+          }
+        }
+      ],
       "destinations": [],
       "sharesWith": [],
       "declared": [
@@ -10864,14 +10912,14 @@
       "destinations": [
         {
           "country": "United States",
-          "note": "Comscore says website or program data may be processed in the United States, where it operates its central database.",
+          "note": "Comscore identifies the US as the location of its central database.",
           "source": {
             "title": "Privacy Policy - Comscore, Inc.",
             "publisher": "Comscore",
             "url": "https://www.comscore.com/About/Privacy-Policy",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:48:27.616Z"
+            "fetchedAt": "2026-11-22T06:58:24.537Z"
           }
         }
       ]
@@ -11059,6 +11107,21 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T05:54:31.515Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Kochava location data complaint",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC sued Kochava, alleging that its location data exposed visits to sensitive sites.",
+          "source": {
+            "title": "FTC Sues Kochava for Selling Data that Tracks People at Reproductive Health Clinics, Places of Worship, and Other Sensitive Locations | Federal Trade ",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.300Z"
           }
         }
       ],
@@ -11532,6 +11595,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:02.899Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Apitor children’s data complaint",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged a robot toy app allowed a third-party software provider to collect children’s data without parental consent.",
+          "source": {
+            "title": "FTC Takes Action Against Robot Toy Maker for Allowing Collection of Children’s Data without Parental Consent | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/09/ftc-takes-action-against-robot-toy-maker-allowing-collection-childrens-data-without-parental-consent",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.646Z"
+          }
         }
       ],
       "declared": []
@@ -11609,6 +11687,21 @@
             "date": "2025-01-14",
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:04.487Z"
+          }
+        },
+        {
+          "kind": "regulator",
+          "title": "Mobilewalla final location-data order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC finalized an order barring Mobilewalla from selling sensitive location data.",
+          "source": {
+            "title": "FTC Finalizes Order Banning Mobilewalla from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.687Z"
           }
         }
       ],
@@ -12964,6 +13057,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:19:13.875Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Gravy Analytics and Venntel final order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC finalized restrictions on Gravy Analytics and Venntel’s sale of sensitive location data.",
+          "source": {
+            "title": "FTC Finalizes Order Prohibiting Gravy Analytics, Venntel from Selling Sensitive Location Data | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:22.771Z"
+          }
         }
       ],
       "declared": []
@@ -14015,7 +14123,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "kind": "breach",
+          "title": "Sentry backup exposure",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "Sentry reported that exposed backups contained user details, including hashed passwords.",
+          "source": {
+            "title": "Security Incident (June 12 2016) | Sentry Blog",
+            "publisher": "Sentry",
+            "url": "https://blog.sentry.io/security-incident-june-12-2016/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:18.279Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -14527,6 +14651,20 @@
             "fetchedAt": "2026-11-22T06:45:44.091Z"
           }
         }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Automattic lists Amazon Web Services in the US for storage and backups.",
+          "source": {
+            "title": "Subprocessor List &#8211; Automattic",
+            "publisher": "Automattic",
+            "url": "https://automattic.com/subprocessor-list/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:23.916Z"
+          }
+        }
       ]
     },
     {
@@ -14603,7 +14741,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "IP address and device information",
+          "purpose": "Operate and protect Reddit",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.040Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "fine",
@@ -14618,6 +14769,34 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:48:47.921Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Perform services for Reddit",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.247Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Reddit says it may store information on United States servers.",
+          "source": {
+            "title": "Reddit",
+            "publisher": "Reddit",
+            "url": "https://storage.googleapis.com/transparency_hub_documents/675211559efd527760c6441a/privacy_policy/1782892824.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:24.257Z"
           }
         }
       ]
@@ -15580,9 +15759,61 @@
           }
         }
       ]
+    },
+    {
+      "name": "X-Mode / Outlogic",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "X-Mode / Outlogic sensitive location order",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "summary": "The FTC case concerned the sale of sensitive location data by X-Mode and successor Outlogic.",
+          "source": {
+            "title": "X-Mode Social, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.026Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "General Motors",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "GM and OnStar proposed location-data order",
+          "year": 2025,
+          "jurisdiction": "United States",
+          "summary": "The FTC alleged GM and OnStar shared drivers’ precise location and driving behavior data without informed consent.",
+          "source": {
+            "title": "FTC Takes Action Against General Motors for Sharing Drivers’ Precise Location and Driving Behavior Data Without Consent | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-takes-action-against-general-motors-sharing-drivers-precise-location-driving-behavior-data",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:20.392Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T06:58:17.408Z",
+  "generatedAt": "2026-11-22T06:58:24.538Z",
   "index": {
     "exe": {
       "brave.exe": [

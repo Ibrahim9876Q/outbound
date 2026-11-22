@@ -694,3 +694,15 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
 - FloSports — https://apps.apple.com/us/app/flosports-watch-live-sports/id1149210891 — No developer-declared data linked to the user
 - NBA — https://apps.apple.com/us/app/nba-2k-hq/id6745190566 — No developer-declared data linked to the user
+
+## incidents-09 · 2026-11-22T06:58:22.771Z
+
+- Datadog — https://investors.datadoghq.com/static-files/6212f93a-3104-4aba-aba9-48a2e59c83b7 — curl: (22) The requested URL returned error: 403
+
+## facts-08 · 2026-11-22T06:58:24.537Z
+
+- New Relic — https://newrelic.com/termsandconditions/privacy — missing evidence: personal data transferred
+- Criteo — https://www.criteo.com/wp-content/uploads/2024/05/The-Media-Grid-Sub-Processors.pdf — missing evidence: United States
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
+- Akamai Technologies — https://www.akamai.com/site/en/documents/corporate/akamai-privacy-statement.pdf — curl: (22) The requested URL returned error: 403
