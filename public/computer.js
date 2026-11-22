@@ -308,6 +308,10 @@
       const fresh = !unknown && now - born < FRESH_MS;
       a.priority = (a.mic || a.cam ? 1e6 : 0) + (fresh ? 1e4 : 0) + (unknown ? 0 : 1e3) + a.activeConnections * 10 + a.destinations.length;
     }
+    // Two different exes with the same friendly name (chatgpt.exe and codex.exe are both "Codex").
+    const counts = new Map();
+    for (const a of list) counts.set(a.name, (counts.get(a.name) || 0) + 1);
+    for (const a of list) a.dupe = counts.get(a.name) > 1;
     return list.sort((a, b) => b.priority - a.priority);
   }
 
@@ -364,6 +368,11 @@
     return slot;
   }
 
+  // "chatgpt.exe"; apps seen only through the mic/camera have no exe.
+  function exeLabel(app) {
+    return app.id.startsWith('device:') ? 'mic / camera only' : app.id;
+  }
+
   function tileInner(app) {
     return app.icon
       ? `<img alt="" src="data:image/png;base64,${app.icon}">`
@@ -374,7 +383,7 @@
     const node = document.createElement('div');
     node.className = 'app';
     node.dataset.id = app.id;
-    node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div>`;
+    node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div><div class="sub" hidden></div>`;
     node.addEventListener('click', (e) => { e.stopPropagation(); select(selected === app.id ? null : app.id); });
     return node;
   }
@@ -382,6 +391,10 @@
   function updateIcon(node, app) {
     const name = node.querySelector('.name');
     if (name.textContent !== app.name) name.textContent = app.name;
+    const sub = node.querySelector('.sub');
+    sub.hidden = !app.dupe;
+    node.classList.toggle('dupe', !!app.dupe);
+    if (app.dupe && sub.textContent !== exeLabel(app)) sub.textContent = exeLabel(app);
     if (app.icon && !node.querySelector('img')) {
       // The real icon arrived after the app first appeared.
       node.querySelector('.initials')?.remove();
@@ -691,7 +704,7 @@
     const tile = app.icon ? tileInner(app) : `<span class="initials">${esc(initials(app.name))}</span>`;
     const live = app.destinations.filter((d) => d.active).length;
     const dev = [app.mic && 'using the microphone', app.cam && 'using the camera'].filter(Boolean);
-    let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3>`
+    let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     if (app.destinations.length) {
       html += '<div class="detail-sub">Sends data to</div><ul class="dests">';
