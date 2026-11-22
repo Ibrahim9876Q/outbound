@@ -1,6 +1,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const dossier = require('../public/data/research.json');
+const { buildIndex } = require('./index');
 
 function date(value) { assert.ok(typeof value === 'string' && Number.isFinite(Date.parse(value))); }
 function str(value) { assert.ok(typeof value === 'string' && value.trim()); }
@@ -56,4 +57,11 @@ test('dossier v2 has a verified HTTPS source for every claim and every entry', (
     incidents(company.incidents);
     assert.ok(company.declared.length + company.incidents.length);
   }
+});
+
+test('dossier index maps executable and domain keys to stable app IDs', () => {
+  assert.deepEqual(dossier.index, buildIndex(dossier.apps));
+  assert.ok(dossier.index.exe['discord.exe'].includes('discord'));
+  assert.ok(dossier.index.domain['discord.com'].includes('discord'));
+  assert.ok(dossier.index.domain['google.com'].length > 1);
 });

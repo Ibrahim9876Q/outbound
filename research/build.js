@@ -2,6 +2,7 @@ const { execFile } = require('node:child_process');
 const { promisify } = require('node:util');
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const { buildIndex } = require('./index');
 
 const run = promisify(execFile);
 const root = path.join(__dirname, '..');
@@ -110,6 +111,7 @@ async function main() {
     '\n## ' + batch + ' · ' + new Date().toISOString() + '\n\n' + rejected.join('\n') + '\n');
   if (accepted) {
     dossier.generatedAt = new Date().toISOString();
+    dossier.index = buildIndex(dossier.apps);
     await fs.writeFile(output, JSON.stringify(dossier, null, 2) + '\n');
   }
   console.log('Accepted ' + accepted + ' of ' + entries.length + ' in ' + batch);
