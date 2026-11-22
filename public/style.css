@@ -269,7 +269,10 @@ main { flex: 1; min-height: 0; position: relative; view-transition-name: outboun
 .intel-link { color: inherit; background: none; border: 0; text-decoration: underline; padding: 0; cursor: pointer; }
 .intel-filters { display: flex; gap: 12px; flex-wrap: wrap; }
 .intel-filters input, .intel-filters select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line-strong); }
+#dossier-search { inline-size: 25ch; max-inline-size: 100%; }
 .citation { display: block; margin-top: 4px; color: var(--muted); }
+.incident-excerpt { margin: 8px 0 4px; padding: 4px 10px; border-inline-start: 2px solid var(--line-strong); }
+.incident-excerpt blockquote { margin: 0; }
 #dossier-list { max-height: 62vh; overflow-y: auto; overflow-x: hidden; }
 .policy-plan { border: 1px solid var(--line-strong); padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .rules-grid { margin-top: 14px; }

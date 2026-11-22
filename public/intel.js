@@ -380,7 +380,11 @@
     }
     const display = (key, heading, row) => `<h3>${heading}</h3>` + list(entries(selected, key)
       .filter((entry) => key !== 'incidents' || !kind || entry.kind === kind)
-      .map((entry) => row(entry) + sourceHTML(entry.source)), 'No verified entries reported.');
+      .map((entry) => {
+        const citedInQuote = key === 'incidents' && entry.quote && entry.quoteSource?.url === entry.source.url
+          && !entry.source.alternates?.length;
+        return row(entry) + (citedInQuote ? '' : sourceHTML(entry.source));
+      }), 'No verified entries reported.');
     const observed = (Outbound.state?.apps || []).find((app) => app.researchId === selected.id && app.id?.endsWith('.exe'))
       || (Outbound.state?.apps || []).find((app) => app.id?.endsWith('.exe') && app.destinations?.length);
     output.innerHTML = `<h2>${esc(selected.name)}</h2>`
@@ -388,7 +392,10 @@
       + (observed ? `<p>Live app for rule preview / ${esc(observed.name)} ${blockButton('app', observed.id)}</p>` : '')
       + display('incidents', 'Documented incidents', (entry) => `<strong>${esc(entry.title)}</strong><br>`
         + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary)
-        + (entry.quote && entry.quoteSource ? `<p><q>${esc(entry.quote)}</q>${sourceHTML(entry.quoteSource)}</p>` : ''))
+        + (entry.quote && entry.quoteSource
+          ? `<figure class="incident-excerpt"><blockquote><q>${esc(entry.quote)}</q></blockquote>`
+            + `<figcaption>${sourceHTML(entry.quoteSource)}</figcaption></figure>`
+          : ''))
       + blockButton(selected.type, selected.type === 'app' ? selected.processNames?.[0] : selected.name)
       + (selected.domains || []).map((domain) => blockButton('domain', domain)).join(' ')
       + display('declared', 'Declared collection', (entry) => `<strong>${esc(entry.data)}</strong> / ${esc(entry.purpose)}`)
