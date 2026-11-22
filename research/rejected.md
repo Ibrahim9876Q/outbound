@@ -194,3 +194,14 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Ring, LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/2023113-ring-llc — privacy topic not supported by the case summary
 - Global Tel Link Corporation — https://search.ftc.gov/legal-library/browse/cases-proceedings/2123012-global-tel-link-corporation — privacy topic not supported by the case summary
 - TransUnion Rental Screening Solutions, Inc. and Trans Union, LLC., FTC and CFPB v. — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3204-transunion-rental-screening-solutions-inc-trans-union-llc-ftc-cfpb-v — no substantive case summary
+
+## FTC privacy case index pages 0–9
+
+- MyLife.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3022-mylifecom-inc — privacy topic not supported by the case summary
+- Kuuhuub, Inc., et al., U.S. v. (Recolor Oy) — https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3184-kuuhuub-inc-et-al-us-v-recolor-oy — unclear dossier entity.
+- AppFolio, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/1923016-appfolio-inc — privacy topic not supported by the case summary
+- Emp Media Inc. (MyEx.com) — https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3052-emp-media-inc-myexcom — no substantive case summary
+- Tapplock, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3011-tapplock-inc-matter — privacy topic not supported by the case summary
+- Retina-X Studios, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3118-retina-x-studios-llc-matter — privacy topic not supported by the case summary
+- BoostMyScore LLC — https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3059-boostmyscore-llc — no substantive case summary
+- Office Depot, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3023-office-depot-inc — privacy topic not supported by the case summary

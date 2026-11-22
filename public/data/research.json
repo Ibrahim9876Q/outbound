@@ -5890,9 +5890,548 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Easy Healthcare Corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "court",
+          "title": "Easy Healthcare Corporation, U.S. v. · FTC case record",
+          "year": 2023,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving health information. The earliest dated item in the published case timeline is from 2023.",
+          "caseRef": "202 3186",
+          "source": {
+            "title": "Easy Healthcare Corporation, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/202-3186-easy-healthcare-corporation-us-v",
+            "date": "2023-06-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.303Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Chegg",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Chegg · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2022.",
+          "source": {
+            "title": "Chegg | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/chegg",
+            "date": "2023-01-26",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.369Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Drizly, LLC.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Drizly, LLC., In the Matter of · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving a data breach and related security practices. The earliest dated item in the published case timeline is from 2022.",
+          "caseRef": "2023185",
+          "source": {
+            "title": "Drizly, LLC., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023185-drizly-llc-matter",
+            "date": "2023-01-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.246Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Everalbum, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Everalbum, Inc., In the Matter of · FTC case record",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2021.",
+          "caseRef": "192 3172",
+          "source": {
+            "title": "Everalbum, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3172-everalbum-inc-matter",
+            "date": "2022-05-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.826Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Weight Watchers/WW",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Weight Watchers/WW · FTC case record",
+          "year": 2022,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2022.",
+          "caseRef": "1923228",
+          "source": {
+            "title": "Weight Watchers/WW | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923228-weight-watchersww",
+            "date": "2022-03-04",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.825Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "ITMedia Solutions LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "ITMedia Solutions LLC · FTC case record",
+          "year": 2016,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2016.",
+          "caseRef": "1523225",
+          "source": {
+            "title": "ITMedia Solutions LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1523225-itmedia-solutions-llc",
+            "date": "2022-01-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.448Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ascension Data & Analytics, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ascension Data & Analytics, LLC, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3126",
+          "source": {
+            "title": "Ascension Data & Analytics, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3126-ascension-data-analytics-llc-matter",
+            "date": "2021-12-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.422Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "OpenX Technologies, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "OpenX Technologies, Inc. · FTC case record",
+          "year": 2021,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving location information. The earliest dated item in the published case timeline is from 2021.",
+          "caseRef": "1923019",
+          "source": {
+            "title": "OpenX Technologies, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923019-openx-technologies-inc",
+            "date": "2021-12-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:36.713Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SkyMed International, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SkyMed International, Inc., In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "1923140",
+          "source": {
+            "title": "SkyMed International, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923140-skymed-international-inc-matter",
+            "date": "2021-02-05",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:37.335Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Midwest Recovery Systems, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Midwest Recovery Systems, LLC · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "1923042",
+          "source": {
+            "title": "Midwest Recovery Systems, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/1923042-midwest-recovery-systems-llc",
+            "date": "2020-11-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.886Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "NTT Global Data Centers Americas, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "NTT Global Data Centers Americas, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3189",
+          "source": {
+            "title": "NTT Global Data Centers Americas, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3189-ntt-global-data-centers-americas-inc-matter",
+            "date": "2020-10-28",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.733Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Ortho-Clinical Diagnostics, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Ortho-Clinical Diagnostics, Inc., In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3050",
+          "source": {
+            "title": "Ortho-Clinical Diagnostics, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3050-ortho-clinical-diagnostics-inc-matter",
+            "date": "2020-07-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.809Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Miniclip",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Miniclip, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3129",
+          "source": {
+            "title": "Miniclip, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3129-miniclip-matter",
+            "date": "2020-07-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.594Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Kohl's Department Stores, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Kohl's Department Stores, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "182 3200",
+          "source": {
+            "title": "Kohl's Department Stores, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3200-kohls-department-stores-inc",
+            "date": "2020-06-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:39.458Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "HyperBeard, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "HyperBeard, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3109",
+          "source": {
+            "title": "HyperBeard, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3109-hyperbeard-inc",
+            "date": "2020-06-04",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.580Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Jasjit Gotra (Alliance Security)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Jasjit Gotra (Alliance Security) · FTC case record",
+          "year": 2018,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2018.",
+          "caseRef": "X140022",
+          "source": {
+            "title": "Jasjit Gotra (Alliance Security) | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/x140022-jasjit-gotra-alliance-security",
+            "date": "2020-05-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:38.791Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "T&M Protection Resources, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "T&M Protection Resources, LLC, In the Matter of · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "192 3092",
+          "source": {
+            "title": "T&M Protection Resources, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3092-tm-protection-resources-llc-matter",
+            "date": "2020-03-23",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:39.515Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Global Data Vault, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Global Data Vault, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3093",
+          "source": {
+            "title": "Global Data Vault, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3093-global-data-vault-llc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.682Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TDARX, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "TDARX, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3084",
+          "source": {
+            "title": "TDARX, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3084-tdarx-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.774Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Click Labs, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Click Labs, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3090",
+          "source": {
+            "title": "Click Labs, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3090-click-labs-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:40.755Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:13:10.844Z",
+  "generatedAt": "2026-11-22T06:14:42.276Z",
   "index": {
     "exe": {
       "brave.exe": [
