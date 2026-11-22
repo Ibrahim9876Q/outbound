@@ -130,3 +130,13 @@ Verify the first SSE state after a new connection contains the active peer link.
 - A live restart with corrupt policy, history, and usage files kept serving with warnings. An unavailable scheduled-task cmdlet and an exclusive lock on a QA History database produced scan warnings while state and report remained available.
 - In a local 1280×800 Chrome rehearsal, measured interaction times were 1.89 s for Computer startup, 2.14 s for Stored data and Permission history, 0.26 s for Dossier, 1.52 s through the Rules preview, and 0.77 s for Globe and its All apps fallback. Chrome recorded no uncaught exceptions. At 130 words per minute, the spoken lines plus those interaction times fit each of the five slots in `DEMO.md`.
 - Five `npm test` runs with `CI=true` each passed all 44 tests. `npm run check` passed for 10 local assets, state, report, and the initial SSE frame. QA disabled outbound reverse DNS and hosted integrations. The README dossier totals were regenerated from the merged catalog.
+
+## xray9 performance replay
+
+- Recorded a real 185,058-byte state with 80 apps, including 63 purpose-started processes with actual loopback sockets. The recording stayed in gitignored local storage. Chrome rendered the labeled replay. Twelve HTTP endpoint checks and three SSE frames carried `FIXTURE DATA`. The launcher rejected a missing opt-in.
+
+## xray10 release rehearsal
+
+- A fresh HTTPS clone of public `master` at `019881b` installed 59 dependencies with `npm ci`, passed 51 tests, and passed `npm run check`. The desktop answered 19 local-mode HTTP and SSE checks covering the README API table.
+- CIM denied the rehearsal’s executable lookup. Policy now uses the existing `Get-Process` collector with a path-only option. After the fix, Chrome completed all five quick-demo steps with zero uncaught exceptions. The Rules stage took 4.62 seconds including its direct API check, and Globe opened a real country attribution. The opt-in permission rows were visible while the full folder walk could continue. One run waiting for the full walk exceeded the 110-second observation window.
+- Five repeat `npm test` runs with `CI=true` passed all 51 tests each, covering the xray10 three-run check and the outstanding xray9 repeat check. The live-mode smoke check passed for 10 assets, state, report, and SSE while the shell had a replay path set. QA disabled reverse DNS and hosted integrations.

@@ -8,10 +8,10 @@ CBC Marketplace reported that the Tim Hortons app appeared to contact outside co
 
 ## What it does
 
-- **Computer and Globe.** Select an app to inspect observed TCP destinations, attributed owners, tracker matches and estimated endpoint locations. Globe animates those connections. The laptop’s mic key and camera lamp reflect Windows capture sessions. Links distinguish observed local sockets and process relationships from inferred associations.
-- **Stored data and Permission history.** The opt-in scan summarizes browser history domains and cookie hosts, app-folder metadata, installed software, startup entries and tasks, extension permissions, and Windows privacy settings and permission timestamps. The previous completed scan stays available during a rescan and can be reopened after a restart.
-- **Dossier, exposure and history.** The Dossier links public claims and incidents to sources. Exposure scores show the factors and coverage behind the number. Daily history and a local Markdown report summarize the observations over time.
-- **Rules and Phone.** Desktop Rules previews Windows Firewall commands in dry-run mode. A separate DNS gateway can require time-limited approval for tracker lookups when configured. The offline Phone demo labels its fixture DNS answers and simulated approvals.
+- **Computer and Globe.** Inspect TCP endpoints, attributed owners, tracker matches, and estimated server locations. The laptop’s mic and camera indicators reflect Windows capture sessions.
+- **Stored data.** An opt-in scan summarizes browser domains and cookie hosts, app-folder metadata, extension permissions, and Windows permission history. Completed scans can be reopened after a restart.
+- **Dossier, exposure and history.** Public claims and incidents link to their sources. Exposure scores show each factor and its coverage. History and a local report summarize observed activity.
+- **Rules and Phone.** Desktop Rules previews Windows Firewall commands. The separate DNS gateway supports time-limited tracker approvals when configured.
 
 ## How we built it
 
@@ -19,15 +19,15 @@ We join Windows TCP snapshots to process IDs and stream the observations to Comp
 
 ### Auth0
 
-Optional desktop sign-in identifies the local rule author. For a configured approval, Auth0 CIBA requests a decision through Guardian. On approval, Auth0 FGA stores an opaque rule relation. The Phone gateway uses CIBA and FGA for expiring DNS tracker grants. Fixture tests exercise request and approval handling, FGA checks, expiry, and revocation.
+Optional desktop sign-in identifies the rule author. Auth0 CIBA requests consent through Guardian. FGA stores opaque desktop approval relations and expiring Phone tracker grants. Fixtures covered approval handling, grant checks, expiry, and revocation. The Phone offline demo labels its fixture DNS answers and simulated approvals.
 
 The reported hosted attempt stopped at Guardian enrollment, before a push was delivered. Hosted approval and revocation remain unverified end to end. Our live desktop rehearsal exercised the local dry run.
 
 ### Privacy
 
-Both HTTP dashboards bind to loopback. The opt-in scan keeps its results and caches on the PC. Browser history in the result is reduced to domains. Cookie queries select host and count fields. The scanner leaves password stores alone, and the app-folder walk reads names, sizes and timestamps. The desktop uses offline ASN and IP geolocation data. Reverse DNS can use the operating system’s resolver. Optional Phone DNS forwarding and hosted Auth0 use the configured upstream services. Firewall rules stay in preview mode by default.
+Both HTTP dashboards bind to loopback. The opt-in scan keeps results on the PC, summarizes history as domains, reads cookie hosts and counts, and skips password stores. Firewall rules stay in preview mode by default. Reverse DNS, Phone DNS forwarding, and hosted Auth0 can contact their configured services.
 
-### Built with
+## Built With
 
 - Node.js 24, Server-Sent Events, and globe.gl
 - Windows PowerShell, `netstat`, Core Audio, Media Foundation, and the Windows privacy registry
@@ -50,3 +50,7 @@ Socket observations, registry timestamps, and public tracker research answer dif
 ## What’s next
 
 Verify hosted consent through approval and revocation on a Guardian-enrolled test device, broaden the sourced Dossier, and compare opt-in snapshots over time.
+
+## Try it
+
+On Windows 11 with Node.js 24, clone the repository, then run `npm ci` and `npm start`. Open `http://127.0.0.1:4317/` and follow the judging walkthrough. The local desktop runs without Auth0 credentials. [Repository](https://github.com/Ibrahim9876Q/outbound) · [Judge’s guide](JUDGING.md)
