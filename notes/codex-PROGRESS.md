@@ -76,3 +76,9 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `6d1199e` fixes the enabled HQ toggle contrast, including on hover.
 - `f2b512d` uses compact locations in the trail and moves the collapsed legend above Pause rotation.
 - Chrome on port 4318 passed at 1280×800 and 1920×1080 with 270 observed destinations after opening Weather.com and zero console errors. The browser preview supplied the existing Phone assets from integration. A controlled 201-destination test verified aggregation, owner ordering, both trail formats, HQ toggle contrast, and legend disclosure. White dashed outlines stay visible over tracker-red cells.
+
+## Horizon labels and long arcs
+
+- `119520f` hides labels close to the horizon and resolves screen overlaps in descending estimate count. Country rings remain available for inspection.
+- `7eafc07` caps outbound, return, and HQ arc altitude while preserving distance-based scaling for short routes.
+- Verified at 1280×800 on port 4318 in Chrome with 181 real destinations after opening Weather.com and zero console errors. The preview supplied the shared Phone assets from integration. A controlled snapshot checked larger-label priority, horizon rejection, label refresh after rotation, and the Australia and Brazil routes.
