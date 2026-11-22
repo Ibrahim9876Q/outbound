@@ -69,3 +69,10 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `6e7f454` adds a toggleable, offline table of 40 company headquarters and a separate dotted layer for reported network owners.
 - `7746b64` adds a six-row data trail sorted by first observation time, using snapshots for city and company labels.
 - Chrome on port 4318 passed at 1280×800 and 1920×1080 with no console errors. As in the previous round, the preview supplied the existing Phone assets from `integration` through browser-only overrides. A test snapshot verified distinct and stable IP offsets across socket updates, the same marker element after refresh, the country-only tooltip, headquarters link labels and toggle, and newest-first ordering capped at six rows.
+
+## High-traffic Globe polish
+
+- `0cea340` replaces the per-IP jitter with one logarithmically sized country marker, a count label, and an owner summary. Repeated country-estimate routes are grouped by app and route attributes.
+- `6d1199e` fixes the enabled HQ toggle contrast, including on hover.
+- `f2b512d` uses compact locations in the trail and moves the collapsed legend above Pause rotation.
+- Chrome on port 4318 passed at 1280×800 and 1920×1080 with 270 observed destinations after opening Weather.com and zero console errors. The browser preview supplied the existing Phone assets from integration. A controlled 201-destination test verified aggregation, owner ordering, both trail formats, HQ toggle contrast, and legend disclosure. White dashed outlines stay visible over tracker-red cells.

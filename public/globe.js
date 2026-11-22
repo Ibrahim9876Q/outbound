@@ -465,7 +465,6 @@
     marker.setAttribute('aria-label', countryName(point.places[0].country) + ' · ' + count + ' country-level estimates');
     marker.style.setProperty('--estimate-size', Math.round(18 + 10 * Math.log1p(count)) + 'px');
     setText(marker.firstElementChild, count + ' approx.');
-    marker.classList.toggle('tracker', point.places.some((place) => place.tracker));
   }
 
   function updateEstimateMarkers(points) {

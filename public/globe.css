@@ -179,8 +179,8 @@
   position: relative;
   pointer-events: auto;
   cursor: pointer;
+  filter: drop-shadow(0 0 2px #000);
 }
-#view-globe .globe-estimate-marker.tracker { border-color: var(--map-tracker); }
 
 #view-globe .globe-estimate-count {
   position: absolute;
