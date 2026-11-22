@@ -62,3 +62,10 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `f7017e7` adds one-shot arrival pulses and socket-scaled points.
 - `8ebd84c` adds terminal-style company, ASN, IP, location, app, and port details.
 - Verified Chrome on port 4318 at 1280×800 and 1920×1080 with zero console errors. The preview supplied the existing Phone assets from `integration` as browser-only overrides. Live screenshots show the brighter destination cells. A separate browser fixture verified tracker red, socket scaling, a pulse that stays unchanged across socket updates, company expansion and collapse, and all endpoint fields on pointer hover.
+
+## Country precision, headquarters, and data trail
+
+- `0d53161` distinguishes locations estimated at country level with hollow dashed rings and approximate-location tooltip text.
+- `6e7f454` adds a toggleable, offline table of 40 company headquarters and a separate dotted layer for reported network owners.
+- `7746b64` adds a six-row data trail sorted by first observation time, using snapshots for city and company labels.
+- Chrome on port 4318 passed at 1280×800 and 1920×1080 with no console errors. As in the previous round, the preview supplied the existing Phone assets from `integration` through browser-only overrides. A test snapshot verified distinct and stable IP offsets across socket updates, the same marker element after refresh, the country-only tooltip, headquarters link labels and toggle, and newest-first ordering capped at six rows.

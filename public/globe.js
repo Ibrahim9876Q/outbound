@@ -56,6 +56,7 @@
   let knownDestinations = new Set();
   let arrivingDestinations = new Set();
   let mapPoints = [];
+  let estimateMarkers = new Map();
   let headquartersFor;
   let showHeadquarters = false;
   let recentTrail = new Map();
@@ -159,8 +160,10 @@
     const usCentroid = place.country === 'US'
       && Math.abs(place.lat - 37.751) < 0.015 && Math.abs(place.lng + 97.822) < 0.015;
     if (place.city?.trim() && !usCentroid) return place;
-    const angle = (hash('angle:' + place.ip) % 4096) / 4096 * Math.PI * 2;
-    const radius = 0.25 + (hash('radius:' + place.ip) % 110) / 100;
+    const seed = Math.imul(hash(place.ip), 0x9e3779b1) >>> 0;
+    const angle = (seed >>> 16) / 65536 * Math.PI * 2;
+    const spread = usCentroid ? 3.4 : 1.4;
+    const radius = spread * (0.2 + 0.8 * Math.sqrt((seed & 65535) / 65535));
     const lat = Math.max(-89, Math.min(89, place.lat + Math.sin(angle) * radius));
     const lng = (place.lng + Math.cos(angle) * radius + 540) % 360 - 180;
     return { ...place, city: '', lat, lng, approximate: true };
@@ -432,16 +435,34 @@
     ];
   }
 
-  function estimateMarker(point) {
+  function estimateMarker(entry) {
     const marker = node('button', 'globe-estimate-marker');
     marker.type = 'button';
-    marker.setAttribute('aria-label', 'Country-level estimate · ' + countryName(point.places[0].country));
-    marker.style.setProperty('--estimate-size', Math.min(27, 11 + Math.sqrt(point.sockets) * 2) + 'px');
-    if (point.places.some((place) => place.tracker)) marker.classList.add('tracker');
-    marker.addEventListener('pointerenter', () => { if (pinnedPoint === null) renderPoint(point); });
+    entry.marker = marker;
+    styleEstimateMarker(entry);
+    marker.addEventListener('pointerenter', () => { if (pinnedPoint === null) renderPoint(entry.point); });
     marker.addEventListener('pointerleave', () => { if (pinnedPoint === null) renderPoint(null); });
-    marker.addEventListener('click', () => pinPoint(point));
+    marker.addEventListener('click', () => pinPoint(entry.point));
     return marker;
+  }
+
+  function styleEstimateMarker({ marker, point }) {
+    marker.setAttribute('aria-label', 'Country-level estimate · ' + countryName(point.places[0].country));
+    marker.style.setProperty('--estimate-size', Math.min(22, 9 + Math.sqrt(point.sockets) * 2) + 'px');
+    marker.classList.toggle('tracker', point.places.some((place) => place.tracker));
+  }
+
+  function updateEstimateMarkers(points) {
+    const next = new Map();
+    for (const point of points) {
+      if (!point.approximate) continue;
+      const entry = estimateMarkers.get(point.key) || { key: point.key };
+      Object.assign(entry, { lat: point.lat, lng: point.lng, point });
+      if (entry.marker) styleEstimateMarker(entry);
+      next.set(point.key, entry);
+    }
+    estimateMarkers = next;
+    globe.htmlElementsData([...next.values()]);
   }
 
   function pulseDestinations(places) {
@@ -571,9 +592,8 @@
       if (updated) renderPoint(updated);
       else clearPoint();
     }
-    globe.arcsData(makeArcs(located, home))
-      .pointsData(points.filter((point) => !point.approximate))
-      .htmlElementsData(points.filter((point) => point.approximate));
+    globe.arcsData(makeArcs(located, home)).pointsData(points.filter((point) => !point.approximate));
+    updateEstimateMarkers(points);
     pulseDestinations(located);
   }
 
