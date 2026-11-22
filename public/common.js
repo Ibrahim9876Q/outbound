@@ -60,6 +60,8 @@
     const filled = Math.max(0, Math.min(10, Math.round(score.value / 10)));
     return '[' + '#'.repeat(filled) + '.'.repeat(10 - filled) + '] ' + score.value + '/100';
   };
+  Outbound.capCount = (shown, retained, label) =>
+    Number.isFinite(retained) && shown < retained ? `Showing ${shown} of ${retained} ${label}` : '';
 
   let scoreRequestedAt = -Infinity;
   let scorePending = false;
@@ -317,6 +319,12 @@
       ? `${phone.lookups} lookups / ${phone.blocked} blocked`
       : 'Phone gateway offline.');
     setText('live-text', `Live · ${live} connection${live === 1 ? '' : 's'}`);
+    const caps = [['apps', 'retained apps'], ['links', 'retained evidence links'],
+      ['legacyLinks', 'retained legacy links'], ['events', 'retained feed events']]
+      .map(([key, label]) => Outbound.capCount(state[key]?.length ?? 0, state.totals?.[key], label)).filter(Boolean);
+    const note = $('retained-caps');
+    note.hidden = !caps.length;
+    setText('retained-caps', caps.join(' / '));
   }
 
   function devicePill(id, label, dev, state) {
