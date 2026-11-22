@@ -74,6 +74,24 @@ body::after {
 }
 
 button { font: inherit; color: inherit; }
+.boot-console {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  gap: 18px;
+  background: #080808;
+  color: #fff;
+  font-family: var(--font-mono);
+}
+.boot-console pre { margin: 0; white-space: pre-wrap; }
+.boot-console button { background: #111; border: 1px solid #888; padding: 6px 10px; }
+.ascii-warning::before { content: '[!] '; color: var(--tracker); }
+.ascii-radar { white-space: pre; font: 14px/1.25 var(--font-mono); }
+.view { font-family: var(--font-mono); }
+.view .card h2::before { content: '┌─ '; color: var(--muted); }
 h1, h2, h3, p { margin: 0; }
 ul { list-style: none; margin: 0; padding: 0; }
 .hidden, [hidden] { display: none !important; }

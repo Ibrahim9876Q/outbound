@@ -17,6 +17,38 @@
   const discoveryFns = [];
   const Outbound = { state: null, view: 'computer', util: {} };
   window.Outbound = Outbound;
+  let bootPending = true;
+
+  function showBoot(state) {
+    if (!bootPending) return;
+    bootPending = false;
+    try {
+      if (sessionStorage.getItem('outbound.boot')) return;
+      sessionStorage.setItem('outbound.boot', 'seen');
+    } catch { /* Storage can be disabled. */ }
+    const overlay = document.createElement('section');
+    overlay.className = 'boot-console';
+    overlay.setAttribute('aria-label', 'Outbound startup');
+    const output = document.createElement('pre');
+    const skip = document.createElement('button');
+    skip.type = 'button';
+    skip.textContent = 'Skip startup';
+    const socketCount = state.apps.reduce((total, app) => total + (app.activeConnections || 0), 0);
+    const lines = [
+      '+==================+\n|    O U T B O U N D   |\n+==================+',
+      '[ OK ] local state received',
+      '[ OK ] Windows device status: ' + (state.devices.source || 'reported'),
+      '[ OK ] ' + socketCount + ' active connections observed',
+    ];
+    overlay.append(output, skip);
+    document.body.append(overlay);
+    const finish = () => overlay.remove();
+    skip.addEventListener('click', finish);
+    overlay.addEventListener('keydown', (event) => { if (event.key === 'Escape') finish(); });
+    skip.focus();
+    lines.forEach((line, i) => setTimeout(() => { if (overlay.isConnected) output.textContent += line + '\n'; }, i * 180));
+    setTimeout(finish, 1250);
+  }
 
   Outbound.onState = (fn) => { stateFns.push(fn); if (Outbound.state) safe(fn, Outbound.state); };
   Outbound.onEvent = (fn) => { eventFns.push(fn); };
@@ -353,6 +385,7 @@
       if (!state || !Array.isArray(state.apps) || (Outbound.state && state.at < Outbound.state.at)) return;
       const initial = !Outbound.state;
       Outbound.state = state;
+      safe(showBoot, state);
       safe(renderTopbar, state);
       safe(renderSession, state);
       for (const fn of stateFns) safe(fn, state);
