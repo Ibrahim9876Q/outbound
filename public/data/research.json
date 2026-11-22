@@ -7747,7 +7747,7 @@
             "url": "https://arstechnica.com/information-technology/2015/06/hola-vpn-used-to-perform-ddos-attacks-violate-user-privacy/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:17:55.591Z"
+            "fetchedAt": "2026-11-22T08:20:02.373Z"
           }
         }
       ],
@@ -11537,7 +11537,7 @@
             "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ilnd-1_11-cv-05807/pdf/USCOURTS-ilnd-1_11-cv-05807-0.pdf",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:17:56.256Z"
+            "fetchedAt": "2026-11-22T08:20:07.704Z"
           }
         }
       ],
@@ -15048,7 +15048,7 @@
             "url": "https://blog.checkpoint.com/securing-the-cloud/cdn-service-exposes-users-to-malicious-packages-for-phishing-attacks-invisible-to-security-tools/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:17:56.442Z"
+            "fetchedAt": "2026-11-22T08:20:02.253Z"
           }
         }
       ],
@@ -15164,7 +15164,7 @@
             "url": "https://companiesmarketcap.com/datadog/sec-reports-10k/0001561550-22-000009/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:17:55.762Z"
+            "fetchedAt": "2026-11-22T08:20:02.868Z"
           }
         }
       ],
@@ -15569,6 +15569,58 @@
             "fetchedAt": "2026-11-22T06:48:47.788Z"
           }
         }
+      ],
+      "sharesWith": [
+        {
+          "party": "Amazon Web Services",
+          "purpose": "Host identity data and temporarily store some content for Acrobat Services",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.720Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
+          }
+        },
+        {
+          "country": "Ireland",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
+          }
+        },
+        {
+          "country": "Singapore",
+          "note": "Adobe’s Acrobat Services FAQ lists this country for replicated identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.727Z"
+          }
+        }
       ]
     },
     {
@@ -15740,7 +15792,23 @@
           }
         }
       ],
-      "incidents": [],
+      "incidents": [
+        {
+          "title": "Magnite cookie tracking class certification ruling",
+          "year": 2026,
+          "kind": "court",
+          "jurisdiction": "United States",
+          "summary": "Plaintiffs alleged that Magnite put tracking cookies on browsers for targeted advertising. The court denied class certification.",
+          "source": {
+            "title": "Adding To The Tally: Another Court Denies Bid For Class Certification In Cookie Tracking Case | Legal 500",
+            "publisher": "Ballard Spahr",
+            "url": "https://www.legal500.com/intelligence/united-states/privacy/adding-to-the-tally-another-court-denies-bid-for-class-certification-in-cookie-tracking-case",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:02.508Z"
+          }
+        }
+      ],
       "sharesWith": [
         {
           "party": "Service providers",
@@ -15804,7 +15872,7 @@
             "url": "https://www.classaction.org/media/doe-v-microsoft-corporation-et-al.pdf",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T08:17:55.970Z"
+            "fetchedAt": "2026-11-22T08:20:02.923Z"
           }
         }
       ],
@@ -17687,9 +17755,69 @@
           }
         }
       ]
+    },
+    {
+      "name": "unpkg",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [],
+      "sharesWith": [
+        {
+          "party": "Cloudflare",
+          "purpose": "Serve incoming CDN requests using its edge network",
+          "source": {
+            "title": "Network &amp; Architecture — UNPKG",
+            "publisher": "unpkg",
+            "url": "https://unpkg.com/network",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:20:01.254Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Akamai Technologies",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [],
+      "destinations": [
+        {
+          "country": "Sweden",
+          "note": "Spotify’s Korea disclosure lists this country for storage and file sharing by Akamai Technologies AB.",
+          "source": {
+            "title": "Entrustment, Transfers to 3rd Party and Overseas Transfers - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.602Z"
+          }
+        },
+        {
+          "country": "United States",
+          "note": "Spotify’s Korea disclosure lists this country for storage and file sharing by Akamai Technologies AB.",
+          "source": {
+            "title": "Entrustment, Transfers to 3rd Party and Overseas Transfers - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/kr-en/legal/korea-entrustmentandtransfers/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:19:58.602Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T08:18:52.444Z",
+  "generatedAt": "2026-11-22T08:20:07.705Z",
   "index": {
     "exe": {
       "brave.exe": [

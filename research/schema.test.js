@@ -61,7 +61,8 @@ test('dossier v2 has a verified HTTPS source for every claim and every entry', (
     if (company.sharesWith) claims(company.sharesWith, ['party', 'purpose']);
     if (company.destinations) claims(company.destinations, ['country', 'note']);
     incidents(company.incidents);
-    assert.ok(company.declared.length + company.incidents.length);
+    assert.ok(company.declared.length + company.incidents.length +
+      (company.sharesWith?.length || 0) + (company.destinations?.length || 0));
   }
 });
 

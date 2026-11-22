@@ -802,3 +802,7 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Toyota — https://apps.apple.com/us/app/toyota/id1455685357 — No developer-declared data linked to the user
 - Tesla — https://apps.apple.com/us/app/tesla/id582007913 — No developer-declared data linked to the user
 - Reddit — https://apps.apple.com/us/app/reddit/id1064216828 — No developer-declared data linked to the user
+
+## incidents-11 · 2026-11-22T08:20:07.704Z
+
+- Stripe — https://www.casemine.com/judgement/us/6109ba0e4653d04ad655694a — missing evidence: July 28, 2021
