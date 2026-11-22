@@ -280,6 +280,8 @@
     }
     const remove = event.target.closest('[data-remove-rule]');
     if (!remove || policyBusy || policy?.enforcer !== 'dry-run') return;
+    const rule = policy.rules?.find((item) => item.id === remove.dataset.removeRule);
+    if (!rule || (rule.approval?.via === 'auth0' && (policy.auth0Configured ?? policy.providerConfigured))) return;
     policyBusy = true;
     renderPolicy();
     try {
