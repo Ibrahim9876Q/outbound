@@ -87,6 +87,52 @@
       + (selected ? profileCard(selected.browser) : '<p>No browser profiles with results are shown.</p>'));
   }
 
+  function scanWindows(scan) {
+    const report = (key, title, render, empty) => card(title,
+      Array.isArray(scan[key]) ? render(scan[key]) || `<p class="intel-muted">${esc(empty)}</p>`
+        : '<p class="intel-muted">This scan section is unavailable.</p>');
+    const timestamp = (value) => Number.isFinite(value) ? new Date(value).toLocaleString() : 'Time unavailable';
+    const permissions = report('permissions', 'Permission history', (rows) => {
+      const groups = new Map();
+      for (const row of rows) {
+        const group = groups.get(row.capability) || [];
+        group.push(row);
+        groups.set(row.capability, group);
+      }
+      const day = 86400000;
+      const now = scan.finishedAt || Date.now();
+      return [...groups].map(([capability, group]) => `<h3>${esc(capability)}</h3><p class="intel-muted">Last 7 days / oldest to newest</p>`
+        + list(group.map((row) => {
+          const age = Number.isFinite(row.lastUsedStart) ? Math.floor((now - row.lastUsedStart) / day) : -1;
+          const marker = row.inUse ? '*' : '#';
+          const timeline = age >= 0 && age < 7 ? Array.from({ length: 7 }, (_, i) => i === 6 - age ? marker : '.').join('') : '.......';
+          return `<code>[${timeline}]</code> ${esc(row.app)}<br>`
+            + esc(row.inUse ? 'In use since ' + timestamp(row.lastUsedStart) : Number.isFinite(row.lastUsedStart)
+              ? timestamp(row.lastUsedStart) + (Number.isFinite(row.lastUsedStop) ? ' to ' + timestamp(row.lastUsedStop) : '') : 'No use timestamp reported');
+        }), '')).join('');
+    }, 'No permission history was reported.');
+    const installed = report('installed', 'Installed software', (rows) => rows.length ? list(rows.map((row) => {
+      const dossier = research?.find((record) => record.type === 'app' && record.id === row.researchId);
+      const incidents = dossier ? entries(dossier, 'incidents').length : 0;
+      return `<strong>${esc(row.name)}</strong> ${row.researchId ? dossierLink(row.researchId, 'app', 'Open dossier') : ''}`
+        + (incidents ? ` <span class="tag tracker">${incidents} ${incidents === 1 ? 'incident' : 'incidents'}</span>` : '')
+        + '<br>' + esc([row.publisher, row.version, row.installDate, Number.isFinite(row.sizeBytes) ? size(row.sizeBytes) : null].filter(Boolean).join(' / '));
+    }), '') : '', 'No installed software entries were reported.');
+    const autoruns = report('autoruns', 'Phones home on its own', (rows) =>
+      '<p class="intel-muted">Flags are based on startup entries, scheduled tasks, and service metadata.</p>'
+      + list(rows.filter((row) => row.flagged).map((row) =>
+        `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc(row.kind)}<br>`
+          + esc([row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
+      'No startup entries were flagged by this scan.'), 'No startup information was reported.');
+    const extensions = report('extensions', 'Extensions that can read every site', (rows) => list(rows.filter((row) => row.allSites).map((row) =>
+      `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))}<br>`
+      + esc((row.permissions || []).join(', ')), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
+    const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
+      `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
+        + (row.recommended ? '<br>Recommended: ' + esc(row.recommended) : '')), '') : '', 'No Windows privacy values were reported.');
+    return [permissions, installed, autoruns, extensions, privacy];
+  }
+
   function setRadar(running) {
     radar.hidden = !running;
     if (!running) {
@@ -117,6 +163,10 @@
     if (scan.apps?.length) browsers.push(card('App data at rest', list(scan.apps.map((app) =>
       `<strong>${dossierLink(app.app, 'app')}</strong> / ${esc(size(app.bytes))} / ${number(app.files)} files<br>`
       + Object.entries(app.kinds || {}).map(([kind, count]) => esc(kind) + ': ' + number(count)).join(' / ')), '')));
+    if (scan.status === 'done') {
+      if (scan.warnings?.length) browsers.push(card('Scan warnings', list(scan.warnings.map(esc), '')));
+      browsers.push(...scanWindows(scan));
+    }
     const html = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
     const output = $('scan-results');
     if (output.dataset.model !== html) {
@@ -162,7 +212,7 @@
     }
     refreshScan();
   });
-  Outbound.onView((name) => { if (name === 'scan') refreshScan(); });
+  Outbound.onView((name) => { if (name === 'scan') { refreshScan(); loadResearch(); } });
 
   let research;
   let researchLoading;
@@ -229,6 +279,7 @@
     } finally {
       researchLoading = false;
       renderDossier();
+      if (Outbound.view === 'scan' && lastScan) renderScan(lastScan);
     }
   }
 
