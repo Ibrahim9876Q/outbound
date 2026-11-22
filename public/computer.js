@@ -308,6 +308,10 @@
       const fresh = !unknown && now - born < FRESH_MS;
       a.priority = (a.mic || a.cam ? 1e6 : 0) + (fresh ? 1e4 : 0) + (unknown ? 0 : 1e3) + a.activeConnections * 10 + a.destinations.length;
     }
+    // Two different exes with the same friendly name (chatgpt.exe and codex.exe are both "Codex").
+    const counts = new Map();
+    for (const a of list) counts.set(a.name, (counts.get(a.name) || 0) + 1);
+    for (const a of list) a.dupe = counts.get(a.name) > 1;
     return list.sort((a, b) => b.priority - a.priority);
   }
 
@@ -346,6 +350,7 @@
       updateIcon(icon.node, app);
     }
     el.empty.hidden = apps.length > 0;
+    placeToasts();
     el.desktop.dataset.hidden = hiddenApps;
   }
 
@@ -363,6 +368,11 @@
     return slot;
   }
 
+  // "chatgpt.exe"; apps seen only through the mic/camera have no exe.
+  function exeLabel(app) {
+    return app.id.startsWith('device:') ? 'mic / camera only' : app.id;
+  }
+
   function tileInner(app) {
     return app.icon
       ? `<img alt="" src="data:image/png;base64,${app.icon}">`
@@ -373,7 +383,7 @@
     const node = document.createElement('div');
     node.className = 'app';
     node.dataset.id = app.id;
-    node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div>`;
+    node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div><div class="sub" hidden></div>`;
     node.addEventListener('click', (e) => { e.stopPropagation(); select(selected === app.id ? null : app.id); });
     return node;
   }
@@ -381,6 +391,10 @@
   function updateIcon(node, app) {
     const name = node.querySelector('.name');
     if (name.textContent !== app.name) name.textContent = app.name;
+    const sub = node.querySelector('.sub');
+    sub.hidden = !app.dupe;
+    node.classList.toggle('dupe', !!app.dupe);
+    if (app.dupe && sub.textContent !== exeLabel(app)) sub.textContent = exeLabel(app);
     if (app.icon && !node.querySelector('img')) {
       // The real icon arrived after the app first appeared.
       node.querySelector('.initials')?.remove();
@@ -690,7 +704,7 @@
     const tile = app.icon ? tileInner(app) : `<span class="initials">${esc(initials(app.name))}</span>`;
     const live = app.destinations.filter((d) => d.active).length;
     const dev = [app.mic && 'using the microphone', app.cam && 'using the camera'].filter(Boolean);
-    let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3>`
+    let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     if (app.destinations.length) {
       html += '<div class="detail-sub">Sends data to</div><ul class="dests">';
@@ -799,8 +813,32 @@
     const ico = cls === 'mic' ? svgIcon(e.type.endsWith('on') ? 'mic' : 'micOff') : cls === 'camera' ? svgIcon(e.type.endsWith('on') ? 'cam' : 'camOff') : '';
     node.innerHTML = `${ico}<span>${esc(eventText(e))}</span>`;
     el.toasts.prepend(node);
-    while (el.toasts.children.length > 3) el.toasts.lastChild.remove();
-    setTimeout(() => { node.classList.add('leaving'); setTimeout(() => node.remove(), 450); }, 4500);
+    while (el.toasts.children.length > 2) el.toasts.lastChild.remove();
+    placeToasts();
+    setTimeout(() => { node.classList.add('leaving'); setTimeout(() => { node.remove(); placeToasts(); }, 450); }, 4500);
+  }
+
+  // Put toasts in the first screen corner that covers no desktop icon (or its name).
+  // If every corner is taken, they sit over the internet strip, which only hides company chips briefly.
+  function placeToasts() {
+    const zone = el.toasts;
+    if (!zone.children.length) return;
+    const W = el.screen.clientWidth;
+    const H = el.screen.clientHeight;
+    const w = zone.offsetWidth;
+    const h = zone.offsetHeight;
+    const top = el.internet.offsetHeight + 8;
+    const bottom = H - 38 - 8 - h;
+    const boxes = [];
+    for (const icon of icons.values()) {
+      if (!icon.slot || icon.node.hidden) continue;
+      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: ICON_W, h: icon.node.offsetHeight });
+    }
+    const free = (x, y) => !boxes.some((b) => x < b.x + b.w && b.x < x + w && y < b.y + b.h && b.y < y + h);
+    const corners = [[W - 12 - w, bottom], [12, bottom], [W - 12 - w, top], [12, top]];
+    const spot = corners.find(([x, y]) => free(x, y)) || [W - 12 - w, 6];
+    zone.style.left = `${Math.round(spot[0])}px`;
+    zone.style.top = `${Math.round(spot[1])}px`;
   }
 
   // ---------- demo spotlight: cycles through the most interesting things on screen ----------

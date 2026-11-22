@@ -5,34 +5,79 @@ const fs = require('fs');
 const path = require('path');
 const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
+const { renderReport, localDate } = require('./lib/report');
 
 const PORT = Number(process.env.PORT) || 4317;
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
 const HOME = {
-  lat: Number(process.env.HOME_LAT) || 43.0096,
-  lng: Number(process.env.HOME_LNG) || -81.2737,
+  lat: coordinate(process.env.HOME_LAT, 90, 43.0096),
+  lng: coordinate(process.env.HOME_LNG, 180, -81.2737),
   label: process.env.HOME_LABEL || 'This PC',
 };
 
+function coordinate(value, limit, fallback) {
+  const number = value?.trim() ? Number(value) : NaN;
+  return Number.isFinite(number) && Math.abs(number) <= limit ? number : fallback;
+}
+
 const events = [];
 const clients = new Set();
+const pendingEvents = [];
+let phone = null;
+
+async function pollPhone() {
+  try {
+    const response = await fetch('http://127.0.0.1:4320/api/state', {
+      signal: AbortSignal.timeout(1000),
+      redirect: 'error',
+    });
+    if (!response.ok) { phone = null; return; }
+    const { stats, lookups, consent } = await response.json();
+    const counts = [stats?.lookups, stats?.blocked, consent?.active];
+    if (!counts.every((count) => Number.isSafeInteger(count) && count >= 0) || !Array.isArray(lookups)) {
+      phone = null;
+      return;
+    }
+    phone = {
+      online: true,
+      lookups: stats.lookups,
+      blocked: stats.blocked,
+      approvals: consent.active,
+      lastTracker: lookups.find((lookup) => typeof lookup?.tracker === 'string' && lookup.tracker)?.tracker ?? null,
+    };
+  } catch {
+    phone = null;
+  }
+}
 
 function pushEvent(e) {
   events.unshift(e);
   if (events.length > 200) events.pop();
-  broadcast('event', e);
+  if (clients.size) {
+    pendingEvents.push(e);
+    if (pendingEvents.length > 200) pendingEvents.shift();
+  }
 }
 
-function broadcast(type, data) {
-  const msg = `event: ${type}\ndata: ${JSON.stringify(data)}\n\n`;
-  for (const res of clients) res.write(msg);
+function frame(type, data) {
+  return `event: ${type}\ndata: ${JSON.stringify(data)}\n\n`;
 }
 
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
+process.on('exit', () => devices.close());
+process.on('SIGINT', () => process.exit(130));
+process.on('SIGTERM', () => process.exit(143));
 
 function state() {
-  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60) };
+  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60), phone };
+}
+
+function broadcastState() {
+  const events = pendingEvents.splice(0);
+  if (!clients.size) return;
+  const batch = events.map((event) => frame('event', event)).join('') + frame('state', state());
+  for (const res of clients) if (!res.writableNeedDrain) res.write(batch);
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -43,10 +88,14 @@ function loop(fn, everyMs) {
   };
   go();
 }
-loop(() => network.poll(), 2000);
-loop(() => devices.poll(), 1000);
-setInterval(() => broadcast('state', state()), 1000);
+loop(() => network.poll(), 1500);
+loop(() => devices.poll(), 750);
+setInterval(pollPhone, 2000);
+pollPhone();
+setInterval(broadcastState, 500);
 
+const PUBLIC = path.join(__dirname, 'public');
+const LOCAL_HOST = /^(?:localhost|127\.0\.0\.1)(?::\d+)?$/i;
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml' };
 const STATIC = {
   '/vendor/globe.gl.min.js': path.join(__dirname, 'node_modules', 'globe.gl', 'dist', 'globe.gl.min.js'),
@@ -64,22 +113,43 @@ function sendFile(res, file) {
 }
 
 const server = http.createServer((req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host}`);
+  if (!LOCAL_HOST.test(req.headers.host || '')) {
+    res.writeHead(403);
+    return res.end();
+  }
+  const url = URL.parse(req.url, 'http://localhost');
+  if (!url) {
+    res.writeHead(400);
+    return res.end();
+  }
   if (url.pathname === '/events') {
-    res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', Connection: 'keep-alive' });
-    res.write(`event: state\ndata: ${JSON.stringify(state())}\n\n`);
+    res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-store', Connection: 'keep-alive' });
+    res.flushHeaders();
     clients.add(res);
-    req.on('close', () => clients.delete(res));
+    res.on('close', () => clients.delete(res));
     return;
   }
   if (url.pathname === '/api/state') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(state()));
   }
-  if (STATIC[url.pathname]) return sendFile(res, STATIC[url.pathname]);
+  if (url.pathname === '/api/report' || url.pathname === '/api/report/download') {
+    if (req.method !== 'GET') {
+      res.writeHead(405, { Allow: 'GET' });
+      return res.end();
+    }
+    const now = Date.now();
+    const headers = { 'Content-Type': 'text/markdown; charset=utf-8', 'Cache-Control': 'no-store' };
+    if (url.pathname.endsWith('/download') || url.searchParams.get('download') === '1') {
+      headers['Content-Disposition'] = `attachment; filename="outbound-${localDate(now)}.md"`;
+    }
+    res.writeHead(200, headers);
+    return res.end(renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now));
+  }
+  if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
-  const file = path.join(__dirname, 'public', path.normalize(rel));
-  if (!file.startsWith(path.join(__dirname, 'public'))) { res.writeHead(403); return res.end(); }
+  const file = path.resolve(PUBLIC, rel);
+  if (!file.startsWith(PUBLIC + path.sep)) { res.writeHead(403); return res.end(); }
   sendFile(res, file);
 });
 
