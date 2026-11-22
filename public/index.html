@@ -26,6 +26,7 @@
       <button class="view-btn" data-view="scan" role="tab">Stored data</button>
       <button class="view-btn" data-view="dossier" role="tab">Dossier</button>
       <button class="view-btn" data-view="rules" role="tab">Rules</button>
+      <button class="view-btn" data-view="history" role="tab">History</button>
     </nav>
     <div class="stats">
       <div class="stat"><b id="stat-apps">--</b><span>apps online</span></div>
@@ -196,6 +197,10 @@
       <div id="rules-pending"></div>
       <pre id="rules-plan" class="policy-plan" hidden></pre>
       <div id="rules-list" class="card"></div>
+    </section>
+    <section class="view intel-view hidden" id="view-history">
+      <div class="intel-heading"><h2>Week history</h2><p id="history-status" role="status">Waiting for local history.</p></div>
+      <div id="history-results" class="intel-grid"></div>
     </section>
   </main>
 

@@ -411,4 +411,49 @@
     }
   });
   Outbound.onView((name) => { if (name === 'rules') refreshPolicy(); });
+
+  const historyMetrics = [
+    ['companies', 'Attributed companies'], ['trackers', 'Tracker companies'], ['countries', 'Countries'],
+    ['backgroundMinutes', 'Background minutes'], ['micSeconds', 'Microphone seconds'], ['cameraSeconds', 'Camera seconds'],
+  ];
+  let historyRequest = 0;
+
+  async function showWeek() {
+    const request = ++historyRequest;
+    const status = $('history-status');
+    const output = $('history-results');
+    try {
+      const { days } = await api('/api/history');
+      if (request !== historyRequest) return;
+      const week = [...days].sort((a, b) => a.date.localeCompare(b.date)).slice(-7);
+      if (!week.length) {
+        status.textContent = 'No calendar days have been recorded on this PC.';
+        output.replaceChildren();
+        return;
+      }
+      status.textContent = 'Most recent ' + week.length + ' recorded days, oldest to newest. Counts sum app observations and can overlap.';
+      const dayTotal = (day, key) => day.apps.some((app) => Number.isFinite(app[key]))
+        ? day.apps.reduce((sum, app) => sum + (Number.isFinite(app[key]) ? app[key] : 0), 0) : null;
+      const chars = '._-:=+*#';
+      const series = historyMetrics.map(([key, label]) => {
+        const points = week.map((day) => dayTotal(day, key));
+        const peak = Math.max(1, ...points.filter(Number.isFinite));
+        const trend = points.map((value) => Number.isFinite(value) ? chars[Math.round(value / peak * (chars.length - 1))] : '?').join('');
+        return `<li><strong>${label}</strong> <code>[${trend}]</code><br>${points.map((point, i) =>
+          esc(week[i].date.slice(5) + ': ' + (point === null ? 'unknown' : number(point)))).join(' / ')}</li>`;
+      });
+      const daily = [...week].reverse().map((day) => card(day.date,
+        list([...day.apps].sort((a, b) => b.companies - a.companies || b.trackers - a.trackers || a.name.localeCompare(b.name))
+          .slice(0, 5).map((app) => `<strong>${esc(app.name)}</strong><br>`
+            + historyMetrics.map(([key, label]) => esc(label.toLowerCase() + ': ' + number(app[key]))).join(' / ')),
+        'No app observations for this day.')));
+      output.innerHTML = card('Daily trends', '<ul>' + series.join('') + '</ul>') + daily.join('');
+    } catch {
+      if (request !== historyRequest) return;
+      status.textContent = 'Local history is unavailable.';
+      output.replaceChildren();
+    }
+  }
+
+  Outbound.onView((name) => { if (name === 'history') showWeek(); });
 })();
