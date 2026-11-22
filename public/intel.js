@@ -137,13 +137,14 @@
       return `<strong>${esc(row.name)}</strong> ${researchBadge(row.researchId)}`
         + '<br>' + esc([row.publisher, row.version, row.installDate, Number.isFinite(row.sizeBytes) ? size(row.sizeBytes) : null].filter(Boolean).join(' / '));
     }), '') : '', 'No installed software entries were reported.');
-    const autoruns = report('autoruns', 'Phones home on its own', (rows) =>
-      '<p class="intel-muted">Flags are based on startup entries, scheduled tasks, and service metadata.</p>'
+    const autoruns = report('autoruns', 'Starts or runs on its own (may send data)', (rows) =>
+      '<p class="intel-muted">Flags are based on startup, task, and service metadata rather than observed traffic.</p>'
       + list(rows.filter((row) => row.flagged).map((row) =>
         `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc(row.kind)}<br>`
           + esc([row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
-    const extensions = report('extensions', 'Extensions that can read every site', (rows) => list(rows.filter((row) => row.allSites).map((row) =>
+    const extensions = report('extensions', 'Extensions allowed to read every site', (rows) =>
+      '<p class="intel-muted">This list reflects the declared scope of extension permissions.</p>' + list(rows.filter((row) => row.allSites).map((row) =>
       `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))} ${researchBadge(row.researchId)}<br>`
       + esc((row.permissions || []).join(', '))), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
