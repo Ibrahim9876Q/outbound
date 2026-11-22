@@ -80,15 +80,16 @@
     const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
     const gap = parseFloat(cs.rowGap) || 0;
-    const availW = stage.clientWidth - padX - 16;
-    const availH = stage.clientHeight - padY - el.toggles.offsetHeight - el.footnote.offsetHeight - gap * 2 - 8;
-    // Everything in the laptop scales with its width, so measure its shape once and scale to fit.
+    const availW = stage.clientWidth - padX;
+    const availH = stage.clientHeight - padY - el.toggles.offsetHeight - el.footnote.offsetHeight - gap * 2;
+    if (availW <= 0 || availH <= 0 || !el.laptop.offsetWidth) return;
+    // Measure the projected keyboard deck, then fill whichever stage dimension runs out first.
     for (let pass = 0; pass < 2; pass++) {
       const w0 = el.laptop.offsetWidth;
       const baseRect = el.base.getBoundingClientRect();
-      const visualH = el.lid.offsetHeight + baseRect.height;
+      const visualH = baseRect.bottom - el.lid.getBoundingClientRect().top;
       const visualW = Math.max(w0, baseRect.width);
-      const w = Math.max(420, Math.floor(Math.min(availW * w0 / visualW, availH * w0 / visualH, 1500)));
+      const w = Math.max(1, Math.floor(Math.min(availW * w0 / visualW, availH * w0 / visualH, 1600)));
       el.laptop.style.setProperty('--lw', `${w}px`);
       const squash = el.base.offsetHeight - el.base.getBoundingClientRect().height;
       el.laptop.style.setProperty('--base-squash', `${Math.max(0, squash)}px`);

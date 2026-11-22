@@ -58,7 +58,7 @@
 /* ---------- laptop ---------- */
 
 .laptop {
-  --lw: 900px;
+  --lw: min(900px, 100%);
   width: var(--lw);
   flex: none;
   container-type: inline-size;
