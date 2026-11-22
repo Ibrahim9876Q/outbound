@@ -67,17 +67,19 @@
     const name = node('div');
     name.append(node('span', tracker.domain, 'phone-domain'));
     if (tracker.org) name.append(node('small', tracker.org));
-    if (tracker.code) name.append(node('small', 'Match Outbound ref ' + tracker.code + ' in Guardian.'));
+    if (tracker.code) name.append(node('small', state.demo ? 'Demo request ' + tracker.code :
+      'Match Outbound ref ' + tracker.code + ' in Guardian.'));
     if (tracker.state === 'approved') {
       name.append(node('small', 'Expires at ' + time.format(tracker.expiresAt)));
     }
     if (tracker.reason) name.append(node('small', tracker.reason));
     const actions = node('div', null, 'phone-tracker-actions');
-    actions.append(status(...trackerStatuses[tracker.state]));
+    actions.append(state.demo && tracker.state === 'pending' ? status('Waiting for demo decision', 'pending') :
+      status(...trackerStatuses[tracker.state]));
     const revoke = tracker.state === 'approved';
     const request = ['blocked', 'revoked', 'expired', 'failed', 'denied'].includes(tracker.state);
     if (revoke || (request && consent.ciba && consent.fga !== 'unconfigured')) {
-      const button = node('button', revoke ? 'Revoke' : 'Ask Guardian', 'phone-button');
+      const button = node('button', revoke ? 'Revoke' : state.demo ? 'Request demo approval' : 'Ask Guardian', 'phone-button');
       button.type = 'button';
       button.dataset.domain = tracker.domain;
       button.dataset.action = revoke ? 'revoke' : 'request';
@@ -90,6 +92,7 @@
   }
 
   function authMessage(consent) {
+    if (state.demo) return 'Demo approvals last one minute. Use the demo controls to approve or deny a request.';
     if (consent.fga === 'unconfigured') return 'Known trackers are blocked. Configure Auth0 FGA and CIBA to request access.';
     if (consent.fga === 'unavailable') return 'FGA is unavailable. New tracker lookups stay blocked if an approval can’t be verified.';
     if (!consent.ciba) return 'Configure Auth0 CIBA to send approval requests to Guardian.';
@@ -99,6 +102,23 @@
 
   function render() {
     const { dns, stats, consent } = state;
+    const demoPanel = byId('demo');
+    demoPanel.hidden = !state.laptop;
+    byId('demo-label').textContent = state.demo ? 'DEMO DATA' : 'Laptop DNS test';
+    byId('demo-description').textContent = state.demo ?
+      'Simulated Auth0 approval with real loopback DNS. Runs offline on this laptop.' :
+      'Send a lookup from this laptop and approve it on your enrolled phone.';
+    for (const button of demoPanel.querySelectorAll('button')) {
+      button.hidden = !state.demo && button.dataset.demo !== 'lookup';
+      button.disabled = busy || (button.dataset.demo !== 'lookup' &&
+        !consent.trackers.some((tracker) => tracker.state === 'pending'));
+    }
+    const pending = consent.trackers.find((tracker) => tracker.state === 'pending');
+    byId('approval-wait').hidden = state.demo || !pending;
+    if (pending && !state.demo) {
+      const seconds = Math.max(0, Math.ceil((pending.expiresAt - Date.now()) / 1000));
+      byId('approval-clock').textContent = Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
+    }
     const gatewayStatus = byId('status');
     gatewayStatus.textContent = dns.host === '127.0.0.1' ? 'Loopback DNS listening' : 'Phone DNS listening';
     gatewayStatus.dataset.live = 'true';
@@ -108,7 +128,7 @@
     byId('approved').textContent = ['unavailable', 'loading'].includes(consent.fga) ? '—' : number.format(consent.active);
     byId('auth-status').textContent = authMessage(consent);
     renderFeed();
-    const key = JSON.stringify([consent, busy]);
+    const key = JSON.stringify([consent, busy, state.demo]);
     if (key !== trackersKey) {
       trackersKey = key;
       const list = byId('trackers');
@@ -120,21 +140,24 @@
   }
 
   async function changeConsent(event) {
-    const button = event.target.closest('button[data-action]');
+    const button = event.target.closest('button[data-action], button[data-demo]');
     if (!button || busy) return;
-    const { domain, action } = button.dataset;
+    const { domain, action, demo } = button.dataset;
     const message = byId('action-status');
     message.hidden = false;
-    message.textContent = action === 'request' ? 'Preparing Guardian request…' : 'Revoking approval…';
+    message.textContent = demo ? 'Running demo action…' :
+      action === 'request' ? 'Preparing approval request…' : 'Revoking approval…';
     busy = true;
     render();
     try {
-      const response = await fetch('/api/trackers/' + encodeURIComponent(domain) + '/' + action, {
+      const url = demo ? '/api/demo/' + demo : '/api/trackers/' + encodeURIComponent(domain) + '/' + action;
+      const response = await fetch(url, {
         method: 'POST', headers: { 'X-Outbound-Action': '1' }, signal: AbortSignal.timeout(15000),
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error);
-      message.textContent = action === 'request' ? 'Check the request below for ' + domain + '.' : 'Revoked approval for ' + domain + '.';
+      message.textContent = result.message || (action === 'request' ? 'Check the request below for ' + domain + '.' :
+        'Revoked approval for ' + domain + '.');
     } catch (error) {
       message.textContent = error.name === 'Error' ? error.message : 'Could not reach the gateway.';
     } finally {
@@ -162,5 +185,6 @@
 
   filter.addEventListener('change', renderFeed);
   byId('trackers').addEventListener('click', changeConsent);
+  byId('demo').addEventListener('click', changeConsent);
   void poll();
 })();

@@ -81,6 +81,9 @@
 .phone-metrics > div:nth-child(3) dd { color: var(--phone-text); }
 .phone-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
 .phone-card { min-width: 0; border: 1px solid var(--phone-border); background: var(--phone-panel); }
+.phone-demo { padding: 1rem; margin-bottom: 1rem; font-family: Consolas, "Courier New", monospace; }
+.phone-demo p { margin: .25rem 0 .65rem; }
+.phone-demo .phone-button { margin-bottom: .25rem; }
 .phone-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1rem; border-bottom: 1px solid var(--phone-border); }
 .phone-card-head h2 { font-size: 1.12rem; }
 .phone-filter { display: flex; align-items: center; gap: .35rem; color: var(--phone-muted); font-size: .875rem; white-space: nowrap; cursor: pointer; }

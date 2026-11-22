@@ -1,5 +1,18 @@
 # Outbound Phone
 
+## Laptop-only consent demo
+
+Stop any gateway already using port 4320, then run `node gateway/server.js --demo` and open the [Phone dashboard](http://127.0.0.1:4320/).
+
+1. Click **Look up tracker** to see a blocked lookup.
+2. Click **Request demo approval**, then **Deny demo request**. Look up the tracker again to confirm it is blocked.
+3. Request approval again and click **Approve demo request**. Look up the tracker to see the approved DNS response.
+4. Click **Revoke**, then look up the tracker again. A one-minute approval also expires automatically.
+
+The **DEMO DATA** banner identifies simulated Auth0 decisions. The gateway processes actual loopback DNS requests and uses an offline fixture answer. Demo approvals stay in memory and reset on restart.
+
+With both providers configured, the same command runs live consent with a laptop DNS test button. Select **Ask Guardian**, respond on the enrolled phone before the countdown expires, then repeat the lookup. The demo decision buttons are available only with the offline fallback.
+
 Run the gateway from the repo root with Node 24 and open the [Phone dashboard](http://127.0.0.1:4320/).
 
 ```powershell
@@ -15,6 +28,8 @@ The dashboard listens on the PC's loopback address at port **4320**. The default
 3. Restart the gateway. Set the phone's DNS server to the PC's adapter address. With WireGuard, use that address for the phone tunnel's DNS and include it in the peer's allowed addresses. Use a fresh DNS lookup to verify that the dashboard receives traffic. [iPhone Wi-Fi settings](https://support.apple.com/guide/iphone/manage-wi-fi-settings-iphw5gjwl8k2/27/ios/27) · [Android network settings](https://support.google.com/android/answer/9654714?hl=en)
 
 ## Enable Auth0 consent
+
+To publish the bundled model from the laptop, first fill `FGA_API_URL`, `FGA_STORE_ID`, `FGA_CLIENT_ID` and `FGA_CLIENT_SECRET` in `.env`. Run `node gateway/fga-model.js` with a store client that can write models, then paste the printed `FGA_MODEL_ID` line into `.env`.
 
 1. Create an Auth0 FGA store. In Model Explorer, publish [consent.fga](consent.fga). In store Settings, create an authorized client that can read and write tuples and perform checks. Paste the regional API URL, store ID, published model ID, client ID and secret into `.env`. [FGA models](https://docs.fga.dev/intro/models) · [FGA store settings](https://docs.fga.dev/intro/settings)
 2. Create an Auth0 tenant with CIBA trial or paid access. Create a **Regular Web Application** with **Client Secret (Post)** authentication and RS256 signing. Enable the **Client Initiated Backchannel Authentication** grant and Guardian push. Create a test approver and enroll their device in Guardian through Universal Login. Paste the tenant hostname, application credentials and enrolled user's `user_id` into `.env`. [Auth0 CIBA setup](https://auth0.com/blog/building-secure-ai-agents-microsoft-agent-framework-auth0-part-4-human-in-the-loop-approval/)

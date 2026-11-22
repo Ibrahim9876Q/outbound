@@ -1,5 +1,9 @@
 # Phone lane progress
 
+## 2026-11-21 19:01 EST — Laptop-only consent demo
+
+Added an opt-in offline demo with an on-screen DEMO DATA banner, simulated approval decisions, and real loopback DNS through the gateway. Verified through the HTTP and DNS endpoints that the tracker stays blocked while pending and after denial, resolves after approval, and is blocked again after revocation. All four gateway tests passed.
+
 ## 2026-11-21 18:57 EST — Recheck grants after DNS resolution
 
 Direct tracker queries now recheck consent after the upstream resolver answers. Added a loopback regression that revokes approval during upstream resolution and verifies the gateway refuses the response. The hosted Auth0 and phone checks remain pending because the local configuration is absent.

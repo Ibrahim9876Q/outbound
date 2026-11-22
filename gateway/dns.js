@@ -181,7 +181,7 @@ async function forward(packet, question, upstreams, tcp) {
   throw new Error('Upstream DNS unavailable');
 }
 
-function createHandler({ upstreams, allowTracker, onLookup }) {
+function createHandler({ upstreams, allowTracker, onLookup, resolve = forward }) {
   let inFlight = 0;
   return async function handle(packet, tcp) {
     if (packet.length < HEADER || (packet[2] & 0x80)) return null;
@@ -207,7 +207,7 @@ function createHandler({ upstreams, allowTracker, onLookup }) {
         log('blocked', direct);
         return reply(packet, question, RCODE.REFUSED);
       }
-      const { response, answer } = await forward(packet, question, upstreams, tcp);
+      const { response, answer } = await resolve(packet, question, upstreams, tcp);
       const { trackers, ttlOffsets } = inspectAnswer(response, answer);
       if (trackers.size > 8) throw new Error('Too many tracker names in DNS response');
       // Approval may have expired or been revoked while the upstream resolver answered.

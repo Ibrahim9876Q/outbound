@@ -6,6 +6,7 @@ const dns = require('node:dns');
 const { startDns } = require('./dns');
 const { createFga, createCiba } = require('./auth0');
 const { createConsent, ConsentError } = require('./consent');
+const { createDemo, lookupTracker } = require('./demo');
 
 const DASHBOARD_PORT = 4320;
 const LOOPBACK = '127.0.0.1';
@@ -72,16 +73,17 @@ function json(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data', 'phone-consent.json') } = {}) {
+async function startGateway(config, { fetch, laptop = false, catalogPath = path.join(ROOT, 'data', 'phone-consent.json') } = {}) {
+  const demo = laptop && !(config.fga && config.ciba) ? createDemo() : null;
   const assets = new Map(await Promise.all(Object.entries(ASSETS).map(async ([route, [type, file]]) =>
     [route, { type, body: await fs.readFile(file) }])));
   const stats = { lookups: 0, blocked: 0 };
   const lookups = [];
   const consent = createConsent({
-    fga: config.fga && createFga(config.fga, fetch),
-    ciba: config.ciba && createCiba(config.ciba, fetch),
+    fga: demo?.fga || (config.fga && createFga(config.fga, fetch)),
+    ciba: demo?.ciba || (config.ciba && createCiba(config.ciba, fetch)),
     grantMinutes: config.grantMinutes,
-    catalogPath,
+    catalogPath: demo ? null : catalogPath,
   });
   let dnsListener;
   const server = http.createServer(async (req, res) => {
@@ -95,6 +97,18 @@ async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data
     if (req.method === 'POST') {
       if (req.headers.origin !== 'http://' + req.headers.host || req.headers['x-outbound-action'] !== '1') {
         return json(res, 403, { error: 'Use the local Phone view to change tracker permissions.' });
+      }
+      if (laptop && req.url === '/api/demo/lookup') {
+        try {
+          return json(res, 200, { message: await lookupTracker(dnsListener.port) });
+        } catch {
+          return json(res, 500, { error: 'Laptop DNS lookup failed.' });
+        }
+      }
+      if (demo && ['/api/demo/approve', '/api/demo/deny'].includes(req.url)) {
+        const accepted = demo.decide(req.url.endsWith('/approve') ? 'approved' : 'denied');
+        return accepted ? json(res, 200, { message: 'Demo decision submitted.' }) :
+          json(res, 409, { error: 'No pending demo request.' });
       }
       const action = /^\/api\/trackers\/([a-z0-9.-]{1,253})\/(request|revoke)$/.exec(req.url);
       if (!action) return json(res, 404, { error: 'Not found.' });
@@ -115,7 +129,7 @@ async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data
     if (req.url === '/api/state') {
       return json(res, 200, {
         dns: { host: config.host, port: dnsListener.port },
-        stats, lookups, consent: consent.snapshot(),
+        stats, lookups, consent: consent.snapshot(), laptop, demo: Boolean(demo),
       });
     }
     const asset = assets.get(req.url);
@@ -137,6 +151,7 @@ async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data
   try {
     dnsListener = await startDns({
       ...config,
+      resolve: demo?.resolve,
       onError,
       allowTracker: consent.allowTracker,
       onLookup(event) {
@@ -160,7 +175,12 @@ async function startGateway(config, { fetch, catalogPath = path.join(ROOT, 'data
     close();
     throw error;
   }
-  return { close, dnsPort: dnsListener.port };
+  return { close, dnsPort: dnsListener.port, demo: Boolean(demo) };
+}
+
+function printAuthStatus(config, demo) {
+  const status = (value) => value ? 'configured' : 'not configured';
+  console.log('Auth0 FGA: ' + status(config.fga) + ' CIBA: ' + status(config.ciba) + ' Mode: ' + (demo ? 'demo' : 'live'));
 }
 
 async function main() {
@@ -169,8 +189,13 @@ async function main() {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
-  const config = readConfig(process.env);
-  const gateway = await startGateway(config);
+  const laptop = process.argv.includes('--demo');
+  const config = readConfig(laptop ? { ...process.env, PHONE_DNS_HOST: LOOPBACK, PHONE_DNS_CLIENT: LOOPBACK,
+    PHONE_DNS_PORT: '', PHONE_UPSTREAM_DNS: process.env.PHONE_UPSTREAM_DNS || dns.getServers()[0] || LOOPBACK } : process.env);
+  if (laptop) config.port = 0;
+  if (laptop && !(config.fga && config.ciba)) config.grantMinutes = 1;
+  const gateway = await startGateway(config, { laptop });
+  printAuthStatus(config, gateway.demo);
   console.log('Outbound Phone at http://' + LOOPBACK + ':' + DASHBOARD_PORT + '/');
   console.log('Phone DNS listening on ' + config.host + ':' + gateway.dnsPort + ' (UDP and TCP)');
 }

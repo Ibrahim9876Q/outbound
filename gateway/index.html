@@ -13,6 +13,13 @@
     <a class="phone-return" href="http://127.0.0.1:4317/">Computer dashboard <span aria-hidden="true">↗</span></a>
   </header>
   <main class="phone-shell">
+    <section id="phone-demo" class="phone-card phone-demo" hidden aria-label="Laptop-only demo">
+      <strong id="phone-demo-label">Laptop DNS test</strong>
+      <p id="phone-demo-description"></p>
+      <button type="button" class="phone-button" data-demo="lookup">Look up tracker</button>
+      <button type="button" class="phone-button" data-demo="approve" disabled>Approve demo request</button>
+      <button type="button" class="phone-button" data-demo="deny" disabled>Deny demo request</button>
+    </section>
     <section class="phone-intro" aria-labelledby="phone-title">
       <div>
         <h1 id="phone-title">Phone activity</h1>
@@ -46,6 +53,7 @@
         <header class="phone-card-head"><h2 id="phone-consent-title">Tracker permissions</h2></header>
         <div class="phone-consent">
           <p class="phone-hint" id="phone-auth-status">Known trackers stay blocked until approved.</p>
+          <p class="phone-hint" id="phone-approval-wait" hidden>Waiting for approval on your phone... <span id="phone-approval-clock" role="timer"></span></p>
           <p class="phone-action-status" id="phone-action-status" role="status" hidden></p>
           <ul class="phone-trackers" id="phone-trackers"></ul>
           <p class="phone-empty" id="phone-trackers-empty">Tracker domains will appear here as they’re detected.</p>
