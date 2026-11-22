@@ -46,6 +46,7 @@
   `.trim().split(/\s+/);
   const countryRows = new Map();
   const countryTargets = new Map();
+  const expandedCountries = new Set();
   let countryColors = new Map();
   const appButtons = new Map();
   const arcCache = new Map();
@@ -187,32 +188,70 @@
     countryTargets.clear();
     for (const place of places) {
       const code = place.country;
-      totals.set(code, (totals.get(code) || 0) + 1);
+      if (!totals.has(code)) totals.set(code, []);
+      totals.get(code).push(place);
       const best = countryTargets.get(code);
       if (globe && code && hasCoordinates(place) && (!best || place.sockets > best.sockets)) {
         countryTargets.set(code, place);
       }
     }
     const rows = [...totals].sort(([a, aCount], [b, bCount]) =>
-      Number(!a) - Number(!b) || bCount - aCount || countryName(a).localeCompare(countryName(b)));
+      Number(!a) - Number(!b) || bCount.length - aCount.length || countryName(a).localeCompare(countryName(b)));
     reconcile(countries, countryRows, rows, ([code]) => code, ([code]) => {
       const row = node('li', 'globe-country');
       const button = node('button', 'globe-country-button');
       button.type = 'button';
-      button.addEventListener('click', () => focusCountry(code));
+      const details = node('ul', 'globe-country-companies');
+      details.id = 'globe-country-' + (code || 'unknown');
+      button.setAttribute('aria-controls', details.id);
+      button.addEventListener('click', () => {
+        if (expandedCountries.has(code)) {
+          expandedCountries.delete(code);
+        } else {
+          expandedCountries.add(code);
+          if (countryTargets.has(code)) focusCountry(code);
+        }
+        modelKey = '';
+        render();
+      });
       const icon = countryFlag(code);
       icon.setAttribute('aria-hidden', 'true');
       button.append(icon, node('span', 'globe-country-name', countryName(code)),
         node('span', 'globe-count'));
-      row.append(button);
+      row.append(button, details);
       return row;
-    }, (row, [code, count]) => {
+    }, (row, [code, destinations]) => {
       const button = row.firstElementChild;
-      button.disabled = !countryTargets.has(code);
-      button.title = button.disabled ? '' : 'Focus a destination in ' + countryName(code);
-      setText(button.lastElementChild, String(count));
+      const details = row.lastElementChild;
+      const expanded = expandedCountries.has(code);
+      setText(button.lastElementChild, String(destinations.length));
+      button.setAttribute('aria-expanded', String(expanded));
+      details.hidden = !expanded;
+      if (expanded) renderCountryCompanies(details, destinations);
     });
     countryEmpty.hidden = rows.length > 0;
+  }
+
+  function renderCountryCompanies(list, destinations) {
+    const companies = new Map();
+    for (const destination of destinations) {
+      if (!companies.has(destination.org)) companies.set(destination.org, { sockets: 0, apps: new Set() });
+      const company = companies.get(destination.org);
+      if (destination.active) company.sockets += destination.sockets;
+      company.apps.add(destination.appName);
+    }
+    const rows = [...companies].sort(([a, first], [b, second]) =>
+      second.sockets - first.sockets || a.localeCompare(b))
+      .map(([name, { sockets, apps }]) => [name, sockets, [...apps].sort().join(' · ')]);
+    const key = JSON.stringify(rows);
+    if (list.dataset.model === key) return;
+    list.dataset.model = key;
+    list.replaceChildren(...rows.map(([name, sockets, apps]) => {
+      const row = node('li');
+      row.append(node('strong', '', name), node('span', '', sockets + ' live ' + plural(sockets, 'socket')),
+        node('small', '', apps));
+      return row;
+    }));
   }
 
   function makeArcs(places, home) {

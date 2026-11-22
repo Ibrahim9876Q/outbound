@@ -244,7 +244,37 @@
 
 #view-globe .globe-country-button:not(:disabled)::after {
   color: var(--map-muted);
-  content: "↗" / "";
+  content: "+" / "";
+}
+
+#view-globe .globe-country-button[aria-expanded="true"]::after {
+  content: "−" / "";
+}
+
+#view-globe .globe-country-companies {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 8px 12px 16px;
+  list-style: none;
+}
+
+#view-globe .globe-country-companies li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 8px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+#view-globe .globe-country-companies span,
+#view-globe .globe-country-companies small {
+  color: var(--map-muted);
+}
+
+#view-globe .globe-country-companies small {
+  grid-column: 1 / -1;
+  font-size: inherit;
 }
 
 #view-globe .globe-country-button:not(:disabled):hover {
