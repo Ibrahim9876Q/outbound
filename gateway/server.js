@@ -13,6 +13,7 @@ const LOOPBACK = '127.0.0.1';
 const ROOT = path.join(__dirname, '..');
 const DASHBOARD_HOSTS = new Set([LOOPBACK + ':' + DASHBOARD_PORT, 'localhost:' + DASHBOARD_PORT]);
 const ASSETS = {
+  '/style.css': ['text/css', path.join(ROOT, 'public', 'style.css')],
   '/': ['text/html', path.join(__dirname, 'index.html')],
   '/phone.js': ['text/javascript', path.join(ROOT, 'public', 'phone.js')],
   '/phone.css': ['text/css', path.join(ROOT, 'public', 'phone.css')],

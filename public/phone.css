@@ -8,9 +8,10 @@
   margin: 0;
   min-height: 100vh;
   color-scheme: dark;
-  background: var(--phone-bg);
+  background-color: var(--phone-bg);
+  overflow: auto;
   color: var(--phone-text);
-  font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
+  font: 16px/1.5 var(--font-mono, monospace);
 }
 
 .phone *, .phone *::before { box-sizing: border-box; }
@@ -41,7 +42,7 @@
 }
 
 .phone-return { color: var(--phone-muted); font-size: .9rem; }
-.phone-shell { width: min(100%, 1340px); margin: 0 auto; padding: clamp(1.2rem, 4vw, 3.4rem); }
+.phone-shell { width: min(100%, 1340px); height: auto; margin: 0 auto; padding: clamp(1.2rem, 4vw, 3.4rem); }
 .phone-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
 .phone-intro h1 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 750; letter-spacing: -.045em; }
 .phone-intro p { color: var(--phone-muted); }
@@ -81,7 +82,7 @@
 .phone-metrics > div:nth-child(3) dd { color: var(--phone-text); }
 .phone-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
 .phone-card { min-width: 0; border: 1px solid var(--phone-border); background: var(--phone-panel); }
-.phone-demo { padding: 1rem; margin-bottom: 1rem; font-family: Consolas, "Courier New", monospace; }
+.phone-demo { padding: 1rem; margin-bottom: 1rem; }
 .phone-demo p { margin: .25rem 0 .65rem; }
 .phone-demo .phone-button { margin-bottom: .25rem; }
 .phone-terminal {
@@ -92,7 +93,6 @@
   padding: .65rem;
   border: 1px solid var(--phone-border);
   background: var(--phone-bg);
-  font-family: var(--font-mono, Consolas, monospace);
 }
 .phone-terminal [data-blocked] { color: var(--phone-red); }
 .phone-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1rem; border-bottom: 1px solid var(--phone-border); }
@@ -128,7 +128,7 @@
   padding: .35rem .65rem;
   color: var(--phone-text);
   background: #181818;
-  font: 650 .875rem/1.4 "Segoe UI", system-ui, sans-serif;
+  font: 650 .875rem/1.4 var(--font-mono, monospace);
   cursor: pointer;
 }
 .phone-button:hover:enabled { border-color: var(--phone-text); }
@@ -148,15 +148,11 @@
   .phone-table th, .phone-table td, .phone-card-head { padding-inline: .65rem; }
 }
 
-.phone-bar, .phone-endpoint, .phone-card-head, .phone-metrics, .phone-time, .phone-badge {
-  font-family: Consolas, "Courier New", monospace;
-}
 .phone-bar, .phone-card-head { background: #181818; }
 .phone-brand, .phone-card-head h2, .phone-metrics dt {
   text-transform: uppercase;
   letter-spacing: .05em;
 }
-.phone-intro h1 { font-family: Consolas, "Courier New", monospace; }
 .phone-metrics > div { justify-content: flex-end; border-top: 2px solid var(--phone-muted); }
 .phone-metrics > div:nth-child(2) { border-top-color: var(--phone-red); }
 .phone a:hover { text-decoration: underline; }
