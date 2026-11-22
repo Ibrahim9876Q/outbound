@@ -3,6 +3,10 @@
     "checkedAt": "2026-11-22T08:54:40.576Z",
     "status": "reachable"
   },
+  "https://about.fb.com/news/2018/12/facebooks-partners/": {
+    "checkedAt": "2026-11-22T09:32:53.062Z",
+    "status": "reachable"
+  },
   "https://about.fb.com/news/2018/12/facebooks-partners/amp/": {
     "checkedAt": "2026-11-22T08:54:40.358Z",
     "status": "reachable"
@@ -201,6 +205,10 @@
   },
   "https://apps.apple.com/us/app/depop-buy-sell-clothes/id518684914": {
     "checkedAt": "2026-11-22T08:54:42.524Z",
+    "status": "reachable"
+  },
+  "https://apps.apple.com/us/app/discord-talk-play-hang-out/id985746746": {
+    "checkedAt": "2026-11-22T09:32:48.123Z",
     "status": "reachable"
   },
   "https://apps.apple.com/us/app/draftkings-sports-casino/id1375031369": {
@@ -559,6 +567,10 @@
     "checkedAt": "2026-11-22T08:54:54.365Z",
     "status": "reachable"
   },
+  "https://apps.apple.com/us/app/snapchat/id447188370": {
+    "checkedAt": "2026-11-22T09:32:48.148Z",
+    "status": "reachable"
+  },
   "https://apps.apple.com/us/app/southwest-airlines-travel-app/id344542975": {
     "checkedAt": "2026-11-22T08:54:53.582Z",
     "status": "reachable"
@@ -593,6 +605,10 @@
   },
   "https://apps.apple.com/us/app/threads/id6446901002": {
     "checkedAt": "2026-11-22T08:54:54.744Z",
+    "status": "reachable"
+  },
+  "https://apps.apple.com/us/app/tiktok/id835599320": {
+    "checkedAt": "2026-11-22T09:32:48.154Z",
     "status": "reachable"
   },
   "https://apps.apple.com/us/app/toca-boca-world-game-play/id1208138685": {
@@ -661,6 +677,10 @@
   },
   "https://apps.apple.com/us/app/yahoo-mail-your-email-inbox/id577586159": {
     "checkedAt": "2026-11-22T08:54:56.779Z",
+    "status": "reachable"
+  },
+  "https://apps.apple.com/us/app/youtube/id544007664": {
+    "checkedAt": "2026-11-22T09:32:48.389Z",
     "status": "reachable"
   },
   "https://apps.apple.com/us/app/yuka-food-cosmetic-scanner/id1092799236": {
@@ -995,6 +1015,10 @@
     "checkedAt": "2026-11-22T08:55:02.865Z",
     "status": "reachable"
   },
+  "https://newsroom.tiktok.com/how-tiktok-recommends-videos-foryou?lang=en-AU": {
+    "checkedAt": "2026-11-22T09:32:48.823Z",
+    "status": "reachable"
+  },
   "https://newsroom.tiktok.com/mythbusting-the-facts-on-reports-about-our-data-collection-practices-ca?lang=en-CA": {
     "checkedAt": "2026-11-22T08:55:01.799Z",
     "status": "reachable"
@@ -1041,6 +1065,10 @@
   },
   "https://play.google.com/store/apps/details?id=com.nvidia.geforcenow&hl=en_US": {
     "checkedAt": "2026-11-22T08:55:03.142Z",
+    "status": "reachable"
+  },
+  "https://policies.google.com/privacy/archive/20261016?hl=en-US": {
+    "checkedAt": "2026-11-22T09:32:48.283Z",
     "status": "reachable"
   },
   "https://policies.google.com/privacy/frameworks?hl=en": {
@@ -1623,6 +1651,10 @@
     "checkedAt": "2026-11-22T08:55:16.481Z",
     "status": "reachable"
   },
+  "https://search.ftc.gov/news-events/news/press-releases/2019/09/google-youtube-will-pay-record-170-million-alleged-violations-childrens-privacy-law": {
+    "checkedAt": "2026-11-22T09:32:50.162Z",
+    "status": "reachable"
+  },
   "https://search.ftc.gov/news-events/news/press-releases/2020/11/ftc-requires-zoom-enhance-its-security-practices-part-settlement": {
     "checkedAt": "2026-11-22T08:55:21.201Z",
     "status": "reachable"
@@ -1796,7 +1828,7 @@
     "status": "reachable"
   },
   "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ": {
-    "checkedAt": "2026-11-22T09:09:38.516Z",
+    "checkedAt": "2026-11-22T09:32:49.255Z",
     "status": "unavailable",
     "reason": "curl: (22) The requested URL returned error: 403"
   },
@@ -1912,6 +1944,10 @@
     "checkedAt": "2026-11-22T08:55:24.041Z",
     "status": "reachable"
   },
+  "https://www.cnil.fr/en/cookies-and-advertisements-inserted-between-emails-google-fined-325-million-euros-cnil": {
+    "checkedAt": "2026-11-22T09:32:49.540Z",
+    "status": "reachable"
+  },
   "https://www.cnil.fr/fr/publicites-inserees-entre-les-courriels-et-cookies-la-cnil-sanctionne-google-dune-amende-de-325": {
     "checkedAt": "2026-11-22T08:55:24.410Z",
     "status": "reachable"
@@ -1958,6 +1994,10 @@
   },
   "https://www.dataprotection.ie/en/news-media/press-releases/Data-Protection-Commission-announces-conclusion-of-inquiry-into-Meta-Ireland": {
     "checkedAt": "2026-11-22T08:55:23.815Z",
+    "status": "reachable"
+  },
+  "https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-whatsapp-inquiry": {
+    "checkedAt": "2026-11-22T09:32:48.601Z",
     "status": "reachable"
   },
   "https://www.datatilsynet.no/en/news/news-2025/the-court-of-appeal-upholds-the-fine-against-grindr/": {
