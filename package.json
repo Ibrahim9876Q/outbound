@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "phone": "node gateway/server.js",
+    "phone:demo": "node gateway/server.js --demo",
+    "fga:model": "node gateway/fga-model.js",
+    "dev:all": "node scripts/dev-all.js",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",
