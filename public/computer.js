@@ -162,7 +162,10 @@
     const html = (rows.length
       ? rows.slice(0, 4).map((r) => `<li class="${r.now ? 'now' : ''}"><span class="dot"></span>${r.text}</li>`).join('')
       : '<li class="none">No app usage recorded in this sample.</li>') + caps.map((cap) => `<li class="none">${esc(cap)}</li>`).join('');
-    if (list.innerHTML !== html) list.innerHTML = html;
+    if (list.dataset.model !== html) {
+      list.dataset.model = html;
+      list.innerHTML = html;
+    }
   }
 
   function burstCameraLight(cam) {
@@ -184,6 +187,7 @@
 
   const orgChips = new Map(); // org -> chip element
   let moreChip = null;
+  let orgLayoutKey;
   let visibleOrgs = new Map(); // org -> chip element currently shown
 
   function summarizeOrgs(state) {
@@ -235,21 +239,32 @@
     if (ordered.length !== current.length || ordered.some((c, i) => c !== current[i])) {
       for (const chip of ordered) el.orgs.appendChild(chip);
     }
-    el.orgs.appendChild(moreChip);
-    for (const chip of ordered) chip.hidden = false;
-    moreChip.hidden = false;
-    moreChip.textContent = '+99 more';
-    const room = el.orgs.clientWidth - moreChip.offsetWidth - 8;
-    visibleOrgs = new Map();
-    let hidden = 0;
-    for (const chip of ordered) {
-      const fits = chip.offsetLeft - el.orgs.offsetLeft + chip.offsetWidth <= room && hidden === 0;
-      chip.hidden = !fits;
-      if (fits) visibleOrgs.set(chip.dataset.org, chip); else hidden++;
+    const available = el.orgs.clientWidth;
+    const layoutKey = JSON.stringify([available, ...ordered.map((chip) => chip.dataset.html)]);
+    if (layoutKey !== orgLayoutKey) {
+      orgLayoutKey = layoutKey;
+      el.orgs.appendChild(moreChip);
+      for (const chip of ordered) chip.hidden = false;
+      moreChip.hidden = false;
+      moreChip.textContent = `+${list.length} more`;
+      const gap = parseFloat(getComputedStyle(el.orgs).columnGap) || 0;
+      const widths = ordered.map((chip) => chip.offsetWidth);
+      const allFit = widths.reduce((total, width) => total + width + gap, -gap) <= available;
+      let remaining = allFit ? available : available - moreChip.offsetWidth - gap;
+      visibleOrgs = new Map();
+      let hidden = 0;
+      for (const [index, chip] of ordered.entries()) {
+        const fits = hidden === 0 && widths[index] <= remaining;
+        chip.hidden = !fits;
+        if (fits) {
+          visibleOrgs.set(chip.dataset.org, chip);
+          remaining -= widths[index] + gap;
+        } else hidden++;
+      }
+      moreChip.textContent = `+${hidden} more`;
+      moreChip.hidden = hidden === 0;
+      moreChip.title = hidden ? list.slice(-hidden).map((o) => o.org).join(', ') : '';
     }
-    moreChip.textContent = `+${hidden} more`;
-    moreChip.hidden = hidden === 0;
-    moreChip.title = list.slice(list.length - hidden).map((o) => o.org).join(', ');
 
     const countries = new Set(list.flatMap((o) => [...o.countries.keys()]));
     el.internetSub.textContent = list.length
@@ -1117,6 +1132,7 @@
 
   function update(state) {
     lastState = state;
+    if (Outbound.view !== 'computer' || document.hidden) return;
     const observed = new Set(state.links.map(({ kind }) => kind));
     const legend = [
       ['loopback', '---- --  Loopback'], ['parent', '--- . -  Parent process'],
@@ -1187,7 +1203,10 @@
     Outbound.onState(update);
     Outbound.onEvent(toast);
     Outbound.onView(() => { runLoop(); if (Outbound.view === 'computer') relayout(); });
-    document.addEventListener('visibilitychange', runLoop);
+    document.addEventListener('visibilitychange', () => {
+      runLoop();
+      if (!document.hidden && Outbound.view === 'computer') relayout();
+    });
     reducedMotion.addEventListener('change', runLoop);
     runLoop();
   }

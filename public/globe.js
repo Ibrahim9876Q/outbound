@@ -69,6 +69,7 @@
   });
   let selectedApp = null;
   let modelKey = '';
+  let arcModelKey = '';
   let visible = false;
   let rotating = !reducedMotion.matches;
   let pinnedPoint = null;
@@ -470,7 +471,12 @@
     }
     arcCache.clear();
     for (const [id, arc] of next) arcCache.set(id, arc);
-    return [...next.values()];
+    const arcs = [...next.values()];
+    let motionBudget = 160;
+    for (const arc of arcs) {
+      arc.moving = arc.active && !arc.hqLabel && !reducedMotion.matches && motionBudget-- > 0;
+    }
+    return arcs;
   }
 
   function updateCountryCells(places) {
@@ -810,7 +816,14 @@
       else clearPoint();
     }
     const precise = points.filter((point) => !point.approximate);
-    globe.arcsData(makeArcs(located, home)).pointsData(precise)
+    const routes = JSON.stringify([home?.lat, home?.lng, showHeadquarters, reducedMotion.matches,
+      flashingDiscovery?.key, flashingDiscovery?.appId,
+      located.map((place) => [place.id, place.lat, place.lng, place.country, place.approximate, place.active, place.tracker, place.org])]);
+    if (arcModelKey !== routes) {
+      arcModelKey = routes;
+      globe.arcsData(makeArcs(located, home));
+    }
+    globe.pointsData(precise)
       .labelsData(precise.filter((point) => point.places?.length).map((point) => {
         const names = [...new Set(point.places.map((place) => place.appName))];
         const initial = (name) => shared?.util?.initials(name) || name.slice(0, 2).toUpperCase();
@@ -846,11 +859,11 @@
         .arcColor((arc) => arc.flash ? trackerColor : arc.color)
         .arcStroke((arc) => arc.flash ? 0.75 : null)
         .arcCurveResolution(40)
-        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.active && !reducedMotion.matches ? (arc.inbound ? 0.045 : 0.085) : 1)
-        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.active && !reducedMotion.matches ? 0.25 : 0)
+        .arcDashLength((arc) => arc.hqLabel ? 0.018 : arc.moving ? (arc.inbound ? 0.045 : 0.085) : 1)
+        .arcDashGap((arc) => arc.hqLabel ? 0.029 : arc.moving ? 0.25 : 0)
         .arcLabel((arc) => arc.hqLabel ? node('div', 'globe-hq-label', arc.hqLabel) : '')
         .arcDashInitialGap('phase')
-        .arcDashAnimateTime((arc) => arc.active && !reducedMotion.matches ? arc.duration : 0)
+        .arcDashAnimateTime((arc) => arc.moving ? arc.duration : 0)
         .arcsTransitionDuration(0)
         .pointAltitude((point) => point.key === 'home' ? 0.022 : 0.008)
         .pointRadius((point) => point.key === 'home' ? 0.65 : Math.min(2.1, 0.24 + Math.sqrt(point.sockets) * 0.23))
