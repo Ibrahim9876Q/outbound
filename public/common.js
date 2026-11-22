@@ -202,6 +202,12 @@
   // One readable sentence per server event.
   function eventText(e) {
     switch (e.type) {
+      case 'background-talk': {
+        const companies = [...new Set(e.companies || [])].sort();
+        const target = companies.length ? companies.join(', ') : 'unattributed endpoints';
+        return `${appLabel(e.app)} talked to ${target} in the background`;
+      }
+      case 'new-company': return `${appLabel(e.app)} discovered ${e.org || 'a new company'}${place(e)}`;
       case 'new-destination':
         return e.tracker
           ? `${appLabel(e.app)} connected to tracker ${e.org}${place(e)}`
@@ -211,7 +217,7 @@
       case 'mic-off': return `${deviceAppName(e.app)} stopped using the microphone${e.durationMs ? ` (${duration(e.durationMs)})` : ''}`;
       case 'camera-on': return `Camera turned on by ${deviceAppName(e.app)}`;
       case 'camera-off': return `${deviceAppName(e.app)} stopped using the camera${e.durationMs ? ` (${duration(e.durationMs)})` : ''}`;
-      default: return e.type;
+      default: return e.app ? `Observed activity from ${appLabel(e.app)}` : 'Observed local activity';
     }
   }
 

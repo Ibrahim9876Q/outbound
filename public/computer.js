@@ -847,8 +847,6 @@
 
   const feedItems = new Map(); // key -> li
 
-  function eventKey(e) { return `${e.at}|${e.type}|${e.app || e.from}|${e.org || e.to || ''}|${e.host || ''}`; }
-
   function eventClass(e) {
     if (e.type.startsWith('mic')) return 'mic';
     if (e.type.startsWith('camera')) return 'camera';
@@ -858,7 +856,21 @@
 
   function renderFeed(state) {
     const now = Date.now();
-    const events = state.events.slice(0, 40);
+    const bySignature = new Map();
+    const events = [];
+    for (const event of [...state.events].sort((a, b) => b.at - a.at)) {
+      const message = eventText(event);
+      const signature = JSON.stringify([event.type, event.appId || event.app || event.from, message, event.tracker]);
+      const newer = bySignature.get(signature);
+      if (newer && newer.event.at - event.at <= 30000) {
+        newer.count++;
+        newer.oldest = event.at;
+      } else {
+        const group = { event, message, count: 1, oldest: event.at, signature };
+        bySignature.set(signature, group);
+        events.push(group);
+      }
+    }
     if (!events.length) {
       if (!el.feed.querySelector('.none')) el.feed.innerHTML = '<li class="none">Nothing yet. Open an app or a website and watch it appear here.</li>';
       return;
@@ -866,42 +878,28 @@
     el.feed.querySelector('.none')?.remove();
     const keys = new Set();
     let anchor = el.feed.firstChild;
-    for (const e of events) {
-      const key = eventKey(e);
+    for (const { event: e, message, count, oldest, signature } of events.slice(0, 40)) {
+      const key = signature + '|' + oldest;
       keys.add(key);
       let li = feedItems.get(key);
       if (!li) {
         li = document.createElement('li');
         li.className = eventClass(e);
-        li.innerHTML = '<span class="dot"></span><span class="msg"></span><span class="t"></span>';
-        const msg = li.querySelector('.msg');
-        if (firstState || reducedMotion.matches) msg.textContent = eventText(e);
-        else typeLine(li, msg, eventText(e));
+        li.innerHTML = '<span class="feed-app" aria-hidden="true"></span><span class="msg"></span><span class="t"></span>';
+        const app = state.apps.find((app) => app.id === e.appId || app.name === (e.app || e.from));
+        li.firstElementChild.innerHTML = app ? tileInner(app) : esc(initials(e.app || e.from || 'System'));
+        if (!firstState) li.classList.add('feed-enter');
         feedItems.set(key, li);
-        el.feed.insertBefore(li, anchor);
-      } else {
-        anchor = li.nextSibling;
       }
+      if (li !== anchor) el.feed.insertBefore(li, anchor);
+      anchor = li.nextSibling;
+      const text = message + (count > 1 ? ' x' + count : '');
+      if (li.querySelector('.msg').textContent !== text) li.querySelector('.msg').textContent = text;
       const t = li.querySelector('.t');
       const when = ago(e.at, now);
       if (t.textContent !== when) t.textContent = when;
     }
     for (const [key, li] of feedItems) if (!keys.has(key)) { li.remove(); feedItems.delete(key); }
-  }
-
-  // New feed lines type themselves out like a terminal.
-  function typeLine(li, msg, text) {
-    li.classList.add('typing');
-    let i = 0;
-    const timer = setInterval(() => {
-      i = Math.min(text.length, i + 2);
-      msg.textContent = text.slice(0, i);
-      if (i >= text.length || !li.isConnected) {
-        clearInterval(timer);
-        msg.textContent = text;
-        li.classList.remove('typing');
-      }
-    }, 16);
   }
 
   function toast(e) {
