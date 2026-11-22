@@ -13,7 +13,10 @@ function stop(code) {
 }
 
 for (const entry of ['server.js', 'gateway/server.js']) {
-  const child = spawn(process.execPath, [entry], { cwd: root, stdio: 'inherit' });
+  const child = spawn(process.execPath, [entry], {
+    cwd: root, stdio: 'inherit',
+    env: entry === 'server.js' ? { ...process.env, OUTBOUND_PHONE: '1' } : process.env,
+  });
   children.add(child);
   child.once('error', (error) => {
     console.error(`${entry}: ${error.message}`);

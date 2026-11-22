@@ -5,9 +5,10 @@ const fs = require('fs');
 const path = require('path');
 const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
-const { renderReport, localDate } = require('./lib/report');
+const { renderReport, renderScanAndLinks, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
 const { StoredScan } = require('./lib/scan');
+const { LinkWatcher } = require('./lib/links');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -25,10 +26,19 @@ function coordinate(value, limit, fallback) {
 const events = [];
 const stream = new StateStream(state);
 let phone = null;
+let sampledAt = null;
 
-async function pollPhone() {
+function phoneEndpoint() {
+  const address = process.env.PHONE_URL || (process.env.OUTBOUND_PHONE === '1' ? 'http://127.0.0.1:4320' : '');
+  const url = address && URL.parse(address);
+  if (!url || url.protocol !== 'http:' || !['localhost', '127.0.0.1'].includes(url.hostname) || url.username || url.password) return null;
+  url.hostname = '127.0.0.1';
+  return new URL('/api/state', url);
+}
+
+async function pollPhone(endpoint) {
   try {
-    const response = await fetch('http://127.0.0.1:4320/api/state', {
+    const response = await fetch(endpoint, {
       signal: AbortSignal.timeout(1000),
       redirect: 'error',
     });
@@ -60,6 +70,7 @@ function pushEvent(e) {
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
 const scan = new StoredScan();
+const linkWatcher = new LinkWatcher();
 process.on('exit', () => {
   devices.close();
   network.foreground.close();
@@ -68,7 +79,10 @@ process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
 
 function state() {
-  return { at: Date.now(), home: HOME, ...network.snapshot(), devices: devices.snapshot(), events: events.slice(0, 60), phone };
+  const snapshot = network.snapshot();
+  return { at: Date.now(), home: HOME, ...snapshot, legacyLinks: snapshot.links,
+    ...linkWatcher.snapshot(snapshot.apps), devices: devices.snapshot(), events: events.slice(0, 60), phone,
+    sampledAt, fresh: sampledAt !== null };
 }
 
 // Polling loops. Each waits for the previous run to finish so slow commands never pile up.
@@ -79,10 +93,17 @@ function loop(fn, everyMs) {
   };
   go();
 }
-loop(() => network.poll(), 1500);
+loop(async () => {
+  await network.poll();
+  sampledAt = Date.now();
+}, 1500);
 loop(() => devices.poll(), 750);
-setInterval(pollPhone, 2000);
-pollPhone();
+loop(() => {
+  const { apps, links } = network.snapshot();
+  return linkWatcher.poll(apps, links);
+}, 5000);
+const endpoint = phoneEndpoint();
+if (endpoint) loop(() => pollPhone(endpoint), 2000);
 setInterval(() => stream.flush(), 500);
 
 const PUBLIC = path.join(__dirname, 'public');
@@ -131,7 +152,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(403, headers);
         return res.end(JSON.stringify({ ok: false, startedAt: scan.result.startedAt }));
       }
-      const startedAt = scan.start(network.snapshot().apps.map(({ id, name }) => ({ id, name })));
+      const startedAt = scan.start(state().apps.map(({ id, name }) => ({ id, name })));
       res.writeHead(startedAt ? 202 : 409, headers);
       return res.end(JSON.stringify({ ok: Boolean(startedAt), startedAt: startedAt ?? scan.result.startedAt }));
     }
@@ -149,8 +170,9 @@ const server = http.createServer((req, res) => {
       headers['Content-Disposition'] = `attachment; filename="outbound-${localDate(now)}.md"`;
     }
     res.writeHead(200, headers);
-    return res.end(renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now,
-      network.seenCompanies.namesOn(localDate(now))));
+    const daily = renderReport(network.dailyReport.forDay(now), devices.reportSessions(now), now,
+      network.seenCompanies.namesOn(localDate(now)));
+    return res.end(daily + renderScanAndLinks(scan.result, [...linkWatcher.current.edges.values()]));
   }
   if (Object.hasOwn(STATIC, url.pathname)) return sendFile(res, STATIC[url.pathname]);
   const rel = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);

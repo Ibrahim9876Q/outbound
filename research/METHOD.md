@@ -1,0 +1,5 @@
+# Dossier method
+
+The dossier separates publisher disclosures from regulator findings. Candidate records name the terms required to support each short paraphrase. The build downloads public URLs with curl, follows HTTPS redirects, uses a browser user agent, and checks the page text after stripping scripts and styles. A response must contain each required term before the source receives `verified: true` and a fetch timestamp. Review the evidence snippets and keep claims narrow. Failed fetches or evidence checks are recorded in [rejected.md](rejected.md).
+
+An empty section means no claim was verified for that section. A null headquarters field or source date means it was omitted for lack of verified metadata. App domains are identity hints. Policy disclosures describe possible collection or transfers and do not identify the destinations of any particular user's traffic. Enforcement summaries distinguish allegations and settlements from findings. No local traffic, user files, or credentials are used as research inputs.
