@@ -61,3 +61,9 @@ At 1920×1080, headless Chrome sampled three consecutive three-second `requestAn
 | Globe | 90, 85, 90 | 11, 22, 11 ms | 0 |
 
 Every window exceeded 50 fps. These figures describe frame callback cadence on this machine and the recorded endpoint load. No performance change was needed for this replay. The fixture remains opt-in.
+
+## xray10 live browser QA
+
+Turned off replay and used an isolated loopback server with a completed local scan. With browser caching disabled, each of the seven views passed a cold navigation and three reloads in Chrome and Edge at both 1366×768 and 1920×1080. That is 28 cold navigations and 84 reloads. The runs recorded zero console errors, horizontal overflow checks that failed, or external page requests.
+
+Chrome matched all 20 rendered excerpts to their catalog text, source title, date, and link. An unquoted record retained its regular incident layout. All 51 tests and the live smoke check passed.
