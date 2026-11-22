@@ -142,7 +142,7 @@
       '<p class="intel-muted">Flags are based on startup, task, and service metadata rather than observed traffic.</p>'
       + list(rows.filter((row) => row.flagged).map((row) =>
         `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc(row.kind)}<br>`
-          + esc([row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
+          + esc([row.stale && 'Previous observation', row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
     const extensions = report('extensions', 'Extensions allowed to read every site', (rows) =>
       '<p class="intel-muted">This list reflects the declared scope of extension permissions.</p>' + list(rows.filter((row) => row.allSites).map((row) =>
@@ -225,25 +225,46 @@
     const profile = event.target.closest('[data-scan-profile]');
     const toggle = event.target.closest('[data-empty-profiles]');
     if (!lastScan || (!profile && !toggle)) return;
+    const grid = event.target.closest('.intel-grid');
     if (profile) selectedProfile = Number(profile.dataset.scanProfile);
     if (toggle) showEmptyProfiles = !showEmptyProfiles;
     renderScan(lastScan);
     const target = profile ? `[data-scan-profile="${selectedProfile}"]` : '[data-empty-profiles]';
-    event.target.closest('.intel-grid')?.querySelector(target)?.focus();
+    grid?.querySelector(target)?.focus();
   });
 
-  async function refreshScan() {
+  let scanRequest = 0;
+  let hasScanStatus = true;
+  async function refreshScan(backgroundOnly = false) {
     clearTimeout(scanPoll);
+    const request = ++scanRequest;
     try {
+      if (backgroundOnly && hasScanStatus) {
+        try {
+          const status = await api('/api/scan/status');
+          if (request !== scanRequest) return;
+          if (status.appDataBackground) {
+            scanPoll = setTimeout(() => refreshScan(true), 3000);
+            return;
+          }
+        } catch (error) {
+          if (error.status !== 404) throw error;
+          hasScanStatus = false;
+        }
+      }
       const scan = await api('/api/scan');
+      if (request !== scanRequest) return;
       renderScan(scan);
       if (scan.status === 'running') scanPoll = setTimeout(refreshScan, 650);
-      else if (scan.appDataBackground) scanPoll = setTimeout(refreshScan, 3000);
+      else if (scan.appDataBackground) scanPoll = setTimeout(() => refreshScan(true), 3000);
     } catch (error) {
+      if (request !== scanRequest) return;
       setRadar(false);
       scanButton.disabled = error.status === 404;
       $('scan-status').textContent = error.status === 404 ? 'Stored-data scanner is unavailable in this build.' : 'Could not read scan status.';
-      if (error.status !== 404 && Outbound.view === 'scan') scanPoll = setTimeout(refreshScan, 1500);
+      if (error.status !== 404 && (Outbound.view === 'scan' || backgroundOnly)) {
+        scanPoll = setTimeout(() => refreshScan(backgroundOnly), backgroundOnly ? 3000 : 1500);
+      }
     }
   }
 
