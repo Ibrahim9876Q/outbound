@@ -134,3 +134,10 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - Both Chrome demo walkthroughs on port 4318 reached the Tim Hortons source, local dry-run decision, and filtered Globe with zero browser errors or external requests, including rapid switching. Four of the 629 permission records lacked stop timestamps and displayed historical wording. The hidden Globe already had nine filters and 24 mapped destinations before its tab opened.
 - The 1280×800 dry run produced a firewall command. The first executable lookup in the 1920×1080 walkthrough returned a decision without a command, which Rules reported explicitly.
 - A focused 1920×1080 check held the preview request locally. The retry appeared after 15.246 seconds, then a real retry generated a `netsh advfirewall` command. The test removed its rule and recorded zero browser errors. All 40 tests and the smoke check passed.
+
+## xray7 frontend
+
+- Merged integration and the Phone lane's extension index handoff. The Rules consent panel shows sign-in, CIBA, FGA and enforcer configuration from the local APIs. The existing setup guide is served from an explicit loopback route.
+- A real local scan returned 69 extension rows. The five unique extension-ID matches all rendered dossier links. Chrome followed one to its dossier.
+- Unified dashboard panel spacing, headings and frames. A 1920×1080 reload test exposed a delayed navigation after rapid switching. Requests in a burst now settle without waiting for an animation.
+- Final Chrome verification captured all seven views at both sizes after three reloads and rapid switches per size, with zero console errors or external requests. All 40 tests and the smoke check passed. Screenshots stayed outside the repository.

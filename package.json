@@ -10,6 +10,7 @@
     "fga:model": "node gateway/fga-model.js",
     "dev:all": "node scripts/dev-all.js",
     "check": "node scripts/check.js",
+    "docs:counts": "node scripts/update-readme-counts.js",
     "test": "node --test"
   },
   "keywords": [],

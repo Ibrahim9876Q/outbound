@@ -149,10 +149,19 @@
         `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc(row.kind)}<br>`
           + esc([row.stale && 'Previous observation', row.publisher, row.status, row.startType, row.reason].filter(Boolean).join(' / '))),
       'No startup entries were flagged by this scan.'), 'No startup information was reported.');
-    const extensions = report('extensions', 'Extensions allowed to read every site', (rows) =>
-      '<p class="intel-muted">This list reflects the declared scope of extension permissions.</p>' + list(rows.filter((row) => row.allSites).map((row) =>
-      `<strong class="ascii-warning">${esc(row.name)}</strong> / ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))} ${researchBadge(row.researchId)}<br>`
-      + esc((row.permissions || []).join(', '))), 'No extension with all-site access was reported.'), 'No extension inventory was reported.');
+    const extensions = report('extensions', 'Extensions allowed to read every site', (rows) => {
+      const extensionRow = (row) => {
+        const matches = extensionDossiers.get(lower(row.id));
+        const dossier = matches?.length === 1 ? matches[0] : matches?.length ? null : row.researchId;
+        return `<strong${row.allSites ? ' class="ascii-warning"' : ''}>${esc(row.name)}</strong> /
+          ${esc([row.browser, row.profile, row.version].filter(Boolean).join(' / '))} ${researchBadge(dossier)}<br>`
+          + esc((row.permissions || []).join(', '));
+      };
+      const other = rows.filter((row) => !row.allSites);
+      return '<p class="intel-muted">The flags reflect the declared scope of extension permissions.</p>'
+        + list(rows.filter((row) => row.allSites).map(extensionRow), 'No extension with all-site access was reported.')
+        + (other.length ? `<details><summary>Other observed extensions (${other.length})</summary>${list(other.map(extensionRow), '')}</details>` : '');
+    }, 'No extension inventory was reported.');
     const privacy = report('windowsPrivacy', 'Windows privacy checklist', (rows) => rows.length ? list(rows.map((row) =>
       `<strong>[ ] ${esc(row.setting)}</strong><br>Current: ${esc(row.value ?? 'Unavailable')}${row.meaning ? ' / ' + esc(row.meaning) : ''}`
         + (row.recommended ? '<br>Recommended: ' + esc(row.recommended) : '')), '') : '', 'No Windows privacy values were reported.');
@@ -321,6 +330,7 @@
   const entries = (record, key) => (record[key] || []).filter((item) => item.source?.verified === true);
   const fields = ['declared', 'sharesWith', 'destinations', 'incidents'];
   let researchIndex = new Map();
+  let extensionDossiers = new Map();
 
   function researchBadge(id) {
     if (!id) return '';
@@ -389,6 +399,7 @@
         ...(data.companies || []).map((record) => ({ ...record, type: 'company', match: record.aliases || [] })),
       ];
       researchIndex = new Map(research.map((record) => [record.type === 'company' ? 'company:' + record.name : record.id, record]));
+      extensionDossiers = new Map(Object.entries(data.index?.extension || {}));
       const incidents = research.reduce((sum, record) => sum + entries(record, 'incidents').length, 0);
       const sources = new Set(research.flatMap((record) => fields.flatMap((key) => entries(record, key).map((item) => item.source.url).filter(Boolean))));
       $('dossier-count').textContent = (data.apps || []).length + ' apps / ' + incidents + ' incidents / ' + sources.size + ' sources';
@@ -481,7 +492,24 @@
   }
   Outbound.blockButton = blockButton;
 
+  function renderAuthFlow() {
+    const identity = !authLoaded ? 'Checking dashboard sign-in'
+      : !dashboardAuth ? 'Sign-in status unavailable'
+        : !dashboardAuth.enabled ? 'Local mode'
+          : !dashboardAuth.configured ? 'Sign-in setup incomplete'
+            : dashboardAuth.user ? 'Signed in with Auth0' : 'Auth0 sign-in configured';
+    const configured = policy?.auth0Configured ?? policy?.providerConfigured;
+    const providerState = configured == null ? 'Configuration unavailable'
+      : configured ? 'Configured' : 'Setup required';
+    $('auth-flow-identity').textContent = identity;
+    $('auth-flow-push').textContent = providerState;
+    $('auth-flow-fga').textContent = providerState;
+    $('auth-flow-plan').textContent = policy?.enforcer === 'dry-run' ? 'Dry-run configured'
+      : policy?.enforcer ? policy.enforcer + ' configured' : 'Enforcer unavailable';
+  }
+
   function renderPolicy() {
+    renderAuthFlow();
     const pending = $('rules-pending');
     if (blockTarget) {
       const label = policyBusy ? 'Preparing dry-run preview…' : previewRetry ? 'Retry preview' : 'Preview block';
