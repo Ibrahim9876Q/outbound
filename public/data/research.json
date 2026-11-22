@@ -7621,6 +7621,646 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "extension-bmnlcjabgnpnenekpadlanbbkooimhnj",
+      "extensionIds": [
+        "bmnlcjabgnpnenekpadlanbbkooimhnj"
+      ],
+      "name": "PayPal Honey: Automated Coupons & Rewards",
+      "publisher": "PayPal Inc.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Financial and payment information, Location, Web history, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "PayPal Honey: Automated Coupons & Rewards - Chrome Web Store",
+            "publisher": "PayPal Inc.",
+            "url": "https://chromewebstore.google.com/detail/honey-automated-coupons-r/bmnlcjabgnpnenekpadlanbbkooimhnj",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:37.964Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-gomekmidlodglbbmalcneegieacbdmki",
+      "extensionIds": [
+        "gomekmidlodglbbmalcneegieacbdmki"
+      ],
+      "name": "Avast Online Security & Privacy",
+      "publisher": "Gen Digital",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Location, Web history, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Avast Online Security & Privacy - Chrome Web Store",
+            "publisher": "Gen Digital",
+            "url": "https://chromewebstore.google.com/detail/avast-online-security-pri/gomekmidlodglbbmalcneegieacbdmki",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.005Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-gkojfkhlekighikafcpjkiklfbnlmeio",
+      "extensionIds": [
+        "gkojfkhlekighikafcpjkiklfbnlmeio"
+      ],
+      "name": "Hola VPN - Your Website Unblocker",
+      "publisher": "Ran Finkels",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Financial and payment information, Authentication information, Personal communications, Location, Web history, User activity",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Hola VPN - Your Website Unblocker - Chrome Web Store",
+            "publisher": "Ran Finkels",
+            "url": "https://chromewebstore.google.com/detail/hola-vpn-your-website-unb/gkojfkhlekighikafcpjkiklfbnlmeio",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.124Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-eppiocemhmnlbhjplcgkofciiegomcon",
+      "extensionIds": [
+        "eppiocemhmnlbhjplcgkofciiegomcon"
+      ],
+      "name": "Urban VPN Proxy",
+      "publisher": "Urban Cyber Security INC",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Location, Web history, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Urban VPN Proxy - Chrome Web Store",
+            "publisher": "Urban Cyber Security INC",
+            "url": "https://chromewebstore.google.com/detail/urban-vpn-proxy/eppiocemhmnlbhjplcgkofciiegomcon",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.090Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-jghecgabfgfdldnmbfkhmffcabddioke",
+      "extensionIds": [
+        "jghecgabfgfdldnmbfkhmffcabddioke"
+      ],
+      "name": "Volume Master",
+      "publisher": "Peta Sittek",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Volume Master - Chrome Web Store",
+            "publisher": "Peta Sittek",
+            "url": "https://chromewebstore.google.com/detail/volume-master/jghecgabfgfdldnmbfkhmffcabddioke",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.218Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-majdfhpaihoncoakbjgbdhglocklcgno",
+      "extensionIds": [
+        "majdfhpaihoncoakbjgbdhglocklcgno"
+      ],
+      "name": "Free VPN for Chrome - VPN Proxy VeePN",
+      "publisher": "VeePN CORP",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Free VPN for Chrome - VPN Proxy VeePN - Chrome Web Store",
+            "publisher": "VeePN CORP",
+            "url": "https://chromewebstore.google.com/detail/free-vpn-for-chrome-vpn-p/majdfhpaihoncoakbjgbdhglocklcgno",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.326Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-gighmmpiobklfepjocnamgkkbiglidom",
+      "extensionIds": [
+        "gighmmpiobklfepjocnamgkkbiglidom"
+      ],
+      "name": "AdBlock — block ads across the web",
+      "publisher": "ADBLOCK, INC.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "AdBlock — block ads across the web - Chrome Web Store",
+            "publisher": "ADBLOCK, INC.",
+            "url": "https://chromewebstore.google.com/detail/adblock-—-block-ads-acros/gighmmpiobklfepjocnamgkkbiglidom",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:38.543Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-inomeogfingihgjfjlpeplalcfajhgai",
+      "extensionIds": [
+        "inomeogfingihgjfjlpeplalcfajhgai"
+      ],
+      "name": "Chrome Remote Desktop",
+      "publisher": "Google Ireland, Ltd.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Chrome Remote Desktop - Chrome Web Store",
+            "publisher": "Google Ireland, Ltd.",
+            "url": "https://chromewebstore.google.com/detail/chrome-remote-desktop/inomeogfingihgjfjlpeplalcfajhgai",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:39.435Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-bgnkhhnnamicmpeenaelnjfhikgbkllg",
+      "extensionIds": [
+        "bgnkhhnnamicmpeenaelnjfhikgbkllg"
+      ],
+      "name": "AdGuard AdBlocker",
+      "publisher": "Adguard Software Limited",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "AdGuard AdBlocker - Chrome Web Store",
+            "publisher": "Adguard Software Limited",
+            "url": "https://chromewebstore.google.com/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:39.473Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-kbfnbcaeplbcioakkpcpgfkobkghlhen",
+      "extensionIds": [
+        "kbfnbcaeplbcioakkpcpgfkobkghlhen"
+      ],
+      "name": "Grammarly: AI Writing Assistant and Grammar Checker App",
+      "publisher": "Grammarly",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Personal communications, Location, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Grammarly: AI Writing Assistant and Grammar Checker App - Chrome Web Store",
+            "publisher": "Grammarly",
+            "url": "https://chromewebstore.google.com/detail/grammarly-ai-writing-assi/kbfnbcaeplbcioakkpcpgfkobkghlhen",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:39.544Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-cfhdojbkjhnklbpkdaibdccddilifddb",
+      "extensionIds": [
+        "cfhdojbkjhnklbpkdaibdccddilifddb"
+      ],
+      "name": "Adblock Plus - free ad blocker",
+      "publisher": "eyeo GmbH",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Adblock Plus - free ad blocker - Chrome Web Store",
+            "publisher": "eyeo GmbH",
+            "url": "https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:39.671Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-lmjnegcaeklhafolokijcfjliaokphfk",
+      "extensionIds": [
+        "lmjnegcaeklhafolokijcfjliaokphfk"
+      ],
+      "name": "Video Download Helper",
+      "publisher": "SAS ACLAP",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Video Download Helper - Chrome Web Store",
+            "publisher": "SAS ACLAP",
+            "url": "https://chromewebstore.google.com/detail/video-download-helper/lmjnegcaeklhafolokijcfjliaokphfk",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:40.002Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-cmedhionkhpnakcndndgjdbohmhepckk",
+      "extensionIds": [
+        "cmedhionkhpnakcndndgjdbohmhepckk"
+      ],
+      "name": "Adblock for Youtube™",
+      "publisher": "AdBlock Ltd.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Adblock for Youtube™ - Chrome Web Store",
+            "publisher": "AdBlock Ltd.",
+            "url": "https://chromewebstore.google.com/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:43.606Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-lgblnfidahcdcjddiepkckcfdhpknnjh",
+      "extensionIds": [
+        "lgblnfidahcdcjddiepkckcfdhpknnjh"
+      ],
+      "name": "Ad Blocker: Stands AdBlocker",
+      "publisher": "Stands",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Ad Blocker: Stands AdBlocker - Chrome Web Store",
+            "publisher": "Stands",
+            "url": "https://chromewebstore.google.com/detail/ad-blocker-stands-adblock/lgblnfidahcdcjddiepkckcfdhpknnjh",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:43.807Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-aapbdbdomjkkjkaonfhkkikfgjllcleb",
+      "extensionIds": [
+        "aapbdbdomjkkjkaonfhkkikfgjllcleb"
+      ],
+      "name": "Google Translate",
+      "publisher": "Google Ireland, Ltd.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Location, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Google Translate - Chrome Web Store",
+            "publisher": "Google Ireland, Ltd.",
+            "url": "https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:44.067Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-eimadpbcbfnmbkopoojfekhnkhdbieeh",
+      "extensionIds": [
+        "eimadpbcbfnmbkopoojfekhnkhdbieeh"
+      ],
+      "name": "Dark Reader",
+      "publisher": "Dark Reader Ltd",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Dark Reader - Chrome Web Store",
+            "publisher": "Dark Reader Ltd",
+            "url": "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:44.148Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-ekhagklcjbdpajgpjgmbionohlpdbjgc",
+      "extensionIds": [
+        "ekhagklcjbdpajgpjgmbionohlpdbjgc"
+      ],
+      "name": "Zotero Connector",
+      "publisher": "Corporation For Digital Scholarship",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Zotero Connector - Chrome Web Store",
+            "publisher": "Corporation For Digital Scholarship",
+            "url": "https://chromewebstore.google.com/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:44.217Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-aeblfdkhhhdcdjpifhhbdiojplfjncoa",
+      "extensionIds": [
+        "aeblfdkhhhdcdjpifhhbdiojplfjncoa"
+      ],
+      "name": "1Password – Password Manager",
+      "publisher": "AgileBits Inc",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Financial and payment information, Location",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "1Password – Password Manager - Chrome Web Store",
+            "publisher": "AgileBits Inc",
+            "url": "https://chromewebstore.google.com/detail/1password-–-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:44.992Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-fdpohaocaechififmbbbbbknoalclacl",
+      "extensionIds": [
+        "fdpohaocaechififmbbbbbknoalclacl"
+      ],
+      "name": "GoFullPage - Full Page Screen Capture",
+      "publisher": "Full Page LLC",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "GoFullPage - Full Page Screen Capture - Chrome Web Store",
+            "publisher": "Full Page LLC",
+            "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:45.126Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-jplgfhpmjnbigmhklmmbgecoobifkmpa",
+      "extensionIds": [
+        "jplgfhpmjnbigmhklmmbgecoobifkmpa"
+      ],
+      "name": "Proton VPN: Fast & Secure",
+      "publisher": "Proton AG",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Authentication information",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Proton VPN: Fast & Secure - Chrome Web Store",
+            "publisher": "Proton AG",
+            "url": "https://chromewebstore.google.com/detail/proton-vpn-fast-secure/jplgfhpmjnbigmhklmmbgecoobifkmpa",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:45.395Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -12255,7 +12895,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T06:48:54.375Z",
+  "generatedAt": "2026-11-22T06:53:45.632Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -12718,6 +13358,68 @@
       ],
       "zoominfo.com": [
         "zoominfo"
+      ]
+    },
+    "extension": {
+      "aapbdbdomjkkjkaonfhkkikfgjllcleb": [
+        "extension-aapbdbdomjkkjkaonfhkkikfgjllcleb"
+      ],
+      "aeblfdkhhhdcdjpifhhbdiojplfjncoa": [
+        "extension-aeblfdkhhhdcdjpifhhbdiojplfjncoa"
+      ],
+      "bgnkhhnnamicmpeenaelnjfhikgbkllg": [
+        "extension-bgnkhhnnamicmpeenaelnjfhikgbkllg"
+      ],
+      "bmnlcjabgnpnenekpadlanbbkooimhnj": [
+        "extension-bmnlcjabgnpnenekpadlanbbkooimhnj"
+      ],
+      "cfhdojbkjhnklbpkdaibdccddilifddb": [
+        "extension-cfhdojbkjhnklbpkdaibdccddilifddb"
+      ],
+      "cmedhionkhpnakcndndgjdbohmhepckk": [
+        "extension-cmedhionkhpnakcndndgjdbohmhepckk"
+      ],
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh": [
+        "extension-eimadpbcbfnmbkopoojfekhnkhdbieeh"
+      ],
+      "ekhagklcjbdpajgpjgmbionohlpdbjgc": [
+        "extension-ekhagklcjbdpajgpjgmbionohlpdbjgc"
+      ],
+      "eppiocemhmnlbhjplcgkofciiegomcon": [
+        "extension-eppiocemhmnlbhjplcgkofciiegomcon"
+      ],
+      "fdpohaocaechififmbbbbbknoalclacl": [
+        "extension-fdpohaocaechififmbbbbbknoalclacl"
+      ],
+      "gighmmpiobklfepjocnamgkkbiglidom": [
+        "extension-gighmmpiobklfepjocnamgkkbiglidom"
+      ],
+      "gkojfkhlekighikafcpjkiklfbnlmeio": [
+        "extension-gkojfkhlekighikafcpjkiklfbnlmeio"
+      ],
+      "gomekmidlodglbbmalcneegieacbdmki": [
+        "extension-gomekmidlodglbbmalcneegieacbdmki"
+      ],
+      "inomeogfingihgjfjlpeplalcfajhgai": [
+        "extension-inomeogfingihgjfjlpeplalcfajhgai"
+      ],
+      "jghecgabfgfdldnmbfkhmffcabddioke": [
+        "extension-jghecgabfgfdldnmbfkhmffcabddioke"
+      ],
+      "jplgfhpmjnbigmhklmmbgecoobifkmpa": [
+        "extension-jplgfhpmjnbigmhklmmbgecoobifkmpa"
+      ],
+      "kbfnbcaeplbcioakkpcpgfkobkghlhen": [
+        "extension-kbfnbcaeplbcioakkpcpgfkobkghlhen"
+      ],
+      "lgblnfidahcdcjddiepkckcfdhpknnjh": [
+        "extension-lgblnfidahcdcjddiepkckcfdhpknnjh"
+      ],
+      "lmjnegcaeklhafolokijcfjliaokphfk": [
+        "extension-lmjnegcaeklhafolokijcfjliaokphfk"
+      ],
+      "majdfhpaihoncoakbjgbdhglocklcgno": [
+        "extension-majdfhpaihoncoakbjgbdhglocklcgno"
       ]
     }
   }

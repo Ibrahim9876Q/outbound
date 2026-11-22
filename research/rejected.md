@@ -628,3 +628,14 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 ## incidents-07 · 2026-11-22T06:48:54.374Z
 
 - Comscore — https://cases.justia.com/federal/district-courts/illinois/ilndce/1%3A2011cv05807/259136/369/0.pdf — curl: (22) The requested URL returned error: 403
+
+## Chrome Web Store leads
+
+- https://chromewebstore.google.com/detail/ddkjiahejlhfcafbddmgiahcphecmpfh — No public developer name
+- https://chromewebstore.google.com/detail/omghfjlpggmjjaagoclmmobgdodcjboh — No public developer name
+- https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo — No public developer name
+- https://chromewebstore.google.com/detail/akcocjjpkmlniicdeemdceeajlmoabhg — No public developer name
+- https://chromewebstore.google.com/detail/paponcgjfojgemddooebbgniglhkajkj — No public developer name
+- https://chromewebstore.google.com/detail/nenlahapcbofgnanklpelkaejcehkggg — No public developer name
+- https://chromewebstore.google.com/detail/naciaagbkifhpnoodlkhbejjldaiffcm — No public developer name
+- https://chromewebstore.google.com/detail/ogdlpmhglpejoiomcodnpjnfgcpmgale — No public developer name
