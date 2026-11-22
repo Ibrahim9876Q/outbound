@@ -48,3 +48,16 @@ The 80-app measurements remain blocked on integration commit `7c867fa`. Its trac
 - Chrome completed three reloads on each of the seven dashboard views on port 4318. All 21 reloads produced zero console errors and zero external page requests. Edge completed the scrollbar check. Its supplemental reload run timed out.
 - A real local dry-run rule was created and removed in Chrome. A DOM observer counted one update to the empty list, and the policy API confirmed zero remaining rules after refresh.
 - The seven public-facing captures are in `notes/gallery/` at 1920×1080. Stored Data shows the real aggregate summary, with browser profiles and domain rows excluded. Individual connection and device history details were omitted from the gallery.
+
+## xray10 labeled replay
+
+Ran `npm run fixture` on loopback port 4318 with a gitignored, previously collected local recording. The API header and dashboard both showed `FIXTURE DATA`. The sample contained 80 distinct app records and 24 retained remote endpoints.
+
+At 1920×1080, headless Chrome sampled three consecutive three-second `requestAnimationFrame` windows per view.
+
+| View | FPS by window | 95th percentile frame interval | Frame intervals above 33 ms |
+| --- | --- | --- | ---: |
+| Computer | 90, 90, 90 | 11, 11, 11 ms | 0 |
+| Globe | 90, 85, 90 | 11, 22, 11 ms | 0 |
+
+Every window exceeded 50 fps. These figures describe frame callback cadence on this machine and the recorded endpoint load. No performance change was needed for this replay. The fixture remains opt-in.
