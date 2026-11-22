@@ -194,6 +194,18 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:47.809Z"
           }
+        },
+        {
+          "data": "Purchases, contact information, user content, search history, identifiers and diagnostics",
+          "purpose": "The iOS App Store privacy label lists these as data that may be collected and linked to identity.",
+          "source": {
+            "title": "Discord - Talk, Play, Hang Out App - App Store",
+            "publisher": "Discord Inc. via Apple App Store",
+            "url": "https://apps.apple.com/us/app/discord-talk-play-hang-out/id985746746",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:36.399Z"
+          }
         }
       ],
       "sharesWith": [
@@ -696,6 +708,18 @@
             "verified": true,
             "fetchedAt": "2026-11-22T03:49:26.449Z"
           }
+        },
+        {
+          "data": "Purchases, location, contacts, user content, search history and identifiers",
+          "purpose": "The iOS App Store privacy label lists these as data that may be collected and linked to identity.",
+          "source": {
+            "title": "Snapchat App - App Store",
+            "publisher": "Snap, Inc. via Apple App Store",
+            "url": "https://apps.apple.com/us/app/snapchat/id447188370",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:36.759Z"
+          }
         }
       ],
       "sharesWith": [
@@ -1001,6 +1025,30 @@
             "verified": true,
             "fetchedAt": "2026-11-22T05:43:01.187Z"
           }
+        },
+        {
+          "data": "Purchases, financial information, location, contacts, search and browsing history",
+          "purpose": "The iOS App Store privacy label lists these as data that may be collected and linked to identity.",
+          "source": {
+            "title": "YouTube App - App Store",
+            "publisher": "Google LLC via Apple App Store",
+            "url": "https://apps.apple.com/us/app/youtube/id544007664",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:36.731Z"
+          }
+        },
+        {
+          "data": "Video viewing and search history",
+          "purpose": "With YouTube History enabled, Google saves watched videos and searches to the account for recommendations and resuming playback.",
+          "source": {
+            "title": "Privacy Policy – Privacy & Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy/archive/20261016?hl=en-US",
+            "date": "2026-10-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:35.858Z"
+          }
         }
       ],
       "sharesWith": [
@@ -1045,7 +1093,17 @@
             "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3083-google-llc-youtube-llc",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:54:33.051Z"
+            "fetchedAt": "2026-11-22T05:54:33.051Z",
+            "alternates": [
+              {
+                "title": "Google and YouTube Will Pay Record $170 Million for Alleged Violations of Children's Privacy Law | Federal Trade Commission",
+                "publisher": "Federal Trade Commission",
+                "url": "https://search.ftc.gov/news-events/news/press-releases/2019/09/google-youtube-will-pay-record-170-million-alleged-violations-childrens-privacy-law",
+                "date": "2019-09-04",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:23:36.079Z"
+              }
+            ]
           }
         }
       ]
@@ -2418,6 +2476,30 @@
             "verified": true,
             "fetchedAt": "2026-11-22T08:36:37.191Z"
           }
+        },
+        {
+          "data": "Location, photos or videos, audio, contacts, searches, purchases and financial information",
+          "purpose": "The iOS App Store privacy label lists these as data that may be collected and linked to identity.",
+          "source": {
+            "title": "TikTok - Videos, Shop & LIVE App - App Store",
+            "publisher": "TikTok Ltd. via Apple App Store",
+            "url": "https://apps.apple.com/us/app/tiktok/id835599320",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:36.292Z"
+          }
+        },
+        {
+          "data": "Likes, shares, follows, comments and completion of longer videos",
+          "purpose": "TikTok identifies these user interactions as signals for ranking For You recommendations.",
+          "source": {
+            "title": "How TikTok recommends videos #ForYou - Newsroom | TikTok",
+            "publisher": "TikTok Newsroom",
+            "url": "https://newsroom.tiktok.com/how-tiktok-recommends-videos-foryou?lang=en-AU",
+            "date": "2020-06-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:37.625Z"
+          }
         }
       ],
       "sharesWith": [
@@ -2708,7 +2790,17 @@
             "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/decision-concerning-whatsapp-ireland-ltd",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T05:50:11.974Z"
+            "fetchedAt": "2026-11-22T05:50:11.974Z",
+            "alternates": [
+              {
+                "title": "Data Protection Commission announces decision in WhatsApp inquiry | 02/09/2021 | Data Protection Commission",
+                "publisher": "Irish Data Protection Commission",
+                "url": "https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-whatsapp-inquiry",
+                "date": "2021-09-02",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:23:37.530Z"
+              }
+            ]
           },
           "quote": "Following this reassessment, the DPC imposed a fine of €225 million on WhatsApp",
           "quoteSource": {
@@ -11826,7 +11918,17 @@
             "url": "https://www.cnil.fr/fr/publicites-inserees-entre-les-courriels-et-cookies-la-cnil-sanctionne-google-dune-amende-de-325",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:08:29.201Z"
+            "fetchedAt": "2026-11-22T06:08:29.201Z",
+            "alternates": [
+              {
+                "title": "Cookies and advertisements inserted between emails: GOOGLE fined 325 million euros by the CNIL | CNIL",
+                "publisher": "CNIL",
+                "url": "https://www.cnil.fr/en/cookies-and-advertisements-inserted-between-emails-google-fined-325-million-euros-cnil",
+                "date": "2025-09-03",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:23:35.769Z"
+              }
+            ]
           }
         },
         {
@@ -11933,6 +12035,18 @@
             "date": null,
             "verified": true,
             "fetchedAt": "2026-11-22T06:45:36.426Z"
+          }
+        },
+        {
+          "data": "Location signals and samples of saved user audio",
+          "purpose": "Google lists GPS, IP address and nearby networks as location signals. Google says it analyzes samples of saved audio to improve recognition.",
+          "source": {
+            "title": "Privacy Policy – Privacy & Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy/archive/20261016?hl=en-US",
+            "date": "2026-10-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T09:23:35.858Z"
           }
         }
       ],
@@ -12797,7 +12911,17 @@
             "url": "https://about.fb.com/news/2018/12/facebooks-partners/amp/",
             "date": null,
             "verified": true,
-            "fetchedAt": "2026-11-22T06:41:50.489Z"
+            "fetchedAt": "2026-11-22T06:41:50.489Z",
+            "alternates": [
+              {
+                "title": "Let's Clear Up a Few Things About Facebook's Partners",
+                "publisher": "Meta Newsroom",
+                "url": "https://about.fb.com/news/2018/12/facebooks-partners/",
+                "date": "2018-12-18",
+                "verified": true,
+                "fetchedAt": "2026-11-22T09:23:43.053Z"
+              }
+            ]
           }
         }
       ],
@@ -18523,7 +18647,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T09:09:37.533Z",
+  "generatedAt": "2026-11-22T09:32:38.089Z",
   "index": {
     "exe": {
       "brave.exe": [
