@@ -58,6 +58,10 @@
   let mapPoints = [];
   let headquartersFor;
   let showHeadquarters = false;
+  let recentTrail = new Map();
+  const trailTime = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+  });
   let selectedApp = null;
   let modelKey = '';
   let visible = false;
@@ -97,6 +101,11 @@
     render();
   });
   wrap.append(overview, motion, hqToggle);
+  const trail = node('section', 'globe-trail');
+  const trailList = node('ol');
+  const trailEmpty = node('p', '', 'Waiting for new destinations…');
+  trail.append(node('h3', '', 'Data trail'), trailList, trailEmpty);
+  wrap.append(trail);
 
   const legendLabels = ['Outbound route', 'Return route', 'Tracker / analytics'];
   [...legend.children].forEach((row, i) => {
@@ -155,6 +164,42 @@
     const lat = Math.max(-89, Math.min(89, place.lat + Math.sin(angle) * radius));
     const lng = (place.lng + Math.cos(angle) * radius + 540) % 360 - 180;
     return { ...place, city: '', lat, lng, approximate: true };
+  }
+
+  function updateTrail(apps) {
+    const recent = new Map(recentTrail);
+    for (const app of apps) {
+      for (const destination of app.destinations) {
+        if (!Number.isFinite(destination.firstSeen)) continue;
+        const key = JSON.stringify([app.id, destination.ip, destination.firstSeen]);
+        const location = plotLocation({ ...destination, country: countryCode(destination.country) });
+        recent.set(key, [
+          destination.firstSeen, shared?.util?.appLabel?.(app.name) || app.name,
+          destination.org || 'Unknown owner',
+          location.city?.trim() || (location.country ? countryName(location.country) + ' (country only)' : 'Location unknown'),
+        ]);
+      }
+    }
+    recentTrail = new Map([...recent].sort((a, b) => b[1][0] - a[1][0] || a[0].localeCompare(b[0])).slice(0, 6));
+  }
+
+  function renderTrail() {
+    const model = JSON.stringify([...recentTrail.values()]);
+    if (trailList.dataset.model === model) return;
+    trailList.dataset.model = model;
+    trailEmpty.hidden = recentTrail.size > 0;
+    trailList.replaceChildren(...[...recentTrail.values()].map(([at, app, org, location]) => {
+      const row = node('li');
+      const when = node('time', '', trailTime.format(at));
+      when.dateTime = new Date(at).toISOString();
+      row.append(when);
+      for (const value of [app, org, location]) {
+        const cell = node('span', '', value);
+        cell.title = value;
+        row.append(cell);
+      }
+      return row;
+    }));
   }
 
   function countryCode(code) {
@@ -487,6 +532,7 @@
 
   function render() {
     if (!visible || !state) return;
+    renderTrail();
     const apps = state.apps.filter((app) => app.destinations.length);
     const nameCounts = new Map();
     for (const app of apps) nameCounts.set(app.name, (nameCounts.get(app.name) || 0) + 1);
@@ -631,6 +677,7 @@
   }
 
   function receiveState(snapshot) {
+    updateTrail(snapshot.apps);
     const next = new Set(snapshot.apps.flatMap((app) =>
       app.destinations.map((destination) => app.id + '|' + destination.ip)));
     for (const id of next) {
