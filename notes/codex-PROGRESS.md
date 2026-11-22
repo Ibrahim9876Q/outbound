@@ -108,3 +108,15 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - Opt-in scan completed only after the button click, using isolated, empty profile directories. Dossier loaded 70 apps, eight incidents, and 74 sources, and the Fine filter opened a cited result. The Rules UI created an approved local preview showing a real dry-run command, then removed the rule from the temporary policy store.
 - The deployed policy hook was still missing. The Rules walkthrough mounted the existing handler with a test-only adapter. No firewall change was applied, Phone polling was disabled, and no hosted provider was contacted.
 - `npm test` passed 23 tests. `npm run check` passed for 10 assets, state, report, and SSE.
+
+## xray3 frontend
+
+- Merged integration first and merged both lanes before adding extended scan views. The later merge retained the backend policy route hook and the Phone lane's local-origin validation.
+- `6de6ba9` renders readable feed sentences with app icons, 30-second grouping, and an insert animation. Chrome showed eight icon-backed rows with no raw kinds. An isolated grouping check verified the repeat count and newest-first order.
+- `4dfed51` adds the scan summary, visit-sorted profile tabs, empty-profile control, and expandable tracker-company chips. The local Weather.com dataset grouped 15 entries into 12 company chips.
+- `e3e58b0` groups unresolved PIDs, with exact ports in the detail list. No unresolved PIDs appeared in the final live run. An isolated aggregation check preserved both PIDs and ports in one icon.
+- `b20da00` protects hidden layouts and immediately patches device snapshots on SSE events. Chrome found no overlaps with nine icons at 1280×800 and ten at 1920×1080. An isolated on/off check repainted both edges and held stale data. Physical devices were inactive during the walkthrough.
+- `a3c2950` renders the extended scan sections. Explicit local scan runs found 629 permission records, 199 installed entries, eight Windows settings, and 221 autorun entries in one run. The final run reported zero autorun entries. The isolated browser profiles had no extensions.
+- `aa36440` displays the six wire kinds and verified HQ incident badges. Chrome showed four badges and followed one to a cited Dossier entry.
+- `e37acac` and `8eab304` verify actual policy wiring with no adapter. All three rule types were approved, evaluated as blocked, and removed by the real routes using the local dry-run enforcer and an isolated store.
+- Captured all six views in Chrome on port 4318 at 1280×800 and 1920×1080. Three reloads passed with zero browser console errors. `npm test` passed 24 tests. `npm run check` passed for 10 assets, state, report, and SSE.
