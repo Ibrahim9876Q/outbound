@@ -213,12 +213,31 @@
     }
     const html = browsers.join('') || (scan.status === 'done' ? '<p>No stored-data results were reported.</p>' : '');
     const output = $(prefix + '-results');
-    if (output.dataset.model !== html) {
-      const scroll = $('view-scan').scrollTop;
-      output.innerHTML = html;
-      output.dataset.model = html;
-      $('view-scan').scrollTop = scroll;
+    if (output.dataset.model === html) return;
+    const viewport = $('view-scan');
+    const viewportTop = viewport.getBoundingClientRect().top;
+    const oldCards = [...output.children];
+    const cardKey = (node) => node.id || node.querySelector('h2')?.textContent || node.tagName;
+    const anchor = oldCards.find((node) => node.getBoundingClientRect().bottom > viewportTop);
+    const anchorTop = anchor?.getBoundingClientRect().top;
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    const oldByKey = new Map(oldCards.map((node) => [cardKey(node), node]));
+    const nextCards = [...template.content.children].map((node) => {
+      const old = oldByKey.get(cardKey(node));
+      // A user-opened disclosure is UI state, so ignore it in the content comparison.
+      const source = node.outerHTML;
+      if (old?.scanSource === source) return old;
+      node.scanSource = source;
+      return node;
+    });
+    for (let index = 0; index < nextCards.length; index++) {
+      if (output.children[index] !== nextCards[index]) output.insertBefore(nextCards[index], output.children[index] ?? null);
     }
+    while (output.children.length > nextCards.length) output.lastElementChild.remove();
+    output.dataset.model = html;
+    const nextAnchor = anchor && nextCards.find((node) => cardKey(node) === cardKey(anchor));
+    if (nextAnchor) viewport.scrollTop += nextAnchor.getBoundingClientRect().top - anchorTop;
   }
 
   $('view-scan').addEventListener('click', (event) => {
