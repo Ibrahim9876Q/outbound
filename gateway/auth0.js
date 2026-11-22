@@ -6,6 +6,29 @@ const CONSISTENCY = 'HIGHER_CONSISTENCY';
 const RELATION = 'can_resolve';
 const CIBA_GRANT = 'urn:openid:params:grant-type:ciba';
 
+class Auth0Error extends Error {
+  constructor(source, status, payload, secrets = []) {
+    const description = typeof payload?.error_description === 'string' ? payload.error_description : '';
+    let detail = description;
+    for (const secret of secrets.filter(Boolean)) {
+      for (const value of new Set([secret, encodeURIComponent(secret)])) detail = detail.replaceAll(value, '[redacted]');
+    }
+    detail = detail.replace(/\bBearer\s+\S+|\beyJ[\w-]+\.[\w-]+\.[\w-]+/gi, '[redacted]')
+      .replace(/[\x00-\x1f\x7f]/g, ' ').trim().slice(0, 300);
+    const guidance = source === 'CIBA' && /guardian-push: User does not have push notifications set up/i.test(description)
+      ? 'Phone not enrolled in Auth0 Guardian. Open the enrollment email, scan with the Guardian app, then retry.'
+      : status === 401 || status === 403
+        ? 'Check the ' + source + ' credentials and permissions in your Auth0 setup.'
+        : source === 'FGA' ? 'Auth0 FGA could not verify or update tracker consent.' : 'Auth0 could not complete the phone approval request.';
+    super(guidance + (detail ? ' Auth0 reported: ' + detail : ' (HTTP ' + status + ').'));
+    this.source = source;
+  }
+}
+
+async function providerError(source, response, secrets) {
+  return new Auth0Error(source, response.status, await response.json().catch(() => null), secrets);
+}
+
 function createFga(config, fetch = globalThis.fetch) {
   const url = config.api + 'stores/' + config.store;
   const digest = (value) => createHmac('sha256', config.key).update(value).digest('hex');
@@ -25,7 +48,7 @@ function createFga(config, fetch = globalThis.fetch) {
         audience: config.api,
       }),
     });
-    if (!response.ok) throw new Error('FGA token request failed (HTTP ' + response.status + ').');
+    if (!response.ok) throw await providerError('FGA', response, [config.clientSecret]);
     const data = await response.json();
     if (typeof data.access_token !== 'string' || !data.access_token || !Number.isFinite(data.expires_in)) {
       throw new Error('Invalid FGA token response.');
@@ -46,7 +69,7 @@ function createFga(config, fetch = globalThis.fetch) {
       body: JSON.stringify(body),
     });
     if (response.status === 401 && token === usedToken) token = undefined;
-    if (!response.ok) throw new Error('FGA ' + endpoint + ' failed (HTTP ' + response.status + ').');
+    if (!response.ok) throw await providerError('FGA', response, [config.clientSecret, usedToken.value]);
     return response.status === 204 ? {} : response.json();
   }
 
@@ -145,7 +168,7 @@ function createCiba(config, fetch = globalThis.fetch, wait = delay) {
         login_hint: JSON.stringify({ format: 'iss_sub', iss: config.issuer, sub: config.subject }),
         binding_message: binding,
       });
-      if (!response.ok) throw new Error('Guardian request failed (HTTP ' + response.status + ').');
+      if (!response.ok) throw await providerError('CIBA', response, [config.clientSecret]);
       const { auth_req_id: id, expires_in: seconds, interval = 5 } = await response.json();
       if (typeof id !== 'string' || !id || !Number.isInteger(seconds) || seconds < 1 || seconds > 300 ||
           !Number.isInteger(interval) || interval < 1) throw new Error('Invalid Guardian request response.');
@@ -156,20 +179,20 @@ function createCiba(config, fetch = globalThis.fetch, wait = delay) {
         await wait(Math.min(interval * 1000, Math.max(0, deadline - Date.now())));
         if (Date.now() >= deadline) break;
         const response = await post('oauth/token', { grant_type: CIBA_GRANT, auth_req_id: id });
-        const data = await response.json();
+        const data = await response.json().catch(() => null);
         if (response.ok) {
-          await verifyApprover(data.id_token);
+          await verifyApprover(data?.id_token);
           return 'approved';
         }
-        if (data.error === 'authorization_pending') continue;
-        if (data.error === 'slow_down') { interval += 5; continue; }
-        if (data.error === 'access_denied') return 'denied';
-        if (data.error === 'expired_token') break;
-        throw new Error('Guardian status check failed (HTTP ' + response.status + ').');
+        if (data?.error === 'authorization_pending') continue;
+        if (data?.error === 'slow_down') { interval += 5; continue; }
+        if (data?.error === 'access_denied') return 'denied';
+        if (data?.error === 'expired_token') break;
+        throw new Auth0Error('CIBA', response.status, data, [config.clientSecret, id]);
       }
       return 'expired';
     },
   };
 }
 
-module.exports = { createFga, createCiba };
+module.exports = { createFga, createCiba, Auth0Error };

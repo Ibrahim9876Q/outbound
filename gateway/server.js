@@ -108,7 +108,11 @@ async function startGateway(config, { fetch, laptop = false, catalogPath = path.
         }
       }
       if (laptop && req.url === '/api/demo/check') {
-        return json(res, 200, { allowed: await consent.allowTracker(DOMAIN) });
+        try {
+          return json(res, 200, { allowed: await consent.verify(DOMAIN) });
+        } catch (error) {
+          return json(res, 503, { error: error.message });
+        }
       }
       if (demo && ['/api/demo/approve', '/api/demo/deny'].includes(req.url)) {
         const accepted = demo.decide(req.url.endsWith('/approve') ? 'approved' : 'denied');

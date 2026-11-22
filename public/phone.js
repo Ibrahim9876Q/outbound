@@ -95,7 +95,7 @@
   function authMessage(consent) {
     if (state.demo) return 'Demo approvals last one minute. Use the demo controls to approve or deny a request.';
     if (consent.fga === 'unconfigured') return 'Known trackers are blocked. Configure Auth0 FGA and CIBA to request access.';
-    if (consent.fga === 'unavailable') return 'FGA is unavailable. New tracker lookups stay blocked if an approval can’t be verified.';
+    if (consent.fga === 'unavailable') return consent.fgaError || 'FGA is unavailable. New tracker lookups stay blocked if an approval can’t be verified.';
     if (!consent.ciba) return 'Configure Auth0 CIBA to send approval requests to Guardian.';
     return 'Ask Guardian to approve a tracker for ' + number.format(consent.grantMinutes) +
       (consent.grantMinutes === 1 ? ' minute.' : ' minutes.');
