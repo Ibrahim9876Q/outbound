@@ -1886,6 +1886,22 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:12:41.422Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Musical.ly, Inc. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3004",
+          "source": {
+            "title": "Musical.ly, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3004-musically-inc",
+            "date": "2019-02-27",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.059Z"
+          }
         }
       ]
     },
@@ -5835,6 +5851,22 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:08.838Z"
           }
+        },
+        {
+          "kind": "regulator",
+          "title": "Rite Aid Corporation, In the Matter of · FTC case record",
+          "year": 2010,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving biometric data or facial recognition. The earliest dated item in the published case timeline is from 2010.",
+          "caseRef": "072 3121",
+          "source": {
+            "title": "Rite Aid Corporation, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3121-c-4308-rite-aid-corporation-matter",
+            "date": "2010-11-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:15:22.135Z"
+          }
         }
       ],
       "declared": []
@@ -6429,9 +6461,468 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Incentive Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Incentive Services, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "192 3078",
+          "source": {
+            "title": "Incentive Services, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/192-3078-incentive-services-inc-matter",
+            "date": "2020-01-29",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.047Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "DCR Workforce, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "DCR Workforce, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3188",
+          "source": {
+            "title": "DCR Workforce, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3188-dcr-workforce-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.186Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Trueface.ai",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Trueface.ai, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3193",
+          "source": {
+            "title": "Trueface.ai, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3193-truefaceai-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:45.958Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LotaData, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LotaData, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3194",
+          "source": {
+            "title": "LotaData, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3194-lotadata-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.285Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Thru, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Thru, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3196",
+          "source": {
+            "title": "Thru, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3196-thru-inc-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.188Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "EmpiriStat",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "EmpiriStat, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3195",
+          "source": {
+            "title": "EmpiriStat, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3195-empiristat-matter",
+            "date": "2020-01-16",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.079Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Mortgage Solutions FCS, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Mortgage Solutions FCS, Inc. · FTC case record",
+          "year": 2020,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2020.",
+          "caseRef": "182 3199",
+          "source": {
+            "title": "Mortgage Solutions FCS, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3199-mortgage-solutions-fcs-inc",
+            "date": "2020-01-10",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:45.972Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Medable, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Medable, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3192",
+          "source": {
+            "title": "Medable, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3192-medable-inc-matter",
+            "date": "2020-01-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.265Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "InfoTrax Systems, L.C.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "InfoTrax Systems, L.C. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "162 3130",
+          "source": {
+            "title": "InfoTrax Systems, L.C. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/162-3130-infotrax-systems-lc",
+            "date": "2020-01-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.458Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Cambridge Analytica, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Cambridge Analytica, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3107",
+          "source": {
+            "title": "Cambridge Analytica, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3107-cambridge-analytica-llc-matter",
+            "date": "2019-12-18",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:46.370Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LifeLock, Inc., a corporation",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LifeLock, Inc., a corporation · FTC case record",
+          "year": 2010,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2010.",
+          "caseRef": "072 3069",
+          "source": {
+            "title": "LifeLock, Inc., a corporation | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/072-3069-x100023-lifelock-inc-corporation",
+            "date": "2019-10-08",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.049Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LightYear Dealer Technologies, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LightYear Dealer Technologies, LLC, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3051",
+          "source": {
+            "title": "LightYear Dealer Technologies, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3051-lightyear-dealer-technologies-llc-matter",
+            "date": "2019-09-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.891Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "LabMD, Inc. v. Federal Trade Commission",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "LabMD, Inc. v. Federal Trade Commission · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "102 3099",
+          "source": {
+            "title": "LabMD, Inc. v. Federal Trade Commission | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/102-3099-labmd-inc-v-federal-trade-commission",
+            "date": "2019-08-30",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.968Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SecurTest, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SecurTest, Inc., In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "182 3152",
+          "source": {
+            "title": "SecurTest, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/182-3152-securtest-inc-matter",
+            "date": "2019-08-21",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.529Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Equifax, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Equifax, Inc. · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3203",
+          "source": {
+            "title": "Equifax, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3203-equifax-inc",
+            "date": "2019-07-31",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.969Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "James V. Grago, Jr. doing business as ClixSense.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "James V. Grago, Jr. doing business as ClixSense.com, In the Matter of · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3003",
+          "source": {
+            "title": "James V. Grago, Jr. doing business as ClixSense.com, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3003-james-v-grago-jr-doing-business-clixsensecom-matter",
+            "date": "2019-07-02",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:47.730Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Unixiz, Inc. doing business as i-Dressup.com",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Unixiz, Inc. doing business as i-Dressup.com · FTC case record",
+          "year": 2019,
+          "jurisdiction": "United States",
+          "summary": "The FTC case summary describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2019.",
+          "caseRef": "172 3002",
+          "source": {
+            "title": "Unixiz, Inc. doing business as i-Dressup.com | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/172-3002-unixiz-inc-doing-business-i-dressupcom",
+            "date": "2019-04-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:14:48.186Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:14:42.276Z",
+  "generatedAt": "2026-11-22T06:15:57.306Z",
   "index": {
     "exe": {
       "brave.exe": [
