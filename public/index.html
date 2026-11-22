@@ -51,13 +51,7 @@
           <label><input type="checkbox" id="show-local" checked><span class="sw local"></span>App ↔ app (direct)</label>
           <label><input type="checkbox" id="show-shared" checked><span class="sw shared"></span>Same company</label>
           <button class="tool-btn" id="spotlight-btn" title="Cycle through the most interesting things on screen (S)">Demo spotlight</button>
-          <details class="wire-key"><summary>Wire legend</summary><pre>-------  TCP endpoint
----- --  Loopback
---- . -  Parent process
-. . . .  Named pipe
--- -- -  UDP listener
---- ---  Shared company
-.. ---   Shared tracker [!]</pre></details>
+          <details class="wire-key"><summary>Wire legend</summary><pre id="wire-legend-body">Waiting for local state.</pre></details>
         </div>
 
         <div class="laptop">

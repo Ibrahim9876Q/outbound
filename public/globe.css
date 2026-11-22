@@ -206,6 +206,15 @@
 }
 
 #view-globe .globe-estimate-owners dd { margin: 0; }
+.globe-incident-marker {
+  pointer-events: auto;
+  cursor: pointer;
+  color: var(--tracker);
+  background: #080808;
+  border: 1px solid currentColor;
+  padding: 1px 3px;
+  font: 11px var(--font-mono);
+}
 
 #view-globe .globe-hq-toggle,
 #view-globe .globe-hq-label {

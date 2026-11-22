@@ -61,6 +61,7 @@
   let flashingDiscovery = null;
   let discoveryFlashTimer;
   let headquartersFor;
+  let incidentMarkers;
   let showHeadquarters = false;
   let recentTrail = new Map();
   const trailTime = new Intl.DateTimeFormat('en-GB', {
@@ -100,6 +101,8 @@
     showHeadquarters = !showHeadquarters;
     hqToggle.setAttribute('aria-pressed', String(showHeadquarters));
     hqLegend.hidden = !showHeadquarters;
+    incidentLegend.hidden = !showHeadquarters;
+    if (showHeadquarters && !incidentMarkers) loadHQIncidents();
     clearPoint();
     modelKey = '';
     render();
@@ -129,6 +132,10 @@
   hqLegend.append(node('span', 'globe-hq-key'), document.createTextNode('HQ reference / no network hop'));
   hqLegend.hidden = true;
   legend.insertBefore(hqLegend, legend.lastElementChild);
+  const incidentLegend = node('div');
+  incidentLegend.append(node('code', '', '[!]'), document.createTextNode('Verified incidents / HQ reference'));
+  incidentLegend.hidden = true;
+  legend.insertBefore(incidentLegend, legend.lastElementChild);
   tip.hidden = true;
   const countryNote = node('p', 'globe-card-note', 'Estimated server locations, including recently closed connections.');
   countries.before(countryNote);
@@ -503,6 +510,18 @@
   }
 
   function estimateMarker(entry) {
+    if (entry.incident) {
+      const container = node('span', 'globe-incident-anchor');
+      const button = node('button', 'globe-incident-marker', '[' + entry.glyph + '] ' + entry.count);
+      button.type = 'button';
+      button.dataset.dossier = entry.name;
+      button.dataset.dossierKind = entry.kind;
+      button.title = entry.name + ' / ' + entry.count + ' verified incidents / HQ: ' + entry.city;
+      button.setAttribute('aria-label', button.title);
+      button.style.translate = entry.offset + 'px 0';
+      container.append(button);
+      return container;
+    }
     const marker = node('button', 'globe-estimate-marker');
     marker.type = 'button';
     marker.append(node('span', 'globe-estimate-count'));
@@ -513,6 +532,31 @@
     marker.addEventListener('pointerleave', () => { if (pinnedPoint === null) renderPoint(null); });
     marker.addEventListener('click', () => pinPoint(entry.point));
     return marker;
+  }
+
+  async function loadHQIncidents() {
+    let records;
+    try {
+      const response = await fetch('/data/research.json');
+      if (!response.ok) return;
+      records = await response.json();
+    } catch { return; }
+    const cities = new Map();
+    incidentMarkers = [];
+    for (const [kind, entries] of [['company', records.companies || []], ['app', records.apps || []]]) {
+      for (const record of entries) {
+        const incidents = (record.incidents || []).filter((entry) => entry.source?.verified === true);
+        const [hq] = headquartersFor(record.name);
+        if (!incidents.length || !hq) continue;
+        const key = hq.lat + '|' + hq.lng;
+        const index = cities.get(key) || 0;
+        cities.set(key, index + 1);
+        incidentMarkers.push({ ...hq, incident: true, kind, name: record.name, count: incidents.length,
+          glyph: incidents.some((entry) => entry.kind === 'fine') ? '$' : '!', offset: index * 38 });
+      }
+    }
+    modelKey = '';
+    render();
   }
 
   function styleEstimateMarker({ marker, point }) {
@@ -532,7 +576,7 @@
       next.set(point.key, entry);
     }
     estimateMarkers = next;
-    globe.htmlElementsData([...next.values()]);
+    globe.htmlElementsData([...next.values(), ...(showHeadquarters ? incidentMarkers || [] : [])]);
     scheduleEstimateLayout();
   }
 

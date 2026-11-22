@@ -11,8 +11,8 @@
   };
   const card = (title, body) => `<section class="card"><h2>${esc(title)}</h2>${body}</section>`;
   const list = (items, empty) => items.length ? `<ul>${items.map((item) => '<li>' + item + '</li>').join('')}</ul>` : `<p class="intel-muted">${esc(empty)}</p>`;
-  const dossierLink = (name, kind = 'company') => name
-    ? `<button type="button" class="intel-link" data-dossier="${esc(name)}" data-dossier-kind="${kind}">${esc(name)}</button>` : '';
+  const dossierLink = (name, kind = 'company', label = name) => name
+    ? `<button type="button" class="intel-link" data-dossier="${esc(name)}" data-dossier-kind="${kind}">${esc(label)}</button>` : '';
 
   async function api(url, options) {
     const response = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(5000), ...options });

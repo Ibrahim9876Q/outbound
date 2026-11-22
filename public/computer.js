@@ -1052,6 +1052,23 @@
 
   function update(state) {
     lastState = state;
+    const observed = new Set(state.links.map(({ kind }) => kind));
+    const legend = [
+      ['loopback', '---- --  Loopback'], ['parent', '--- . -  Parent process'],
+      ['pipe', '. . . .  Named pipe'], ['udp', '-- -- -  UDP listener'],
+      ['shared-company', '--- ---  Shared company'], ['shared-tracker', '.. ---   Shared tracker [!]'],
+    ];
+    const text = '-------  TCP endpoint\n' + legend.map(([kind, label]) => observed.has(kind) ? label : label + ' / none observed').join('\n');
+    const wireLegend = $('wire-legend-body');
+    if (wireLegend.dataset.model !== text) {
+      wireLegend.dataset.model = text;
+      wireLegend.replaceChildren(document.createTextNode('-------  TCP endpoint\n'), ...legend.map(([kind, label]) => {
+        const line = document.createElement('span');
+        line.classList.toggle('intel-muted', !observed.has(kind));
+        line.textContent = label + (observed.has(kind) ? '' : ' / none observed') + '\n';
+        return line;
+      }));
+    }
     const users = deviceUsers(state);
     renderDevice('mic', state.devices.mic, state);
     renderDevice('camera', state.devices.camera, state);
