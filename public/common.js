@@ -35,7 +35,7 @@
     skip.textContent = 'Skip startup';
     const socketCount = state.apps.reduce((total, app) => total + (app.activeConnections || 0), 0);
     const lines = [
-      '+==================+\n|    O U T B O U N D   |\n+==================+',
+      '+---------------------+\n|   O U T B O U N D   |\n+---------------------+',
       '[ OK ] local state received',
       '[ OK ] Windows device status: ' + (state.devices.source || 'reported'),
       '[ OK ] ' + socketCount + ' active connections observed',
@@ -243,7 +243,7 @@
   function tickCount(id, value) {
     const element = $(id);
     if (counters.get(id)?.to === value || (!counters.has(id) && Number(element.textContent) === value)) return;
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !element.textContent.trim()) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !Number.isFinite(Number(element.textContent))) {
       counters.delete(id);
       element.textContent = value;
       return;

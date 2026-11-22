@@ -100,3 +100,11 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - `7c3a224` adds the page-session strip. During live verification its count rose from seven companies and zero trackers to 18 companies and six trackers. Both sensor timers remained at zero while the devices were inactive.
 - `620d6e3` preserves the laptop scale under 600px of height and lets the stage scroll. At 1280×550 Chrome measured a 640px laptop width and confirmed the stage could scroll to the keyboard and deck.
 - Chrome on port 4318 passed at 1280×800 and 1920×1080 with no console errors. Live verification checked the X-ray verdict against Chrome's observed companies, the app-matched filter, the tracker toast rate and batch, and the Globe flash.
+
+## xray2 frontend
+
+- Merged integration first, then backend and phone before the new API views and again as their scanner, links, research, and policy implementations landed.
+- Chrome at 1280×800 and 1920×1080 observed 41 active sockets, eight rendered wires, 16 Globe arcs and two precise location labels. The boot skip, idle Globe canvas, app keyboard selection, app filters, three reloads, and stale-state recovery after restart passed. The browser walkthrough had no console errors outside the deliberate outage. The live sample did not publish any v2 links in the walkthrough, so the named inter-app link unit test supplies evidence for the backend output shape.
+- Opt-in scan completed only after the button click, using isolated, empty profile directories. Dossier loaded 70 apps, eight incidents, and 74 sources, and the Fine filter opened a cited result. The Rules UI created an approved local preview showing a real dry-run command, then removed the rule from the temporary policy store.
+- The deployed policy hook was still missing. The Rules walkthrough mounted the existing handler with a test-only adapter. No firewall change was applied, Phone polling was disabled, and no hosted provider was contacted.
+- `npm test` passed 23 tests. `npm run check` passed for 10 assets, state, report, and SSE.

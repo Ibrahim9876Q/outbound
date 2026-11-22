@@ -115,7 +115,7 @@
       const parsed = new URL(source.url);
       if (parsed.protocol === 'https:' || parsed.protocol === 'http:') url = parsed.href;
     } catch { /* Invalid citations stay plain text. */ }
-    const details = [source.publisher, source.date].filter(Boolean).join(' / ') || 'Source metadata unavailable';
+    const details = [source.publisher || 'Publisher unavailable', source.date || 'Date unavailable'].join(' / ');
     return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}</small>`;
   }
 
@@ -280,6 +280,8 @@
     }
     const remove = event.target.closest('[data-remove-rule]');
     if (!remove || policyBusy || policy?.enforcer !== 'dry-run') return;
+    const rule = policy.rules?.find((item) => item.id === remove.dataset.removeRule);
+    if (!rule || (rule.approval?.via === 'auth0' && (policy.auth0Configured ?? policy.providerConfigured))) return;
     policyBusy = true;
     renderPolicy();
     try {
