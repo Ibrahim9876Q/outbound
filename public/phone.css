@@ -84,6 +84,17 @@
 .phone-demo { padding: 1rem; margin-bottom: 1rem; font-family: Consolas, "Courier New", monospace; }
 .phone-demo p { margin: .25rem 0 .65rem; }
 .phone-demo .phone-button { margin-bottom: .25rem; }
+.phone-terminal {
+  margin-top: .75rem;
+  max-height: 13rem;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  padding: .65rem;
+  border: 1px solid var(--phone-border);
+  background: var(--phone-bg);
+  font-family: var(--font-mono, Consolas, monospace);
+}
+.phone-terminal [data-blocked] { color: var(--phone-red); }
 .phone-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1rem; border-bottom: 1px solid var(--phone-border); }
 .phone-card-head h2 { font-size: 1.12rem; }
 .phone-filter { display: flex; align-items: center; gap: .35rem; color: var(--phone-muted); font-size: .875rem; white-space: nowrap; cursor: pointer; }

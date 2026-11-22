@@ -59,4 +59,4 @@ function createDemo() {
   };
 }
 
-module.exports = { createDemo, lookupTracker };
+module.exports = { createDemo, lookupTracker, DOMAIN };
