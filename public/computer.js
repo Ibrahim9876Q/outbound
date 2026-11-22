@@ -299,7 +299,20 @@
 
   // Apps shown on the desktop: any with network activity, plus anything using the mic or camera.
   function desktopApps(state, users) {
-    const list = state.apps.map((a) => ({ ...a, name: appLabel(a.name), mic: users.mic.has(a.id), cam: users.camera.has(a.id) }));
+    const unresolved = state.apps.filter((app) => /^pid-\d+(?:\.exe)?$/i.test(app.id));
+    const list = state.apps.filter((app) => !unresolved.includes(app))
+      .map((a) => ({ ...a, name: appLabel(a.name), mic: users.mic.has(a.id), cam: users.camera.has(a.id) }));
+    if (unresolved.length) {
+      const destinations = unresolved.flatMap((app) => app.destinations);
+      const countOwners = (rows) => new Set(rows.map((destination) => destination.org).filter((org) => org && org !== 'Unknown owner')).size;
+      list.push({
+        id: 'system:protected', name: `System and protected processes (${unresolved.length})`,
+        icon: null, protectedProcesses: unresolved, destinations, localPeers: [],
+        activeConnections: unresolved.reduce((total, app) => total + app.activeConnections, 0),
+        companies: countOwners(destinations), trackers: countOwners(destinations.filter((destination) => destination.tracker)),
+        mic: unresolved.some((app) => users.mic.has(app.id)), cam: unresolved.some((app) => users.camera.has(app.id)),
+      });
+    }
     for (const kind of ['mic', 'camera']) {
       for (const label of users.unmatched[kind]) {
         const id = `device:${label.toLowerCase()}`;
@@ -312,7 +325,7 @@
     for (const a of list) {
       const born = a.destinations.reduce((m, d) => Math.min(m, d.firstSeen), Infinity);
       // Processes Windows couldn't name rank below every named app.
-      const unknown = /^pid-\d+/i.test(a.id);
+      const unknown = Boolean(a.protectedProcesses);
       const fresh = !unknown && now - born < FRESH_MS;
       a.priority = (a.mic || a.cam ? 1e6 : 0) + (fresh ? 1e4 : 0) + (unknown ? 0 : 1e3) + a.activeConnections * 10 + a.destinations.length;
     }
@@ -380,7 +393,7 @@
 
   // "chatgpt.exe"; apps seen only through the mic/camera have no exe.
   function exeLabel(app) {
-    return app.id.startsWith('device:') ? 'mic / camera only' : app.id;
+    return app.protectedProcesses ? 'Unresolved executables' : app.id.startsWith('device:') ? 'mic / camera only' : app.id;
   }
 
   function tileInner(app) {
@@ -394,6 +407,7 @@
     node.type = 'button';
     node.className = 'app';
     node.dataset.id = app.id;
+    if (app.protectedProcesses) node.setAttribute('aria-expanded', 'false');
     node.innerHTML = `<span class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></span><span class="name"></span><span class="sub" hidden></span>`;
     node.addEventListener('click', (e) => { e.stopPropagation(); select(selected === app.id ? null : app.id); });
     return node;
@@ -439,6 +453,7 @@
     node.title = parts.join(' · ');
     node.setAttribute('aria-label', app.dupe ? app.name + ' (' + exeLabel(app) + ')' : app.name);
     node.setAttribute('aria-pressed', String(selected === app.id));
+    if (app.protectedProcesses) node.setAttribute('aria-expanded', String(selected === app.id));
     node.setAttribute('aria-controls', 'app-detail');
   }
 
@@ -758,6 +773,17 @@
     let html = `<div class="detail-head"><div class="tile">${tile}</div><div><h3>${esc(app.name)}</h3><p class="exe">${esc(exeLabel(app))}</p>`
       + `<p>${app.companies} compan${app.companies === 1 ? 'y' : 'ies'} · ${live} live of ${app.destinations.length} servers${app.trackers ? ` · <span style="color:var(--tracker)">${app.trackers} tracker</span>` : ''}${dev.length ? ` · ${dev.join(', ')}` : ''}</p></div></div>`;
     html += appXray(app);
+    if (app.protectedProcesses) {
+      html += '<div class="detail-sub">System and protected processes</div><ul class="dests protected-list">'
+        + app.protectedProcesses.map((process) => {
+          const pid = /^pid-(\d+)/i.exec(process.id)?.[1];
+          const remote = [...new Set(process.destinations.flatMap((destination) => destination.ports || []))].sort((a, b) => a - b);
+          const udp = [...new Set((process.udp || []).map((listener) => listener.localPort))].sort((a, b) => a - b);
+          return `<li><strong>PID ${esc(pid)}</strong><br>`
+            + (remote.length ? 'Remote TCP ports: ' + remote.join(', ') : 'No remote TCP ports observed')
+            + (udp.length ? '<br>Local UDP ports: ' + udp.join(', ') : '') + '</li>';
+        }).join('') + '</ul>';
+    }
     if (app.destinations.length) {
       html += '<div class="detail-sub">Connected to endpoints attributed to</div><ul class="dests">';
       html += app.destinations.slice(0, 40).map((d) => {
@@ -837,8 +863,8 @@
       return `<div class="xray-group"><strong>${kind === 'mic' ? 'Microphone' : 'Camera'}</strong><span>${lines.map(esc).join('<br>') || 'No use recorded'}</span></div>`;
     }).join('');
     return `<section class="app-xray" aria-label="App X-ray"><p class="xray-verdict">${esc(verdict)}</p>`
-      + `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
-      + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`
+      + (app.protectedProcesses ? '' : `<button type="button" class="tool-btn" data-xray-globe ${app.destinations.length ? '' : 'disabled'}>Show on globe</button>`
+        + `<button type="button" class="tool-btn" data-dossier="${esc(app.id)}" data-dossier-kind="app">Open dossier</button>`)
       + (Outbound.blockButton?.('app', app.id.endsWith('.exe') ? app.id : '') || '')
       + orgs + (flags ? `<div class="xray-countries">${flags}</div>` : '') + history + '</section>';
   }
