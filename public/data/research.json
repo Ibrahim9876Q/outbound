@@ -10419,6 +10419,38 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "extension-efaidnbmnnnibpcajpcglclefindmkaj",
+      "extensionIds": [
+        "efaidnbmnnnibpcajpcglclefindmkaj"
+      ],
+      "name": "Adobe Acrobat: PDF edit, convert, sign tools",
+      "publisher": "Adobe, Inc.",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Location, User activity",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Adobe Acrobat: PDF edit, convert, sign tools - Chrome Web Store",
+            "publisher": "Adobe, Inc.",
+            "url": "https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:18:18.287Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -17077,7 +17109,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:18:15.103Z",
+  "generatedAt": "2026-11-22T08:18:18.291Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -17569,6 +17601,9 @@
       ],
       "cmedhionkhpnakcndndgjdbohmhepckk": [
         "extension-cmedhionkhpnakcndndgjdbohmhepckk"
+      ],
+      "efaidnbmnnnibpcajpcglclefindmkaj": [
+        "extension-efaidnbmnnnibpcajpcglclefindmkaj"
       ],
       "eimadpbcbfnmbkopoojfekhnkhdbieeh": [
         "extension-eimadpbcbfnmbkopoojfekhnkhdbieeh"
