@@ -390,10 +390,11 @@
   }
 
   function makeIcon(app) {
-    const node = document.createElement('div');
+    const node = document.createElement('button');
+    node.type = 'button';
     node.className = 'app';
     node.dataset.id = app.id;
-    node.innerHTML = `<div class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></div><div class="name"></div><div class="sub" hidden></div>`;
+    node.innerHTML = `<span class="tile">${tileInner(app)}<span class="badge tr" hidden></span><span class="badge co" hidden></span><span class="badge dev" hidden></span></span><span class="name"></span><span class="sub" hidden></span>`;
     node.addEventListener('click', (e) => { e.stopPropagation(); select(selected === app.id ? null : app.id); });
     return node;
   }
@@ -435,6 +436,9 @@
     if (app.mic) parts.push('using the microphone');
     if (app.cam) parts.push('using the camera');
     node.title = parts.join(' · ');
+    node.setAttribute('aria-label', app.dupe ? app.name + ' (' + exeLabel(app) + ')' : app.name);
+    node.setAttribute('aria-pressed', String(selected === app.id));
+    node.setAttribute('aria-controls', 'app-detail');
   }
 
   function isRelated(id) {

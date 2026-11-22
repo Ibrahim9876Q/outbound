@@ -213,6 +213,11 @@
 
   function showPlan(plan, decision) {
     const output = $('rules-plan');
+    if (plan?.some((entry) => entry.applied)) {
+      output.textContent = 'The backend reported an applied command. Review the local policy configuration.';
+      output.hidden = false;
+      return;
+    }
     const commands = (plan || []).map((entry) => [entry.command, entry.reason && '# ' + entry.reason].filter(Boolean).join('\n')).filter(Boolean);
     output.textContent = '+-- DRY RUN, nothing applied --+\n'
       + (decision ? 'Decision: ' + decision.status + ' / via ' + decision.via + '\n' : '')

@@ -414,10 +414,20 @@
     const pill = $('pill-live');
     let source;
     let connected = false;
+    let waitingFresh = false;
     let retry = 500;
 
     function publish(state) {
       if (!state || !Array.isArray(state.apps) || (Outbound.state && state.at < Outbound.state.at)) return;
+      if (state.fresh === false || (waitingFresh && state.fresh !== true)) {
+        pill.classList.add('down');
+        setText('live-text', Outbound.state ? 'Stale / waiting for fresh sample' : 'Waiting for first sample');
+        return;
+      }
+      if (connected) {
+        waitingFresh = false;
+        pill.classList.remove('down');
+      }
       const initial = !Outbound.state;
       Outbound.state = state;
       safe(showBoot, state);
@@ -443,7 +453,7 @@
       current.onopen = () => {
         connected = true;
         retry = 500;
-        pill.classList.remove('down');
+        if (waitingFresh) setText('live-text', 'Stale / waiting for fresh sample');
         refresh(current);
       };
       current.addEventListener('state', (message) => {
@@ -460,8 +470,9 @@
         current.close();
         source = null;
         connected = false;
+        waitingFresh = Boolean(Outbound.state);
         pill.classList.add('down');
-        setText('live-text', 'Reconnecting…');
+        setText('live-text', waitingFresh ? 'Stale / reconnecting…' : 'Reconnecting…');
         setTimeout(open, retry);
         retry = Math.min(8000, retry * 2);
       };

@@ -600,7 +600,15 @@
         node('p', '', details.length + ' destinations · approximate (country only)'));
       const owners = node('dl', 'globe-estimate-owners');
       for (const [name, count] of topOrgs) {
-        owners.append(node('dt', '', name), node('dd', '', String(count)));
+        const company = node('dt', '', name);
+        if (pinned && name !== 'Unknown owner') {
+          const button = node('button', 'intel-link', name);
+          button.type = 'button';
+          button.dataset.dossier = name;
+          button.dataset.dossierKind = 'company';
+          company.replaceChildren(button);
+        }
+        owners.append(company, node('dd', '', String(count)));
       }
       tip.append(owners);
       return;
