@@ -50,6 +50,8 @@ body.hc::after { display: none; }
 html, body { height: 100%; margin: 0; }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg);
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
@@ -89,11 +91,13 @@ h1, h2, h3 {
 /* ---------- top bar ---------- */
 
 .topbar {
-  height: var(--topbar-h);
+  min-height: var(--topbar-h);
+  flex: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 22px;
-  padding: 0 20px;
+  padding: 8px 20px;
   border-bottom: 1px solid var(--line);
   background: #000;
   position: relative;
@@ -149,7 +153,7 @@ h1, h2, h3 {
 .view-btn:disabled { opacity: 0.5; cursor: default; }
 .view-btn .ext { font-size: 11px; margin-left: 3px; }
 
-.stats { display: flex; align-items: center; gap: 18px; margin-left: auto; min-width: 0; }
+.stats { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-left: auto; min-width: 0; }
 .stat { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
 .stat b { font: 700 22px var(--font-mono); font-variant-numeric: tabular-nums; }
 .stat span { font: 11px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
@@ -163,14 +167,11 @@ h1, h2, h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  white-space: nowrap;
-  max-width: 240px;
+  overflow-wrap: anywhere;
   min-width: 0;
-  flex: 0 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .pill .dot { width: 8px; height: 8px; background: var(--dim); flex: none; }
+#pill-phone.on .dot { background: var(--fg); }
 #pill-mic.on { color: var(--mic); border-color: var(--mic); box-shadow: 0 0 14px rgba(255, 138, 31, 0.35); }
 #pill-mic.on .dot { background: var(--mic); box-shadow: 0 0 10px var(--mic); animation: pulse 1.4s ease-in-out infinite; }
 #pill-cam.on { color: var(--bg); background: var(--camera); border-color: var(--camera); box-shadow: 0 0 18px rgba(255, 255, 255, 0.55); }
@@ -191,17 +192,17 @@ h1, h2, h3 {
 
 @media (max-width: 1500px) { .brand p { display: none; } }
 @media (max-width: 1360px) {
-  .topbar { gap: 12px; padding: 0 14px; }
+  .topbar { gap: 8px 12px; padding: 8px 14px; }
   .stats { gap: 10px; }
   .stat b { font-size: 18px; }
   .stat span { font-size: 10px; letter-spacing: 0.06em; }
-  .pill { padding: 4px 7px; letter-spacing: 0.04em; max-width: 190px; }
+  .pill { padding: 4px 7px; letter-spacing: 0.04em; }
   .view-btn { padding: 6px 10px; }
 }
 
 /* ---------- page layout ---------- */
 
-main { height: calc(100vh - var(--topbar-h)); position: relative; }
+main { flex: 1; min-height: 0; position: relative; }
 
 .view {
   height: 100%;

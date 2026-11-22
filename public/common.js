@@ -223,6 +223,9 @@
 
     devicePill('pill-mic', 'Mic', state.devices.mic, state);
     devicePill('pill-cam', 'Camera', state.devices.camera, state);
+    const phone = state.phone;
+    $('pill-phone').classList.toggle('on', Boolean(phone));
+    setText('phone-text', phone ? `Phone · ${phone.lookups} lookups · ${phone.blocked} blocked` : 'Phone · Offline');
     setText('live-text', `Live · ${live} connection${live === 1 ? '' : 's'}`);
   }
 
