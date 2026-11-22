@@ -7568,9 +7568,549 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Golf Connect, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Golf Connect, LLC, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3141",
+          "source": {
+            "title": "Golf Connect, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3141-golf-connect-llc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:47.029Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "NAICS Association, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "NAICS Association, LLC, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3138",
+          "source": {
+            "title": "NAICS Association, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3138-naics-association-llc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:47.772Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Forensics Consulting Solutions, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Forensics Consulting Solutions, LLC, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3185",
+          "source": {
+            "title": "Forensics Consulting Solutions, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3185-forensics-consulting-solutions-llc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:48.863Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Jhayrmaine Daniels (California Skate Line)",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Jhayrmaine Daniels (California Skate Line), In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3198",
+          "source": {
+            "title": "Jhayrmaine Daniels (California Skate Line), In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3198-jhayrmaine-daniels-california-skate-line-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:46.426Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Jubilant Clinsys, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Jubilant Clinsys, Inc., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3140",
+          "source": {
+            "title": "Jubilant Clinsys, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3140-jubilant-clinsys-inc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:46.370Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "SteriMed Medical Waste Solutions",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "SteriMed Medical Waste Solutions, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3193",
+          "source": {
+            "title": "SteriMed Medical Waste Solutions, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3193-sterimed-medical-waste-solutions-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:48.085Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Inbox Group, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Inbox Group, LLC, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3202",
+          "source": {
+            "title": "Inbox Group, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3202-inbox-group-llc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:47.953Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "One Industries Corp.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "One Industries Corp., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3201",
+          "source": {
+            "title": "One Industries Corp., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3201-one-industries-corp-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:48.161Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Dale Jarrett Racing Adventure, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Dale Jarrett Racing Adventure, Inc., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3190",
+          "source": {
+            "title": "Dale Jarrett Racing Adventure, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3190-dale-jarrett-racing-adventure-inc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:49.107Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Just Bagels Manufacturing, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Just Bagels Manufacturing, Inc., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3199",
+          "source": {
+            "title": "Just Bagels Manufacturing, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3199-just-bagels-manufacturing-inc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:52.559Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Contract Logix, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Contract Logix, LLC, In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3184",
+          "source": {
+            "title": "Contract Logix, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3184-contract-logix-llc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:52.496Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "IOActive, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "IOActive, Inc., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3187",
+          "source": {
+            "title": "IOActive, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3187-ioactive-inc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:54.599Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Pinger, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Pinger, Inc., In the Matter of · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving privacy framework representations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "152 3137",
+          "source": {
+            "title": "Pinger, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3137-pinger-inc-matter",
+            "date": "2015-10-09",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.293Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Tricolor Auto Acceptance, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Tricolor Auto Acceptance, LLC · FTC case record",
+          "year": 2015,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving consumer reports and related privacy obligations. The earliest dated item in the published case timeline is from 2015.",
+          "caseRef": "142 3073",
+          "source": {
+            "title": "Tricolor Auto Acceptance, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3073-tricolor-auto-acceptance-llc",
+            "date": "2015-09-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.352Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "PaymentsMD, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "PaymentsMD, LLC, In the Matter of · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving health information. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "132 3088",
+          "source": {
+            "title": "PaymentsMD, LLC, In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3088-paymentsmd-llc-matter",
+            "date": "2015-02-06",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.663Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "TinyCo, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "TinyCo, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "132 3209",
+          "source": {
+            "title": "TinyCo, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3209-tinyco-inc",
+            "date": "2014-09-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:54.959Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Yelp Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Yelp Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving children’s online privacy. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "132 3066",
+          "source": {
+            "title": "Yelp Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3066-yelp-inc",
+            "date": "2014-09-17",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.536Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "GMR Transcription Services, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "GMR Transcription Services, Inc., In the Matter of · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "122 3095",
+          "source": {
+            "title": "GMR Transcription Services, Inc., In the Matter of | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/122-3095-gmr-transcription-services-inc-matter",
+            "date": "2014-08-21",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.631Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Credit Karma, Inc.",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Credit Karma, Inc. · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "132 3091",
+          "source": {
+            "title": "Credit Karma, Inc. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3091-credit-karma-inc",
+            "date": "2014-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.565Z"
+          }
+        }
+      ],
+      "declared": []
+    },
+    {
+      "name": "Fandango, LLC",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [
+        {
+          "kind": "regulator",
+          "title": "Fandango, LLC · FTC case record",
+          "year": 2014,
+          "jurisdiction": "United States",
+          "summary": "A press release linked in the FTC case timeline describes a matter involving handling of personal information. The earliest dated item in the published case timeline is from 2014.",
+          "caseRef": "132 3089",
+          "source": {
+            "title": "Fandango, LLC | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3089-fandango-llc",
+            "date": "2014-08-19",
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:19:55.611Z"
+          }
+        }
+      ],
+      "declared": []
     }
   ],
-  "generatedAt": "2026-11-22T06:19:30.618Z",
+  "generatedAt": "2026-11-22T06:19:55.665Z",
   "index": {
     "exe": {
       "brave.exe": [

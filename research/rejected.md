@@ -458,3 +458,9 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Henry Schein Practice Solutions, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/142-3161-c4575-henry-schein-practice-solutions-inc-matter — privacy topic not supported by the case summary or release headlines
 - Oracle Corporation, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3115-c4571-oracle-corporation-matter — privacy topic not supported by the case summary or release headlines
 - Craig Brittain, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3120-craig-brittain-matter — privacy topic not supported by the case summary or release headlines
+
+## FTC privacy case index pages 0–9
+
+- Nomi Technologies, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/132-3251-nomi-technologies-inc-matter — privacy topic not supported by the case summary or release headlines
+- American International Mailing, Inc., In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3051-american-international-mailing-inc-matter — privacy topic not supported by the case summary or release headlines
+- TES Franchising, LLC, In the Matter of — https://search.ftc.gov/legal-library/browse/cases-proceedings/152-3015-tes-franchising-llc-matter — privacy topic not supported by the case summary or release headlines
