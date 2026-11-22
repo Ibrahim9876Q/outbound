@@ -227,9 +227,17 @@ async function main() {
     PHONE_DNS_PORT: '', PHONE_UPSTREAM_DNS: process.env.PHONE_UPSTREAM_DNS || dns.getServers()[0] || LOOPBACK } : process.env);
   if (laptop) config.port = 0;
   if (laptop && !(config.fga && config.ciba)) config.grantMinutes = 1;
-  const gateway = await startGateway(config, { laptop });
+  const dashboardPort = portNumber(process.env.PHONE_DASHBOARD_PORT, DASHBOARD_PORT, 'PHONE_DASHBOARD_PORT');
+  let stopRequested = false;
+  let gateway;
+  if (process.send) process.once('disconnect', () => {
+    stopRequested = true;
+    gateway?.close();
+  });
+  gateway = await startGateway(config, { laptop, dashboardPort });
+  if (stopRequested) return gateway.close();
   printAuthStatus(config, gateway.demo);
-  console.log('Outbound Phone at http://' + LOOPBACK + ':' + DASHBOARD_PORT + '/');
+  console.log('Outbound Phone at http://' + LOOPBACK + ':' + gateway.dashboardPort + '/');
   console.log('Phone DNS listening on ' + config.host + ':' + gateway.dnsPort + ' (UDP and TCP)');
 }
 

@@ -87,6 +87,7 @@ process.on('exit', () => {
 });
 process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
+if (process.send) process.once('disconnect', () => process.exit(0));
 
 function scores(apps) {
   const scanKey = scan.result.status === 'done' ? scan.result : null;
