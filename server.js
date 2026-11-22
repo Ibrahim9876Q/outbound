@@ -7,6 +7,7 @@ const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, localDate } = require('./lib/report');
 const { StateStream } = require('./lib/sse');
+const { StoredScan } = require('./lib/scan');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -58,6 +59,7 @@ function pushEvent(e) {
 
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
+const scan = new StoredScan();
 process.on('exit', () => {
   devices.close();
   network.foreground.close();
@@ -117,6 +119,24 @@ const server = http.createServer((req, res) => {
   if (url.pathname === '/api/state') {
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
     return res.end(JSON.stringify(state()));
+  }
+  if (url.pathname === '/api/scan') {
+    const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
+    if (req.method === 'GET') {
+      res.writeHead(200, headers);
+      return res.end(JSON.stringify(scan.result));
+    }
+    if (req.method === 'POST') {
+      if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) {
+        res.writeHead(403, headers);
+        return res.end(JSON.stringify({ ok: false, startedAt: scan.result.startedAt }));
+      }
+      const startedAt = scan.start(network.snapshot().apps.map(({ id, name }) => ({ id, name })));
+      res.writeHead(startedAt ? 202 : 409, headers);
+      return res.end(JSON.stringify({ ok: Boolean(startedAt), startedAt: startedAt ?? scan.result.startedAt }));
+    }
+    res.writeHead(405, { ...headers, Allow: 'GET, POST' });
+    return res.end();
   }
   if (url.pathname === '/api/report' || url.pathname === '/api/report/download') {
     if (req.method !== 'GET') {
