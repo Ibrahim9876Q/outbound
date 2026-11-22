@@ -680,3 +680,17 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
 - ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
 - Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
+
+## App Store chart leads
+
+- Proton VPN — https://apps.apple.com/us/app/proton-vpn-fast-secure/id1437005085 — No developer-declared data linked to the user
+- Smart Home Manager — https://apps.apple.com/us/app/smart-home-manager/id1258654743 — No developer-declared data linked to the user
+- Bible Shorts — https://apps.apple.com/us/app/bible-shorts-watch-study/id6795921981 — No developer-declared data linked to the user
+- Bible Path — https://apps.apple.com/us/app/bible-path-widgets-stories/id6504798650 — No developer-declared data linked to the user
+- Sky Guide — https://apps.apple.com/us/app/sky-guide/id576588894 — No developer-declared data linked to the user
+- Cal AI — https://apps.apple.com/us/app/cal-ai-calorie-tracker/id6480417616 — No developer-declared data linked to the user
+- Learna — https://apps.apple.com/us/app/learna-speak-learn-english/id6478287397 — No developer-declared data linked to the user
+- ABCmouse — https://apps.apple.com/us/app/abcmouse-kids-learning-games/id6460300848 — No developer-declared data linked to the user
+- Amtrak — https://apps.apple.com/us/app/amtrak/id405074003 — No developer-declared data linked to the user
+- FloSports — https://apps.apple.com/us/app/flosports-watch-live-sports/id1149210891 — No developer-declared data linked to the user
+- NBA — https://apps.apple.com/us/app/nba-2k-hq/id6745190566 — No developer-declared data linked to the user

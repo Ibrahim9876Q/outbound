@@ -9773,6 +9773,586 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "underdog",
+      "name": "Underdog",
+      "publisher": "Underdog Sports, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Underdog: Sports, Games & Rips App - App Store",
+            "publisher": "Underdog Sports, Inc.",
+            "url": "https://apps.apple.com/us/app/underdog-sports-games-rips/id1514665962",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.364Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "espn",
+      "name": "ESPN",
+      "publisher": "Disney Electronic Content, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎ESPN: Live Sports & Scores App - App Store",
+            "publisher": "Disney Electronic Content, Inc.",
+            "url": "https://apps.apple.com/us/app/espn-live-sports-scores/id317469184",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.191Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fanduel-sportsbook",
+      "name": "FanDuel Sportsbook",
+      "publisher": "FanDuel Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎FanDuel Sportsbook & Casino App - App Store",
+            "publisher": "FanDuel Limited",
+            "url": "https://apps.apple.com/us/app/fanduel-sportsbook-casino/id1413721906",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.340Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "dazn",
+      "name": "DAZN",
+      "publisher": "DAZN Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎DAZN: Stream Live Sports App - App Store",
+            "publisher": "DAZN Limited",
+            "url": "https://apps.apple.com/us/app/dazn-stream-live-sports/id1129523589",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.513Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "hudl",
+      "name": "Hudl",
+      "publisher": "Hudl, Inc. (US)",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Hudl App - App Store",
+            "publisher": "Hudl, Inc. (US)",
+            "url": "https://apps.apple.com/us/app/hudl/id412223222",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.642Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "nba",
+      "name": "NBA",
+      "publisher": "NBA MEDIA VENTURES, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, Browsing History, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎NBA: Live Games & Scores App - App Store",
+            "publisher": "NBA MEDIA VENTURES, LLC",
+            "url": "https://apps.apple.com/us/app/nba-live-games-scores/id484672289",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:03.692Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "maxpreps",
+      "name": "MaxPreps",
+      "publisher": "MaxPreps Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎MaxPreps: High School Sports App - App Store",
+            "publisher": "MaxPreps Inc.",
+            "url": "https://apps.apple.com/us/app/maxpreps-high-school-sports/id980665604",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.152Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "fanatics-sports",
+      "name": "Fanatics Sports",
+      "publisher": "FBG ENTERPRISES OPCO, LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Fanatics Sports & Casino App - App Store",
+            "publisher": "FBG ENTERPRISES OPCO, LLC",
+            "url": "https://apps.apple.com/us/app/fanatics-sports-casino/id1616738407",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.607Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "sportsyou",
+      "name": "sportsYou",
+      "publisher": "MMR Digital LLC",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Contact Info, User Content, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎sportsYou App - App Store",
+            "publisher": "MMR Digital LLC",
+            "url": "https://apps.apple.com/us/app/sportsyou/id1186906455",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.246Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bet365",
+      "name": "bet365",
+      "publisher": "Hillside Technology Limited",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎bet365 - Sportsbook & Casino App - App Store",
+            "publisher": "Hillside Technology Limited",
+            "url": "https://apps.apple.com/us/app/bet365-sportsbook-casino/id1465717844",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.820Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gamechanger",
+      "name": "GameChanger",
+      "publisher": "GameChanger Media, Inc.",
+      "category": "sports",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎GameChanger App - App Store",
+            "publisher": "GameChanger Media, Inc.",
+            "url": "https://apps.apple.com/us/app/gamechanger/id1308415878",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.361Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "threads",
+      "name": "Threads",
+      "publisher": "Instagram, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Contacts, User Content, Search History, Browsing History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Threads App - App Store",
+            "publisher": "Instagram, Inc.",
+            "url": "https://apps.apple.com/us/app/threads/id6446901002",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.707Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "messenger",
+      "name": "Messenger",
+      "publisher": "Meta Platforms, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Financial Info, Location, Contact Info, Contacts, User Content, Search History, Browsing History, Identifiers, Usage Data, Diagnostics, Other Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Messenger App - App Store",
+            "publisher": "Meta Platforms, Inc.",
+            "url": "https://apps.apple.com/us/app/messenger/id454638411",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:04.796Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "instants",
+      "name": "Instants",
+      "publisher": "Instagram, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact Info, User Content, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Instants, an Instagram app App - App Store",
+            "publisher": "Instagram, Inc.",
+            "url": "https://apps.apple.com/us/app/instants-an-instagram-app/id6756442328",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.371Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "textnow",
+      "name": "TextNow",
+      "publisher": "TextNow, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, Location, Contact Info, Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎TextNow: Call + Text Unlimited App - App Store",
+            "publisher": "TextNow, Inc.",
+            "url": "https://apps.apple.com/us/app/textnow-call-text-unlimited/id314716233",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.471Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "groupme",
+      "name": "GroupMe",
+      "publisher": "Skype Communications S.a.r.l",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎GroupMe App - App Store",
+            "publisher": "Skype Communications S.a.r.l",
+            "url": "https://apps.apple.com/us/app/groupme/id392796698",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.512Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "whee",
+      "name": "Whee",
+      "publisher": "TIKTOK PTE. LTD.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchases, User Content, Search History, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Whee - TikTok Chat App - App Store",
+            "publisher": "TIKTOK PTE. LTD.",
+            "url": "https://apps.apple.com/us/app/whee-tiktok-chat/id6484505984",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.692Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "band",
+      "name": "BAND",
+      "publisher": "NAVER Corp.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers, Usage Data",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎BAND - App for all groups App - App Store",
+            "publisher": "NAVER Corp.",
+            "url": "https://apps.apple.com/us/app/band-app-for-all-groups/id542613198",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.776Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "locket-widget",
+      "name": "Locket Widget",
+      "publisher": "Locket Labs, Inc.",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location, Identifiers, Usage Data, Diagnostics",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Locket Widget App - App Store",
+            "publisher": "Locket Labs, Inc.",
+            "url": "https://apps.apple.com/us/app/locket-widget/id1600525061",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.980Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "letterboxd",
+      "name": "Letterboxd",
+      "publisher": "Letterboxd Ltd",
+      "category": "social",
+      "processNames": [],
+      "domains": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Identifiers",
+          "purpose": "The developer declares these categories as data that may be linked to the user.",
+          "source": {
+            "title": "‎Letterboxd App - App Store",
+            "publisher": "Letterboxd Ltd",
+            "url": "https://apps.apple.com/us/app/letterboxd/id1054271011",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:58:05.858Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -14407,7 +14987,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T06:57:58.540Z",
+  "generatedAt": "2026-11-22T06:58:05.982Z",
   "index": {
     "exe": {
       "brave.exe": [
