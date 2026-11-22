@@ -163,7 +163,20 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Help run Spotify, including its technical infrastructure.",
+          "source": {
+            "title": "Privacy Policy - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/us/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:38.175Z"
+          }
+        }
+      ],
       "destinations": [],
       "incidents": []
     },
@@ -328,7 +341,20 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Registration verification providers",
+          "purpose": "Send the phone verification code during account registration.",
+          "source": {
+            "title": "Signal >> Terms of Service &amp; Privacy Policy",
+            "publisher": "Signal",
+            "url": "https://signal.org/legal/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:37.721Z"
+          }
+        }
+      ],
       "destinations": [],
       "incidents": []
     },
@@ -360,7 +386,20 @@
         }
       ],
       "sharesWith": [],
-      "destinations": [],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Snap identifies the United States as a possible country for international data transfers.",
+          "source": {
+            "title": "Privacy Policy | Snapchat Privacy",
+            "publisher": "Snap",
+            "url": "https://values.snap.com/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:37.708Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -487,7 +526,20 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Google affiliates and trusted processors",
+          "purpose": "Process information on Google’s behalf under its instructions.",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:37.777Z"
+          }
+        }
+      ],
       "destinations": [],
       "incidents": []
     },
@@ -807,8 +859,34 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Vendors and service providers",
+          "purpose": "Hosting, support and other functions needed to operate the service.",
+          "source": {
+            "title": "Privacy policy | OpenAI",
+            "publisher": "OpenAI",
+            "url": "https://openai.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:37.546Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "The policy identifies the United States among jurisdictions where personal data may be processed.",
+          "source": {
+            "title": "Privacy policy | OpenAI",
+            "publisher": "OpenAI",
+            "url": "https://openai.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:37.551Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -1197,7 +1275,24 @@
       ],
       "sharesWith": [],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "LinkedIn targeted advertising inquiry",
+          "year": 2024,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€310 million",
+          "summary": "The DPC announced fines and an order to bring processing for behavioural analysis and targeted advertising into compliance.",
+          "source": {
+            "title": "Irish Data Protection Commission fines LinkedIn Ireland €310 million | 24/10/2024 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://dataprotection.ie/en/news-media/press-releases/irish-data-protection-commission-fines-linkedin-ireland-eu310-million",
+            "date": "2024-10-24",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:36.270Z"
+          }
+        }
+      ]
     },
     {
       "id": "doordash",
@@ -1446,8 +1541,1225 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "publisher": "Meta",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "instagram.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "Instagram children’s data inquiry",
+          "year": 2022,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€405 million",
+          "summary": "The DPC announced a fine after examining public disclosure of children’s contact details and public-by-default settings.",
+          "source": {
+            "title": "Data Protection Commission announces decision in Instagram Inquiry | 15/09/2022 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-instagram-inquiry",
+            "date": "2022-09-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:36.293Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "publisher": "TikTok",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "tiktok.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "TikTok children’s data inquiry",
+          "year": 2023,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€345 million",
+          "summary": "The DPC announced a fine after reviewing children’s default settings, transparency and age verification.",
+          "source": {
+            "title": "Irish Data Protection Commission announces €345 million fine of TikTok | 15/09/2023 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://dataprotection.ie/en/news-media/press-releases/DPC-announces-345-million-euro-fine-of-TikTok",
+            "date": "2023-09-15",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:36.008Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tim-hortons",
+      "name": "Tim Hortons",
+      "publisher": "Tim Hortons",
+      "category": "food",
+      "processNames": [],
+      "domains": [
+        "timhortons.ca"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "investigation",
+          "title": "Tim Hortons mobile location investigation",
+          "year": 2022,
+          "jurisdiction": "Canada",
+          "summary": "Canadian privacy regulators found that its app collected sensitive location information, including when users were not actively using the app.",
+          "source": {
+            "title": "News release: Tim Hortons app violated privacy laws in collection of ‘vast amounts’ of sensitive location data - Office of the Privacy Commissioner of",
+            "publisher": "Office of the Privacy Commissioner of Canada",
+            "url": "https://www.priv.gc.ca/en/opc-news/news-and-announcements/2022/nr-c_220601/",
+            "date": "2022-06-01",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:47:36.960Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "publisher": "Meta",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "facebook.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "Meta EU–US transfer inquiry",
+          "year": 2023,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€1.2 billion",
+          "summary": "The DPC announced a fine and corrective orders over Meta Ireland’s transfers of Facebook users’ personal data from the EU/EEA to the United States.",
+          "source": {
+            "title": "Data Protection Commission announces conclusion of inquiry into Meta Ireland | 22/05/2023 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/news-media/press-releases/Data-Protection-Commission-announces-conclusion-of-inquiry-into-Meta-Ireland",
+            "date": "2023-05-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:11.908Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "publisher": "WhatsApp",
+      "category": "communication",
+      "processNames": [],
+      "domains": [
+        "whatsapp.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "WhatsApp transparency inquiry",
+          "year": 2021,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€225 million",
+          "summary": "The DPC imposed a fine and ordered corrective measures after examining the information provided about processing to users and non-users.",
+          "source": {
+            "title": "Decision concerning WhatsApp Ireland Ltd | Data Protection Commissioner",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/dpc-guidance/decisions/decision-concerning-whatsapp-ireland-ltd",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:11.974Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "avast",
+      "name": "Avast",
+      "publisher": "Gen Digital",
+      "category": "security",
+      "processNames": [],
+      "domains": [
+        "avast.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": [
+        {
+          "kind": "settlement",
+          "title": "Avast browsing data order",
+          "year": 2024,
+          "jurisdiction": "United States",
+          "amount": "USD 16.5 million",
+          "summary": "The FTC required a payment and restricted use of browsing data after alleging that Avast and its subsidiaries sold such data despite privacy promises.",
+          "source": {
+            "title": "Avast | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/2023033-avast",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:13.538Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "publisher": "Anthropic",
+      "category": "ai",
+      "processNames": [],
+      "domains": [
+        "claude.ai"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Prompts and account information",
+          "purpose": "Provide and maintain Claude",
+          "source": {
+            "title": "Privacy Policy \\ Anthropic",
+            "publisher": "Anthropic",
+            "url": "https://www.anthropic.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:15.198Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-search",
+      "name": "Google Search",
+      "publisher": "Google",
+      "category": "search",
+      "processNames": [],
+      "domains": [
+        "google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Search terms and activity",
+          "purpose": "Provide results and personalize services",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:14.349Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "gemini",
+      "name": "Google Gemini",
+      "publisher": "Google",
+      "category": "ai",
+      "processNames": [],
+      "domains": [
+        "gemini.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Prompts and Gemini Apps activity",
+          "purpose": "Provide Gemini Apps and improve services",
+          "source": {
+            "title": "Gemini Apps Privacy Hub - Gemini Apps Help",
+            "publisher": "Google",
+            "url": "https://support.google.com/gemini/answer/13594961?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:15.289Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "playstation",
+      "name": "PlayStation App",
+      "publisher": "Sony Interactive Entertainment",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "playstation.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Operate PlayStation services",
+          "source": {
+            "title": "Privacy Policy (US)",
+            "publisher": "Sony Interactive Entertainment",
+            "url": "https://www.playstation.com/en-us/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:14.661Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "walmart",
+      "name": "Walmart",
+      "publisher": "Walmart",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "walmart.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Purchase and device information",
+          "purpose": "Fill orders and operate services",
+          "source": {
+            "title": "Walmart Customer Privacy Notice (Online and In-Store)",
+            "publisher": "Walmart",
+            "url": "https://corporate.walmart.com/privacy-security/walmart-privacy-notice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:14.951Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "shop",
+      "name": "Shop",
+      "publisher": "Shopify",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "shop.app"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact and purchase information",
+          "purpose": "Provide order and shipping services",
+          "source": {
+            "title": "Shopify Privacy Policy - Shopify Canada",
+            "publisher": "Shopify",
+            "url": "https://www.shopify.com/legal/privacy/app-users",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:16.027Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "capital-one",
+      "name": "Capital One Mobile",
+      "publisher": "Capital One",
+      "category": "finance",
+      "processNames": [],
+      "domains": [
+        "capitalone.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and online activity information",
+          "purpose": "Operate and secure online services",
+          "source": {
+            "title": "Online Privacy Policy | Capital One",
+            "publisher": "Capital One",
+            "url": "https://www.capitalone.com/privacy/online-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:15.997Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox",
+      "publisher": "Microsoft",
+      "category": "games",
+      "processNames": [],
+      "domains": [
+        "xbox.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Gameplay, account and device data",
+          "purpose": "Operate Xbox features and multiplayer services",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:16.527Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "bing",
+      "name": "Bing",
+      "publisher": "Microsoft",
+      "category": "search",
+      "processNames": [],
+      "domains": [
+        "bing.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Search queries and related activity",
+          "purpose": "Provide Bing search results",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:16.706Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "outlook",
+      "name": "Outlook",
+      "publisher": "Microsoft",
+      "category": "email",
+      "processNames": [],
+      "domains": [
+        "outlook.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Email messages and related information",
+          "purpose": "Provide Outlook mail services",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:16.461Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "google-photos",
+      "name": "Google Photos",
+      "publisher": "Google",
+      "category": "photo",
+      "processNames": [],
+      "domains": [
+        "photos.google.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Images and videos uploaded by the user",
+          "purpose": "Provide photo storage and related features",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:16.936Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-maps",
+      "name": "Apple Maps",
+      "publisher": "Apple",
+      "category": "navigation",
+      "processNames": [],
+      "domains": [
+        "maps.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location and navigation requests",
+          "purpose": "Provide routes and improve Maps",
+          "source": {
+            "title": "Legal - Apple Maps &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-maps/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:17.575Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-music",
+      "name": "Apple Music",
+      "publisher": "Apple",
+      "category": "music",
+      "processNames": [],
+      "domains": [
+        "music.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Listening activity",
+          "purpose": "Provide and personalize Apple Music",
+          "source": {
+            "title": "Legal - Apple Music &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-music/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:17.730Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-tv",
+      "name": "Apple TV",
+      "publisher": "Apple",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "tv.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Viewing activity",
+          "purpose": "Provide and personalize video recommendations",
+          "source": {
+            "title": "Legal - Apple TV App &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-tv-app/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:17.996Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "apple-podcasts",
+      "name": "Apple Podcasts",
+      "publisher": "Apple",
+      "category": "music",
+      "processNames": [],
+      "domains": [
+        "podcasts.apple.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Listening activity",
+          "purpose": "Provide and personalize podcast recommendations",
+          "source": {
+            "title": "Legal - Apple Podcasts &amp; Privacy- Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/data/en/apple-podcasts/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:17.576Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "duckduckgo",
+      "name": "DuckDuckGo",
+      "publisher": "DuckDuckGo",
+      "category": "browser",
+      "processNames": [],
+      "domains": [
+        "duckduckgo.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Anonymous product usage measurement",
+          "purpose": "Improve DuckDuckGo services",
+          "source": {
+            "title": "DuckDuckGo Privacy Policy",
+            "publisher": "DuckDuckGo",
+            "url": "https://duckduckgo.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:17.849Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "proton-mail",
+      "name": "Proton Mail",
+      "publisher": "Proton",
+      "category": "email",
+      "processNames": [],
+      "domains": [
+        "proton.me"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account data and service metadata",
+          "purpose": "Operate and protect Proton Mail",
+          "source": {
+            "title": "Privacy Policy - Proton Mail | Proton",
+            "publisher": "Proton",
+            "url": "https://proton.me/mail/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:18.585Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "booking",
+      "name": "Booking.com",
+      "publisher": "Booking.com",
+      "category": "travel",
+      "processNames": [],
+      "domains": [
+        "booking.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Reservation and contact information",
+          "purpose": "Arrange bookings and customer support",
+          "source": {
+            "title": "Booking.com: Privacy Notice.",
+            "publisher": "Booking.com",
+            "url": "https://www.booking.com/content/privacy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:19.587Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "ebay",
+      "name": "eBay",
+      "publisher": "eBay",
+      "category": "shopping",
+      "processNames": [],
+      "domains": [
+        "ebay.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and transaction information",
+          "purpose": "Provide marketplace services",
+          "source": {
+            "title": "User Privacy Notice | eBay",
+            "publisher": "eBay",
+            "url": "https://www.ebay.com/help/policies/member-behavior-policies/user-privacy-notice-privacy-policy?id=4260",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:20.330Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
     }
   ],
-  "companies": [],
-  "generatedAt": "2026-11-22T05:44:26.599Z"
+  "companies": [
+    {
+      "name": "Google",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Identifiers, device information and interactions",
+          "purpose": "Provide services and personalize content and ads",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:35.839Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Amazon",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Purchase and service interaction information",
+          "purpose": "Provide and personalize Amazon services",
+          "source": {
+            "title": "Amazon.com Privacy Notice - Amazon Customer Service",
+            "publisher": "Amazon",
+            "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:36.270Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device, usage and diagnostic data",
+          "purpose": "Operate and improve Microsoft products",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:35.909Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Criteo",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Browsing events and pseudonymous identifiers",
+          "purpose": "Measure and personalize advertising",
+          "source": {
+            "title": "Privacy Policy | Criteo",
+            "publisher": "Criteo",
+            "url": "https://www.criteo.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:36.154Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Trade Desk",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Advertising identifiers and device data",
+          "purpose": "Facilitate interest-based advertising and measurement",
+          "source": {
+            "title": "Privacy | The Trade Desk",
+            "publisher": "The Trade Desk",
+            "url": "https://www.thetradedesk.com/us/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:36.532Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comscore",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device and media usage information",
+          "purpose": "Audience measurement",
+          "source": {
+            "title": "Privacy Policy - Comscore, Inc.",
+            "publisher": "Comscore",
+            "url": "https://www.comscore.com/About/Privacy-Policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:37.310Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Salesforce",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Contact and device information",
+          "purpose": "Provide services and manage business relationships",
+          "source": {
+            "title": "Salesforce Privacy Information | Salesforce",
+            "publisher": "Salesforce",
+            "url": "https://www.salesforce.com/company/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:38.256Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mixpanel",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Usage and device information",
+          "purpose": "Provide analytics services",
+          "source": {
+            "title": "Privacy Policy | Mobile &amp; Web User Analytics | Mixpanel",
+            "publisher": "Mixpanel",
+            "url": "https://mixpanel.com/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:37.685Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Segment",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Account and device information in Twilio services",
+          "purpose": "Provide and improve services",
+          "source": {
+            "title": "Website Privacy Notice | Twilio",
+            "publisher": "Segment",
+            "url": "https://www.twilio.com/en-us/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:37.665Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AppsFlyer",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device and advertising identifiers",
+          "purpose": "Measure and attribute marketing events",
+          "source": {
+            "title": "AppsFlyer Services Privacy Policy | AppsFlyer",
+            "publisher": "AppsFlyer",
+            "url": "https://www.appsflyer.com/legal/services-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:38.791Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Outlogic",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Location and device information",
+          "purpose": "Provide location-based services",
+          "source": {
+            "title": "Outlogic Privacy Policy - Outlogic",
+            "publisher": "Outlogic",
+            "url": "https://outlogic.io/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:39.615Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kochava",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device and attribution information",
+          "purpose": "Provide marketing attribution",
+          "source": {
+            "title": "Privacy Block",
+            "publisher": "Kochava",
+            "url": "https://www.kochava.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:39.674Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fog Data Science",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Website usage information",
+          "purpose": "Operate its website",
+          "source": {
+            "title": "Privacy Policy | Fog Data Science &mdash; FOG DATA SCIENCE",
+            "publisher": "Fog Data Science",
+            "url": "https://www.fogdatascience.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:40.090Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Experian",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Identity and contact information",
+          "purpose": "Deliver consumer information services",
+          "source": {
+            "title": "Privacy Policy at Experian.com",
+            "publisher": "Experian",
+            "url": "https://www.experian.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:39.211Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yandex",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device and service interaction information",
+          "purpose": "Operate and improve Yandex services",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Yandex",
+            "url": "https://yandex.com/legal/confidential/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:42.058Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tencent",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Contact and technical information",
+          "purpose": "Operate services",
+          "source": {
+            "title": "Privacy Policy - Tencent",
+            "publisher": "Tencent",
+            "url": "https://www.tencent.com/en-us/privacy-policy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:42.378Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Baidu",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "declared": [
+        {
+          "data": "Device information",
+          "purpose": "Operate Baidu services",
+          "source": {
+            "title": "百度隐私政策总则",
+            "publisher": "Baidu",
+            "url": "https://privacy.baidu.com/policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:48:43.687Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meta",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "kind": "fine",
+          "title": "Meta EU–US transfer inquiry",
+          "year": 2023,
+          "jurisdiction": "Ireland / EU",
+          "amount": "€1.2 billion",
+          "summary": "The DPC announced a fine and corrective orders over Meta Ireland’s transfers of Facebook users’ personal data from the EU/EEA to the United States.",
+          "source": {
+            "title": "Data Protection Commission announces conclusion of inquiry into Meta Ireland | 22/05/2023 | Data Protection Commission",
+            "publisher": "Irish Data Protection Commission",
+            "url": "https://www.dataprotection.ie/en/news-media/press-releases/Data-Protection-Commission-announces-conclusion-of-inquiry-into-Meta-Ireland",
+            "date": "2023-05-22",
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:50:11.908Z"
+          }
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-11-22T05:50:20.331Z"
 }

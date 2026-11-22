@@ -30,7 +30,7 @@ async function verify(url, terms) {
 
 async function main() {
   const batch = process.argv[2];
-  if (!/^(apps|companies|incidents)-\d+$/.test(batch || '')) throw new Error('Supply a catalog batch such as apps-01.');
+  if (!/^(apps|companies|incidents|facts)-\d+$/.test(batch || '')) throw new Error('Supply a catalog batch such as apps-01.');
   const entries = require('./' + batch);
   let dossier;
   try { dossier = JSON.parse(await fs.readFile(output, 'utf8')); }
@@ -40,6 +40,7 @@ async function main() {
   }
   const checks = new Map();
   const rejected = [];
+  const isExtra = /^(incidents|facts)/.test(batch);
   let accepted = 0;
   const verified = async (url, terms) => {
     const key = JSON.stringify([url, terms]);
@@ -48,6 +49,13 @@ async function main() {
   };
   for (let i = 0; i < entries.length; i += 8) {
     const results = await Promise.allSettled(entries.slice(i, i + 8).map(async (row) => {
+      if (isExtra) {
+        const { url, terms, publisher, date, section, claim } = row;
+        const result = await verified(url, terms);
+        console.log(row.id + ' | ' + result.evidence.join(' | '));
+        return { section, ...claim, source: { title: result.title || claim.title || publisher,
+          publisher, url, date: date || null, verified: true, fetchedAt: result.fetchedAt } };
+      }
       const [id, name, publisher, category, processName, domain, url, data, purpose, terms] = row;
       const result = await verified(url, terms);
       const source = { title: result.title || publisher + ' privacy notice', publisher, url, date: null,
@@ -59,13 +67,31 @@ async function main() {
     for (const [offset, result] of results.entries()) {
       const row = entries[i + offset];
       if (result.status === 'rejected') {
-        rejected.push('- ' + row[1] + ' — ' + row[6] + ' — ' + result.reason.message);
+        rejected.push('- ' + (isExtra ? row.id + ' — ' + row.url : row[1] + ' — ' + row[6]) + ' — ' + result.reason.message);
         continue;
       }
       const entry = result.value;
-      if (batch.startsWith('companies')) {
+      if (isExtra) {
+        const items = row.company ? dossier.companies : dossier.apps;
+        const identity = row.company ? 'name' : 'id';
+        let target = items.find((item) => item[identity] === row.id);
+        if (!target && row.creation) {
+          const [name, publisher, category, domain] = row.creation;
+          target = row.company ? { name, aliases: [], hq: { city: null, country: null }, declared: [], incidents: [] } :
+            { id: row.id, name, publisher, category, processNames: [], domains: [domain],
+              hq: { city: null, country: null }, declared: [], sharesWith: [], destinations: [], incidents: [] };
+          items.push(target);
+        }
+        if (!target) { rejected.push('- ' + row.id + ' — no verified parent entry'); continue; }
+        const { section, ...claim } = entry;
+        const key = section === 'incidents' ? 'title' : section === 'destinations' ? 'country' : 'party';
+        target[section] = target[section].filter((existing) => existing[key] !== claim[key]);
+        target[section].push(claim);
+      } else if (batch.startsWith('companies')) {
+        const previous = dossier.companies.find((company) => company.name === entry.name);
         dossier.companies = dossier.companies.filter((company) => company.name !== entry.name);
-        dossier.companies.push({ name: entry.name, aliases: [], hq: entry.hq, incidents: entry.incidents, declared: entry.declared });
+        dossier.companies.push({ name: entry.name, aliases: previous?.aliases || [], hq: entry.hq,
+          incidents: previous?.incidents || [], declared: entry.declared });
       } else {
         const previous = dossier.apps.find((app) => app.id === entry.id);
         if (previous) entry.incidents = previous.incidents;
