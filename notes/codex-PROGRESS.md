@@ -54,3 +54,11 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 
 - Added a grayscale land mask from the bundled Natural Earth geometry. The map still loads entirely offline.
 - Disabled the library’s opening spin so the globe starts at home with routes visible. Verified recognizable North American coastlines, the grid, and live routes in Chrome at 1280×800.
+
+## Dotted land and endpoint inspection
+
+- `89350d2` adds the offline Natural Earth dataset and resolution-3 country cells. The first live check loaded 177 country features and drew 36 routes from eight observed apps.
+- `1805708` adds expandable country rows with company names, live socket totals, and app names.
+- `f7017e7` adds one-shot arrival pulses and socket-scaled points.
+- `8ebd84c` adds terminal-style company, ASN, IP, location, app, and port details.
+- Verified Chrome on port 4318 at 1280×800 and 1920×1080 with zero console errors. The preview supplied the existing Phone assets from `integration` as browser-only overrides. Live screenshots show the brighter destination cells. A separate browser fixture verified tracker red, socket scaling, a pulse that stays unchanged across socket updates, company expansion and collapse, and all endpoint fields on pointer hover.
