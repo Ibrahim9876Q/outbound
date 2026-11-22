@@ -45,7 +45,7 @@
 }
 
 #view-globe .globe-overview,
-#view-globe .globe-legend,
+#view-globe .globe-legend-disclosure,
 #view-globe .globe-tip,
 #view-globe .globe-motion {
   position: absolute;
@@ -83,12 +83,24 @@
 }
 
 #view-globe .globe-legend {
-  inset: 102px auto auto 16px;
   display: grid;
   gap: 6px;
   padding: 12px 14px;
   font-size: 14px;
-  pointer-events: none;
+}
+
+#view-globe .globe-legend-disclosure {
+  right: 16px;
+  bottom: 65px;
+  min-width: 130px;
+}
+
+#view-globe .globe-legend-disclosure summary {
+  padding: 8px 10px;
+  border: 1px solid var(--map-border);
+  background: var(--map-panel);
+  font: 14px/1.35 Consolas, monospace;
+  cursor: pointer;
 }
 
 #view-globe .globe-trail {
@@ -124,7 +136,7 @@
 
 #view-globe .globe-trail li {
   display: grid;
-  grid-template-columns: 8ch minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: 8ch minmax(0, 1fr) minmax(0, 1.1fr) minmax(7ch, 1.1fr);
   gap: 8px;
 }
 
@@ -517,8 +529,8 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  #view-globe .globe-legend {
-    top: 109px;
+  #view-globe .globe-legend-disclosure {
+    bottom: 232px;
   }
 
   #view-globe .globe-motion {

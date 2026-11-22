@@ -116,6 +116,9 @@
     row.append(document.createTextNode(legendLabels[i]));
   });
   legend.append(node('p', '', 'Motion illustrates active TCP connections.'));
+  const legendDisclosure = node('details', 'globe-legend-disclosure');
+  legendDisclosure.append(node('summary', '', 'Map legend'), legend);
+  wrap.append(legendDisclosure);
   const estimateLegend = node('div');
   estimateLegend.append(node('span', 'globe-estimate-key'), document.createTextNode('Country-level estimate'));
   legend.insertBefore(estimateLegend, legend.lastElementChild);
@@ -184,7 +187,9 @@
         recent.set(key, [
           destination.firstSeen, shared?.util?.appLabel?.(app.name) || app.name,
           destination.org || 'Unknown owner',
-          location.city?.trim() || (location.country ? countryName(location.country) + ' (country only)' : 'Location unknown'),
+          location.city?.trim()
+            ? [location.city.trim(), location.country].filter(Boolean).join(', ')
+            : (location.country ? location.country + ' ~' : 'Unknown'),
         ]);
       }
     }
@@ -497,7 +502,7 @@
     const pinned = pinnedPoint !== null;
     const details = point?.places || [];
     const topOrgs = point?.approximate ? summarizeEstimateOwners(details) : null;
-    const contentKey = JSON.stringify([pinned, point?.key, point?.label, topOrgs ?? details.map((place) =>
+    const contentKey = JSON.stringify([pinned, point?.key, point?.label, details.length, topOrgs ?? details.map((place) =>
       [place.org, place.asn, place.ip, place.city, place.country, place.appName, place.ports, place.tracker])]);
     if (tipContentKey === contentKey) return;
     tipContentKey = contentKey;
