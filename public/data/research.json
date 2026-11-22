@@ -1,0 +1,949 @@
+{
+  "version": 2,
+  "method": "Publisher and regulator sources verified with HTTPS curl and evidence terms.",
+  "apps": [
+    {
+      "id": "edge",
+      "name": "Microsoft Edge",
+      "publisher": "Microsoft",
+      "category": "browser",
+      "processNames": [
+        "msedge.exe"
+      ],
+      "domains": [
+        "microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Edge diagnostic data",
+          "purpose": "Keep the browser working and improve it",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.027Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "brave",
+      "name": "Brave",
+      "publisher": "Brave Software",
+      "category": "browser",
+      "processNames": [
+        "brave.exe"
+      ],
+      "domains": [
+        "brave.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Privacy-preserving product analytics",
+          "purpose": "Understand broad feature usage",
+          "source": {
+            "title": "Browser Privacy Policy | Brave",
+            "publisher": "Brave Software",
+            "url": "https://brave.com/privacy/browser/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.039Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "opera",
+      "name": "Opera",
+      "publisher": "Opera",
+      "category": "browser",
+      "processNames": [
+        "opera.exe"
+      ],
+      "domains": [
+        "opera.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage and diagnostic information",
+          "purpose": "Operate and improve products",
+          "source": {
+            "title": "Privacy Statement",
+            "publisher": "Opera",
+            "url": "https://legal.opera.com/privacy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.681Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "publisher": "Discord",
+      "category": "communication",
+      "processNames": [
+        "discord.exe"
+      ],
+      "domains": [
+        "discord.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Provide and maintain Discord",
+          "source": {
+            "title": "Privacy Policy | Discord",
+            "publisher": "Discord",
+            "url": "https://discord.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.332Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "publisher": "Spotify",
+      "category": "music",
+      "processNames": [
+        "spotify.exe"
+      ],
+      "domains": [
+        "spotify.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Listening and service usage data",
+          "purpose": "Provide and personalize Spotify",
+          "source": {
+            "title": "Privacy Policy - Spotify",
+            "publisher": "Spotify",
+            "url": "https://www.spotify.com/us/legal/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.933Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "publisher": "Valve",
+      "category": "games",
+      "processNames": [
+        "steam.exe"
+      ],
+      "domains": [
+        "steampowered.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Game usage and device information",
+          "purpose": "Provide and improve Steam",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:23.584Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "publisher": "Zoom",
+      "category": "communication",
+      "processNames": [
+        "zoom.exe"
+      ],
+      "domains": [
+        "zoom.us"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and meeting usage information",
+          "purpose": "Deliver and improve Zoom services",
+          "source": {
+            "title": "Zoom Privacy Statement | Zoom",
+            "publisher": "Zoom",
+            "url": "https://www.zoom.com/en/trust/privacy/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:25.221Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "teams",
+      "name": "Microsoft Teams",
+      "publisher": "Microsoft",
+      "category": "communication",
+      "processNames": [
+        "ms-teams.exe"
+      ],
+      "domains": [
+        "teams.microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and communications-related information",
+          "purpose": "Provide communication and collaboration services",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:24.808Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "publisher": "Telegram",
+      "category": "communication",
+      "processNames": [
+        "telegram.exe"
+      ],
+      "domains": [
+        "telegram.org"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Phone number and basic account data",
+          "purpose": "Provide the messaging service",
+          "source": {
+            "title": "Telegram Privacy Policy",
+            "publisher": "Telegram",
+            "url": "https://telegram.org/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:25.446Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "signal",
+      "name": "Signal",
+      "publisher": "Signal Messenger",
+      "category": "communication",
+      "processNames": [
+        "signal.exe"
+      ],
+      "domains": [
+        "signal.org"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Phone number used for account registration",
+          "purpose": "Register and operate a Signal account",
+          "source": {
+            "title": "Signal >> Terms of Service &amp; Privacy Policy",
+            "publisher": "Signal Messenger",
+            "url": "https://signal.org/legal/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:24.912Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "snapchat",
+      "name": "Snapchat",
+      "publisher": "Snap",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "snapchat.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage and device information",
+          "purpose": "Provide and personalize Snap services",
+          "source": {
+            "title": "Privacy Policy | Snapchat Privacy",
+            "publisher": "Snap",
+            "url": "https://values.snap.com/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T03:49:26.449Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "publisher": "Mozilla",
+      "category": "browser",
+      "processNames": [
+        "firefox.exe"
+      ],
+      "domains": [
+        "mozilla.org"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Technical and interaction data",
+          "purpose": "Improve Firefox",
+          "source": {
+            "title": "Firefox Privacy Notice — Mozilla",
+            "publisher": "Mozilla",
+            "url": "https://www.mozilla.org/en-US/privacy/firefox/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:00.480Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "publisher": "Salesforce",
+      "category": "communication",
+      "processNames": [
+        "slack.exe"
+      ],
+      "domains": [
+        "slack.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Log data and device information",
+          "purpose": "Provide and improve Slack",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Salesforce",
+            "url": "https://slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:00.503Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "x",
+      "name": "X",
+      "publisher": "X Corp.",
+      "category": "social",
+      "processNames": [],
+      "domains": [
+        "x.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage and device information",
+          "purpose": "Operate and personalize X",
+          "source": {
+            "title": "X Privacy Policy",
+            "publisher": "X Corp.",
+            "url": "https://x.com/en/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:00.527Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "publisher": "Google",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "youtube.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Videos watched and interactions",
+          "purpose": "Personalize content and recommendations",
+          "source": {
+            "title": "Privacy Policy – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy?hl=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:01.187Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "publisher": "Netflix",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "netflix.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Viewing activity",
+          "purpose": "Provide and personalize the service",
+          "source": {
+            "title": "Privacy Statement | Netflix Help Center",
+            "publisher": "Netflix",
+            "url": "https://help.netflix.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:01.493Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "prime-video",
+      "name": "Amazon Prime Video",
+      "publisher": "Amazon",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "primevideo.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Interactions with Amazon streaming services",
+          "purpose": "Provide and personalize Amazon services",
+          "source": {
+            "title": "Amazon.com Privacy Notice - Amazon Customer Service",
+            "publisher": "Amazon",
+            "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:01.225Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "disney-plus",
+      "name": "Disney+",
+      "publisher": "Disney",
+      "category": "video",
+      "processNames": [],
+      "domains": [
+        "disneyplus.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Usage and device information across Disney services",
+          "purpose": "Provide and personalize experiences",
+          "source": {
+            "title": "Privacy Policy - The Walt Disney Privacy Center",
+            "publisher": "Disney",
+            "url": "https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:10.630Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "onedrive",
+      "name": "OneDrive",
+      "publisher": "Microsoft",
+      "category": "storage",
+      "processNames": [
+        "onedrive.exe"
+      ],
+      "domains": [
+        "onedrive.live.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Files and their content",
+          "purpose": "Store and synchronize files a user chooses to upload",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:10.650Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "publisher": "Dropbox",
+      "category": "storage",
+      "processNames": [
+        "dropbox.exe"
+      ],
+      "domains": [
+        "dropbox.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Uploaded files and usage information",
+          "purpose": "Provide file storage and collaboration",
+          "source": {
+            "title": "Privacy Policy - Dropbox",
+            "publisher": "Dropbox",
+            "url": "https://www.dropbox.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:11.188Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "icloud",
+      "name": "iCloud",
+      "publisher": "Apple",
+      "category": "storage",
+      "processNames": [
+        "icloud.exe"
+      ],
+      "domains": [
+        "icloud.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Apple account information",
+          "purpose": "Operate services and respond to requests",
+          "source": {
+            "title": "Legal - Apple Privacy Policy - Apple",
+            "publisher": "Apple",
+            "url": "https://www.apple.com/legal/privacy/en-ww/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:10.918Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "office",
+      "name": "Microsoft Office",
+      "publisher": "Microsoft",
+      "category": "productivity",
+      "processNames": [
+        "winword.exe"
+      ],
+      "domains": [
+        "office.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Diagnostic data about Office software and features",
+          "purpose": "Keep Office secure and improve the product",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:11.056Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "windows",
+      "name": "Windows",
+      "publisher": "Microsoft",
+      "category": "operating system",
+      "processNames": [],
+      "domains": [
+        "windows.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Required and optional Windows diagnostic data",
+          "purpose": "Maintain and improve Windows",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:11.279Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft Copilot",
+      "publisher": "Microsoft",
+      "category": "ai",
+      "processNames": [],
+      "domains": [
+        "copilot.microsoft.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Inputs and interactions with Copilot",
+          "purpose": "Provide AI responses and related features",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:12.086Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "publisher": "OpenAI",
+      "category": "ai",
+      "processNames": [
+        "chatgpt.exe"
+      ],
+      "domains": [
+        "chatgpt.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Prompts and other submitted content",
+          "purpose": "Provide and improve services",
+          "source": {
+            "title": "Privacy policy | OpenAI",
+            "publisher": "OpenAI",
+            "url": "https://openai.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:12.102Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "publisher": "Grammarly",
+      "category": "productivity",
+      "processNames": [
+        "grammarly.desktop.exe"
+      ],
+      "domains": [
+        "grammarly.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Text submitted for writing assistance",
+          "purpose": "Provide writing suggestions and improve services",
+          "source": {
+            "title": "Privacy Policy | Superhuman",
+            "publisher": "Grammarly",
+            "url": "https://www.grammarly.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:12.462Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "razer-synapse",
+      "name": "Razer Synapse",
+      "publisher": "Razer",
+      "category": "utility",
+      "processNames": [
+        "razer synapse.exe"
+      ],
+      "domains": [
+        "razer.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and account information",
+          "purpose": "Operate and improve Razer services",
+          "source": {
+            "title": "Razer - Privacy Policy | Razer United States",
+            "publisher": "Razer",
+            "url": "https://www.razer.com/legal/customer-privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:12.549Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "logitech-g-hub",
+      "name": "Logitech G Hub",
+      "publisher": "Logitech",
+      "category": "utility",
+      "processNames": [
+        "lghub.exe"
+      ],
+      "domains": [
+        "logitechg.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Product and device usage information",
+          "purpose": "Provide and improve products",
+          "source": {
+            "title": "Logitech Privacy Policy | How We Protect Your Information",
+            "publisher": "Logitech",
+            "url": "https://www.logitech.com/en-us/legal/product-privacy-policy.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:14.163Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    },
+    {
+      "id": "league-of-legends",
+      "name": "League of Legends",
+      "publisher": "Riot Games",
+      "category": "games",
+      "processNames": [
+        "leagueclient.exe"
+      ],
+      "domains": [
+        "leagueoflegends.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Gameplay and device information",
+          "purpose": "Operate and improve Riot services",
+          "source": {
+            "title": "Privacy Notice | Riot Games",
+            "publisher": "Riot Games",
+            "url": "https://www.riotgames.com/en/privacy-notice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T05:43:12.394Z"
+          }
+        }
+      ],
+      "sharesWith": [],
+      "destinations": [],
+      "incidents": []
+    }
+  ],
+  "companies": [],
+  "generatedAt": "2026-11-22T05:43:14.662Z"
+}
