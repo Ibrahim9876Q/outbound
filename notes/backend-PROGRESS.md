@@ -92,3 +92,9 @@ Verify the first SSE state after a new connection contains the active peer link.
 - The PowerShell helper samples the foreground PID roughly once a second. Background counts start after the baseline scan, group processes by executable, and skip unknown or stale foreground readings.
 - Local `data/seen.json` preserves attributed company names and their first observation time across server runs. Company identity follows the available attribution label and can improve when DNS information arrives.
 - The report includes background socket totals and newly seen companies for the local day. All 12 tests and the nine-asset smoke check passed.
+
+## xray2 real scan
+
+- Port 4319 completed a real opt-in scan in 20.844 seconds. Out of 15 profiles, all 15 history databases and 14 cookie databases were readable. One profile reported `EBUSY`.
+- Aggregates were 497 visited domains, 104 with public tracker matches, 162 tracker companies, 974 cookie domains, and 378 flagged cookie domains. The time-limited metadata walk reported 23,177,254,998 bytes across 49 app-folder rows.
+- The local state returned 154 link records at the end of the scan. Phone remained null in standalone mode and live state had a completed sample timestamp. The report served all three new sections.
