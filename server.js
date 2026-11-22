@@ -58,7 +58,10 @@ function pushEvent(e) {
 
 const network = new NetworkWatcher(pushEvent);
 const devices = new DeviceWatcher(pushEvent);
-process.on('exit', () => devices.close());
+process.on('exit', () => {
+  devices.close();
+  network.foreground.close();
+});
 process.on('SIGINT', () => process.exit(130));
 process.on('SIGTERM', () => process.exit(143));
 
