@@ -161,7 +161,22 @@ function createCiba(config, fetch = globalThis.fetch, wait = delay) {
     }
   }
 
+  async function pollDecision({ id }) {
+    const response = await post('oauth/token', { grant_type: CIBA_GRANT, auth_req_id: id });
+    const data = await response.json().catch(() => null);
+    if (response.ok) {
+      await verifyApprover(data?.id_token);
+      return 'approved';
+    }
+    if (data?.error === 'authorization_pending') return 'pending';
+    if (data?.error === 'slow_down') return 'slow_down';
+    if (data?.error === 'access_denied') return 'denied';
+    if (data?.error === 'expired_token') return 'expired';
+    throw new Auth0Error('CIBA', response.status, data, [config.clientSecret, id]);
+  }
+
   return {
+    pollDecision,
     async start(binding) {
       const response = await post('bc-authorize', {
         scope: 'openid',
@@ -178,17 +193,10 @@ function createCiba(config, fetch = globalThis.fetch, wait = delay) {
       while (Date.now() < deadline) {
         await wait(Math.min(interval * 1000, Math.max(0, deadline - Date.now())));
         if (Date.now() >= deadline) break;
-        const response = await post('oauth/token', { grant_type: CIBA_GRANT, auth_req_id: id });
-        const data = await response.json().catch(() => null);
-        if (response.ok) {
-          await verifyApprover(data?.id_token);
-          return 'approved';
-        }
-        if (data?.error === 'authorization_pending') continue;
-        if (data?.error === 'slow_down') { interval += 5; continue; }
-        if (data?.error === 'access_denied') return 'denied';
-        if (data?.error === 'expired_token') break;
-        throw new Auth0Error('CIBA', response.status, data, [config.clientSecret, id]);
+        const status = await pollDecision({ id });
+        if (status === 'pending') continue;
+        if (status === 'slow_down') { interval += 5; continue; }
+        return status;
       }
       return 'expired';
     },
