@@ -12,6 +12,13 @@ function source(value) {
   str(value.publisher);
   date(value.fetchedAt);
   if (value.date !== null) date(value.date);
+  for (const alternate of value.alternates || []) {
+    assert.equal(alternate.verified, true);
+    assert.equal(new URL(alternate.url).protocol, 'https:');
+    assert.notEqual(alternate.url, value.url);
+    str(alternate.title);
+    date(alternate.fetchedAt);
+  }
 }
 function headquarters(value) {
   for (const key of ['city', 'country']) if (value[key] !== null) str(value[key]);
@@ -29,6 +36,12 @@ function incidents(rows) {
     assert.ok(['court', 'settlement', 'fine', 'regulator', 'investigation', 'report', 'breach'].includes(row.kind));
     assert.ok(Number.isInteger(row.year));
     if (row.amount !== undefined) str(row.amount);
+    if (row.quote !== undefined || row.quoteSource !== undefined) {
+      str(row.quote);
+      assert.ok(row.quote.trim().split(/\s+/).length <= 25);
+      source(row.quoteSource);
+      assert.match(row.quoteSource.date, /^\d{4}-\d{2}-\d{2}$/);
+    }
   }
 }
 test('dossier v2 has a verified HTTPS source for every claim and every entry', () => {
@@ -63,6 +76,23 @@ test('dossier v2 has a verified HTTPS source for every claim and every entry', (
     incidents(company.incidents);
     assert.ok(company.declared.length + company.incidents.length +
       (company.sharesWith?.length || 0) + (company.destinations?.length || 0));
+  }
+});
+
+test('twenty incident excerpts have dated primary citations and a 25-word cap', () => {
+  const quotes = [...dossier.apps, ...dossier.companies].flatMap((item) => item.incidents).filter((item) => item.quote);
+  assert.equal(quotes.length, 20);
+});
+
+test('each cited URL was checked and each unavailable original has a verified reachable alternate', () => {
+  const health = require('./link-health.json');
+  const citations = require('./link-health').sources(dossier);
+  for (const item of citations) {
+    assert.ok(health[item.url], item.url);
+    date(health[item.url].checkedAt);
+    const reachable = (url) => health[url]?.status === 'reachable';
+    for (const alternate of item.alternates || []) assert.ok(reachable(alternate.url), alternate.url);
+    assert.ok(reachable(item.url) || item.alternates?.some((alternate) => reachable(alternate.url)), item.url);
   }
 });
 

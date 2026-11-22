@@ -352,7 +352,13 @@
       if (parsed.protocol === 'https:' || parsed.protocol === 'http:') url = parsed.href;
     } catch { /* Invalid citations stay plain text. */ }
     const details = [source.publisher || 'Publisher unavailable', source.date || 'Date unavailable'].join(' / ');
-    return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}</small>`;
+    const alternates = (source.alternates || []).flatMap((item) => {
+      try {
+        return new URL(item.url).protocol === 'https:'
+          ? [` / <a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Alternate source</a>`] : [];
+      } catch { return []; }
+    }).join('');
+    return `<small class="citation">${esc(details)}${url ? ` / <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || 'Source')}</a>` : ''}${alternates}</small>`;
   }
 
   function renderDossier() {
@@ -381,7 +387,8 @@
       + (selected.publisher ? `<p>${esc(selected.publisher)}</p>` : '')
       + (observed ? `<p>Live app for rule preview / ${esc(observed.name)} ${blockButton('app', observed.id)}</p>` : '')
       + display('incidents', 'Documented incidents', (entry) => `<strong>${esc(entry.title)}</strong><br>`
-        + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary))
+        + esc([entry.kind, entry.year, entry.jurisdiction, entry.amount].filter(Boolean).join(' / ')) + '<br>' + esc(entry.summary)
+        + (entry.quote && entry.quoteSource ? `<p><q>${esc(entry.quote)}</q>${sourceHTML(entry.quoteSource)}</p>` : ''))
       + blockButton(selected.type, selected.type === 'app' ? selected.processNames?.[0] : selected.name)
       + (selected.domains || []).map((domain) => blockButton('domain', domain)).join(' ')
       + display('declared', 'Declared collection', (entry) => `<strong>${esc(entry.data)}</strong> / ${esc(entry.purpose)}`)
