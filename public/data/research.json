@@ -8261,6 +8261,358 @@
           }
         }
       ]
+    },
+    {
+      "id": "extension-bjegfnhaogjfneindkaobkliokknbnfn",
+      "extensionIds": [
+        "bjegfnhaogjfneindkaobkliokknbnfn"
+      ],
+      "name": "Canva Chrome Extension",
+      "publisher": "CANVA PTY LTD",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Authentication information, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Canva Chrome Extension - Chrome Web Store",
+            "publisher": "CANVA PTY LTD",
+            "url": "https://chromewebstore.google.com/detail/canva-chrome-extension/bjegfnhaogjfneindkaobkliokknbnfn",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:47.309Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-jkkbfimmfiegakhkknnlolfgkhljggai",
+      "extensionIds": [
+        "jkkbfimmfiegakhkknnlolfgkhljggai"
+      ],
+      "name": "Bulk Unsaver for Insta",
+      "publisher": "Vrajesh Trivedi",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Authentication information",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Bulk Unsaver for Insta - Chrome Web Store",
+            "publisher": "Vrajesh Trivedi",
+            "url": "https://chromewebstore.google.com/detail/bulk-unsaver-for-insta/jkkbfimmfiegakhkknnlolfgkhljggai",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:47.821Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-aeoggmbongnapneiobbkonlicmfagpfg",
+      "extensionIds": [
+        "aeoggmbongnapneiobbkonlicmfagpfg"
+      ],
+      "name": "myjobb AI - Auto Apply to jobs in seconds!",
+      "publisher": "Infyn Technologies Pvt Ltd",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Authentication information",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "myjobb AI - Auto Apply to jobs in seconds! - Chrome Web Store",
+            "publisher": "Infyn Technologies Pvt Ltd",
+            "url": "https://chromewebstore.google.com/detail/myjobb-ai-auto-apply-to-j/aeoggmbongnapneiobbkonlicmfagpfg",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:48.720Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-kcihaacmobnfpcellccakhmbhkjdlkbf",
+      "extensionIds": [
+        "kcihaacmobnfpcellccakhmbhkjdlkbf"
+      ],
+      "name": "ShortKit – TikTok & Douyin Video Tools",
+      "publisher": "Diep Van Tien",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Web history, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "ShortKit – TikTok & Douyin Video Tools - Chrome Web Store",
+            "publisher": "Diep Van Tien",
+            "url": "https://chromewebstore.google.com/detail/shortkit-–-tiktok-douyin/kcihaacmobnfpcellccakhmbhkjdlkbf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:48.889Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-acopdedgmhhddcmoahmoamcclpbllkpb",
+      "extensionIds": [
+        "acopdedgmhhddcmoahmoamcclpbllkpb"
+      ],
+      "name": "SightSolve - Screenshot AI Homework Helper & Step-by-Step Tutor",
+      "publisher": "Luca Conti",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "SightSolve - Screenshot AI Homework Helper & Step-by-Step Tutor - Chrome Web Store",
+            "publisher": "Luca Conti",
+            "url": "https://chromewebstore.google.com/detail/sightsolve-screenshot-ai/acopdedgmhhddcmoahmoamcclpbllkpb",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:49.254Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-kimkfadngofemjnifamblbodcjjaipbm",
+      "extensionIds": [
+        "kimkfadngofemjnifamblbodcjjaipbm"
+      ],
+      "name": "Ryne - Humanize AI Text & AI Detector",
+      "publisher": "RYNE AI LLC FZ",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Authentication information, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Ryne - Humanize AI Text & AI Detector - Chrome Web Store",
+            "publisher": "RYNE AI LLC FZ",
+            "url": "https://chromewebstore.google.com/detail/ryne-humanize-ai-text-ai/kimkfadngofemjnifamblbodcjjaipbm",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:50.564Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-felfklcdlphibinjcogbgmdfcbbcaljf",
+      "extensionIds": [
+        "felfklcdlphibinjcogbgmdfcbbcaljf"
+      ],
+      "name": "AliSnapMedia - Download AliExpress Images",
+      "publisher": "vicen",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "AliSnapMedia - Download AliExpress Images - Chrome Web Store",
+            "publisher": "vicen",
+            "url": "https://chromewebstore.google.com/detail/alisnapmedia-download-ali/felfklcdlphibinjcogbgmdfcbbcaljf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:50.739Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-hdhkmndbgklmnccbdmmfloojokngplpc",
+      "extensionIds": [
+        "hdhkmndbgklmnccbdmmfloojokngplpc"
+      ],
+      "name": "Higgsfield Automation - Free Image and Video Generator",
+      "publisher": "Deepak Thapa",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Higgsfield Automation - Free Image and Video Generator - Chrome Web Store",
+            "publisher": "Deepak Thapa",
+            "url": "https://chromewebstore.google.com/detail/higgsfield-automation-fre/hdhkmndbgklmnccbdmmfloojokngplpc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:50.718Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-kogdciljkfifplhdainlinbppfpeenii",
+      "extensionIds": [
+        "kogdciljkfifplhdainlinbppfpeenii"
+      ],
+      "name": "Moxby",
+      "publisher": "Moxby",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Personal communications, Web history, User activity, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Moxby - Chrome Web Store",
+            "publisher": "Moxby",
+            "url": "https://chromewebstore.google.com/detail/moxby/kogdciljkfifplhdainlinbppfpeenii",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:50.796Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-jlblkfhlhppghnhfmkdnmogeeknoinbc",
+      "extensionIds": [
+        "jlblkfhlhppghnhfmkdnmogeeknoinbc"
+      ],
+      "name": "NotebookLM Quiz to Google Form Exporter",
+      "publisher": "Confidence Chigemezu Ofoegbu",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Personally identifiable information, Website content",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "NotebookLM Quiz to Google Form Exporter - Chrome Web Store",
+            "publisher": "Confidence Chigemezu Ofoegbu",
+            "url": "https://chromewebstore.google.com/detail/notebooklm-quiz-to-google/jlblkfhlhppghnhfmkdnmogeeknoinbc",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:51.342Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extension-hcbklcddgdgdfmlappncepolopnlgfcp",
+      "extensionIds": [
+        "hcbklcddgdgdfmlappncepolopnlgfcp"
+      ],
+      "name": "Discord Web Plus | Themes, Icons & UI Tweaks",
+      "publisher": "RawatLabs",
+      "category": "browser extension",
+      "domains": [],
+      "processNames": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "incidents": [],
+      "destinations": [],
+      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Developer declares no collection or use",
+          "purpose": "Publisher disclosure on its Chrome Web Store listing.",
+          "source": {
+            "title": "Discord Web Plus | Themes, Icons & UI Tweaks - Chrome Web Store",
+            "publisher": "RawatLabs",
+            "url": "https://chromewebstore.google.com/detail/discord-web-plus-themes-i/hcbklcddgdgdfmlappncepolopnlgfcp",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T06:53:51.426Z"
+          }
+        }
+      ]
     }
   ],
   "companies": [
@@ -12895,7 +13247,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T06:53:45.632Z",
+  "generatedAt": "2026-11-22T06:53:51.428Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -13364,11 +13716,20 @@
       "aapbdbdomjkkjkaonfhkkikfgjllcleb": [
         "extension-aapbdbdomjkkjkaonfhkkikfgjllcleb"
       ],
+      "acopdedgmhhddcmoahmoamcclpbllkpb": [
+        "extension-acopdedgmhhddcmoahmoamcclpbllkpb"
+      ],
       "aeblfdkhhhdcdjpifhhbdiojplfjncoa": [
         "extension-aeblfdkhhhdcdjpifhhbdiojplfjncoa"
       ],
+      "aeoggmbongnapneiobbkonlicmfagpfg": [
+        "extension-aeoggmbongnapneiobbkonlicmfagpfg"
+      ],
       "bgnkhhnnamicmpeenaelnjfhikgbkllg": [
         "extension-bgnkhhnnamicmpeenaelnjfhikgbkllg"
+      ],
+      "bjegfnhaogjfneindkaobkliokknbnfn": [
+        "extension-bjegfnhaogjfneindkaobkliokknbnfn"
       ],
       "bmnlcjabgnpnenekpadlanbbkooimhnj": [
         "extension-bmnlcjabgnpnenekpadlanbbkooimhnj"
@@ -13391,6 +13752,9 @@
       "fdpohaocaechififmbbbbbknoalclacl": [
         "extension-fdpohaocaechififmbbbbbknoalclacl"
       ],
+      "felfklcdlphibinjcogbgmdfcbbcaljf": [
+        "extension-felfklcdlphibinjcogbgmdfcbbcaljf"
+      ],
       "gighmmpiobklfepjocnamgkkbiglidom": [
         "extension-gighmmpiobklfepjocnamgkkbiglidom"
       ],
@@ -13400,17 +13764,38 @@
       "gomekmidlodglbbmalcneegieacbdmki": [
         "extension-gomekmidlodglbbmalcneegieacbdmki"
       ],
+      "hcbklcddgdgdfmlappncepolopnlgfcp": [
+        "extension-hcbklcddgdgdfmlappncepolopnlgfcp"
+      ],
+      "hdhkmndbgklmnccbdmmfloojokngplpc": [
+        "extension-hdhkmndbgklmnccbdmmfloojokngplpc"
+      ],
       "inomeogfingihgjfjlpeplalcfajhgai": [
         "extension-inomeogfingihgjfjlpeplalcfajhgai"
       ],
       "jghecgabfgfdldnmbfkhmffcabddioke": [
         "extension-jghecgabfgfdldnmbfkhmffcabddioke"
       ],
+      "jkkbfimmfiegakhkknnlolfgkhljggai": [
+        "extension-jkkbfimmfiegakhkknnlolfgkhljggai"
+      ],
+      "jlblkfhlhppghnhfmkdnmogeeknoinbc": [
+        "extension-jlblkfhlhppghnhfmkdnmogeeknoinbc"
+      ],
       "jplgfhpmjnbigmhklmmbgecoobifkmpa": [
         "extension-jplgfhpmjnbigmhklmmbgecoobifkmpa"
       ],
       "kbfnbcaeplbcioakkpcpgfkobkghlhen": [
         "extension-kbfnbcaeplbcioakkpcpgfkobkghlhen"
+      ],
+      "kcihaacmobnfpcellccakhmbhkjdlkbf": [
+        "extension-kcihaacmobnfpcellccakhmbhkjdlkbf"
+      ],
+      "kimkfadngofemjnifamblbodcjjaipbm": [
+        "extension-kimkfadngofemjnifamblbodcjjaipbm"
+      ],
+      "kogdciljkfifplhdainlinbppfpeenii": [
+        "extension-kogdciljkfifplhdainlinbppfpeenii"
       ],
       "lgblnfidahcdcjddiepkckcfdhpknnjh": [
         "extension-lgblnfidahcdcjddiepkckcfdhpknnjh"
