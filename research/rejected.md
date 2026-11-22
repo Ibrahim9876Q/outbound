@@ -771,3 +771,7 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 - Monarch Services, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3375-monarch-services-inc-et-al — unclear dossier entity.
 - Bigmailbox.Com, Inc., et al. — https://search.ftc.gov/legal-library/browse/cases-proceedings/002-3378-bigmailboxcom-inc-et-al — unclear dossier entity.
 - Toysmart.com, LLC, and Toysmart.com, Inc. — https://search.ftc.gov/legal-library/browse/cases-proceedings/x000075-toysmartcom-llc-toysmartcom-inc — unclear dossier entity.
+
+## incidents-10 · 2026-11-22T08:13:38.684Z
+
+- U.S. Radiology — https://ag.ny.gov/press-release/2023/attorney-general-james-secures-450000-medical-company-providing-services-western — missing evidence: U.S. Radiology

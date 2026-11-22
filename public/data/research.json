@@ -11559,6 +11559,21 @@
             "verified": true,
             "fetchedAt": "2026-11-22T06:13:02.320Z"
           }
+        },
+        {
+          "title": "Disney children’s video privacy matter",
+          "year": 2025,
+          "summary": "The FTC alleged that Disney failed to properly designate some child-directed YouTube videos.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Disney | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/disney",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.939Z"
+          }
         }
       ],
       "declared": []
@@ -16525,9 +16540,373 @@
         }
       ],
       "declared": []
+    },
+    {
+      "name": "Refuah Health Center",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Refuah ransomware safeguards agreement",
+          "year": 2024,
+          "summary": "The state reported safeguards deficiencies and reached an agreement requiring investment in patient-data security.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Reaches Agreement with Hudson Valley Health Care Provider to Invest $1.2 Million to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-reaches-agreement-hudson-valley-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.164Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HealthAlliance",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "HealthAlliance patient-data agreement",
+          "year": 2024,
+          "summary": "New York announced penalties and security requirements following an investigation of patient data protection.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $550,000 from Hudson Valley Health Care Facility Operator for Failing to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-550000-hudson-valley-health-care-facility",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.857Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albany ENT & Allergy Services",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Albany ENT patient-data agreement",
+          "year": 2024,
+          "summary": "An agreement required penalties and security investment after attacks compromised patient records.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $2.25 Million from Capital Region Health Care Provider to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-225-million-capital-region-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.167Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OrthopedicsNY",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "OrthopedicsNY privacy settlement",
+          "year": 2025,
+          "summary": "The state announced a settlement over safeguards after attackers obtained patient data.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $500,000 from Capital Region Health Care Provider for Failing to Protect Patients’ Information",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-secures-500000-capital-region-health-care-provider",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.235Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NewYork-Presbyterian",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Hospital tracking technology agreement",
+          "year": 2023,
+          "summary": "New York announced an agreement involving tracking technology on hospital websites.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $300,000 from NewYork-Presbyterian Hospital for Failing to Protect Patient Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-300000-newyork-presbyterian-hospital-failing",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.309Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Enzo Biochem",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Enzo Biochem ransomware settlement",
+          "year": 2024,
+          "summary": "State attorneys general investigated safeguards after a ransomware attack on a clinical laboratory business.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $4.5 Million from Biotech Company for Failing to Protect New Yorkers’ Health Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2024/attorney-general-james-secures-45-million-biotech-company-failing-protect-new",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.868Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Personal Touch",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Personal Touch patient and employee data settlement",
+          "year": 2023,
+          "summary": "The state reached an agreement over safeguards for patient and employee data.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James Secures $350,000 from Long Island Home Health Care Company for Failing to Protect Patient and Employee Data",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-secures-350000-long-island-home-health-care-company",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:35.404Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blackbaud",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Multistate Blackbaud breach settlement",
+          "year": 2023,
+          "summary": "A coalition of state attorneys general settled a matter over a breach at the cloud software provider.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General James and Multistate Coalition Secure $49.5 Million from Cloud Company for Data Breach",
+            "publisher": "New York Attorney General",
+            "url": "https://ag.ny.gov/press-release/2023/attorney-general-james-and-multistate-coalition-secure-495-million-cloud-company",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.595Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Healthline",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Healthline CCPA settlement",
+          "year": 2025,
+          "summary": "California announced a settlement over advertising disclosures and consumer opt-out practices.",
+          "jurisdiction": "United States",
+          "kind": "settlement",
+          "source": {
+            "title": "Attorney General Bonta Announces Largest CCPA Settlement to Date, Secures $1.55 Million from Healthline.com | State of California - Department of Just",
+            "publisher": "California Attorney General",
+            "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-announces-largest-ccpa-settlement-date-secures-155",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:37.859Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Honda California privacy settlement",
+          "year": 2025,
+          "summary": "Honda agreed to change privacy request and consent practices under a California administrative settlement.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Honda Settles With CPPA Over Privacy Violations",
+            "publisher": "California Privacy Protection Agency",
+            "url": "https://cppa.ca.gov/announcements/2025/20250312.html",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.944Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cognosphere",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Genshin Impact children’s privacy and marketing matter",
+          "year": 2025,
+          "summary": "The FTC case includes allegations involving children’s information in Genshin Impact.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Cognosphere, LLC, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3152-cognosphere-llc-us-v",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:38.597Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NGL",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "NGL youth safety and privacy order",
+          "year": 2024,
+          "summary": "The FTC case addressed youth privacy and other claims related to the NGL messaging app.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "NGL | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/ngl",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:36.835Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Easy Healthcare",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Premom federal stipulated order",
+          "year": 2023,
+          "summary": "A federal court entered an order related to the Premom fertility app and its handling of health information.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Premom federal stipulated order",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/2023.06.22_easy_healthcare_signed_order_2023.pdf",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:37.160Z"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cerebral",
+      "aliases": [],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [],
+      "incidents": [
+        {
+          "title": "Cerebral telehealth information complaint",
+          "year": 2024,
+          "summary": "The FTC case alleged improper use or disclosure of sensitive data from users of the telehealth service.",
+          "jurisdiction": "United States",
+          "kind": "regulator",
+          "source": {
+            "title": "Cerebral, Inc. and Kyle Robertson, U.S. v. | Federal Trade Commission",
+            "publisher": "Federal Trade Commission",
+            "url": "https://search.ftc.gov/legal-library/browse/cases-proceedings/222-3067-cerebral-inc-kyle-robertson-us-v",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:13:38.683Z"
+          }
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-11-22T06:58:55.414Z",
+  "generatedAt": "2026-11-22T08:13:38.685Z",
   "index": {
     "exe": {
       "brave.exe": [
