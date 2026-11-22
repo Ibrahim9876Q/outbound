@@ -36,3 +36,25 @@ A populated field has at least one curl-verified source. Product-specific statem
 | UNPKG | Collection, destinations, incidents | The operator identifies Cloudflare as its CDN. The sources did not establish what UNPKG collects, named processing countries, or a privacy incident. |
 
 Failed leads are documented in [rejected.md](rejected.md).
+
+## Student laptop demo coverage
+
+The demo set covers 25 selected apps. Verified collection, sharing, destinations, and incidents are present for 25, 24, 20, 18 entries respectively. 14 entries have all four fields. These counts describe evidence coverage.
+
+Adobe refers to Acrobat Reader, with service-specific hosting information from Adobe. The NVIDIA entry uses the GeForce NOW Android developer label because curl could not verify the NVIDIA desktop disclosure. Riot collection and processing claims use the company-wide notice and are scoped accordingly.
+
+| App | Fields we could not verify |
+| --- | --- |
+| Steam | destinations |
+| OneDrive | incidents |
+| Instagram | destinations |
+| WhatsApp | sharing, destinations |
+| Telegram | incidents |
+| Netflix | destinations |
+| Riot Vanguard | incidents |
+| NVIDIA GeForce NOW | destinations, incidents |
+| Adobe Acrobat Reader | incidents |
+| Grammarly | incidents |
+| Notion | incidents |
+
+Named countries require explicit processing or transfer evidence. Publisher-wide incidents without a verified link to the app are kept on the company record. Failed or insufficient sources are in [rejected.md](rejected.md).

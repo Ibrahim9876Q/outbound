@@ -818,3 +818,54 @@ Verification failures are appended by the dossier builder. A failed fetch or ter
 ## incidents-11 · 2026-11-22T08:21:37.872Z
 
 - Stripe — https://www.casemine.com/judgement/us/6109ba0e4653d04ad655694a — missing evidence: Stripe Elements, 2021, 4:20-cv-08196-YGR, various privacy laws, motion to dismiss
+
+## facts-11 · 2026-11-22T08:28:38.859Z
+
+- steam — https://store.steampowered.com/privacy_agreement/ — missing evidence: United States
+- zoom — https://www.zoom.com/en/trust/privacy/privacy-statement/ — missing evidence: vendors and service providers
+- slack — https://slack.com/trust/privacy/privacy-policy — missing evidence: Third Party Service Providers
+- telegram — https://telegram.org/privacy — missing evidence: our group companies
+- netflix — https://help.netflix.com/legal/privacy — missing evidence: United States
+- epic-games — https://www.epicgames.com/site/en-US/privacypolicy — curl: (22) The requested URL returned error: 403
+- nvidia — https://www.nvidia.com/en-us/about-nvidia/privacy-policy/ — missing evidence: device, system information
+- nvidia — no verified parent entry
+- nvidia — no verified parent entry
+
+## incidents-12 · 2026-11-22T08:28:40.502Z
+
+- slack — https://slack.com/blog/news/slack-security-update — missing evidence: hashed password, shared invitation link
+- dropbox — https://www.sec.gov/Archives/edgar/data/1467623/000146762324000024/dbx-20240429.htm — curl: (22) The requested URL returned error: 403
+- grammarly — https://www.helpnetsecurity.com/2018/02/06/grammarly-vulnerability/ — curl: (22) The requested URL returned error: 405
+
+## facts-11 · 2026-11-22T08:33:17.097Z
+
+- steam — https://store.steampowered.com/privacy_agreement/ — missing evidence: United States
+- netflix — https://help.netflix.com/legal/privacy — missing evidence: United States
+- nvidia — https://www.nvidia.com/en-us/about-nvidia/privacy-policy/ — missing evidence: device, system information
+- nvidia — no verified parent entry
+- nvidia — no verified parent entry
+- nvidia — https://nvidia.custhelp.com/app/answers/detail/a_id/3188/kw/gpu%20rendering/related/1 — curl: (22) The requested URL returned error: 403
+- netflix — https://help.netflix.com/legal/personal-information-international-transfers — missing evidence: United States
+
+## incidents-12 · 2026-11-22T08:33:18.823Z
+
+- slack — https://slack.com/intl/en-gb/blog/news/intl-ja-jp-new-information-2015-incident — missing evidence: unauthorised
+- grammarly — https://www.helpnetsecurity.com/2018/02/06/grammarly-vulnerability/ — curl: (22) The requested URL returned error: 405
+
+## facts-11 · 2026-11-22T08:36:47.445Z
+
+- steam — https://store.steampowered.com/privacy_agreement/ — missing evidence: United States
+- whatsapp — https://www.whatsapp.com/legal/privacy-policy?lang=en&lg=en — curl: (22) The requested URL returned error: 400
+- whatsapp — https://www.whatsapp.com/legal/privacy-policy?lang=en&lg=en — curl: (22) The requested URL returned error: 400
+- netflix — https://help.netflix.com/legal/privacy — missing evidence: United States
+- nvidia — https://www.nvidia.com/en-us/about-nvidia/privacy-policy/ — missing evidence: device, system information
+- nvidia — no verified parent entry
+- nvidia — no verified parent entry
+- nvidia — https://nvidia.custhelp.com/app/answers/detail/a_id/3188 — curl: (22) The requested URL returned error: 403
+- nvidia-geforce-now — https://play.google.com/store/apps/details?id=com.nvidia.geforcenow&hl=en_US — missing evidence: App activity, Device or other IDs
+- nvidia-geforce-now — no verified parent entry
+- netflix — https://help.netflix.com/legal/personal-information-international-transfers — missing evidence: United States
+
+## incidents-12 · 2026-11-22T08:36:50.331Z
+
+- grammarly — https://www.helpnetsecurity.com/2018/02/06/grammarly-vulnerability/ — curl: (22) The requested URL returned error: 405

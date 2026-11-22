@@ -371,9 +371,38 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Third-party payment providers",
+          "purpose": "Process payments",
+          "source": {
+            "title": "Privacy Policy Agreement",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/privacy_agreement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:34.694Z"
+          }
+        }
+      ],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "title": "Steam storefront caching exposure",
+          "year": 2015,
+          "kind": "breach",
+          "jurisdiction": "Global",
+          "summary": "Valve reported that a storefront caching error let some users see account information belonging to other users.",
+          "source": {
+            "title": "News - All News",
+            "publisher": "Valve",
+            "url": "https://store.steampowered.com/oldnews/?enddate=1451635200&feed=steam_news",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:49.315Z"
+          }
+        }
+      ]
     },
     {
       "id": "zoom",
@@ -404,8 +433,46 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide and support the service",
+          "source": {
+            "title": "Zoom Privacy Statement | Zoom",
+            "publisher": "Zoom",
+            "url": "https://www.zoom.com/en/trust/privacy/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:34.715Z"
+          }
+        },
+        {
+          "party": "Amazon Web Services",
+          "purpose": "Provide cloud infrastructure as a listed Zoom subprocessor.",
+          "source": {
+            "title": "Zoom Third-Party Subprocessors &amp; Zoom Affiliates | Zoom",
+            "publisher": "Zoom",
+            "url": "https://www.zoom.com/en/trust/subprocessors/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:45.434Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Zoom identifies the United States as a possible processing or storage location.",
+          "source": {
+            "title": "Zoom Privacy Statement | Zoom",
+            "publisher": "Zoom",
+            "url": "https://www.zoom.com/en/trust/privacy/privacy-statement/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:34.816Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "year": 2020,
@@ -528,8 +595,34 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Telegram group companies",
+          "purpose": "Provide, improve and support the service",
+          "source": {
+            "title": "Telegram Privacy Policy",
+            "publisher": "Telegram",
+            "url": "https://telegram.org/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.863Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "Netherlands",
+          "note": "Telegram says data for certain users is stored in Netherlands data centres.",
+          "source": {
+            "title": "Telegram Privacy Policy",
+            "publisher": "Telegram",
+            "url": "https://telegram.org/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.902Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -605,7 +698,20 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Support Snapchat and other Snap services",
+          "source": {
+            "title": "Privacy Policy | Snapchat Privacy",
+            "publisher": "Snap Inc.",
+            "url": "https://values.snap.com/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:36.257Z"
+          }
+        }
+      ],
       "destinations": [
         {
           "country": "United States",
@@ -700,7 +806,20 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide services such as computing and storage",
+          "source": {
+            "title": "Privacy Policy | Legal | Slack",
+            "publisher": "Slack",
+            "url": "https://slack.com/trust/privacy/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:34.906Z"
+          }
+        }
+      ],
       "destinations": [
         {
           "country": "United States",
@@ -775,7 +894,23 @@
           }
         }
       ],
-      "incidents": []
+      "incidents": [
+        {
+          "title": "Slack account-data breach",
+          "year": 2015,
+          "kind": "breach",
+          "jurisdiction": "Global",
+          "summary": "Slack disclosed unauthorized access to account information and later reset passwords for additional affected users.",
+          "source": {
+            "title": "New information about Slack’s 2015 security incident | Slack",
+            "publisher": "Slack",
+            "url": "https://slack.com/intl/en-gb/blog/news/intl-ja-jp-new-information-2015-incident",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:49.319Z"
+          }
+        }
+      ]
     },
     {
       "id": "x",
@@ -882,7 +1017,20 @@
           }
         }
       ],
-      "destinations": [],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Google describes use of the EU–U.S. Data Privacy Framework for covered transfers.",
+          "source": {
+            "title": "Data transfer frameworks – Privacy &amp; Terms – Google",
+            "publisher": "Google",
+            "url": "https://policies.google.com/privacy/frameworks?hl=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.809Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "settlement",
@@ -929,9 +1077,38 @@
           }
         }
       ],
-      "sharesWith": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide services used to operate Netflix",
+          "source": {
+            "title": "Privacy Statement | Netflix Help Center",
+            "publisher": "Netflix",
+            "url": "https://help.netflix.com/legal/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.871Z"
+          }
+        }
+      ],
       "destinations": [],
-      "incidents": []
+      "incidents": [
+        {
+          "title": "Dutch authority fines Netflix over privacy information",
+          "year": 2024,
+          "kind": "fine",
+          "jurisdiction": "Netherlands",
+          "summary": "The Dutch privacy regulator announced a €4.75 million fine over information Netflix supplied about its use of personal data.",
+          "source": {
+            "title": "Netflix fined for not properly informing customers | Autoriteit Persoonsgegevens",
+            "publisher": "Dutch Data Protection Authority",
+            "url": "https://autoriteitpersoonsgegevens.nl/en/current/netflix-fined-for-not-properly-informing-customers",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:49.725Z"
+          }
+        }
+      ]
     },
     {
       "id": "prime-video",
@@ -1024,8 +1201,34 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Microsoft’s notice covering OneDrive describes using providers acting on its behalf.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:34.994Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Microsoft’s general notice covering OneDrive names the US as a possible processing location.",
+          "source": {
+            "title": "Microsoft Privacy Statement – Microsoft privacy",
+            "publisher": "Microsoft",
+            "url": "https://privacy.microsoft.com/en-us/privacystatement",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:35.002Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -1057,9 +1260,51 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Trusted third parties",
+          "purpose": "Help provide and protect Dropbox services",
+          "source": {
+            "title": "Privacy Policy - Dropbox",
+            "publisher": "Dropbox",
+            "url": "https://www.dropbox.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:35.463Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Dropbox’s notice names the US as a location where it may store, process and transmit information.",
+          "source": {
+            "title": "Privacy Policy - Dropbox",
+            "publisher": "Dropbox",
+            "url": "https://www.dropbox.com/privacy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:36.311Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "title": "Dropbox Sign unauthorized access",
+          "year": 2024,
+          "kind": "breach",
+          "jurisdiction": "Global",
+          "summary": "Dropbox disclosed unauthorized access to Dropbox Sign customer information in an SEC filing.",
+          "source": {
+            "title": "Dropbox Sign unauthorized access",
+            "publisher": "Dropbox",
+            "url": "https://investors.dropbox.com/static-files/c057b02d-e330-4f11-9009-ff7f19d456e2",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:49.882Z"
+          }
+        }
+      ]
     },
     {
       "id": "icloud",
@@ -1246,7 +1491,23 @@
           }
         }
       ],
-      "incidents": []
+      "incidents": [
+        {
+          "title": "ChatGPT conversation history exposure",
+          "year": 2023,
+          "kind": "breach",
+          "jurisdiction": "Global",
+          "summary": "OpenAI said a bug let some users see titles from another active user’s chat history.",
+          "source": {
+            "title": "March 20 ChatGPT outage: Here’s what happened | OpenAI",
+            "publisher": "OpenAI",
+            "url": "https://openai.com/index/march-20-chatgpt-outage/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:49.584Z"
+          }
+        }
+      ]
     },
     {
       "id": "grammarly",
@@ -1277,8 +1538,34 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide the services described in Grammarly’s notice",
+          "source": {
+            "title": "Privacy Policy | Superhuman",
+            "publisher": "Grammarly",
+            "url": "https://www.grammarly.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:46.024Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Grammarly’s notice addresses processing in the United States.",
+          "source": {
+            "title": "Privacy Policy | Superhuman",
+            "publisher": "Grammarly",
+            "url": "https://www.grammarly.com/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:46.736Z"
+          }
+        }
+      ],
       "incidents": []
     },
     {
@@ -1568,9 +1855,51 @@
           }
         }
       ],
-      "sharesWith": [],
-      "destinations": [],
-      "incidents": []
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide Canva’s service and supporting infrastructure",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Canva",
+            "url": "https://www.canva.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:47.444Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "Australia",
+          "note": "Canva’s notice identifies Australia as a country where data may be processed.",
+          "source": {
+            "title": "Privacy Policy",
+            "publisher": "Canva",
+            "url": "https://www.canva.com/policies/privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:47.154Z"
+          }
+        }
+      ],
+      "incidents": [
+        {
+          "title": "Canva account-data breach",
+          "year": 2019,
+          "kind": "breach",
+          "jurisdiction": "Global",
+          "summary": "Canva reported that a 2019 security incident exposed account data.",
+          "source": {
+            "title": "Canva Security Incident – May 24 FAQs - Canva Help Center",
+            "publisher": "Canva",
+            "url": "https://www.canva.com/help/incident-may24/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:50.331Z"
+          }
+        }
+      ]
     },
     {
       "id": "figma",
@@ -1963,8 +2292,34 @@
         "city": null,
         "country": null
       },
-      "declared": [],
-      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Contact information and identifiers",
+          "purpose": "The developer lists these categories in its App Store privacy label.",
+          "source": {
+            "title": "‎Instagram App - App Store",
+            "publisher": "Instagram, Inc.",
+            "url": "https://apps.apple.com/us/app/instagram/id389801252",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:36.128Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Third parties",
+          "purpose": "Meta’s policy update describes sharing information and names law enforcement as one recipient category.",
+          "source": {
+            "title": "Here&#039;s What You Need to Know About Our Updated Privacy Policy and Terms of Service",
+            "publisher": "Meta",
+            "url": "https://about.fb.com/news/2022/05/metas-updated-privacy-policy/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:41.955Z"
+          }
+        }
+      ],
       "destinations": [],
       "incidents": [
         {
@@ -1998,8 +2353,34 @@
         "city": null,
         "country": null
       },
-      "declared": [],
-      "sharesWith": [],
+      "declared": [
+        {
+          "data": "Approximate location when Location Services is enabled in Canada",
+          "purpose": "Canadian disclosure about optional location collection",
+          "source": {
+            "title": "Mythbusting: The Facts On Reports About Our Data Collection Practices - Newsroom | TikTok",
+            "publisher": "TikTok",
+            "url": "https://newsroom.tiktok.com/mythbusting-the-facts-on-reports-about-our-data-collection-practices-ca?lang=en-CA",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:37.191Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Oracle",
+          "purpose": "Provide cloud infrastructure, as described for newly collected US user data in October 2023",
+          "source": {
+            "title": "TikTok Facts: How we secure personal information and store data - Newsroom | TikTok",
+            "publisher": "TikTok",
+            "url": "https://newsroom.tiktok.com/tiktok-facts-how-we-secure-personal-information-and-store-data?lang=en",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:37.551Z"
+          }
+        }
+      ],
       "destinations": [
         {
           "country": "United States",
@@ -2217,7 +2598,20 @@
         "city": null,
         "country": null
       },
-      "declared": [],
+      "declared": [
+        {
+          "data": "Contact information and identifiers",
+          "purpose": "The developer lists these categories in its App Store privacy label.",
+          "source": {
+            "title": "‎WhatsApp App - App Store",
+            "publisher": "WhatsApp Inc.",
+            "url": "https://apps.apple.com/us/app/whatsapp-messenger/id310633997",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:36.496Z"
+          }
+        }
+      ],
       "sharesWith": [],
       "destinations": [],
       "incidents": [
@@ -3530,9 +3924,48 @@
         "city": null,
         "country": null
       },
-      "declared": [],
-      "sharesWith": [],
-      "destinations": [],
+      "declared": [
+        {
+          "data": "Account and device information",
+          "purpose": "Operate Epic games and services",
+          "source": {
+            "title": "Epic Games Privacy Policy - Epic Games",
+            "publisher": "Epic Games",
+            "url": "https://legal.epicgames.com/epicgames/privacy-policy?lang=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.999Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Providers support Epic services",
+          "source": {
+            "title": "Epic Games Privacy Policy - Epic Games",
+            "publisher": "Epic Games",
+            "url": "https://legal.epicgames.com/epicgames/privacy-policy?lang=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:42.920Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Epic describes processing information in the United States.",
+          "source": {
+            "title": "Epic Games Privacy Policy - Epic Games",
+            "publisher": "Epic Games",
+            "url": "https://legal.epicgames.com/epicgames/privacy-policy?lang=en-US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:44.046Z"
+          }
+        }
+      ],
       "incidents": [
         {
           "kind": "settlement",
@@ -11031,6 +11464,221 @@
       "sharesWith": [],
       "destinations": [],
       "incidents": []
+    },
+    {
+      "id": "riot-vanguard",
+      "name": "Riot Vanguard",
+      "publisher": "Riot Games",
+      "category": "anti-cheat",
+      "processNames": [],
+      "domains": [
+        "riotgames.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Device and gameplay information",
+          "purpose": "Riot describes using technical data for service integrity and to prevent cheating.",
+          "source": {
+            "title": "Privacy Notice | Riot Games",
+            "publisher": "Riot Games",
+            "url": "https://www.riotgames.com/en/privacy-notice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:44.041Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide and support Riot’s services",
+          "source": {
+            "title": "Privacy Notice | Riot Games",
+            "publisher": "Riot Games",
+            "url": "https://www.riotgames.com/en/privacy-notice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:44.048Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Riot’s publisher-wide notice describes processing personal data abroad, including in the US.",
+          "source": {
+            "title": "Privacy Notice | Riot Games",
+            "publisher": "Riot Games",
+            "url": "https://www.riotgames.com/en/privacy-notice",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:44.044Z"
+          }
+        }
+      ],
+      "incidents": []
+    },
+    {
+      "id": "acrobat-reader",
+      "name": "Adobe Acrobat Reader",
+      "publisher": "Adobe",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "adobe.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Contact information and user content",
+          "purpose": "Adobe’s App Store privacy label for Acrobat Reader lists these data categories.",
+          "source": {
+            "title": "‎Acrobat Reader: PDF Editor App - App Store",
+            "publisher": "Adobe",
+            "url": "https://apps.apple.com/us/app/adobe-acrobat-reader-edit-pdf/id469337564",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:46.090Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Amazon Web Services",
+          "purpose": "Host Acrobat Services identity data",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:45.840Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Adobe lists US locations for Acrobat Services identity data.",
+          "source": {
+            "title": "Adobe Developers",
+            "publisher": "Adobe",
+            "url": "https://developer.adobe.com/document-services/faq/tech-support/",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:45.815Z"
+          }
+        }
+      ],
+      "incidents": []
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "publisher": "Notion Labs",
+      "category": "productivity",
+      "processNames": [],
+      "domains": [
+        "notion.so"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Account and profile information",
+          "purpose": "Provide the Notion workspace service",
+          "source": {
+            "title": "Your connected workspace for wiki, docs &amp; projects | Notion",
+            "publisher": "Notion Labs",
+            "url": "https://www.notion.com/trust/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:46.726Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Service providers",
+          "purpose": "Provide the workspace and support services",
+          "source": {
+            "title": "Your connected workspace for wiki, docs &amp; projects | Notion",
+            "publisher": "Notion Labs",
+            "url": "https://www.notion.com/trust/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:47.016Z"
+          }
+        }
+      ],
+      "destinations": [
+        {
+          "country": "United States",
+          "note": "Notion describes processing or transferring personal information in the US.",
+          "source": {
+            "title": "Your connected workspace for wiki, docs &amp; projects | Notion",
+            "publisher": "Notion Labs",
+            "url": "https://www.notion.com/trust/privacy-policy",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:36:46.770Z"
+          }
+        }
+      ],
+      "incidents": []
+    },
+    {
+      "id": "nvidia-geforce-now",
+      "name": "NVIDIA GeForce NOW",
+      "publisher": "NVIDIA",
+      "category": "cloud gaming",
+      "processNames": [],
+      "domains": [
+        "geforcenow.com"
+      ],
+      "hq": {
+        "city": null,
+        "country": null
+      },
+      "declared": [
+        {
+          "data": "Location and personal information",
+          "purpose": "Developer disclosure for the GeForce NOW Android app.",
+          "source": {
+            "title": "GeForce NOW Cloud Gaming - Apps on Google Play",
+            "publisher": "NVIDIA",
+            "url": "https://play.google.com/store/apps/details?id=com.nvidia.geforcenow&hl=en_US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:38:25.173Z"
+          }
+        }
+      ],
+      "sharesWith": [
+        {
+          "party": "Third parties",
+          "purpose": "The developer’s Google Play label declares no data sharing for the Android app.",
+          "source": {
+            "title": "GeForce NOW Cloud Gaming - Apps on Google Play",
+            "publisher": "NVIDIA",
+            "url": "https://play.google.com/store/apps/details?id=com.nvidia.geforcenow&hl=en_US",
+            "date": null,
+            "verified": true,
+            "fetchedAt": "2026-11-22T08:38:25.234Z"
+          }
+        }
+      ],
+      "destinations": [],
+      "incidents": []
     }
   ],
   "companies": [
@@ -17773,7 +18421,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-11-22T08:22:52.561Z",
+  "generatedAt": "2026-11-22T08:38:25.235Z",
   "index": {
     "exe": {
       "brave.exe": [
@@ -17858,6 +18506,9 @@
     "domain": {
       "1password.com": [
         "1password"
+      ],
+      "adobe.com": [
+        "acrobat-reader"
       ],
       "android.com": [
         "android"
@@ -17997,6 +18648,9 @@
       "flo.health": [
         "flo"
       ],
+      "geforcenow.com": [
+        "nvidia-geforce-now"
+      ],
       "gemini.google.com": [
         "gemini"
       ],
@@ -18081,6 +18735,9 @@
       "news.google.com": [
         "google-news"
       ],
+      "notion.so": [
+        "notion"
+      ],
       "obsproject.com": [
         "obs"
       ],
@@ -18120,6 +18777,9 @@
       ],
       "razer.com": [
         "razer-synapse"
+      ],
+      "riotgames.com": [
+        "riot-vanguard"
       ],
       "shein.com": [
         "shein"
