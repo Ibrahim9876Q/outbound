@@ -46,6 +46,7 @@
   `.trim().split(/\s+/);
   const countryRows = new Map();
   const countryTargets = new Map();
+  let countryColors = new Map();
   const appButtons = new Map();
   const arcCache = new Map();
   let globe;
@@ -239,6 +240,38 @@
     return [...next.values()];
   }
 
+  function updateCountryCells(places) {
+    const colors = new Map();
+    for (const { country, tracker } of places) {
+      if (country) colors.set(country, tracker || colors.get(country) || false);
+    }
+    if (colors.size === countryColors.size
+      && [...colors].every(([code, tracker]) => countryColors.get(code) === tracker)) return;
+    countryColors = colors;
+    globe.hexPolygonColor((country) => countryCellColor(country));
+  }
+
+  function countryCellColor(country) {
+    if (countryColors.get(country.code)) return arcColor(trackerColor, true);
+    return countryColors.has(country.code) ? 'rgba(235,235,235,0.74)' : 'rgba(195,195,195,0.35)';
+  }
+
+  async function loadCountryCells() {
+    try {
+      const response = await fetch('/data/countries.geojson');
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      const { features } = await response.json();
+      const countryGeometry = features.map(({ geometry, properties }) => ({
+        geometry,
+        code: countryCode(properties.ISO_A2) || countryCode(properties.WB_A2)
+          || (properties.ADM0_A3 === 'NOR' ? 'NO' : ''),
+      }));
+      globe.hexPolygonsData(countryGeometry);
+    } catch (error) {
+      console.warn('Could not load Globe country cells.', error);
+    }
+  }
+
   function makePoints(places, home) {
     const points = new Map();
     for (const place of places) {
@@ -350,6 +383,7 @@
       setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') : 'Waiting for network activity…');
     }
     if (!globe) return;
+    updateCountryCells(places);
     const points = hasCoordinates(home) ? makePoints(located, home) : [];
     if (shownPoint) {
       const updated = points.find((point) => point.key === shownPoint.key);
@@ -372,6 +406,13 @@
         .backgroundColor('#080808')
         .showAtmosphere(false)
         .showGraticules(true)
+        .hexPolygonGeoJsonGeometry('geometry')
+        .hexPolygonResolution(3)
+        .hexPolygonMargin(0.3)
+        .hexPolygonAltitude(0.002)
+        .hexPolygonUseDots(true)
+        .hexPolygonsTransitionDuration(0)
+        .hexPolygonColor(countryCellColor)
         .arcAltitudeAutoScale('scale')
         .arcStartAltitude('startAlt')
         .arcEndAltitude('endAlt')
@@ -391,7 +432,7 @@
         })
         .pointResolution(10)
         .pointsTransitionDuration(0)
-        .pointerEventsFilter((object) => object.__globeObjType !== 'arc')
+        .pointerEventsFilter((object) => ['point', 'globe'].includes(object.__globeObjType))
         .onPointHover((point) => {
           if (pinnedPoint === null) renderPoint(point);
         })
@@ -409,6 +450,7 @@
         globe.pointOfView({ lat: home.lat - 9, lng: home.lng, altitude: 1.65 });
       });
       globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      loadCountryCells();
     } catch (error) {
       globe = undefined;
       initFailed = true;
