@@ -12,6 +12,7 @@ const { LinkWatcher } = require('./lib/links');
 const { warnPoll } = require('./lib/poll');
 const { scoreApps } = require('./lib/score');
 const { DailyHistory } = require('./lib/history');
+const { researchLink } = require('./lib/dossier');
 
 const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
@@ -86,9 +87,10 @@ process.on('SIGTERM', () => process.exit(143));
 
 function scores(apps) {
   const scanKey = scan.result.status === 'done' ? scan.result : null;
-  if (!scoreCache || scoreCache.sampledAt !== sampledAt || scoreCache.scan !== scanKey) {
+  if (!scoreCache || scoreCache.sampledAt !== sampledAt || scoreCache.scan !== scanKey || scoreCache.links !== linkWatcher.current) {
     const payload = scoreApps(apps, scan.result, sampledAt);
-    scoreCache = { sampledAt, scan: scanKey, payload, byId: new Map(payload.apps.map(({ id, score }) => [id, score])) };
+    scoreCache = { sampledAt, scan: scanKey, links: linkWatcher.current, payload,
+      byId: new Map(payload.apps.map(({ id, score }) => [id, score])) };
   }
   return scoreCache;
 }
@@ -98,7 +100,8 @@ function state() {
   const linked = linkWatcher.snapshot(snapshot.apps);
   const { byId } = scores(linked.apps);
   return { at: Date.now(), home: HOME, ...snapshot, legacyLinks: snapshot.links,
-    ...linked, apps: linked.apps.map((app) => ({ ...app, score: byId.get(app.id) ?? null })),
+    ...linked, apps: linked.apps.map((app) => ({ ...app, score: byId.get(app.id) ?? null,
+      ...researchLink({ exe: app.id, name: app.name }) })),
     devices: devices.snapshot(), events: events.slice(0, 60), phone,
     sampledAt, fresh: sampledAt !== null };
 }
