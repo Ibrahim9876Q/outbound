@@ -29,7 +29,7 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 2. In **Stored data**, run **Scan this PC** before the timer. When the scan is ready, open **Permission history** and show one recorded timestamp.
 3. In **Dossier**, search **Tim Hortons** and click its result. Under **Documented incidents**, point to the mobile location investigation and its regulator source.
 4. Return to **Computer** and choose **Block app** for a rehearsed app with a known executable path, then **Preview block**. Point to **DRY RUN**.
-5. Click **Show app on globe**, then open a country row. Use **All apps** if the selected app has no mapped endpoints. [Three-minute script](DEMO.md)
+5. Click **Show app on globe**, then open a country row. Use **All apps** if the selected app has no mapped endpoints. [Judge’s guide](JUDGING.md) · [Three-minute script](DEMO.md)
 
 ## Views
 
