@@ -123,3 +123,10 @@ Verify the first SSE state after a new connection contains the active peer link.
 - The Windows workflow uses Node 24 and runs the fixture suite with `CI=true`. The suite uses in-memory DNS and SSE fixtures and needs neither live collectors nor listening ports.
 - Ten consecutive local `npm test` runs with `CI=true` each passed all 40 tests, for 400 passing results and zero failures.
 - `npm run check` passed for 10 assets, state, report and SSE on its own loopback port. The local verification disabled outbound reverse DNS and hosted integrations.
+
+## xray8 demo readiness
+
+- A fresh local clone installed 59 packages with `npm ci --offline` and ran both components of `npm run dev:all` on isolated loopback ports. First requests to the README APIs, including the first SSE message and the scan start acknowledgment, took 1–8 ms. Optional Auth0 routes responded in local mode. The scan cache appeared after the opt-in scan and restored with its original finish time after restart. The policy file appeared on the first rule write. The device fixture verified that `usage.json` appears after a completed capture session.
+- A live restart with corrupt policy, history, and usage files kept serving with warnings. An unavailable scheduled-task cmdlet and an exclusive lock on a QA History database produced scan warnings while state and report remained available.
+- In a local 1280×800 Chrome rehearsal, measured interaction times were 1.89 s for Computer startup, 2.14 s for Stored data and Permission history, 0.26 s for Dossier, 1.52 s through the Rules preview, and 0.77 s for Globe and its All apps fallback. Chrome recorded no uncaught exceptions. At 130 words per minute, the spoken lines plus those interaction times fit each of the five slots in `DEMO.md`.
+- Five `npm test` runs with `CI=true` each passed all 44 tests. `npm run check` passed for 10 local assets, state, report, and the initial SSE frame. QA disabled outbound reverse DNS and hosted integrations. The README dossier totals were regenerated from the merged catalog.

@@ -36,7 +36,7 @@ Open [Desktop](http://127.0.0.1:4317/) and [Phone](http://127.0.0.1:4320/). If P
 | History | 6 | The last seven recorded days in the UI, with up to 30 local days available through the API. |
 
 <!-- dossier-counts:start -->
-The dossier contains **313 apps**, **183 companies**, and **223 incident records**, with **528 distinct source URLs** across its records.
+The dossier contains **334 apps**, **199 companies**, and **244 incident records**, with **575 distinct source URLs** across its records.
 <!-- dossier-counts:end -->
 
 Counts include incident records from app and company entries. Run `npm run docs:counts` after rebuilding [the dossier](public/data/research.json).
