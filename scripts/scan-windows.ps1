@@ -43,8 +43,53 @@ function InstalledSoftware {
   }
 }
 
+function Autoruns {
+  foreach ($root in @('HKCU:\Software\Microsoft\Windows\CurrentVersion', 'HKLM:\Software\Microsoft\Windows\CurrentVersion',
+      'HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion')) {
+    foreach ($key in @('Run', 'RunOnce')) {
+      $registry = Get-Item "$root\$key"
+      if (-not $registry) { continue }
+      foreach ($name in $registry.GetValueNames()) {
+        $command = $registry.GetValue($name, $null, 'DoNotExpandEnvironmentNames')
+        if ($command -is [string]) { [pscustomobject]@{ kind='startup'; name=$name; command=$command } }
+      }
+    }
+  }
+  $shell = New-Object -ComObject WScript.Shell
+  foreach ($folder in @([Environment]::GetFolderPath('Startup'), [Environment]::GetFolderPath('CommonStartup')) | Select-Object -Unique) {
+    if (-not $folder) { continue }
+    foreach ($file in Get-ChildItem -LiteralPath $folder -File) {
+      if ($file.Name -eq 'desktop.ini') { continue }
+      $command = $file.FullName
+      if ($shell -and $file.Extension -eq '.lnk') {
+        $shortcut = $shell.CreateShortcut($file.FullName)
+        if ($shortcut.TargetPath) { $command = ('"{0}" {1}' -f $shortcut.TargetPath, $shortcut.Arguments).Trim() }
+      }
+      [pscustomobject]@{ kind='startup'; name=$file.BaseName; command=$command }
+    }
+  }
+  Get-ScheduledTask | ForEach-Object {
+    $commands = @($_.Actions | ForEach-Object {
+      if ($_.Execute) { ('"{0}" {1}' -f $_.Execute, $_.Arguments).Trim() }
+      elseif ($_.ClassId) { 'COM handler ' + $_.ClassId }
+    })
+    $triggers = @($_.Triggers | ForEach-Object {
+      @{ type=$_.CimClass.CimClassName; enabled=$_.Enabled; start=$_.StartBoundary; end=$_.EndBoundary;
+         repetition=$_.Repetition.Interval; daysInterval=$_.DaysInterval; daysOfWeek=$_.DaysOfWeek; weeksInterval=$_.WeeksInterval;
+         delay=$_.Delay }
+    })
+    [pscustomobject]@{ kind='task'; name=($_.TaskPath + $_.TaskName); command=($commands -join ' ; ')
+      publisher=$_.Author; status=[string]$_.State; triggers=$triggers }
+  }
+  Get-CimInstance Win32_Service | ForEach-Object {
+    [pscustomobject]@{ kind='service'; name=$_.Name; command=$_.PathName; description=($_.DisplayName + ' ' + $_.Description)
+      status=$_.State; startType=$_.StartMode }
+  }
+}
+
 $rows = switch ($Collector) {
   'permissions' { ConsentEntries 'HKLM:'; ConsentEntries 'HKCU:' }
   'installed' { InstalledSoftware }
+  'autoruns' { Autoruns }
 }
 [Console]::WriteLine((ConvertTo-Json -InputObject @($rows) -Depth 8 -Compress))
