@@ -87,9 +87,24 @@ function ScheduledTasks {
 }
 
 function Services {
-  Get-CimInstance Win32_Service -ErrorAction Stop | ForEach-Object {
-    [pscustomobject]@{ kind='service'; name=$_.Name; command=$_.PathName; description=($_.DisplayName + ' ' + $_.Description)
-      status=$_.State; startType=$_.StartMode }
+  $services = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\CurrentControlSet\Services')
+  if (-not $services) { throw 'Service registry is unavailable.' }
+  try {
+    foreach ($service in Get-Service -ErrorAction Stop) {
+      $entry = $services.OpenSubKey($service.Name)
+      if (-not $entry) { continue }
+      try {
+        $description = $service.DisplayName + ' ' + $entry.GetValue('Description')
+        if (($service.Name + ' ' + $description) -notmatch 'telemetry|diagtrack|dmwappushservice|diagnostics?|tracking') { continue }
+        $start = $entry.GetValue('Start')
+        $startType = switch ($start) { 0 { 'Boot' } 1 { 'System' } 2 { 'Automatic' } 3 { 'Manual' } 4 { 'Disabled' } }
+        [pscustomobject]@{ kind='service'; name=$service.Name
+          command=$entry.GetValue('ImagePath', $null, 'DoNotExpandEnvironmentNames'); description=$description
+          status=[string]$service.Status; startType=$startType }
+      } finally { $entry.Dispose() }
+    }
+  } finally {
+    $services.Dispose()
   }
 }
 
