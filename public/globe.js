@@ -193,6 +193,7 @@
           location.city?.trim()
             ? [location.city.trim(), location.country].filter(Boolean).join(', ')
             : (location.country ? location.country + ' ~' : 'Unknown'),
+          destination.ip,
         ]);
       }
     }
@@ -202,18 +203,18 @@
   function renderTrail() {
     const groups = [];
     const latest = new Map();
-    for (const [at, app, org, location] of recentTrail.values()) {
+    for (const [at, app, org, location, ip] of recentTrail.values()) {
       const key = JSON.stringify([app, org, location]);
       const group = latest.get(key);
       if (group && group[0] - at < 10000) {
-        group[4]++;
+        group[4].add(ip);
       } else {
-        const row = [at, app, org, location, 1];
+        const row = [at, app, org, location, new Set([ip])];
         groups.push(row);
         latest.set(key, row);
       }
     }
-    const rows = groups.slice(0, 6);
+    const rows = groups.slice(0, 6).map(([at, app, org, location, ips]) => [at, app, org, location, ips.size]);
     const model = JSON.stringify(rows);
     if (trailList.dataset.model === model) return;
     trailList.dataset.model = model;

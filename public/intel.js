@@ -245,9 +245,17 @@
     policyBusy = true;
     renderPolicy();
     try {
+      const target = { ...blockTarget };
+      if (target.kind === 'company') {
+        const addresses = [...new Set((Outbound.state?.apps || []).flatMap((app) => app.destinations)
+          .filter((destination) => lower(destination.org) === lower(target.value))
+          .map((destination) => destination.ip)
+          .filter((ip) => typeof ip === 'string' && /^[a-f0-9:.]+$/i.test(ip)))].slice(0, 100);
+        if (addresses.length) target.addresses = addresses;
+      }
       const response = await api('/api/policy/rules', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ target: blockTarget, action: 'block', scope: 'session' }),
+        body: JSON.stringify({ target, action: 'block', scope: 'session' }),
       });
       showPlan(response.plan, response.decision);
       $('rules-status').textContent = 'Local block rule preview ready.';
