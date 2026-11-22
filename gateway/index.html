@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone | Outbound</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/phone.css">
+  <script defer src="/phone.js"></script>
+</head>
+<body class="phone">
+  <header class="phone-bar">
+    <a class="phone-brand" href="http://127.0.0.1:4317/">Outbound</a>
+    <a class="phone-return" href="http://127.0.0.1:4317/">Computer dashboard <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="phone-shell">
+    <section id="phone-demo" class="phone-card phone-demo" hidden aria-label="Laptop-only demo">
+      <strong id="phone-demo-label">Laptop DNS test</strong>
+      <p id="phone-demo-description"></p>
+      <button type="button" class="phone-button" id="phone-self-test">RUN CONSENT SELF-TEST</button>
+      <button type="button" class="phone-button" data-demo="lookup">Look up tracker</button>
+      <button type="button" class="phone-button" data-demo="approve" disabled>Approve demo request</button>
+      <button type="button" class="phone-button" data-demo="deny" disabled>Deny demo request</button>
+      <div id="phone-terminal" class="phone-terminal" role="log" aria-label="Consent self-test log" hidden></div>
+    </section>
+    <section class="phone-intro" aria-labelledby="phone-title">
+      <div>
+        <h1 id="phone-title">Phone activity</h1>
+        <p>Watch the domains your phone looks up and control access to known trackers.</p>
+      </div>
+      <div class="phone-endpoint">
+        <span class="phone-indicator" id="phone-status" role="status">Connecting to gateway</span>
+        <span id="phone-endpoint"></span>
+      </div>
+    </section>
+    <dl class="phone-metrics">
+      <div><dt>DNS lookups</dt><dd id="phone-lookups">—</dd></div>
+      <div><dt>Blocked lookups</dt><dd id="phone-blocked">—</dd></div>
+      <div><dt>Active approvals</dt><dd id="phone-approved">—</dd></div>
+    </dl>
+    <div class="phone-grid">
+      <section class="phone-card" aria-labelledby="phone-activity-title">
+        <header class="phone-card-head">
+          <h2 id="phone-activity-title">Recent DNS lookups</h2>
+          <label class="phone-filter"><input id="phone-filter" type="checkbox"> Trackers only</label>
+        </header>
+        <div class="phone-scroll">
+          <table class="phone-table">
+            <thead><tr><th scope="col">Domain</th><th scope="col">Result</th><th scope="col">Time</th></tr></thead>
+            <tbody id="phone-feed"></tbody>
+          </table>
+          <p class="phone-empty" id="phone-feed-empty">Waiting for the first lookup.</p>
+        </div>
+      </section>
+      <section class="phone-card" aria-labelledby="phone-consent-title">
+        <header class="phone-card-head"><h2 id="phone-consent-title">Tracker permissions</h2></header>
+        <div class="phone-consent">
+          <p class="phone-hint" id="phone-auth-status">Known trackers stay blocked until approved.</p>
+          <p class="phone-hint" id="phone-approval-wait" hidden>Waiting for approval on your phone... <span id="phone-approval-clock" role="timer"></span></p>
+          <p class="phone-action-status" id="phone-action-status" role="status" hidden></p>
+          <ul class="phone-trackers" id="phone-trackers"></ul>
+          <p class="phone-empty" id="phone-trackers-empty">Tracker domains will appear here as they’re detected.</p>
+        </div>
+      </section>
+    </div>
+    <p class="phone-footnote">DNS shows domain lookups. The feed covers traffic sent to this resolver. Encrypted DNS, cached addresses and direct IP connections can bypass it.</p>
+    <details class="phone-card phone-explainer">
+      <summary>How Auth0 powers tracker consent</summary>
+      <ul>
+        <li>Auth0 FGA stores a consent tuple for each approved tracker with an expiry and checks it on DNS lookups.</li>
+        <li>Auth0 CIBA sends an approval push to the enrolled phone while the gateway polls for the decision.</li>
+        <li>Revoking consent deletes the FGA tuple so future tracker lookups are blocked.</li>
+      </ul>
+    </details>
+  </main>
+</body>
+</html>
