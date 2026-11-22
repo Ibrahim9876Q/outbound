@@ -346,6 +346,7 @@
       updateIcon(icon.node, app);
     }
     el.empty.hidden = apps.length > 0;
+    placeToasts();
     el.desktop.dataset.hidden = hiddenApps;
   }
 
@@ -799,8 +800,32 @@
     const ico = cls === 'mic' ? svgIcon(e.type.endsWith('on') ? 'mic' : 'micOff') : cls === 'camera' ? svgIcon(e.type.endsWith('on') ? 'cam' : 'camOff') : '';
     node.innerHTML = `${ico}<span>${esc(eventText(e))}</span>`;
     el.toasts.prepend(node);
-    while (el.toasts.children.length > 3) el.toasts.lastChild.remove();
-    setTimeout(() => { node.classList.add('leaving'); setTimeout(() => node.remove(), 450); }, 4500);
+    while (el.toasts.children.length > 2) el.toasts.lastChild.remove();
+    placeToasts();
+    setTimeout(() => { node.classList.add('leaving'); setTimeout(() => { node.remove(); placeToasts(); }, 450); }, 4500);
+  }
+
+  // Put toasts in the first screen corner that covers no desktop icon (or its name).
+  // If every corner is taken, they sit over the internet strip, which only hides company chips briefly.
+  function placeToasts() {
+    const zone = el.toasts;
+    if (!zone.children.length) return;
+    const W = el.screen.clientWidth;
+    const H = el.screen.clientHeight;
+    const w = zone.offsetWidth;
+    const h = zone.offsetHeight;
+    const top = el.internet.offsetHeight + 8;
+    const bottom = H - 38 - 8 - h;
+    const boxes = [];
+    for (const icon of icons.values()) {
+      if (!icon.slot || icon.node.hidden) continue;
+      boxes.push({ x: icon.slot.x, y: icon.slot.y, w: ICON_W, h: icon.node.offsetHeight });
+    }
+    const free = (x, y) => !boxes.some((b) => x < b.x + b.w && b.x < x + w && y < b.y + b.h && b.y < y + h);
+    const corners = [[W - 12 - w, bottom], [12, bottom], [W - 12 - w, top], [12, top]];
+    const spot = corners.find(([x, y]) => free(x, y)) || [W - 12 - w, 6];
+    zone.style.left = `${Math.round(spot[0])}px`;
+    zone.style.top = `${Math.round(spot[1])}px`;
   }
 
   // ---------- demo spotlight: cycles through the most interesting things on screen ----------
