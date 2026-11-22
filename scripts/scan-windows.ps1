@@ -43,7 +43,7 @@ function InstalledSoftware {
   }
 }
 
-function Autoruns {
+function StartupEntries {
   foreach ($root in @('HKCU:\Software\Microsoft\Windows\CurrentVersion', 'HKLM:\Software\Microsoft\Windows\CurrentVersion',
       'HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion')) {
     foreach ($key in @('Run', 'RunOnce')) {
@@ -68,7 +68,10 @@ function Autoruns {
       [pscustomobject]@{ kind='startup'; name=$file.BaseName; command=$command }
     }
   }
-  Get-ScheduledTask | ForEach-Object {
+}
+
+function ScheduledTasks {
+  Get-ScheduledTask -ErrorAction Stop | ForEach-Object {
     $commands = @($_.Actions | ForEach-Object {
       if ($_.Execute) { ('"{0}" {1}' -f $_.Execute, $_.Arguments).Trim() }
       elseif ($_.ClassId) { 'COM handler ' + $_.ClassId }
@@ -81,7 +84,10 @@ function Autoruns {
     [pscustomobject]@{ kind='task'; name=($_.TaskPath + $_.TaskName); command=($commands -join ' ; ')
       publisher=$_.Author; status=[string]$_.State; triggers=$triggers }
   }
-  Get-CimInstance Win32_Service | ForEach-Object {
+}
+
+function Services {
+  Get-CimInstance Win32_Service -ErrorAction Stop | ForEach-Object {
     [pscustomobject]@{ kind='service'; name=$_.Name; command=$_.PathName; description=($_.DisplayName + ' ' + $_.Description)
       status=$_.State; startType=$_.StartMode }
   }
@@ -113,7 +119,9 @@ function PrivacyReadout {
 $rows = switch ($Collector) {
   'permissions' { ConsentEntries 'HKLM:'; ConsentEntries 'HKCU:' }
   'installed' { InstalledSoftware }
-  'autoruns' { Autoruns }
+  'startup entries' { StartupEntries }
+  'scheduled tasks' { ScheduledTasks }
+  'services' { Services }
   'windowsPrivacy' { PrivacyReadout }
 }
 [Console]::WriteLine((ConvertTo-Json -InputObject @($rows) -Depth 8 -Compress))
