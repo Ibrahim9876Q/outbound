@@ -8,4 +8,15 @@ The first three app batches follow the priority Windows and popular-app list. La
 
 For enforcement research, PDF sources are downloaded with the same curl settings and converted to text with Poppler's `pdftotext.exe` before checking evidence. The FTC catalog tool starts from the [FTC's privacy cases index](https://search.ftc.gov/enforcement/cases-proceedings/terms/1420), then fetches each case page, verifies the title and topic, and checks for a dated case timeline. Topic evidence comes from the case summary or a press release headline in the timeline. The record's year identifies the earliest item shown in the timeline. The file number is recorded where the page exposes it and is used to avoid counting multiple pages for the same matter. Catalog entries summarize the docket topic, which may concern allegations or a procedural development.
 
-This snapshot contains 222 apps, including 87 additional chart apps, and 116 company records. The dossier contains 145 incident records, five sharing disclosures, and 16 country transfer disclosures. The index contains 26 executable names and 123 domains. Coverage varies by entity. Some priority products have an enforcement source only, and some requested disclosures could not be verified. The FTC's `search.ftc.gov` host supplied official case pages when its main hostname returned a 404 to curl.
+This snapshot contains 222 apps, including 87 additional chart apps, and 136 company records. The dossier contains 162 incident records, 36 sharing disclosures, and 39 country transfer disclosures. The index contains 26 executable names and 123 domains. Some entries have an enforcement source only. The FTC's `search.ftc.gov` host supplied official case pages when its main hostname returned a 404 to curl.
+
+## Scan-prioritized coverage
+
+An opt-in scan on loopback port 4321 returned 20 tracker companies in `summary.topTrackers`, the endpoint's limit. To cover the requested 28, the remaining eight were ranked from the same scan's site tracker records by counting unique sites per company and sorting ties by company name. This reproduced the published top 20 exactly. Tracker ranks are dataset matches against visited sites, which do not establish that a connection was made. Six installed apps mapped to app entries. Company-only matches were excluded from the app count. Scan data stayed local.
+
+| Group | Targeted | With a dossier entry | All four fields | Collection | Sharing | Destinations | Incidents |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Tracker companies | 28 | 26 | 12 | 24 | 24 | 17 | 17 |
+| Installed apps matched to the dossier | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
+
+A populated field has at least one curl-verified source. Product-specific statements identify their scope and historical disclosures identify their date. Gaps remain where a source failed to load, could not substantiate the claim, or lacked incident coverage. Akamai's candidate notices returned HTTP 403 to curl, and UNPKG's public material did not substantiate a privacy claim. Failed leads are documented in [rejected.md](rejected.md).
