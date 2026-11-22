@@ -43,8 +43,77 @@ function InstalledSoftware {
   }
 }
 
+function Autoruns {
+  foreach ($root in @('HKCU:\Software\Microsoft\Windows\CurrentVersion', 'HKLM:\Software\Microsoft\Windows\CurrentVersion',
+      'HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion')) {
+    foreach ($key in @('Run', 'RunOnce')) {
+      $registry = Get-Item "$root\$key"
+      if (-not $registry) { continue }
+      foreach ($name in $registry.GetValueNames()) {
+        $command = $registry.GetValue($name, $null, 'DoNotExpandEnvironmentNames')
+        if ($command -is [string]) { [pscustomobject]@{ kind='startup'; name=$name; command=$command } }
+      }
+    }
+  }
+  $shell = New-Object -ComObject WScript.Shell
+  foreach ($folder in @([Environment]::GetFolderPath('Startup'), [Environment]::GetFolderPath('CommonStartup')) | Select-Object -Unique) {
+    if (-not $folder) { continue }
+    foreach ($file in Get-ChildItem -LiteralPath $folder -File) {
+      if ($file.Name -eq 'desktop.ini') { continue }
+      $command = $file.FullName
+      if ($shell -and $file.Extension -eq '.lnk') {
+        $shortcut = $shell.CreateShortcut($file.FullName)
+        if ($shortcut.TargetPath) { $command = ('"{0}" {1}' -f $shortcut.TargetPath, $shortcut.Arguments).Trim() }
+      }
+      [pscustomobject]@{ kind='startup'; name=$file.BaseName; command=$command }
+    }
+  }
+  Get-ScheduledTask | ForEach-Object {
+    $commands = @($_.Actions | ForEach-Object {
+      if ($_.Execute) { ('"{0}" {1}' -f $_.Execute, $_.Arguments).Trim() }
+      elseif ($_.ClassId) { 'COM handler ' + $_.ClassId }
+    })
+    $triggers = @($_.Triggers | ForEach-Object {
+      @{ type=$_.CimClass.CimClassName; enabled=$_.Enabled; start=$_.StartBoundary; end=$_.EndBoundary;
+         repetition=$_.Repetition.Interval; daysInterval=$_.DaysInterval; daysOfWeek=$_.DaysOfWeek; weeksInterval=$_.WeeksInterval;
+         delay=$_.Delay }
+    })
+    [pscustomobject]@{ kind='task'; name=($_.TaskPath + $_.TaskName); command=($commands -join ' ; ')
+      publisher=$_.Author; status=[string]$_.State; triggers=$triggers }
+  }
+  Get-CimInstance Win32_Service | ForEach-Object {
+    [pscustomobject]@{ kind='service'; name=$_.Name; command=$_.PathName; description=($_.DisplayName + ' ' + $_.Description)
+      status=$_.State; startType=$_.StartMode }
+  }
+}
+
+function PrivacyValue($Setting, $Choices) {
+  foreach ($entry in $Choices) {
+    $item = Get-ItemProperty -LiteralPath $entry[0] -Name $entry[1]
+    $value = $item.($entry[1])
+    if ($null -ne $value) { return [pscustomobject]@{ setting=$Setting; value=$value; mode=$entry[2] } }
+  }
+  [pscustomobject]@{ setting=$Setting; value=$null; mode=$null }
+}
+
+function PrivacyReadout {
+  $pol = 'HKLM:\Software\Policies\Microsoft\Windows'
+  $user = 'HKCU:\Software\Microsoft\Windows\CurrentVersion'
+  $machine = 'HKLM:\Software\Microsoft\Windows\CurrentVersion'
+  PrivacyValue 'Advertising ID' @(@("$pol\AdvertisingInfo",'DisabledByGroupPolicy','disabledPolicy'), @("$user\AdvertisingInfo",'Enabled','enabled'))
+  PrivacyValue 'Diagnostic data' @(@("$pol\DataCollection",'AllowTelemetry','diagnostic'), @("$machine\Policies\DataCollection",'AllowTelemetry','diagnostic'))
+  PrivacyValue 'Tailored experiences' @(@('HKCU:\Software\Policies\Microsoft\Windows\CloudContent','DisableTailoredExperiencesWithDiagnosticData','disabledPolicy'), @("$user\Privacy",'TailoredExperiencesWithDiagnosticDataEnabled','enabled'))
+  PrivacyValue 'Activity history' @(@("$pol\System",'PublishUserActivities','enabled'), @("$pol\System",'EnableActivityFeed','enabled'), @("$user\ActivityHistory",'Enabled','enabled'))
+  PrivacyValue 'Location service' @(@("$pol\LocationAndSensors",'DisableLocation','disabledPolicy'), @("HKLM:\$consent\location",'Value','consent'))
+  PrivacyValue 'Inking and typing personalization' @(@("$pol\System",'AllowInputPersonalization','enabled'), @('HKCU:\Software\Microsoft\InputPersonalization','RestrictImplicitTextCollection','restriction'))
+  PrivacyValue 'Find my device' @(@("$pol\FindMyDevice",'AllowFindMyDevice','enabled'), @('HKLM:\Software\Microsoft\Settings\FindMyDevice','LocationSyncEnabled','enabled'))
+  PrivacyValue 'Online speech recognition' @(@("$pol\System",'AllowInputPersonalization','enabled'), @("$user\OnlineSpeechPrivacy",'HasAccepted','enabled'))
+}
+
 $rows = switch ($Collector) {
   'permissions' { ConsentEntries 'HKLM:'; ConsentEntries 'HKCU:' }
   'installed' { InstalledSoftware }
+  'autoruns' { Autoruns }
+  'windowsPrivacy' { PrivacyReadout }
 }
 [Console]::WriteLine((ConvertTo-Json -InputObject @($rows) -Depth 8 -Compress))
