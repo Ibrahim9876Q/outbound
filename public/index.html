@@ -83,7 +83,10 @@
                 <g id="packets"></g>
               </svg>
               <div class="desktop" id="desktop"></div>
-              <div class="empty" id="empty">&gt; waiting for apps to connect_</div>
+              <div class="empty" id="empty" role="status">
+                <div><strong><span class="watch-dot" aria-hidden="true"></span>Listening on this PC</strong>
+                  <p id="desktop-observation">Waiting for the first Windows connection sample.</p></div>
+              </div>
               <div class="toast-zone" id="toasts"></div>
               <div class="taskbar">
                 <span class="start" aria-hidden="true"></span>

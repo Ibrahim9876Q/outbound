@@ -456,6 +456,11 @@
   pointer-events: none;
 }
 
+.empty > div { max-width: 34ch; text-align: center; padding: 12px 18px; }
+.empty strong { color: var(--fg); }
+.empty p { margin-top: 8px; font-size: 13px; line-height: 1.4; }
+.watch-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; background: currentColor; animation: pulse 1.6s ease-in-out infinite; }
+
 /* demo spotlight caption */
 .spotlight-caption {
   position: absolute;

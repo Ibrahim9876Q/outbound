@@ -226,6 +226,7 @@
     const rows = groups.slice(0, 6).map(([at, app, org, location, ips]) => [at, app, org, location, ips.size]);
     const model = JSON.stringify(rows);
     if (trailList.dataset.model === model) return;
+    const firstRows = !trailList.childElementCount && rows.length;
     trailList.dataset.model = model;
     trailEmpty.hidden = recentTrail.size > 0;
     trailList.replaceChildren(...rows.map(([at, app, org, location, count]) => {
@@ -240,6 +241,12 @@
       }
       return row;
     }));
+    if (firstRows && visible && !reducedMotion.matches) {
+      for (const [index, row] of [...trailList.children].entries()) {
+        row.animate([{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 220, delay: index * 35, fill: 'backwards' });
+      }
+    }
   }
 
   function countryCode(code) {
@@ -780,7 +787,8 @@
       const mapped = count + ' mapped ' + plural(count, 'destination');
       const cap = shared?.capCount?.(places.length, retained, 'retained endpoints');
       setText(summary, places.length ? mapped + (unknown ? ' · ' + unknown + ' unplaced' : '') + (cap ? ' / ' + cap : '')
-        : selectedApp ? 'No retained destinations for ' + selectedApp + '.' : 'Waiting for network activity…');
+        : selectedApp ? 'No retained destinations for ' + selectedApp + '.'
+          : state.fresh ? 'Listening on this PC. No remote destinations observed yet.' : 'Waiting for the first Windows connection sample.');
     }
     if (!globe) return;
     updateCountryCells(places);

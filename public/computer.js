@@ -254,7 +254,7 @@
     const countries = new Set(list.flatMap((o) => [...o.countries.keys()]));
     el.internetSub.textContent = list.length
       ? `· ${list.length} compan${list.length === 1 ? 'y' : 'ies'} in ${countries.size} countr${countries.size === 1 ? 'y' : 'ies'}`
-      : '';
+      : '· No attributed companies observed';
   }
 
   // Bottom-center of a chip in screen coordinates (where wires end).
@@ -382,6 +382,12 @@
       updateDesktopDossier(icon);
     }
     el.empty.hidden = apps.length > 0;
+    if (!apps.length) {
+      const text = state.fresh ? 'No app connections in the latest sample. Open an app to watch its connections appear.'
+        : 'Waiting for the first Windows connection sample.';
+      const observation = $('desktop-observation');
+      if (observation.textContent !== text) observation.textContent = text;
+    }
     placeToasts();
     el.desktop.dataset.hidden = hiddenApps;
   }
