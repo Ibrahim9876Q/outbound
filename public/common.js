@@ -248,22 +248,58 @@
 
   function connect() {
     const pill = $('pill-live');
-    const source = new EventSource('/events');
-    source.addEventListener('state', (msg) => {
-      let state;
-      try { state = JSON.parse(msg.data); } catch { return; }
+    let source;
+    let connected = false;
+    let retry = 500;
+
+    function publish(state) {
+      if (!state || !Array.isArray(state.apps) || (Outbound.state && state.at < Outbound.state.at)) return;
       Outbound.state = state;
-      pill.classList.remove('down');
       safe(renderTopbar, state);
       for (const fn of stateFns) safe(fn, state);
-    });
-    source.addEventListener('event', (msg) => {
-      let e;
-      try { e = JSON.parse(msg.data); } catch { return; }
-      for (const fn of eventFns) safe(fn, e);
-    });
-    // EventSource reconnects by itself; just tell the user.
-    source.onerror = () => { pill.classList.add('down'); setText('live-text', 'Reconnecting…'); };
+      if (!connected && pill.classList.contains('down')) setText('live-text', 'Reconnecting…');
+    }
+
+    async function refresh(current) {
+      try {
+        const response = await fetch('/api/state', { cache: 'no-store', signal: AbortSignal.timeout(4000) });
+        if (response.ok) {
+          const state = await response.json();
+          if (source === current) publish(state);
+        }
+      } catch { /* The event stream retries independently. */ }
+    }
+
+    function open() {
+      const current = source = new EventSource('/events');
+      current.onopen = () => {
+        connected = true;
+        retry = 500;
+        pill.classList.remove('down');
+        refresh(current);
+      };
+      current.addEventListener('state', (message) => {
+        try { publish(JSON.parse(message.data)); } catch { /* Ignore malformed messages. */ }
+      });
+      current.addEventListener('event', (message) => {
+        let event;
+        try { event = JSON.parse(message.data); } catch { return; }
+        for (const fn of eventFns) safe(fn, event);
+      });
+      current.onerror = () => {
+        if (source !== current) return;
+        current.close();
+        source = null;
+        connected = false;
+        pill.classList.add('down');
+        setText('live-text', 'Reconnecting…');
+        setTimeout(open, retry);
+        retry = Math.min(8000, retry * 2);
+      };
+    }
+
+    open();
+    refresh(source);
   }
 
   // ---------- high contrast (projectors) ----------
