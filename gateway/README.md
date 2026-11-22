@@ -27,6 +27,8 @@ The dashboard listens on the PC's loopback address at port **4320**. The default
 
 ## Enable Auth0 consent
 
+To publish the bundled model from the laptop, first fill `FGA_API_URL`, `FGA_STORE_ID`, `FGA_CLIENT_ID` and `FGA_CLIENT_SECRET` in `.env`. Run `node gateway/fga-model.js` with a store client that can write models, then paste the printed `FGA_MODEL_ID` line into `.env`.
+
 1. Create an Auth0 FGA store. In Model Explorer, publish [consent.fga](consent.fga). In store Settings, create an authorized client that can read and write tuples and perform checks. Paste the regional API URL, store ID, published model ID, client ID and secret into `.env`. [FGA models](https://docs.fga.dev/intro/models) · [FGA store settings](https://docs.fga.dev/intro/settings)
 2. Create an Auth0 tenant with CIBA trial or paid access. Create a **Regular Web Application** with **Client Secret (Post)** authentication and RS256 signing. Enable the **Client Initiated Backchannel Authentication** grant and Guardian push. Create a test approver and enroll their device in Guardian through Universal Login. Paste the tenant hostname, application credentials and enrolled user's `user_id` into `.env`. [Auth0 CIBA setup](https://auth0.com/blog/building-secure-ai-agents-microsoft-agent-framework-auth0-part-4-human-in-the-loop-approval/)
 3. Generate `PHONE_POLICY_KEY` with the command below and keep it in `.env`. Leave the same key in place across restarts so the gateway can match existing grants. Restart the gateway after filling the settings.
