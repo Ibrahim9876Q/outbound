@@ -180,6 +180,8 @@
         <p>Scanning stays on this PC. Browser results show domains only, with no cookie values or passwords.</p>
         <button type="button" class="tool-btn" id="scan-start">Scan this PC</button></div>
       <p id="scan-status" role="status">Waiting for scan status.</p>
+      <p><button type="button" class="tool-btn" id="permission-jump">Permission history</button>
+        <button type="button" class="tool-btn" data-dossier="tim-hortons" data-dossier-kind="app">Tim Hortons dossier</button></p>
       <pre class="ascii-radar" id="scan-radar" aria-hidden="true" hidden></pre>
       <div id="scan-results" class="intel-grid"></div>
     </section>
@@ -196,6 +198,7 @@
       <p id="rules-status" role="status"></p>
       <div id="rules-pending"></div>
       <pre id="rules-plan" class="policy-plan" hidden></pre>
+      <button type="button" class="tool-btn" id="rules-globe" hidden>Show app on globe</button>
       <div id="rules-list" class="card"></div>
     </section>
     <section class="view intel-view hidden" id="view-history">

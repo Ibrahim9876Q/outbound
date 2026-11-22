@@ -318,6 +318,10 @@
         button.title = app.id;
       }
       button.addEventListener('click', () => {
+        if (shared?.showView) {
+          shared.showView('globe', app.id || '');
+          return;
+        }
         selectedApp = app.id || null;
         setRotation(false);
         clearPoint();
@@ -750,7 +754,6 @@
       const label = shared?.util?.appLabel?.(app.name) || app.name;
       return { ...app, name: nameCounts.get(app.name) > 1 ? label + ' · ' + app.id : label };
     }).sort((a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
-    if (!namedApps.some((app) => app.id === selectedApp)) selectedApp = null;
     const shownApps = namedApps.filter((app) => selectedApp === null || app.id === selectedApp);
     const retained = shownApps.reduce((total, app) => total + (app.totals?.destinations ?? app.destinations.length), 0);
     const places = shownApps
@@ -957,13 +960,16 @@
         render();
       }, 1100);
     });
-    shared.showAppOnGlobe = (id) => {
-      selectedApp = id;
+    shared.showAppOnGlobe = (id) => shared.showView('globe', id);
+    shared.onView((name) => {
+      if (name !== 'globe') return;
+      const target = shared.viewTarget || null;
+      if (target !== selectedApp) setRotation(false);
+      selectedApp = target;
       modelKey = '';
       clearPoint();
-      shared.showView('globe');
       syncView();
-    };
+    });
     shared.onState(receiveState);
   } else {
     const source = new EventSource('/events');

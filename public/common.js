@@ -339,25 +339,33 @@
 
   // ---------- view tabs ----------
 
-  function showView(name) {
+  function showView(name, target = '') {
     if (!document.getElementById(`view-${name}`)) return;
     if (Outbound.view !== name && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.startViewTransition(() => applyView(name));
+      document.startViewTransition(() => applyView(name, target));
     } else {
-      applyView(name);
+      applyView(name, target);
     }
   }
 
-  function applyView(name) {
+  function applyView(name, target) {
     Outbound.view = name;
+    Outbound.viewTarget = target;
     for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
       const on = btn.dataset.view === name;
       btn.classList.toggle('active', on);
       btn.setAttribute('aria-selected', on);
     }
     for (const view of document.querySelectorAll('main > .view')) view.classList.toggle('hidden', view.id !== `view-${name}`);
-    try { history.replaceState(null, '', `#${name}`); } catch { /* file:// or sandboxed */ }
+    try { history.replaceState(null, '', `#${name}${target ? '/' + encodeURIComponent(target) : ''}`); } catch { /* file:// or sandboxed */ }
     for (const fn of viewFns) safe(fn, name);
+  }
+
+  function followHash() {
+    const [name, encoded] = location.hash.slice(1).split('/', 2);
+    let target = '';
+    try { target = decodeURIComponent(encoded || ''); } catch { /* malformed hash */ }
+    showView(name || 'computer', target);
   }
 
   // ---------- live connection ----------
@@ -566,18 +574,21 @@
     try { hc = localStorage.getItem('outbound.hc') === '1'; } catch { /* storage blocked */ }
     setHighContrast(hc);
     $('hc-btn')?.addEventListener('click', () => setHighContrast(!document.body.classList.contains('hc')));
+    const shortcuts = ['computer', 'globe', 'scan', 'dossier', 'rules', 'history'];
     document.addEventListener('keydown', (e) => {
       if (e.target.closest('input, textarea, select, [contenteditable]') || e.ctrlKey || e.metaKey || e.altKey) return;
       if (e.key === 'h' || e.key === 'H') setHighContrast(!document.body.classList.contains('hc'));
+      if (!e.shiftKey && /^[1-6]$/.test(e.key)) showView(shortcuts[Number(e.key) - 1]);
     });
     // Only buttons with data-view switch views; the Phone tab is a plain link to the phone dashboard.
     for (const btn of document.querySelectorAll('.view-btn[data-view]')) {
+      const shortcut = shortcuts.indexOf(btn.dataset.view);
+      if (shortcut >= 0) btn.setAttribute('aria-keyshortcuts', String(shortcut + 1));
       btn.addEventListener('click', () => { if (!btn.disabled) showView(btn.dataset.view); });
     }
-    const fromHash = location.hash.slice(1);
-    if (fromHash && fromHash !== 'computer') showView(fromHash);
+    followHash();
     // Editing the #hash in the address bar doesn't reload the page, so follow it here too.
-    window.addEventListener('hashchange', () => showView(location.hash.slice(1) || 'computer'));
+    window.addEventListener('hashchange', followHash);
     connect();
   }
 
