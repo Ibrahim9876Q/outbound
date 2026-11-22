@@ -339,10 +339,24 @@
 
   // ---------- view tabs ----------
 
+  let viewTransition;
   function showView(name, target = '') {
     if (!document.getElementById(`view-${name}`)) return;
+    viewTransition?.skipTransition();
+    viewTransition = null;
     if (Outbound.view !== name && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.startViewTransition(() => applyView(name, target));
+      const transition = document.startViewTransition(() => {
+        if (viewTransition === transition) applyView(name, target);
+      });
+      viewTransition = transition;
+      transition.ready.catch((error) => {
+        if (error.name !== 'AbortError') console.error(error);
+      });
+      transition.finished.catch((error) => {
+        if (error.name !== 'AbortError') console.error(error);
+      }).finally(() => {
+        if (viewTransition === transition) viewTransition = null;
+      });
     } else {
       applyView(name, target);
     }
