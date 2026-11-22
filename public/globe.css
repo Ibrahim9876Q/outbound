@@ -154,6 +154,22 @@
   border-top: 1px solid var(--map-border);
 }
 
+#view-globe .globe-tip-fields {
+  display: grid;
+  grid-template-columns: 9ch minmax(0, 1fr);
+  gap: 2px 8px;
+  margin: 6px 0 0;
+  font: 14px/1.35 Consolas, monospace;
+}
+
+#view-globe .globe-tip-fields dt {
+  color: var(--map-muted);
+}
+
+#view-globe .globe-tip-fields dd {
+  margin: 0;
+}
+
 #view-globe .globe-tip-close {
   position: absolute;
   top: 5px;
@@ -244,7 +260,37 @@
 
 #view-globe .globe-country-button:not(:disabled)::after {
   color: var(--map-muted);
-  content: "↗" / "";
+  content: "+" / "";
+}
+
+#view-globe .globe-country-button[aria-expanded="true"]::after {
+  content: "−" / "";
+}
+
+#view-globe .globe-country-companies {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 8px 12px 16px;
+  list-style: none;
+}
+
+#view-globe .globe-country-companies li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 8px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+#view-globe .globe-country-companies span,
+#view-globe .globe-country-companies small {
+  color: var(--map-muted);
+}
+
+#view-globe .globe-country-companies small {
+  grid-column: 1 / -1;
+  font-size: inherit;
 }
 
 #view-globe .globe-country-button:not(:disabled):hover {

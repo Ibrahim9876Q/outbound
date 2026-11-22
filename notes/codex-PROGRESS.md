@@ -49,3 +49,8 @@ On slow Wi-Fi, use destinations already observed during the live preflight. The 
 - Merged the shared theme and preserved both lanes’ entries in the shared requests file.
 - Replaced Earth imagery with a latitude and longitude grid. The routes, panels, and flag icons are grayscale. Tracker details use the shared red accent.
 - Opened the merged Globe tab in headless Chrome on port 4318 and inspected a 1280×800 capture with live destinations.
+
+## Monochrome land layer
+
+- Added a grayscale land mask from the bundled Natural Earth geometry. The map still loads entirely offline.
+- Disabled the library’s opening spin so the globe starts at home with routes visible. Verified recognizable North American coastlines, the grid, and live routes in Chrome at 1280×800.
