@@ -187,7 +187,7 @@ const server = http.createServer(async (req, res) => {
   if (url.pathname === '/api/scan') {
     const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
     if (req.method === 'GET') {
-      return sendScan(req, res, scan.result);
+      return sendScan(req, res, scan.view());
     }
     if (req.method === 'POST') {
       if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) {
