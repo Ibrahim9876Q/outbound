@@ -105,3 +105,17 @@ History contains at most 30 local calendar days. Background minutes estimate int
 The following records may carry an optional `researchId`: `apps[]`, `scan.installed[]`, `scan.extensions[]`, `scan.permissions[]`, `scan.browsers[].sites[]`, and `scan.browsers[].cookieDomains[]`. Extension rows may also have `publisher`. Dossier IDs are app IDs or `company:<canonical company name>`. Missing or ambiguous matches are omitted.
 
 State and SSE include pre-cap retained counts in `totals: { apps, links, legacyLinks, events }`, `apps[].totals: { destinations, localPeers, udp, children, backgroundCompanies, backgroundTrackers }`, and `devices.{mic,camera}.totals: { recentSessions, lastUsedByApp }`. The visible limits are 80 apps, 160 of each link array, 24 events, 40 destinations per app, 20 UDP listeners, 24 peer/child/background names per list, and 10 device sessions or last-used rows per list. Scores and history are computed before these display caps.
+
+## 8. Retained scans and lightweight polling (xray5)
+
+`GET /api/scan` keeps its existing fields. It adds `cached: boolean` and can embed the last completed snapshot as `previous` while a newer scan is running, provisional, or failed. A restored snapshot or reused `previous` has `cached: true` with the original `finishedAt`. Fresh results have `cached: false`. Only a scan that completes its background walk replaces the saved snapshot. The full route supports gzip and sends `Cache-Control: no-store`.
+
+```
+GET /api/scan/status = {
+  status, startedAt, finishedAt, progress, cached, appDataBackground, appDataCachedAt,
+  counts: { browsers, apps, permissions, installed, autoruns, extensions, windowsPrivacy },
+  warningCount, previous: { finishedAt, cached: true } | null, error?
+}
+```
+
+Poll status for progress and fetch the full result when a visible section is ready or the scan completes. Counts describe rows available in the current result and can include stale autorun rows. `autoruns[].stale: true` marks rows retained from the last completed scan while their source is being retried or could not be refreshed. Each successful source replaces its own rows, including when it returns an empty list.

@@ -57,3 +57,11 @@ After replacing the service inventory's CIM query with Service Control Manager s
 - `f972c38` and `864ddb4` revise the judged script, Devpost claims and timing fallbacks.
 - `7aa600d` isolates autorun collectors so slow task enumeration cannot erase startup and service results.
 - `effbc13` replaces the timing-out service inventory with read-only Service Control Manager and registry metadata.
+
+## xray5 remeasurement · November 22, 2026
+
+On port 4319, status first reported **629 permission rows at 3.980 s**. The foreground result arrived in **20.448 s**, and the background cache completed in **101.524 s** with 68 folder rows and zero collector warnings. The full provisional response was **761,539 bytes** as identity and **83,558 bytes** as gzip. The status response was **298 bytes** at that point.
+
+Idle Node used **6.25% of one CPU core** over **24.242 s**. Its working set at the end was **223.6 MiB**. The measurement excludes child-process CPU.
+
+The completed cache occupied **766,246 bytes**. After restarting the owned server, the full GET immediately returned the same finish timestamp and permission count with `cached: true`. A rescan exposed 629 previous permission rows and 217 stale autorun rows. Its full gzip response was 95,069 bytes and its status response was **324 bytes**. The failure fixture independently verified that a failed source retains its old rows without clearing successful sources.

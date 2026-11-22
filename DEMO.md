@@ -14,7 +14,7 @@ Rehearse from the integrated Windows checkout. Before the timer, press **Scan th
 
 ## Fallback appendix
 
-- If the scan is still running, show Computer until the permission card renders, or use a reviewed recording of an actual run. A new scan replaces the previous result. The app-data walk can continue after the browser and permission results are ready.
+- If the scan is still running, show Computer until the permission card renders, or use a reviewed recording of an actual run. The local scan API retains the previous result with its finish time. The app-data walk can continue after the browser and permission results are ready.
 - If the block preview stalls, show the Rules status and move on to Globe. Read a generated command only once it appears.
 - If venue Wi-Fi stalls, use the observed destinations still retained within the time and per-app caps. With the QA server on 4319, `curl.exe -N http://127.0.0.1:4319/events -o NUL` creates a real local connection that appears in Computer or Links. Stop that curl with Ctrl+C. If the run has few geographic estimates, state the count shown and use the country detail list when available.
 - If asked about device indicators, use a preapproved camera preview. The webcam lamp is white. The orange microphone key and the white lamp indicate Windows sessions, and durations reflect the observations.
