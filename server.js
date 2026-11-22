@@ -7,7 +7,7 @@ const { NetworkWatcher } = require('./lib/network');
 const { DeviceWatcher } = require('./lib/devices');
 const { renderReport, localDate } = require('./lib/report');
 
-const PORT = Number(process.env.PORT) || 4317;
+const PORT = Number(process.env.PORT || 4317);
 // Where arcs on the globe start. Defaults to Western University, London ON. No IP lookup service is called.
 const HOME = {
   lat: coordinate(process.env.HOME_LAT, 90, 43.0096),
@@ -154,4 +154,4 @@ const server = http.createServer((req, res) => {
 });
 
 // Only listen on this computer, so nobody else on the Wi-Fi can see your data.
-server.listen(PORT, '127.0.0.1', () => console.log(`Outbound running at http://localhost:${PORT}`));
+server.listen(PORT, '127.0.0.1', () => console.log(`Outbound running at http://127.0.0.1:${server.address().port}`));
